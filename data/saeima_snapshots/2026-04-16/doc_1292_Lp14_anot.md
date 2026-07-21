@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2] [cursor=pointer]:
+    - generic [ref=e3]:
+      - img [ref=e4]
+      - text: Drukāt
+    - generic [ref=e5]:
+      - img [ref=e6]
+      - text: Aizvērt
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]:
+      - img "Savērst" [ref=e12]
+      - text: Oriģinālais dokumenta saturs
+    - paragraph [ref=e13]:
+      - link "1292_Saeimas_velesanu_lik.pdf 1292_Saeimas_velesanu_lik.pdf" [ref=e14] [cursor=pointer]:
+        - /url: /LIVS14/saeimalivs14.nsf/0/3eb7590009ee34a6c2258dda004073bb/$FILE/1292_Saeimas_velesanu_lik.pdf
+        - img "1292_Saeimas_velesanu_lik.pdf" [ref=e15]
+        - generic [ref=e16]: 1292_Saeimas_velesanu_lik.pdf

@@ -1,0 +1,420 @@
+{% extends "base.html.j2" %}
+{% set active_page = "about" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Par mums{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="section" style="text-align:center; padding: 4rem 0 2rem;">
+  <h1 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Vai darbi sakrīt ar vārdiem?</h1>
+  <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 640px; margin: 0 auto; line-height: 1.7;">
+    <strong>atmina.lv</strong> ir politiskā atmiņa — mēs izsekojam ko politiķi sola, salīdzinām ar to ko viņi dara, un atrodam pretrunas.
+  </p>
+  <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 640px; margin: 0.75rem auto 0; line-height: 1.6;">
+    {{ stats.politicians }} politiķi · {{ stats.parties }} partijas · {{ stats.votes }} Saeimas balsojumi
+  </p>
+  <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 640px; margin: 1rem auto 0; line-height: 1.6; opacity: 0.85;">
+    Eksperimentāls caurspīdīguma projekts, veidots ar mākslīgā intelekta palīdzību. Visi dati ir <strong>publiski pieejami</strong> — mēs tos neradam, tikai apkopojam un strukturējam.
+  </p>
+</section>
+
+<!-- Pipeline animation -->
+<section class="section">
+  <div class="section-header">
+    <h2>Kā tas strādā</h2>
+  </div>
+
+  <div class="anim-pipeline-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="atmina — apstrādes plūsma">
+      <defs>
+        <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:var(--surface)"/>
+          <stop offset="100%" style="stop-color:var(--bg)"/>
+        </linearGradient>
+
+        <marker id="arrow3" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,-5L10,0L0,5" style="fill:var(--accent)"/>
+        </marker>
+
+        <style>
+          .bg3 { fill: url(#bg3); }
+          .step-num { font-family: "JetBrains Mono", ui-monospace, monospace;
+            font-size: 10px; font-weight: 500; letter-spacing: 0.15em;
+            fill: var(--text-muted); }
+          .step-title { font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+            fill: var(--text); }
+          .step-sub { font-family: "JetBrains Mono", ui-monospace, monospace;
+            font-size: 11px; fill: var(--text-muted); letter-spacing: 0.04em; }
+          .doc-line { stroke: var(--border); stroke-width: 2; stroke-linecap: round; }
+          .doc-line-hl { stroke: var(--accent-highlight); stroke-width: 2; stroke-linecap: round; opacity: 0; }
+          .claim-pill { fill: var(--surface); stroke: var(--accent); stroke-width: 1.2; rx: 4; ry: 4; }
+          .topic-bucket { fill: var(--surface); stroke-width: 1.5; rx: 8; ry: 8; }
+
+          @keyframes docScroll {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(-72px); }
+          }
+          @keyframes highlight {
+            0%, 10%   { opacity: 0; }
+            15%       { opacity: 0.9; }
+            30%       { opacity: 0.9; }
+            40%       { opacity: 0; }
+            100%      { opacity: 0; }
+          }
+          @keyframes claimFly {
+            0%, 30% { opacity: 0; transform: translate(0, 0) scale(0.85); }
+            40%     { opacity: 1; transform: translate(0, 0) scale(1); }
+            60%     { opacity: 1; transform: translate(200px, 0) scale(0.85); }
+            78%     { opacity: 0; transform: translate(360px, 0) scale(0.65); }
+            100%    { opacity: 0; transform: translate(0, 0) scale(0.85); }
+          }
+
+          .doc-scroller { animation: docScroll 6s linear infinite; }
+          .hl1 { animation: highlight 6s ease-in-out infinite; }
+          .hl2 { animation: highlight 6s ease-in-out infinite; animation-delay: 0.3s; }
+          .hl3 { animation: highlight 6s ease-in-out infinite; animation-delay: 0.6s; }
+          .fly-pill {
+            animation: claimFly 6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+            transform-box: fill-box;
+            transform-origin: 0% 50%;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .doc-scroller, .hl1, .hl2, .hl3, .fly-pill { animation: none; }
+          }
+        </style>
+      </defs>
+
+      <rect class="bg3" width="1100" height="320"/>
+
+      <g style="stroke:var(--accent-brand)" stroke-width="1.2" fill="none" opacity="0.7" marker-end="url(#arrow3)">
+        <line x1="215" y1="170" x2="320" y2="170"/>
+        <line x1="565" y1="170" x2="670" y2="170"/>
+        <line x1="830" y1="170" x2="935" y2="170"/>
+      </g>
+
+      <g transform="translate(40 80)">
+        <text class="step-num" x="0" y="0">01</text>
+        <text class="step-title" x="22" y="1">Avots</text>
+        <text class="step-sub" x="0" y="20">ziņas · X · Saeima</text>
+
+        <g transform="translate(0 40)">
+          <rect x="0" y="0" width="170" height="130" rx="6" style="fill:var(--surface); stroke:var(--border)" stroke-width="1"/>
+
+          <clipPath id="docClip"><rect x="0" y="0" width="170" height="130" rx="6"/></clipPath>
+          <g clip-path="url(#docClip)">
+            <g class="doc-scroller">
+              <text x="14" y="22" style="fill:var(--accent)" font-size="9"
+                font-family="JetBrains Mono, ui-monospace, monospace"
+                font-weight="500" letter-spacing="0.08em">DELFI.LV · 2026-04-19</text>
+
+              <line class="doc-line" x1="14" y1="42" x2="150" y2="42"/>
+              <line class="doc-line" x1="14" y1="52" x2="120" y2="52"/>
+              <line class="doc-line" x1="14" y1="62" x2="146" y2="62"/>
+              <line class="doc-line-hl hl1" x1="14" y1="72" x2="156" y2="72"/>
+              <line class="doc-line" x1="14" y1="82" x2="134" y2="82"/>
+              <line class="doc-line" x1="14" y1="92" x2="148" y2="92"/>
+              <line class="doc-line-hl hl2" x1="14" y1="102" x2="140" y2="102"/>
+              <line class="doc-line" x1="14" y1="112" x2="122" y2="112"/>
+              <line class="doc-line" x1="14" y1="122" x2="150" y2="122"/>
+
+              <line class="doc-line" x1="14" y1="152" x2="150" y2="152"/>
+              <line class="doc-line-hl hl3" x1="14" y1="162" x2="130" y2="162"/>
+              <line class="doc-line" x1="14" y1="172" x2="146" y2="172"/>
+              <line class="doc-line" x1="14" y1="182" x2="120" y2="182"/>
+              <line class="doc-line" x1="14" y1="192" x2="150" y2="192"/>
+              <line class="doc-line" x1="14" y1="202" x2="134" y2="202"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <g transform="translate(330 80)">
+        <text class="step-num" x="0" y="0">02</text>
+        <text class="step-title" x="22" y="1">Ekstrakcija</text>
+        <text class="step-sub" x="0" y="20">@claim-extractor</text>
+
+        <rect x="0" y="40" width="235" height="130" rx="6" style="fill:var(--surface); stroke:var(--border)" stroke-width="1"/>
+
+        <g class="fly-pill">
+          <g transform="translate(0 63)">
+            <rect class="claim-pill" width="190" height="22"/>
+            <text x="10" y="15" style="fill:var(--text)" font-size="11"
+              font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+              <tspan style="fill:var(--accent)" font-weight="600">pozīcija:</tspan> Rail Baltica
+            </text>
+          </g>
+        </g>
+        <g class="fly-pill" style="animation-delay: 2s">
+          <g transform="translate(0 98)">
+            <rect class="claim-pill" width="210" height="22"/>
+            <text x="10" y="15" style="fill:var(--text)" font-size="11"
+              font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+              <tspan style="fill:var(--accent)" font-weight="600">pozīcija:</tspan> aizsardzība
+            </text>
+          </g>
+        </g>
+        <g class="fly-pill" style="animation-delay: 4s">
+          <g transform="translate(0 133)">
+            <rect class="claim-pill" width="200" height="22"/>
+            <text x="10" y="15" style="fill:var(--text)" font-size="11"
+              font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+              <tspan style="fill:var(--accent)" font-weight="600">pozīcija:</tspan> budžets
+            </text>
+          </g>
+        </g>
+      </g>
+
+      <g transform="translate(680 80)">
+        <text class="step-num" x="0" y="0">03</text>
+        <text class="step-title" x="22" y="1">Klasifikācija</text>
+        <text class="step-sub" x="0" y="20">tēma · svarīgums · pretrunas</text>
+
+        <rect x="0" y="40" width="150" height="130" rx="6" style="fill:var(--surface); stroke:var(--border)" stroke-width="1"/>
+
+        <g transform="translate(15 66)">
+          <rect x="-3" y="-6" width="6" height="12" style="fill:var(--accent-highlight)"/>
+          <text x="14" y="4" style="fill:var(--text)" font-size="11"
+            font-family="-apple-system, Segoe UI, Roboto, sans-serif">Aizsardzība</text>
+          <text x="120" y="4" style="fill:var(--text-muted)" font-size="10" text-anchor="end"
+            font-family="JetBrains Mono, ui-monospace, monospace">0.90</text>
+        </g>
+        <g transform="translate(15 93)">
+          <rect x="-3" y="-6" width="6" height="12" style="fill:var(--accent)"/>
+          <text x="14" y="4" style="fill:var(--text)" font-size="11"
+            font-family="-apple-system, Segoe UI, Roboto, sans-serif">Rail Baltica</text>
+          <text x="120" y="4" style="fill:var(--text-muted)" font-size="10" text-anchor="end"
+            font-family="JetBrains Mono, ui-monospace, monospace">0.75</text>
+        </g>
+        <g transform="translate(15 120)">
+          <rect x="-3" y="-6" width="6" height="12" style="fill:var(--green)"/>
+          <text x="14" y="4" style="fill:var(--text)" font-size="11"
+            font-family="-apple-system, Segoe UI, Roboto, sans-serif">Budžets</text>
+          <text x="120" y="4" style="fill:var(--text-muted)" font-size="10" text-anchor="end"
+            font-family="JetBrains Mono, ui-monospace, monospace">0.65</text>
+        </g>
+
+        <g transform="translate(15 148)">
+          <rect width="120" height="16" rx="2" fill="rgba(183,28,28,0.18)"
+            style="stroke:var(--accent-highlight)" stroke-width="0.8"/>
+          <text x="60" y="12" text-anchor="middle" fill="#C62828" font-size="9"
+            font-family="JetBrains Mono, ui-monospace, monospace"
+            font-weight="500" letter-spacing="0.1em">PRETRUNA · 0.62</text>
+        </g>
+      </g>
+
+      <g transform="translate(950 80)">
+        <text class="step-num" x="0" y="0">04</text>
+        <text class="step-title" x="22" y="1">Atmiņa</text>
+        <text class="step-sub" x="0" y="20">atmina.db</text>
+
+        <g transform="translate(0 40)">
+          <rect class="topic-bucket" x="0" y="0" width="120" height="130"
+            style="stroke:var(--accent-brand)" stroke-width="1.5"/>
+
+          <clipPath id="bucketClip"><rect x="1" y="1" width="118" height="128" rx="7"/></clipPath>
+          <g clip-path="url(#bucketClip)">
+            <rect x="0" y="114" width="120" height="16" style="fill:var(--accent)" opacity="0.18"/>
+            <rect x="0" y="104" width="120" height="10" style="fill:var(--accent)" opacity="0.28">
+              <animate attributeName="y" values="130;104;104;104" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.28;0.28;0.28" dur="6s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="0" y="94" width="120" height="10" style="fill:var(--accent)" opacity="0.38">
+              <animate attributeName="y" values="130;94" dur="6s" keyTimes="0;1" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.38" dur="6s" keyTimes="0;1" repeatCount="indefinite"/>
+            </rect>
+          </g>
+
+          <text x="60" y="72" text-anchor="middle" style="fill:var(--text)" font-size="26"
+            font-family="Georgia, Times New Roman, serif"
+            font-weight="500" letter-spacing="-0.02em">{{ "{:,}".format(stats.claims).replace(",", " ") }}</text>
+          <text x="60" y="92" text-anchor="middle" style="fill:var(--text-muted)" font-size="9"
+            font-family="JetBrains Mono, ui-monospace, monospace"
+            letter-spacing="0.12em">APGALVOJUMI</text>
+        </g>
+      </g>
+
+      <g transform="translate(40 40)">
+        <text font-family="JetBrains Mono, ui-monospace, monospace"
+          font-size="10" style="fill:var(--text-muted)" letter-spacing="0.2em">
+          KĀ DARBOJAS ATMINA · 4 SOĻU PLŪSMA
+        </text>
+      </g>
+
+      <text x="550" y="295" text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="10" style="fill:var(--text-muted)" letter-spacing="0.08em">
+        katru dienu · {{ "{:,}".format(stats.documents).replace(",", " ") }} {{ stats.documents|lv_plural("dokuments apstrādāts", "dokumenti apstrādāti") }} · {{ stats.tensions }} {{ stats.tensions|lv_plural("spriedze fiksēta", "spriedzes fiksētas") }}
+      </text>
+    </svg>
+  </div>
+</section>
+
+<!-- What we track -->
+<section class="section">
+  <div class="section-header">
+    <h2>Ko mēs izsekojam</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="card" style="text-align:center; padding:1.5rem;">
+      <div style="font-size:2rem; font-weight:700; color:var(--blue);">{{ stats.politicians }}</div>
+      <div style="font-size:1rem; font-weight:600; margin-bottom:0.5rem;">Politiķi</div>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">Aktīvi izsekoti deputāti un publiskas personas</p>
+    </div>
+    <div class="card" style="text-align:center; padding:1.5rem;">
+      <div style="font-size:2rem; font-weight:700; color:var(--green);">{{ stats.parties }}</div>
+      <div style="font-size:1rem; font-weight:600; margin-bottom:0.5rem;">Partijas</div>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">Ar koalīcijas vai opozīcijas statusu</p>
+    </div>
+    <div class="card" style="text-align:center; padding:1.5rem;">
+      <div style="font-size:2rem; font-weight:700; color:var(--accent);">{{ stats.claims }}</div>
+      <div style="font-size:1rem; font-weight:600; margin-bottom:0.5rem;">Pozīcijas</div>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">Ko politiķi saka par konkrētām tēmām</p>
+    </div>
+    <div class="card" style="text-align:center; padding:1.5rem;">
+      <div style="font-size:2rem; font-weight:700; color:var(--purple);">{{ stats.votes }}</div>
+      <div style="font-size:1rem; font-weight:600; margin-bottom:0.5rem;">Balsojumi</div>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">Saeimas balsojumu ieraksti</p>
+    </div>
+    <div class="card" style="text-align:center; padding:1.5rem;">
+      <div style="font-size:2rem; font-weight:700; color:var(--red-bright);">{{ stats.contradictions }}</div>
+      <div style="font-size:1rem; font-weight:600; margin-bottom:0.5rem;">Pretrunas</div>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">Kad vārdi nesakrīt ar rīcību</p>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section class="section">
+  <div class="section-header">
+    <h2>Metodoloģija</h2>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Runas vs. rīcība</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Katru reizi, kad kāds politiķis publiski pauž pozīciju kādā tēmā (intervijā, tvītā, ziņu rakstā), mēs to salīdzinām ar viņa faktisko balsojumu Saeimā par attiecīgā temata likumprojektiem. Ja vārdi un balsojums nesakrīt — tā ir <strong>pretruna</strong>. Šis ir projekta centrālais mērķis: caurspīdīgums starp solījumiem un reālu rīcību.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Koalīcijas/opozīcijas statuss</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Katrai partijai mēs uzturam oficiālu statusu: <strong>koalīcija</strong>, <strong>opozīcija</strong> vai <strong>nav Saeimā</strong>. Šis statuss tiek lietots visā vietnē — balsojumu frakciju pārskatos, tendenču analīzēs un pretrunu kontekstā. Pozīcijas no koalīcijas un opozīcijas politiķiem tiek svērtas atšķirīgi, jo koalīcijas disciplīna var izskaidrot dažus šķietami "pretrunīgus" balsojumus.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Ticamības novērtējumi</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Katrai pozīcijai tiek piešķirts ticamības novērtējums no 0.0 līdz 1.0, kas atspoguļo MI pārliecības līmeni par izvilkto informāciju. Augstāks novērtējums nozīmē skaidrāku un nepārprotamāku avota tekstu. Novērtējums <strong>nav</strong> apgalvojuma patiesības mērs.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">{{ topic_count }} tematiskās kategorijas</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Pozīcijas tiek klasificētas vienā no {{ topic_count }} tematiskajām kategorijām: aizsardzība, ekonomika, izglītība, veselība, ārpolitika, vide u.c. Automātiskā klasifikācija ar manuālu pārbaudi nodrošina konsekventu tēmu piešķiršanu.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Dublikātu noteikšana</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Dokumenti tiek deduplificēti ar diviem mehānismiem: satura jaukšana (hash) un semantiskā līdzība (384-dimensiju embedding vektori). Tas nodrošina, ka viena un tā pati ziņa no dažādiem avotiem netiek uzskaitīta vairākkārt.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Publiskie dati un analīzes</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Papildus ziņu un sociālo mediju monitoringam mēs analizējam publiskos datus: KNAB amatpersonu deklarācijas, vēlēšanu kampaņu finanses, valsts statistiku. Šie dati papildina pozīciju analīzi ar faktisko kontekstu.
+      </p>
+    </details>
+  </div>
+</section>
+
+<!-- Disclaimers -->
+<section class="section">
+  <div class="card">
+    <h2 style="margin-bottom:1rem;">Atrunas</h2>
+    <ul style="color:var(--text-muted); font-size:0.9rem; list-style:disc; padding-left:1.5rem; line-height:1.8;">
+      <li><strong>Eksperimentāls projekts</strong> — atmina.lv ir aktīvā attīstībā. Datu struktūra, tēmu sadalījums un metodoloģija var mainīties.</li>
+      <li><strong>Publiski dati</strong> — mēs apkopojam un strukturējam publiski pieejamus avotus (mediju raksti, Saeimas balsojumi, sociālo tīklu ieraksti, KNAB deklarācijas). Mēs neveidojam jaunu informāciju.</li>
+      <li><strong>Selektīvs pārklājums</strong> — mēs neizsekojam visus politiķus un visas tēmas.</li>
+      <li><strong>MI var kļūdīties</strong> — pozīciju ekstrakcija, tēmu piešķiršana un pretrunu atpazīšana ir MI-asistēta. Iespējamās kļūdas: nepareizi interpretēts citāts, izlaista nianse, aplama pretrunas sasaiste, neprecīza tēmas klasifikācija.</li>
+      <li><strong>Nepiedāvājam vērtējumu</strong> — mēs tikai strukturēti pierakstām, ko politiķi publiski ir teikuši un kā balsojuši. Secinājumi paliek lasītāja ziņā.</li>
+      <li><strong>Pārbaudiet paši</strong> — katrs ieraksts satur saiti uz oriģinālo avotu. Ja mūsu pieraksts nesakrīt ar avotu, oriģinālais avots ir pārāks.</li>
+      <li><strong>Saeimas balsojumi ir autoritatīvi</strong> — balsojumu ieraksti nāk tieši no Saeimas oficiālajiem datiem un tiek uzskatīti par nemainīgu patiesību. Atšķirībā no pozīcijām ziņās, kur iespējama interpretācijas kļūda, balsojums "par/pret/atturas" ir precīzs faktu ieraksts.</li>
+      <li><strong>Ticamības novērtējumi</strong> norāda MI pārliecības līmeni, nevis absolūtu patiesību.</li>
+      <li><strong>Ziņojiet par kļūdām</strong> — ja pamanāt neprecizitāti, rakstiet uz <a href="mailto:info@atmina.lv">info@atmina.lv</a>. Katra atsauksme uzlabo sistēmu.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2 style="margin-bottom:1rem;">Atvērtais kods</h2>
+    <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7; margin:0 0 0.75rem;">
+      atmina pirmkods ir publiski pieejams —
+      <a href="https://github.com/imaksligais/atmina-lv" target="_blank" rel="noopener">github.com/imaksligais/atmina-lv</a>
+      (licence <strong>AGPL-3.0</strong>). Ikviens var pārbaudīt, kā tieši dati tiek ievākti, analizēti
+      un renderēti — caurskatāmības platformai arī pašai jābūt caurskatāmai.
+    </p>
+    <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7; margin:0;">
+      Kļūdu ziņojumi un uzlabojumu ierosinājumi ir gaidīti gan
+      <a href="https://github.com/imaksligais/atmina-lv/issues" target="_blank" rel="noopener">GitHub issues</a>,
+      gan uz <a href="mailto:info@atmina.lv">info@atmina.lv</a>.
+    </p>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<style>
+  .anim-pipeline-wrap {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .anim-pipeline-wrap svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  details summary { list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before {
+    content: "▸ ";
+    color: var(--accent);
+    font-weight: 700;
+  }
+  details[open] summary::before { content: "▾ "; }
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+{% endblock %}

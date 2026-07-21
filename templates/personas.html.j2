@@ -1,0 +1,187 @@
+{% extends "base.html.j2" %}
+{% set active_page = "personas" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Profili{% endblock %}
+
+{% block content %}
+<section class="pnv1-section">
+
+  <header class="pnv1-header">
+    <div class="pnv1-header-title">
+      <div class="pnv1-kicker">Izsekoto personu profilu reģistrs</div>
+      <h1 class="pnv1-h1">Profili</h1>
+    </div>
+    <div class="pnv1-metrics">
+      <div class="pnv1-metric">
+        <span class="pnv1-metric-label">Kopā</span>
+        <span class="pnv1-metric-value">{{ metrics.total }}</span>
+      </div>
+      <div class="pnv1-metric">
+        <span class="pnv1-metric-label">Deputāti</span>
+        <span class="pnv1-metric-value">{{ metrics.deputies }}</span>
+      </div>
+      <div class="pnv1-metric">
+        <span class="pnv1-metric-label">Pretrunas</span>
+        <span class="pnv1-metric-value pnv1-metric-accent">{{ metrics.with_contradictions }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="pnv1-mobile-filterbar">
+    <button class="pnv1-mobile-toggle" type="button" aria-expanded="false">
+      Filtri <span class="pnv1-mobile-count">(0)</span>
+    </button>
+    <div class="pnv1-mobile-chips" hidden></div>
+  </div>
+
+  <div class="pnv1-grid" data-mobile-filter-open="false">
+
+    <aside class="pnv1-aside">
+      <div class="pnv1-rail-group">
+        <div class="pnv1-rail-title">Kategorija</div>
+        <div class="pnv1-rail-rows" id="pnv1-rail-categories">
+          <button type="button" class="pnv1-rail-row is-active" data-axis="category" data-value="visas">
+            <span class="pnv1-rail-dot" aria-hidden="true"></span>
+            <span class="pnv1-rail-label">Visas</span>
+            <span class="pnv1-rail-count">{{ personas|length }}</span>
+          </button>
+          {% for cat, cnt in category_counts.items() %}
+          <button type="button" class="pnv1-rail-row" data-axis="category" data-value="{{ cat }}">
+            <span class="pnv1-rail-dot" aria-hidden="true"></span>
+            <span class="pnv1-rail-label">{{ cat }}</span>
+            <span class="pnv1-rail-count">{{ cnt }}</span>
+          </button>
+          {% if cat == 'Mediji' %}
+          <a class="pnv1-rail-sublink" href="mediji.html">Mediju caurskatāmība →</a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="pnv1-rail-group">
+        <div class="pnv1-rail-title">Partija</div>
+        <div class="pnv1-rail-rows" id="pnv1-rail-parties">
+          <button type="button" class="pnv1-rail-row is-active" data-axis="party" data-value="Visas">
+            <span class="pnv1-rail-dot" aria-hidden="true"></span>
+            <span class="pnv1-rail-label">Visas partijas</span>
+            <span class="pnv1-rail-count">{{ personas|length }}</span>
+          </button>
+          {% for name, short, color, count in parties_with_counts %}
+          <button type="button" class="pnv1-rail-row" data-axis="party" data-value="{{ name }}" data-color="{{ color }}">
+            <span class="pnv1-rail-dot" style="background:{{ color }}"></span>
+            <span class="pnv1-rail-label">{{ name }}</span>
+            <span class="pnv1-rail-count">{{ count }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="pnv1-rail-group">
+        <div class="pnv1-rail-title">Koalīcija</div>
+        <div class="pnv1-rail-rows" id="pnv1-rail-coalition">
+          <button type="button" class="pnv1-rail-row is-active" data-axis="coalition" data-value="visas">
+            <span class="pnv1-rail-dot" aria-hidden="true"></span>
+            <span class="pnv1-rail-label">Visi</span>
+            <span class="pnv1-rail-count">{{ personas|length }}</span>
+          </button>
+          <button type="button" class="pnv1-rail-row" data-axis="coalition" data-value="coalition">
+            <span class="pnv1-rail-dot" style="background:var(--blue)"></span>
+            <span class="pnv1-rail-label">Koalīcijā</span>
+            <span class="pnv1-rail-count">{{ metrics.coalition }}</span>
+          </button>
+          <button type="button" class="pnv1-rail-row" data-axis="coalition" data-value="opposition">
+            <span class="pnv1-rail-dot" style="background:var(--text-muted)"></span>
+            <span class="pnv1-rail-label">Opozīcijā</span>
+            <span class="pnv1-rail-count">{{ metrics.opposition }}</span>
+          </button>
+          <button type="button" class="pnv1-rail-row" data-axis="coalition" data-value="other">
+            <span class="pnv1-rail-dot" style="background:var(--text-dim)"></span>
+            <span class="pnv1-rail-label">Bez Saeimas frakcijas</span>
+            <span class="pnv1-rail-count">{{ metrics.total - metrics.coalition - metrics.opposition }}</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="pnv1-main">
+      <div class="pnv1-searchbar">
+        <svg class="pnv1-search-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="11" y1="11" x2="14" y2="14" stroke="currentColor" stroke-width="1.2"/></svg>
+        <input type="text" class="pnv1-search-input" id="pnv1-search" placeholder="Meklēt personu, amatu, partiju…" aria-label="Meklēt personu, amatu vai partiju">
+        <button type="button" class="pnv1-clear-chip" id="pnv1-clear" hidden>Notīrīt ✕</button>
+      </div>
+
+      <div class="pnv1-sortbar">
+        <span class="pnv1-showing" role="status" aria-live="polite" aria-atomic="true">Rāda <span id="pnv1-shown">{{ personas|length }}</span> no <span id="pnv1-total">{{ personas|length }}</span></span>
+        <span class="pnv1-sortbar-spacer"></span>
+        <span class="pnv1-sortbar-label">Kārtot:</span>
+        <button type="button" class="pnv1-sortbtn" data-sort="alfabets">alfabēts</button>
+        <button type="button" class="pnv1-sortbtn is-active" data-sort="aktivitate">pēd. aktivitāte</button>
+        <button type="button" class="pnv1-sortbtn" data-sort="pretrunas">pretrunas</button>
+        <button type="button" class="pnv1-sortbtn" data-sort="pozicijas">pozīcijas</button>
+      </div>
+
+      <div class="pnv1-cards" id="pnv1-cards">
+        {% for p in personas %}
+        <article class="pnv1-card"
+                 data-name="{{ p.name|lower }}"
+                 data-role="{{ (p.role or '')|lower }}"
+                 data-party="{{ p.party or '' }}"
+                 data-party-short="{{ p.party_short }}"
+                 data-category="{{ p.category }}"
+                 data-coalition="{{ p.coalition_status }}"
+                 data-last-iso="{{ p.last_activity_iso }}"
+                 data-positions="{{ p.claims_count }}"
+                 data-contradictions="{{ p.contradictions_count }}"
+                 style="--spine:{{ p.party_color or 'var(--text-dim)' }};">
+          <a class="pnv1-card-link" href="politiki/{{ p.slug }}.html">
+            <div class="pnv1-card-top">
+              {% if p.has_photo %}
+                <img class="pnv1-card-avatar" src="assets/photos/{{ p.slug }}.jpg" alt="{{ p.name }}" loading="lazy" decoding="async" width="40" height="40">
+              {% else %}
+                <div class="pnv1-card-avatar pnv1-card-avatar-ph" aria-hidden="true">{{ p.name[0]|upper }}</div>
+              {% endif %}
+              <div class="pnv1-card-ident">
+                <div class="pnv1-card-eyebrow">{{ p.category }}{% if p.party_short %} · {{ p.party_short }}{% endif %}</div>
+                <div class="pnv1-card-name">{{ p.name }}</div>
+                {% if p.role %}<div class="pnv1-card-role">{{ p.role }}</div>{% endif %}
+              </div>
+            </div>
+          </a>
+
+          <div class="pnv1-card-stats">
+            {% if p.claims_count %}<a class="pnv1-card-stat" href="pozicijas.html?persona={{ p.name|urlencode }}" title="Skatīt pozīcijas"><span class="pnv1-card-stat-n">{{ p.claims_count }}</span><span class="pnv1-card-stat-l">poz.</span></a>{% else %}<div class="pnv1-card-stat"><span class="pnv1-card-stat-n">0</span><span class="pnv1-card-stat-l">poz.</span></div>{% endif %}
+            {# "bals." tikai Saeimas balsotājiem — ne-deputātiem (amatpersonas, organizācijas) nav saeima_individual_votes, tāpēc stati izlaiž, nevis rāda maldinošu "0". Atbilst detaļlapas has_saeima_content gating. #}
+            {% if p.votes_count %}<a class="pnv1-card-stat" href="balsojumi.html?deputats={{ p.name|urlencode }}" title="Skatīt balsojumus"><span class="pnv1-card-stat-n">{{ p.votes_count }}</span><span class="pnv1-card-stat-l">bals.</span></a>{% endif %}
+            {% if p.contradictions_count %}<a class="pnv1-card-stat is-red" href="pretrunas.html?persona={{ p.name|urlencode }}" title="Skatīt pretrunas"><span class="pnv1-card-stat-n">{{ p.contradictions_count }}</span><span class="pnv1-card-stat-l">pretr.</span></a>{% else %}<div class="pnv1-card-stat"><span class="pnv1-card-stat-n">0</span><span class="pnv1-card-stat-l">pretr.</span></div>{% endif %}
+            <a class="pnv1-card-stat" href="politiki/{{ p.slug }}.html" title="Skatīt profilu"><span class="pnv1-card-stat-n">{{ p.docs_count }}</span><span class="pnv1-card-stat-l">dok.</span></a>
+          </div>
+
+          <div class="pnv1-card-foot">
+            {% if p.x_handle %}
+            <a class="pnv1-card-x" href="{{ ('https://x.com/' ~ p.x_handle) | safe_url }}" target="_blank" rel="noopener" title="Atvērt X profilu">𝕏 @{{ p.x_handle }}</a>
+            {% else %}
+            <span class="pnv1-card-x pnv1-card-x-empty" aria-hidden="true">—</span>
+            {% endif %}
+            {% if p.last_activity %}
+            <a class="pnv1-card-activity" href="{{ p.last_activity.href }}" title="{{ p.last_activity.label }}">
+              <span class="pnv1-card-activity-date">{{ p.last_activity.date[5:] }}</span>
+              <span class="pnv1-card-activity-icon" aria-hidden="true">{{ p.last_activity.icon }}</span>
+            </a>
+            {% if p.last_activity.source_url %}<a class="pnv1-card-source" href="{{ p.last_activity.source_url | safe_url }}" target="_blank" rel="noopener" title="Avots">↗</a>{% endif %}
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="pnv1-empty" id="pnv1-empty" hidden>Nav atrastu personu.</div>
+    </main>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/pnv1.js?v={{ assets_version }}"></script>
+{% endblock %}

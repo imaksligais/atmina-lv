@@ -1,0 +1,36 @@
+{# Single activity row — reusable for full-render + HTMX append.
+
+Args:
+  row: dict from get_activity_context().rows (has ts, kind, summary, relative_time, etc.)
+#}
+{% set icon = {
+    'ingest': '📥',
+    'mentions_fetch': '🐦',
+    'mentions_fetch_guardrail': '⚠',
+    'social_fetch': '📱',
+    'social_fetch_all': '📱',
+    'deploy': '🚀',
+    'image_generated': '🎨',
+    'image_approved': '✅',
+    'image_rejected': '❌',
+    'daily_brief': '📰',
+    'weekly_brief': '📅',
+    'context': '📝',
+    'analysis': '🔍',
+}.get(row.kind, '·') %}
+
+<li class="flex items-start gap-3 py-1.5 px-1
+           {% if row.status == 'partial' or row.kind == 'mentions_fetch_guardrail' %}status-warning rounded{% endif %}
+           {% if row.status == 'fail' or row.kind == 'image_rejected' %}status-danger rounded{% endif %}"
+    data-table="{{ row.table }}"
+    data-source-id="{{ row.source_id }}">
+  <span class="w-12 shrink-0 text-xs text-slate-500 dark:text-slate-400 data-mono"
+        title="{{ row.ts }}">
+    {{ row.relative_time }}
+  </span>
+  <span class="w-6 shrink-0 text-center text-sm" aria-hidden="true">{{ icon }}</span>
+  <span class="flex-1 text-sm">
+    <span class="font-medium">{{ row.kind }}</span>
+    <span class="text-slate-600 dark:text-slate-400">— {{ row.summary }}</span>
+  </span>
+</li>

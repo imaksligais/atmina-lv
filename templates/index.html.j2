@@ -1,0 +1,641 @@
+{% extends "base.html.j2" %}
+{% set active_page = "index" %}
+{% set assets_prefix = "" %}
+
+{% block title %}atmina.lv{% endblock %}
+
+{% block content %}
+<section class="hero-v2">
+  <div class="hero-top">
+    <h1 class="hero-brand">
+      <span class="hero-brand-line">Ko viņi teica.</span>
+      <span class="hero-brand-line hero-brand-line-muted">Kā viņi balsoja.</span>
+    </h1>
+    <div class="hero-top-right">
+      <div class="hero-election" role="note">
+        <span class="hero-election-days">{{ days_until_election }}</span>
+        <span class="hero-election-label">{{ days_until_election|lv_plural("diena", "dienas") }} līdz 15. Saeimas vēlēšanām</span>
+        <a class="hero-election-link" href="partijas.html">Partiju programmas →</a>
+      </div>
+      <form class="hero-search" action="pozicijas.html" method="get" role="search" data-sg-index="data/sg-index.json">
+        <svg class="hero-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+        <input type="search" name="q" class="hero-search-input" placeholder="Meklē politiķi, tēmu vai citātu…" aria-label="Meklēt pozīcijas" autocomplete="off">
+        <button type="submit" class="hero-search-btn">Meklēt</button>
+      </form>
+    </div>
+  </div>
+
+  {% if hero_items %}
+  <div class="hero-feature" id="heroFeature">
+    <div class="hero-feature-kicker"><span class="hero-v2-live-dot"></span> Uzmanības centrā</div>
+    <div class="hero-feature-stage">
+      {% for it in hero_items %}
+      {% set c = it.item %}
+      {% if it.kind == 'contradiction' %}
+      <a class="hero-feature-card{% if loop.first %} is-active{% endif %}" href="pretrunas/{{ c.id }}.html" data-i="{{ loop.index0 }}">
+        <div class="hero-feature-persona">
+          {%- if c.has_photo %}
+          <img class="hero-feature-avatar hero-feature-avatar-photo" src="assets/photos/{{ c.slug }}.jpg" alt="{{ c.politician_name }}" width="56" height="56" style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="hero-feature-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <span class="hero-feature-persona-text">
+            <span class="hero-feature-name">{{ c.politician_name }}</span>
+            <span class="hero-feature-role">{{ c.party_short }}{% if c.topic %} · {{ c.topic }}{% endif %}</span>
+          </span>
+          <span class="hero-feature-badge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}{% if c.delta_days is not none %} · ΔT {{ c.delta_days }}d{% endif %}</span>
+        </div>
+        <div class="hero-feature-split">
+          <div class="hero-feature-pane">
+            <span class="hero-feature-pane-label">{{ c.old_label or 'Iepriekš' }} · {{ c.old_date }}</span>
+            <span class="hero-feature-stance">{% if c.old_is_quote %}„{{ c.old_excerpt }}”{% else %}{{ c.old_excerpt }}{% endif %}</span>
+          </div>
+          <span class="hero-feature-arrow" aria-hidden="true">→</span>
+          <div class="hero-feature-pane hero-feature-pane-new">
+            <span class="hero-feature-pane-label">{{ c.new_label or 'Pašlaik' }} · {{ c.new_date }}</span>
+            <span class="hero-feature-stance">{% if c.new_is_quote %}„{{ c.new_excerpt }}”{% else %}{{ c.new_excerpt }}{% endif %}</span>
+          </div>
+        </div>
+        <span class="hero-feature-cta">Skatīt pretrunu →</span>
+      </a>
+      {% elif it.kind == 'position' %}
+      <a class="hero-feature-card{% if loop.first %} is-active{% endif %}" href="politiki/{{ c.slug }}.html" data-i="{{ loop.index0 }}">
+        <div class="hero-feature-persona">
+          {%- if c.has_photo %}
+          <img class="hero-feature-avatar hero-feature-avatar-photo" src="assets/photos/{{ c.slug }}.jpg" alt="{{ c.name }}" width="56" height="56" style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="hero-feature-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <span class="hero-feature-persona-text">
+            <span class="hero-feature-name">{{ c.name }}</span>
+            <span class="hero-feature-role">{{ c.party_short }}{% if c.party_short and c.topic %} · {% endif %}{{ c.topic }}</span>
+          </span>
+          <span class="hero-feature-badge">Pozīcija</span>
+        </div>
+        <div class="hero-feature-pane">
+          <span class="hero-feature-pane-label">{{ c.date|lv_date }} · {{ c.source_domain }}</span>
+          <span class="hero-feature-stance">„{{ c.quote }}”</span>
+        </div>
+        <span class="hero-feature-cta">Skatīt profilu →</span>
+      </a>
+      {% elif it.kind == 'vote' %}
+      <a class="hero-feature-card{% if loop.first %} is-active{% endif %}" href="balsojumi.html#vote-{{ c.id }}" data-i="{{ loop.index0 }}">
+        <div class="hero-feature-persona">
+          <span class="hero-feature-persona-text">
+            <span class="hero-feature-name">Saeimas balsojums</span>
+            <span class="hero-feature-role">{{ c.date|lv_date }}</span>
+          </span>
+          <span class="hero-feature-badge">{{ c.result }}</span>
+        </div>
+        <div class="hero-feature-pane">
+          <span class="hero-feature-stance">{{ c.title }}</span>
+        </div>
+        <div class="hero-vote-bar" role="img" aria-label="Par {{ c.par }}, pret {{ c.pret }}, atturas {{ c.atturas }}">
+          <span class="hero-vote-par" style="flex-grow: {{ c.par }}"></span>
+          <span class="hero-vote-pret" style="flex-grow: {{ c.pret }}"></span>
+          <span class="hero-vote-att" style="flex-grow: {{ c.atturas }}"></span>
+        </div>
+        <div class="hero-vote-legend"><span>Par {{ c.par }}</span><span>Pret {{ c.pret }}</span><span>Atturas {{ c.atturas }}</span></div>
+        <span class="hero-feature-cta">Skatīt balsojumu →</span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% if hero_items|length > 1 %}
+    <div class="hero-feature-dots">
+      {% for it in hero_items %}
+      <button type="button" class="hero-feature-dot{% if loop.first %} is-active{% endif %}" data-i="{{ loop.index0 }}" aria-label="{{ {'contradiction': 'Pretruna', 'position': 'Pozīcija', 'vote': 'Balsojums'}[it.kind] }} {{ loop.index }}"></button>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="hero-v2-metrics hero-v2-metrics-compact">
+    <a href="pozicijas.html" class="hero-v2-metric">
+      <div class="hero-v2-metric-head">
+        <div class="hero-v2-metric-num">{{ stats.claims }}</div>
+        <div class="hero-v2-metric-delta">+{{ stats.claims_7d }} / 7d</div>
+      </div>
+      <div class="hero-v2-metric-spark">{{ spark_positions }}</div>
+      <div class="hero-v2-metric-label">poz&#299;cijas</div>
+    </a>
+    <a href="pretrunas.html" class="hero-v2-metric">
+      <div class="hero-v2-metric-head">
+        <div class="hero-v2-metric-num">{{ stats.contradictions }}</div>
+        <div class="hero-v2-metric-delta">{% if contradictions_7d %}+{{ contradictions_7d }} / 7d{% else %}stabils{% endif %}</div>
+      </div>
+      <div class="hero-v2-metric-spark">{{ spark_contradictions }}</div>
+      <div class="hero-v2-metric-label">pretrunas</div>
+    </a>
+    <a href="personas.html" class="hero-v2-metric">
+      <div class="hero-v2-metric-head">
+        <div class="hero-v2-metric-num">{{ stats.politicians_active }}</div>
+        <div class="hero-v2-metric-delta">{{ stats.votes }} bals.</div>
+      </div>
+      <div class="hero-v2-metric-spark">{{ spark_active }}</div>
+      <div class="hero-v2-metric-label">akt&#299;vi politi&#311;i</div>
+    </a>
+  </div>
+
+</section>
+
+{% if recent_briefs %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">Anal&#299;zes &middot; p&#257;rskati</div>
+      <h2 class="section-head-title">Jaun&#257;kie p&#257;rskati</h2>
+    </div>
+    <a href="analizes.html" class="section-head-link">Visi p&#257;rskati &rarr;</a>
+  </div>
+  <div class="brief-featured-grid">
+    {% for b in recent_briefs %}
+    <a href="blog/{{ b.slug }}.html" class="brief-featured-card">
+      {% if b.image_filename %}
+      <img src="images/briefs/{{ b.image_filename|image_variant('card') }}"
+           alt="{{ b.headline or b.title }}"
+           width="640" height="360"
+           loading="{% if loop.first %}eager{% else %}lazy{% endif %}">
+      {% endif %}
+      <div class="brief-featured-body">
+        <div class="brief-featured-meta">
+          <span class="brief-featured-type{% if b.note_type == 'weekly_brief' %} is-weekly{% endif %}">{{ b.type_label }}</span>
+          <span class="brief-featured-date">{{ b.date }}</span>
+        </div>
+        {% if b.headline %}
+        <div class="brief-featured-headline">{{ b.headline }}</div>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% macro focus_quote_card(q) %}
+<article class="focus-quote-card" style="--pc: {{ q.party_color }}">
+  <blockquote class="focus-quote-text">{{ q.quote }}</blockquote>
+  <footer class="focus-quote-attr">
+    {%- if q.has_photo %}
+    <img class="prv2-avatar prv2-avatar-photo focus-avatar" src="{{ assets_prefix }}assets/photos/{{ q.slug }}.jpg" alt="{{ q.name }}" width="40" height="40" loading="lazy" style="--pc: {{ q.party_color }}">
+    {%- else %}
+    <span class="prv2-avatar focus-avatar" style="--pc: {{ q.party_color }}">{{ q.initials }}</span>
+    {%- endif %}
+    <div class="focus-quote-who">
+      <a href="politiki/{{ q.slug }}.html">{{ q.name }}</a>
+      <span class="focus-quote-meta">{{ q.party_short }}{% if q.party_short %} · {% endif %}{{ q.date }} · <a href="{{ q.source_url }}" rel="noopener">{{ q.source_domain }} ↗</a></span>
+    </div>
+  </footer>
+</article>
+{% endmacro %}
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">Karstākais šobrīd</div>
+      <h2 class="section-head-title">Uzmanības centrā</h2>
+    </div>
+    <a href="pretrunas.html" class="section-head-link">Visas pretrunas &rarr;</a>
+  </div>
+  <div class="focus-grid">
+
+    {% if focus.hot %}
+    <article class="focus-hot">
+      <div class="focus-hot-head">
+        <span class="focus-hot-flame" aria-hidden="true">🔥</span>
+        <div>
+          <div class="focus-kicker">Karstā tēma</div>
+          <h3 class="focus-hot-title"><a href="temas/{{ focus.hot.topic_slug }}.html">{{ focus.hot.topic }}</a></h3>
+        </div>
+        <div class="focus-hot-chips">
+          <span class="focus-chip">{{ focus.hot.n|lv_plural("pozīcija", "pozīcijas") }}</span>
+          <span class="focus-chip">{{ focus.hot.pol|lv_plural("politiķis", "politiķi") }}</span>
+          <span class="focus-chip focus-chip-dim">šonedēļ</span>
+        </div>
+      </div>
+      <div class="focus-hot-quotes">{% for q in focus.hot.quotes %}{{ focus_quote_card(q) }}{% endfor %}</div>
+      {% if focus.hot.koal_n or focus.hot.opoz_n %}
+      <div class="focus-bloc-bar" role="img" aria-label="Koalīcija {{ focus.hot.koal_n }}, opozīcija {{ focus.hot.opoz_n }}">
+        <span class="focus-bloc-koal" style="flex-grow: {{ focus.hot.koal_n }}"></span>
+        <span class="focus-bloc-opoz" style="flex-grow: {{ focus.hot.opoz_n }}"></span>
+      </div>
+      <div class="focus-bloc-legend"><span>Koalīcija {{ focus.hot.koal_n }}</span><span>Opozīcija {{ focus.hot.opoz_n }}</span></div>
+      {% endif %}
+      <a class="focus-cta" href="temas/{{ focus.hot.topic_slug }}.html">Visa tēma &rarr;</a>
+    </article>
+    {% endif %}
+
+    {% for slot in [focus.slot_b] %}
+    {% if slot %}
+    <div class="focus-slot">
+      {% if slot.kind == 'contradiction' %}
+      {% set c = slot.item %}
+      <div class="focus-kicker">≈ Svaiga pretruna</div>
+    <article class="prv2-card sev-{{ c.severity }}">
+      <div class="prv2-partybar" style="background: {{ c.party_color }}"></div>
+
+      <header class="prv2-head">
+        <div class="prv2-persona">
+          {%- if c.has_photo %}
+          <img class="prv2-avatar prv2-avatar-photo" src="{{ assets_prefix }}assets/photos/{{ c.slug }}.jpg" alt="{{ c.politician_name }}" width="56" height="56" loading="lazy" style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="prv2-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <div class="prv2-persona-text">
+            <a class="prv2-name" href="politiki/{{ c.slug }}.html">{{ c.politician_name }}</a>
+            <div class="prv2-role">{{ c.party_short }}</div>
+          </div>
+        </div>
+        <div class="prv2-meta-mid">
+          <span class="prv2-sevbadge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}</span>
+          {% if c.topic %}<span class="prv2-topic">{{ c.topic }}</span>{% endif %}
+        </div>
+        {% if c.delta_days is not none %}
+        <div class="prv2-meta-right">
+          <div class="prv2-datacell">
+            <span class="prv2-datacell-l">ΔT</span>
+            <span class="prv2-datacell-v">{{ c.delta_days }}d</span>
+          </div>
+        </div>
+        {% endif %}
+      </header>
+
+      {% if c.summary %}
+      <section class="prv2-summary">
+        <div class="prv2-kicker">Kopsavilkums</div>
+        <p class="contra-summary-clamp">{{ c.summary | autolink_bills(bill_slugs) | safe }}</p>
+      </section>
+      {% endif %}
+
+      {% if c.context_note %}
+      <aside class="prv2-context">
+        <span class="prv2-context-kicker">Konteksts</span>
+        {{ c.context_note }}
+      </aside>
+      {% endif %}
+
+      <div class="prv2-split">
+        <div class="prv2-pane prv2-pane-old">
+          <div class="prv2-kicker">{{ c.old_label or 'Iepriekš' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.old_date }}">{{ c.old_date }}</time>
+            {% if c.old_source %}
+            · <a href="{{ c.old_source }}" target="_blank" rel="noopener">{{ c.old_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.old_stance }}</div>
+          {% if c.old_quote %}
+          <blockquote class="prv2-quote">{{ c.old_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+        </div>
+
+        <div class="prv2-gutter">
+          <span class="prv2-gutter-disc" aria-hidden="true">{{ c.severity_glyph }}</span>
+        </div>
+
+        <div class="prv2-pane prv2-pane-new">
+          <div class="prv2-kicker prv2-kicker-sev">{{ c.new_label or 'Pašlaik' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.new_date }}">{{ c.new_date }}</time>
+            {% if c.new_source %}
+            · <a href="{{ c.new_source }}" target="_blank" rel="noopener">{{ c.new_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.new_stance }}</div>
+          {% if c.new_quote %}
+          <blockquote class="prv2-quote">{{ c.new_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+          {% if c.vote_summary %}
+          <div class="prv2-vote">
+            <span class="prv2-vote-kicker">Likumprojekts</span>
+            {{ c.vote_summary }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+      {% elif slot.kind == 'tension' %}
+      {% set t = slot.item %}
+      <div class="focus-kicker">⚡ {{ t.type_lv }}</div>
+      <article class="focus-duel">
+        <div class="focus-duel-pair">
+          <a class="focus-duel-name" href="politiki/{{ t.source_slug }}.html">{{ t.source_name }}</a>
+          <span class="focus-duel-arrow" aria-hidden="true">⟶</span>
+          <a class="focus-duel-name" href="politiki/{{ t.target_slug }}.html">{{ t.target_name }}</a>
+        </div>
+        <p class="focus-duel-desc">{{ t.description }}</p>
+        <div class="focus-duel-meta">{{ t.date }}{% if t.topic %} · {{ t.topic }}{% endif %}{% if t.source_url %} · <a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">Avots ↗</a>{% endif %}{% if t.target_url %} · <a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener">Atbilde ↗</a>{% endif %} · <a href="spriedzes.html">Visas spriedzes &rarr;</a></div>
+      </article>
+      {% elif slot.kind == 'quote' %}
+      <div class="focus-kicker">Dienas citāts</div>
+      {{ focus_quote_card(slot.item) }}
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    {% if focus.slot_c_items %}
+    <div class="focus-slot">
+      {% set c_tensions = focus.slot_c_items | selectattr('kind', 'equalto', 'tension') | list %}
+      {% if c_tensions %}
+      <div class="focus-kicker">⚡ Spriedzes</div>
+      {% for s in c_tensions %}
+      {% set t = s.item %}
+      <article class="focus-duel">
+        <div class="focus-duel-pair">
+          <a class="focus-duel-name" href="politiki/{{ t.source_slug }}.html">{{ t.source_name }}</a>
+          <span class="focus-duel-arrow" aria-hidden="true">⟶</span>
+          <a class="focus-duel-name" href="politiki/{{ t.target_slug }}.html">{{ t.target_name }}</a>
+        </div>
+        <p class="focus-duel-desc">{{ t.description }}</p>
+        <div class="focus-duel-meta">{{ t.date }} · {{ t.type_lv }}{% if t.topic %} · {{ t.topic }}{% endif %}{% if t.source_url %} · <a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">Avots ↗</a>{% endif %}{% if t.target_url %} · <a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener">Atbilde ↗</a>{% endif %}</div>
+      </article>
+      {% endfor %}
+      <a class="focus-cta" href="spriedzes.html">Visas spriedzes &rarr;</a>
+      {% endif %}
+      {% for s in focus.slot_c_items if s.kind == 'quote' %}
+      <div class="focus-kicker focus-kicker-stacked">Dienas citāts</div>
+      {{ focus_quote_card(s.item) }}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% if rankings and (rankings.most_contradictions or rankings.biggest_reversals or rankings.most_active_7d or rankings.vote_alignment_outliers) %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">Atklāj bez meklēšanas</div>
+      <h2 class="section-head-title">Līderu josla</h2>
+    </div>
+    <a href="pretrunas.html" class="section-head-link">Visas pretrunas &rarr;</a>
+  </div>
+  <div class="ranks-grid">
+    {% if rankings.most_contradictions %}
+    <div class="rank-card">
+      <h3 class="rank-card-title">Visvairāk pretrunu</h3>
+      <div class="rank-list">
+        {% for r in rankings.most_contradictions %}
+        {% if loop.first %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-leader" style="--pc: {{ r.party_color }}">
+          {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
+          {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.name.split()[0][0] }}{{ r.name.split()[-1][0] }}</span>{% endif %}
+          <span class="rank-leader-name">{{ r.name }}</span>
+          <span class="rank-leader-value">{{ r.count }}</span>
+        </a>
+        {% else %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-row">
+          {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if rankings.biggest_reversals %}
+    <div class="rank-card">
+      <h3 class="rank-card-title">Lielākie apvērsumi</h3>
+      <div class="rank-list">
+        {% for r in rankings.biggest_reversals %}
+        {% if loop.first %}
+        <a href="pretrunas/{{ r.id }}.html" class="rank-leader" style="--pc: {{ r.party_color }}">
+          {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
+          {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.name.split()[0][0] }}{{ r.name.split()[-1][0] }}</span>{% endif %}
+          <span class="rank-leader-name">{{ r.name }}</span>
+          <span class="rank-leader-value">{{ r.delta_days }}d</span>
+        </a>
+        {% else %}
+        <a href="pretrunas/{{ r.id }}.html" class="rank-row">
+          {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.delta_days }}d</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="rank-card-note">Dienu starpība starp abām nostājām</div>
+    </div>
+    {% endif %}
+    {% if rankings.most_active_7d %}
+    <div class="rank-card">
+      <h3 class="rank-card-title">Visaktīvākie (7 dienās)</h3>
+      <div class="rank-list">
+        {% for r in rankings.most_active_7d %}
+        {% if loop.first %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-leader" style="--pc: {{ r.party_color }}">
+          {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
+          {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.name.split()[0][0] }}{{ r.name.split()[-1][0] }}</span>{% endif %}
+          <span class="rank-leader-name">{{ r.name }}</span>
+          <span class="rank-leader-value">{{ r.count }}</span>
+        </a>
+        {% else %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-row">
+          {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="rank-card-note">Jaunas pozīcijas medijos un X</div>
+    </div>
+    {% endif %}
+    {% if rankings.vote_alignment_outliers %}
+    <div class="rank-card">
+      <h3 class="rank-card-title">Sakritība ar Saeimas vairākumu</h3>
+      <div class="rank-list">
+        {% for r in rankings.vote_alignment_outliers %}
+        {% if loop.first %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-leader" style="--pc: {{ r.party_color }}">
+          {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
+          {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.name.split()[0][0] }}{{ r.name.split()[-1][0] }}</span>{% endif %}
+          <span class="rank-leader-name">{{ r.name }}</span>
+          <span class="rank-leader-value">{{ r.agree_pct }}%</span>
+        </a>
+        {% else %}
+        <a href="politiki/{{ r.slug }}.html" class="rank-row">
+          {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.agree_pct }}%</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="rank-card-note">Nodoto balsu (par/pret/atturas) daļa, kas sakrīt ar vairākumu. Opozīcijai zemāka sakritība ir dabiska.</div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if week_summary %}
+<section class="section week-section">
+  <div class="week-strip">
+    <div class="week-strip-head">
+      <div class="section-head-kicker">Pēdējās 7 dienās</div>
+      <div class="week-strip-title">Šonedēļ</div>
+    </div>
+    <div class="week-strip-stats">
+      <a class="week-stat" href="pozicijas.html">
+        <span class="week-stat-num">{{ week_summary.claims_7d }}</span>
+        <span class="week-stat-label">{{ week_summary.claims_7d|lv_plural("jauna pozīcija", "jaunas pozīcijas") }}</span>
+      </a>
+      <a class="week-stat" href="balsojumi.html">
+        {% if week_summary.votes_fact %}
+        <span class="week-stat-num week-stat-date">{{ week_summary.votes_fact.date }}</span>
+        <span class="week-stat-label">{{ week_summary.votes_fact.label }}</span>
+        {% else %}
+        <span class="week-stat-num">{{ week_summary.votes_7d }}</span>
+        <span class="week-stat-label">{{ week_summary.votes_7d|lv_plural("balsojums", "balsojumi") }}</span>
+        {% endif %}
+      </a>
+      <a class="week-stat" href="pretrunas.html">
+        {% if week_summary.contradictions_fact %}
+        <span class="week-stat-num week-stat-date">{{ week_summary.contradictions_fact.date }}</span>
+        <span class="week-stat-label">{{ week_summary.contradictions_fact.label }}</span>
+        {% else %}
+        <span class="week-stat-num">{{ week_summary.contradictions_7d }}</span>
+        <span class="week-stat-label">{{ week_summary.contradictions_7d|lv_plural("jauna pretruna", "jaunas pretrunas") }}</span>
+        {% endif %}
+      </a>
+    </div>
+    {% if week_summary.weekly_brief %}
+    <a class="week-strip-cta" href="blog/{{ week_summary.weekly_brief.slug }}.html">
+      Nedēļas pārskats{% if week_summary.weekly_brief.date %} · {{ week_summary.weekly_brief.date }}{% endif %} &rarr;
+    </a>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if latest_synthesis or latest_analysis %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">Dziļāk ielūkojoties</div>
+      <h2 class="section-head-title">Jaunākās analīzes</h2>
+    </div>
+    <a href="analizes.html#sintezes" class="section-head-link">Visas analīzes &rarr;</a>
+  </div>
+  <div class="analysis-feed is-duo">
+    {% set s = latest_synthesis %}
+    {% if s %}
+    <article class="analysis-feat{% if s.image_filename %} has-image{% endif %}">
+      {% if s.image_filename %}
+      <a href="sintezes/{{ s.slug }}.html" class="analysis-feat-media">
+        <img src="images/synthesis/{{ s.image_filename|image_variant('card') }}" alt="{{ s.title }}" loading="lazy">
+      </a>
+      {% endif %}
+      <div class="analysis-feat-body">
+        <div class="analysis-feat-meta">
+          <a href="analizes.html#sintezes" class="analysis-feat-kicker">Sintēze</a>
+          {% if s.created %}
+          <span class="analysis-feat-sep">·</span>
+          <span class="analysis-feat-date">{{ s.created }}</span>
+          {% endif %}
+        </div>
+        <h3 class="analysis-feat-title"><a href="sintezes/{{ s.slug }}.html">{{ s.title }}</a></h3>
+        {% if s.description %}
+        <div class="analysis-feat-desc">{{ s.description }}</div>
+        {% endif %}
+        <a href="sintezes/{{ s.slug }}.html" class="analysis-feat-cta">Lasīt sintēzi &rarr;</a>
+      </div>
+    </article>
+    {% endif %}
+    {% set a = latest_analysis %}
+    {% if a %}
+    <article class="analysis-feat{% if a.image_filename %} has-image{% endif %}">
+      {% if a.image_filename %}
+      <a href="{{ a.url }}" class="analysis-feat-media">
+        <img src="images/analizes/{{ a.image_filename|image_variant('card') }}" alt="{{ a.title }}" loading="lazy">
+      </a>
+      {% endif %}
+      <div class="analysis-feat-body">
+        <div class="analysis-feat-meta">
+          <a href="analizes.html#tematic" class="analysis-feat-kicker">Tematiskā analīze</a>
+          <span class="analysis-feat-sep">·</span>
+          <span class="analysis-feat-date">{{ a.date }}</span>
+        </div>
+        <h3 class="analysis-feat-title"><a href="{{ a.url }}">{{ a.title }}</a></h3>
+        {% if a.description %}
+        <div class="analysis-feat-desc">{{ a.description }}</div>
+        {% endif %}
+        <a href="{{ a.url }}" class="analysis-feat-cta">Lasīt analīzi &rarr;</a>
+      </div>
+    </article>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if trends_data %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">P&#275;d&#275;jo 14 dienu dati</div>
+      <h2 class="section-head-title">Tendences</h2>
+    </div>
+    <a href="analizes.html#trends" class="section-head-link">Visas tendences &rarr;</a>
+  </div>
+  <div class="grid-2">
+    <div class="chart-container">
+      <h3>Popul&#257;r&#257;k&#257;s t&#275;mas</h3>
+      <canvas id="topicsChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Akt&#299;v&#257;kie politi&#311;i</h3>
+      <canvas id="politiciansChart"></canvas>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-head-kicker">Saeimas balsojumi</div>
+      <h2 class="section-head-title">P&#275;d&#275;jie balsojumi</h2>
+    </div>
+    <a href="balsojumi.html" class="section-head-link">Visi balsojumi &rarr;</a>
+  </div>
+  <div class="table-wrap">
+    <table class="data-table votes-mini">
+      <thead>
+        <tr>
+          <th>Datums</th>
+          <th>Jautājums</th>
+          <th>Rezultāts</th>
+          <th>Par</th>
+          <th>Pret</th>
+          <th>Atturas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for v in recent_votes %}
+        <tr>
+          <td>{{ v.vote_date|lv_date }}</td>
+          <td><a class="vote-link" href="balsojumi.html#vote-{{ v.id }}">{{ v.motif[:80] }}{% if v.motif|length > 80 %}…{% endif %}</a></td>
+          <td><span class="badge {% if v.result == 'Pieņemts' %}badge-green{% else %}badge-red{% endif %}">{{ v.result }}</span></td>
+          <td><span class="badge badge-green">{{ v.total_par }}</span></td>
+          <td><span class="badge badge-red">{{ v.total_pret }}</span></td>
+          <td><span class="badge badge-yellow">{{ v.total_atturas }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% if trends_data %}
+<script src="assets/chart.min.js" defer></script>
+<script type="application/json" id="trends-data">{{ trends_data | tojson | safe_json }}</script>
+{% endif %}
+<script src="{{ assets_prefix }}assets/ixv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

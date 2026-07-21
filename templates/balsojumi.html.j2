@@ -1,0 +1,181 @@
+{% extends "base.html.j2" %}
+{% set active_page = "balsojumi" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Balsojumi{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Saeimas balsojumu reģistrs</div>
+      <h1 class="pagehead-h1">Balsojumi</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Kopā</span>
+        <span class="pagehead-metric-value">{{ "{:,}".format(metrics.total).replace(",", " ") }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Pēdējā nedēļā</span>
+        <span class="pagehead-metric-value">{{ metrics.last_week }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Pieņemti</span>
+        <span class="pagehead-metric-value">{{ metrics.accepted_pct }}%</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subtab bar -->
+  <div class="subtab-bar">
+    <button class="subtab-btn active" data-tab="votes-list">Balsojumi</button>
+    <button class="subtab-btn" data-tab="votes-matrix">Matrica</button>
+    <button class="subtab-btn" data-tab="bills-list">Likumprojekti</button>
+  </div>
+
+  <!-- ═══ TAB 1: Existing vote cards ═══ -->
+  <div id="votes-list-tab">
+    <div class="filter-bar">
+      <div class="multi-select" id="topic-select">
+        <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="topic-trigger">
+          <span>Visas tēmas</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+          <input type="text" class="multi-select-search" aria-label="Meklēt tēmas" placeholder="Meklēt...">
+          {% for topic in vote_topics %}
+          <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ topic }}">
+            <span class="checkbox"></span>
+            <span>{{ topic }}</span>
+          </div>
+          {% endfor %}
+          <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+        </div>
+      </div>
+
+      <div class="multi-select" id="deputy-select">
+        <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="deputy-trigger">
+          <span>Visi deputāti</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+          <input type="text" class="multi-select-search" aria-label="Meklēt deputātus" placeholder="Meklēt...">
+          {% for deputy in deputies %}
+          <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ deputy }}">
+            <span class="checkbox"></span>
+            <span>{{ deputy }}</span>
+          </div>
+          {% endfor %}
+          <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+        </div>
+      </div>
+
+      <div class="multi-select" id="session-select">
+        <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="session-trigger">
+          <span>Visas sēdes</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+          <input type="text" class="multi-select-search" aria-label="Meklēt sēdes" placeholder="Meklēt...">
+          {% for session in vote_sessions %}
+          <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ session }}">
+            <span class="checkbox"></span>
+            <span>{{ session[8:10] }}.{{ session[5:7] }}.{{ session[:4] }}</span>
+          </div>
+          {% endfor %}
+          <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+        </div>
+      </div>
+    </div>
+
+    {# Single rendering path ("Option 2", 2026-07-17): the vote cards are ALWAYS
+       rendered client-side by assets/bmv1.js::balsojumiArchiveRender from the
+       compact matrix JSON — SSR-identical, but the whole history is searchable
+       and the page ships ~0.3–0.7 MB instead of 6.4 MB. The static shell below
+       is filled by the inline script's renderArchive() on load. #}
+    <div id="votes-archive" data-vote-total="{{ metrics.total }}">
+      <div id="votes-archive-info" style="margin-bottom:1rem; color:var(--text-muted); font-size:0.9rem;"></div>
+      <div id="votes-archive-cards"></div>
+      <div style="text-align:center; margin-top:1rem;">
+        <button id="votes-archive-more" class="link-filter-btn" style="display:none;">Rādīt vairāk</button>
+      </div>
+    </div>
+    <noscript><p class="muted-link">Balsojumu saraksta attēlošanai nepieciešams JavaScript. Balsojumu dati pieejami arī <a href="https://titania.saeima.lv" rel="noopener">titania.saeima.lv</a>.</p></noscript>
+  </div>
+
+  <!-- ═══ TAB 2: Vote Matrix (JS-rendered, lazy-init on tab show) ═══ -->
+  <!-- Skeleton until assets/bmv1.js fetches /data/balsojumi-matrica.json. -->
+  <!-- Plan: docs/superpowers/plans/2026-05-28-balsojumi-virtualization.md -->
+  <div id="votes-matrix-tab" style="display: none;">
+    <div id="matrix-root"></div>
+    <noscript>
+      <p style="text-align:center; padding:2rem; color:var(--text-muted);">
+        Matricai vajadzīgs JavaScript. Apskati katra deputāta balsojumus
+        profilā: <a href="personas.html">Personas →</a>
+      </p>
+    </noscript>
+  </div>
+
+  <!-- ═══ TAB 3: Bills list ═══ -->
+  <div id="bills-list-tab" style="display: none;">
+    {% from "_bill_card.html.j2" import bill_card %}
+    <div class="filter-bar">
+      <div class="multi-select" id="bill-topic-select">
+        <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="bill-topic-trigger">
+          <span>Visas tēmas</span><span class="arrow">&#9660;</span>
+        </div>
+        <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+          <input type="text" class="multi-select-search" aria-label="Meklēt tēmas" placeholder="Meklēt...">
+          {% for topic in bill_topics %}
+          <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ topic }}">
+            <span class="checkbox"></span><span>{{ topic }}</span>
+          </div>
+          {% endfor %}
+          <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+        </div>
+      </div>
+
+      <div class="bill-status-filter">
+        <button class="link-filter-btn active" data-status="">Visi</button>
+        <button class="link-filter-btn" data-status="procesā">Procesā</button>
+        <button class="link-filter-btn" data-status="pieņemts">Pieņemts</button>
+        <button class="link-filter-btn" data-status="noraidīts">Noraidīts</button>
+      </div>
+
+      <div class="bill-type-filter">
+        {% for bt in ['Lp14', 'Lm14', 'P14'] %}
+        <button class="link-filter-btn active" data-bill-type="{{ bt }}">{{ bt }}</button>
+        {% endfor %}
+      </div>
+
+      <input type="search" id="bill-search" placeholder="Meklēt nosaukumā..." class="bill-search-input">
+    </div>
+
+    <div class="bill-card-grid" id="bills-grid">
+      {% for b in bills %}{{ bill_card(b) }}{% endfor %}
+    </div>
+    <div id="bills-empty-state" class="votes-empty-state" style="display:none;">
+      <span class="empty-icon">&#9638;</span>
+      <p>Nav likumprojektu, kas atbilst filtriem</p>
+    </div>
+    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9rem;">
+      <a href="likumi.html" class="muted-link">Visi pamatlikumi ({{ laws_index_count }}) →</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{# Balsojumu matricas JS — plāns docs/superpowers/plans/2026-05-28-balsojumi-virtualization.md.
+   bmv1.js ielādēts SINHRONI (bez defer), lai window.initBalsojumiMatrica /
+   window.balsojumiArchiveRender būtu reģistrēti pirms blv1.js lapas init. ~14 KB
+   minificēts, kešots pēc pirmās ielādes.
+   KRITISKI (CSP secība): blv1.js JĀIELĀDĒ SINHRONI (bez defer) UZREIZ PĒC bmv1.js —
+   lapas init izsauc window.balsojumiArchiveRender nekavējoties, tāpēc izpildes
+   secībai jāpaliek identiskai kā agrākajam inline skriptam. #}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/bmv1.js?v={{ assets_version }}"></script>
+<script src="assets/blv1.js?v={{ assets_version }}"></script>
+{% endblock %}

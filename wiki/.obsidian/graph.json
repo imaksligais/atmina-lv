@@ -1,0 +1,149 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:index.md",
+      "color": {
+        "a": 1,
+        "rgb": 16498468
+      }
+    },
+    {
+      "query": "file:personas.md OR file:temas.md OR file:partijas.md OR file:likumi.md OR file:operacijas.md OR file:agenti.md",
+      "color": {
+        "a": 1,
+        "rgb": 12000284
+      }
+    },
+    {
+      "query": "[party:\"Jaunā Vienotība\"]",
+      "color": {
+        "a": 1,
+        "rgb": 3900150
+      }
+    },
+    {
+      "query": "[party:\"Zaļo un Zemnieku savienība\"]",
+      "color": {
+        "a": 1,
+        "rgb": 8702998
+      }
+    },
+    {
+      "query": "[party:\"Nacionālā apvienība\"]",
+      "color": {
+        "a": 1,
+        "rgb": 2278750
+      }
+    },
+    {
+      "query": "[party:\"Progresīvie\"]",
+      "color": {
+        "a": 1,
+        "rgb": 11032055
+      }
+    },
+    {
+      "query": "[party:\"Latvija Pirmajā Vietā\"]",
+      "color": {
+        "a": 1,
+        "rgb": 15680580
+      }
+    },
+    {
+      "query": "[party:\"Apvienotais saraksts\"]",
+      "color": {
+        "a": 1,
+        "rgb": 440020
+      }
+    },
+    {
+      "query": "[party:\"Stabilitātei!\"]",
+      "color": {
+        "a": 1,
+        "rgb": 16347926
+      }
+    },
+    {
+      "query": "[party:\"Latvijas attīstībai\"]",
+      "color": {
+        "a": 1,
+        "rgb": 1357990
+      }
+    },
+    {
+      "query": "[party:\"MMN\"]",
+      "color": {
+        "a": 1,
+        "rgb": 16486972
+      }
+    },
+    {
+      "query": "[party:\"SARAUJ, LATGALE!\"]",
+      "color": {
+        "a": 1,
+        "rgb": 16436245
+      }
+    },
+    {
+      "query": "path:persons/",
+      "color": {
+        "a": 1,
+        "rgb": 9479342
+      }
+    },
+    {
+      "query": "path:topics/",
+      "color": {
+        "a": 1,
+        "rgb": 1096065
+      }
+    },
+    {
+      "query": "path:parties/",
+      "color": {
+        "a": 1,
+        "rgb": 16478597
+      }
+    },
+    {
+      "query": "path:laws/",
+      "color": {
+        "a": 1,
+        "rgb": 15381256
+      }
+    },
+    {
+      "query": "path:operations/agenti/",
+      "color": {
+        "a": 1,
+        "rgb": 15485081
+      }
+    },
+    {
+      "query": "path:operations/",
+      "color": {
+        "a": 1,
+        "rgb": 9133302
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.4,
+  "lineSizeMultiplier": 1.2,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.18462326225857623,
+  "close": true
+}

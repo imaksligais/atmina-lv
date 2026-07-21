@@ -1,0 +1,187 @@
+{% extends "base.html.j2" %}
+{% set active_page = "saites" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Saites{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Politiķu savstarpējo saišu grafs</div>
+      <h1 class="pagehead-h1">Saites</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Saiknes</span>
+        <span class="pagehead-metric-value">{{ metrics.total }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Politiķi</span>
+        <span class="pagehead-metric-value">{{ metrics.politicians }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Uzbrukumi</span>
+        <span class="pagehead-metric-value">{{ metrics.attacks }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="link-filters" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+    <button class="link-filter-btn active" data-link-type="uzbrukums" style="--filter-color: var(--red-bright);">
+      <span class="filter-dot" style="background: var(--red-bright);"></span>
+      Uzbrukums <span class="filter-count">{{ type_counts.uzbrukums|default(0) }}</span>
+    </button>
+    <button class="link-filter-btn active" data-link-type="spriedze" style="--filter-color: var(--yellow);">
+      <span class="filter-dot" style="background: var(--yellow);"></span>
+      Spriedze <span class="filter-count">{{ type_counts.spriedze|default(0) }}</span>
+    </button>
+    <button class="link-filter-btn active" data-link-type="atbalsts" style="--filter-color: var(--green);">
+      <span class="filter-dot" style="background: var(--green);"></span>
+      Atbalsts <span class="filter-count">{{ type_counts.atbalsts|default(0) }}</span>
+    </button>
+    <button class="link-filter-btn active" data-link-type="vote" style="--filter-color: var(--purple);">
+      <span class="filter-dot" style="background: var(--purple);"></span>
+      Balsojumi
+    </button>
+    <button class="link-filter-btn active" data-link-type="shared_topic" style="--filter-color: #64748b;">
+      <span class="filter-dot" style="background: #64748b;"></span>
+      Kopīgās tēmas
+    </button>
+  </div>
+
+  <!-- Split layout: graph + detail panel -->
+  <div class="graph-split">
+    <div class="graph-pane" id="graph-container">
+      <svg id="graph-svg" style="width: 100%; height: 100%;"></svg>
+      <!-- Legend -->
+      <div id="graph-legend" style="position: absolute; bottom: 12px; left: 12px; background: var(--graph-legend-bg); border: 1px solid var(--tooltip-border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.7rem; color: var(--graph-label); display: flex; flex-direction: column; gap: 0.3rem; pointer-events: none;">
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 18px; height: 3px; background: var(--red-bright); border-radius: 2px;"></span>
+          <span>Uzbrukums</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 18px; height: 3px; background: var(--yellow); border-radius: 2px;"></span>
+          <span>Spriedze</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 18px; height: 3px; background: var(--green); border-radius: 2px;"></span>
+          <span>Atbalsts</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 18px; height: 3px; background: var(--purple); border-radius: 2px; opacity: 0.6;"></span>
+          <span>Balsojumi</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 18px; height: 1px; background: #64748b; border-radius: 2px; opacity: 0.5;"></span>
+          <span>Kopīgās tēmas</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="display: inline-block; width: 10px; height: 10px; background: var(--red-bright); border-radius: 50%;"></span>
+          <span>Pretrunas</span>
+        </div>
+      </div>
+    </div>
+    <div class="detail-pane" id="detail-pane">
+      <div class="detail-pane-empty" id="detail-empty">
+        <span class="hint-icon">&#8644;</span>
+        <p>Uzklikšķini uz <strong>politiķa</strong> vai <strong>saites līnijas</strong>, lai redzētu detaļas</p>
+      </div>
+      <div id="detail-content" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="multi-select" id="table-type-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="table-type-trigger">
+        <span>Visi tipi</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt tipus" placeholder="Meklēt...">
+        {% for tt in tension_types %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ tt }}">
+          <span class="checkbox"></span>
+          <span>{% if tt == 'uzbrukums' %}Uzbrukums{% elif tt == 'spriedze' %}Spriedze{% elif tt == 'atbalsts' %}Atbalsts{% else %}{{ tt }}{% endif %}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="party-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="party-trigger">
+        <span>Visas partijas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt partijas" placeholder="Meklēt...">
+        {% for party in parties %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ party }}">
+          <span class="checkbox"></span>
+          <span>{{ party }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="person-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="person-trigger">
+        <span>Visas personas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt personas" placeholder="Meklēt...">
+        {% for person in persons %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ person }}">
+          <span class="checkbox"></span>
+          <span>{{ person }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto;">
+    <table class="data-table" id="saites-table">
+      <thead>
+        <tr>
+          <th>Politiķis 1</th>
+          <th>Partija</th>
+          <th style="text-align: center; width: 2rem;"></th>
+          <th>Politiķis 2</th>
+          <th>Partija</th>
+          <th>Tips</th>
+          <th>Tēma</th>
+          <th>Avots</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in tensions %}
+        <tr data-source-party="{{ t.source_party }}" data-target-party="{{ t.target_party }}" data-tension-type="{{ t.tension_type }}" data-source-name="{{ t.source_name }}" data-target-name="{{ t.target_name }}">
+          <td><a href="politiki/{{ t.source_slug }}.html">{{ t.source_name }}</a></td>
+          <td><span class="party-tag">{{ t.source_party }}</span></td>
+          <td style="text-align: center; color: var(--text-muted);">&rarr;</td>
+          <td><a href="politiki/{{ t.target_slug }}.html">{{ t.target_name }}</a></td>
+          <td><span class="party-tag">{{ t.target_party }}</span></td>
+          <td><span class="badge {% if t.tension_type == 'uzbrukums' %}badge-red{% elif t.tension_type == 'spriedze' %}badge-yellow{% elif t.tension_type == 'atbalsts' %}badge-green{% endif %}">{{ t.type_lv }}</span></td>
+          <td>{{ t.topic }}</td>
+          <td>{% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">Skatīt &rarr;</a>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="saites-data">{{ saites_data | tojson | safe_json }}</script>
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="assets/sav1.js?v={{ assets_version }}"></script>
+{% endblock %}

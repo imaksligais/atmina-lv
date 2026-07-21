@@ -1,0 +1,68 @@
+# Scraping
+httpx==0.28.1
+trafilatura==2.0.0
+beautifulsoup4==4.14.3
+lxml==5.4.0
+crawl4ai==0.8.6
+
+# X/Twitter
+twikit==2.3.3
+
+# NLP
+sentence-transformers==5.3.0
+simplemma==1.1.2
+fasttext-wheel==0.9.2
+
+# Database
+sqlite-vec==0.1.9
+simhash==2.1.2
+pydantic==2.12.5
+
+# Templates & rendering
+jinja2==3.1.6
+pyyaml==6.0.3
+markdown==3.10.2
+
+# Utilities
+keyring==25.7.0
+
+# HTML sanitization (SEC-01 fix)
+bleach==6.2.0
+
+# AI image generation (nanobanana / gemini-3.1-flash-image-preview)
+google-genai==1.73.1
+
+# AI SDK for visual_brief extraction in backfill
+anthropic==0.96.0
+
+# Chart rendering for social_agent stats pillar
+matplotlib==3.10.8
+
+# HTML → PNG rendering for social_agent quote cards
+playwright==1.58.0
+
+# Operator dashboard (atmina ops) — localhost-only Flask app at :8080
+flask>=3.0,<4
+
+# See requirements.lock for full dependency tree with pinned versions
+
+# Video ingest stack (Phase 1, pre-election video extraction)
+# NB: speechbrain must NOT be installed — pyannote 4.x doesn't need it (community-1
+# uses wespeaker embeddings), and both released lines break this venv (1.1.0 = k2
+# lazy-import cascade, 1.0.x = torchaudio 2.11 API mismatch). pyannote guards its
+# absence with try/except ImportError.
+yt-dlp==2025.10.22
+faster-whisper==1.1.1
+pyannote.audio==4.0.7
+pydub==0.25.1
+soundfile==0.14.0
+torch==2.13.0
+torchaudio==2.11.0
+
+# Test/dev — lint + test runner (CI runs `ruff check` then `pytest`) and a
+# deterministic clock for render characterization fixtures. Pinned so CI's
+# ruff matches the version the lint baseline was verified against (an
+# unpinned newer ruff can introduce new lint failures on unchanged code).
+ruff==0.15.10
+pytest==9.0.2
+freezegun>=1.5.0

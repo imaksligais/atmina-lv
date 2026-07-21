@@ -1,0 +1,62 @@
+{# Deploy confirm modal — shown when operator hits the [D] shortcut or
+   clicks the deploy entry point. Submits to /api/deploy.
+
+Args:
+  last_deploy: dict | None — most recent deploy log row, or None for
+               first-deploy case.
+#}
+<div id="deploy-modal"
+     x-data="{ open: true, busy: false }"
+     x-show="open"
+     x-cloak
+     class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+     @click.self="open = false; document.getElementById('deploy-modal').remove()"
+     @keydown.escape.window="open = false; document.getElementById('deploy-modal').remove()">
+  <form hx-post="/api/deploy"
+        hx-swap="none"
+        @htmx:before-request="busy = true"
+        @htmx:after-request="busy = false; open = false; setTimeout(() => document.getElementById('deploy-modal').remove(), 200)"
+        class="bg-white dark:bg-slate-900 rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+    <h3 class="text-lg font-semibold mb-3">Apstiprināt deploy uz atmina.lv</h3>
+
+    {% if last_deploy %}
+    <dl class="text-sm space-y-1 mb-4">
+      <div class="flex justify-between">
+        <dt class="text-slate-500 dark:text-slate-400">Pēdējais deploy:</dt>
+        <dd class="data-mono">{{ last_deploy.timestamp }}</dd>
+      </div>
+      <div class="flex justify-between">
+        <dt class="text-slate-500 dark:text-slate-400">Statuss:</dt>
+        <dd class="data-mono
+                  {% if last_deploy.status == 'success' %}text-emerald-600 dark:text-emerald-400{% else %}text-rose-600 dark:text-rose-400{% endif %}">
+          {{ last_deploy.status }}
+        </dd>
+      </div>
+    </dl>
+    {% else %}
+    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+      Nav iepriekšēja deploy ieraksta — šis būs pirmais log entry priekš `action='deploy'`.
+    </p>
+    {% endif %}
+
+    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+      Tiks palaists <code class="data-mono">bash scripts/deploy.sh</code> ar 300 s timeout.
+      Atskats būs toast paziņojumā.
+    </p>
+
+    <div class="flex justify-end gap-2 text-sm">
+      <button type="button"
+              @click="open = false; document.getElementById('deploy-modal').remove()"
+              class="rounded px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-800"
+              :disabled="busy">
+        Atcelt
+      </button>
+      <button type="submit"
+              :disabled="busy"
+              class="status-success rounded px-4 py-1 font-medium disabled:opacity-50">
+        <span x-show="!busy">Apstiprināt</span>
+        <span x-show="busy" x-cloak>Deployē…</span>
+      </button>
+    </div>
+  </form>
+</div>

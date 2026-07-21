@@ -1,0 +1,130 @@
+{% extends "base.html.j2" %}
+{% set active_page = "analizes" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block og_title %}{{ post.headline or post.title }}{% endblock %}
+{% block og_description %}{{ (post.preview or '')|truncate(200) }}{% endblock %}
+{% block og_image %}{% if post.image_filename %}{{ BASE_URL|default('https://atmina.lv') }}/images/{{ post.image_dir|default('briefs') }}/{{ post.image_filename|image_variant('og') }}{% if post.image_cache_bust %}?v={{ post.image_cache_bust }}{% endif %}{% else %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og-image.png{% endif %}{% endblock %}
+
+{% block jsonld %}
+{%- set _site_url = BASE_URL|default('https://atmina.lv') -%}
+{%- set _date_iso = post.date_slug|default(post.date) -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ (post.headline or post.display_title or post.title)|tojson }},
+  "inLanguage": "lv",
+  {% if _date_iso %}"datePublished": {{ _date_iso|tojson }},{% endif %}
+  {% if post.created_at %}"dateModified": {{ post.created_at|tojson }},{% endif %}
+  "image": ["{{ self.og_image() }}"],
+  {% if canonical_url %}"mainEntityOfPage": {"@type": "WebPage", "@id": "{{ canonical_url }}"},{% endif %}
+  "author": {
+    "@type": "Organization",
+    "name": "atmina.lv",
+    "url": "{{ _site_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "atmina.lv",
+    "url": "{{ _site_url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ _site_url }}/assets/logo.svg"
+    }
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+{% set _back_href = back_href|default('../analizes.html') %}
+{% if post.image_filename %}
+<figure class="brief-hero">
+  <img src="{{ post.image_src|default('../images/briefs/' ~ (post.image_filename|image_variant('hero'))) }}"
+       alt="{{ post.headline or post.title }}"
+       width="1280" height="720"
+       loading="eager">
+</figure>
+{% endif %}
+
+<section class="section brief-content">
+  <a href="{{ _back_href }}" class="brief-back">&larr; Visas analīzes</a>
+
+  <header class="brief-pagehead">
+    <div class="brief-pagehead-meta">
+      <span class="brief-pagehead-kicker">{{ post.type_label }}</span>
+      <span class="brief-pagehead-sep">·</span>
+      <span class="brief-pagehead-date">{{ post.date }}</span>
+    </div>
+    <h1 class="brief-pagehead-title">{{ post.display_title or post.title }}</h1>
+  </header>
+
+  <style>
+    .context-box {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .context-box .context-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .context-box p { margin: 0.3rem 0; }
+    .post-content table a { color: var(--accent); text-decoration: none; }
+    .post-content table a:hover { text-decoration: underline; }
+  </style>
+
+  {% if toc %}
+  <nav class="post-toc" aria-label="Saturs">
+    <div class="post-toc-label">Saturs</div>
+    <ul class="post-toc-list">
+      {% for item in toc %}
+      <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content_html | safe }}
+  </div>
+
+  {% if post.footer %}
+  <hr class="brief-footer-sep">
+  <p class="brief-footer">
+    <strong>Pamatā:</strong>
+    {{ post.footer.doc_count }} {{ post.footer.doc_count|lv_plural("dokuments", "dokumenti") }} ({{ post.footer.web }} web · {{ post.footer.twitter }} X · {{ post.footer.mentions }} {{ post.footer.mentions|lv_plural("pieminējums", "pieminējumi") }}) ·
+    {{ post.footer.positions }} {{ post.footer.positions|lv_plural("jauna pozīcija", "jaunas pozīcijas") }}
+    {%- if post.footer.votes %} · {{ post.footer.votes }} {{ post.footer.votes|lv_plural("Saeimas balsojums", "Saeimas balsojumi") }}{%- endif %}
+    ·
+    {{ post.footer.contradictions }} {{ post.footer.contradictions|lv_plural("pretruna", "pretrunas") }}
+    <br>
+    <strong>Atjaunots:</strong> {{ post.footer.updated }} (Latvijas laiks)
+  </p>
+  {% endif %}
+
+  <div class="brief-footnav">
+    {% if prev_post %}
+    <a href="{{ prev_post.slug }}.html" class="brief-footnav-link">&larr; {{ prev_post.date }}</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+    <a href="{{ _back_href }}" class="brief-footnav-link brief-footnav-center">Visas analīzes</a>
+    {% if next_post %}
+    <a href="{{ next_post.slug }}.html" class="brief-footnav-link">{{ next_post.date }} &rarr;</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

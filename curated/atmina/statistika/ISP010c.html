@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light" id="meta-color-scheme"><meta name="darkreader-lock">
+  <meta name="theme-color" content="#f7f3e8" id="meta-theme-color">
+  <title>IKP ceturksnī — Politiskā atmiņa</title>
+  <meta name="description" content="atmina.lv — Latvijas politiķu pozīcijas, pretrunas un balsojumi. Strukturēta, pārbaudāma informācija par politisko darbību.">
+  <link rel="canonical" href="https://atmina.lv/statistika/ISP010c.html">
+  <meta property="og:title" content="atmina.lv — Politiskā atmiņa">
+  <meta property="og:description" content="Latvijas politiķu pozīcijas, pretrunas un balsojumi.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="lv_LV">
+  <meta property="og:site_name" content="atmina.lv">
+  <meta property="og:image" content="https://atmina.lv/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="atmina.lv — Politiskā atmiņa">
+  <meta property="og:url" content="https://atmina.lv/statistika/ISP010c.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@atmina_lv">
+  <meta name="twitter:title" content="atmina.lv — Politiskā atmiņa">
+  <meta name="twitter:description" content="Latvijas politiķu pozīcijas, pretrunas un balsojumi.">
+  <meta name="twitter:image" content="https://atmina.lv/assets/og-image.png">
+  <meta name="twitter:image:alt" content="atmina.lv — Politiskā atmiņa">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"><link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" media="print" data-font-async>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <script src="../assets/theme-init.js?v=1784813789"></script>
+  <link rel="stylesheet" href="../assets/style.css?v=1784813789">
+  
+<style>
+/* ── Detail page styles ─────────────────────────── */
+.stat-breadcrumb { margin-top: 3rem; font-size: 0.85rem; }
+.stat-breadcrumb a { color: var(--text-muted); }
+.stat-breadcrumb a:hover { color: var(--text); }
+
+.stat-detail-header { padding: 1.5rem 0 2rem; }
+.stat-detail-title {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+}
+.stat-detail-title h1 { font-size: 2.25rem; }
+.stat-detail-meta {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;
+    font-size: 0.75rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.06em; align-items: center;
+}
+.stat-detail-meta .sep { opacity: 0.4; }
+.stat-detail-meta strong { color: var(--text); font-weight: 600; }
+
+.stat-hero-value {
+    display: flex; align-items: baseline; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;
+}
+.stat-hero-value .num {
+    font-size: 3.25rem; font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1; color: var(--text);
+}
+.stat-hero-change {
+    font-size: 0.95rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+}
+.stat-hero-change.positive { color: var(--green); background: rgba(34,197,94,0.12); }
+.stat-hero-change.negative { color: var(--red-soft); background: rgba(198,40,40,0.15); }
+
+.domain-chip {
+    display: inline-block; padding: 0.2rem 0.55rem; border-radius: 4px;
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.domain-chip.domain-economy { color: var(--domain-economy); background: rgba(144,164,174,0.12); }
+.domain-chip.domain-social  { color: var(--domain-social); background: rgba(179,136,199,0.12); }
+.domain-chip.domain-prices  { color: var(--orange); background: rgba(249,115,22,0.12); }
+.domain-chip.domain-state   { color: var(--green); background: rgba(34,197,94,0.12); }
+
+.stat-insight-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0;
+    font-size: 0.95rem; color: var(--text-muted); font-style: italic;
+    border-left: 3px solid var(--domain-color, var(--accent));
+}
+.stat-insight-card.domain-economy { border-left-color: var(--domain-economy); }
+.stat-insight-card.domain-social  { border-left-color: var(--domain-social); }
+.stat-insight-card.domain-prices  { border-left-color: var(--orange); }
+.stat-insight-card.domain-state   { border-left-color: var(--green); }
+
+.stat-chart-container {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0 1.5rem;
+}
+.stat-chart-wrap { position: relative; height: 440px; }
+
+/* Event chips */
+.stat-event-filter {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center;
+}
+.stat-event-filter-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-muted); font-weight: 600; margin-right: 0.25rem;
+}
+.stat-event-chip {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.3rem 0.75rem; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-muted); transition: all 0.2s ease; user-select: none;
+}
+.stat-event-chip:hover { color: var(--text); border-color: var(--accent); }
+.stat-event-chip.active { color: var(--text); border-color: transparent; }
+.stat-event-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--chip-color); }
+.stat-event-chip.active.cat-crisis    { background: rgba(198,40,40,0.15); border-color: rgba(198,40,40,0.4); }
+.stat-event-chip.active.cat-policy    { background: rgba(234,179,8,0.12); border-color: rgba(234,179,8,0.4); }
+.stat-event-chip.active.cat-elections { background: rgba(144,164,174,0.12); border-color: rgba(144,164,174,0.4); }
+.stat-event-chip.active.cat-milestone { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.4); }
+.stat-event-chip.active.cat-government{ background: rgba(249,115,22,0.12); border-color: rgba(249,115,22,0.4); }
+.stat-event-chip.cat-crisis    { --chip-color: #C62828; }
+.stat-event-chip.cat-policy    { --chip-color: var(--yellow); }
+.stat-event-chip.cat-elections { --chip-color: var(--accent); }
+.stat-event-chip.cat-milestone { --chip-color: var(--green); }
+.stat-event-chip.cat-government{ --chip-color: var(--orange); }
+
+/* Event legend */
+.stat-event-legend {
+    display: flex; flex-direction: column;
+    gap: 0.25rem; margin-top: 1rem; font-size: 0.78rem;
+}
+.stat-event-legend-item {
+    display: flex; align-items: baseline; gap: 0.6rem;
+    color: var(--text-muted); padding: 0.25rem 0.5rem;
+    border-radius: 4px; cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease; margin: 0 -0.5rem;
+}
+.stat-event-legend-item:hover, .stat-event-legend-item.hovered {
+    background: var(--overlay-hover); color: var(--text);
+}
+.stat-event-legend-item.hidden { display: none; }
+.stat-event-legend-item .marker {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0; transform: translateY(1px);
+}
+.stat-event-legend-item .date {
+    color: var(--text); font-weight: 600;
+    font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 64px;
+}
+
+/* Data table */
+details.stat-data-table-wrap { margin-top: 1.5rem; }
+details.stat-data-table-wrap summary {
+    cursor: pointer; color: var(--text-muted); font-size: 0.8rem;
+    padding: 0.75rem 1rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    list-style: none; text-transform: uppercase;
+    letter-spacing: 0.06em; font-weight: 600;
+}
+details.stat-data-table-wrap summary::-webkit-details-marker { display: none; }
+details.stat-data-table-wrap summary::before { content: '\25B8  '; }
+details.stat-data-table-wrap[open] summary::before { content: '\25BE  '; }
+details.stat-data-table-wrap summary:hover { color: var(--text); }
+.stat-data-table {
+    width: 100%; border-collapse: collapse; margin-top: 0.75rem;
+}
+.stat-data-table th, .stat-data-table td {
+    padding: 0.5rem 0.85rem; text-align: right;
+    border-bottom: 1px solid var(--border); font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+}
+.stat-data-table th {
+    color: var(--text-muted); font-weight: 600; text-align: left;
+    text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.08em;
+}
+.stat-data-table td:first-child { text-align: left; color: var(--text-muted); }
+.stat-data-table tr:last-child td { border-bottom: none; }
+
+.stat-source-note {
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted);
+}
+.stat-source-note a { color: var(--text-muted); text-decoration: underline; }
+</style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "atmina.lv",
+    "url": "https://atmina.lv",
+    "logo": "https://atmina.lv/assets/logo.svg",
+    "description": "Latvijas politiķu pozīcijas, pretrunas un balsojumi — strukturēta, pārbaudāma informācija par politisko darbību.",
+    "sameAs": ["https://x.com/AtminaLV"]
+  }
+  </script>
+  
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="ed2729be-82e1-48d9-a164-645a8f389d35"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="atm-logo" viewBox="0 0 64 64">
+    <circle cx="27" cy="27" r="17" fill="none" stroke-width="5.5" style="stroke:var(--logo-ring)"/>
+    <line x1="40.5" y1="40.5" x2="52" y2="52" stroke-width="5.5" stroke-linecap="round" style="stroke:var(--logo-ring)"/>
+    <circle cx="27" cy="27" r="6" style="fill:var(--logo-dot)"/>
+  </symbol>
+</svg>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+  <nav class="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="atmina.lv"><use href="#atm-logo"/></svg>
+        <span class="nav-logo-text">atmina.lv</span>
+      </a>
+      <button type="button" id="nav-burger" class="nav-burger" aria-label="Atvērt izvēlni" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-menu">
+        <a href="../pretrunas.html">Pretrunas</a>
+        <a href="../pozicijas.html">Pozīcijas</a>
+        <a href="../balsojumi.html">Balsojumi</a>
+        <a href="../temas.html">Tēmas</a>
+        <a href="../personas.html">Profili</a>
+        <a href="../analizes.html">Analīzes</a>
+        <div class="nav-more">
+          <button type="button" class="nav-more-btn active" aria-expanded="false" aria-controls="nav-more-menu">Vairāk<span class="nav-more-caret" aria-hidden="true">▾</span></button>
+          <div class="nav-more-menu" id="nav-more-menu">
+            <a href="../partijas.html">Partijas</a>
+            <a href="../mediji.html">Mediji</a>
+            <a href="../zinas.html">Ziņas</a>
+            <a href="../x.html">X</a>
+            <a href="../likumi.html">Likumi</a>
+            <a href="../spriedzes.html">Spriedzes</a>
+            <a href="../saites.html">Saites</a>
+            <a href="../finanses.html">Finanses</a>
+            <a href="../statistika.html" class="active" aria-current="page">Statistika</a>
+          </div>
+        </div>
+        
+        
+        <form class="nav-search" action="../pozicijas.html" method="get" role="search" data-sg-index="../data/sg-index.json">
+          <svg class="nav-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          <input type="search" name="q" class="nav-search-input" placeholder="Meklēt…" aria-label="Meklēt" autocomplete="off">
+        </form>
+        
+      </div>
+      <button type="button" id="nav-sound" class="nav-icon-btn" role="switch" aria-checked="false" aria-label="Skaņu efekti" title="Skaņu efekti">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 5.5 6.6 9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.6L11 18.5v-13z"/>
+          <path class="nav-sound-wave" d="M14.5 9.7a3.5 3.5 0 0 1 0 4.6"/>
+          <path class="nav-sound-wave" d="M16.8 7.6a7 7 0 0 1 0 8.8"/>
+          <line class="nav-sound-slash" x1="4.5" y1="19.5" x2="19.5" y2="4.5"/>
+        </svg>
+      </button>
+      <button type="button" id="nav-theme" class="nav-icon-btn" role="switch" aria-checked="false" aria-label="Gaišais režīms" title="Gaišais/tumšais režīms">
+        <svg class="nav-icon nav-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5"/>
+        </svg>
+        <svg class="nav-icon nav-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <script src="../assets/chrome-v1.js?v=1784813789" defer></script>
+
+  <main class="container" id="main">
+    
+<div class="stat-breadcrumb">
+    <a href="../statistika.html">&larr; Atpakaļ uz pārskatu</a>
+</div>
+
+<header class="stat-detail-header">
+    <div class="stat-detail-title">
+        <div>
+            <h1>IKP ceturksnī</h1>
+            <div class="stat-detail-meta">
+                <span class="domain-chip domain-economy">Ekonomika</span>
+                <span class="sep">&middot;</span>
+                <span><strong>tūkst. EUR</strong></span>
+                <span class="sep">&middot;</span>
+                <span>Ceturksnis</span>
+                <span class="sep">&middot;</span>
+                <span>1996 Q1 → 2025 Q4 · 30 g.</span>
+                
+                <span class="sep">&middot;</span>
+                <span>Atj. 2026-02-27</span>
+                
+            </div>
+        </div>
+        <div class="stat-hero-value">
+            <span class="num">€11.8B</span>
+            
+            <span class="stat-hero-change positive">
+                +5.5%
+            </span>
+            
+        </div>
+    </div>
+</header>
+
+
+<div class="stat-insight-card domain-economy">aug 3 cet. pēc kārtas. augstākais kopš 1996</div>
+
+
+
+<div class="stat-event-filter" id="event-filter">
+    <span class="stat-event-filter-label">Notikumi:</span>
+    
+    <span class="stat-event-chip cat-crisis active" data-cat="crisis">
+        <span class="dot"></span>Krīzes (6)
+    </span>
+    
+    <span class="stat-event-chip cat-milestone active" data-cat="milestone">
+        <span class="dot"></span>Pagrieziena punkti (4)
+    </span>
+    
+    <span class="stat-event-chip cat-elections active" data-cat="elections">
+        <span class="dot"></span>Vēlēšanas (2)
+    </span>
+    
+    <span class="stat-event-chip cat-government active" data-cat="government">
+        <span class="dot"></span>Valdība (1)
+    </span>
+    
+</div>
+
+
+<div class="stat-chart-container">
+    <div class="stat-chart-wrap">
+        <canvas id="main-chart"></canvas>
+    </div>
+    
+    <div class="stat-event-legend" id="event-legend">
+        
+        <div class="stat-event-legend-item" data-cat="milestone" data-evt-idx="0">
+            <span class="marker" style="background: #22c55e"></span>
+            <span class="date">2004 Q1</span>
+            <span>Iestāšanās NATO</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="milestone" data-evt-idx="1">
+            <span class="marker" style="background: #22c55e"></span>
+            <span class="date">2004 Q2</span>
+            <span>Iestāšanās ES</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="2">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2008 Q3</span>
+            <span>Lehman / globālā finanšu krīze</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="3">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2008 Q4</span>
+            <span>SVF/ES aizdevums Latvijai</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="4">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2009 Q2</span>
+            <span>Iekšējā devalvācija, budžeta griezumi</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="milestone" data-evt-idx="5">
+            <span class="marker" style="background: #22c55e"></span>
+            <span class="date">2014 Q1</span>
+            <span>Eiro ieviešana</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="elections" data-evt-idx="6">
+            <span class="marker" style="background: #90A4AE"></span>
+            <span class="date">2018 Q4</span>
+            <span>13. Saeimas vēlēšanas</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="milestone" data-evt-idx="7">
+            <span class="marker" style="background: #22c55e"></span>
+            <span class="date">2019 Q2</span>
+            <span>Rail Baltica būvdarbu sākums</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="8">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2020 Q1</span>
+            <span>COVID ārkārtas stāvoklis</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="9">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2022 Q1</span>
+            <span>Krievijas iebrukums Ukrainā</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="crisis" data-evt-idx="10">
+            <span class="marker" style="background: #C62828"></span>
+            <span class="date">2022 Q3</span>
+            <span>Enerģētikas krīze / gāzes cenu šoks</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="elections" data-evt-idx="11">
+            <span class="marker" style="background: #90A4AE"></span>
+            <span class="date">2022 Q4</span>
+            <span>14. Saeimas vēlēšanas</span>
+        </div>
+        
+        <div class="stat-event-legend-item" data-cat="government" data-evt-idx="12">
+            <span class="marker" style="background: #f97316"></span>
+            <span class="date">2023 Q3</span>
+            <span>Siliņas valdība</span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<details class="stat-data-table-wrap">
+    <summary>Datu tabula (120 ieraksti)</summary>
+    <table class="stat-data-table">
+        <thead><tr><th>Periods</th><th>V&#275;rt&#299;ba</th></tr></thead>
+        <tbody>
+        
+        <tr><td>2025 Q4</td><td>€11.8B</td></tr>
+        
+        <tr><td>2025 Q3</td><td>€11.2B</td></tr>
+        
+        <tr><td>2025 Q2</td><td>€10.7B</td></tr>
+        
+        <tr><td>2025 Q1</td><td>€9.3B</td></tr>
+        
+        <tr><td>2024 Q4</td><td>€11.1B</td></tr>
+        
+        <tr><td>2024 Q3</td><td>€10.5B</td></tr>
+        
+        <tr><td>2024 Q2</td><td>€10.2B</td></tr>
+        
+        <tr><td>2024 Q1</td><td>€8.8B</td></tr>
+        
+        <tr><td>2023 Q4</td><td>€10.6B</td></tr>
+        
+        <tr><td>2023 Q3</td><td>€10.2B</td></tr>
+        
+        <tr><td>2023 Q2</td><td>€9.8B</td></tr>
+        
+        <tr><td>2023 Q1</td><td>€8.9B</td></tr>
+        
+        <tr><td>2022 Q4</td><td>€9.8B</td></tr>
+        
+        <tr><td>2022 Q3</td><td>€9.7B</td></tr>
+        
+        <tr><td>2022 Q2</td><td>€8.9B</td></tr>
+        
+        <tr><td>2022 Q1</td><td>€7.7B</td></tr>
+        
+        <tr><td>2021 Q4</td><td>€9.0B</td></tr>
+        
+        <tr><td>2021 Q3</td><td>€8.6B</td></tr>
+        
+        <tr><td>2021 Q2</td><td>€7.9B</td></tr>
+        
+        <tr><td>2021 Q1</td><td>€6.7B</td></tr>
+        
+        <tr><td>2020 Q4</td><td>€7.9B</td></tr>
+        
+        <tr><td>2020 Q3</td><td>€7.7B</td></tr>
+        
+        <tr><td>2020 Q2</td><td>€6.9B</td></tr>
+        
+        <tr><td>2020 Q1</td><td>€6.7B</td></tr>
+        
+        <tr><td>2019 Q4</td><td>€7.8B</td></tr>
+        
+        <tr><td>2019 Q3</td><td>€7.8B</td></tr>
+        
+        <tr><td>2019 Q2</td><td>€7.4B</td></tr>
+        
+        <tr><td>2019 Q1</td><td>€6.5B</td></tr>
+        
+        <tr><td>2018 Q4</td><td>€7.6B</td></tr>
+        
+        <tr><td>2018 Q3</td><td>€7.4B</td></tr>
+        
+        <tr><td>2018 Q2</td><td>€7.1B</td></tr>
+        
+        <tr><td>2018 Q1</td><td>€6.0B</td></tr>
+        
+        <tr><td>2017 Q4</td><td>€7.0B</td></tr>
+        
+        <tr><td>2017 Q3</td><td>€6.8B</td></tr>
+        
+        <tr><td>2017 Q2</td><td>€6.5B</td></tr>
+        
+        <tr><td>2017 Q1</td><td>€5.7B</td></tr>
+        
+        <tr><td>2016 Q4</td><td>€6.6B</td></tr>
+        
+        <tr><td>2016 Q3</td><td>€6.4B</td></tr>
+        
+        <tr><td>2016 Q2</td><td>€6.1B</td></tr>
+        
+        <tr><td>2016 Q1</td><td>€5.4B</td></tr>
+        
+        <tr><td>2015 Q4</td><td>€6.3B</td></tr>
+        
+        <tr><td>2015 Q3</td><td>€6.2B</td></tr>
+        
+        <tr><td>2015 Q2</td><td>€6.0B</td></tr>
+        
+        <tr><td>2015 Q1</td><td>€5.3B</td></tr>
+        
+        <tr><td>2014 Q4</td><td>€6.1B</td></tr>
+        
+        <tr><td>2014 Q3</td><td>€5.9B</td></tr>
+        
+        <tr><td>2014 Q2</td><td>€5.7B</td></tr>
+        
+        <tr><td>2014 Q1</td><td>€5.1B</td></tr>
+        
+        <tr><td>2013 Q4</td><td>€5.9B</td></tr>
+        
+        <tr><td>2013 Q3</td><td>€5.7B</td></tr>
+        
+        <tr><td>2013 Q2</td><td>€5.4B</td></tr>
+        
+        <tr><td>2013 Q1</td><td>€4.8B</td></tr>
+        
+        <tr><td>2012 Q4</td><td>€5.7B</td></tr>
+        
+        <tr><td>2012 Q3</td><td>€5.5B</td></tr>
+        
+        <tr><td>2012 Q2</td><td>€5.3B</td></tr>
+        
+        <tr><td>2012 Q1</td><td>€4.7B</td></tr>
+        
+        <tr><td>2011 Q4</td><td>€5.2B</td></tr>
+        
+        <tr><td>2011 Q3</td><td>€5.0B</td></tr>
+        
+        <tr><td>2011 Q2</td><td>€4.8B</td></tr>
+        
+        <tr><td>2011 Q1</td><td>€4.1B</td></tr>
+        
+        <tr><td>2010 Q4</td><td>€4.7B</td></tr>
+        
+        <tr><td>2010 Q3</td><td>€4.6B</td></tr>
+        
+        <tr><td>2010 Q2</td><td>€4.4B</td></tr>
+        
+        <tr><td>2010 Q1</td><td>€4.0B</td></tr>
+        
+        <tr><td>2009 Q4</td><td>€4.6B</td></tr>
+        
+        <tr><td>2009 Q3</td><td>€4.6B</td></tr>
+        
+        <tr><td>2009 Q2</td><td>€4.8B</td></tr>
+        
+        <tr><td>2009 Q1</td><td>€4.6B</td></tr>
+        
+        <tr><td>2008 Q4</td><td>€5.8B</td></tr>
+        
+        <tr><td>2008 Q3</td><td>€6.1B</td></tr>
+        
+        <tr><td>2008 Q2</td><td>€5.9B</td></tr>
+        
+        <tr><td>2008 Q1</td><td>€5.5B</td></tr>
+        
+        <tr><td>2007 Q4</td><td>€5.9B</td></tr>
+        
+        <tr><td>2007 Q3</td><td>€5.7B</td></tr>
+        
+        <tr><td>2007 Q2</td><td>€5.3B</td></tr>
+        
+        <tr><td>2007 Q1</td><td>€4.6B</td></tr>
+        
+        <tr><td>2006 Q4</td><td>€4.7B</td></tr>
+        
+        <tr><td>2006 Q3</td><td>€4.3B</td></tr>
+        
+        <tr><td>2006 Q2</td><td>€3.9B</td></tr>
+        
+        <tr><td>2006 Q1</td><td>€3.4B</td></tr>
+        
+        <tr><td>2005 Q4</td><td>€3.8B</td></tr>
+        
+        <tr><td>2005 Q3</td><td>€3.4B</td></tr>
+        
+        <tr><td>2005 Q2</td><td>€3.2B</td></tr>
+        
+        <tr><td>2005 Q1</td><td>€2.8B</td></tr>
+        
+        <tr><td>2004 Q4</td><td>€2.9B</td></tr>
+        
+        <tr><td>2004 Q3</td><td>€2.8B</td></tr>
+        
+        <tr><td>2004 Q2</td><td>€2.6B</td></tr>
+        
+        <tr><td>2004 Q1</td><td>€2.3B</td></tr>
+        
+        <tr><td>2003 Q4</td><td>€2.5B</td></tr>
+        
+        <tr><td>2003 Q3</td><td>€2.4B</td></tr>
+        
+        <tr><td>2003 Q2</td><td>€2.3B</td></tr>
+        
+        <tr><td>2003 Q1</td><td>€2.0B</td></tr>
+        
+        <tr><td>2002 Q4</td><td>€2.2B</td></tr>
+        
+        <tr><td>2002 Q3</td><td>€2.1B</td></tr>
+        
+        <tr><td>2002 Q2</td><td>€2.1B</td></tr>
+        
+        <tr><td>2002 Q1</td><td>€1.8B</td></tr>
+        
+        <tr><td>2001 Q4</td><td>€2.0B</td></tr>
+        
+        <tr><td>2001 Q3</td><td>€1.8B</td></tr>
+        
+        <tr><td>2001 Q2</td><td>€1.9B</td></tr>
+        
+        <tr><td>2001 Q1</td><td>€1.6B</td></tr>
+        
+        <tr><td>2000 Q4</td><td>€1.8B</td></tr>
+        
+        <tr><td>2000 Q3</td><td>€1.7B</td></tr>
+        
+        <tr><td>2000 Q2</td><td>€1.7B</td></tr>
+        
+        <tr><td>2000 Q1</td><td>€1.5B</td></tr>
+        
+        <tr><td>1999 Q4</td><td>€1.7B</td></tr>
+        
+        <tr><td>1999 Q3</td><td>€1.5B</td></tr>
+        
+        <tr><td>1999 Q2</td><td>€1.5B</td></tr>
+        
+        <tr><td>1999 Q1</td><td>€1.4B</td></tr>
+        
+        <tr><td>1998 Q4</td><td>€1.5B</td></tr>
+        
+        <tr><td>1998 Q3</td><td>€1.5B</td></tr>
+        
+        <tr><td>1998 Q2</td><td>€1.5B</td></tr>
+        
+        <tr><td>1998 Q1</td><td>€1.4B</td></tr>
+        
+        <tr><td>1997 Q4</td><td>€1.5B</td></tr>
+        
+        <tr><td>1997 Q3</td><td>€1.3B</td></tr>
+        
+        <tr><td>1997 Q2</td><td>€1.3B</td></tr>
+        
+        <tr><td>1997 Q1</td><td>€1.1B</td></tr>
+        
+        <tr><td>1996 Q4</td><td>€1.3B</td></tr>
+        
+        <tr><td>1996 Q3</td><td>€1.1B</td></tr>
+        
+        <tr><td>1996 Q2</td><td>€1.1B</td></tr>
+        
+        <tr><td>1996 Q1</td><td>€1.0B</td></tr>
+        
+        </tbody>
+    </table>
+</details>
+
+<div class="stat-source-note">
+    Dati: <a href="https://data.stat.gov.lv/" target="_blank" rel="noopener">Centr&#257;l&#257; statistikas p&#257;rvalde</a>
+</div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <svg class="footer-logo-icon" viewBox="0 0 64 64" width="20" height="20" role="img" aria-label="atmina.lv"><use href="#atm-logo"/></svg>
+        <span class="footer-tagline">Politisk&#257; caurskat&#257;m&#299;ba</span>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <strong>atmina.lv</strong> — Politiskā atmiņa<br>
+          <small>Dati no publiskiem avotiem. MI-asistēta analīze ar ticamības novērtējumiem.</small>
+        </div>
+        <div>
+          <strong>Metodoloģija</strong><br>
+          <small>MI-asistēta pozīciju identifikācija · Ticamības novērtējumi (0.0–1.0) · Saeimas balsojumi</small>
+        </div>
+        <div style="text-align: right;">
+          <div>Saeimas vēlēšanas: <strong>2026-10-03</strong></div>
+          <div style="margin-top: 0.25rem; display: inline-flex; align-items: center; gap: 0.6rem;">
+            <a href="../about.html" style="color: var(--text-muted); font-size: 0.8rem;">Par mums</a>
+            <span style="color: var(--border);">·</span>
+            <a href="../kontakti.html" style="color: var(--text-muted); font-size: 0.8rem;">Kontakti</a>
+            <span style="color: var(--border);">·</span>
+            <a href="https://x.com/AtminaLV" target="_blank" rel="noopener" aria-label="atmina.lv uz X" class="footer-x-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/atminaLV" target="_blank" rel="noopener" aria-label="atmina.lv Facebook lapa" class="footer-fb-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/imaksligais/atmina-lv" target="_blank" rel="noopener" aria-label="atmina.lv pirmkods GitHub" class="footer-gh-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/sgv1.js?v=1784813789" defer></script>
+  
+<script type="application/json" id="stat-detail">{"chart": {"labels": ["1996 Q1", "1996 Q2", "1996 Q3", "1996 Q4", "1997 Q1", "1997 Q2", "1997 Q3", "1997 Q4", "1998 Q1", "1998 Q2", "1998 Q3", "1998 Q4", "1999 Q1", "1999 Q2", "1999 Q3", "1999 Q4", "2000 Q1", "2000 Q2", "2000 Q3", "2000 Q4", "2001 Q1", "2001 Q2", "2001 Q3", "2001 Q4", "2002 Q1", "2002 Q2", "2002 Q3", "2002 Q4", "2003 Q1", "2003 Q2", "2003 Q3", "2003 Q4", "2004 Q1", "2004 Q2", "2004 Q3", "2004 Q4", "2005 Q1", "2005 Q2", "2005 Q3", "2005 Q4", "2006 Q1", "2006 Q2", "2006 Q3", "2006 Q4", "2007 Q1", "2007 Q2", "2007 Q3", "2007 Q4", "2008 Q1", "2008 Q2", "2008 Q3", "2008 Q4", "2009 Q1", "2009 Q2", "2009 Q3", "2009 Q4", "2010 Q1", "2010 Q2", "2010 Q3", "2010 Q4", "2011 Q1", "2011 Q2", "2011 Q3", "2011 Q4", "2012 Q1", "2012 Q2", "2012 Q3", "2012 Q4", "2013 Q1", "2013 Q2", "2013 Q3", "2013 Q4", "2014 Q1", "2014 Q2", "2014 Q3", "2014 Q4", "2015 Q1", "2015 Q2", "2015 Q3", "2015 Q4", "2016 Q1", "2016 Q2", "2016 Q3", "2016 Q4", "2017 Q1", "2017 Q2", "2017 Q3", "2017 Q4", "2018 Q1", "2018 Q2", "2018 Q3", "2018 Q4", "2019 Q1", "2019 Q2", "2019 Q3", "2019 Q4", "2020 Q1", "2020 Q2", "2020 Q3", "2020 Q4", "2021 Q1", "2021 Q2", "2021 Q3", "2021 Q4", "2022 Q1", "2022 Q2", "2022 Q3", "2022 Q4", "2023 Q1", "2023 Q2", "2023 Q3", "2023 Q4", "2024 Q1", "2024 Q2", "2024 Q3", "2024 Q4", "2025 Q1", "2025 Q2", "2025 Q3", "2025 Q4"], "values": [990674.0, 1127160.0, 1142112.0, 1284515.0, 1131592.0, 1305817.0, 1322789.0, 1488283.0, 1350040.0, 1482422.0, 1482394.0, 1538517.0, 1367673.0, 1510613.0, 1540880.0, 1678956.0, 1491795.0, 1695983.0, 1721942.0, 1788241.0, 1624085.0, 1872583.0, 1842462.0, 1978610.0, 1765930.0, 2065920.0, 2073256.0, 2230339.0, 1993500.0, 2284461.0, 2390886.0, 2473924.0, 2342573.0, 2595024.0, 2794280.0, 2896992.0, 2751318.0, 3155315.0, 3442907.0, 3753083.0, 3383012.0, 3910156.0, 4315242.0, 4686398.0, 4608333.0, 5314298.0, 5725318.0, 5861378.0, 5466218.0, 5942299.0, 6103449.0, 5839925.0, 4564886.0, 4758451.0, 4556108.0, 4603041.0, 3999134.0, 4400159.0, 4576673.0, 4743674.0, 4090379.0, 4769956.0, 5043203.0, 5213722.0, 4704932.0, 5261294.0, 5475797.0, 5662303.0, 4835090.0, 5447430.0, 5747310.0, 5926363.0, 5097294.0, 5653906.0, 5944093.0, 6095211.0, 5258803.0, 5950109.0, 6248279.0, 6287073.0, 5428763.0, 6132861.0, 6356981.0, 6579569.0, 5719229.0, 6497233.0, 6819621.0, 6981046.0, 6038650.0, 7076632.0, 7422982.0, 7615179.0, 6538042.0, 7412156.0, 7804121.0, 7812681.0, 6696252.0, 6911072.0, 7731222.0, 7885795.0, 6725884.0, 7894487.0, 8614917.0, 9048492.0, 7669262.0, 8941580.0, 9672124.0, 9805774.0, 8931544.0, 9819193.0, 10221229.0, 10592256.0, 8839693.0, 10229250.0, 10481180.0, 11102195.0, 9300891.0, 10697463.0, 11206307.0, 11821528.0], "label": "IKP ceturksnī"}, "events": [{"label": "2004 Q1", "text": "Iestāšanās NATO", "category": "milestone"}, {"label": "2004 Q2", "text": "Iestāšanās ES", "category": "milestone"}, {"label": "2008 Q3", "text": "Lehman / globālā finanšu krīze", "category": "crisis"}, {"label": "2008 Q4", "text": "SVF/ES aizdevums Latvijai", "category": "crisis"}, {"label": "2009 Q2", "text": "Iekšējā devalvācija, budžeta griezumi", "category": "crisis"}, {"label": "2014 Q1", "text": "Eiro ieviešana", "category": "milestone"}, {"label": "2018 Q4", "text": "13. Saeimas vēlēšanas", "category": "elections"}, {"label": "2019 Q2", "text": "Rail Baltica būvdarbu sākums", "category": "milestone"}, {"label": "2020 Q1", "text": "COVID ārkārtas stāvoklis", "category": "crisis"}, {"label": "2022 Q1", "text": "Krievijas iebrukums Ukrainā", "category": "crisis"}, {"label": "2022 Q3", "text": "Enerģētikas krīze / gāzes cenu šoks", "category": "crisis"}, {"label": "2022 Q4", "text": "14. Saeimas vēlēšanas", "category": "elections"}, {"label": "2023 Q3", "text": "Siliņas valdība", "category": "government"}], "domain": "economy"}</script>
+<script src="../assets/chart.min.js"></script>
+<script src="../assets/chartjs-plugin-annotation.min.js"></script>
+<script src="../assets/stv1.js?v=1784813789" defer></script>
+
+</body>
+</html>

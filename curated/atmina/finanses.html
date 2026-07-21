@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partiju finanses — Politiskā atmiņa</title>
+  <meta name="description" content="Partiju ziedojumu dati no KNAB publiskas datu bazes. Lielako partiju finanses, ziedojumi un neatbilstibas.">
+  <meta property="og:title" content="atmina.lv — Politiskā atmiņa">
+  <meta property="og:description" content="Latvijas politiķu pozīcijas, pretrunas un balsojumi.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="lv_LV">
+  <meta property="og:site_name" content="atmina.lv">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:title" content="atmina.lv — politiskā caurskatamība">
+  <meta property="og:description" content="Latvijas politiķu pozīciju un pretrunu izsekošana">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f7f3e8" id="meta-theme-color">
+  <script src="assets/theme-init.js?v=1"></script>
+  <link rel="stylesheet" href="assets/style.css?v=1776544394">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="ed2729be-82e1-48d9-a164-645a8f389d35"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="480 170 920 920" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,1800) scale(0.1,-0.1)" stroke="none">
+            <g fill="#37474F"><path d="M9275 15021 c-60 -4 -120 -11 -133 -15 -13 -4 -60 -14 -105 -21 -45 -8 -111 -21 -147 -30 -36 -9 -81 -20 -100 -24 -56 -13 -314 -102 -325 -112 -5 -5 -15 -9 -22 -9 -22 0 -277 -127 -371 -184 -228 -139 -373 -250 -551 -421 -255 -246 -458 -526 -600 -828 -87 -185 -91 -194 -91 -210 0 -9 -4 -19 -10 -22 -5 -3 -10 -13 -10 -22 0 -8 -6 -29 -14 -46 -31 -69 -98 -328 -112 -427 -3 -25 -10 -58 -15 -75 -12 -43 -39 -340 -39 -438 0 -140 25 -405 54 -572 23 -135 91 -375 136 -480 4 -11 19 -47 32 -80 12 -33 40 -95 60 -138 21 -43 38 -80 38 -83 0 -9 127 -218 174 -289 59 -87 150 -208 170 -224 9 -7 16 -22 16 -33 0 -11 -62 -81 -155 -174 l-155 -154 -168 5 c-399 12 -618 14 -629 7 -13 -8 -430 -420 -1276 -1259 l-467 -464 0 -162 c0 -351 20 -922 33 -934 9 -9 154 -14 542 -19 l530 -7 196 194 c107 107 496 491 863 854 368 363 677 669 687 679 16 17 19 36 19 122 0 57 -4 158 -9 226 -6 68 -12 193 -15 278 l-5 154 157 158 c112 113 164 158 180 158 14 0 52 -25 95 -61 61 -51 182 -135 337 -234 41 -27 220 -125 227 -125 3 0 34 -13 70 -30 35 -16 67 -30 71 -30 4 -1 25 -9 47 -20 22 -11 45 -19 51 -20 7 0 25 -7 40 -15 16 -8 37 -15 47 -15 9 0 25 -4 35 -9 23 -13 100 -35 207 -60 136 -32 174 -40 250 -51 39 -6 97 -15 130 -20 75 -12 531 -12 605 0 30 5 93 14 140 20 47 6 101 15 120 20 19 5 76 19 125 30 100 24 121 30 215 61 102 34 143 49 175 63 17 7 46 20 65 27 70 28 320 158 386 201 38 24 90 58 116 74 50 32 197 145 262 203 132 116 368 366 426 451 14 19 30 41 38 49 19 20 101 146 124 191 7 14 30 54 52 90 21 36 61 112 88 170 27 58 54 113 59 122 32 61 126 359 154 488 9 41 20 95 25 120 10 44 22 137 40 295 12 108 12 331 0 435 -22 194 -51 384 -70 460 -32 132 -110 379 -122 386 -4 3 -8 12 -8 20 0 23 -112 261 -169 359 -16 28 -41 71 -55 97 -13 26 -29 53 -35 60 -6 7 -47 63 -92 123 -121 162 -158 206 -313 360 -172 172 -347 307 -586 452 -80 48 -333 173 -352 173 -8 0 -18 4 -23 9 -6 5 -26 14 -45 19 -19 6 -80 26 -135 46 -55 20 -118 41 -140 47 -75 20 -170 40 -230 50 -33 5 -91 16 -130 24 -84 17 -517 27 -680 16z m550 -451 c197 -23 442 -82 562 -136 17 -8 38 -14 46 -14 9 0 18 -4 21 -9 3 -5 18 -12 33 -16 30 -7 315 -148 336 -165 6 -6 56 -40 110 -75 98 -64 113 -76 235 -183 270 -237 440 -462 604 -797 27 -55 54 -108 59 -117 5 -10 9 -23 9 -29 0 -6 6 -25 14 -42 35 -82 90 -273 106 -372 4 -27 13 -70 19 -95 60 -248 42 -714 -39 -1015 -24 -89 -42 -151 -50 -170 -4 -11 -18 -49 -30 -85 -47 -138 -150 -342 -238 -473 -37 -54 -71 -106 -77 -115 -5 -9 -12 -19 -15 -22 -3 -3 -39 -48 -82 -100 -87 -109 -253 -273 -348 -345 -36 -27 -67 -52 -70 -55 -13 -16 -334 -220 -346 -220 -3 0 -47 -20 -97 -43 -51 -24 -119 -54 -152 -67 -33 -12 -69 -26 -80 -31 -51 -20 -164 -51 -300 -83 -182 -42 -480 -63 -669 -47 -183 16 -380 48 -471 79 -16 5 -57 17 -90 27 -33 9 -69 20 -80 25 -11 5 -31 12 -45 16 -72 19 -331 149 -455 227 -162 102 -179 114 -269 192 -130 111 -191 171 -298 295 -135 157 -233 305 -328 500 -45 91 -85 173 -90 182 -6 10 -10 23 -10 29 0 6 -6 25 -14 42 -43 99 -82 245 -122 462 -21 114 -31 523 -15 645 21 161 50 309 85 425 8 28 20 68 26 90 6 22 18 54 26 72 8 17 14 36 14 42 0 6 4 19 10 29 5 9 19 40 30 67 134 317 393 671 650 886 209 174 556 389 669 414 17 4 33 11 36 16 4 5 13 9 22 9 8 0 29 6 46 14 123 55 352 110 562 135 97 11 453 12 550 1z m-2973 -5109 c4 -3 8 -112 10 -241 l3 -235 -406 -3 -407 -2 -563 -564 c-310 -311 -567 -562 -571 -560 -4 3 -8 42 -8 87 l0 82 279 275 c154 151 485 479 737 728 l457 452 231 -6 c127 -4 234 -9 238 -13z"/></g>
+            <g fill="#B71C1C"><path d="M9240 13845 c-8 -2 -49 -8 -90 -15 -133 -21 -294 -65 -460 -126 -41 -15 -202 -97 -245 -124 -16 -11 -40 -24 -51 -29 -24 -11 -38 -37 -24 -46 5 -3 26 5 47 18 132 83 348 180 493 220 339 95 714 87 1035 -22 165 -56 227 -84 355 -160 271 -162 459 -363 602 -646 19 -38 42 -88 50 -110 9 -22 23 -58 31 -80 45 -115 107 -366 107 -433 0 -14 6 -22 16 -22 15 0 16 9 11 68 -3 37 -10 81 -16 97 -5 17 -17 66 -26 110 -9 44 -22 91 -27 105 -6 14 -14 39 -19 55 -40 151 -204 439 -326 576 -242 269 -617 467 -1038 549 -57 11 -393 23 -425 15z"/><path d="M9235 13624 c-5 -2 -44 -8 -85 -13 -81 -10 -213 -36 -245 -50 -11 -4 -45 -16 -75 -26 -125 -40 -325 -150 -450 -248 -132 -103 -273 -257 -338 -369 -13 -24 -33 -59 -45 -78 -103 -180 -168 -391 -183 -592 -6 -87 -5 -98 10 -98 9 0 16 1 16 3 1 1 5 45 10 97 31 351 173 644 439 908 139 138 287 233 494 317 34 14 71 30 82 35 28 12 106 35 195 57 61 14 115 18 285 18 229 0 334 -14 470 -62 39 -14 81 -27 95 -31 21 -4 192 -89 239 -117 161 -100 313 -237 418 -378 75 -102 80 -109 121 -187 60 -113 162 -387 162 -438 1 -37 37 -166 48 -170 16 -5 15 41 -2 108 -8 30 -17 75 -21 100 -4 24 -11 51 -15 60 -4 8 -17 44 -28 80 -125 399 -385 712 -747 897 -187 96 -322 139 -520 169 -83 12 -307 18 -330 8z"/><path d="M9145 13384 c-210 -40 -456 -146 -421 -181 2 -3 37 11 78 31 305 146 584 173 913 89 33 -8 75 -21 93 -29 18 -8 37 -14 42 -14 15 0 159 -70 165 -81 9 -14 45 -11 45 5 0 12 -67 50 -160 89 -43 19 -207 71 -275 88 -78 19 -384 21 -480 3z"/><path d="M9200 13173 c-138 -31 -304 -89 -341 -120 -8 -7 -19 -13 -22 -13 -16 0 -140 -92 -202 -151 -71 -67 -165 -185 -202 -254 -11 -22 -31 -58 -43 -79 -39 -71 -79 -209 -97 -333 -14 -105 -15 -136 -4 -230 21 -183 19 -348 -4 -418 -27 -79 -105 -159 -195 -199 -36 -16 -73 -32 -82 -37 -10 -5 -27 -9 -37 -9 -23 0 -37 -18 -24 -31 21 -21 184 51 263 117 71 60 110 126 130 221 10 51 10 77 -1 145 -21 128 -19 434 5 528 10 41 24 90 32 108 8 18 14 37 14 42 0 20 67 148 114 218 143 215 330 350 601 435 63 20 256 47 327 47 62 -1 248 -32 298 -50 223 -82 365 -180 477 -330 42 -57 133 -215 133 -232 0 -6 7 -24 14 -41 22 -47 42 -137 60 -267 9 -63 21 -133 27 -155 5 -22 14 -60 20 -84 5 -25 27 -81 50 -127 63 -126 187 -239 311 -282 121 -42 268 -64 268 -41 0 10 -29 20 -101 33 -164 29 -254 73 -348 166 -60 59 -92 109 -131 205 -17 42 -50 193 -50 230 0 18 -9 76 -20 131 -55 263 -166 474 -323 614 -89 79 -199 149 -266 171 -14 4 -57 19 -95 33 -38 14 -79 26 -92 26 -13 0 -49 7 -81 15 -73 19 -293 18 -383 -2z"/><path d="M8444 13022 c-182 -168 -319 -425 -370 -692 -14 -78 -17 -142 -16 -353 1 -291 -3 -317 -66 -375 -20 -18 -54 -38 -76 -44 -48 -13 -68 -27 -60 -39 13 -22 87 1 150 47 18 13 43 43 58 68 l26 45 0 278 c0 215 3 294 16 348 33 149 64 251 91 305 7 14 13 28 13 32 0 21 124 209 170 259 51 54 128 145 129 154 5 22 -17 11 -65 -33z"/><path d="M10240 13050 c0 -5 15 -24 33 -42 75 -75 188 -231 225 -310 51 -109 67 -158 97 -288 10 -41 24 -96 31 -122 8 -26 14 -51 14 -57 0 -15 60 -140 84 -176 36 -53 134 -143 178 -163 78 -36 102 -44 168 -58 36 -8 66 -14 67 -14 2 0 3 9 3 20 0 14 -9 20 -37 25 -167 25 -306 119 -371 250 -51 105 -70 160 -113 340 -11 50 -25 94 -30 99 -5 6 -9 16 -9 23 0 18 -54 132 -113 237 -69 123 -227 288 -227 236z"/><path d="M9227 12990 c-130 -26 -260 -85 -362 -163 -105 -81 -222 -222 -254 -308 -7 -19 -18 -45 -25 -59 -7 -14 -21 -56 -30 -95 -10 -38 -22 -86 -27 -106 -12 -49 -12 -283 1 -350 18 -94 16 -326 -4 -389 -51 -162 -156 -282 -321 -366 -36 -19 -72 -34 -78 -34 -7 0 -27 -9 -46 -21 -24 -14 -31 -23 -23 -31 8 -8 36 0 99 27 215 92 337 215 397 400 20 62 22 301 4 482 -38 383 115 703 418 880 65 38 200 87 298 109 158 34 354 2 531 -87 111 -55 174 -108 257 -218 49 -65 128 -206 128 -230 0 -5 5 -22 12 -38 24 -58 40 -154 53 -333 14 -190 26 -274 43 -306 6 -11 18 -39 28 -64 22 -53 94 -153 138 -193 103 -94 228 -149 391 -172 128 -18 165 -19 165 -2 0 10 -34 19 -115 30 -208 30 -337 89 -446 204 -113 120 -141 201 -169 486 -23 229 -50 369 -88 443 -5 11 -27 54 -48 98 -43 87 -132 190 -226 262 -179 138 -453 195 -701 144z"/><path d="M9322 12822 c-63 -13 -39 -27 48 -28 120 -1 265 -29 332 -65 10 -5 27 -9 39 -9 48 0 -14 39 -110 69 -100 32 -241 47 -309 33z"/><path d="M8951 12665 c-86 -63 -175 -201 -207 -322 -18 -67 -24 -202 -9 -203 6 0 13 28 16 62 17 165 86 309 201 419 67 64 66 94 -1 44z"/><path d="M9272 12630 c-94 -28 -182 -82 -246 -151 -57 -61 -71 -87 -108 -194 -18 -54 -20 -78 -15 -245 2 -102 9 -198 15 -215 32 -85 30 -401 -4 -515 -64 -217 -259 -437 -497 -558 -54 -28 -65 -37 -56 -48 9 -11 24 -7 88 27 104 56 193 123 277 211 138 143 203 266 245 462 21 99 22 114 11 209 -20 166 -31 239 -43 275 -6 19 -11 99 -11 180 0 133 2 153 25 215 14 37 37 87 51 111 52 89 167 177 256 196 133 29 135 29 228 10 110 -22 173 -55 240 -123 91 -94 125 -182 148 -385 19 -174 45 -304 62 -310 16 -5 16 37 -2 107 -8 31 -19 108 -25 171 -16 162 -26 217 -49 279 -57 146 -172 245 -341 295 -70 21 -170 19 -249 -4z"/><path d="M9880 12609 c0 -6 15 -29 34 -52 38 -48 96 -147 96 -166 0 -7 6 -27 14 -44 25 -55 46 -186 46 -288 0 -163 50 -481 81 -514 5 -5 9 -15 9 -23 0 -30 86 -155 147 -214 35 -35 69 -65 76 -67 6 -2 28 -16 48 -31 61 -43 212 -102 311 -121 108 -20 161 -23 156 -8 -4 13 -35 22 -173 51 -243 51 -444 196 -526 382 -46 106 -79 301 -98 582 -5 73 -14 147 -20 165 -6 19 -20 66 -31 104 -21 74 -66 158 -114 219 -29 35 -56 47 -56 25z"/><path d="M9317 12433 c-55 -14 -139 -78 -175 -133 -47 -71 -58 -148 -42 -320 7 -79 17 -157 22 -174 5 -17 16 -56 24 -86 8 -30 23 -73 33 -95 10 -22 23 -51 29 -65 6 -14 25 -47 42 -75 16 -27 33 -57 37 -65 16 -36 127 -172 185 -227 150 -144 251 -216 409 -293 57 -28 113 -56 124 -62 21 -12 161 -64 210 -78 17 -5 55 -17 85 -26 106 -31 252 -64 261 -58 27 16 -14 33 -176 74 -113 28 -172 46 -235 70 -30 12 -67 25 -81 30 -47 14 -213 97 -289 144 -172 106 -355 278 -457 430 -18 26 -33 50 -33 53 0 2 -12 25 -27 51 -37 62 -72 157 -100 267 -40 164 -43 389 -6 460 46 86 150 155 235 155 84 0 195 -70 235 -147 23 -43 39 -130 48 -248 15 -201 83 -387 179 -493 46 -49 155 -132 176 -132 27 0 12 22 -44 63 -173 127 -256 298 -276 568 -14 203 -37 267 -118 340 -27 24 -71 52 -98 62 -45 16 -134 21 -177 10z"/><path d="M9367 12133 c-7 -40 11 -228 29 -298 40 -152 105 -294 179 -394 72 -97 314 -301 358 -301 26 0 -5 35 -80 90 -121 89 -185 151 -254 246 -70 97 -118 187 -143 269 -10 33 -23 74 -28 90 -8 26 -28 282 -24 309 0 6 -6 11 -15 13 -11 3 -18 -5 -22 -24z"/><path d="M8730 11858 c0 -7 -2 -98 -4 -203 -4 -203 -8 -224 -69 -343 -81 -161 -205 -273 -399 -365 -43 -20 -78 -41 -78 -47 0 -24 30 -19 101 16 105 52 184 106 262 183 97 93 135 152 188 289 22 55 39 204 39 332 0 117 -2 139 -16 144 -22 8 -24 8 -24 -6z"/><path d="M9130 11276 c-11 -25 -20 -52 -20 -60 0 -8 -6 -27 -14 -43 -8 -15 -23 -46 -33 -68 -37 -82 -180 -282 -224 -315 -3 -3 -39 -35 -80 -72 -41 -36 -103 -85 -137 -108 -60 -40 -81 -64 -69 -76 3 -3 39 15 79 41 135 87 291 238 370 358 61 92 131 233 140 282 2 11 12 21 23 23 15 2 31 -14 65 -65 75 -115 265 -291 388 -360 28 -16 32 -16 32 1 0 7 -12 22 -27 32 -53 34 -178 139 -241 202 -64 66 -182 214 -182 230 0 10 -33 42 -43 42 -4 0 -16 -20 -27 -44z"/><path d="M10192 11023 c4 -24 216 -95 366 -123 59 -12 125 -25 147 -30 22 -5 43 -6 47 -2 17 17 -14 34 -78 42 -135 17 -327 68 -394 104 -14 8 -40 17 -58 21 -29 6 -33 5 -30 -12z"/><path d="M9173 10883 c-104 -165 -202 -274 -381 -425 -31 -25 -42 -48 -24 -48 30 0 194 146 308 274 45 51 154 217 154 235 0 30 -24 15 -57 -36z"/><path d="M9815 10719 c-9 -14 15 -30 105 -73 100 -47 304 -117 378 -130 24 -4 32 -2 32 10 0 8 -6 16 -12 18 -7 2 -40 11 -73 20 -148 41 -165 47 -307 115 -118 57 -114 55 -123 40z"/><path d="M9311 10699 c-30 -12 -85 -60 -129 -113 -19 -23 -75 -85 -126 -139 -89 -96 -102 -117 -80 -124 11 -4 55 41 222 224 133 146 175 160 277 94 22 -14 48 -30 57 -36 9 -5 57 -38 106 -72 81 -55 132 -83 272 -145 25 -10 53 -24 62 -29 23 -12 58 -12 58 0 0 12 -40 41 -57 41 -7 0 -42 14 -76 30 -35 17 -67 30 -70 30 -10 0 -156 90 -257 159 -129 88 -191 107 -259 80z"/><path d="M9353 10435 c-39 -18 -153 -122 -153 -141 0 -27 26 -14 75 37 28 28 63 57 79 66 38 20 97 12 139 -19 55 -41 154 -98 171 -98 32 0 14 18 -81 81 -139 91 -168 100 -230 74z"/></g>
+          </g>
+        </svg>
+        <span class="nav-logo-text">atmina.lv</span>
+      </a>
+            <div class="nav-links">
+        <a href="pozicijas.html">Pozīcijas</a>
+        <a href="balsojumi.html">Balsojumi</a>
+        <a href="pretrunas.html">Pretrunas</a>
+        <a href="personas.html">Personas</a>
+        <a href="partijas.html">Partijas</a>
+        <a href="zinas.html">Ziņas</a>
+        <a href="x.html">X</a>
+        <a href="saites.html">Saites</a>
+        <a href="analizes.html">Analīzes</a>
+        <a href="finanses.html" class="active">Finanses</a>
+        <a href="statistika.html">Statistika</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+<section class="section">
+  <div class="section-header">
+    <h2>Partiju finanses</h2>
+    <span class="count">KNAB publiskā datubāze</span>
+  </div>
+  <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+    Verificēti dati no KNAB oficiālās datubāzes (info.knab.gov.lv). 25 partijas (ieskaitot vēsturiskos
+    juridisko personu nosaukumus), pilna vēsture bez filtriem.
+    Atjaunināts: 2026-07-24. <a href="analizes/deklaracijas-2026.html">Pilna analīze &rarr;</a>
+  </p>
+
+  <section class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">57 255</div>
+      <div class="stat-label">Ziedojumi</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">33 736 165 &euro;</div>
+      <div class="stat-label">Kopējā summa</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">14 735</div>
+      <div class="stat-label">Unikāli ziedotāji</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">651</div>
+      <div class="stat-label">Atmaksas (-947 885 &euro;)</div>
+    </div>
+  </section>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Galvenie atklājumi</h2>
+  </div>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+    <div class="card" style="border-left:4px solid var(--red);">
+      <div style="font-size:0.75rem; color:var(--red); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Naudas krīze</div>
+      <strong>JV ar 760 EUR kontā</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Valdošās koalīcijas vadošā partija beidza 2025. gadu ar 760 EUR naudas atlikumu. Iztērēti 1.49M pret 1.32M ieņēmumiem.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange);">
+      <div style="font-size:0.75rem; color:var(--orange); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Ģimenes finansēšana</div>
+      <strong>Dandzbergu ģimene = 36% MMN</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">4 ģimenes locekļi ziedoja 61 200 EUR — vairāk nekā trešdaļu no visiem MMN ziedojumiem. Visi 2026. g. februārī–martā.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--yellow);">
+      <div style="font-size:0.75rem; color:var(--yellow); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Koordinēti ziedojumi</div>
+      <strong>8 800 EUR klubs</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">7 dažādi cilvēki ziedoja tieši 8 800 EUR partijai LA 2025. gadā. Ne-apaļa summa pār 10 mēnešiem norāda uz koordināciju.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--red);">
+      <div style="font-size:0.75rem; color:var(--red); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Maksātnespēja</div>
+      <strong>Stabilitātei! bankrots uz valsts naudu</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Negatīvs kapitāls (-94 566 EUR), bet saņem 539K no nodokļu maksātājiem un tērē 309K reklāmai.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--accent);">
+      <div style="font-size:0.75rem; color:var(--accent); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Ģimenes impērija</div>
+      <strong>Berķu ģimene — 240 600 EUR vienai partijai</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Trīs Berķu ģimenes locekļi (Olafs, Jānis, Nauris) ir lielākais ģimenes ziedotājs Latvijā — ceturtdaļmiljons partijai "Latvijas attīstībai".</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--yellow);">
+      <div style="font-size:0.75rem; color:var(--yellow); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Necaurspīdīgums</div>
+      <strong>AS — 85% izdevumu "citi izdevumi"</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Apvienotais saraksts novirza 730K EUR caur necaurspīdīgu "citi izdevumi" kategoriju. Nulle biedru naudas, 92% ieņēmumu no valsts.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--green);">
+      <div style="font-size:0.75rem; color:var(--green); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Masveida modelis</div>
+      <strong>Progresīvie — 6 001 ziedojums, vid. 114 EUR</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Lielākais mazo ziedojumu kopums starp pašreizējām Saeimas partijām — īsts grassroots finansēšanas modelis ar zemāko vidējo summu.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange);">
+      <div style="font-size:0.75rem; color:var(--orange); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Koordinēts trio</div>
+      <strong>GKR — 3 × 13 500 EUR 11 dienās</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Trīs cilvēki (Dubskis, Jasinskis, Češeva) aprīlī ziedoja identisku summu — kopā 40 500 EUR, kas finansēja visu GKR reklāmas kampaņu.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--accent);">
+      <div style="font-size:0.75rem; color:var(--accent); text-transform:uppercase; font-weight:600; margin-bottom:0.5rem;">Zaļais bloks</div>
+      <strong>ZZS + LZP + LZS = 9,18M EUR</strong>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Trīs "zaļā bloka" partijas kopā saņēmušas vairāk nekā ceturtdaļu (27%) no visiem 25 partiju ziedojumiem. Daudzi donori ziedo starp visām trim.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Finanšu veselība 2025</h2>
+    <span class="count">gada pārskati</span>
+  </div>
+  <input type="text" id="health-search" data-filter-table="health-table" placeholder="Meklēt partiju..." style="border-radius:2rem; padding:0.5rem 1rem; border:1px solid var(--border); background:var(--surface); color:var(--text); width:100%; max-width:300px; margin-bottom:1rem;">
+  <div class="table-wrap">
+  <table class="data-table" id="health-table">
+    <thead><tr><th>Partija</th><th style="text-align:right">Ieņēmumi</th><th style="text-align:right">Izdevumi</th><th style="text-align:right">Neto</th><th style="text-align:right">Nauda</th><th style="text-align:right">Valsts %</th></tr></thead>
+    <tbody>
+      <tr><td>Jaunā Vienotība</td><td style="text-align:right">1 316 749</td><td style="text-align:right">1 487 443</td><td style="text-align:right;color:var(--red)">-170 694</td><td style="text-align:right;color:var(--red)"><strong>760</strong></td><td style="text-align:right">85.1%</td></tr>
+      <tr><td>Zaļo un Zemnieku savienība</td><td style="text-align:right">1 024 372</td><td style="text-align:right">1 245 817</td><td style="text-align:right;color:var(--red)">-221 445</td><td style="text-align:right;color:var(--yellow)">46 812</td><td style="text-align:right">86.8%</td></tr>
+      <tr><td>Apvienotais saraksts</td><td style="text-align:right">849 761</td><td style="text-align:right">881 792</td><td style="text-align:right;color:var(--red)">-32 031</td><td style="text-align:right;color:var(--yellow)">4 249</td><td style="text-align:right">91.6%</td></tr>
+      <tr><td>Latvija Pirmajā Vietā</td><td style="text-align:right">769 469</td><td style="text-align:right">870 284</td><td style="text-align:right;color:var(--red)">-100 815</td><td style="text-align:right">64 104</td><td style="text-align:right">67.8%</td></tr>
+      <tr><td>Latvijas attīstībai</td><td style="text-align:right">610 813</td><td style="text-align:right">658 583</td><td style="text-align:right;color:var(--red)">-47 770</td><td style="text-align:right;color:var(--red)"><strong>31</strong></td><td style="text-align:right">0.0%</td></tr>
+      <tr><td>Progresīvie</td><td style="text-align:right">604 693</td><td style="text-align:right">698 331</td><td style="text-align:right;color:var(--red)">-93 638</td><td style="text-align:right">172 539</td><td style="text-align:right">86.6%</td></tr>
+      <tr><td>Nacionālā apvienība</td><td style="text-align:right">590 532</td><td style="text-align:right">678 797</td><td style="text-align:right;color:var(--red)">-88 265</td><td style="text-align:right">240 708</td><td style="text-align:right">65.9%</td></tr>
+      <tr><td>Stabilitātei!</td><td style="text-align:right">560 868</td><td style="text-align:right">564 407</td><td style="text-align:right;color:var(--red)">-3 539</td><td style="text-align:right;color:var(--red)"><strong>387</strong></td><td style="text-align:right">96.1%</td></tr>
+      <tr><td>Latvijas Zaļā partija</td><td style="text-align:right">455 491</td><td style="text-align:right">509 997</td><td style="text-align:right;color:var(--red)">-54 506</td><td style="text-align:right">47 062</td><td style="text-align:right">44.7%</td></tr>
+      <tr><td>Latvijas Reģionu Apvienība</td><td style="text-align:right">366 451</td><td style="text-align:right">376 074</td><td style="text-align:right;color:var(--red)">-9 623</td><td style="text-align:right;color:var(--yellow)">5 281</td><td style="text-align:right">62.1%</td></tr>
+      <tr><td>SARAUJ, LATGALE!</td><td style="text-align:right">69 471</td><td style="text-align:right">68 332</td><td style="text-align:right;color:var(--green)">+1 139</td><td style="text-align:right;color:var(--red)">444</td><td style="text-align:right">0.0%</td></tr>
+      <tr><td>Gods kalpot Rīgai</td><td style="text-align:right">67 293</td><td style="text-align:right">93 006</td><td style="text-align:right;color:var(--red)">-25 713</td><td style="text-align:right;color:var(--yellow)">1 626</td><td style="text-align:right">0.0%</td></tr>
+      <tr><td>Mēs mainām noteikumus</td><td style="text-align:right">24 505</td><td style="text-align:right">26 303</td><td style="text-align:right;color:var(--red)">-1 798</td><td style="text-align:right;color:var(--red)"><strong>3</strong></td><td style="text-align:right">0.0%</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Partijas pēc ziedojumiem</h2>
+    <span class="count">visa vēsture 2002–2026</span>
+  </div>
+  <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1rem;">
+    KNAB datubāze vēsturiskos juridisko personu nosaukumus uzskaita atsevišķi — piemēram, partija
+    VIENOTĪBA un Jaunā Vienotība vai Saskaņas Centrs un Saskaņa ir atsevišķas rindas. Tabulā iekļauti
+    visi ierakstu veidi, arī biedru naudas.
+  </p>
+  <input type="text" id="party-search" data-filter-table="parties-table" placeholder="Meklēt partiju..." style="border-radius:2rem; padding:0.5rem 1rem; border:1px solid var(--border); background:var(--surface); color:var(--text); width:100%; max-width:300px; margin-bottom:1rem;">
+  <div class="table-wrap">
+  <table class="data-table" id="parties-table">
+    <thead><tr><th>Partija</th><th style="text-align:right">Ieraksti</th><th style="text-align:right">Kopā EUR</th><th style="text-align:right">Vid. EUR</th></tr></thead>
+    <tbody>
+      <tr><td>Zaļo un Zemnieku savienība</td><td style="text-align:right">3 987</td><td style="text-align:right">5 425 165</td><td style="text-align:right">1 361</td></tr>
+      <tr><td>Partija VIENOTĪBA</td><td style="text-align:right">5 381</td><td style="text-align:right">4 572 126</td><td style="text-align:right">850</td></tr>
+      <tr><td>Saskaņa</td><td style="text-align:right">4 496</td><td style="text-align:right">3 845 288</td><td style="text-align:right">855</td></tr>
+      <tr><td>Latvijas attīstībai</td><td style="text-align:right">3 078</td><td style="text-align:right">3 173 645</td><td style="text-align:right">1 031</td></tr>
+      <tr><td>LSDSP</td><td style="text-align:right">1 834</td><td style="text-align:right">2 746 718</td><td style="text-align:right">1 498</td></tr>
+      <tr><td>Latvijas Zemnieku savienība</td><td style="text-align:right">4 446</td><td style="text-align:right">2 205 629</td><td style="text-align:right">496</td></tr>
+      <tr><td>Latvijas Zaļā partija</td><td style="text-align:right">1 508</td><td style="text-align:right">1 545 071</td><td style="text-align:right">1 025</td></tr>
+      <tr><td>Nacionālā apvienība</td><td style="text-align:right">3 220</td><td style="text-align:right">1 449 625</td><td style="text-align:right">450</td></tr>
+      <tr><td>Saskaņas Centrs</td><td style="text-align:right">662</td><td style="text-align:right">1 441 641</td><td style="text-align:right">2 178</td></tr>
+      <tr><td>Gods kalpot Rīgai</td><td style="text-align:right">1 203</td><td style="text-align:right">1 327 699</td><td style="text-align:right">1 104</td></tr>
+      <tr><td>Jaunā Vienotība</td><td style="text-align:right">1 777</td><td style="text-align:right">1 304 185</td><td style="text-align:right">734</td></tr>
+      <tr><td>Latvija Pirmajā Vietā</td><td style="text-align:right">2 035</td><td style="text-align:right">1 217 629</td><td style="text-align:right">598</td></tr>
+      <tr><td>Progresīvie</td><td style="text-align:right">6 001</td><td style="text-align:right">685 539</td><td style="text-align:right">114</td></tr>
+      <tr><td>Jaunā konservatīvā partija</td><td style="text-align:right">7 420</td><td style="text-align:right">622 382</td><td style="text-align:right">84</td></tr>
+      <tr><td>Apvienotais saraksts</td><td style="text-align:right">1 186</td><td style="text-align:right">471 884</td><td style="text-align:right">398</td></tr>
+      <tr><td>Latvijas Reģionu Apvienība</td><td style="text-align:right">1 763</td><td style="text-align:right">424 746</td><td style="text-align:right">241</td></tr>
+      <tr><td>Kustība Par!</td><td style="text-align:right">3 297</td><td style="text-align:right">403 847</td><td style="text-align:right">122</td></tr>
+      <tr><td>PLI (Par!/LA/Izaugsme)</td><td style="text-align:right">938</td><td style="text-align:right">309 337</td><td style="text-align:right">330</td></tr>
+      <tr><td>Mēs mainām noteikumus</td><td style="text-align:right">470</td><td style="text-align:right">167 947</td><td style="text-align:right">357</td></tr>
+      <tr><td>Suverēnā vara</td><td style="text-align:right">560</td><td style="text-align:right">139 849</td><td style="text-align:right">250</td></tr>
+      <tr><td>SARAUJ, LATGALE!</td><td style="text-align:right">183</td><td style="text-align:right">73 111</td><td style="text-align:right">400</td></tr>
+      <tr><td>Stabilitātei!</td><td style="text-align:right">477</td><td style="text-align:right">67 510</td><td style="text-align:right">142</td></tr>
+      <tr><td>Centra Partija</td><td style="text-align:right">100</td><td style="text-align:right">47 337</td><td style="text-align:right">473</td></tr>
+      <tr><td>Apvienība Jaunlatvieši</td><td style="text-align:right">715</td><td style="text-align:right">40 030</td><td style="text-align:right">56</td></tr>
+      <tr><td>Austošā Saule Latvijai</td><td style="text-align:right">518</td><td style="text-align:right">28 225</td><td style="text-align:right">54</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>TOP 20 ziedotāji</h2>
+    <span class="count">visa vēsture</span>
+  </div>
+  <input type="text" id="donor-search" data-filter-table="donors-table" placeholder="Meklēt personu..." style="border-radius:2rem; padding:0.5rem 1rem; border:1px solid var(--border); background:var(--surface); color:var(--text); width:100%; max-width:300px; margin-bottom:1rem;">
+  <div class="table-wrap">
+  <table class="data-table" id="donors-table">
+    <thead><tr><th>Persona</th><th style="text-align:right">Kopā EUR</th><th style="text-align:right">Ziedojumu sk.</th><th>Partija(-s)</th></tr></thead>
+    <tbody>
+      <tr><td>Biedrība „LATVIJA PIRMĀ”</td><td style="text-align:right">340 654</td><td style="text-align:right">3</td><td><small style="color:var(--text-muted)">LPV</small></td></tr>
+      <tr><td>Arnis Vējš</td><td style="text-align:right">178 461</td><td style="text-align:right">22</td><td><small style="color:var(--text-muted)">JV, LRA, VIEN</small></td></tr>
+      <tr><td>Normunds Bergs</td><td style="text-align:right">172 455</td><td style="text-align:right">15</td><td><small style="color:var(--text-muted)">JV, LZP, PLI, VIEN</small></td></tr>
+      <tr><td>Jānis Bergs</td><td style="text-align:right">163 772</td><td style="text-align:right">13</td><td><small style="color:var(--text-muted)">JV, PRO, VIEN</small></td></tr>
+      <tr><td>Pēteris Vinķelis</td><td style="text-align:right">137 879</td><td style="text-align:right">67</td><td><small style="color:var(--text-muted)">JV, LA, PLI, PRO, Par!, VIEN</small></td></tr>
+      <tr><td>Olafs Berķis</td><td style="text-align:right">135 175</td><td style="text-align:right">11</td><td><small style="color:var(--text-muted)">JV, LA, PLI</small></td></tr>
+      <tr><td>Edgars Čeporjus</td><td style="text-align:right">129 522</td><td style="text-align:right">25</td><td><small style="color:var(--text-muted)">LA, LRA</small></td></tr>
+      <tr><td>Aivars Bergers</td><td style="text-align:right">127 479</td><td style="text-align:right">36</td><td><small style="color:var(--text-muted)">SC, SDPS</small></td></tr>
+      <tr><td>Ainārs Ščipčinskis</td><td style="text-align:right">121 995</td><td style="text-align:right">10</td><td><small style="color:var(--text-muted)">JV, LA, PLI</small></td></tr>
+      <tr><td>Artis Pabriks</td><td style="text-align:right">113 484</td><td style="text-align:right">69</td><td><small style="color:var(--text-muted)">LA, PLI, VIEN</small></td></tr>
+      <tr><td>Sandra Kalniete</td><td style="text-align:right">112 149</td><td style="text-align:right">161</td><td><small style="color:var(--text-muted)">JV, VIEN</small></td></tr>
+      <tr><td>Augusts Brigmanis</td><td style="text-align:right">111 363</td><td style="text-align:right">160</td><td><small style="color:var(--text-muted)">LZS, ZZS</small></td></tr>
+      <tr><td>Inese Vaidere</td><td style="text-align:right">109 831</td><td style="text-align:right">137</td><td><small style="color:var(--text-muted)">JV, VIEN</small></td></tr>
+      <tr><td>Arkādijs Suharenko</td><td style="text-align:right">104 329</td><td style="text-align:right">13</td><td><small style="color:var(--text-muted)">GKR, LA, LPV, LZP, SDPS, VIEN, ZZS</small></td></tr>
+      <tr><td>Andris Ameriks</td><td style="text-align:right">101 726</td><td style="text-align:right">9</td><td><small style="color:var(--text-muted)">GKR</small></td></tr>
+      <tr><td>Aleksandrs Brandavs</td><td style="text-align:right">101 090</td><td style="text-align:right">10</td><td><small style="color:var(--text-muted)">GKR</small></td></tr>
+      <tr><td>Aivars Lembergs</td><td style="text-align:right">99 941</td><td style="text-align:right">11</td><td><small style="color:var(--text-muted)">LZP, LZS, ZZS</small></td></tr>
+      <tr><td>Valdis Dombrovskis</td><td style="text-align:right">96 632</td><td style="text-align:right">48</td><td><small style="color:var(--text-muted)">JV, VIEN</small></td></tr>
+      <tr><td>Elmārs Švēde</td><td style="text-align:right">95 412</td><td style="text-align:right">25</td><td><small style="color:var(--text-muted)">LZS, ZZS</small></td></tr>
+      <tr><td>Arvils Ašeradens</td><td style="text-align:right">89 870</td><td style="text-align:right">29</td><td><small style="color:var(--text-muted)">JV, VIEN</small></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Ziedojumu koncentrācija</h2>
+    <span class="count">cik atkarīgas no lielākajiem ziedotājiem</span>
+  </div>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Partija</th><th style="text-align:right">Top 3 (%)</th><th style="text-align:right">Top 10 (%)</th></tr></thead>
+    <tbody>
+      <tr><td>Centra Partija</td><td style="text-align:right;color:var(--red)"><strong>47.7%</strong></td><td style="text-align:right;color:var(--red)"><strong>78.5%</strong></td></tr>
+      <tr><td>Suverēnā vara</td><td style="text-align:right;color:var(--red)"><strong>32.9%</strong></td><td style="text-align:right;color:var(--red)"><strong>60.7%</strong></td></tr>
+      <tr><td>PLI (Par!/LA/Izaugsme)</td><td style="text-align:right;color:var(--red)"><strong>30.0%</strong></td><td style="text-align:right;color:var(--yellow)">47.6%</td></tr>
+      <tr><td>Stabilitātei!</td><td style="text-align:right;color:var(--red)"><strong>29.6%</strong></td><td style="text-align:right;color:var(--red)"><strong>63.6%</strong></td></tr>
+      <tr><td>Mēs mainām noteikumus</td><td style="text-align:right;color:var(--red)"><strong>26.9%</strong></td><td style="text-align:right;color:var(--red)"><strong>60.2%</strong></td></tr>
+      <tr><td>Latvija Pirmajā Vietā</td><td style="text-align:right;color:var(--yellow)">24.9%</td><td style="text-align:right;color:var(--yellow)">32.1%</td></tr>
+      <tr><td>Austošā Saule Latvijai</td><td style="text-align:right;color:var(--yellow)">21.6%</td><td style="text-align:right;color:var(--yellow)">43.5%</td></tr>
+      <tr><td>Gods kalpot Rīgai</td><td style="text-align:right;color:var(--yellow)">20.9%</td><td style="text-align:right;color:var(--yellow)">38.3%</td></tr>
+      <tr><td>SARAUJ, LATGALE!</td><td style="text-align:right;color:var(--yellow)">20.2%</td><td style="text-align:right;color:var(--yellow)">44.5%</td></tr>
+      <tr><td>Kustība Par!</td><td style="text-align:right;color:var(--yellow)">16.2%</td><td style="text-align:right;color:var(--yellow)">37.9%</td></tr>
+      <tr><td>Apvienotais saraksts</td><td style="text-align:right;color:var(--yellow)">16.0%</td><td style="text-align:right;color:var(--yellow)">28.0%</td></tr>
+      <tr><td>Apvienība Jaunlatvieši</td><td style="text-align:right;color:var(--yellow)">15.4%</td><td style="text-align:right;color:var(--yellow)">33.1%</td></tr>
+      <tr><td>Jaunā konservatīvā partija</td><td style="text-align:right">15.0%</td><td style="text-align:right;color:var(--yellow)">30.6%</td></tr>
+      <tr><td>Progresīvie</td><td style="text-align:right">14.1%</td><td style="text-align:right;color:var(--yellow)">33.8%</td></tr>
+      <tr><td>Jaunā Vienotība</td><td style="text-align:right">11.5%</td><td style="text-align:right;color:var(--yellow)">24.1%</td></tr>
+      <tr><td>Saskaņas Centrs</td><td style="text-align:right">11.5%</td><td style="text-align:right;color:var(--yellow)">25.6%</td></tr>
+      <tr><td>Latvijas attīstībai</td><td style="text-align:right">10.6%</td><td style="text-align:right;color:var(--yellow)">25.3%</td></tr>
+      <tr><td>Nacionālā apvienība</td><td style="text-align:right">9.9%</td><td style="text-align:right;color:var(--yellow)">21.0%</td></tr>
+      <tr><td>Latvijas Reģionu Apvienība</td><td style="text-align:right">8.9%</td><td style="text-align:right;color:var(--yellow)">20.4%</td></tr>
+      <tr><td>Partija VIENOTĪBA</td><td style="text-align:right">8.2%</td><td style="text-align:right;color:var(--yellow)">20.6%</td></tr>
+      <tr><td>Latvijas Zemnieku savienība</td><td style="text-align:right">7.7%</td><td style="text-align:right">17.0%</td></tr>
+      <tr><td>Latvijas Zaļā partija</td><td style="text-align:right">6.4%</td><td style="text-align:right">16.3%</td></tr>
+      <tr><td>LSDSP</td><td style="text-align:right">6.3%</td><td style="text-align:right">14.5%</td></tr>
+      <tr><td>Saskaņa</td><td style="text-align:right">4.7%</td><td style="text-align:right">12.1%</td></tr>
+      <tr><td>Zaļo un Zemnieku savienība</td><td style="text-align:right">3.4%</td><td style="text-align:right">8.0%</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2>Reklāmas kanālu stratēģija</h2>
+    <span class="count">vēlēšanu deklarācijas</span>
+  </div>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Partija</th><th style="text-align:right">Publiskās vietas</th><th style="text-align:right">Radio</th><th style="text-align:right">Internets</th><th style="text-align:right">Prese</th><th style="text-align:right">TV</th><th style="text-align:right">Kopā EUR</th></tr></thead>
+    <tbody>
+      <tr><td>Latvija Pirmajā Vietā</td><td style="text-align:right"><strong>57.5%</strong></td><td style="text-align:right">23.1%</td><td style="text-align:right">9.5%</td><td style="text-align:right">10.0%</td><td style="text-align:right">—</td><td style="text-align:right">398 514</td></tr>
+      <tr><td>Jaunā Vienotība</td><td style="text-align:right"><strong>42.9%</strong></td><td style="text-align:right">27.3%</td><td style="text-align:right">7.6%</td><td style="text-align:right">17.8%</td><td style="text-align:right">4.4%</td><td style="text-align:right">360 942</td></tr>
+      <tr><td>ZZS</td><td style="text-align:right">26.9%</td><td style="text-align:right">22.8%</td><td style="text-align:right"><strong>27.3%</strong></td><td style="text-align:right">22.9%</td><td style="text-align:right">—</td><td style="text-align:right">282 794</td></tr>
+      <tr><td>Latvijas attīstībai</td><td style="text-align:right"><strong>51.0%</strong></td><td style="text-align:right">20.1%</td><td style="text-align:right">24.6%</td><td style="text-align:right">3.4%</td><td style="text-align:right">—</td><td style="text-align:right">231 571</td></tr>
+      <tr><td>Latvijas Zaļā partija</td><td style="text-align:right"><strong>68.7%</strong></td><td style="text-align:right">1.9%</td><td style="text-align:right">20.2%</td><td style="text-align:right">9.3%</td><td style="text-align:right">—</td><td style="text-align:right">202 740</td></tr>
+      <tr><td>Nacionālā apvienība</td><td style="text-align:right"><strong>51.0%</strong></td><td style="text-align:right">8.3%</td><td style="text-align:right">23.9%</td><td style="text-align:right">16.8%</td><td style="text-align:right">—</td><td style="text-align:right">162 751</td></tr>
+      <tr><td>Progresīvie</td><td style="text-align:right">26.4%</td><td style="text-align:right">30.2%</td><td style="text-align:right"><strong>32.9%</strong></td><td style="text-align:right">7.4%</td><td style="text-align:right">3.1%</td><td style="text-align:right">155 786</td></tr>
+      <tr><td>Stabilitātei!</td><td style="text-align:right">23.6%</td><td style="text-align:right">8.4%</td><td style="text-align:right">24.0%</td><td style="text-align:right"><strong>44.0%</strong></td><td style="text-align:right">—</td><td style="text-align:right">120 081</td></tr>
+      <tr><td>SARAUJ, LATGALE!</td><td style="text-align:right">12.4%</td><td style="text-align:right"><strong>77.8%</strong></td><td style="text-align:right">6.5%</td><td style="text-align:right">3.2%</td><td style="text-align:right">—</td><td style="text-align:right">37 883</td></tr>
+      <tr><td>Mēs mainām noteikumus</td><td style="text-align:right">18.0%</td><td style="text-align:right"><strong>43.8%</strong></td><td style="text-align:right">—</td><td style="text-align:right">38.1%</td><td style="text-align:right">—</td><td style="text-align:right">11 121</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+  </main>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <svg class="footer-logo-icon" viewBox="480 170 920 920" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,1800) scale(0.1,-0.1)" stroke="none">
+            <g fill="#37474F"><path d="M9275 15021 c-60 -4 -120 -11 -133 -15 -13 -4 -60 -14 -105 -21 -45 -8 -111 -21 -147 -30 -36 -9 -81 -20 -100 -24 -56 -13 -314 -102 -325 -112 -5 -5 -15 -9 -22 -9 -22 0 -277 -127 -371 -184 -228 -139 -373 -250 -551 -421 -255 -246 -458 -526 -600 -828 -87 -185 -91 -194 -91 -210 0 -9 -4 -19 -10 -22 -5 -3 -10 -13 -10 -22 0 -8 -6 -29 -14 -46 -31 -69 -98 -328 -112 -427 -3 -25 -10 -58 -15 -75 -12 -43 -39 -340 -39 -438 0 -140 25 -405 54 -572 23 -135 91 -375 136 -480 4 -11 19 -47 32 -80 12 -33 40 -95 60 -138 21 -43 38 -80 38 -83 0 -9 127 -218 174 -289 59 -87 150 -208 170 -224 9 -7 16 -22 16 -33 0 -11 -62 -81 -155 -174 l-155 -154 -168 5 c-399 12 -618 14 -629 7 -13 -8 -430 -420 -1276 -1259 l-467 -464 0 -162 c0 -351 20 -922 33 -934 9 -9 154 -14 542 -19 l530 -7 196 194 c107 107 496 491 863 854 368 363 677 669 687 679 16 17 19 36 19 122 0 57 -4 158 -9 226 -6 68 -12 193 -15 278 l-5 154 157 158 c112 113 164 158 180 158 14 0 52 -25 95 -61 61 -51 182 -135 337 -234 41 -27 220 -125 227 -125 3 0 34 -13 70 -30 35 -16 67 -30 71 -30 4 -1 25 -9 47 -20 22 -11 45 -19 51 -20 7 0 25 -7 40 -15 16 -8 37 -15 47 -15 9 0 25 -4 35 -9 23 -13 100 -35 207 -60 136 -32 174 -40 250 -51 39 -6 97 -15 130 -20 75 -12 531 -12 605 0 30 5 93 14 140 20 47 6 101 15 120 20 19 5 76 19 125 30 100 24 121 30 215 61 102 34 143 49 175 63 17 7 46 20 65 27 70 28 320 158 386 201 38 24 90 58 116 74 50 32 197 145 262 203 132 116 368 366 426 451 14 19 30 41 38 49 19 20 101 146 124 191 7 14 30 54 52 90 21 36 61 112 88 170 27 58 54 113 59 122 32 61 126 359 154 488 9 41 20 95 25 120 10 44 22 137 40 295 12 108 12 331 0 435 -22 194 -51 384 -70 460 -32 132 -110 379 -122 386 -4 3 -8 12 -8 20 0 23 -112 261 -169 359 -16 28 -41 71 -55 97 -13 26 -29 53 -35 60 -6 7 -47 63 -92 123 -121 162 -158 206 -313 360 -172 172 -347 307 -586 452 -80 48 -333 173 -352 173 -8 0 -18 4 -23 9 -6 5 -26 14 -45 19 -19 6 -80 26 -135 46 -55 20 -118 41 -140 47 -75 20 -170 40 -230 50 -33 5 -91 16 -130 24 -84 17 -517 27 -680 16z m550 -451 c197 -23 442 -82 562 -136 17 -8 38 -14 46 -14 9 0 18 -4 21 -9 3 -5 18 -12 33 -16 30 -7 315 -148 336 -165 6 -6 56 -40 110 -75 98 -64 113 -76 235 -183 270 -237 440 -462 604 -797 27 -55 54 -108 59 -117 5 -10 9 -23 9 -29 0 -6 6 -25 14 -42 35 -82 90 -273 106 -372 4 -27 13 -70 19 -95 60 -248 42 -714 -39 -1015 -24 -89 -42 -151 -50 -170 -4 -11 -18 -49 -30 -85 -47 -138 -150 -342 -238 -473 -37 -54 -71 -106 -77 -115 -5 -9 -12 -19 -15 -22 -3 -3 -39 -48 -82 -100 -87 -109 -253 -273 -348 -345 -36 -27 -67 -52 -70 -55 -13 -16 -334 -220 -346 -220 -3 0 -47 -20 -97 -43 -51 -24 -119 -54 -152 -67 -33 -12 -69 -26 -80 -31 -51 -20 -164 -51 -300 -83 -182 -42 -480 -63 -669 -47 -183 16 -380 48 -471 79 -16 5 -57 17 -90 27 -33 9 -69 20 -80 25 -11 5 -31 12 -45 16 -72 19 -331 149 -455 227 -162 102 -179 114 -269 192 -130 111 -191 171 -298 295 -135 157 -233 305 -328 500 -45 91 -85 173 -90 182 -6 10 -10 23 -10 29 0 6 -6 25 -14 42 -43 99 -82 245 -122 462 -21 114 -31 523 -15 645 21 161 50 309 85 425 8 28 20 68 26 90 6 22 18 54 26 72 8 17 14 36 14 42 0 6 4 19 10 29 5 9 19 40 30 67 134 317 393 671 650 886 209 174 556 389 669 414 17 4 33 11 36 16 4 5 13 9 22 9 8 0 29 6 46 14 123 55 352 110 562 135 97 11 453 12 550 1z m-2973 -5109 c4 -3 8 -112 10 -241 l3 -235 -406 -3 -407 -2 -563 -564 c-310 -311 -567 -562 -571 -560 -4 3 -8 42 -8 87 l0 82 279 275 c154 151 485 479 737 728 l457 452 231 -6 c127 -4 234 -9 238 -13z"/></g>
+            <g fill="#B71C1C"><path d="M9240 13845 c-8 -2 -49 -8 -90 -15 -133 -21 -294 -65 -460 -126 -41 -15 -202 -97 -245 -124 -16 -11 -40 -24 -51 -29 -24 -11 -38 -37 -24 -46 5 -3 26 5 47 18 132 83 348 180 493 220 339 95 714 87 1035 -22 165 -56 227 -84 355 -160 271 -162 459 -363 602 -646 19 -38 42 -88 50 -110 9 -22 23 -58 31 -80 45 -115 107 -366 107 -433 0 -14 6 -22 16 -22 15 0 16 9 11 68 -3 37 -10 81 -16 97 -5 17 -17 66 -26 110 -9 44 -22 91 -27 105 -6 14 -14 39 -19 55 -40 151 -204 439 -326 576 -242 269 -617 467 -1038 549 -57 11 -393 23 -425 15z"/><path d="M9235 13624 c-5 -2 -44 -8 -85 -13 -81 -10 -213 -36 -245 -50 -11 -4 -45 -16 -75 -26 -125 -40 -325 -150 -450 -248 -132 -103 -273 -257 -338 -369 -13 -24 -33 -59 -45 -78 -103 -180 -168 -391 -183 -592 -6 -87 -5 -98 10 -98 9 0 16 1 16 3 1 1 5 45 10 97 31 351 173 644 439 908 139 138 287 233 494 317 34 14 71 30 82 35 28 12 106 35 195 57 61 14 115 18 285 18 229 0 334 -14 470 -62 39 -14 81 -27 95 -31 21 -4 192 -89 239 -117 161 -100 313 -237 418 -378 75 -102 80 -109 121 -187 60 -113 162 -387 162 -438 1 -37 37 -166 48 -170 16 -5 15 41 -2 108 -8 30 -17 75 -21 100 -4 24 -11 51 -15 60 -4 8 -17 44 -28 80 -125 399 -385 712 -747 897 -187 96 -322 139 -520 169 -83 12 -307 18 -330 8z"/><path d="M9145 13384 c-210 -40 -456 -146 -421 -181 2 -3 37 11 78 31 305 146 584 173 913 89 33 -8 75 -21 93 -29 18 -8 37 -14 42 -14 15 0 159 -70 165 -81 9 -14 45 -11 45 5 0 12 -67 50 -160 89 -43 19 -207 71 -275 88 -78 19 -384 21 -480 3z"/><path d="M9200 13173 c-138 -31 -304 -89 -341 -120 -8 -7 -19 -13 -22 -13 -16 0 -140 -92 -202 -151 -71 -67 -165 -185 -202 -254 -11 -22 -31 -58 -43 -79 -39 -71 -79 -209 -97 -333 -14 -105 -15 -136 -4 -230 21 -183 19 -348 -4 -418 -27 -79 -105 -159 -195 -199 -36 -16 -73 -32 -82 -37 -10 -5 -27 -9 -37 -9 -23 0 -37 -18 -24 -31 21 -21 184 51 263 117 71 60 110 126 130 221 10 51 10 77 -1 145 -21 128 -19 434 5 528 10 41 24 90 32 108 8 18 14 37 14 42 0 20 67 148 114 218 143 215 330 350 601 435 63 20 256 47 327 47 62 -1 248 -32 298 -50 223 -82 365 -180 477 -330 42 -57 133 -215 133 -232 0 -6 7 -24 14 -41 22 -47 42 -137 60 -267 9 -63 21 -133 27 -155 5 -22 14 -60 20 -84 5 -25 27 -81 50 -127 63 -126 187 -239 311 -282 121 -42 268 -64 268 -41 0 10 -29 20 -101 33 -164 29 -254 73 -348 166 -60 59 -92 109 -131 205 -17 42 -50 193 -50 230 0 18 -9 76 -20 131 -55 263 -166 474 -323 614 -89 79 -199 149 -266 171 -14 4 -57 19 -95 33 -38 14 -79 26 -92 26 -13 0 -49 7 -81 15 -73 19 -293 18 -383 -2z"/></g>
+          </g>
+        </svg>
+        <span class="footer-tagline">Politisk&#257; caurskat&#257;m&#299;ba</span>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <strong>atmina.lv</strong> — Politiskā atmiņa<br>
+          <small>Dati no publiskiem avotiem. MI-asistēta analīze ar ticamības novērtējumiem.</small>
+        </div>
+        <div>
+          <strong>Metodoloģija</strong><br>
+          <small>MI-asistēta pozīciju identifikācija · Ticamības novērtējumi (0.0–1.0) · Saeimas balsojumi</small>
+        </div>
+        <div style="text-align: right;">
+          <div>Saeimas vēlēšanas: <strong>2026-10-03</strong></div>
+          <div style="margin-top: 0.25rem;"><a href="about.html" style="color: var(--text-muted); font-size: 0.8rem;">Par mums</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="assets/fnv1.js?v=1" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+{% extends "base.html.j2" %}
+{% set active_page = "kontakti" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Kontakti{% endblock %}
+{% block description %}Sazinies ar atmina.lv — e-pasts info@atmina.lv un X profils @AtminaLV.{% endblock %}
+{% block og_title %}Kontakti — atmina.lv{% endblock %}
+{% block og_description %}E-pasts info@atmina.lv · X profils @AtminaLV. Jautājumi, kļūdu ziņojumi un atsauksmes.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="section" style="text-align:center; padding: 4rem 0 2rem;">
+  <h1 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Kontakti</h1>
+  <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 640px; margin: 0 auto; line-height: 1.7;">
+    Jautājumi, kļūdu ziņojumi, atsauksmes vai sadarbības piedāvājumi — rakstiet.
+  </p>
+  <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 640px; margin: 1rem auto 0; line-height: 1.6; opacity: 0.85;">
+    Vairāk par projektu un metodoloģiju — <a href="about.html" style="color: var(--accent);">Par mums</a>.
+  </p>
+</section>
+
+<!-- Contact channels -->
+<section class="section">
+  <div class="section-header">
+    <h2>Kā sazināties</h2>
+  </div>
+
+  <div class="contact-grid">
+    <a href="mailto:info@atmina.lv" class="card contact-card">
+      <div class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+      </div>
+      <div class="contact-label">E-pasts</div>
+      <div class="contact-value">info@atmina.lv</div>
+      <div class="contact-hint">Kļūdu ziņojumi · jautājumi · sadarbība</div>
+    </a>
+
+    <a href="https://x.com/AtminaLV" target="_blank" rel="noopener" class="card contact-card">
+      <div class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </div>
+      <div class="contact-label">X / Twitter</div>
+      <div class="contact-value">@AtminaLV</div>
+      <div class="contact-hint">Dienas pārskati · nedēļas pārskati · atjauninājumi</div>
+    </a>
+  </div>
+</section>
+
+<!-- What to write about -->
+<section class="section">
+  <div class="section-header">
+    <h2>Par ko rakstīt</h2>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details open>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Kļūdu ziņojumi</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Ja pamanāt neprecīzi izvilktu citātu, aplam piešķirtu tēmu, nepareizu pretrunas sasaisti vai tehnisku problēmu — rakstiet uz <a href="mailto:info@atmina.lv">info@atmina.lv</a>. Pievienojiet saiti uz konkrēto ierakstu. Katra atsauksme uzlabo sistēmu.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Sadarbības piedāvājumi</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Žurnālisti, pētnieki, NVO vai akadēmiskie partneri, kas vēlas izmantot datus vai diskutēt par metodoloģiju — rakstiet uz <a href="mailto:info@atmina.lv">info@atmina.lv</a>.
+      </p>
+    </details>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <details>
+      <summary style="cursor:pointer; font-weight:600; padding:0.5rem 0;">Vispārīgi jautājumi</summary>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem; line-height:1.7;">
+        Kā darbojas pozīciju ekstrakcija, ko nozīmē ticamības novērtējums, kāpēc konkrēts politiķis nav iekļauts — atbildi var atrast <a href="about.html">Par mums</a> sadaļā. Ja tur nav, rakstiet e-pastu.
+      </p>
+    </details>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .contact-card {
+    display: block;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .contact-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .contact-icon {
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+    display: inline-flex;
+  }
+  .contact-label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+  }
+  .contact-value {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .contact-hint {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  details summary { list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before {
+    content: "▸ ";
+    color: var(--accent);
+    font-weight: 700;
+  }
+  details[open] summary::before { content: "▾ "; }
+  @media (max-width: 640px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}

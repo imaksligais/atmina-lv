@@ -1,0 +1,2295 @@
+{
+  "motifs": [
+    {
+      "motif": "Grozījumi likumā “Par piesārņojumu” (1274/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1274/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Valsts pārvalde"
+    },
+    {
+      "motif": "Grozījumi Imigrācijas likumā (1180/Lp14), 3.lasījums",
+      "resolve_bill_from_motif": "1180/Lp14",
+      "_reading_from_motif": "3.lasījums",
+      "_motif_to_topic": "Imigrācija"
+    },
+    {
+      "motif": "Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14), 3.lasījums",
+      "resolve_bill_from_motif": "991/Lp14",
+      "_reading_from_motif": "3.lasījums",
+      "_motif_to_topic": "Sociālā politika"
+    },
+    {
+      "motif": "Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14)",
+      "resolve_bill_from_motif": "953/Lm14",
+      "_reading_from_motif": "Lm14 cits",
+      "_motif_to_topic": "airBaltic"
+    },
+    {
+      "motif": "Grozījums Saeimas vēlēšanu likumā (1288/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1288/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Vēlēšanas"
+    },
+    {
+      "motif": "Grozījumi Kriminālprocesa likumā (1312/Lp14), 2.lasījums, steidzams",
+      "resolve_bill_from_motif": "1312/Lp14",
+      "_reading_from_motif": "2.lasījums",
+      "_motif_to_topic": "Tieslietas"
+    },
+    {
+      "motif": "Grozījumi Civilprocesa likumā (1187/Lp14), 3.lasījums",
+      "resolve_bill_from_motif": "1187/Lp14",
+      "_reading_from_motif": "3.lasījums",
+      "_motif_to_topic": "Valsts pārvalde"
+    },
+    {
+      "motif": "Grozījumi Izglītības likumā (1303/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1303/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Izglītība"
+    },
+    {
+      "motif": "Grozījums Bērnu tiesību aizsardzības likumā (1257/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1257/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Sociālā politika"
+    },
+    {
+      "motif": "Grozījums Meža likumā (1291/Lp14), nodošana komisijām",
+      "resolve_bill_from_motif": "1291/Lp14",
+      "_reading_from_motif": "iesniegts",
+      "_motif_to_topic": "Mežsaimniecība"
+    },
+    {
+      "motif": "Par Jura Rancāna iecelšanu par rajona (pilsētas) tiesas tiesnesi (938/Lm14)",
+      "resolve_bill_from_motif": "938/Lm14",
+      "_reading_from_motif": "tiesneša_amats",
+      "_motif_to_topic": "Tieslietas"
+    },
+    {
+      "motif": "Grozījumi Atkritumu apsaimniekošanas likumā (1270/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1270/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Vide"
+    },
+    {
+      "motif": "Grozījumi Valsts drošības iestāžu likumā (1297/Lp14), nodošana komisijām",
+      "resolve_bill_from_motif": "1297/Lp14",
+      "_reading_from_motif": "iesniegts",
+      "_motif_to_topic": "Aizsardzība un drošība"
+    },
+    {
+      "motif": "Grozījumi Gaisa kuģu pasažieru datu apstrādes likumā (1072/Lp14), 3.lasījums",
+      "resolve_bill_from_motif": "1072/Lp14",
+      "_reading_from_motif": "3.lasījums",
+      "_motif_to_topic": "Valsts pārvalde"
+    },
+    {
+      "motif": "Par 10 177 Latvijas pilsoņu kolektīvā iesnieguma “Par atklātu algu valsts pārvaldē” turpmāko virzību (928/Lm14)",
+      "resolve_bill_from_motif": "928/Lm14",
+      "_reading_from_motif": "Lm14 cits",
+      "_motif_to_topic": "Valsts pārvalde"
+    },
+    {
+      "motif": "Grozījumi Dzīvokļa īpašuma likumā (1153/Lp14), 2.lasījums",
+      "resolve_bill_from_motif": "1153/Lp14",
+      "_reading_from_motif": "2.lasījums",
+      "_motif_to_topic": "Valsts pārvalde"
+    },
+    {
+      "motif": "Par priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta “Imigrācijas likums” (Nr.56/Lp14) trešajam lasījumam līdz 2026. gada 9. aprīlim (940/Lm14)",
+      "resolve_bill_from_motif": "56/Lp14",
+      "_reading_from_motif": "procesuāls",
+      "_motif_to_topic": "Imigrācija"
+    },
+    {
+      "motif": "Grozījums likumā “Par Latvijas Republikas Uzņēmumu reģistru” (1265/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "1265/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Budžets un finanses"
+    },
+    {
+      "motif": "Grozījumi likumā “Par nekustamā īpašuma nodokli” (1280/Lp14), nodošana komisijām",
+      "resolve_bill_from_motif": "1280/Lp14",
+      "_reading_from_motif": "iesniegts",
+      "_motif_to_topic": "Pašvaldības"
+    },
+    {
+      "motif": "Grozījumi likumā “Par akcīzes nodokli” (913/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "913/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Budžets un finanses"
+    },
+    {
+      "motif": "Grozījumi Ieslodzījuma vietu pārvaldes likumā (1052/Lp14), 2.lasījums",
+      "resolve_bill_from_motif": "1052/Lp14",
+      "_reading_from_motif": "2.lasījums",
+      "_motif_to_topic": "Tieslietas"
+    },
+    {
+      "motif": "Grozījumi Energoresursu cenu ārkārtēja pieauguma samazinājuma pasākumu likumā (99/Lp14)",
+      "resolve_bill_from_motif": "99/Lp14",
+      "_reading_from_motif": "nezināms",
+      "_motif_to_topic": "Degviela un enerģētika"
+    },
+    {
+      "motif": "Grozījumi Autortiesību likumā (726/Lp14), 1.lasījums",
+      "resolve_bill_from_motif": "726/Lp14",
+      "_reading_from_motif": "1.lasījums",
+      "_motif_to_topic": "Kultūra"
+    },
+    {
+      "motif": "Grozījumi Administratīvo teritoriju un apdzīvoto vietu likumā (572/Lp14), nodošana komisijām",
+      "resolve_bill_from_motif": "572/Lp14",
+      "_reading_from_motif": "iesniegts",
+      "_motif_to_topic": "Pašvaldības"
+    },
+    {
+      "motif": "Grozījums Covid-19 infekcijas izplatības seku pārvarēšanas likumā (519/Lp14), 2.lasījums",
+      "resolve_bill_from_motif": "519/Lp14",
+      "_reading_from_motif": "2.lasījums",
+      "_motif_to_topic": "Veselības aprūpe"
+    }
+  ],
+  "parse_agenda_snapshot": [
+    {
+      "document_nr": "1292/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Saeimas vēlēšanu likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1293/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Pašvaldības domes vēlēšanu likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1294/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ministru kabineta iekārtas likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1295/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Valsts pārvaldes iekārtas likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova\" [ref=e229]':"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1296/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Eiropas Parlamenta vēlēšanu likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1297/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Valsts drošības iestāžu likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1298/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova\" [ref=e298]':"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1299/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par Centrālo vēlēšanu komisiju”",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1300/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Latvijas Bankas likumā",
+      "individual_submitters": [
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Mārcis Jencītis",
+        "Ričards Šlesers",
+        "Ilze Stobova"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1305/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Aizsargjoslu likumā",
+      "individual_submitters": [],
+      "institutional_submitter": "Ministru kabinets",
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1306/Lp14",
+      "bill_type": "Lp14",
+      "title": "Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums",
+      "individual_submitters": [],
+      "institutional_submitter": "Ministru kabinets",
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1307/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ieroču aprites likumā",
+      "individual_submitters": [
+        "Edvīns Šnore",
+        "Jānis Vitenbergs",
+        "Artūrs Butāns",
+        "Uģis Mitrevics",
+        "Jānis Grasbergs"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1308/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā",
+      "individual_submitters": [
+        "Edmunds Jurēvics",
+        "Zanda Kalniņa-Lukaševica",
+        "Agnese Krasta",
+        "Dāvis Mārtiņš Daugavietis",
+        "Mārtiņš Felss"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1309/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Augstskolu likumā",
+      "individual_submitters": [],
+      "institutional_submitter": "Ministru kabinets",
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1310/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Zinātniskās darbības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": "Ministru kabinets",
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1311/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Profesionālās izglītības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": "Ministru kabinets",
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1312/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Kriminālprocesa likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "942/Lm14",
+      "bill_type": "Lm14",
+      "title": "Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "128/P14",
+      "bill_type": "P14",
+      "title": "Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu'",
+      "individual_submitters": [
+        "Edvards Smiltēns",
+        "Edgars Tavars",
+        "Andris Kulbergs",
+        "Juris Viļums",
+        "Linda Matisone",
+        "Edgars Putra",
+        "Česlavs Batņa",
+        "Aiva Vīksna",
+        "Lauris Lizbovskis",
+        "Andrejs Svilāns"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "129/P14",
+      "bill_type": "P14",
+      "title": "viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē'",
+      "individual_submitters": [
+        "Viktorija Pleškāne",
+        "Edmunds Zivtiņš",
+        "Maija Armaņeva",
+        "Linda Liepiņa",
+        "Kristaps Krištopans",
+        "Mārcis Jencītis",
+        "Jeļena Kļaviņa",
+        "Jekaterina Drelinga",
+        "Ilze Stobova",
+        "Ramona Petraviča"
+      ],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "124/P14",
+      "bill_type": "P14",
+      "title": "Ministru prezidentei Evikai Siliņai ''Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei''",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "950/Lm14",
+      "bill_type": "Lm14",
+      "title": "Par likumprojekta “Grozījumi likumā ''Par piesārņojumu''” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1269/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Vides aizsardzības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1271/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par zemes dzīlēm”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1272/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par radiācijas drošību un kodoldrošību”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1273/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ķīmisko vielu likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1275/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ūdens apsaimniekošanas likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1276/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par ietekmes uz vidi novērtējumu”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1277/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Sugu un biotopu aizsardzības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "991/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par valsts sociālo apdrošināšanu”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1186/Lp14",
+      "bill_type": "Lp14",
+      "title": "Sabiedrības interesēs iesaistīto personu aizsardzības likums",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1187/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Civilprocesa likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1156/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par valsts kompensāciju cietušajiem”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1139/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Epidemioloģiskās drošības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1197/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Valsts robežsardzes likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1203/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Biometrijas datu apstrādes sistēmas likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1284/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Bibliotēku likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1252/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījums Operatīvās darbības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1198/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Civilprocesa likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1149/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Rail Baltica projekta īstenošanas likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "953/Lm14",
+      "bill_type": "Lm14",
+      "title": "Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1302/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Augstskolu likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1303/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Izglītības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1304/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Profesionālās izglītības likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1286/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi Ceļu satiksmes likumā",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    },
+    {
+      "document_nr": "1274/Lp14",
+      "bill_type": "Lp14",
+      "title": "Grozījumi likumā “Par piesārņojumu”",
+      "individual_submitters": [],
+      "institutional_submitter": null,
+      "reading_hint": null,
+      "vote_uuid": null
+    }
+  ],
+  "parse_vote_snapshot": {
+    "vote_a.md": {
+      "motif": "Grozījumi Pašvaldības domes vēlēšanu likumā (1293/Lp14), nodošana komisijām",
+      "date": "2026-04-16",
+      "time": "09:28:52",
+      "total_par": 17,
+      "total_pret": 53,
+      "total_atturas": 14,
+      "total_nebalso": 5,
+      "result": "Noraidīts",
+      "url": null,
+      "individual_votes": [
+        {
+          "deputy_name": "Selma Teodora Levrence",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Maija Armaņeva",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gatis Liepiņš",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Ceļapīters",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ingmārs Līdaka",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jekaterina Drelinga",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Daiga Mieriņa",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Iļja Ivanovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Antoņina Ņenaševa",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārcis Jencītis",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Patmalnieks",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jefimijs Klementjevs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edgars Putra",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jeļena Kļaviņa",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Igors Rajevs",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kļaviņa",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anna Rancāne",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dmitrijs Kovaļenko",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Leila Rasima",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kristaps Krištopans",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Harijs Rokpelnis",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Liepiņa",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Rotbergs",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ramona Petraviča",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jana Simanovska",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viktorija Pleškāne",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Skrastiņš",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Amils Saļimovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zane Skujiņa-Rubene",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Vilis Sruoģis",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvards Smiltēns",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Stobova",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Svilāns",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Zivtiņš",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Šuvajevs",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Vergina",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Česlavs Batņa",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Viļums",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raimonds Bergmanis",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Aiva Vīksna",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Inga Bērziņa",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Agita Zariņa-Stūre",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Bērziņš",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Zariņš",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anita Brakovska",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viesturs Zariņš",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Augusts Brigmanis",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Didzis Zemmers",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kaspars Briškens",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Oļegs Burovs",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uldis Augulis",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Cepurītis",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Dinevičs",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ingrīda Circene",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Dombrava",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anda Čakša",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raivis Dzintars",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Daģis",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ligita Gintere",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dāvis Mārtiņš Daugavietis",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Grasbergs",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Felss",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Indriksone",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Liene Gātere",
+          "faction": "PRO",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Jakovins",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Alīna Gendele",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kozlovska",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Judins",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gunārs Kūtris",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Jurēvics",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Valdis Maslovskis",
+          "faction": "ZZS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zanda Kalniņa-Lukaševica",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Mitrevics",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Inese Kalniņa",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ināra Mūrniece",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Irma Kalniņa",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Nauris Puntulis",
+          "faction": "NA",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Aleksandrs Kiršteins",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jurģis Klotiņš",
+          "faction": "NA",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Artūrs Butāns",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Agnese Krasta",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Lauris Lizbovskis",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Māris Kučinskis",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Matisone",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Kulbergs",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvīns Šnore",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Atis Labucis",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edgars Tavars",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ainars Latkovskis",
+          "faction": "JV",
+          "vote": "Pret",
+          "politician_id": null
+        }
+      ]
+    },
+    "vote_b.md": {
+      "motif": "Grozījumi Ceļu satiksmes likumā (1286/Lp14), 1.lasījums",
+      "date": "2026-04-16",
+      "time": "16:17:46",
+      "total_par": 88,
+      "total_pret": 0,
+      "total_atturas": 0,
+      "total_nebalso": 1,
+      "result": "Pieņemts",
+      "url": null,
+      "individual_votes": [
+        {
+          "deputy_name": "Ainars Latkovskis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Maija Armaņeva",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Selma Teodora Levrence",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uldis Augulis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Liepiņa",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Česlavs Batņa",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gatis Liepiņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raimonds Bergmanis",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Lauris Lizbovskis",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Inga Bērziņa",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ingmārs Līdaka",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Bērziņš",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Nataļja Marčenko-Jodko",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anita Brakovska",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Valdis Maslovskis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Augusts Brigmanis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Matisone",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kaspars Briškens",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Daiga Mieriņa",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Oļegs Burovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Mitrevics",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Ceļapīters",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Antoņina Ņenaševa",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Cepurītis",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Patmalnieks",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ingrīda Circene",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ramona Petraviča",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anda Čakša",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viktorija Pleškāne",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Svetlana Čulkova",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Nauris Puntulis",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Daģis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edgars Putra",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gundars Daudze",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Igors Rajevs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dāvis Mārtiņš Daugavietis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anna Rancāne",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Dinevičs",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Leila Rasima",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jekaterina Drelinga",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Harijs Rokpelnis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raivis Dzintars",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Rotbergs",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Felss",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Amils Saļimovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Alīna Gendele",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jana Simanovska",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ligita Gintere",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Skrastiņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Grasbergs",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zane Skujiņa-Rubene",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Indriksone",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvards Smiltēns",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Iļja Ivanovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Vilis Sruoģis",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Jakovins",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Stobova",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārcis Jencītis",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Svilāns",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Judins",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Didzis Šmits",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Igors Judins",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvīns Šnore",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zanda Kalniņa-Lukaševica",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Šuvajevs",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Irma Kalniņa",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edgars Tavars",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Aleksandrs Kiršteins",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Vergina",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jefimijs Klementjevs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Viļums",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jurģis Klotiņš",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Vitenbergs",
+          "faction": "NA",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jeļena Kļaviņa",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Aiva Vīksna",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kļaviņa",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Agita Zariņa-Stūre",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dmitrijs Kovaļenko",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Zariņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kozlovska",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viesturs Zariņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Agnese Krasta",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Didzis Zemmers",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kristaps Krištopans",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Zivtiņš",
+          "faction": "LPV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Māris Kučinskis",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Kulbergs",
+          "faction": "AS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Jurēvics",
+          "faction": "JV",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Atis Labucis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        }
+      ]
+    },
+    "vote_c.md": {
+      "motif": "Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14)",
+      "date": "2026-04-16",
+      "time": "15:53:40",
+      "total_par": 49,
+      "total_pret": 23,
+      "total_atturas": 1,
+      "total_nebalso": 15,
+      "result": "Pieņemts",
+      "url": null,
+      "individual_votes": [
+        {
+          "deputy_name": "Agita Zariņa-Stūre",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Inga Bērziņa",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Zariņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Bērziņš",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viesturs Zariņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anita Brakovska",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Didzis Zemmers",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Augusts Brigmanis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kaspars Briškens",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Maija Armaņeva",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Oļegs Burovs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uldis Augulis",
+          "faction": "ZZS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Ceļapīters",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Česlavs Batņa",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Cepurītis",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Svetlana Čulkova",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ingrīda Circene",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jekaterina Drelinga",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anda Čakša",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Iļja Ivanovs",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Daģis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārcis Jencītis",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gundars Daudze",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Aleksandrs Kiršteins",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dāvis Mārtiņš Daugavietis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jefimijs Klementjevs",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Dinevičs",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jeļena Kļaviņa",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Mārtiņš Felss",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Dmitrijs Kovaļenko",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Liene Gātere",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Kristaps Krištopans",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Alīna Gendele",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Liepiņa",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ligita Gintere",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Lauris Lizbovskis",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Jakovins",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Nataļja Marčenko-Jodko",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Judins",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Linda Matisone",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Jurēvics",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ramona Petraviča",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zanda Kalniņa-Lukaševica",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Viktorija Pleškāne",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Inese Kalniņa",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Vilis Sruoģis",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Irma Kalniņa",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Stobova",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kļaviņa",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Didzis Šmits",
+          "faction": null,
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Līga Kozlovska",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edgars Tavars",
+          "faction": "AS",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Agnese Krasta",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edmunds Zivtiņš",
+          "faction": "LPV",
+          "vote": "Pret",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Atis Labucis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ainars Latkovskis",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andrejs Svilāns",
+          "faction": "AS",
+          "vote": "Atturas",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Selma Teodora Levrence",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Gatis Liepiņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raimonds Bergmanis",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Valdis Maslovskis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Artūrs Butāns",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Daiga Mieriņa",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Raivis Dzintars",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Antoņina Ņenaševa",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Grasbergs",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Patmalnieks",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Indriksone",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Igors Rajevs",
+          "faction": null,
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Igors Judins",
+          "faction": null,
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Anna Rancāne",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jurģis Klotiņš",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Leila Rasima",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Māris Kučinskis",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Harijs Rokpelnis",
+          "faction": "ZZS",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Mitrevics",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Uģis Rotbergs",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Nauris Puntulis",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jana Simanovska",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Amils Saļimovs",
+          "faction": null,
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Skrastiņš",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvards Smiltēns",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Zane Skujiņa-Rubene",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Edvīns Šnore",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Andris Šuvajevs",
+          "faction": "PRO",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Juris Viļums",
+          "faction": "AS",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Ilze Vergina",
+          "faction": "JV",
+          "vote": "Par",
+          "politician_id": null
+        },
+        {
+          "deputy_name": "Jānis Vitenbergs",
+          "faction": "NA",
+          "vote": "Nebalsoja",
+          "politician_id": null
+        }
+      ]
+    }
+  }
+}

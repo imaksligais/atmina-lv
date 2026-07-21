@@ -1,0 +1,65 @@
+- generic [ref=e2]:
+  - generic [ref=e3] [cursor=pointer]:
+    - generic [ref=e4]:
+      - img [ref=e5]
+      - text: Drukāt
+    - generic [ref=e6]:
+      - img [ref=e7]
+      - text: Aizvērt
+  - generic [ref=e9]:
+    - paragraph [ref=e10]
+    - paragraph [ref=e12]
+    - paragraph [ref=e14]
+    - paragraph [ref=e16]
+    - paragraph [ref=e18]
+    - paragraph [ref=e20]
+    - paragraph [ref=e22]
+    - paragraph [ref=e24]
+    - heading "Paziņojums" [level=2] [ref=e26]:
+      - generic [ref=e27]: Paziņojums
+    - paragraph [ref=e28]
+    - paragraph [ref=e30]:
+      - generic [ref=e31]: Daru zināmu, ka Saeima šā gada 16. aprīļa sēdē,
+    - paragraph [ref=e32]:
+      - generic [ref=e36]: lai mazinātu
+      - generic [ref=e37]: Tuvo Austrumu reģiona konflikta īpaši negatīvo ietekmi uz AS “Air Baltic Corporation” finanšu situāciju,
+    - paragraph [ref=e38]:
+      - generic [ref=e42]: nolēmusi piekrist
+      - generic [ref=e43]:
+        - text: tam, ka finanšu ministrs atbilstoši Likuma par budžetu un finanšu vadību 36. panta sestajā daļā un 8.
+        - superscript [ref=e44]: "1"
+        - text: panta pirmās daļas 1. un 3. punktā noteiktajam, pamatojoties uz Ministru kabineta 2026. gada 31. marta sēdes lēmumu (protokols Nr. 17/38.§ “Informatīvais ziņojums “Par aktuālo situāciju “airBaltic””) un Ministru kabineta 2026. gada 13. aprīļa ārkārtas sēdes lēmumu (protokols Nr. 19/1.§ “Informatīvais ziņojums “Par aktuālo situāciju “airBaltic””), izsniedz AS “Air Baltic Corporation” valsts īstermiņa aizdevumu 30 000 000
+        - generic [ref=e45]: euro
+        - text: apmērā;
+    - paragraph [ref=e46]:
+      - generic [ref=e50]: uzdod
+      - generic [ref=e52]: Satiksmes ministrijai nodrošināt Eiropas Komisijas viedokļa saņemšanu par valsts īstermiņa aizdevuma atbilstību privātā tirgus dalībnieka principam, ar Finanšu ministrijas starpniecību nosūtot informāciju Eiropas Komisijai līdz 2026. gada 5. maijam;
+    - paragraph [ref=e53]:
+      - generic [ref=e57]: nosaka
+      - generic [ref=e58]: "šādus aizdevuma būtiskos nosacījumus:"
+    - paragraph [ref=e59]:
+      - generic [ref=e63]: 1) valsts īstermiņa aizdevuma pamatsummas un aizdevuma procentu atmaksas termiņš ir 2026. gada 31. augusts;
+    - paragraph [ref=e64]:
+      - generic [ref=e68]: 2) valsts īstermiņa aizdevumam tiek piemērota aizdevuma procentu likme saskaņā ar Informatīvajā ziņojumā noteikto aprēķina metodiku un ievērojot komercdarbības atbalsta kontroles regulējumu;
+    - paragraph [ref=e69]:
+      - generic [ref=e73]: 3) valsts aizdevums tiek izsniegts bez nodrošinājuma.
+    - paragraph [ref=e74]
+    - paragraph [ref=e76]
+    - paragraph [ref=e78]
+    - paragraph [ref=e80]
+    - paragraph [ref=e82]:
+      - generic [ref=e83]: Saeimas priekšsēdētāja D. Mieriņa
+    - paragraph [ref=e84]
+    - paragraph [ref=e86]
+    - paragraph [ref=e88]
+    - paragraph [ref=e90]:
+      - generic [ref=e91]: Rīgā 2026. gada 16. aprīlī
+  - generic [ref=e93]:
+    - generic [ref=e94] [cursor=pointer]:
+      - img "Savērst" [ref=e95]
+      - text: Oriģinālais dokumenta saturs
+    - paragraph [ref=e96]:
+      - link "953_airBaltic.doc 953_airBaltic.doc" [ref=e97] [cursor=pointer]:
+        - /url: /LIVS14/saeimalivs_lmp.nsf/0/f1974a4311940ea6c2258ddb0043b181/$FILE/953_airBaltic.doc
+        - img "953_airBaltic.doc" [ref=e98]
+        - generic [ref=e99]: 953_airBaltic.doc

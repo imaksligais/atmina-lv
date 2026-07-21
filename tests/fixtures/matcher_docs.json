@@ -1,0 +1,86 @@
+{
+  "_doc": "Curated characterization fixtures for src.matcher (extracted from src.ingest in Phase 1 of refactor-plan-2026-04-29.md). Each entry pins observed match_politicians() / extract_twitter_author_handle() output captured from master commit b0f9871 against data/atmina.db (politician IDs stable per tracked_politicians table).",
+  "_invariants": "Each case targets a specific code path. Adding a new tracked politician with a previously unseen name MAY change expected_matches; adding one with conflicting first-name MAY change a foreign-firstname guard outcome. Update fixture deliberately when behavior changes.",
+
+  "match_politicians_cases": [
+    {
+      "name": "explicit-fullname",
+      "comment": "Plain full name → unique-form candidate, single subject role.",
+      "text": "Edgars Rinkēvičs šodien tikās ar premjeru.",
+      "expected_matches": [[1, "subject"]]
+    },
+    {
+      "name": "two-politicians-stable",
+      "comment": "Two distinct politicians, both unique-form. First (highest count, alphabetic tie) wins subject; rest mentioned.",
+      "text": "Edgars Rinkēvičs un Evika Siliņa apsprieda budžetu nākamajai sēdei.",
+      "expected_matches": [[1, "subject"], [2, "mentioned"]]
+    },
+    {
+      "name": "inflection-genitive-silinya",
+      "comment": "Latvian genitive ('Siliņas') resolves through _latvian_surname_inflections form generation.",
+      "text": "Siliņas viedoklis bija skaidrs — pretī šim risinājumam.",
+      "expected_matches": [[2, "subject"]]
+    },
+    {
+      "name": "surname-collision-bare",
+      "comment": "Bare 'Hermanis' without first-name disambiguator. Both Jānis (13) and Alvis (29) tracked. Truly ambiguous — first-name proximity filter (added 2026-05-13) drops both rather than guess. Old behavior returned both via inflection-not-shared accident; new behavior favors recall loss over false attribution.",
+      "text": "Hermanis paziņoja, ka atbalsta likumprojektu.",
+      "expected_matches": []
+    },
+    {
+      "name": "surname-collision-resolved-janis",
+      "comment": "Full name 'Jānis Hermanis' present → unique form match for pid=13. Alvis (29) dropped: shared-surname match without 'Alvis' or 'Alvja/Alvim/Alvi' preceding any Hermanis occurrence in text.",
+      "text": "Saeimas priekšsēdētāja vietnieks Jānis Hermanis vakar paziņoja par savu lēmumu.",
+      "expected_matches": [[13, "subject"]]
+    },
+    {
+      "name": "surname-collision-resolved-alvis",
+      "comment": "'Alvis Hermanis' present → unique form match for pid=29. Jānis (13) dropped for same reason as the mirror case: no Jānis/Jāņa/Jānim/Jāni preceding any Hermanis form.",
+      "text": "Režisors Alvis Hermanis komentēja teātri.",
+      "expected_matches": [[29, "subject"]]
+    },
+    {
+      "name": "negative-pattern-berzins-cebuvetaji",
+      "comment": "Andris Bērziņš (146) has negative_pattern 'biedrība Latvijas Ceļu būvētājs' — used to disambiguate from former president of same name. Pattern fires, match rejected.",
+      "text": "biedrība Latvijas Ceļu būvētājs uzaicināja Andri Bērziņu uz tikšanos.",
+      "expected_matches": []
+    },
+    {
+      "name": "negative-pattern-berzins-eks",
+      "comment": "Negative pattern 'eks-prezidents' fires — refers to former president, not the tracked ZZS deputy.",
+      "text": "eks-prezidents Andris Bērziņš pieminēja runā.",
+      "expected_matches": []
+    },
+    {
+      "name": "foreign-firstname-kalnins",
+      "comment": "'Krists Kalniņš' — Krists is NOT Rūdolfs (the tracked Kalniņš's first name). foreign-firstname guard rejects.",
+      "text": "Krists Kalniņš teica, ka komiteja vēl nav lēmusi.",
+      "expected_matches": []
+    },
+    {
+      "name": "foreign-firstname-kols",
+      "comment": "'Tomass Alens' is Rihards Kols's negative_pattern (referring to a different person). Match rejected.",
+      "text": "Tomass Alens un Rihards Kols apsprieda situāciju.",
+      "expected_matches": []
+    },
+    {
+      "name": "common-word-guard-krasta",
+      "comment": "'Krasta iela' is street name, not politician 'Krasta' (if any). _surname_has_person_context returns False → no match.",
+      "text": "Krasta iela tiek pārbūvēta nākamgad.",
+      "expected_matches": []
+    },
+    {
+      "name": "empty-match",
+      "comment": "Article without any politician reference returns empty list.",
+      "text": "Šodien Rīgā līs lietus, sola sinoptiķi. Rīt gaidāmas pārmaiņas atmosfēras spiedienā.",
+      "expected_matches": []
+    }
+  ],
+
+  "extract_twitter_author_handle_cases": [
+    {"url": "https://x.com/EvikaSilina/status/12345", "expected": "evikasilina"},
+    {"url": "https://twitter.com/edgarsrinkevics", "expected": "edgarsrinkevics"},
+    {"url": "https://www.delfi.lv/article", "expected": null},
+    {"url": null, "expected": null}
+  ]
+}

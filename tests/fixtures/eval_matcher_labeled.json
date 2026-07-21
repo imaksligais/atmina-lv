@@ -1,0 +1,179 @@
+{
+  "_doc": "Hand-labeled ground-truth eval set for src.matcher.match_politicians(). Distinct from matcher_docs.json (which pins CURRENT behavior as characterization). Each case here has expected_matches set by HUMAN judgment of what the matcher SHOULD do — not by reading the matcher's output. Failing cases = real bugs.",
+  "_metric_design": "Primary metric is set-based F1 over politician IDs (does the matcher find the right people?). Role accuracy (subject vs mentioned) is a secondary metric — role is a count-based heuristic and not strict ground truth. Use scripts/eval_matcher.py to compute.",
+  "_categories": {
+    "positive-fullname": "Politician's full name appears in text, clear context. Matcher MUST find them.",
+    "positive-surname-with-context": "Only surname or inflected surname appears, but with strong person-context (role, party tag, action verb).",
+    "negative-collision": "Trigger word matches a politician's name_form, but the actual referent is a different person/entity (covered by negative_patterns or person-context guard).",
+    "negative-common-word": "Trigger word is a common noun, street name, or place name — NOT a person.",
+    "negative-vestnesis-strict": "Vestnesis pavēle/saraksts where a tracked politician's surname appears in a name list without first-name context.",
+    "negative-no-politician": "Document mentions no tracked politicians at all.",
+    "mixed": "Multiple politicians correctly attributed; tests subject-vs-mentioned ranking and multi-match."
+  },
+
+  "cases": [
+    {
+      "id": "001-spruds-full-name-party-role",
+      "category": "positive-fullname",
+      "doc_id": 30664,
+      "source_url": "https://www.la.lv/iedzivotaji-tiek-aicinati-meklet-patverumu-telpas-aizvert-logus-un-durvis-latvijas-gaisa-telpa-ielidojusi-vairaki-krievu-lidaparati-divi-no-tiem-nokritusi",
+      "note": "Sprūds (id=16) clear full-name attribution as aizsardzības ministrs. No collision.",
+      "text": "\"Pilnīgi skaidrs, kas šis ir ārkārtas gadījums, tā ka vērtēsim arī tālāk valdībā,\" dronu ielidošanu šorīt Latgalē Latvijas Televīzijas raidījumam \"Rīta panorāma\" komentēja Aizsardzības ministrs Andris Sprūds (P). Viņš pats ceturtdienas rītā devies uz notikuma vietu.",
+      "expected_matches": [[16, "subject"]]
+    },
+    {
+      "id": "002-silina-rinkevics-tutins-multi",
+      "category": "mixed",
+      "doc_id": 30634,
+      "source_url": "https://www.delfi.lv/193/politics/120117335/dronu-incidenti-rinkevics-aicina-iedzivotajus-sekot-dienestu-noradem-silina-sasauc-krizes-vadibas-padomi",
+      "note": "Three tracked politicians: Rinkēvičs (1), Siliņa (2), Tutins (180). Subject is ambiguous between Rinkēvičs and Siliņa — count-heuristic decides; both are correctly mentioned. Ašeradens (19) ALSO mentioned by full name once.",
+      "text": "Valsts prezidents Edgars Rinkēvičs saistībā ar dronu incidentiem ir saziņā ar pašvaldību vadītājiem un aicina iedzīvotājus sekot dienestu norādēm. Savukārt Ministru prezidente Evika Siliņa (JV) ceturtdien sasaukusi Krīzes vadības padomes sēdi. \"Esmu telefoniski sazinājies ar Rēzeknes pilsētas domes priekšsēdētāju Jāni Tutinu un Rēzeknes novada domes priekšsēdētāju Guntaru Skudru saistībā ar incidentiem,\" pauda Rinkēvičs. Savukārt finanšu ministrs Arvils Ašeradens (JV), kurš šodien Saeimu informē par valsts ekonomisko situāciju, sacīja deputātiem, ka Saeimas sēdē varēs piedalīties līdz pulksten 10, jo Ministru prezidente saistībā ar dronu incidentiem sasaukusi Krīzes vadības padomes sēdi.",
+      "expected_matches": [[1, "subject"], [2, "mentioned"], [19, "mentioned"], [180, "mentioned"]]
+    },
+    {
+      "id": "003-latkovskis-fullname-party",
+      "category": "positive-fullname",
+      "doc_id": 30908,
+      "source_url": "https://www.delfi.lv/193/politics/120117426/saeimas-nacionalas-drosibas-komitejas-vaditajam-gruti-atbildet-vai-uzticas-am-politiskajai-vadibai",
+      "note": "Latkovskis (id=114) full name + (JV) party tag + komisijas vadītājs role. Then later just 'Latkovskis' surname — should still resolve to 114.",
+      "text": "Saeimas Nacionālās drošības komisijas vadītājs Ainars Latkovskis (JV) ceturtdien vairījās atbildēt uz jautājumu, vai viņš uzticas Aizsardzības ministrijas (AM) politiskajai vadībai. \"Man ir grūti atbildēt uz šo jautājumu,\" sacīja Latkovskis, pēc NDK sēdes par dronu incidentu Latgalē atbildot žurnālistiem uz jautājumu, vai uzticas AM politiskajai vadībai. Politiķis pauda, ka Nacionālajiem bruņotajiem spēkiem pašreizējā situācijā nav pamata pārmest rīcību.",
+      "expected_matches": [[114, "subject"]]
+    },
+    {
+      "id": "004-valainis-fullname-zzs",
+      "category": "positive-fullname",
+      "doc_id": 30249,
+      "source_url": "https://www.delfi.lv/193/politics/120117283/valainis-ar-rumanijas-vestnieku-vienojas-par-ciesaku-ekonomisko-sadarbibu",
+      "note": "Valainis (id=25) full name + (ZZS) party tag + ekonomikas ministrs role. LETA (id=195) tracked as institutional/journalist voice — matches on agency name.",
+      "text": "Ekonomikas ministrs Viktors Valainis (ZZS) un Rumānijas vēstnieks Latvijā Sergijs Nistors vienojās par ciešāku ekonomiskās sadarbības veicināšanu, tostarp pakalpojumu eksportā un investīciju jomā, aģentūru LETA informēja Ekonomikas ministrijā (EM). Ministrijā norāda, ka trešdien Valainis tikās ar Nistoru, lai pārrunātu abu valstu aktualitātes.",
+      "expected_matches": [[25, "subject"], [195, "mentioned"]]
+    },
+    {
+      "id": "005-dombrava-fullname-na",
+      "category": "positive-fullname",
+      "doc_id": 30242,
+      "source_url": "https://www.delfi.lv/193/politics/120117292/komisija-neatbalsta-uzturesanas-atlauju-izsniegsanas-apturesanu-ja-treso-valstu-pilsonu-skaits-parsniedz-5-no-pilsonu-skaita",
+      "note": "Dombrava (id=6) genitive form 'Jāņa Dombravas (NA)' + later 'Dombravas' surname-only. Clear politician.",
+      "text": "Viens no trešdien skatītajiem un neatbalstītajiem priekšlikumiem bija Saeimas deputāta Jāņa Dombravas (NA) priekšlikums, ka Ministru kabinetam ir jāaptur jaunu uzturēšanās atļauju un ilgtermiņa vīzu izsniegšana trešo valstu pilsoņiem, ja trešo valstu pilsoņu skaits ir pārsniedzis 5% no valstī dzīvojošā Latvijas pilsoņu skaita. Tāpat komisija neatbalstīja Dombravas priekšlikumu, ka ārzemniekam reizi mēnesī ir klātienē jāreģistrē sava uzturēšanās Latvijā Pilsonības un migrācijas lietu pārvaldes nodaļā.",
+      "expected_matches": [[6, "subject"]]
+    },
+    {
+      "id": "006-rajevs-fullname-role",
+      "category": "positive-fullname",
+      "doc_id": 30950,
+      "source_url": "https://www.la.lv/rajevs-krievija-vel-joprojam-doma-ka-ir-spejiga-mus-saskelt",
+      "note": "Igors Rajevs (id=121) full name + IeM parlamentārais sekretārs role tag.",
+      "text": "Igors Rajevs, IeM parlamentārais sekretārs, NBS rezerves pulkvedis, TV24 raidījumā \"Kārtības rullis\" pauda uzskatu, ka galvenais drošības garants Baltijas reģionā ir nelokāma politiskā griba un NATO vienotība. Rajevs norāda, ka Krievija joprojām lolo cerības par Rietumu vienotības graušanu.",
+      "expected_matches": [[121, "subject"]]
+    },
+    {
+      "id": "007-spruds-kozlovskis-multi",
+      "category": "mixed",
+      "doc_id": 30906,
+      "source_url": "https://www.delfi.lv/193/politics/120117393/dienesti-nebija-drosi-ka-necietis-civiliedzivotaji-un-infrastruktura-kapec-rezekne-nenotrieca-dronus",
+      "note": "Two tracked ministers in one piece: Sprūds (16) and Kozlovskis (156), both full name + party tag. Leščinskis is NBS, not a tracked politician.",
+      "text": "Aizsardzības ministrs Andris Sprūds (P) papildināja, ka ir jāizpildās konkrētiem kritērijiem, lai pieņemtu lēmumu par lidojoša objekta notriekšanu. Ir vairāki faktori, kuriem jāizpildās, lai apdzīvotā vietā notriektu dronus, sacīja Sprūds. Sprūds sacīja, ka tiek izskatīti visi iespējamie varianti, tostarp arī tas, ka tie bija Ukrainas droni, kas bija ceļā uz mērķiem Krievijā. Savukārt iekšlietu ministrs Rihards Kozlovskis (JV) uzsvēra, ka iedzīvotājiem vairāk jāievēro šūnu apraides paziņojumā norādītais.",
+      "expected_matches": [[16, "subject"], [156, "mentioned"]]
+    },
+    {
+      "id": "008-melnis-collision-raivis-not-kaspars",
+      "category": "negative-collision",
+      "doc_id": 34100,
+      "source_url": "https://nra.lv/latvija/520976-evika-silina-atklaj-sarunu-taktiku-ar-progresivajiem.htm",
+      "note": "CRITICAL collision case. 'Raivis Melnis' is in tracked_politicians.negative_patterns for Kaspars Melnis (id=157). Document is about Siliņa proposing Raivis Melnis as defense minister — id=157 must NOT match. Siliņa (id=2) MUST match.",
+      "text": "Ministru prezidente Evika Siliņa (JV) šodien pie koalīcijas partneru \"Progresīvo\" Saeimas frakcijas deputātiem ieradīsies runāt, nevis karot, intervijā TV3 raidījumam \"900 sekundes\" apgalvoja premjere. Skaidrojot savu izvēli aizsardzības ministra amatam virzīt Nacionālo bruņoto spēku (NBS) pulkvedi Raivi Melni, Siliņa uzsvēra, ka, viņasprāt, neviens cilvēks no politiskās vides šajā situācijā nespētu aizsardzības ministra amatā iejusties un noorientēties tik ātri kā profesionālis. Tādējādi viņa cer, ka varbūt visi koalīcijas partneri spēs vienoties par Melni kā par kopīgu koalīcijas kandidātu.",
+      "expected_matches": [[2, "subject"]]
+    },
+    {
+      "id": "009-melnis-collision-pulkvedis-only",
+      "category": "negative-collision",
+      "doc_id": 34060,
+      "source_url": "https://www.lsm.lv/raksts/zinas/latvija/13.05.2026-jaudigs-un-ar-ieksejo-dzinuli-kas-ir-aizsardzibas-ministra-amata-kandidats-raivis-melnis.a646769/?utm_source=rss&utm_campaign=rss&utm_medium=links",
+      "note": "Entire piece is about pulkvedis Raivis Melnis (defense minister candidate). 'Raivi Melni' / 'Raivis Melnis' both forms — both in Kaspars Melnis (157) negative_patterns. Expected: no tracked politician matches at all (Raivis Melnis is not himself tracked).",
+      "text": "Jaudīgs un ar iekšējo dzinuli. Kas ir aizsardzības ministra amata kandidāts Raivis Melnis? — Cēlies no Balviem, tādēļ labi zina Latvijas austrumu pierobežas vajadzības un nianses. Jaudīgs komandas spēlētājs ar lielām darba spējām. Tā aizsardzības ministra amata kandidātu pulkvedi Raivi Melni raksturo viņa laikabiedri. Melnis ir arī labi zināms profesionāļu aprindās Baltijas reģionā, Lielbritānijā un Ukrainā, kurš līdz šim pildīja Aizsardzības ministrijas pārstāvja pienākumus.",
+      "expected_matches": []
+    },
+    {
+      "id": "010-kovalenko-collision-ua-andrii",
+      "category": "negative-collision",
+      "doc_id": 33224,
+      "source_url": "https://www.la.lv/lukasenko-aicina-baltkrievijas-armiju-gatavoties-sauszemes-operacijai",
+      "note": "Kovaļenko here = Andrii Kovalenko (UA Pretdezinformācijas centrs), in Dmitrijs Kovaļenko (id=102) negative_patterns. id=102 must NOT match — no LV politician in this document at all.",
+      "text": "Baltkrievijas prezidents Aleksandrs Lukašenko sarīkojis sanāksmi par bruņojumu un aizsardzības pasūtījumiem un negaidīti publiski aicinājis armiju gatavoties \"sauszemes operācijas\" veikšanai iespējama kara gadījumā. Dezinformācijas apkarošanas centrā to nosauca par manipulāciju. Tur uzsvēra, ka Lukašenko runājis par armijas apbruņojuma pieeju maiņu, nevis paziņojis par gatavošanos uzbrukumam. Minskai pašlaik nav resursu pilnvērtīgai sauszemes operācijai. Kovaļenko paziņoja, ka Baltkrievija šobrīd imitē rosīgu darbību, tostarp rada informatīvus viļņus.",
+      "expected_matches": []
+    },
+    {
+      "id": "011-krasta-common-noun-jura",
+      "category": "negative-common-word",
+      "doc_id": 30295,
+      "source_url": "https://nra.lv/neatkariga/ekonomika/520376-rigas-licis-drosibas-osta-kruizu-turistiem.htm",
+      "note": "'krasta' / 'krastā' here is common noun (seashore), not Agnese Krasta (id=108). _COMMON_WORD_FORMS / _surname_has_person_context guard must reject.",
+      "text": "NATO dalībvalstīm Somijai un Igaunijai jāspēj nodalīt Somu līcis kā piefrontes zona Krievijas karā ar Ukrainu no pārējās Baltijas jūras, lai Rīga varētu pārdot drošību un omulību kruīzu reisu pasažieriem. Piektajā gadā kopš Krievijas pilna apmēra iebrukuma Ukrainā frontes līnija aizvirzījusies ne Ukrainas, bet Krievijas iekšienē arī līdz Sanktpēterburgai pie Baltijas jūras Somu līča. Kaujas līdzekļu sprādzieni un ugunsgrēki pārņēmuši šā līča piekrasti Krievijas pusē.",
+      "expected_matches": []
+    },
+    {
+      "id": "012-krasta-common-noun-malaizija",
+      "category": "negative-common-word",
+      "doc_id": 22361,
+      "source_url": "https://nra.lv/pasaule/519166-ugunsgreks-malaizija-1000-nodegusas-majas-evakueti-9000-cilveku.htm",
+      "note": "'krasta līnijas' = shore-line in Malaysia fire article. No LV politicians.",
+      "text": "Ugunsgrēkā piekrastes ciematā Borneo Malaizijas daļā, nodegušas aptuveni 1000 māju un vairāk nekā 9000 cilvēku bijuši spiesti pamest savu dzīvesvietu, paziņoja vietējās varasiestādes. Ūdens ciemati jeb neoficiālas apmetnes, kas uzceltas virs jūras, atrodas gar lielu daļu krasta līnijas Sabahā, kas ir viena no nabadzīgākajām Malaizijas pavalstīm. Premjerministrs Anvars Ibrahims teica, ka federālās un štata institūcijas koordinē palīdzības pasākumus.",
+      "expected_matches": []
+    },
+    {
+      "id": "013-vestnesis-virsnieka-pavele-ozols",
+      "category": "negative-vestnesis-strict",
+      "doc_id": 34347,
+      "source_url": "https://www.vestnesis.lv/ta/id/368298",
+      "note": "Vēstnesis pavēle nameslist: 'leitnantam Matīsam Ozolam' — surname form 'Ozolam' appears but with NO Otto Ozols (id=182) first-name context. _filter_vestnesis_strict must drop. Otto Ozols's negative_pattern also contains 'virsnieka dienesta pakāpe' which appears here.",
+      "text": "Par virsnieka dienesta pakāpes piešķiršanu — Valsts prezidenta informācija. Daru zināmu, ka Valsts prezidents 2026. gada 11. maijā izdeva pavēli Nr. 4-v \"Par virsnieka dienesta pakāpes piešķiršanu\", ar kuru pavēlēja piešķirt kārtējo dienesta pakāpi šādiem karavīriem: Pulkvežleitnanta pakāpi: majoram Eduardam Šinkūnam, majoram Armīnam Āmuram; Majora pakāpi: kapteinim Kristapam Krūzem, kapteinim Jānim Blažim; Kapteiņa pakāpi: virsleitnantam Mārim Ābelem, virsleitnantam Artūram Zūbergam; Virsleitnanta pakāpi: leitnantam Edgaram Stiprovietim, leitnantam Norbertam Dānielam Dovgānam, leitnantam Matīsam Ozolam, leitnantam Jevgenijam Zinovjevam.",
+      "expected_matches": []
+    },
+    {
+      "id": "014-vestnesis-mk-noteikumi-no-politicians",
+      "category": "negative-no-politician",
+      "doc_id": 34348,
+      "source_url": "https://www.vestnesis.lv/ta/id/368301",
+      "note": "Pure regulatory text. No tracked politician mentioned. Should return [].",
+      "text": "Grozījumi Ministru kabineta 2014. gada 26. maija noteikumos Nr. 265 \"Jaunatnes konsultatīvās padomes nolikums\". Ministru kabineta noteikumi Nr. 247 Rīgā 2026. gada 12. maijā. Izteikt 3.2. apakšpunktu šādā redakcijā: reizi gadā kopīgi ar visām nozaru ministrijām izvērtēt, vai situācija jaunatnes politikas īstenošanā atbilst jaunatnes politikas attīstības plānošanas dokumentos un Jaunatnes politikas valsts programmā noteiktajam, un sniegt Izglītības un zinātnes ministrijai ieteikumus par prioritārajiem atbalsta virzieniem un pasākumiem jaunatnes politikā nākamajā gadā.",
+      "expected_matches": []
+    },
+    {
+      "id": "015-no-politician-gardening",
+      "category": "negative-no-politician",
+      "doc_id": 27546,
+      "source_url": "https://www.la.lv/velos-paslepties-no-kaiminiem-labakie-lapukoki-skaistam-dzivzogam",
+      "note": "Garden advice article. Contains 'Daina M.' and 'Maija B.' — first-name-only readers. 'Dace Dinsberga' is a stāduaudzētavas owner, not tracked. Should match nothing.",
+      "text": "Kā iekārtot ciešu dzīvžogu no lapukokiem, lai neredzētu kaimiņos topošo autoservisu? Jautā Daina M. Kādu dzīvžogu izvēlēties ziemeļu pusē, kas nav tik ass kā vilkābele, bet labi pasargā no ielas skatiem? Jautā Maija B. Konsultē Talsu novada stāduaudzētavas \"Crataegus\" īpašniece Dace Dinsberga. Dzīvžogs rada privātuma sajūtu dārzā, aizsargā pret putekļiem, no valdošajiem vējiem, trokšņiem un dod patvērumu putniem.",
+      "expected_matches": []
+    },
+    {
+      "id": "016-butans-vitenbergs-fullname-na",
+      "category": "positive-fullname",
+      "doc_id": 30915,
+      "source_url": "https://www.delfi.lv/52061569/atmaskots/120117338/sis-patiesi-ir-sokejosi-vai-csdd-eksamenus-drikst-kartot-krievu-valoda",
+      "note": "Two NA deputies introduce the proposal together: Artūrs Butāns (id=82) and Jānis Vitenbergs (id=139). Both full name + (NA) party tag.",
+      "text": "Otrdien, 5. maijā, Saeimas Tautsaimniecības, agrārās, vides un reģionālās politikas komisijas sēdē deputāti strādāja pie grozījumiem Ceļu satiksmes likumā. Kā liecina Saeimas mājaslapā pieejamā informācija, Nacionālās apvienības (NA) deputāti Artūrs Butāns un Jānis Vitenbergs iesniedza priekšlikumu papildināt likumu.",
+      "expected_matches": [[82, "subject"], [139, "mentioned"]]
+    },
+    {
+      "id": "017-saeimas-deputatu-algas-multi",
+      "category": "mixed",
+      "doc_id": 20865,
+      "source_url": "https://nra.lv/latvija/518078-no-deputatiem-lielaka-alga-februari-bijusi-7645-85-eiro.htm",
+      "note": "Salary list naming 15 tracked deputies. All appear with first+last name (some inflected). Critical excludes: Andris Bērziņš (id=146, ZZS) must NOT match — 'Inga Bērziņa' (id=144) is a different person with feminine surname. Līga Kļaviņa (id=104) must NOT match — 'Jeļena Kļaviņa' (id=100) is a different person. Igors Judins (id=149) must NOT match — 'Andrejam Judinam' refers to Andrejs Judins (id=68).",
+      "text": "No Saeimas deputātiem vislielāko atalgojumu 2026. gada februārī saņēmusi Saeimas priekšsēdētāja Daiga Mieriņa (ZZS), kurai izmaksāti 7645,85 eiro. Otru lielāko algu februārī saņēmis Jānis Grasbergs (NA) - 5468,56 eiro, savukārt trešajā vietā ierindojas Antoņina Ņenaševa (P). Tālāk seko Jānis Dombrava (NA) ar 5216,79 eiro, Andris Šuvajevs (P) ar 5089,05 eiro un Jānis Vucāns (ZZS), kurš februārī nopelnījis 5017,92 eiro. Līdzīgā līmenī atalgojums bijis arī Andrejam Judinam (JV) un Raivim Dzintaram (NA), kuru saņemtās summas nedaudz pārsniedza 4900 eiro robežu. Alga februārī šādā līmenī bijusi arī Agnesei Krastai (JV), Gatim Liepiņam (JV), Uģim Mitrevicam (NA), kā arī Ingai Bērziņai (JV) un Edmundam Cepurītim (P). Savukārt viszemāko atalgojumu februārī saņēmis Dmitrijs Kovaļenko, kura algas apmērs bija 602,47 eiro, bet Jeļenai Kļaviņai izmaksāti 711,77 eiro.",
+      "expected_matches": [[6, "mentioned"], [12, "mentioned"], [17, "subject"], [18, "mentioned"], [68, "mentioned"], [76, "mentioned"], [89, "mentioned"], [100, "mentioned"], [102, "mentioned"], [108, "mentioned"], [115, "mentioned"], [116, "mentioned"], [118, "mentioned"], [137, "mentioned"], [144, "mentioned"]],
+      "expected_excludes": [146, 104, 149]
+    },
+    {
+      "id": "018-tutins-kopa-latvijai-mayor",
+      "category": "positive-surname-with-context",
+      "doc_id": 30631,
+      "source_url": "https://www.delfi.lv/193/politics/120117318/dronu-nokrisana-arkartas-gadijums-verte-spruds-rezekne-atceltas-macibas-saka-mers",
+      "note": "Jānis Tutins (id=180) full name + 'Rēzeknes mērs' + 'Kopā Latvijai' party tag. Sprūds (16) also clearly attributed. Two-politician case.",
+      "text": "\"Pilnīgi skaidrs, kas šis ir ārkārtas gadījums, tā ka vērtēsim arī tālāk valdībā,\" dronu ielidošanu šorīt Latgalē Latvijas Televīzijas raidījumam \"Rīta panorāma\" komentēja Aizsardzības ministrs Andris Sprūds (P). Sprūds arī skaidroja, ka patlaban notiek aktīva saziņa starp atbildīgajām iestādēm un arī pašvaldībām. Rēzeknes mērs Jānis Tutins (\"Kopā Latvijai\") LTV sacīja, ka saistībā ar notikušo ir piemēroti drošības pasākumi.",
+      "expected_matches": [[16, "subject"], [180, "mentioned"]]
+    }
+  ]
+}

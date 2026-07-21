@@ -1,0 +1,91 @@
+# atmina.lv
+#
+# 1. Extensionless URL support — /blog/2026-04-23 → /blog/2026-04-23.html
+# 2. Compression for JSON/JS/CSS — LiteSpeed compresses HTML by default
+#    but skips other text MIME types, so the 455KB pozicijas-data.json
+#    transferred uncompressed (~28s on shared host) until this file
+#    explicitly opted-in (2026-04-25).
+
+RewriteEngine On
+
+# Serve pre-compressed pozicijas-data.json.br/.gz when client supports it
+# (LiteSpeed does NOT auto-compress application/json on this shared host).
+# Build emits both variants alongside the .json (see src/generate.py).
+RewriteCond %{HTTP:Accept-Encoding} br
+RewriteCond %{REQUEST_FILENAME}.br -f
+RewriteRule ^(.+\.json)$ $1.br [L]
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.+\.json)$ $1.gz [L]
+
+# Set correct Content-Type + Content-Encoding for served pre-compressed JSON.
+<FilesMatch "\.json\.br$">
+  AddType application/json .br
+  Header set Content-Encoding br
+</FilesMatch>
+<FilesMatch "\.json\.gz$">
+  AddType application/json .gz
+  Header set Content-Encoding gzip
+</FilesMatch>
+
+# Serve .html when extensionless URL requested
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+ErrorDocument 404 /404.html
+
+# --- Compression for text resources ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# LiteSpeed brotli (preferred where supported; gzip fallback above)
+<IfModule LiteSpeed>
+  SetEnvIfNoCase Request_URI \.(html|css|js|json|svg|xml|txt)$ no-gzip=0
+</IfModule>
+
+# --- Security headers (2026-07-23) ---
+# CSP allowlist mirrors the actual page inventory — update it when a new
+# external host is introduced, or the resource silently stops loading:
+#   scripts: self ONLY (all JS lives in assets/*.js — no inline; locked by
+#            tests/test_no_inline_js.py), cloud.umami.is (analytics),
+#            d3js.org (saites.html)
+#   styles:  self + inline style attrs, fonts.googleapis.com
+#   fonts:   fonts.gstatic.com
+#   connect: self (pozicijas-data.json u.c. sidecar JSON), gateway.umami.is (analytics beacon)
+# script-src has NO 'unsafe-inline' (strict-CSP refactor 2026-07-23): any
+# inline <script> or on*= attribute is silently BLOCKED by browsers. Data
+# blocks use <script type="application/json"> (non-executable, CSP-exempt).
+# style-src keeps 'unsafe-inline' deliberately — style="" attrs are sitewide.
+<IfModule mod_headers.c>
+  # Browsers ignore HSTS on plain-HTTP responses, so an unconditional set is
+  # safe. No includeSubDomains — subdomain HTTPS coverage unverified.
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cloud.umami.is https://d3js.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://gateway.umami.is https://cloud.umami.is; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>
+
+# --- Cache headers ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # JSON data files — short cache so daily routine updates flow through
+  ExpiresByType application/json "access plus 5 minutes"
+  # Static assets — long cache (filenames are versioned via ?v= query)
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+</IfModule>

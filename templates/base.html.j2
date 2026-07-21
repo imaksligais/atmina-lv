@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light" id="meta-color-scheme">
+  {#- Vietnei ir PAŠAI sava tumšā tēma (data-theme pārslēgs) — darkreader-lock
+      liek DarkReader-saimes rīkiem (t.sk. Brave iOS Night Mode) neaiztikt
+      lapu; bez tā gaišā tēma tiek pārkrāsota olīvbrūnā puskrāsojumā. -#}
+  <meta name="darkreader-lock">
+  <meta name="theme-color" content="#f7f3e8" id="meta-theme-color">
+  <title>{% block title %}atmina.lv{% endblock %} — Politiskā atmiņa</title>
+  <meta name="description" content="{% block description %}atmina.lv — Latvijas politiķu pozīcijas, pretrunas un balsojumi. Strukturēta, pārbaudāma informācija par politisko darbību.{% endblock %}">
+  {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+  <meta property="og:title" content="{% block og_title %}atmina.lv — Politiskā atmiņa{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Latvijas politiķu pozīcijas, pretrunas un balsojumi.{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="lv_LV">
+  <meta property="og:site_name" content="atmina.lv">
+  <meta property="og:image" content="{% block og_image %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og-image.png{% endblock %}">
+  <meta property="og:image:width" content="{% block og_image_width %}1200{% endblock %}">
+  <meta property="og:image:height" content="{% block og_image_height %}630{% endblock %}">
+  <meta property="og:image:alt" content="{{ self.og_title() }}">
+  {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@atmina_lv">
+  <meta name="twitter:title" content="{{ self.og_title() }}">
+  <meta name="twitter:description" content="{{ self.og_description() }}">
+  <meta name="twitter:image" content="{{ self.og_image() }}">
+  <meta name="twitter:image:alt" content="{{ self.og_title() }}">
+  <link rel="icon" type="image/svg+xml" href="{{ assets_prefix }}assets/favicon.svg">
+  {#- Rastra favicons Google meklēšanai (vadlīnijas: >=48px, 48 daudzkārtnis;
+      SVG ar prefers-color-scheme Google renderis rāda nestabili). Ģenerē ar
+      scripts/make_favicons.py no tā paša #atm-logo dizaina. -#}
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ assets_prefix }}assets/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ assets_prefix }}assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="{{ assets_prefix }}assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {# Mono-only preload by design. Do NOT add family=Newsreader (or any serif):
+     Newsreader misrenders Latvian diacritics; serif is Georgia via --xv1-serif
+     in assets/style.css. See 53a347a (2026-04-18). -#}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" media="print" data-font-async>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <script src="{{ assets_prefix }}assets/theme-init.js?v={{ assets_version }}"></script>
+  <link rel="stylesheet" href="{{ assets_prefix }}assets/style.css?v={{ assets_version }}">
+  {% block styles %}{% endblock %}
+  {%- set _site_url = BASE_URL|default('https://atmina.lv') %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "atmina.lv",
+    "url": "{{ _site_url }}",
+    "logo": "{{ _site_url }}/assets/logo.svg",
+    "description": "Latvijas politiķu pozīcijas, pretrunas un balsojumi — strukturēta, pārbaudāma informācija par politisko darbību.",
+    "sameAs": ["https://x.com/AtminaLV"]
+  }
+  </script>
+  {% block jsonld %}{% endblock %}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="ed2729be-82e1-48d9-a164-645a8f389d35"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="atm-logo" viewBox="0 0 64 64">
+    <circle cx="27" cy="27" r="17" fill="none" stroke-width="5.5" style="stroke:var(--logo-ring)"/>
+    <line x1="40.5" y1="40.5" x2="52" y2="52" stroke-width="5.5" stroke-linecap="round" style="stroke:var(--logo-ring)"/>
+    <circle cx="27" cy="27" r="6" style="fill:var(--logo-dot)"/>
+  </symbol>
+</svg>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+  <nav class="nav">
+    <div class="container">
+      <a href="{{ assets_prefix }}index.html" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="atmina.lv"><use href="#atm-logo"/></svg>
+        <span class="nav-logo-text">atmina.lv</span>
+      </a>
+      <button type="button" id="nav-burger" class="nav-burger" aria-label="Atvērt izvēlni" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-menu">
+        <a href="{{ assets_prefix }}pretrunas.html"{% if active_page == "pretrunas" %} class="active" aria-current="page"{% endif %}>Pretrunas</a>
+        <a href="{{ assets_prefix }}pozicijas.html"{% if active_page == "pozicijas" %} class="active" aria-current="page"{% endif %}>Pozīcijas</a>
+        <a href="{{ assets_prefix }}balsojumi.html"{% if active_page == "balsojumi" %} class="active" aria-current="page"{% endif %}>Balsojumi</a>
+        <a href="{{ assets_prefix }}temas.html"{% if active_page == "temas" %} class="active" aria-current="page"{% endif %}>Tēmas</a>
+        <a href="{{ assets_prefix }}personas.html"{% if active_page == "personas" %} class="active" aria-current="page"{% endif %}>Profili</a>
+        <a href="{{ assets_prefix }}analizes.html"{% if active_page == "analizes" %} class="active" aria-current="page"{% endif %}>Analīzes</a>
+        <div class="nav-more">
+          <button type="button" class="nav-more-btn{% if active_page in ['partijas', 'mediji', 'zinas', 'x', 'likumi', 'spriedzes', 'saites', 'finanses', 'statistika'] %} active{% endif %}" aria-expanded="false" aria-controls="nav-more-menu">Vairāk<span class="nav-more-caret" aria-hidden="true">▾</span></button>
+          <div class="nav-more-menu" id="nav-more-menu">
+            <a href="{{ assets_prefix }}partijas.html"{% if active_page == "partijas" %} class="active" aria-current="page"{% endif %}>Partijas</a>
+            <a href="{{ assets_prefix }}mediji.html"{% if active_page == "mediji" %} class="active" aria-current="page"{% endif %}>Mediji</a>
+            <a href="{{ assets_prefix }}zinas.html"{% if active_page == "zinas" %} class="active" aria-current="page"{% endif %}>Ziņas</a>
+            <a href="{{ assets_prefix }}x.html"{% if active_page == "x" %} class="active" aria-current="page"{% endif %}>X</a>
+            <a href="{{ assets_prefix }}likumi.html"{% if active_page == "likumi" %} class="active" aria-current="page"{% endif %}>Likumi</a>
+            <a href="{{ assets_prefix }}spriedzes.html"{% if active_page == "spriedzes" %} class="active" aria-current="page"{% endif %}>Spriedzes</a>
+            <a href="{{ assets_prefix }}saites.html"{% if active_page == "saites" %} class="active" aria-current="page"{% endif %}>Saites</a>
+            <a href="{{ assets_prefix }}finanses.html"{% if active_page == "finanses" %} class="active" aria-current="page"{% endif %}>Finanses</a>
+            <a href="{{ assets_prefix }}statistika.html"{% if active_page == "statistika" %} class="active" aria-current="page"{% endif %}>Statistika</a>
+          </div>
+        </div>
+        {% if active_page != "index" %}
+        {# Kompaktais meklētājs — visās lapās izņemot sākumlapu (tur ir hero meklētājs).
+           Progresīvā uzlabošana: bez JS strādā kā parasts GET uz pozicijas.html?q=. #}
+        <form class="nav-search" action="{{ assets_prefix }}pozicijas.html" method="get" role="search" data-sg-index="{{ assets_prefix }}data/sg-index.json">
+          <svg class="nav-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          <input type="search" name="q" class="nav-search-input" placeholder="Meklēt…" aria-label="Meklēt" autocomplete="off">
+        </form>
+        {% endif %}
+      </div>
+      <button type="button" id="nav-sound" class="nav-icon-btn" role="switch" aria-checked="false" aria-label="Skaņu efekti" title="Skaņu efekti">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 5.5 6.6 9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.6L11 18.5v-13z"/>
+          <path class="nav-sound-wave" d="M14.5 9.7a3.5 3.5 0 0 1 0 4.6"/>
+          <path class="nav-sound-wave" d="M16.8 7.6a7 7 0 0 1 0 8.8"/>
+          <line class="nav-sound-slash" x1="4.5" y1="19.5" x2="19.5" y2="4.5"/>
+        </svg>
+      </button>
+      <button type="button" id="nav-theme" class="nav-icon-btn" role="switch" aria-checked="false" aria-label="Gaišais režīms" title="Gaišais/tumšais režīms">
+        <svg class="nav-icon nav-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5"/>
+        </svg>
+        <svg class="nav-icon nav-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <script src="{{ assets_prefix }}assets/chrome-v1.js?v={{ assets_version }}" defer></script>
+
+  <main class="container" id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <svg class="footer-logo-icon" viewBox="0 0 64 64" width="20" height="20" role="img" aria-label="atmina.lv"><use href="#atm-logo"/></svg>
+        <span class="footer-tagline">Politisk&#257; caurskat&#257;m&#299;ba</span>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <strong>atmina.lv</strong> — Politiskā atmiņa<br>
+          <small>Dati no publiskiem avotiem. MI-asistēta analīze ar ticamības novērtējumiem.</small>
+        </div>
+        <div>
+          <strong>Metodoloģija</strong><br>
+          <small>MI-asistēta pozīciju identifikācija · Ticamības novērtējumi (0.0–1.0) · Saeimas balsojumi</small>
+        </div>
+        <div style="text-align: right;">
+          <div>Saeimas vēlēšanas: <strong>2026-10-03</strong></div>
+          <div style="margin-top: 0.25rem; display: inline-flex; align-items: center; gap: 0.6rem;">
+            <a href="{{ assets_prefix }}about.html" style="color: var(--text-muted); font-size: 0.8rem;">Par mums</a>
+            <span style="color: var(--border);">·</span>
+            <a href="{{ assets_prefix }}kontakti.html" style="color: var(--text-muted); font-size: 0.8rem;">Kontakti</a>
+            <span style="color: var(--border);">·</span>
+            <a href="https://x.com/AtminaLV" target="_blank" rel="noopener" aria-label="atmina.lv uz X" class="footer-x-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/atminaLV" target="_blank" rel="noopener" aria-label="atmina.lv Facebook lapa" class="footer-fb-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/imaksligais/atmina-lv" target="_blank" rel="noopener" aria-label="atmina.lv pirmkods GitHub" class="footer-gh-link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ assets_prefix }}assets/sgv1.js?v={{ assets_version }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

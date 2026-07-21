@@ -1,0 +1,254 @@
+{% extends "base.html.j2" %}
+{% set active_page = "finanses" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Partiju finanses{% endblock %}
+{% block description %}Partiju ziedojumu dati no KNAB publiskas datu bazes. Lielako partiju finanses, ziedojumi un neatbilstibas.{% endblock %}
+
+{% block content %}
+{# ── Section 1: Stats bar ── #}
+<section class="section">
+  <div class="section-header">
+    <h2>Partiju finanses</h2>
+    <span class="count">KNAB publiska datu baze</span>
+  </div>
+  <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+    Dati par partiju ziedojumiem no KNAB (Korupcijas novēršanas un apkarošanas biroja) publiskās datubāzes.
+    Periods: 2002–2026. Automātiski atjaunināts.
+  </p>
+
+  <section class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.total_donations) }}</div>
+      <div class="stat-label">Ziedojumi</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ "{:,.0f}".format(stats.total_eur) }} &euro;</div>
+      <div class="stat-label">Kopeja summa</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.unique_donors) }}</div>
+      <div class="stat-label">Unikalte ziedotaji</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ stats.party_count }}</div>
+      <div class="stat-label">Partijas</div>
+    </div>
+  </section>
+</section>
+
+{# ── Highlights: Galvenie atklājumi ── #}
+{% if highlights %}
+<section class="section">
+  <div class="section-header">
+    <h2>Galvenie atklājumi</h2>
+  </div>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:1rem;">
+    {% for h in highlights %}
+    <div style="padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid {{ h.color }};">
+      <div style="font-size:0.8rem; text-transform:uppercase; color:{{ h.color }}; margin-bottom:0.5rem; font-weight:600;">{{ h.category }}</div>
+      <div style="font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">{{ h.title }}</div>
+      <div style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">{{ h.text }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{# ── Section 2: Partiju finanses 2025 ── #}
+{% if declarations_2025 %}
+<section class="section">
+  <div class="section-header">
+    <h2>Partiju finanses 2025</h2>
+    <span class="count">{{ declarations_2025|length }} deklaracijas</span>
+  </div>
+
+  <div style="margin-bottom:1rem;">
+    <input type="text" id="decl-search" placeholder="Meklet partiju..."
+           style="background:var(--surface); border:1px solid var(--border); border-radius:2rem; padding:0.5rem 1rem; color:var(--text); font-size:0.9rem; width:100%; max-width:360px;"
+           data-filter-table="decl-table">
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table" id="decl-table">
+      <thead>
+        <tr>
+          <th>Partija</th>
+          <th>Ieņēmumi</th>
+          <th>Ziedojumi</th>
+          <th>Valsts budžets</th>
+          <th>Reklāma</th>
+          <th>Algas</th>
+          <th>2026 ziedojumi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in declarations_2025 %}
+        <tr>
+          <td>{{ d.party_short }}</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.income_total) }} &euro;</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.income_donations) }} &euro;</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.income_state_budget) }} &euro;</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.expenses_advertising) }} &euro;</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.expenses_salaries) }} &euro;</td>
+          <td style="text-align:right;">{% if d.donations_2026 %}<strong{% if d.donations_2026 > d.income_donations %} style="color:var(--red-bright);"{% endif %}>{{ "{:,.0f}".format(d.donations_2026) }} &euro;</strong>{% else %}—{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+{# ── Section 3: TOP 20 partijas pec ziedojumiem ── #}
+<section class="section">
+  <div class="section-header">
+    <h2>TOP 20 partijas pec ziedojumiem</h2>
+    <span class="count">{{ parties|length }} partijas</span>
+  </div>
+
+  <div style="margin-bottom:1rem;">
+    <input type="text" id="party-search" placeholder="Meklet partiju..."
+           style="background:var(--surface); border:1px solid var(--border); border-radius:2rem; padding:0.5rem 1rem; color:var(--text); font-size:0.9rem; width:100%; max-width:360px;"
+           data-filter-table="parties-table">
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table" id="parties-table">
+      <thead>
+        <tr>
+          <th>Partija</th>
+          <th>Ziedojumu sk.</th>
+          <th>Kopa EUR</th>
+          <th>Unikalte ziedotaji</th>
+          <th>Vid. ziedojums</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in parties %}
+        <tr>
+          <td>{{ p.party }}</td>
+          <td style="text-align:right;">{{ "{:,}".format(p.donation_count) }}</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(p.total_eur) }} &euro;</td>
+          <td style="text-align:right;">{{ "{:,}".format(p.unique_donors) }}</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(p.avg_donation) }} &euro;</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{# ── Section 4: TOP 30 ziedotaji ── #}
+<section class="section">
+  <div class="section-header">
+    <h2>TOP 30 ziedotaji</h2>
+    <span class="count">{{ donors|length }} ziedotaji</span>
+  </div>
+
+  <div style="margin-bottom:1rem;">
+    <input type="text" id="donor-search" placeholder="Meklet ziedotaju..."
+           style="background:var(--surface); border:1px solid var(--border); border-radius:2rem; padding:0.5rem 1rem; color:var(--text); font-size:0.9rem; width:100%; max-width:360px;"
+           data-filter-table="donors-table">
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table" id="donors-table">
+      <thead>
+        <tr>
+          <th>Vards</th>
+          <th>Kopa EUR</th>
+          <th>Ziedojumu sk.</th>
+          <th>Partijas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in donors %}
+        <tr>
+          <td>{{ d.donor_name }}</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(d.total_eur) }} &euro;</td>
+          <td style="text-align:right;">{{ d.donation_count }}</td>
+          <td style="font-size:0.85rem; color:var(--text-muted);">{{ d.parties }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{# ── Section 5: Deputati — ziedotaji ── #}
+{% if politician_donors %}
+<section class="section">
+  <div class="section-header">
+    <h2>Deputati — ziedotaji</h2>
+    <span class="count">{{ politician_donors|length }} politiki</span>
+  </div>
+
+  <div style="margin-bottom:1rem;">
+    <input type="text" id="poldonor-search" placeholder="Meklet politiki..."
+           style="background:var(--surface); border:1px solid var(--border); border-radius:2rem; padding:0.5rem 1rem; color:var(--text); font-size:0.9rem; width:100%; max-width:360px;"
+           data-filter-table="poldonor-table">
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table" id="poldonor-table">
+      <thead>
+        <tr>
+          <th>Politikis</th>
+          <th>Partija</th>
+          <th>Ziedots EUR</th>
+          <th>Kam ziedojis</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pd in politician_donors %}
+        <tr>
+          <td>{{ pd.politician_name }}</td>
+          <td>{{ pd.party }}</td>
+          <td style="text-align:right;">{{ "{:,.0f}".format(pd.total_eur) }} &euro;</td>
+          <td style="font-size:0.85rem; color:var(--text-muted);">{{ pd.donated_to }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+{# ── Section 6: Neatbilstibas ── #}
+{% if mismatches %}
+<section class="section">
+  <div class="section-header">
+    <h2>Neatbilstibas</h2>
+    <span class="count">{{ mismatches|length }} ziedojumu/deklaraciju neatbilstibas</span>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table" id="mismatch-table">
+      <thead>
+        <tr>
+          <th>Partija</th>
+          <th>Svarigums</th>
+          <th>Apraksts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in mismatches %}
+        <tr>
+          <td>{{ m.party }}</td>
+          <td>
+            <span class="badge {% if m.severity == 'critical' %}badge-red{% elif m.severity == 'warning' %}badge-yellow{% elif m.severity == 'high' %}badge-orange{% else %}badge-blue{% endif %}">{{ m.severity }}</span>
+          </td>
+          <td style="font-size:0.9rem;">{{ m.description }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ assets_prefix }}assets/fnv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

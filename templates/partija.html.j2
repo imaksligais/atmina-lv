@@ -1,0 +1,234 @@
+{% extends "base.html.j2" %}
+{% set active_page = "partijas" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ party.display_name or party.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <a href="../partijas.html" class="back-link">&larr; Visas partijas</a>
+
+  <div class="profile-card" style="--party-color: {{ party.color }};">
+    <div class="profile-card-top party-header-split">
+      <div class="profile-identity">
+        <div class="profile-name-row">
+          <h1>{{ party.display_name or party.name }}</h1>
+          <div class="profile-links">
+            {% if party.x_handle %}
+            <a href="https://x.com/{{ party.x_handle }}" target="_blank" rel="noopener" title="@{{ party.x_handle }}">
+              <svg viewBox="0 0 24 24" class="profile-link-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            {% endif %}
+            {% if party.website %}
+            <a href="{{ party.website }}" target="_blank" rel="noopener" title="{{ party.website }}" class="profile-link-icon-wrap">
+              <svg viewBox="0 0 24 24" class="profile-link-icon" style="width:16px;height:16px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="profile-meta">
+          <span class="profile-role">{{ party.ideology or '' }}</span>
+          <span class="profile-party-tag">{% if party.coalition_status == 'coalition' %}Koalīcija{% elif party.coalition_status == 'not_in_saeima' %}Nav Saeimā{% else %}Opozīcija{% endif %}</span>
+        </div>
+      </div>
+      {% if last_news or last_x %}
+      <div class="party-last-activity">
+        <span class="party-activity-label">Pēdējā aktivitāte</span>
+        {% if last_news %}
+        <a href="{{ last_news.url | safe_url }}" target="_blank" rel="noopener" class="party-activity-item" title="{{ last_news.politician }} — {{ last_news.title_full }}">
+          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:var(--text-muted);flex-shrink:0;"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+          <span class="party-activity-text">{{ last_news.politician }} — {{ last_news.title }}</span>
+          <span class="party-activity-date">{{ last_news.date[5:] }}</span>
+        </a>
+        {% endif %}
+        {% if last_x %}
+        <a href="{{ last_x.url | safe_url }}" target="_blank" rel="noopener" class="party-activity-item" title="{{ last_x.politician }} — {{ last_x.title_full }}">
+          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:var(--text-muted);flex-shrink:0;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="party-activity-text">{{ last_x.politician }} — {{ last_x.title }}</span>
+          <span class="party-activity-date">{{ last_x.date[5:] }}</span>
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="profile-stats-bar">
+      <button class="profile-stat active" data-tab="biedri">
+        <span class="profile-stat-value">{{ members|length }}</span>
+        <span class="profile-stat-label">Biedri</span>
+      </button>
+      <button class="profile-stat" data-tab="pozicijas">
+        <span class="profile-stat-value">{{ claims|length }}</span>
+        <span class="profile-stat-label">Pozīcijas</span>
+      </button>
+      {% if program_by_topic %}
+      <button class="profile-stat" data-tab="programma">
+        <span class="profile-stat-value">{{ program_count }}</span>
+        <span class="profile-stat-label">Programma</span>
+      </button>
+      {% endif %}
+      <button class="profile-stat" data-tab="balsojumi">
+        <span class="profile-stat-value">{{ votes|length }}</span>
+        <span class="profile-stat-label">Balsojumi</span>
+      </button>
+      {% if tensions %}
+      <button class="profile-stat" data-tab="spriedzes">
+        <span class="profile-stat-value">{{ tensions|length }}</span>
+        <span class="profile-stat-label">Spriedzes</span>
+      </button>
+      {% endif %}
+      {% if knab_summary %}
+      <button class="profile-stat" data-tab="finanses">
+        <span class="profile-stat-value">€{{ "{:,.0f}".format(knab_summary.total_donations) }}</span>
+        <span class="profile-stat-label">Finanses</span>
+      </button>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Biedri tab -->
+  <div class="party-tab" id="tab-biedri">
+    <div class="politicians-grid">
+      {% for m in members %}
+      <div class="politician-card" style="border-left: 3px solid {{ m.party_color or 'var(--border)' }};">
+        <div class="card-header">
+          {% if m.has_photo %}<img src="../assets/photos/{{ m.slug }}.jpg" alt="{{ m.name }}" class="card-avatar">{% else %}<div class="card-avatar-placeholder">{{ m.name[0] }}</div>{% endif %}
+          <div class="card-info">
+            <div class="card-name-row">
+              <a href="../politiki/{{ m.slug }}.html" class="politician-card-name">{{ m.name }}</a>
+              {% if m.x_handle %}<a href="https://x.com/{{ m.x_handle }}" target="_blank" rel="noopener" class="x-icon-link" title="@{{ m.x_handle }}"><svg viewBox="0 0 24 24" class="x-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>{% endif %}
+            </div>
+            <div class="card-role" title="{{ m.role or '' }}">{{ m.role or '' }}</div>
+          </div>
+        </div>
+        <div class="politician-card-stats">
+          <span>{{ m.claims_count }} poz.</span>
+          <span class="stat-dot">·</span>
+          {% if m.contradictions_count > 0 %}<span style="color:var(--red-bright);">{{ m.contradictions_count }} pretr.</span>{% else %}<span>0 pretr.</span>{% endif %}
+          <span class="stat-dot">·</span>
+          <span>{{ m.votes_count }} bals.</span>
+        </div>
+        {% if m.last_activity %}
+        <div class="card-last-activity">
+          <span class="activity-date">{{ m.last_activity.date[5:] }}</span>
+          <span class="stat-dot">·</span>
+          <a href="../{{ m.last_activity.href }}" class="activity-label">{{ m.last_activity.icon }} {{ m.last_activity.label }}</a>
+          {% if m.last_activity.source_url %}
+          <a href="{{ m.last_activity.source_url | safe_url }}" target="_blank" rel="noopener" class="activity-source">↗</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Pozīcijas tab -->
+  <div class="party-tab" id="tab-pozicijas" style="display:none;">
+    {% if claims %}
+    {% for c in claims %}
+    <div class="card" style="margin-bottom:0.75rem;">
+      <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <a href="../politiki/{{ c.slug }}.html" style="font-weight:600;">{{ c.politician_name }}</a>
+        <span class="topic-tag">{{ c.topic }}</span>
+        <span style="color:var(--text-muted); font-size:0.8rem; margin-left:auto;">{{ c.stated_at[:10] if c.stated_at else '' }}</span>
+      </div>
+      <div style="font-size:0.9rem; line-height:1.5;">{{ c.stance }}</div>
+      {% if c.source_url %}<a href="{{ c.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem; display:inline-block;">Avots ↗</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="color:var(--text-muted);">Nav pozīciju.</p>
+    {% endif %}
+  </div>
+
+  <!-- Programma tab -->
+  {% if program_by_topic %}
+  <div class="party-tab" id="tab-programma" style="display:none;">
+    <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1rem;">Priekšvēlēšanu programmas solījumi pa tēmām. Katrs solījums saistīts ar avotu.</p>
+    {% for group in program_by_topic %}
+    <div style="margin-bottom:1.25rem;">
+      <h2 class="topic-tag" style="display:inline-block; margin-bottom:0.5rem; font-size:1.25rem;">{{ group.topic }}</h2>
+      {% for p in group.promises %}
+      <div class="card" style="margin-bottom:0.6rem;">
+        <div style="font-size:0.9rem; line-height:1.5;">{{ p.stance }}</div>
+        {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem; display:inline-block;">Avots ↗</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Balsojumi tab -->
+  <div class="party-tab" id="tab-balsojumi" style="display:none;">
+    {% if votes %}
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr><th>Datums</th><th>Balsojums</th><th>Par</th><th>Pret</th><th>Atturas</th></tr>
+        </thead>
+        <tbody>
+          {% for v in votes %}
+          <tr>
+            <td style="white-space:nowrap;">{{ v.date }}</td>
+            <td>{{ v.summary }}</td>
+            <td style="color:var(--green); text-align:center;">{{ v.par }}</td>
+            <td style="color:var(--red); text-align:center;">{{ v.pret }}</td>
+            <td style="color:var(--yellow); text-align:center;">{{ v.atturas }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p style="color:var(--text-muted);">Nav balsojumu.</p>
+    {% endif %}
+  </div>
+
+  <!-- Spriedzes tab -->
+  <div class="party-tab" id="tab-spriedzes" style="display:none;">
+    {% if tensions %}
+    {% for t in tensions %}
+    <div class="card" style="margin-bottom:0.75rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+        <span class="badge {% if t.tension_type == 'uzbrukums' %}badge-red{% elif t.tension_type == 'atbalsts' %}badge-green{% else %}badge-yellow{% endif %}">{{ t.tension_type }}</span>
+        <span style="color:var(--text-muted); font-size:0.8rem;">{{ t.created_at[:10] if t.created_at else '' }}</span>
+      </div>
+      <div><strong>{{ t.source_name }}</strong> → <strong>{{ t.target_name }}</strong></div>
+      <div class="topic-tag">{{ t.topic }}</div>
+      <div style="margin-top:0.5rem; font-size:0.9rem;">{{ t.description }}</div>
+      {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem;">Avots ↗</a>{% endif %}
+      {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; margin-left:0.5rem;">Atbilde ↗</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="color:var(--text-muted);">Nav spriedžu.</p>
+    {% endif %}
+  </div>
+
+  <!-- Finanses tab -->
+  {% if knab_summary %}
+  <div class="party-tab" id="tab-finanses" style="display:none;">
+    <div class="stats-row" style="margin-bottom:1.5rem;">
+      <div class="stat-card">
+        <div class="stat-value">€{{ "{:,.0f}".format(knab_summary.total_donations) }}</div>
+        <div class="stat-label">Kopējie ziedojumi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{{ knab_summary.donor_count }}</div>
+        <div class="stat-label">Ziedotāji</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{{ knab_summary.alert_count }}</div>
+        <div class="stat-label">Brīdinājumi</div>
+      </div>
+    </div>
+    <a href="../finanses.html" class="filter-btn" style="display:inline-block;">Skatīt pilnu finanses lapu →</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ assets_prefix }}assets/ptv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

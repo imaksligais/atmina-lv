@@ -1,0 +1,163 @@
+{% extends "base.html.j2" %}
+{% set active_page = "x" %}
+{% set assets_prefix = "" %}
+
+{% block title %}X / Twitter{% endblock %}
+
+{% block content %}
+<section class="xv1-section">
+
+  <header class="xv1-header">
+    <div class="xv1-header-title">
+      <div class="xv1-kicker">X / Twitter ieraksti un pieminējumi</div>
+      <h1 class="xv1-h1">Publiskās sarunas</h1>
+    </div>
+    <div class="xv1-metrics">
+      <div class="xv1-metric">
+        <span class="xv1-metric-label">Ieraksti</span>
+        <span class="xv1-metric-value">{{ metrics.posts_total }}</span>
+      </div>
+      <div class="xv1-metric">
+        <span class="xv1-metric-label">Pieminējumi</span>
+        <span class="xv1-metric-value">{{ metrics.mentions_total }}</span>
+      </div>
+      <div class="xv1-metric">
+        <span class="xv1-metric-label">Pēdējās 24h</span>
+        <span class="xv1-metric-value">{{ metrics.last_24h }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="xv1-grid">
+
+    <aside class="xv1-aside">
+      <details class="xv1-aside-section" open>
+        <summary class="xv1-rail-title">Pieminētākie · pēdējās 7 dienas</summary>
+        <div class="xv1-mention-list">
+          {% for m in top_mentioned %}
+          <button class="xv1-mention-row" type="button"
+                  data-persona="{{ m.name }}"
+                  title="Filtrēt pēc {{ m.name }}">
+            <span class="xv1-rank">{{ "%02d" % loop.index }}</span>
+            <span class="xv1-mention-name">
+              <span class="xv1-mention-author">{{ m.name }}</span>
+              <span class="xv1-mention-handle" style="--party-color:{{ m.party_color }}">
+                {{ m.party_short }}
+              </span>
+            </span>
+            <span class="xv1-mention-count">{{ m.count }}</span>
+            <span class="xv1-mention-trend xv1-trend-{% if m.trend.startswith('+') %}up{% elif m.trend.startswith('-') %}down{% else %}flat{% endif %}">{{ m.trend }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </details>
+
+      <details class="xv1-aside-section" open>
+        <summary class="xv1-rail-title">Tēmas · pēdējās 7 dienas</summary>
+        <div class="xv1-topic-list">
+          {% for t in trending_topics %}
+          <button class="xv1-topic-row" type="button"
+                  data-topic="{{ t.topic }}"
+                  title="Filtrēt pēc {{ t.topic }}">
+            <span class="xv1-topic-mix">
+              {% for c in t.party_colors %}<span class="xv1-topic-dot" style="background:{{ c }}"></span>{% endfor %}
+            </span>
+            <span class="xv1-topic-name">{{ t.topic }}</span>
+            <span class="xv1-topic-meta">{{ t.mentions }} pieminējumi · {{ t.party_colors|length }} partija{% if t.party_colors|length != 1 %}s{% endif %}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </details>
+    </aside>
+
+    <main class="xv1-main">
+      <div class="xv1-ticker-bar">
+        <div class="xv1-tabs" role="tablist">
+          <button class="xv1-tab active" type="button" data-type="" role="tab">Visi</button>
+          <button class="xv1-tab" type="button" data-type="post" role="tab">Tikai ieraksti</button>
+          <button class="xv1-tab" type="button" data-type="mention" role="tab">Tikai pieminējumi</button>
+        </div>
+        <div class="xv1-filters">
+          <div class="xv1-topic-chip-holder" id="xv1-topic-chip"></div>
+          <div class="xv1-select" id="xv1-persona-select">
+            <button class="xv1-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="xv1-select-label">Visas personas</span>
+              <span class="xv1-select-arrow">▾</span>
+            </button>
+            <div class="xv1-select-dropdown" role="listbox" aria-multiselectable="true">
+              <input type="text" class="xv1-select-search" placeholder="Meklēt personu…">
+              {% for pol in politicians %}
+              <div class="xv1-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ pol }}">
+                <span class="xv1-select-checkbox"></span>
+                <span>{{ pol }}</span>
+              </div>
+              {% endfor %}
+              <div class="xv1-select-clear" role="button" tabindex="-1">Notīrīt</div>
+            </div>
+          </div>
+          <div class="xv1-select" id="xv1-party-select">
+            <button class="xv1-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="xv1-select-label">Visas partijas</span>
+              <span class="xv1-select-arrow">▾</span>
+            </button>
+            <div class="xv1-select-dropdown" role="listbox" aria-multiselectable="true">
+              {% for party in parties %}
+              <div class="xv1-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ party }}">
+                <span class="xv1-select-checkbox"></span>
+                <span>{{ party }}</span>
+              </div>
+              {% endfor %}
+              <div class="xv1-select-clear" role="button" tabindex="-1">Notīrīt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="xv1-feed" class="xv1-feed">
+        {% for x in feed %}
+        <article class="xv1-item"
+                 data-type="{{ x.kind }}"
+                 data-persona="{{ x.persona }}"
+                 data-party="{{ x.party }}"
+                 data-topic="{{ x.topic or '' }}"
+                 data-date="{{ x.date }}">
+          <div class="xv1-item-ts">
+            <span class="xv1-item-kind{% if x.kind == 'post' %} is-post{% endif %}">{{ 'IERAKSTS' if x.kind == 'post' else 'PIEMIN.' }}</span>
+            <span class="xv1-item-when">{{ x.date[5:] }}</span>
+          </div>
+          <div class="xv1-item-body">
+            <div class="xv1-item-head">
+              <span class="xv1-item-author">{% if x.kind == 'post' %}{{ x.politician_name }}{% else %}{{ x.target_name }}{% endif %}</span>
+              {% if x.handle %}<button type="button" class="xv1-item-at" style="--party-color:{{ x.party_color }}" data-persona="{{ x.persona }}" title="Filtrēt pēc {{ x.persona }}">@{{ x.handle }}</button>{% endif %}
+              {% if x.party %}<span class="xv1-item-handle-sep">·</span>
+              <button type="button" class="xv1-item-party" style="--party-color:{{ x.party_color }}" data-party="{{ x.party }}" title="Filtrēt pēc {{ x.party }}">{{ _party_short_name(x.party) }}</button>{% endif %}
+              {% if x.kind == 'mention' and x.mentioned_by %}
+              <span class="xv1-item-mentionedby">↳ no @{{ x.mentioned_by }}</span>
+              {% endif %}
+            </div>
+            <p class="xv1-item-text">{{ x.content }}</p>
+            <div class="xv1-item-foot">
+              {% if x.topic %}<button type="button" class="xv1-chip xv1-chip-topic xv1-item-topic" data-topic="{{ x.topic }}" title="Filtrēt pēc {{ x.topic }}">{{ x.topic }}</button>{% endif %}
+              {% if x.favorite_count is not none %}
+              <span class="xv1-engagement">
+                <span>↩ {{ x.reply_count or 0 }}</span>
+                <span>↻ {{ x.retweet_count or 0 }}</span>
+                <span>♡ {{ x.favorite_count or 0 }}</span>
+              </span>
+              {% endif %}
+              {% if x.source_url %}<a class="xv1-item-link" href="{{ x.source_url | safe_url }}" target="_blank" rel="noopener">atvērt X ↗</a>{% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </main>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/x-v1.js?v={{ assets_version }}"></script>
+{% endblock %}

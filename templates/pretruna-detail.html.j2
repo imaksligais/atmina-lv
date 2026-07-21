@@ -1,0 +1,149 @@
+{% extends "base.html.j2" %}
+{% set active_page = "pretrunas" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ c.politician_name }} · {{ c.severity_lv }}{% if c.topic %} — {{ c.topic }}{% endif %}{% endblock %}
+{% block description %}{% if c.summary %}{{ c.summary|truncate(160) }}{% else %}{{ c.politician_name }} — {{ c.severity_lv }}{% if c.topic %} par {{ c.topic }}{% endif %}.{% endif %}{% endblock %}
+
+{% block og_title %}{{ c.politician_name }}: {{ c.topic or "pretruna" }}{% endblock %}
+{% block og_description %}{% if c.summary %}{{ c.summary|truncate(200) }}{% else %}{{ c.severity_lv }} · {{ c.old_date }} → {{ c.new_date }}{% endif %}{% endblock %}
+{% block og_image %}{{ BASE_URL }}/assets/og/pretruna-{{ c.id }}.png{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <div class="prv2-detail-back">
+    <a href="../pretrunas.html">← Visas pretrunas</a>
+  </div>
+
+  <div class="prv2-detail-wrap">
+    {%- set share_text = c.politician_name ~ " — " ~ c.severity_lv ~ (" par " ~ c.topic if c.topic else "") -%}
+    {%- set share_url = BASE_URL ~ "/pretrunas/" ~ c.id ~ ".html" -%}
+
+    <article class="prv2-card sev-{{ c.severity }}" id="pretruna-{{ c.id }}"
+             data-severity="{{ c.severity }}" data-party="{{ c.party }}"
+             data-person="{{ c.politician_name }}">
+
+      <div class="prv2-partybar" style="background: {{ c.party_color }}"></div>
+
+      <header class="prv2-head">
+        <div class="prv2-persona">
+          {%- if c.has_photo %}
+          <img class="prv2-avatar prv2-avatar-photo" src="{{ assets_prefix }}assets/photos/{{ c.slug }}.jpg" alt="{{ c.politician_name }}" style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="prv2-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <div class="prv2-persona-text">
+            <a class="prv2-name" href="{{ assets_prefix }}politiki/{{ c.slug }}.html">{{ c.politician_name }}</a>
+            <div class="prv2-role">
+              {%- if c.role %}{{ c.role }} · {% endif -%}
+              {{ c.party_short -}}
+            </div>
+          </div>
+        </div>
+        <div class="prv2-meta-mid">
+          <span class="prv2-sevbadge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}</span>
+          {% if c.topic %}<span class="prv2-topic">{{ c.topic }}</span>{% endif %}
+        </div>
+        {% if c.delta_days is not none %}
+        <div class="prv2-meta-right">
+          <div class="prv2-datacell">
+            <span class="prv2-datacell-l">ΔT</span>
+            <span class="prv2-datacell-v">{{ c.delta_days }}d</span>
+          </div>
+        </div>
+        {% endif %}
+      </header>
+
+      {% if c.summary %}
+      <section class="prv2-summary">
+        <div class="prv2-kicker">Kopsavilkums</div>
+        <p>{{ c.summary | autolink_bills(bill_slugs, assets_prefix) | safe }}</p>
+      </section>
+      {% endif %}
+
+      {% if c.context_note %}
+      <aside class="prv2-context">
+        <span class="prv2-context-kicker">Konteksts</span>
+        {{ c.context_note }}
+      </aside>
+      {% endif %}
+
+      <div class="prv2-split">
+        <div class="prv2-pane prv2-pane-old">
+          <div class="prv2-kicker">{{ c.old_label or 'Iepriekš' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.old_date }}">{{ c.old_date }}</time>
+            {% if c.old_source %}
+            · <a href="{{ c.old_source }}" target="_blank" rel="noopener">{{ c.old_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.old_stance }}</div>
+          {% if c.old_quote %}
+          <blockquote class="prv2-quote">{{ c.old_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+        </div>
+
+        <div class="prv2-gutter">
+          <span class="prv2-gutter-disc" aria-hidden="true">{{ c.severity_glyph }}</span>
+        </div>
+
+        <div class="prv2-pane prv2-pane-new">
+          <div class="prv2-kicker prv2-kicker-sev">{{ c.new_label or 'Pašlaik' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.new_date }}">{{ c.new_date }}</time>
+            {% if c.new_source %}
+            · <a href="{{ c.new_source }}" target="_blank" rel="noopener">{{ c.new_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.new_stance }}</div>
+          {% if c.new_quote %}
+          <blockquote class="prv2-quote">{{ c.new_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+          {% if c.vote_summary %}
+          <div class="prv2-vote">
+            <span class="prv2-vote-kicker">Likumprojekts</span>
+            {{ c.vote_summary }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <footer class="prv2-foot">
+        <div class="prv2-foot-meta">
+          <span class="prv2-foot-id">ID {{ '%03d' % c.id }}</span>
+          · Konstatēts {{ c.detected_at[:10] }}
+          {% if c.salience %} · Nozīmīgums {{ '%.2f' % c.salience }}{% endif %}
+        </div>
+        <a class="prv2-share-x"
+           href="https://x.com/intent/tweet?text={{ share_text|urlencode }}&url={{ share_url|urlencode }}"
+           target="_blank" rel="noopener"
+           title="Dalīties uz X">𝕏&nbsp;Dalīties</a>
+      </footer>
+    </article>
+
+    {% if related %}
+    <section class="prv2-detail-related">
+      <h2>Citas {{ c.politician_name }} pretrunas</h2>
+      <div class="prv2-related-grid">
+        {% for r in related %}
+        <a class="prv2-related-card sev-{{ r.severity }}" href="{{ r.id }}.html">
+          <div class="prv2-related-glyph">{{ r.severity_glyph }}</div>
+          <div class="prv2-related-body">
+            <div class="prv2-related-sev">{{ r.severity_lv }}</div>
+            <div class="prv2-related-topic">{{ r.topic or '—' }}</div>
+            <div class="prv2-related-summary">{{ (r.summary or r.old_stance or '')|truncate(120) }}</div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+
+  {% include "_keep_digging.html.j2" %}
+</section>
+{% endblock %}

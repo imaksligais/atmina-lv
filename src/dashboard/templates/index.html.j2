@@ -1,0 +1,23 @@
+{% extends "_base.html.j2" %}
+
+{% block content %}
+
+{# Panel grid skeleton — actual panel contents land in Tasks 1.2-1.8. #}
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+  {% include "partials/brief.html.j2" %}
+
+  {% include "partials/routine.html.j2" %}
+
+  {% include "partials/slots.html.j2" %}
+
+  {% include "partials/strategy.html.j2" %}
+
+  {% include "partials/backlog.html.j2" %}
+
+</div>
+
+{% include "partials/activity.html.j2" %}
+
+{% endblock %}

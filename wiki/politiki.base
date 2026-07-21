@@ -1,0 +1,72 @@
+# atmina — politiķu dzīvais panelis (Obsidian Bases)
+# Statisks fails: vaicā personu .md frontmatter live; wiki_sync() to NEAIZTIEK
+# (wiki.py glob/raksta tikai *.md). Nav jāre-ģenerē.
+filters:
+  and:
+    - file.inFolder("persons")
+    - 'file.name != "personas.md"'
+
+formulas:
+  pretrunu_karogs: 'if(contradictions > 0, "⚠️ " + contradictions, "")'
+
+properties:
+  party:
+    displayName: "Partija"
+  role:
+    displayName: "Loma"
+  positions:
+    displayName: "Pozīcijas"
+  votes:
+    displayName: "Balsojumi"
+  contradictions:
+    displayName: "Pretrunas"
+  mentioned_in:
+    displayName: "Pieminēts"
+  last_active:
+    displayName: "Pēd. aktīvs"
+  formula.pretrunu_karogs:
+    displayName: "Pretrunas"
+
+views:
+  - type: table
+    name: "Visi politiķi"
+    groupBy:
+      property: party
+      direction: ASC
+    order:
+      - file.name
+      - party
+      - role
+      - positions
+      - votes
+      - contradictions
+      - mentioned_in
+      - last_active
+    summaries:
+      positions: Sum
+      contradictions: Sum
+      votes: Average
+
+  - type: table
+    name: "Ar pretrunām"
+    filters:
+      and:
+        - 'contradictions > 0'
+    order:
+      - file.name
+      - party
+      - formula.pretrunu_karogs
+      - positions
+      - mentioned_in
+
+  - type: table
+    name: "Visvairāk pieminētie medijos"
+    filters:
+      and:
+        - 'mentioned_in > 20'
+    order:
+      - file.name
+      - party
+      - mentioned_in
+      - positions
+      - contradictions

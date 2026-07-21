@@ -1,0 +1,64 @@
+{# Activity timeline panel — chronological log of the last 20 events.
+
+Args:
+  activity: dict from get_activity_context() — keys: groups, current_filter,
+            offset, limit, has_more.
+#}
+<section id="activity-panel"
+         class="mt-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6">
+
+  <header class="flex items-baseline justify-between flex-wrap gap-2">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Aktivitāte · pēdējās {{ activity.limit }}
+    </h2>
+    <nav class="flex items-center gap-1 text-xs"
+         aria-label="Aktivitātes filtrs">
+      {% for chip in ('all', 'ingest', 'brief', 'image', 'analysis', 'deploy', 'guardrail') %}
+        <a href="?filter={{ chip }}"
+           class="rounded px-2 py-1 hover:bg-slate-100 dark:hover:bg-slate-800
+                  {% if activity.current_filter == chip %}status-info{% endif %}">
+          {{ chip }}
+        </a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  {% if activity.groups %}
+  <div id="activity-rows" class="mt-4 space-y-4">
+    {% for group in activity.groups %}
+    <div>
+      <h3 class="text-xs uppercase tracking-wide text-slate-400 mb-1 border-b border-slate-200 dark:border-slate-800 pb-1">
+        {{ group.label }}
+      </h3>
+      <ul class="divide-y divide-slate-100 dark:divide-slate-900">
+        {% for row in group.rows %}
+          {% include "partials/_activity_row.html.j2" %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if activity.has_more %}
+  <div class="mt-3 text-center">
+    <a href="?filter={{ activity.current_filter }}&offset={{ activity.offset + activity.limit }}"
+       class="text-xs text-sarkans hover:underline">
+      ↓ vairāk
+    </a>
+  </div>
+  {% endif %}
+
+  {# HTMX 30s poll target — appends new rows above the existing list. M2/Task 2.x can fully wire. #}
+  <div hx-get="/api/activity?since_logs={{ activity.cursor.logs | default(0) }}&since_images={{ activity.cursor.brief_images | default(0) }}&since_notes={{ activity.cursor.context_notes | default(0) }}&since_analyses={{ activity.cursor.analyses | default(0) }}&filter={{ activity.current_filter }}"
+       hx-trigger="every 30s"
+       hx-swap="beforeend"
+       hx-target="#activity-rows"
+       class="hidden"></div>
+  {% else %}
+  <div class="mt-4 rounded border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
+    <p class="text-sm text-slate-500 dark:text-slate-400">
+      Aktivitātes vēl nav.
+    </p>
+  </div>
+  {% endif %}
+</section>

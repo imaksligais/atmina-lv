@@ -1,0 +1,85 @@
+{% extends "base.html.j2" %}
+{% set active_page = "partijas" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Partijas{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Politisko partiju reģistrs</div>
+      <h1 class="pagehead-h1">Partijas</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Kopā</span>
+        <span class="pagehead-metric-value">{{ metrics.total }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Koalīcija</span>
+        <span class="pagehead-metric-value">{{ metrics.coalition }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Opozīcija</span>
+        <span class="pagehead-metric-value">{{ metrics.opposition }}</span>
+      </div>
+    </div>
+  </header>
+
+  {# Aicinājums uz Solījumu kartes sintēzi — tā pati analysis-feat vizuālā
+     valoda kā analizes.html izceltajai sintēzei (solo: attēls kreisajā pusē). #}
+  <div class="analysis-feed is-solo" style="margin-bottom:1.75rem;">
+    <a href="sintezes/partiju-programmas-2026-solijumu-karte.html" class="analysis-feat has-image">
+      <div class="analysis-feat-media">
+        <img src="images/synthesis/partiju-programmas-2026-solijumu-karte-card.webp" alt="Partiju programmas 2026: solījumu karte" loading="lazy">
+      </div>
+      <div class="analysis-feat-body">
+        <div class="analysis-feat-meta">
+          <span class="analysis-feat-kicker">Sintēze</span>
+          <span class="analysis-feat-sep">·</span>
+          <span class="analysis-feat-date">2026-07-08</span>
+        </div>
+        <h3 class="analysis-feat-title">Partiju programmas 2026: solījumu karte</h3>
+        <div class="analysis-feat-desc">Ko partijas sola pirms vēlēšanām? Visu 14 startējošo sarakstu oficiālās CVK programmas vienā kartē — pilna pārklājuma tēmas, kvantificēto solījumu tabula, četras polarizācijas asis un klusēšanas zonas.</div>
+        <span class="analysis-feat-cta">Lasīt sintēzi →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="filter-bar" style="margin-bottom:1.5rem;">
+    <button class="filter-btn active" aria-pressed="true" data-filter="all">Visas</button>
+    <button class="filter-btn" aria-pressed="false" data-filter="coalition">Koalīcija</button>
+    <button class="filter-btn" aria-pressed="false" data-filter="opposition">Opozīcija</button>
+    <button class="filter-btn" aria-pressed="false" data-filter="not_in_saeima">Nav Saeimā</button>
+  </div>
+
+  <div class="parties-grid" id="parties-grid">
+    {% for p in parties %}
+    <div class="party-card" data-coalition="{{ p.coalition_status }}" style="border-left: 4px solid {{ p.color }}; cursor:pointer;" data-card-href="partijas/{{ p.short_name|party_page_slug }}.html">
+      <div class="party-card-header">
+        <h3>{{ p.display_name or p.name }}</h3>
+        <span class="badge {% if p.coalition_status == 'coalition' %}badge-blue{% elif p.coalition_status == 'not_in_saeima' %}badge-muted{% else %}badge-yellow{% endif %}">
+          {% if p.coalition_status == 'coalition' %}Koalīcija{% elif p.coalition_status == 'not_in_saeima' %}Nav Saeimā{% else %}Opozīcija{% endif %}
+        </span>
+      </div>
+      <div class="party-card-ideology">{{ p.ideology or '' }}</div>
+      <div class="party-card-stats">
+        <span>{{ p.member_count }} {{ p.member_count|lv_plural("biedrs", "biedri") }}</span>
+        <span>{{ p.claims_count }} {{ p.claims_count|lv_plural("pozīcija", "pozīcijas") }}</span>
+        <span>{{ p.contradictions_count }} {{ p.contradictions_count|lv_plural("pretruna", "pretrunas") }}</span>
+      </div>
+      <div class="party-card-social">
+        {% if p.x_handle %}<a href="https://x.com/{{ p.x_handle }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.3rem;"><svg viewBox="0 0 24 24" class="x-icon" style="width:14px; height:14px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@{{ p.x_handle }}</a>{% endif %}
+        {% if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">{{ p.website | replace('https://', '') }} ↗</a>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ assets_prefix }}assets/ptv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

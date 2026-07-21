@@ -1,0 +1,743 @@
+{% extends "base.html.j2" %}
+{% set active_page = "" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ politician.name }}{% endblock %}
+
+{% block jsonld %}
+{%- set _profile_url = canonical_url|default(share_url) -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ politician.name|tojson }},
+  {% if _profile_url %}"url": "{{ _profile_url }}",{% endif %}
+  {% if politician.party %}"memberOf": {"@type": "Organization", "name": {{ politician.party|tojson }}},{% endif %}
+  {%- if politician.x_handle %}
+  "sameAs": ["https://x.com/{{ politician.x_handle }}"],
+  {%- endif %}
+  "knowsLanguage": "lv"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <a href="../personas.html" class="back-link">&larr; Visi profili</a>
+
+  <div class="profile-card"{% if party_meta %} style="--party-color: {{ party_meta.color }};"{% endif %}>
+    <div class="profile-card-top">
+      {% if has_photo %}
+      <img src="../assets/photos/{{ politician.slug }}.jpg" alt="{{ politician.name }}" class="profile-avatar" loading="eager" decoding="async" fetchpriority="high">
+      {% else %}
+      <div class="profile-avatar profile-avatar-placeholder">
+        <span>{{ politician.name[0] }}</span>
+      </div>
+      {% endif %}
+      <div class="profile-identity">
+        <div class="profile-name-row">
+          <h1>{{ politician.name }}</h1>
+          <div class="profile-links">
+            {% if politician.x_handle %}
+            <a href="https://x.com/{{ politician.x_handle }}" target="_blank" rel="noopener" title="@{{ politician.x_handle }}">
+              <svg viewBox="0 0 24 24" class="profile-link-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            {% endif %}
+            {% for ep in external_profiles %}
+              {% if ep.platform == 'facebook' %}
+              <a href="{{ ep.url | safe_url }}" target="_blank" rel="noopener" title="Facebook: {{ ep.handle or ep.url }}">
+                <svg viewBox="0 0 24 24" class="profile-link-icon" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+              </a>
+              {% elif ep.platform == 'website' %}
+              <a href="{{ ep.url | safe_url }}" target="_blank" rel="noopener" title="Tīmekļa lapa: {{ ep.url }}">
+                <svg viewBox="0 0 24 24" class="profile-link-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.04a15.5 15.5 0 0 0-1.2-5.32A8.03 8.03 0 0 1 19.93 11zM12 4c1.36 1.97 2.16 4.36 2.36 7H9.64C9.84 8.36 10.64 5.97 12 4zM4.07 13h3.04c.13 1.84.55 3.65 1.2 5.32A8.03 8.03 0 0 1 4.07 13zm0-2A8.03 8.03 0 0 1 8.31 5.68 15.5 15.5 0 0 0 7.11 11H4.07zM12 20c-1.36-1.97-2.16-4.36-2.36-7h4.72c-.2 2.64-1 5.03-2.36 7zm3.69-1.68c.65-1.67 1.07-3.48 1.2-5.32h3.04a8.03 8.03 0 0 1-4.24 5.32z"/></svg>
+              </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="profile-meta">
+          <span class="role-chip role-chip-{{ politician.profile_kind }}">{{ politician.role_label }}</span>
+          {% if party_meta %}
+          <a href="../partijas/{{ party_meta.short_name|party_page_slug }}.html" class="profile-party-tag">{{ politician.party }}</a>
+          {% elif feed_outlet %}
+          <a href="../mediji/{{ feed_outlet.slug }}.html" class="profile-party-tag">{{ feed_outlet.name }}</a>
+          {% else %}
+          <span class="profile-party-tag">{{ politician.party or 'Nav norādīts' }}</span>
+          {% endif %}
+        </div>
+        {% if share_url %}
+        <div class="share-row">
+          {%- set share_text = politician.name ~ " — atmina.lv" -%}
+          <a class="share-btn share-btn-x" href="https://x.com/intent/tweet?text={{ share_text|urlencode }}&url={{ share_url|urlencode }}" target="_blank" rel="noopener" title="Dalīties uz X">𝕏 Dalīties</a>
+          <button type="button" class="share-btn share-btn-copy" data-copy-url="{{ share_url }}" aria-live="polite">Kopēt saiti</button>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {# default_tab = tab_set[0] — _profile_tab_set jau curated default
+       atkarīgi no profile_kind un data presence (spec § 4.1). #}
+    {% set default_tab = tab_set[0] if tab_set else 'timeline' %}
+    {# ARIA tablist semantics — screen readers izlasa cilņu joslu kā
+       cieši saistītu izvēles kopu; aria-selected sinhronizēts ar
+       `active` CSS klasi; aria-controls saista button → tabpanel; tab
+       saturs nes `role="tabpanel"` un `aria-labelledby="tab-btn-<id>"`. #}
+    <div class="profile-stats-bar" role="tablist" aria-label="Profila sadaļas">
+      {% if 'parskats' in tab_set %}
+      <button class="profile-stat{% if default_tab == 'parskats' %} active{% endif %}" data-tab="parskats" id="tab-btn-parskats" role="tab" aria-controls="tab-parskats" aria-selected="{% if default_tab == 'parskats' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ parskats_data|length }}</span>
+        <span class="profile-stat-label">Pārskats</span>
+      </button>
+      {% endif %}
+      {% if 'timeline' in tab_set %}
+      <button class="profile-stat{% if default_tab == 'timeline' %} active{% endif %}" data-tab="timeline" id="tab-btn-timeline" role="tab" aria-controls="tab-timeline" aria-selected="{% if default_tab == 'timeline' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ timeline|length }}</span>
+        <span class="profile-stat-label">Laika līnija</span>
+      </button>
+      {% endif %}
+      {% if 'pozicijas' in tab_set %}
+      <button class="profile-stat{% if default_tab == 'pozicijas' %} active{% endif %}" data-tab="pozicijas" id="tab-btn-pozicijas" role="tab" aria-controls="tab-pozicijas" aria-selected="{% if default_tab == 'pozicijas' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ positions|length }}</span>
+        <span class="profile-stat-label">Pozīcijas</span>
+      </button>
+      {% endif %}
+      {% if 'saeima' in tab_set %}
+      <button class="profile-stat{% if default_tab == 'saeima' %} active{% endif %}" data-tab="saeima" id="tab-btn-saeima" role="tab" aria-controls="tab-saeima" aria-selected="{% if default_tab == 'saeima' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ votes_total }}</span>
+        <span class="profile-stat-label">Saeimā</span>
+      </button>
+      {% endif %}
+      {% if 'komentari-by' in tab_set and commentary_by %}
+      <button class="profile-stat{% if default_tab == 'komentari-by' %} active{% endif %}" data-tab="komentari-by" id="tab-btn-komentari-by" role="tab" aria-controls="tab-komentari-by" aria-selected="{% if default_tab == 'komentari-by' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ commentary_by|length }}</span>
+        <span class="profile-stat-label">Komentāri</span>
+      </button>
+      {% endif %}
+      {% if 'publikacijas' in tab_set and (x_posts or news or own_pubs) %}
+      <button class="profile-stat{% if default_tab == 'publikacijas' %} active{% endif %}" data-tab="publikacijas" id="tab-btn-publikacijas" role="tab" aria-controls="tab-publikacijas" aria-selected="{% if default_tab == 'publikacijas' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ (x_posts|length) + (news|length) + (own_pubs|length) }}</span>
+        <span class="profile-stat-label">Publikācijas</span>
+      </button>
+      {% endif %}
+      {% if 'pretrunas' in tab_set and contradictions %}
+      <button class="profile-stat{% if default_tab == 'pretrunas' %} active{% endif %}" data-tab="pretrunas" id="tab-btn-pretrunas" role="tab" aria-controls="tab-pretrunas" aria-selected="{% if default_tab == 'pretrunas' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ contradictions|length }}</span>
+        <span class="profile-stat-label">Pretrunas</span>
+      </button>
+      {% endif %}
+      {% if 'saites' in tab_set and (saites_data.uzbrukumi or saites_data.spriedzes or saites_data.atbalsts or saites_data.commentary_about or saites_data.vote_alignment_top) %}
+      {# Saites count reflektē VISUS cilnes saturus: uzbrukumi/spriedzes/
+         atbalsts tensions + commentary par šo politiķi + top/bottom vote
+         alignment kaimiņus. Pirms Bloks 3 — tikai tensions, kas 90
+         deputātiem rādīja maldinošu "0", lai gan alignment lists bija
+         pilni. #}
+      {% set saites_count = (saites_data.uzbrukumi|length) + (saites_data.spriedzes|length) + (saites_data.atbalsts|length) + (saites_data.commentary_about|length) + (saites_data.vote_alignment_top|length) + (saites_data.vote_alignment_bottom|length) %}
+      <button class="profile-stat{% if default_tab == 'saites' %} active{% endif %}" data-tab="saites" id="tab-btn-saites" role="tab" aria-controls="tab-saites" aria-selected="{% if default_tab == 'saites' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ saites_count }}</span>
+        <span class="profile-stat-label">Saites</span>
+      </button>
+      {% endif %}
+      {% if 'deklaracijas' in tab_set %}
+      <button class="profile-stat{% if default_tab == 'deklaracijas' %} active{% endif %}" data-tab="deklaracijas" id="tab-btn-deklaracijas" role="tab" aria-controls="tab-deklaracijas" aria-selected="{% if default_tab == 'deklaracijas' %}true{% else %}false{% endif %}">
+        <span class="profile-stat-value">{{ vad_data|length }}</span>
+        <span class="profile-stat-label">Deklarācijas</span>
+      </button>
+      {% endif %}
+    </div>
+  </div>
+
+  {# wiki_profile + related-syntheses are now rendered INSIDE the Pārskats
+     tab (below the 3 signal blocks). For profiles without Pārskats
+     (journalists / analysts / organizations / signal-less politicians),
+     they fall back to the top of the page above tab content. #}
+  {% if 'parskats' not in tab_set %}
+  {% if wiki_profile %}
+  <div class="wiki-profile post-content">
+    {{ wiki_profile | safe }}
+  </div>
+  {% endif %}
+
+  {% if syntheses %}
+  <div class="related-syntheses" style="margin: 1rem 0 1.5rem;">
+    <h2 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); margin: 0 0 0.6rem;">Saistītās sintēzes</h2>
+    <div style="display: grid; gap: 0.5rem;">
+      {% for s in syntheses %}
+      <a href="../sintezes/{{ s.slug }}.html" class="card synthesis-card">
+        {% if s.image_filename %}
+        <img src="../images/synthesis/{{ s.image_filename|image_variant('thumb') }}" alt="" loading="lazy" decoding="async" width="96" height="54" class="synthesis-card-thumb">
+        {% endif %}
+        <div class="synthesis-card-text">
+          <div class="synthesis-card-title">{{ s.title }}</div>
+          {% if s.description %}<div class="synthesis-card-desc">{{ s.description }}</div>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <!-- Tab content starts here -->
+
+  <!-- Pārskats tab — 3 curated signal blocks + wiki/syntheses footer.
+       Spec: docs/superpowers/specs/2026-05-14-profila-parskats-design.md § 3 -->
+  {% if 'parskats' in tab_set %}
+  <div class="profile-tab profile-tab-parskats" id="tab-parskats" role="tabpanel" aria-labelledby="tab-btn-parskats"{% if default_tab != 'parskats' %} style="display:none;"{% endif %}>
+    <style>
+      .parskats-block { margin: 0 0 1.5rem; padding: 1rem 1.25rem; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; }
+      .parskats-block .parskats-kicker { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+      .parskats-block .parskats-headline { margin: 0 0 0.5rem; font-size: 1.05rem; line-height: 1.35; }
+      .parskats-block .parskats-body { margin: 0.3rem 0; line-height: 1.55; }
+      .parskats-block .parskats-meta { color: var(--text-muted); font-size: 0.82rem; margin-right: 0.5rem; }
+      .parskats-topic-chip { display: inline-block; background: var(--surface2); color: inherit; text-decoration: none; padding: 0.3rem 0.7rem; border-radius: 2rem; font-size: 0.85rem; margin-right: 0.4rem; margin-bottom: 0.4rem; }
+      .parskats-topic-chip:hover { background: var(--accent); color: var(--bg); }
+      .mini-saites-graph .saites-node { stroke: var(--bg); }
+    </style>
+
+    {% if parskats_data.latest_activity %}
+    <div class="parskats-block parskats-block-activity">
+      <div class="parskats-kicker">Pēdējā aktivitāte · {{ parskats_data.latest_activity.relative }}</div>
+      <h3 class="parskats-headline">
+        {% if parskats_data.latest_activity.type == 'vote' %}Balsojums{% else %}Pozīcija{% endif %}{% if parskats_data.latest_activity.topic %} · <span class="topic-tag">{{ parskats_data.latest_activity.topic }}</span>{% endif %}
+      </h3>
+      <p class="parskats-body">{{ parskats_data.latest_activity.content }}{% if parskats_data.latest_activity.content|length >= 200 %}…{% endif %}</p>
+      {% if parskats_data.latest_activity.source_url %}
+      <a href="{{ parskats_data.latest_activity.source_url | safe_url }}" target="_blank" rel="noopener">Avots →</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if parskats_data.top_contradiction %}
+    <div class="parskats-block parskats-block-contradiction">
+      <div class="parskats-kicker">Ievērojamākā pretruna{% if parskats_data.top_contradiction.delta_days is not none %} · ΔT {{ parskats_data.top_contradiction.delta_days }}d{% endif %}</div>
+      {% if parskats_data.top_contradiction.topic %}
+      <h3 class="parskats-headline">{{ parskats_data.top_contradiction.topic }}</h3>
+      {% endif %}
+      <p class="parskats-body">{{ parskats_data.top_contradiction.summary }}{% if parskats_data.top_contradiction.summary|length >= 240 %}…{% endif %}</p>
+      <a href="../pretrunas.html#pretruna-{{ parskats_data.top_contradiction.id }}">Pilna pretruna →</a>
+    </div>
+    {% endif %}
+
+    {% if parskats_data.dominant_topics %}
+    <div class="parskats-block parskats-block-topics">
+      <div class="parskats-kicker">Pēdējos 6 mēnešos visvairāk runā par</div>
+      <div class="parskats-topics-list" style="margin-top:0.4rem;">
+        {% for t in parskats_data.dominant_topics %}
+        <a href="#pozicijas" class="parskats-topic-chip" data-tab-link="pozicijas">{{ t.topic }} · {{ t.count }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if wiki_profile %}
+    <div class="wiki-profile post-content" style="margin-top: 2rem;">
+      {{ wiki_profile | safe }}
+    </div>
+    {% endif %}
+
+    {% if syntheses %}
+    <div class="related-syntheses" style="margin: 1.5rem 0 0.5rem;">
+      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); margin: 0 0 0.6rem;">Saistītās sintēzes</h3>
+      <div style="display: grid; gap: 0.5rem;">
+        {% for s in syntheses %}
+        <a href="../sintezes/{{ s.slug }}.html" class="card synthesis-card">
+          {% if s.image_filename %}
+          <img src="../images/synthesis/{{ s.image_filename|image_variant('thumb') }}" alt="" loading="lazy" decoding="async" width="96" height="54" class="synthesis-card-thumb">
+          {% endif %}
+          <div class="synthesis-card-text">
+            <div class="synthesis-card-title">{{ s.title }}</div>
+            {% if s.description %}<div class="synthesis-card-desc">{{ s.description }}</div>{% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Timeline tab -->
+  {% if 'timeline' in tab_set %}
+  <div class="profile-tab" id="tab-timeline" role="tabpanel" aria-labelledby="tab-btn-timeline"{% if default_tab != 'timeline' %} style="display:none;"{% endif %}>
+    {% if timeline %}
+    <div class="timeline">
+      {% for e in timeline %}
+      <div class="timeline-event timeline-{{ e.event_type }}">
+        <div class="timeline-date">{{ e.date[:10] if e.date else '' }}</div>
+        <div class="timeline-body">
+          {% if e.event_type == 'claim' %}
+          <span class="topic-tag">{{ e.topic }}</span>
+          <div class="timeline-detail">{{ e.detail }}</div>
+          {% elif e.event_type == 'vote' %}
+          <span class="badge {% if e.vote_result == 'Par' %}badge-green{% elif e.vote_result == 'Pret' %}badge-red{% elif e.vote_result == 'Atturas' %}badge-yellow{% else %}badge-muted{% endif %}" style="margin-right:0.5rem;">{{ e.vote_result }}</span>
+          <span class="topic-tag">{{ e.topic or '' }}</span>
+          <div class="timeline-detail">{{ e.detail[:120] }}{% if e.detail and e.detail|length > 120 %}…{% endif %}</div>
+          {% endif %}
+          {% if e.source_url %}<a href="{{ e.source_url | safe_url }}" target="_blank" rel="noopener" class="timeline-source">↗</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:var(--text-muted);">Nav notikumu.</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Pozīcijas tab -->
+  {% if 'pozicijas' in tab_set %}
+  <div class="profile-tab" id="tab-pozicijas" role="tabpanel" aria-labelledby="tab-btn-pozicijas"{% if default_tab != 'pozicijas' %} style="display:none;"{% endif %}>
+    <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+      {% if claim_topics %}
+      <div class="filter-bar" id="topic-filter" style="margin-bottom:0;">
+        <button class="filter-btn active" aria-pressed="true" data-filter="all">Visas tēmas</button>
+        {% for topic in claim_topics %}
+        <button class="filter-btn" aria-pressed="false" data-filter="{{ topic }}">{{ topic }}</button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if positions %}
+    <div class="table-wrap">
+      <table class="data-table" id="claims-table">
+        <thead>
+          <tr>
+            <th>Tēma</th>
+            <th>Pozīcija</th>
+            <th>Datums</th>
+            <th>Avots</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in positions %}
+          <tr data-topic="{{ c.topic }}" data-vote="false">
+            <td><span class="topic-tag" style="display:inline-block; background:var(--surface2); color:var(--text-muted); padding:0.15rem 0.6rem; border-radius:2rem; font-size:0.75rem;">{{ c.topic }}</span></td>
+            <td>{{ c.stance }}</td>
+            <td style="white-space:nowrap">{{ c.stated_at[:10] if c.stated_at else '' }}</td>
+            <td>{% if c.source_url %}<a href="{{ c.source_url | safe_url }}">Avots</a>{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p style="color:var(--text-muted);">Nav pozīciju.{% if 'saeima' in tab_set %} Saeimas balsojumi tiek rādīti atsevišķi cilnē "Saeimā".{% endif %}</p>
+    {% endif %}
+
+    {# X+Ziņas tucked under Pozīcijas for non-journalist kinds.
+       Journalist/analyst profiles get a dedicated Publikācijas tab instead. #}
+    {% if 'publikacijas' not in tab_set %}
+      {% if x_posts %}
+      <h2 style="margin-top:2rem; font-size:1rem; color:var(--text-muted);">X ieraksti ({{ x_posts|length }})</h2>
+      {% for p in x_posts %}
+      <div class="card profile-feed-card">
+        <div class="profile-feed-meta">
+          <span>{{ p.source_domain or 'x.com' }}</span>
+          <span>{{ (p.published_at or p.scraped_at)[:10] if (p.published_at or p.scraped_at) else '' }}</span>
+        </div>
+        <div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+        {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
+      </div>
+      {% endfor %}
+      {% endif %}
+
+      {% if news %}
+      <h2 style="margin-top:2rem; font-size:1rem; color:var(--text-muted);">Ziņas ({{ news|length }})</h2>
+      {% for n in news %}
+      <div class="card profile-feed-card">
+        <div class="profile-feed-meta">
+          <span>{{ n.source_domain or '' }}{% if n.role == 'mentioned' %} <span class="muted-tag">pieminēts</span>{% endif %}</span>
+          <span>{{ n.scraped_at[:10] if n.scraped_at else '' }}</span>
+        </div>
+        <div class="profile-feed-body">{{ n.preview }}{% if n.preview and n.preview|length >= 200 %}…{% endif %}</div>
+        {% if n.source_url %}<a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Lasīt pilnu rakstu ↗</a>{% endif %}
+      </div>
+      {% endfor %}
+      {% endif %}
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Pretrunas tab -->
+  {% if 'pretrunas' in tab_set and contradictions %}
+  <div class="profile-tab" id="tab-pretrunas" role="tabpanel" aria-labelledby="tab-btn-pretrunas"{% if default_tab != 'pretrunas' %} style="display:none;"{% endif %}>
+    <div class="grid-2">
+      {% for c in contradictions %}
+      <article class="prv2-card sev-{{ c.severity }}">
+        <div class="prv2-partybar" style="background: {{ c.party_color }}"></div>
+
+        <header class="prv2-head">
+          <div class="prv2-persona">
+            {%- if c.has_photo %}
+            <img class="prv2-avatar prv2-avatar-photo" src="{{ assets_prefix }}assets/photos/{{ c.slug }}.jpg" alt="{{ c.politician_name }}" loading="lazy" decoding="async" style="--pc: {{ c.party_color }}">
+            {%- else %}
+            <span class="prv2-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+            {%- endif %}
+            <div class="prv2-persona-text">
+              <div class="prv2-name">{{ c.politician_name }}</div>
+              <div class="prv2-role">{{ c.party_short }}</div>
+            </div>
+          </div>
+          <div class="prv2-meta-mid">
+            <span class="prv2-sevbadge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}</span>
+            {% if c.topic %}<span class="prv2-topic">{{ c.topic }}</span>{% endif %}
+          </div>
+          {% if c.delta_days is not none %}
+          <div class="prv2-meta-right">
+            <div class="prv2-datacell">
+              <span class="prv2-datacell-l">ΔT</span>
+              <span class="prv2-datacell-v">{{ c.delta_days }}d</span>
+            </div>
+          </div>
+          {% endif %}
+        </header>
+
+        {% if c.summary %}
+        <section class="prv2-summary">
+          <div class="prv2-kicker">Kopsavilkums</div>
+          <p>{{ c.summary | autolink_bills(bill_slugs, assets_prefix) | safe }}</p>
+        </section>
+        {% endif %}
+
+        {% if c.context_note %}
+        <aside class="prv2-context">
+          <span class="prv2-context-kicker">Konteksts</span>
+          {{ c.context_note }}
+        </aside>
+        {% endif %}
+
+        <div class="prv2-split">
+          <div class="prv2-pane prv2-pane-old">
+            <div class="prv2-kicker">{{ c.old_label or 'Iepriekš' }}</div>
+            <div class="prv2-pane-meta">
+              <time datetime="{{ c.old_date }}">{{ c.old_date }}</time>
+              {% if c.old_source %}
+              · <a href="{{ c.old_source }}" target="_blank" rel="noopener">{{ c.old_source_domain }} ↗</a>
+              {% endif %}
+            </div>
+            <div class="prv2-stance">{{ c.old_stance }}</div>
+            {% if c.old_quote %}
+            <blockquote class="prv2-quote">{{ c.old_quote }}</blockquote>
+            {% else %}
+            <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+            {% endif %}
+          </div>
+
+          <div class="prv2-gutter">
+            <span class="prv2-gutter-disc" aria-hidden="true">{{ c.severity_glyph }}</span>
+          </div>
+
+          <div class="prv2-pane prv2-pane-new">
+            <div class="prv2-kicker prv2-kicker-sev">{{ c.new_label or 'Pašlaik' }}</div>
+            <div class="prv2-pane-meta">
+              <time datetime="{{ c.new_date }}">{{ c.new_date }}</time>
+              {% if c.new_source %}
+              · <a href="{{ c.new_source }}" target="_blank" rel="noopener">{{ c.new_source_domain }} ↗</a>
+              {% endif %}
+            </div>
+            <div class="prv2-stance">{{ c.new_stance }}</div>
+            {% if c.new_quote %}
+            <blockquote class="prv2-quote">{{ c.new_quote }}</blockquote>
+            {% else %}
+            <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+            {% endif %}
+            {% if c.vote_summary %}
+            <div class="prv2-vote">
+              <span class="prv2-vote-kicker">Likumprojekts</span>
+              {{ c.vote_summary }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Saeimā tab (votes + bills combined) -->
+  {% if 'saeima' in tab_set %}
+  <div class="profile-tab" id="tab-saeima" role="tabpanel" aria-labelledby="tab-btn-saeima"{% if default_tab != 'saeima' %} style="display:none;"{% endif %}>
+    {% if politician.profile_kind == 'former' %}
+    <p style="color:var(--text-muted); font-style:italic; margin-bottom:0.75rem;">Vēsturisks (bijušais deputāts) — nav aktīvs Saeimā.</p>
+    {% endif %}
+    {% if votes %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Datums</th>
+            <th>Jautājums</th>
+            <th>Balsojums</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for v in votes %}
+          <tr>
+            <td style="white-space:nowrap">{{ v.vote_date|lv_date }}</td>
+            <td>{{ v.motif[:80] }}{% if v.motif|length > 80 %}…{% endif %}</td>
+            <td>
+              <span class="badge {% if v.vote == 'Par' %}badge-green{% elif v.vote == 'Pret' %}badge-red{% elif v.vote == 'Atturas' %}badge-yellow{% else %}badge-muted{% endif %}">{{ v.vote }}</span>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if votes_total > votes|length %}
+    <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">
+      Rādīti jaunākie {{ votes|length }} no {{ votes_total }} balsojumiem. Pilns saraksts pa deputātiem: <a href="{{ assets_prefix }}balsojumi.html">Balsojumu matrica ↗</a>
+    </p>
+    {% endif %}
+    {% endif %}
+
+    {% if bills_involved %}
+    <h2 style="margin-top:1.5rem; font-size:1.25rem;">Likumprojekti ({{ bills_involved|length }})</h2>
+    <div class="bill-card-grid">
+      {% from "_bill_card.html.j2" import bill_card %}
+      {% for b in bills_involved %}{{ bill_card(b, prefix=assets_prefix) }}{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Komentāri-by tab (žurnālisti / analītiķi: viņu komentāri par citiem) -->
+  {% if 'komentari-by' in tab_set %}
+  <div class="profile-tab" id="tab-komentari-by" role="tabpanel" aria-labelledby="tab-btn-komentari-by"{% if default_tab != 'komentari-by' %} style="display:none;"{% endif %}>
+    {% if commentary_by %}
+    <p style="color:var(--text-muted); margin-bottom:1rem;">{{ politician.name }} komentāri par citiem politiķiem ({{ commentary_by|length }}).</p>
+    <div class="komentari-grid">
+      {% for c in commentary_by %}
+      <article class="komentari-card">
+        <header class="komentari-head">
+          <span class="komentari-speaker">
+            <a href="../politiki/{{ c.target_slug }}.html">{{ c.target_name }}</a>
+          </span>
+          <span class="komentari-date">{{ c.stated_at[:10] if c.stated_at else c.created_at[:10] }}</span>
+        </header>
+        {% if c.topic %}<div class="komentari-topic">{{ c.topic }}</div>{% endif %}
+        <p class="komentari-stance">{{ c.stance }}</p>
+        {% if c.quote %}
+        <blockquote class="komentari-quote">"{{ c.quote }}"</blockquote>
+        {% endif %}
+        <footer class="komentari-foot">
+          {% if c.source_url %}<a href="{{ c.source_url | safe_url }}" target="_blank" rel="nofollow noopener" class="komentari-source">Avots →</a>{% endif %}
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:var(--text-muted);">Nav saglabātu komentāru.</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Publikācijas tab (žurnālistu/analītiķu X+Ziņas merge) -->
+  {% if 'publikacijas' in tab_set %}
+  <div class="profile-tab" id="tab-publikacijas" role="tabpanel" aria-labelledby="tab-btn-publikacijas"{% if default_tab != 'publikacijas' %} style="display:none;"{% endif %}>
+    {% if own_pubs %}
+    <h2 style="font-size:1rem; color:var(--text-muted);">Publikācijas vietnē {{ own_pubs_outlet.host }} ({{ own_pubs|length }})</h2>
+    {% for n in own_pubs %}
+    <div class="card profile-feed-card">
+      <div class="profile-feed-meta">
+        <span>{{ n.source_domain or '' }}</span>
+        <span>{{ (n.published_at or n.scraped_at)[:10] if (n.published_at or n.scraped_at) else '' }}</span>
+      </div>
+      <div class="profile-feed-body">{{ n.preview }}{% if n.preview and n.preview|length >= 200 %}…{% endif %}</div>
+      {% if n.source_url %}<a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Lasīt pilnu rakstu ↗</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% if own_pubs_outlet %}
+    <a href="../mediji/{{ own_pubs_outlet.slug }}.html" style="font-size:0.85rem;">Visas medija publikācijas →</a>
+    {% endif %}
+    {% endif %}{% if x_posts %}
+    <h2 style="{% if own_pubs %}margin-top:1.5rem; {% endif %}font-size:1rem; color:var(--text-muted);">X ieraksti ({{ x_posts|length }})</h2>
+    {% for p in x_posts %}
+    <div class="card profile-feed-card">
+      <div class="profile-feed-meta">
+        <span>{{ p.source_domain or 'x.com' }}</span>
+        <span>{{ (p.published_at or p.scraped_at)[:10] if (p.published_at or p.scraped_at) else '' }}</span>
+      </div>
+      <div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+      {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if news %}
+    <h2 style="margin-top:1.5rem; font-size:1rem; color:var(--text-muted);">{% if politician.profile_kind == 'organization' %}Pieminēts medijos ({{ news|length }}){% else %}Ziņas ({{ news|length }}){% endif %}</h2>
+    {% for n in news %}
+    <div class="card profile-feed-card">
+      <div class="profile-feed-meta">
+        <span>{{ n.source_domain or '' }}{% if n.role == 'mentioned' %} <span class="muted-tag">pieminēts</span>{% endif %}</span>
+        <span>{{ n.scraped_at[:10] if n.scraped_at else '' }}</span>
+      </div>
+      <div class="profile-feed-body">{{ n.preview }}{% if n.preview and n.preview|length >= 200 %}…{% endif %}</div>
+      {% if n.source_url %}<a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Lasīt pilnu rakstu ↗</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if not x_posts and not news and not own_pubs %}
+    <p style="color:var(--text-muted);">Nav publikāciju.</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Saites tab (mini-graf + 3 type-color sekcijas + commentary + vote alignment) -->
+  {% if 'saites' in tab_set %}
+  <div class="profile-tab" id="tab-saites" role="tabpanel" aria-labelledby="tab-btn-saites"{% if default_tab != 'saites' %} style="display:none;"{% endif %}>
+    {% if saites_data.mini_graph.neighbors %}
+    {% set party_color = (party_meta.color if party_meta else '#8b8fa3') %}
+    <svg viewBox="0 0 400 280" class="mini-saites-graph" role="img" aria-label="Saišu mini-grafs">
+      {# Connecting lines first so neighbor circles render on top #}
+      {% for n in saites_data.mini_graph.neighbors %}
+      <line x1="200" y1="140" x2="{{ n.x }}" y2="{{ n.y }}"
+            class="saites-link saites-link-{{ n.tension_type }}" stroke-width="2"/>
+      {% endfor %}
+      {# Center node — this politician #}
+      <circle cx="200" cy="140" r="14" fill="{{ party_color }}" stroke-width="2" class="saites-node"/>
+      <text x="200" y="170" text-anchor="middle" font-size="10" fill="var(--text-muted)">{{ politician.name.split()[0] }}</text>
+      {# Neighbors — klikšķis aizved uz attiecīgo saites kartiņu zem grafa, ne uz cita profila lapu (B-lite). #}
+      {% for n in saites_data.mini_graph.neighbors %}
+      <a xlink:href="#saites-{{ n.pid }}" aria-label="{{ n.name }} ({{ n.tension_type }}) — skatīt detaļas">
+        <circle cx="{{ n.x }}" cy="{{ n.y }}" r="9" fill="{{ n.party_color }}" stroke-width="1.5" class="saites-node"/>
+        <title>{{ n.name }} ({{ n.tension_type }})</title>
+      </a>
+      <text x="{{ n.x }}" y="{{ n.y + 22 }}" text-anchor="middle" font-size="9"
+            fill="var(--text-muted)" class="saites-node-label">{{ n.name.split()[0] }}</text>
+      {% endfor %}
+    </svg>
+    {% endif %}
+
+    {% if saites_data.uzbrukumi %}
+    <div class="saites-section saites-section-uzbrukumi">
+      <h4>Uzbrukumi ({{ saites_data.uzbrukumi|length }})</h4>
+      {% for t in saites_data.uzbrukumi %}
+      <div class="card saites-card{% if t.is_anchor %} saites-card-anchor{% endif %}"
+           {% if t.is_anchor %}id="saites-{{ t.other_pid }}"{% endif %}
+           style="margin-bottom:0.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <strong>{{ t.source_name }}</strong> → <strong>{{ t.target_name }}</strong>
+          <span style="color:var(--text-muted); font-size:0.8rem;">{{ t.created_at[:10] if t.created_at else '' }}</span>
+        </div>
+        {% if t.topic %}<span class="topic-tag">{{ t.topic }}</span>{% endif %}
+        <div style="margin-top:0.4rem; font-size:0.9rem;">{{ t.description }}</div>
+        {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem;">Avots ↗</a>{% endif %}
+        {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; margin-left:0.5rem;">Atbilde ↗</a>{% endif %}
+        {% if t.other_slug %}<a href="../politiki/{{ t.other_slug }}.html" class="saites-card-profile-btn" style="font-size:0.8rem; margin-left:0.5rem;">Skatīt profilu →</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if saites_data.spriedzes %}
+    <div class="saites-section saites-section-spriedzes">
+      <h4>Spriedzes ({{ saites_data.spriedzes|length }})</h4>
+      {% for t in saites_data.spriedzes %}
+      <div class="card saites-card{% if t.is_anchor %} saites-card-anchor{% endif %}"
+           {% if t.is_anchor %}id="saites-{{ t.other_pid }}"{% endif %}
+           style="margin-bottom:0.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <strong>{{ t.source_name }}</strong> → <strong>{{ t.target_name }}</strong>
+          <span style="color:var(--text-muted); font-size:0.8rem;">{{ t.created_at[:10] if t.created_at else '' }}</span>
+        </div>
+        {% if t.topic %}<span class="topic-tag">{{ t.topic }}</span>{% endif %}
+        <div style="margin-top:0.4rem; font-size:0.9rem;">{{ t.description }}</div>
+        {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem;">Avots ↗</a>{% endif %}
+        {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; margin-left:0.5rem;">Atbilde ↗</a>{% endif %}
+        {% if t.other_slug %}<a href="../politiki/{{ t.other_slug }}.html" class="saites-card-profile-btn" style="font-size:0.8rem; margin-left:0.5rem;">Skatīt profilu →</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if saites_data.atbalsts %}
+    <div class="saites-section saites-section-atbalsts">
+      <h4>Atbalsts ({{ saites_data.atbalsts|length }})</h4>
+      {% for t in saites_data.atbalsts %}
+      <div class="card saites-card{% if t.is_anchor %} saites-card-anchor{% endif %}"
+           {% if t.is_anchor %}id="saites-{{ t.other_pid }}"{% endif %}
+           style="margin-bottom:0.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <strong>{{ t.source_name }}</strong> → <strong>{{ t.target_name }}</strong>
+          <span style="color:var(--text-muted); font-size:0.8rem;">{{ t.created_at[:10] if t.created_at else '' }}</span>
+        </div>
+        {% if t.topic %}<span class="topic-tag">{{ t.topic }}</span>{% endif %}
+        <div style="margin-top:0.4rem; font-size:0.9rem;">{{ t.description }}</div>
+        {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem;">Avots ↗</a>{% endif %}
+        {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener" style="font-size:0.8rem; margin-left:0.5rem;">Atbilde ↗</a>{% endif %}
+        {% if t.other_slug %}<a href="../politiki/{{ t.other_slug }}.html" class="saites-card-profile-btn" style="font-size:0.8rem; margin-left:0.5rem;">Skatīt profilu →</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if saites_data.commentary_about %}
+    <div class="saites-section saites-section-commentary">
+      <h4>Komentāri par {{ politician.name }} ({{ saites_data.commentary_about|length }})</h4>
+      {% for c in saites_data.commentary_about %}
+      <div class="card" style="margin-bottom:0.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+          <span>
+            {% if c.speaker_handle %}<a href="https://x.com/{{ c.speaker_handle }}" target="_blank" rel="noopener">@{{ c.speaker_handle }}</a>
+            {% else %}{{ c.speaker_name }}{% endif %}
+          </span>
+          <span style="color:var(--text-muted); font-size:0.8rem;">{{ c.stated_at[:10] if c.stated_at else c.created_at[:10] }}</span>
+        </div>
+        {% if c.topic %}<span class="topic-tag">{{ c.topic }}</span>{% endif %}
+        <p style="margin-top:0.4rem; font-size:0.9rem;">{{ c.stance }}</p>
+        {% if c.source_url %}<a href="{{ c.source_url | safe_url }}" target="_blank" rel="nofollow noopener" style="font-size:0.8rem;">Avots →</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if saites_data.vote_alignment_top %}
+    <div class="saites-section saites-section-alignment">
+      <h4>Visbiežāk balso vienādi</h4>
+      <ul class="alignment-list">
+        {% for v in saites_data.vote_alignment_top %}
+        <li><a href="../politiki/{{ v.slug }}.html">{{ v.name }}</a>{% if v.party %} <span style="color:var(--text-muted); font-size:0.8rem;">({{ v.party }})</span>{% endif %} — <strong>{{ v.agree_pct }}%</strong> sakritība ({{ v.agree }}/{{ v.total }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if saites_data.vote_alignment_bottom %}
+    <div class="saites-section saites-section-alignment">
+      <h4>Visretāk balso vienādi</h4>
+      <ul class="alignment-list">
+        {% for v in saites_data.vote_alignment_bottom %}
+        <li><a href="../politiki/{{ v.slug }}.html">{{ v.name }}</a>{% if v.party %} <span style="color:var(--text-muted); font-size:0.8rem;">({{ v.party }})</span>{% endif %} — <strong>{{ v.agree_pct }}%</strong> sakritība ({{ v.agree }}/{{ v.total }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if not saites_data.uzbrukumi and not saites_data.spriedzes and not saites_data.atbalsts and not saites_data.commentary_about and not saites_data.vote_alignment_top %}
+    <p style="color:var(--text-muted);">Nav saišu datu.</p>
+    {% endif %}
+
+    <a href="../saites.html" class="see-full-graph-link" style="display:inline-block; margin-top:1rem; font-size:0.9rem;">Skatīt pilnajā kartē →</a>
+  </div>
+  {% endif %}
+
+  <!-- Deklarācijas tab (VAD amatpersonu deklarācijas — year selector + 9 sekciju akkordeoni ar delta) -->
+  {% if 'deklaracijas' in tab_set %}
+  <div class="profile-tab" id="tab-deklaracijas" role="tabpanel" aria-labelledby="tab-btn-deklaracijas"{% if default_tab != 'deklaracijas' %} style="display:none;"{% endif %}>
+    {% include "_vad_panel.html.j2" %}
+  </div>
+  {% endif %}
+</section>
+
+{% include "_keep_digging.html.j2" %}
+{% endblock %}
+
+{% block scripts %}
+{# Pieejamo cilņu kopa — JSON-emitēta no tab_set (saglabā secību), ļauj
+   ppv1.js veikt URL hash validāciju. Non-executable script tips → CSP-atļauts. #}
+<script type="application/json" id="profile-tabs">{{ tab_set | tojson | safe_json }}</script>
+<script src="{{ assets_prefix }}assets/ppv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

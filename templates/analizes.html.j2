@@ -1,0 +1,209 @@
+{% extends "base.html.j2" %}
+{% set active_page = "analizes" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Analīzes{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Politiskās analīzes un tendences</div>
+      <h1 class="pagehead-h1">Analīzes</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Dienas</span>
+        <span class="pagehead-metric-value">{{ metrics.daily }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Nedēļas</span>
+        <span class="pagehead-metric-value">{{ metrics.weekly }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Tematiskās</span>
+        <span class="pagehead-metric-value">{{ metrics.tematic }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Sintēzes</span>
+        <span class="pagehead-metric-value">{{ metrics.sintezes }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="pagehead-tabs" role="tablist">
+    <button class="pagehead-tab active" id="tab-daily" data-anal-tab="daily" role="tab">
+      <span class="pagehead-tab-label">Dienas pārskati</span>
+      <span class="pagehead-tab-count">{{ posts|length }}</span>
+    </button>
+    <button class="pagehead-tab" id="tab-sintezes" data-anal-tab="sintezes" role="tab">
+      <span class="pagehead-tab-label">Sintēzes</span>
+      <span class="pagehead-tab-count">{{ syntheses|length }}</span>
+    </button>
+    <button class="pagehead-tab" id="tab-tematic" data-anal-tab="tematic" role="tab">
+      <span class="pagehead-tab-label">Tematiskās</span>
+      <span class="pagehead-tab-count">{{ analyses|length }}</span>
+    </button>
+    <button class="pagehead-tab" id="tab-trends" data-anal-tab="trends" role="tab">
+      <span class="pagehead-tab-label">Tendences</span>
+    </button>
+  </div>
+
+  <div id="anal-sintezes" style="display:none;">
+    {% if syntheses %}
+    <div class="analysis-feed{% if syntheses|length == 1 %} is-solo{% endif %}">
+      {% for s in syntheses %}
+      <a href="sintezes/{{ s.slug }}.html" class="analysis-feat{% if s.image_filename %} has-image{% endif %}">
+        {% if s.image_filename %}
+        <div class="analysis-feat-media">
+          <img src="images/synthesis/{{ s.image_filename|image_variant('card') }}" alt="{{ s.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="analysis-feat-body">
+          <div class="analysis-feat-meta">
+            <span class="analysis-feat-kicker">Sintēze</span>
+            {% if s.created %}
+            <span class="analysis-feat-sep">·</span>
+            <span class="analysis-feat-date">{{ s.created }}</span>
+            {% endif %}
+          </div>
+          <h3 class="analysis-feat-title">{{ s.title }}</h3>
+          {% if s.description %}
+          <div class="analysis-feat-desc">{{ s.description }}</div>
+          {% endif %}
+          {% if s.topics %}
+          <div class="analysis-feat-tags">
+            {% for tag in s.topics %}
+            <span class="analysis-feat-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <span class="analysis-feat-cta">Lasīt sintēzi →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card" style="text-align:center; padding:3rem;">
+      <p style="color:var(--text-muted);">Sintēzes drīzumā tiks publicētas.</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <div id="anal-tematic" style="display:none;">
+    {% if analyses %}
+    <div class="analysis-feed{% if analyses|length == 1 %} is-solo{% endif %}">
+      {% for a in analyses %}
+      <a href="{{ a.url }}" class="analysis-feat{% if a.image_filename %} has-image{% endif %}">
+        {% if a.image_filename %}
+        <div class="analysis-feat-media">
+          <img src="images/analizes/{{ a.image_filename|image_variant('card') }}" alt="{{ a.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="analysis-feat-body">
+          <div class="analysis-feat-meta">
+            <span class="analysis-feat-kicker">Tematiskā analīze</span>
+            <span class="analysis-feat-sep">·</span>
+            <span class="analysis-feat-date">{{ a.date }}</span>
+          </div>
+          <h3 class="analysis-feat-title">{{ a.title }}</h3>
+          {% if a.description %}
+          <div class="analysis-feat-desc">{{ a.description }}</div>
+          {% endif %}
+          {% if a.tags %}
+          <div class="analysis-feat-tags">
+            {% for tag in a.tags %}
+            <span class="analysis-feat-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <span class="analysis-feat-cta">Lasīt analīzi →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card" style="text-align:center; padding:3rem;">
+      <p style="color:var(--text-muted);">Tematiskās analīzes drīzumā tiks publicētas.</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <div id="anal-daily">
+    {% if posts %}
+    <div class="daily-feed">
+      {% for post in posts %}
+      <a href="blog/{{ post.slug }}.html" class="daily-card{% if post.image_filename %} has-image{% endif %}">
+        {% if post.image_filename %}
+        <img src="images/briefs/{{ post.image_filename|image_variant('thumb') }}"
+             alt="{{ post.headline or post.title }}"
+             width="320" height="180"
+             class="daily-card-thumb" loading="lazy">
+        {% endif %}
+        <div class="daily-date-block">
+          <div class="daily-date-day">{{ post.date[8:10] }}</div>
+          <div class="daily-date-month">{{ post.date[5:7] }}.{{ post.date[:4] }}</div>
+          <div class="daily-type {% if post.note_type == 'weekly_brief' %}daily-type-week{% endif %}">
+            {% if post.note_type == 'weekly_brief' %}Nedēļa{% else %}{{ post.weekday or 'Diena' }}{% endif %}
+          </div>
+        </div>
+        <div class="daily-body">
+          <h3 class="daily-title">{{ post.display_title or post.title }}</h3>
+          <div class="daily-preview">{{ post.preview }}</div>
+        </div>
+        <div class="daily-arrow">→</div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card" style="text-align:center; padding:3rem;">
+      <p style="color:var(--text-muted);">Dienas pārskati drīzumā tiks publicēti.</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <div id="anal-trends" style="display:none;">
+    {% if trends_data %}
+    <div class="grid-2">
+      <div class="chart-container">
+        <h3>Populārākās tēmas (14d)</h3>
+        <canvas id="topicsChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Aktīvākie politiķi (14d)</h3>
+        <canvas id="politiciansChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-container">
+      <h3>Laika līnija — pozīcijas un dokumenti (14d)</h3>
+      <canvas id="timelineChart"></canvas>
+    </div>
+    {% endif %}
+    {% if context_notes %}
+    <div class="section-header" style="margin-top:2rem">
+      <h3>Konteksts</h3>
+    </div>
+    <div class="grid-3 ctx-grid">
+      {% for note in context_notes %}
+      <div class="card ctx-card">
+        <div class="ctx-meta">
+          {% if note.topic %}<span class="ctx-chip">{{ note.topic }}</span>{% endif %}
+          <span class="ctx-date">{{ note.created_at[:10] if note.created_at else '' }}</span>
+        </div>
+        <div class="ctx-body">{{ note.content_html | safe }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% if trends_data %}
+<script type="application/json" id="trends-data">{{ trends_data | tojson | safe_json }}</script>
+{% endif %}
+<script src="{{ assets_prefix }}assets/chart.min.js" defer></script>
+<script src="{{ assets_prefix }}assets/anv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

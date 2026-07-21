@@ -1,0 +1,135 @@
+# Database
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+data/*.backup
+data/*.backup-*
+data/*.json
+data/backups/
+
+# Scratch output from routines (weekly skeleton md, saeima calendar snapshots)
+/scratch_*
+/scratchpad_*
+data/_weekly_skeleton_*.md
+data/saeima_tmp/
+data/saeima/
+data/saeima_snapshots/
+data/*.log
+data/scratch_*
+data/_braze_docs_*
+data/_bf/
+data/_p2/
+data/_bf_*.py
+data/_p2_*.py
+data/_session_*.py
+/calendar.md
+
+# Auth
+data/x_cookies.json
+data/x_cookies/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Output
+output/
+
+# Visual Companion brainstorm mockups
+.superpowers/
+
+# Deploy creds
+.env.deploy
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
+*.gz
+*.zip
+*.tar.gz
+
+# Debug / temp
+.playwright-mcp/
+.pytest_cache/
+.tmp/
+tmp/
+tmp_*
+.scratch/
+.scratch_*
+.git-commit-msg.tmp
+logs/
+videos/
+
+# uv lockfile — project is not yet uv-managed (pyproject has no [project]/[tool.uv]).
+# Remove this line when we actually adopt uv for dependency resolution.
+uv.lock
+
+# Screenshots (dev artifacts)
+*.png
+!docs/tweet_bank/**/*.png
+# Brand assets — versionēti, lai svaigs klons/publiskais spogulis renderē pilnu vietni
+!assets/og-image.png
+!assets/favicon-*.png
+!assets/apple-touch-icon.png
+
+# Downloaded docs
+*.pdf
+
+# Claude Code config — agent prompts (.claude/agents/) ARE canonical and tracked;
+# only per-operator runtime artefacts stay ignored
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+autoresearch-results.tsv
+
+# Handoff archives (kept in working tree but not in git history)
+atmina-handoff/
+atmina-handoff.zip
+
+# social agent draft images
+data/social/drafts/*.png
+data/x_cookies_atmina.json
+
+# Local diagnostic artifacts (not shared)
+data/autoresearch/
+
+# Worktrees
+.worktrees/
+
+# Throwaway one-off image/ad-hoc scripts (superseded by `python -m src.graphics.cli`)
+scripts/_scratch/
+
+# Obsidian per-machine UI state (open-files list etc.) — churns on every vault
+# browse; not content. The rest of wiki/.obsidian/ (config) stays tracked.
+wiki/.obsidian/workspace.json
+
+# --- Pre-flip working-tree hygiene (2026-06-19): scratch / binary / one-off, not for public repo ---
+pppa-reply.docx
+data/_brief_*.md
+docs/audits/
+docs/brand/
+docs/featured-images/
+# tweet_bank: keep .md drafts + *-thread-prompts.json; exclude binaries / renders / image dirs
+docs/tweet_bank/*.docx
+docs/tweet_bank/*.html
+docs/tweet_bank/*.png
+docs/tweet_bank/*-images/
+docs/tweet_bank/2026-05-16-1286-valodas-balsojums/
+# one-off / scratch scripts (not part of the pipeline)
+scripts/build_pppa_reply.py
+scripts/create_1286_vote_docx.py
+scripts/hunt_dombrava_20514.py
+scripts/render_1286_vote_social.py
+scripts/render_one_politician.py
+scripts/dump_claims_defamation_candidates_2026-06-19.py
+scripts/sync_defamation_reframe_2026-06-19.py
+scripts/apply_claims_defamation_reframe_2026-06-19.py
+scripts/final_defamation_cleanup_2026-06-19.py
+scripts/sanitize_render_fixture_2026-06-19.py
+wiki/dailies/
