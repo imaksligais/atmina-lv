@@ -1,0 +1,59 @@
+{
+  "_readme": [
+    "VAD homonīmu deny-list. Bloķē zināmo svešo deklarāciju atkārtotu ievākšanu.",
+    "Pirmie ieraksti: pid=146 Andris Bērziņš — LPP/LC homonīms (cita persona,",
+    "tāds pats Vārds Uzvārds). Avots: data/NVO/izpete_2026-08-12/vad_homonimu_adjudikacija.md,",
+    "purge data/rollback_vad_homonimu_purge_2026-08-12.sql (rindas 3401-3407).",
+    "",
+    "Divas kājas: ieraksts ar match {kind, year} ir STABILS (pāri sesijām);",
+    "ieraksts bez match ir tikai vad_uuid kāja — VID var rotēt uuid per-session,",
+    "tad kāja klusi zaudē spēku. Gads nav rekonstruējams no search etiķetes",
+    "(interim/end/post_year_*), un stabila (kind) kāja bez gada bloķētu arī paša",
+    "politiķa likumīgās nākotnes deklarācijas — tāpēc šīs paliek uuid-only.",
+    "Papildināt tikai ar operatora apstiprinājumu (standing rule: ne auto-add)."
+  ],
+  "entries": [
+    {
+      "pid": 146,
+      "vad_uuid": "30252e0c-bfe5-4450-a24e-9e43c874d975",
+      "match": {"kind": "annual", "year": 2009},
+      "reason": "LPP/LC Bērziņa 2009. gada deklarācija (dzēstās rindas id 3404)"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "ce33959f-47f3-4403-bb4b-03ba70191433",
+      "match": {"kind": "annual", "year": 2010},
+      "reason": "LPP/LC Bērziņa 2010. gada deklarācija (rollback rinda 3402)"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "5f4a657d-6586-4c3c-aabd-9e795a6eb14f",
+      "match": null,
+      "reason": "LPP/LC Bērziņa interim deklarācija, gads search etiķetē nav (rollback 3401); uuid-only — rotācijas gadījumā jāpārbauda manuāli pēc sweep"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "9043ab80-b4e2-4696-8645-936048c28017",
+      "match": null,
+      "reason": "LPP/LC Bērziņa interim deklarācija, gads nav (rollback 3403); uuid-only"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "3a717b8d-8da2-44d9-b1a1-b046a446f3af",
+      "match": null,
+      "reason": "LPP/LC Bērziņa beigu (end) deklarācija, gads nav (rollback 3405); uuid-only"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "d14c1bd3-f47c-4129-a015-0e91a1e2f1bf",
+      "match": null,
+      "reason": "LPP/LC Bērziņa deklarācija par pirmo gadu pēc pilnvaru beigām, gads nav (rollback 3406); uuid-only"
+    },
+    {
+      "pid": 146,
+      "vad_uuid": "257f51e4-b7cd-4717-98fd-85442d1ddc9e",
+      "match": null,
+      "reason": "LPP/LC Bērziņa deklarācija par otro gadu pēc pilnvaru beigām, gads nav (rollback 3407); uuid-only"
+    }
+  ]
+}

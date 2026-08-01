@@ -1,0 +1,47 @@
+{# Routine panel — 10 daily steps, status icon + LV label + details.
+
+Args:
+  routine: dict from get_routine_context() — keys: date, all_complete, steps
+#}
+<section id="routine-panel"
+         class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6">
+
+  <header class="flex items-baseline justify-between">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Rutīna
+    </h2>
+    <span class="text-xs data-mono text-slate-500 dark:text-slate-400">
+      {{ routine.date }}
+    </span>
+  </header>
+
+  <ol class="mt-4 space-y-2 text-sm">
+    {% for key, step in routine.steps.items() %}
+    <li class="flex items-start gap-3"
+        data-status="{{ step.status }}">
+      <span class="data-mono w-5 text-center
+                   {% if step.status == 'done' %}text-emerald-600 dark:text-emerald-400{% endif %}
+                   {% if step.status == 'missing' %}text-rose-600 dark:text-rose-400{% endif %}
+                   {% if step.status == 'waiting' %}text-amber-600 dark:text-amber-400{% endif %}
+                   {% if step.status in ('partial', 'stale') %}text-slate-500 dark:text-slate-400{% endif %}">
+        {{ step.icon }}
+      </span>
+      <span class="flex-1">
+        <span class="font-medium">{{ step.label }}</span>
+        <span class="text-slate-500 dark:text-slate-400">— {{ step.details }}</span>
+      </span>
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% if routine.all_complete %}
+    <p class="mt-4 status-success rounded px-2 py-1 text-xs inline-block">
+      ✓ Rutīna pabeigta
+    </p>
+  {% else %}
+    {% set pending = routine.steps.values() | rejectattr('status', 'equalto', 'done') | list %}
+    <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+      {{ pending | length }} solis{% if pending | length != 1 %}/{{ routine.steps | length }}{% endif %} vēl gaida
+    </p>
+  {% endif %}
+</section>

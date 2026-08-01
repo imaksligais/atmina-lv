@@ -1,0 +1,55 @@
+{% extends "base.html.j2" %}
+{% set active_page = "likumi" %}
+{% block title %}Pamatlikumi — Politiskā atmiņa{% endblock %}
+{% block description %}{{ metrics.total }} Latvijas pamatlikumi un to nesenie grozījumu likumprojekti.{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1>Pamatlikumi</h1>
+  <p class="muted">{{ metrics.total }} likumi · {{ metrics.with_bills }} ar aktīviem likumprojektiem</p>
+</div>
+
+<div class="filter-row" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+  <div class="multi-select" id="law-topic-select">
+    <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="law-topic-trigger">
+      <span>Visas tēmas</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+      <input type="text" class="multi-select-search" aria-label="Meklēt tēmas" placeholder="Meklēt...">
+      {% for t in law_topics %}
+      <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ t }}">
+        <span class="checkbox"></span>
+        <span>{{ t }}</span>
+      </div>
+      {% endfor %}
+      <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+    </div>
+  </div>
+  <input type="search" id="law-search" placeholder="Meklēt nosaukumā..."
+         class="bill-search-input">
+</div>
+
+<div class="bill-card-grid" id="laws-grid">
+  {% for law in laws %}
+  <a class="bill-card" href="likumi/{{ law.slug }}.html"
+     data-topic="{{ law.topic }}" data-title="{{ law.title|lower }}">
+    <div class="bill-card-title">{{ law.title }}</div>
+    {% if law.topic %}<span class="topic-chip">{{ law.topic }}</span>{% endif %}
+    <div class="bill-card-meta">
+      {% if law.bill_count > 0 %}
+        <span>{{ law.bill_count }} likumproj.</span>
+        {% if law.last_activity %}<span class="muted">· {{ law.last_activity[:10] }}</span>{% endif %}
+      {% else %}
+        <span class="muted">nav aktīvu likumprojektu</span>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/lkv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

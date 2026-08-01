@@ -1,0 +1,98 @@
+{% extends "base.html.j2" %}
+{% set active_page = "spriedzes" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Spriedzes{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="section-header">
+    <h2>Spriedzes</h2>
+    <span class="count">{{ tensions|length }} politiskās spriedzes</span>
+  </div>
+
+  <div class="filter-bar">
+    <div class="multi-select" id="type-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="type-trigger">
+        <span>Visi tipi</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt tipus" placeholder="Meklēt...">
+        {% for tt in tension_types %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ tt }}">
+          <span class="checkbox"></span>
+          <span>{% if tt == 'uzbrukums' %}Uzbrukums{% elif tt == 'spriedze' %}Spriedze{% elif tt == 'atbalsts' %}Atbalsts{% else %}{{ tt }}{% endif %}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="party-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="party-trigger">
+        <span>Visas partijas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt partijas" placeholder="Meklēt...">
+        {% for party in parties %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ party }}">
+          <span class="checkbox"></span>
+          <span>{{ party }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="person-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="person-trigger">
+        <span>Visas personas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt personas" placeholder="Meklēt...">
+        {% for person in persons %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ person }}">
+          <span class="checkbox"></span>
+          <span>{{ person }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" id="tensions-grid">
+    {% for t in tensions %}
+    <div class="card" data-type="{{ t.tension_type }}" data-party="{{ t.source_party }}" data-source-person="{{ t.source_name }}" data-target-person="{{ t.target_name }}">
+      <div class="card-header">
+        <div>
+          <a href="politiki/{{ t.source_slug }}.html" class="politician-name">{{ t.source_name }}</a>
+          <span class="party-tag">{{ t.source_party }}</span>
+          <span style="color: var(--text-muted); margin: 0 0.3rem;">&rarr;</span>
+          <a href="politiki/{{ t.target_slug }}.html" class="politician-name">{{ t.target_name }}</a>
+          <span class="party-tag">{{ t.target_party }}</span>
+        </div>
+        <span class="badge {% if t.tension_type == 'uzbrukums' %}badge-red{% elif t.tension_type == 'spriedze' %}badge-yellow{% elif t.tension_type == 'atbalsts' %}badge-green{% endif %}">{{ t.type_lv }}</span>
+      </div>
+      <span class="topic-tag">{{ t.topic }}</span>
+      <div class="summary" style="margin: 0.5rem 0; line-height: 1.5;">{{ t.description }}</div>
+      <div class="sources" style="display: flex; justify-content: space-between; align-items: center;">
+        <span>
+          {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">Avots &rarr;</a>{% endif %}
+          {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener" style="margin-left:0.6rem;">Atbilde &rarr;</a>{% endif %}
+        </span>
+        <span style="color: var(--text-muted); font-size: 0.85rem;">{{ t.date }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/spv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

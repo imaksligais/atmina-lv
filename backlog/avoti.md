@@ -1,0 +1,49 @@
+# BACKLOG tēmas fails
+
+_Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uzturēšanas kontrakts un ienākšanas noteikumi: [`../BACKLOG.md`](../BACKLOG.md) preambula. „§ Ne-darīt" un „§ Operatora verdikti" paliek galvenajā failā._
+
+## Avoti
+
+### [OPEN] X pieminējumu `timeline` fallback = diena bez publiskās sarunas seguma
+Sakne, kas paliek pēc 2026-08-01 labojuma (sk. CHANGELOG): pati **pārslēgšanās** uz `timeline` notiek klusi, kad pūla veselo slotu skaits nokrīt zem `SEARCH_MIN_HEALTHY_SLOTS`. Tagad tas vismaz ir REDZAMS (statuss + seguma piezīme), bet segums joprojām pazūd: `timeline` neredz pieminējumus no neizsekotiem kontiem, t.i. tieši to publisko sarunu par politiķiem, kuras dēļ solis eksistē. Mērogs: 5 nulles dienas no 25 (~20 %), plus viena ar 1.
+
+Ko izlemt: (a) vai pēc `timeline` skrējiena ar 0 saglabātiem automātiski pārplānot `search` atkārtojumu, kad pūls atveseļojas; (b) vai pūla veselība ir jālabo pirmām kārtām (5 sīkfailu faili — cik no tiem tiešām dzīvi?); (c) vai `timeline` vispār ir vērtīgs fallback, ja tā raža šajā konfigurācijā sistemātiski ir ~0 — varbūt godīgāk ir krist ar kļūdu, nekā skriet pa ceļu, kas neko nedod. Nedarīt (a) bez (b) — automātisks atkārtojums pret slimu pūlu tikai pavairos slodzi.
+
+**Datu punkts (b) jautājumam, 2026-08-04:** `scripts/probe_x_cookies.py` — **visi 5 sloti dzīvi, visi 4 endpointi katram OK** (arī abi STRICT), bez neviena rebuild. Pūls VAR būt pilnībā vesels; 5 nulles dienas no 25 tātad bija pārejošas veselības bedres, ne hroniska puse-mirusi konfigurācija. Tas nostiprina (a)+(c) virzienu (pārplānot search, kad pūls atkopies / godīgi krist), ne kredencāļu maiņu.
+
+### [OPEN] Vēsturisko dokumentu backlogi atsevišķai sweep sesijai
+
+Pārmērīts 2026-08-05 (read-only; `COUNT(DISTINCT d.id)` pār `documents d JOIN document_politicians dp ON dp.document_id=d.id WHERE dp.politician_id=? AND d.reviewed_at IS NULL`, sadalījums pa `(dp.role, d.platform)`):
+
+- **Edvīns Šnore (id=7):** 124 nepārskatīti — 99 `mention_target`/x_mention, 15 `mentioned`/twitter, 6 `mentioned`/vestnesis, 1 `mentioned`/web, 1 `mentioned`/x_mention, 3 `subject`/twitter.
+- **Mārtiņš Staķis (id=22):** 139 — 89 `mention_target`/x_mention, 46 `mentioned`/twitter, 3 `mentioned`/x_mention, 3 `subject`/twitter.
+- **Otto Ozols (id=182):** 64 — 37 `mention_target`/x_mention, 24 `mentioned`/twitter, 3 `subject`/twitter.
+
+Sākotnējie 2026-06-10 aģentu skaitļi (Šnore ~44, Staķis ~43, Ozols ~30) bija par citu, mazāku kopu un vairs neder. Rinda ir lielākoties mention-lane; izskatīšanas vērtā apakškopa paliek tā pati — `mentioned` (+ `vestnesis`), t.i. Šnore 23, Staķis 49, Ozols 24, pa ≤12 doku sesijām.
+
+**Vecā `subject`-aste — 1. sweep IZPILDĪTS 2026-08-06** (6 claims #689255–#689260; pieraksts CHANGELOG 2026-08-06). **Paliek nākamajiem sweep (pa ≤12 sesijā, nekad neienāk dienas rindā):** Lapsa 18+15+8 doki + visa laika `subject` 106, Velps 6 (51433, 47607, 47608 + 3 vecāki), Stendzenieks 17, Kulbergs 6 vecāki `web subject`, Judins doc 26496 (re-ingest, ne ekstrakcija), doc 64398 (J. Hermanis klips, marķēts tukšs pirms 08-03 precedenta — atvēršana = operatora lēmums). Neizšķirts noteikuma kandidāts: **retvīts-par-sevi** — ja pirmavots jau DB → empty; ja pirmavota korpusā nav, anonss = vienīgais pierādījums, bet virsraksta līmeņa parafrāze.
+
+**Divi jauni slotu mērījumi (2026-08-15, tas pats vaicājums).** Ekstrakcijas aģenti tos uzrādīja pēc dienas rindas iztukšošanas un pareizi **NEatzīmēja** ar `empty_doc_ids` — neizlasīta dokumenta zīmogošana ir tieši T5/T11 kļūda. **Pūpols (id=51): 829 nepārskatīti** — 649 `mention_target`/x_mention, 172 `mentioned`/twitter, 73 `mentioned`/x_mention, **8 `subject`** (33748 tvnet.lv web + 51419, 52350, 52351, 58050, 60409, 65931, 69992 twitter). **Lindberga (id=184): 194** — 143 `mention_target`/x_mention, 50 `mentioned`/twitter, 5 `mentioned`/x_mention, **1 `subject`** (51432, sākas ar `RT @lasitajs_nr1:`). Abi apstiprina sadaļas kopējo formu: `subject`-aste ir īsa un izdarāma vienā sesijā, mention-josla ir tā, kas nes apjomu. Lindbergas viens doks turklāt ir kails RT, tāpēc sagaidāmā raža no tā ir nulle — bet tas nav iemesls to neizlasīt.
+
+**Divas vakara ingest klases (2026-08-05, pierakstīts, ne aktīvs):** (1) **quote-tweet/atbilžu saturs netiek ievākts** — tvīta `content` nes tikai autora tekstu, tāpēc pozīcija, kas dzīvo citētajā tvītā, ir neekstraktējama pēc konstrukcijas (doc 81547 Hermanis „Šis ir gandrīz vēl svarīgāk…" ar karājošos referentu; tā pati klase kā video pielikumi § Novērošanā); ja klase kļūst bieža, lēmums ir ievākšanas paplašinājums. (2) **iespējams X ievākšanas logs Lapsas paša plūsmā** — pirmās personas KNAB iesnieguma frāze eksistē tikai releja spogulī (doc 81222), paša konta doku pārrāvums 08-04 18:28 → 08-05 07:28; pārbaudīt 08-04 fetch logu, pirms secināt.
+
+### [OPEN] lsm/diena/tvnet truncated doku backfill kampaņa gaida lsm soft-404 sargu
+Sakne salabota 2026-07-16 (`306e41b`): RSS ceļš nefetčoja korpusu, tagad `_enrich_rss_items_fulltext` + truncated-fallback guardrail. **Atlicis:** (1) vēsturisko backfill kampaņa (`insert_document` update-in-place saglabā doc-id/links/claims) — **PIRMS tās pievienot lsm soft-404 guardu** (HTTP 200 "nav atrasta" iziet cauri trafilaturai); (2) nit: `ingest.py:367` `lstrip("www.")` idioms. Blakus: pmo.ee/diena.lv paywall klases. **Slieksnis nav pierakstīts** — pirms apjoma plānošanas pārmēri ar nosauktu vaicājumu (`word_count < 90` dod 1 068 un 393; CHANGELOG 2026-08-03).
+
+### [BLOKĒTS] pietiek.com
+Aiz Cloudflare JS challenge — visas automatizētās metodes krīt (httpx, curl, crawl4ai headless UN headed; headed strādāja TIKAI ar manuālu CF checkbox klikšķi). `trafilatura` strādā uz raksta HTML (9045 simboli tīrs, bez paywall). RSS: `https://pietiek.com/rss/` (RSS 2.0, URL `http://www.pietiek.com/raksti/<slug>`, HTML entītijas jādekodē). **NEpievieno `sources.yaml`/`ingest.py`** līdz risinājumam: (1) manuāla CF cookie/session share, (2) CF bypass, vai (3) cita ingest metode.
+
+### [OPEN] Novērošanā (bez aktīvas darbības)
+
+Klases, kas ir izmeklētas un pierakstītas; rīcība sākas tikai tad, ja biežums aug. Neatver no jauna bez jauna fakta.
+
+- **twikit sliktā TID atslēga — tikai biežuma monitorings.** Salabots 2026-07-25 (CHANGELOG § twikit STRICT-404); STRICT 404 vairs NAV iemesls ct0 refresh. Ja `TRANSACTION_KEY_ATTEMPTS=4` nepietiek — celt budžetu vai pārbaudīt X atslēgas ceļu. Nianse: ct0 refresh TIKAI kopā ar `auth_token` no tās pašas pārlūka sesijas (citādi `403 code 353`; twikit-notes § 2026-06-12).
+- **pmo.ee 97 truncated stubi — pieņemts.** 96 ir paywall raksti, kuriem pilnais body caur publisko lapu nav dabūjams, + 1 fetch kļūda; ja kāds nes claim, `@claim-extractor` truncated-stub gate to marķē NEEDS_REVIEW. Sistēmiskā pārlāde (913/1010) un Vitenberga re-hunt izpildīti 2026-06-11 — sk. CHANGELOG arhīvu.
+- **Tvīti, kuru saturs dzīvo video pielikumā, ir sistēmiski neizlasāmi.** 2026-08-03: doc 79162 (Krištopans, 7 vārdi + `t.co` uz paša tvīta VIDEO pielikumu) — teksts nonāk korpusā, video ne, ekstrakcija korekti atgriež tukšu; tā pati klase kā Abu Meri 77556 (§ Ne-darīt). Ja klase kļūst bieža, lēmums ir divējs: tvītu media pielikumu apstrāde (video pipeline manuālam ceļam jau eksistē) vai apzināta pieņemšana. Sīkums no tās pašas dienas: doc 76622 (Delfi paywall) ir `is_paywall=0` — truncated-source spriedumi uz šo lauku paļauties nevar.
+- **`nra.lv/intervijas/` ievācas kā tikai-ievads** (2026-08-02, divi gadījumi vienā dienā): doc **78789** (Uzulnieks par darbaspēku Latgalē, 552 zīmes) un doc **78788** (Melnis par NBS un plūdiem, 859 zīmes) satur tikai virsrakstu un žurnālista uzstādījuma rindkopu, bez nevienas ministra atbildes — pozīcijas pastāv, tikai korpusā to nav. Nav `pmo.ee` klase un nav truncated-stub vārtu gadījums (859 zīmes ir VIRS ~600 sliekšņa), tāpēc lēmumu abos izšķīra satura pārbaude. Ja paterns turpinās, tas ir atkārtotas ievākšanas jautājums (`ingest_url.py` pa `source_url`), ne ekstrakcijas. **Paterns TURPINĀS — trešais gadījums 2026-08-15:** doc **87900** (`nra.lv/neatkariga/intervijas/527656-kucinskis-komente-latvijas-bankas-prasibas-lauksaimniekiem.htm`, 889 zīmes / 114 vārdi) beidzas ar «saruna ar M. Kučinski», t.i. atkal tikai anonss. Divas atšķirības no 08-02 pāra, kas maina prioritāti: (1) šoreiz **claim tomēr tika saglabāts** — #689677, `Lauksaimniecība`, conf 0.55, `quote=None`, jo viss pieejamais teksts ir žurnālista netiešā runa; aģents to karogoja `needs_review` tieši truncated-avota dēļ; (2) ceļš ir `/neatkariga/intervijas/`, ne `/intervijas/` — ja kāds būvē URL heiristiku, jāsedz abi. Trīs gadījumi divās nedēļās ir pietiekami, lai to vairs nesauktu par vienreizēju. **Re-ingest ceļš IZMĒRĪTS un ATMESTS 2026-08-16 — sk. § Ne-darīt;** klase paliek šeit kā novērojums (biežuma monitorings), bet rīcības kandidāta tai vairs nav.
+
+## Video ingest
+
+### [OPEN] Diarizācija uz crosstalk — per-segment satura sanity-check pirms labelled_transcript (2026-07-22)
+Pirmais E2E tests (KNL 2 min klips, karsta pārrunāšanās Domburs↔Švinka) parādīja: community-1 runātājus atrod, bet robežas asiņo abos virzienos — ministra pirmās personas teksts nonāca zem `@host`, vadītāja jautājums zem `@atis_svinka`, teikums pārrauts pusvārdā starp runātājiem. `@video-extractor` STOP-gate nostrādāja perfekti (0 claims, ziņojums, reviewed_at neaiztikts) — aizsardzības ķēde verificēta. Testa dokuments 71981 dzēsts (rollback `data/rollback_video_test_doc_71981_2026-07-22.sql`). Kandidātuzlabojumi: (a) finalize pirms rakstīšanas brīdina, ja `suggested_speakers.json` confidence 0.0; (b) per-segment "saturs atbilst runātājam?" pārbaude (pirmās personas ministra frāzes vs 'Jūs sakāt' intervētāja frāzes); (c) pirmajiem īstajiem ingestiem izvēlēties mierīgas intervijas, ne debašu klipus. Pilnais 20.04. Progresīvo raidījums (REplay, ~1.5h) būtu labs pirmais produkcijas kandidāts.
+

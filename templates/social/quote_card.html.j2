@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<style>
+  html, body { margin:0; padding:0; background:#0b0f19; color:#fff;
+    font-family: Inter, system-ui, sans-serif; }
+  .card { width: 1200px; height: 675px; padding: 60px 72px;
+    display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
+  .header { display: flex; align-items: baseline; justify-content: space-between; }
+  .header h1 { font-size: 44px; margin: 0; font-weight: 600; letter-spacing: -0.5px; }
+  .header .topic { font-size: 22px; color: #ff3b7f; font-weight: 500; }
+  .quotes { display: flex; flex-direction: column; gap: 28px; margin-top: 32px; }
+  .quote { padding: 24px 28px; background: #151a2a; border-left: 4px solid #ff3b7f;
+    border-radius: 8px; }
+  .quote p { margin: 0 0 10px; font-size: 28px; line-height: 1.35; }
+  .quote .meta { color: #a0a7b8; font-size: 16px; }
+  .footer { display: flex; justify-content: space-between; align-items: center;
+    color: #a0a7b8; font-size: 18px; }
+  .brand { color: #ff3b7f; font-weight: 700; font-size: 22px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1>{{ politician_name }}</h1>
+      <span class="topic">{{ topic }}</span>
+    </div>
+    <div class="quotes">
+      <div class="quote"><p>"{{ old_quote }}"</p><span class="meta">{{ old_date }}</span></div>
+      <div class="quote"><p>"{{ new_quote }}"</p><span class="meta">{{ new_date }}</span></div>
+    </div>
+    <div class="footer"><span>Kurš ir īstais viedoklis?</span><span class="brand">atmina.lv</span></div>
+  </div>
+</body>
+</html>

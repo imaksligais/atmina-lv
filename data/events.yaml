@@ -1,0 +1,115 @@
+# Notikumi, kas anotē statistikas grafikus.
+# tables: "all" vai saraksts ar CSP tabulu ID, uz kuriem notikums ir relevants.
+# category: crisis | milestone | policy | elections | government
+
+events:
+  # ── Milestones (visi grafiki) ─────────────────────────────
+  - date: "2004-03-29"
+    label: "Iestāšanās NATO"
+    category: milestone
+    tables: all
+
+  - date: "2004-05-01"
+    label: "Iestāšanās ES"
+    category: milestone
+    tables: all
+
+  - date: "2014-01-01"
+    label: "Eiro ieviešana"
+    category: milestone
+    tables: all
+
+  # ── Krīzes (visi grafiki) ─────────────────────────────────
+  - date: "2008-09-15"
+    label: "Lehman / globālā finanšu krīze"
+    category: crisis
+    tables: all
+
+  - date: "2008-12-19"
+    label: "SVF/ES aizdevums Latvijai"
+    category: crisis
+    tables: all
+
+  - date: "2009-06-01"
+    label: "Iekšējā devalvācija, budžeta griezumi"
+    category: crisis
+    tables: all
+
+  - date: "2020-03-13"
+    label: "COVID ārkārtas stāvoklis"
+    category: crisis
+    tables: all
+
+  - date: "2022-02-24"
+    label: "Krievijas iebrukums Ukrainā"
+    category: crisis
+    tables: all
+
+  - date: "2022-09-01"
+    label: "Enerģētikas krīze / gāzes cenu šoks"
+    category: crisis
+    tables: all
+
+  # ── Minimālā alga (tikai algu grafiks) ────────────────────
+  - date: "2014-01-01"
+    label: "Minimālā alga €320"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2015-01-01"
+    label: "Minimālā alga €360"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2017-01-01"
+    label: "Minimālā alga €380"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2018-01-01"
+    label: "Minimālā alga €430"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2021-01-01"
+    label: "Minimālā alga €500"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2023-01-01"
+    label: "Minimālā alga €620"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2024-01-01"
+    label: "Minimālā alga €700"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2025-01-01"
+    label: "Minimālā alga €740"
+    category: policy
+    tables: [DSV010m]
+
+  # ── Infrastruktūra (tikai IKP + parāds) ───────────────────
+  - date: "2019-05-15"
+    label: "Rail Baltica būvdarbu sākums"
+    category: milestone
+    tables: [IKP010, ISP010c, VFV050, KRE020m]
+
+  # ── Vēlēšanas (visi) ──────────────────────────────────────
+  - date: "2018-10-06"
+    label: "13. Saeimas vēlēšanas"
+    category: elections
+    tables: all
+
+  - date: "2022-10-01"
+    label: "14. Saeimas vēlēšanas"
+    category: elections
+    tables: all
+
+  # ── Valdība ───────────────────────────────────────────────
+  - date: "2023-09-15"
+    label: "Siliņas valdība"
+    category: government
+    tables: all

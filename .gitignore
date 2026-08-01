@@ -1,0 +1,216 @@
+# =====================================================================
+# ROOT IS AN ALLOW-LIST (2026-08-03, operator decision)
+# =====================================================================
+# Everything at the repo root is ignored, and the entries below are then
+# re-admitted by name. A new file dropped in the root is therefore PRIVATE by
+# default, and publishing it is a deliberate act — which is what the CLAUDE.md
+# standing rule already claims happens ("assume any new file is public unless
+# its directory is in that set").
+#
+# It previously worked the other way: ~24 rules each naming one specific file
+# (`pppa-reply.docx`, `scripts/hunt_dombrava_20514.py`, ...). That protects the
+# exact name and nothing else — rename the file, or drop a sibling next to it,
+# and the protection is gone. The repo is PUBLIC and mirrors from this tree, so
+# the deny-list put the burden on somebody remembering a rule every time.
+#
+# Adding a new top-level directory or root file? Add its `!` line here in the
+# same commit, or git will not see it. That failure is loud (the file simply
+# does not appear in `git status`), which is the intended direction: a missing
+# allow rule costs a commit, a missing deny rule costs a disclosure.
+#
+# Deeper rules below still apply INSIDE these directories — `!/data/` re-admits
+# the directory, it does not re-admit `data/*.json`.
+/*
+
+!/.claude/
+!/.github/
+!/assets/
+!/backlog/
+!/content/
+!/curated/
+!/data/
+!/design/
+!/docs/
+!/scripts/
+!/src/
+!/templates/
+!/tests/
+!/wiki/
+
+!/.env.deploy.example
+!/.gitattributes
+!/.gitignore
+!/ARCHITECTURE.md
+!/BACKLOG.md
+!/CLAUDE.md
+!/CODE_OF_CONDUCT.md
+!/CONTRIBUTING.md
+!/LICENSE
+!/README.md
+!/SECURITY.md
+!/pyproject.toml
+!/requirements.lock
+!/requirements.txt
+!/serve.py
+!/sources.yaml
+
+# =====================================================================
+# Rules that apply at ANY depth (inside the allowed directories above)
+# =====================================================================
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+data/*.backup
+data/*.backup-*
+data/*.json
+# VAD homonīmu deny-list — operator-kurēta konfigurācija, ko lasa src/vad/denylist.py.
+# Jābūt versiju kontrolē: svaigā klonā trūkstošs fails nozīmētu klusi tukšus vārtus
+# (un tests test_vad_denylist.py prasa, lai tas eksistē).
+!data/vad_denylist.json
+data/backups/
+
+# Scratch output from routines (weekly skeleton md, saeima calendar snapshots).
+# The former root-only entries here (/scratch_*, /scratchpad_*, /calendar.md,
+# /eval_matcher_out.json, pppa-reply.docx) are now covered by the root
+# allow-list above and no longer need naming.
+#
+# `data/_*` is one rule for the whole underscore-prefixed scratch family and
+# replaces eight name-specific ones (_weekly_skeleton_*.md, _braze_docs_*,
+# _bf/, _p2/, _bf_*.py, _p2_*.py, _session_*.py, _brief_*.md). Same reason the
+# root became an allow-list: a rule that names one shape protects that shape and
+# nothing else. Measured 2026-08-15 — within a day of the 08-14 repo cleanup the
+# class had regrown to 18 untracked `data/_*` session scripts, and one
+# (`_fix_daily_brief_counts_20260815.py`) was tracked and had reached the public
+# mirror. Deliberate migrations keep their real names (`data/fix_*.sql`,
+# `data/rollback_*.sql`) and stay tracked — the underscore IS the scratch marker.
+data/_*
+data/saeima_tmp/
+data/saeima/
+data/saeima_snapshots/
+data/*.log
+data/scratch_*
+
+# Auth
+data/x_cookies.json
+data/x_cookies/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Output
+output/
+
+# Visual Companion brainstorm mockups
+.superpowers/
+
+# Deploy creds
+.env.deploy
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
+*.gz
+*.zip
+*.tar.gz
+
+# Debug / temp
+.playwright-mcp/
+.pytest_cache/
+.tmp/
+tmp/
+tmp_*
+.scratch/
+.scratch_*
+.git-commit-msg.tmp
+logs/
+videos/
+
+# uv lockfile — project is not yet uv-managed (pyproject has no [project]/[tool.uv]).
+# Remove this line when we actually adopt uv for dependency resolution.
+uv.lock
+
+# Screenshots (dev artifacts)
+*.png
+!docs/tweet_bank/**/*.png
+# Brand assets — versionēti, lai svaigs klons/publiskais spogulis renderē pilnu vietni
+!assets/og-image.png
+!assets/favicon-*.png
+!assets/apple-touch-icon.png
+
+# Downloaded docs
+*.pdf
+
+# Claude Code config — agent prompts (.claude/agents/) ARE canonical and tracked;
+# only per-operator runtime artefacts stay ignored
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+autoresearch-results.tsv
+
+# Handoff archives (kept in working tree but not in git history)
+atmina-handoff/
+atmina-handoff.zip
+
+# social agent draft images
+data/social/drafts/*.png
+data/x_cookies_atmina.json
+
+# Local diagnostic artifacts (not shared)
+data/autoresearch/
+
+# Worktrees
+.worktrees/
+
+# Obsidian per-machine UI state (open-files list etc.) — churns on every vault
+# browse; not content. The rest of wiki/.obsidian/ (config) stays tracked.
+wiki/.obsidian/workspace.json
+
+# --- Working-tree hygiene: scratch / binary / one-off, not for public repo ---
+# NB: `docs/audits/` was listed here 2026-08-14 with the rationale "not for public
+# repo" and REMOVED again 2026-08-22. The rationale was already satisfied elsewhere:
+# `docs/audits` sits in the public-mirror exclusion set (docs/funding/repo-sync.md
+# step 2), exactly like `docs/plans` — which is tracked AND mirror-excluded, 19/19.
+# Untracking bought no privacy and cost provenance: `BACKLOG.md`'s ingestion contract
+# (2026-08-19) routes investigation evidence to this directory, and by 2026-08-22
+# three of the eight audit documents cited from tracked files were already gone —
+# one `git clean` from a citation target. Audits are evidence; evidence gets versioned.
+docs/brand/
+docs/featured-images/
+# tweet_bank: keep .md drafts + *-thread-prompts.json; exclude binaries / renders / image dirs
+docs/tweet_bank/*.docx
+docs/tweet_bank/*.html
+docs/tweet_bank/*.png
+docs/tweet_bank/*-images/
+docs/tweet_bank/2026-05-16-1286-valodas-balsojums/
+# synthesis: keep the hand-written .md source (wiki/synthesis/); exclude the print
+# intermediates. `render_synthesis_pdf.py` writes a base64-inlined .html next to the
+# .pdf; the .pdf was always ignored (*.pdf) but the .html was tracked and shipped to
+# the PUBLIC mirror at 2 836 294 B — 9,96 % of the whole 28,48 MB public tree for a
+# file nothing reads (the published page is output/atmina/sintezes/*.html, ~29 KB,
+# rendered independently from the .md). Regenerable; untracked 2026-08-22.
+docs/synthesis/*.html
+# NB: eleven name-specific `scripts/*.py` deny rules + `scripts/_scratch/` were
+# deleted here 2026-08-15 — verified: none of the twelve paths existed any more
+# (the files went in the 08-14 cleanup, the rules stayed). A deny rule for a
+# file that does not exist protects nothing and reads as if it does.
+wiki/dailies/
+
+# Ielādes žurnāls — append-only operatora diagnostika, kas rotē reizi mēnesī
+# (~110 KB/mēn). To lasa `read_ingest_log()` no DISKA, interaktīvi; neviens
+# automātisks ceļš to neizsauc, un jēgpilnā vēsture dzīvo wiki/CHANGELOG.md.
+# Indekss `wiki/log-ingest.md` paliek izsekots — ignorēta ir tikai mape.
+wiki/log-ingest/
+
+# NVO dotāciju analīzes avoti (privāti: xlsx izvilkums + iekšējā piezīme;
+# publiskā lapa dzīvo curated/atmina/analizes/)
+data/NVO/
+docs/eval/_run-*

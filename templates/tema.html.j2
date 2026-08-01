@@ -1,0 +1,118 @@
+{% extends "base.html.j2" %}
+{% set active_page = "temas" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ topic.name }}{% endblock %}
+{% block description %}{{ topic.name }} — Latvijas politiķu pozīcijas un pretrunas par šo tēmu atmina.lv.{% endblock %}
+
+{% block og_title %}{{ topic.name }} — atmina.lv{% endblock %}
+{% block og_description %}Latvijas politiķu pozīcijas un pretrunas par tēmu “{{ topic.name }}”.{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <div class="tema-detail-back">
+    <a href="{{ assets_prefix }}temas.html">← Visas tēmas</a>
+  </div>
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">
+        <span class="tema-card-dot" style="background: {{ topic.color }}" aria-hidden="true"></span> Tēma
+      </div>
+      <h1 class="pagehead-h1">{{ topic.name }}</h1>
+    </div>
+    {% set tema_share_url = BASE_URL ~ "/temas/" ~ topic.slug ~ ".html" %}
+    <div class="share-row">
+      <a class="share-btn share-btn-x" href="https://x.com/intent/tweet?text={{ ('Tēma: ' ~ topic.name ~ ' — atmina.lv')|urlencode }}&url={{ tema_share_url|urlencode }}" target="_blank" rel="noopener" title="Dalīties uz X">𝕏 Dalīties</a>
+      <button type="button" class="share-btn share-btn-copy" data-copy-url="{{ tema_share_url }}" aria-live="polite">Kopēt saiti</button>
+    </div>
+  </header>
+
+  {% if topic.top_politicians %}
+  <section class="tema-section" id="tema-politiki">
+    <h2 class="tema-section-title">Top politiķi par tēmu</h2>
+    <div class="tema-politiki-list">
+      {% for p in topic.top_politicians %}
+      <a class="tema-politiks" href="{{ assets_prefix }}politiki/{{ p.slug }}.html">
+        <span class="tema-politiks-bar" style="background: {{ p.party_color }}" aria-hidden="true"></span>
+        <span class="tema-politiks-name">{{ p.name }}</span>
+        <span class="tema-politiks-meta">{{ p.party_short }} · {{ p.count }} poz.</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if topic.latest_positions %}
+  <section class="tema-section" id="tema-pozicijas">
+    <h2 class="tema-section-title">Jaunākās pozīcijas</h2>
+    <div class="tema-pozicijas-list">
+      {% for c in topic.latest_positions %}
+      <article class="tema-pozicija conf-{{ c.confidence }}">
+        <div class="tema-pozicija-head">
+          <span class="tema-pozicija-bar" style="background: {{ c.party_color }}" aria-hidden="true"></span>
+          <a class="tema-pozicija-name" href="{{ assets_prefix }}politiki/{{ c.slug }}.html">{{ c.politician_name }}</a>
+          <time class="tema-pozicija-date" datetime="{{ c.stated_at }}">{{ c.stated_at }}</time>
+        </div>
+        <p class="tema-pozicija-stance">{{ c.stance }}</p>
+        {% if c.source_url %}
+        <div class="tema-pozicija-meta">
+          <a href="{{ c.source_url | safe_url }}" target="_blank" rel="noopener">{{ c.source_domain or "avots" }} ↗</a>
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if topic.contradictions %}
+  <section class="tema-section" id="tema-pretrunas">
+    <h2 class="tema-section-title">Pretrunas šajā tēmā</h2>
+    <div class="prv2-related-grid">
+      {% for c in topic.contradictions %}
+      <a class="prv2-related-card sev-{{ c.severity }}" href="{{ assets_prefix }}pretrunas/{{ c.id }}.html">
+        <div class="prv2-related-glyph">{{ c.severity_glyph }}</div>
+        <div class="prv2-related-body">
+          <div class="prv2-related-sev">{{ c.politician_name }} · {{ c.category_label or c.severity_lv }}</div>
+          <div class="prv2-related-summary">{{ (c.summary or c.old_stance or '')|truncate(140) }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if topic.related_bills %}
+  <section class="tema-section" id="tema-likumi">
+    <h2 class="tema-section-title">Saistītie likumi</h2>
+    <ul class="tema-bills-list">
+      {% for b in topic.related_bills %}
+      <li><a href="{{ assets_prefix }}likumprojekti/{{ b.slug }}.html">{{ b.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if topic.related_syntheses %}
+  <section class="tema-section" id="tema-sintezes">
+    <h2 class="tema-section-title">Saistītās sintēzes</h2>
+    <div class="tema-sintezes-list">
+      {% for s in topic.related_syntheses %}
+      <a href="{{ assets_prefix }}sintezes/{{ s.slug }}.html" class="card tema-sinteze">
+        {% if s.image_filename %}
+        <img src="{{ assets_prefix }}images/synthesis/{{ s.image_filename|image_variant('thumb') }}" alt="" loading="lazy" decoding="async" width="96" height="54" class="tema-sinteze-img">
+        {% endif %}
+        <div class="tema-sinteze-text">
+          <div class="tema-sinteze-title">{{ s.title }}</div>
+          {% if s.description %}<div class="tema-sinteze-desc">{{ s.description }}</div>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% include "_keep_digging.html.j2" %}
+</section>
+{% endblock %}

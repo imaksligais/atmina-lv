@@ -1,0 +1,141 @@
+{% extends "base.html.j2" %}
+{% set active_page = "mediji" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ outlet.name }}{% endblock %}
+
+{% block content %}
+<section class="section medijs">
+  <a href="../mediji.html" class="back-link">&larr; Visi mediji</a>
+
+  <header class="medijs-head">
+    <h1>{{ outlet.name }}</h1>
+    <div class="medijs-meta">
+      {% if outlet.type_label %}<span class="medijs-chip">{{ outlet.type_label }}{% if outlet.language and outlet.language != 'lv' %} · {{ outlet.language|upper }}{% endif %}</span>{% endif %}
+      {% if outlet.website %}<a href="{{ outlet.website }}" target="_blank" rel="noopener" class="medijs-link">{{ outlet.website | replace('https://', '') | replace('http://', '') }} ↗</a>{% endif %}
+      {% if outlet.x_handle %}<a href="https://x.com/{{ outlet.x_handle }}" target="_blank" rel="noopener" class="medijs-link">@{{ outlet.x_handle }}</a>{% endif %}
+    </div>
+    {% if outlet.description %}<p class="medijs-desc">{{ outlet.description }}</p>{% endif %}
+  </header>
+
+  <h2 class="medijs-h2">Caurskatāmība</h2>
+  {% set fact_labels = {
+       "owner": "Īpašnieks",
+       "funding_model": "Finansējums",
+       "legal_form": "Juridiskā forma",
+       "editorial_leadership": "Redakcijas vadība",
+       "founded": "Dibināts"} %}
+  {% if outlet.facts %}
+  <div class="fact-grid">
+    {% for f in outlet.facts %}
+    <div class="fact-card">
+      <div class="fact-label">{{ fact_labels.get(f.field, f.field) }}</div>
+      <div class="fact-value">{{ f.value }}</div>
+      <div class="fact-foot">
+        <a href="{{ f.source_url }}" target="_blank" rel="noopener" class="source-link">avots</a>
+        {% if f.as_of %}<span class="muted">{{ f.as_of }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="muted">Caurskatāmības dati (īpašnieki, finansējums, redakcijas vadība)
+     vēl nav apkopoti šim medijam.</p>
+  {% endif %}
+
+  {% if feeds %}
+  <h2 class="medijs-h2">X konti un raidījumi</h2>
+  <div class="feed-grid">
+    {% for f in feeds %}
+    <a class="feed-card" href="../politiki/{{ f.slug }}.html">
+      {% if f.has_photo %}
+      <img class="feed-avatar" src="../assets/photos/{{ f.slug }}.jpg" alt="{{ f.name }}" loading="lazy" decoding="async" width="40" height="40">
+      {% else %}
+      <span class="feed-avatar feed-avatar-ph" aria-hidden="true">{{ f.name[0]|upper }}</span>
+      {% endif %}
+      <span class="feed-ident">
+        <span class="feed-name">{{ f.name }}</span>
+        {# LV locījums: 1/21/31... publikācija, bet 11 publikācijas #}
+        <span class="feed-sub">@{{ f.handle }}{% if f.pubs %} · {{ f.pubs }} publikācij{% if f.pubs % 10 == 1 and f.pubs % 100 != 11 %}a{% else %}as{% endif %}{% endif %}</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="medijs-cover-head">
+    <h2 class="medijs-h2">Pārklājums</h2>
+    <span class="medijs-volume">{{ volume_phrase }}</span>
+  </div>
+  <p class="muted medijs-note">Aprakstoši dati no atmina dokumentiem. Viens raksts var
+     pieminēt vairākas partijas, tāpēc daļas var summēties pāri 100%.</p>
+
+  <h3 class="medijs-h3">Visvairāk atspoguļotie politiķi</h3>
+  {% if top_politicians %}
+  {% set pol_max = top_politicians[0].count %}
+  <div class="cover-list">
+    {% for p in top_politicians %}
+    <a class="cover-row" href="../politiki/{{ p.slug }}.html">
+      <span class="cover-name">
+        <span class="cover-dot" style="background:{{ p.party_color }}"></span>{{ p.key }}
+        {% if p.party %}<span class="cover-party">{{ p.party }}</span>{% endif %}
+      </span>
+      <span class="cover-track">
+        <span class="cover-fill" style="width:{{ (p.count / pol_max * 100)|round(1) }}%;background:{{ p.party_color }}"></span>
+      </span>
+      <span class="cover-count">{{ p.count }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="muted">Nav politiķu pārklājuma datu.</p>
+  {% endif %}
+
+  <h3 class="medijs-h3">Pārklājums pa partijām</h3>
+  {% if party_rows %}
+  {% set share_max = party_rows[0].share %}
+  <div class="cover-list party-cover">
+    {% for r in party_rows %}
+    {% set cover_tag = 'a' if r.party_slug else 'div' %}
+    <{{ cover_tag }} class="cover-row{% if not r.party_slug %} static{% endif %}"{% if r.party_slug %} href="../partijas/{{ r.party_slug }}.html"{% endif %}>
+      <span class="cover-name">
+        <span class="cover-dot" style="background:{{ r.party_color }}"></span>{{ r.party }}
+        <span class="cover-sub">{{ r.count_phrase }}</span>
+      </span>
+      <span class="cover-track" title="Vidēji visos medijos: {{ (r.avg_share * 100)|round(0)|int }}%">
+        <span class="cover-fill" style="width:{{ (r.share / share_max * 100)|round(1) }}%;background:{{ r.party_color }}"></span>
+        {% if r.avg_share > 0 %}<span class="cover-avg" style="left:{{ (r.avg_share / share_max * 100)|round(1) }}%"></span>{% endif %}
+      </span>
+      <span class="cover-count">{{ (r.share * 100)|round(0)|int }}%</span>
+    </{{ cover_tag }}>
+    {% endfor %}
+  </div>
+  <p class="cover-legend"><span class="cover-avg-key"></span> vidējais visos medijos</p>
+  {% else %}
+  <p class="muted">Nav partiju pārklājuma datu.</p>
+  {% endif %}
+
+  <h3 class="medijs-h3">Biežākās tēmas</h3>
+  {% if top_topics %}
+  <div class="topic-chips">
+    {% for t in top_topics %}<span class="topic-chip">{{ t.key }}<b>{{ t.count }}</b></span>{% endfor %}
+  </div>
+  {% else %}
+  <p class="muted">Nav tēmu datu.</p>
+  {% endif %}
+
+  <h3 class="medijs-h3">Jaunākie {{ volume_label }}</h3>
+  {% if recent %}
+  <ul class="recent-list">
+    {% for a in recent %}
+    <li>
+      <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+      {% if a.date %}<span class="recent-date">{{ a.date }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="muted">Nav rakstu.</p>
+  {% endif %}
+</section>
+{% endblock %}

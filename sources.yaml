@@ -1,0 +1,498 @@
+sources:
+  # Tier 1: Safe (direct fetch with httpx)
+  - url: "https://www.lsm.lv/rss/?lang=lv&catid=20"
+    name: "LSM.lv Latvija"
+    outlet: lsm
+    framing: "Valsts sabiedriskais medijs — institucionāli neitrāls, tendēts uz valdības pozīcijas atspoguļošanu, izvairās no spekulācijām"
+    tier: 1
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Public broadcaster RSS — Latvija section (politics, government)"
+    last_tos_review: "2026-04-01"
+
+  - url: "https://www.lsm.lv/rss/?lang=lv&catid=22"
+    name: "LSM.lv Ekonomika"
+    outlet: lsm
+    framing: "Valsts sabiedriskais medijs — ekonomikas fokuss, ministru un institūciju perspektīva dominē"
+    tier: 1
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Public broadcaster RSS — Ekonomika section"
+    last_tos_review: "2026-04-01"
+
+  - url: "https://www.diena.lv/rss/?c=3"
+    name: "Diena.lv Latvijā"
+    outlet: diena
+    framing: "Liberāli centriskā dienas avīze — balansēta ziņošana ar vieglu pro-ES un pro-reformu tendenci"
+    tier: 1
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Major Latvian daily — Latvijā section (politics, Rīga, regions)"
+    last_tos_review: "2026-04-01"
+
+  - url: "https://www.diena.lv/rss/?c=190"
+    name: "Diena.lv Viedokļi"
+    outlet: diena
+    framing: "Viedokļu sadaļa — redakcijas atlasīti autori, tendēti uz liberālu-konservatīvu centru"
+    tier: 1
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Major Latvian daily — Viedokļi (opinion) section"
+    last_tos_review: "2026-04-01"
+
+  - url: "https://www.tvnet.lv/rss"
+    name: "TVNet RSS"
+    outlet: tvnet
+    framing: "Komercportāls — optimizēts engagement, sensacionālāki virsraksti, plašāks tēmu diapazons"
+    tier: 1
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "TVNet public RSS feed — no section feeds available, keyword-filtered at ingest"
+    last_tos_review: "2026-04-01"
+    keyword_filter: true
+
+  # Tier 2: Web scraping (httpx + trafilatura, no browser needed)
+  - url: "https://www.delfi.lv/"
+    name: "Delfi.lv"
+    outlet: delfi
+    framing: "Lielākais ziņu portāls — engagement optimizēts, ātrs uz breaking news, plašs autoru loks ar dažādām perspektīvām"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Major Latvian news portal, public content"
+    last_tos_review: "2026-03-25"
+
+  - url: "https://www.leta.lv/"
+    name: "LETA"
+    outlet: leta
+    framing: "Nacionālā ziņu aģentūra — visfaktoloģiskākais avots, minimāla interpretācija, oficiālie paziņojumi un preses konferences"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 90
+    legal_status: "approved"
+    legal_notes: "National news agency, public homepage articles (not behind paywall)"
+    last_tos_review: "2026-03-25"
+
+  - url: "https://nra.lv/"
+    name: "Neatkarīgā"
+    outlet: nra
+    framing: "Konservatīvi nacionāla avīze — kritiskāka pret koalīciju, nacionālo interešu fokuss, vairāk opozīcijas perspektīvas"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Neatkarīgā Rīta Avīze, public content"
+    last_tos_review: "2026-03-25"
+
+  - url: "https://nra.lv/viedokli/"
+    name: "Neatkarīgā Viedokļi"
+    outlet: nra
+    framing: "Viedokļi no konservatīvi nacionāla skatu punkta — bieži opozīcijas un neatkarīgo ekspertu autori"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "NRA viedokļu sadaļa — politiķu un ekspertu viedokļraksti"
+    last_tos_review: "2026-04-01"
+
+  - url: "https://www.la.lv/"
+    name: "Latvijas Avīze"
+    outlet: la
+    framing: "Tradicionāls dienas laikraksts — konservatīvi-centriska redakcionālā līnija, lauku un nacionālās identitātes fokuss, biežāk skar deklarāciju, finansu un publiskā sektora caurskatāmības tēmas"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Latvijas Avīze (la.lv), publisks saturs. Sitemap nav (visas /sitemap*.xml URL atgriež 404 HTML). Discovery via homepage + /category/zinas/ saraksta lapu."
+    last_tos_review: "2026-04-17"
+
+  - url: "https://jauns.lv/"
+    name: "Jauns.lv"
+    outlet: jauns
+    framing: "Plaša auditorija, tabloid-uzsvars — sensacionālāki virsraksti, ātrs ziņu cikls, bet stabili pārklāj politiku un sabiedrību (Saeima, MK, KNAB lietas, deputātu finanses); reizēm pirmais ar regiona/pašvaldības vērstām skandāliem ko citi pakaļ paņem"
+    tier: 2
+    fetcher_mode: "web_scraper"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Publisks ziņu portāls. RSS pieejams (/rss), bet tier-2 web_scraper izmantots full body fetch caur trafilatura (RSS dotu tikai title+desc). Discovery via homepage + /kategorija/zinas/politika + /sabiedriba + /zinas saraksta lapām. 2026-04-29 uzbrauktas pārbaudes: HTTP 200 ar Mozilla UA, nav CF/anti-bot."
+    last_tos_review: "2026-04-29"
+
+  # Tier 3: Manual-only — vestnesis_lv requires two-stage fetch (RSS gives
+  # only title+link), runs via scripts/ingest_vestnesis.py. Tier 3 keeps
+  # ingest_all() out of it; the manual script reads from this YAML row to
+  # auto-create/look-up the source.
+  - url: "https://www.vestnesis.lv/feed/JL"
+    name: "Latvijas Vēstnesis JL"
+    outlet: vestnesis
+    framing: "Oficiālais laidiens — promulgētie tiesību akti, MK noteikumi, rīkojumi, ST nolēmumi. Faktoloģisks, bez interpretācijas; politiķu junction caur parakstītājiem."
+    tier: 3
+    fetcher_mode: "fetcher"
+    rate_limit_seconds: 60
+    legal_status: "approved"
+    legal_notes: "Latvijas Vēstnesis (vestnesis.lv) JL — Jaunumi Laidienā RSS. Two-stage fetch: RSS dod tikai title+link, body fetch caur /ta/id/<N> ar trafilatura. MANUĀLS INGEST TIKAI — palaid via scripts/ingest_vestnesis.py. Tier 3 nodrošina, ka ingest_all() to neielādē kā parastu RSS (kas radītu title-only stub)."
+    last_tos_review: "2026-04-30"
+
+  # Tier 3: Excluded (documented)
+  - url: "https://www.instagram.com"
+    name: "Instagram"
+    tier: 3
+    legal_status: "excluded"
+    legal_notes: "No public API for this use case"
+
+  - url: "https://www.tiktok.com"
+    name: "TikTok"
+    tier: 3
+    legal_status: "excluded"
+    legal_notes: "Gated researcher access only"
+
+  - url: "https://bsky.app"
+    name: "Bluesky"
+    tier: 3
+    legal_status: "excluded"
+    legal_notes: "Minimal Latvian political presence"
+
+# Media-outlet registry (consumed by src/outlets.py → mediji.html pages).
+# Identity + sourced transparency facts. `facts` is filled per-outlet by the
+# @outlet-researcher agent (each fact MUST carry a source_url, or it is dropped
+# at read time — mirrors the claims "no source_url → dropped" rule). Feeds above
+# are grouped to these outlets via their `outlet:` tag.
+outlets:
+  - short_name: lsm
+    name: "Latvijas Sabiedriskie mediji (LSM)"
+    type: public_tv
+    language: lv
+    hosts: ["lsm.lv"]
+    x_handle: "ltvzinas"
+    x_feeds: ["ltvzinas", "ltvpanorama", "ltvdefacto", "Krustpunkta", "KNL_LTV1"]
+    website: "https://www.lsm.lv"
+    description: "Latvijas sabiedriskais medijs — LTV un Latvijas Radio kopējais ziņu portāls."
+    facts:
+      - field: owner
+        value: 'Sabiedriskais elektroniskais plašsaziņas līdzeklis; kapitālsabiedrība, kurā visas kapitāla daļas (100%) pieder valstij. Valsts kapitāla daļu turētāja ir Sabiedrisko elektronisko plašsaziņas līdzekļu padome (SEPLP).'
+        source_url: "https://www.seplp.lv/lv/par-mums/kapitalsabiedribas"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Finansējumu galvenokārt veido valsts budžeta dotācija sabiedriskā pasūtījuma īstenošanai. 2025. gadam apstiprinātais kopējais budžets ir 51 359 239 euro.'
+        source_url: "https://www.seplp.lv/lv/jaunums/apvienotais-sabiedriskais-medijs-darbu-saks-ar-jaudigu-sabiedriska-pasutijuma-planu-un-budzetu"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Valsts sabiedrība ar ierobežotu atbildību (VSIA) "Latvijas Sabiedriskais medijs"; darbību regulē Sabiedrisko elektronisko plašsaziņas līdzekļu un to pārvaldības likums.'
+        source_url: "https://www.seplp.lv/lv/par-mums/kapitalsabiedribas"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Galvenā redaktore ir Anita Brauna, kura amatā stājās 2025. gada 1. jūnijā.'
+        source_url: "https://www.tvnet.lv/8259802/lsm-galvena-redaktora-amata-darbu-sak-anita-brauna"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Apvienotā VSIA "Latvijas Sabiedriskais medijs" reģistrēta komercreģistrā un darbu sāka 2025. gada 2. janvārī, apvienojot Latvijas Radio (dibināts 1925. gadā), Latvijas Televīziju (1954. gadā) un portālu LSM.lv (2013. gadā).'
+        source_url: "https://www.seplp.lv/lv/jaunums/darbu-sacis-apvienotais-latvijas-sabiedriskais-medijs"
+        as_of: "2026-06-01"
+
+  - short_name: diena
+    name: "Diena"
+    type: print
+    language: lv
+    hosts: ["diena.lv"]
+    website: "https://www.diena.lv"
+    description: "Latvijas dienas laikraksts un ziņu portāls."
+    facts:
+      - field: owner
+        value: 'Laikraksta izdevējs ir SIA "Izdevniecība Dienas Mediji" (reģ. nr. 40003804497). Saskaņā ar Latvijas uzņēmumu reģistra datiem vienīgais dalībnieks ar 100% kapitāldaļu (no 17.11.2015) ir fiziska persona; publiski tas ir Edgars Kots, kurš ir arī sabiedrības valdes priekšsēdētājs.'
+        source_url: "https://firmas.lv/profile/izdevnieciba-dienas-mediji/40003804497"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts izdevums; finansējumu gūst galvenokārt no abonēšanas, laikraksta un satura pārdošanas, maksas satura (paywall) un reklāmas.'
+        source_url: "https://www.diena.lv/izdevnieciba-dienas-mediji/abonesanas-iespejas/"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Sabiedrība ar ierobežotu atbildību (SIA). Izdevējs: SIA "Izdevniecība Dienas Mediji", reģ. nr. 40003804497, reģistrēta 20.02.2006.'
+        source_url: "https://firmas.lv/profile/izdevnieciba-dienas-mediji/40003804497"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Laikraksta "Diena" galvenais redaktors ir Gatis Madžiņš (amatā kopš 10.05.2013).'
+        source_url: "https://www.diena.lv/izdevnieciba-dienas-mediji/par-mums/"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Dibināts 1990. gadā; pirmais laikraksta "Diena" numurs iznāca 1990. gada 23. novembrī.'
+        source_url: "https://lv.wikipedia.org/wiki/Diena_(laikraksts)"
+        as_of: "2026-06-01"
+
+  - short_name: tvnet
+    name: "TVNet"
+    type: online
+    language: lv
+    hosts: ["tvnet.lv"]
+    website: "https://www.tvnet.lv"
+    description: "Latvijas ziņu un izklaides portāls."
+    facts:
+      - field: owner
+        value: 'Portālu TVNET pārvalda SIA "TVNET GRUPA" (reģistrācijas nr. 40003490052), kuras vienīgais (100%) dalībnieks ir Igaunijas uzņēmums AS Postimees Grupp (Igaunijas reģ. nr. 10184643), kas savukārt ietilpst Igaunijas koncernā MM Grupp OÜ.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/tvnet-grupa/40003490052"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts komercmedijs; ieņēmumus galvenokārt veido reklāma un maksas satura abonementi, ko papildina satura projekti, digitalizācijas iniciatīvas un citi ieņēmumi.'
+        source_url: "https://tvnetgrupa.lv/par-mums/"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Sabiedrība ar ierobežotu atbildību (SIA) — SIA "TVNET GRUPA", reģistrācijas nr. 40003490052, reģistrēta Latvijas Republikas Uzņēmumu reģistrā 2000. gada 11. aprīlī.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/tvnet-grupa/40003490052"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'TVNET galvenā redaktore (gan latviešu, gan krievu redakcijā) ir Ērika Staškeviča, kas amatā stājās 2024. gadā. TVNET GRUPAS galvenais redaktors ir Toms Ostrovskis.'
+        source_url: "https://www.tvnet.lv/8146843/darbu-sak-tvnet-galvena-redaktore-erika-staskevica"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Portāls tvnet.lv darbojas kopš 2000. gada; pirmais raksts publicēts 2000. gada 21. jūnijā.'
+        source_url: "https://lv.wikipedia.org/wiki/Tvnet.lv"
+        as_of: "2026-06-01"
+
+  - short_name: delfi
+    name: "Delfi"
+    type: online
+    language: lv
+    hosts: ["delfi.lv"]
+    website: "https://www.delfi.lv"
+    description: "Viens no lielākajiem Latvijas ziņu portāliem."
+    facts:
+      - field: owner
+        value: 'Akciju sabiedrības "DELFI" 100% akciju (2 286 919 akcijas) pieder Igaunijas uzņēmumam "Aktsiaselts Ekspress Grupp" (reģ. Nr. 10004677, Tallina, Igaunija).'
+        source_url: "https://www.firmas.lv/profile/delfi-as/40003504352"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts komercmedijs; ienākumus veido reklāma un maksas abonementi ("Delfi Plus"). Daļa satura ir bezmaksas, daļa pieejama tikai abonentiem.'
+        source_url: "https://lv.wikipedia.org/wiki/Delfi_(port%C4%81ls)"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Akciju sabiedrība (AS) "DELFI", reģistrācijas numurs 40003504352, reģistrēta Latvijas Republikas komercreģistrā.'
+        source_url: "https://www.firmas.lv/profile/delfi-as/40003504352"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Portāla "Delfi" galvenais redaktors ir Filips Lastovskis.'
+        source_url: "https://www.lsm.lv/raksts/zinas/latvija/22.03.2024-zurnalistu-asociaciju-turpmak-vadis-delfi-galvenais-redaktors-lastovskis.a547778/"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Portāls "Delfi" Latvijā dibināts 1999. gadā (darbību sāka 1999. gada 26. novembrī).'
+        source_url: "https://lv.wikipedia.org/wiki/Delfi_(port%C4%81ls)"
+        as_of: "2026-06-01"
+
+  - short_name: leta
+    name: "LETA"
+    type: agency
+    language: lv
+    hosts: ["leta.lv"]
+    x_handle: "letanewslv"
+    x_feeds: ["letanewslv"]
+    website: "https://www.leta.lv"
+    description: "Latvijas nacionālā ziņu aģentūra."
+    facts:
+      - field: owner
+        value: 'LETA ir privāts uzņēmums. Saskaņā ar uzņēmumu reģistra datiem (firmas.lv) tiešais daļu turētājs ir Igaunijā reģistrētā Balti Meediamonitooringu Grupp OÜ ar 95% daļu un fiziska persona ar 5% daļu. Patiesais labuma guvējs grupas struktūrā ir Marguss Linnamē (Margus Linnamäe).'
+        source_url: "https://www.firmas.lv/lv/uznemumi/leta/40003229349"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Komerciāls finansējuma modelis: ieņēmumi no informācijas produktu un pakalpojumu (ziņu abonementu, fotoattēlu, mediju monitoringa u.c.) pārdošanas klientiem. LETA nav valsts budžeta finansēts sabiedriskais medijs.'
+        source_url: "https://www.leta.lv/info_pages/about/"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Sabiedrība ar ierobežotu atbildību (SIA), reģistrācijas numurs 40003229349, reģistrēta Latvijas Republikas Uzņēmumu reģistrā.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/leta/40003229349"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Ziņu redakcijas galvenais redaktors ir Pēteris Zirnis.'
+        source_url: "https://www.leta.lv/info_pages/contacts/"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Aģentūra LETA (Latvijas Telegrāfa aģentūra) izveidota 1920. gadā; tās priekštecis bija 1919. gada martā dibinātais Latvijas preses birojs Latopress. Pirmais aģentūras direktors bija Rihards Bērziņš.'
+        source_url: "https://en.wikipedia.org/wiki/LETA"
+        as_of: "2026-06-01"
+
+  - short_name: nra
+    name: "Neatkarīgā Rīta Avīze (nra.lv)"
+    type: print
+    language: lv
+    hosts: ["nra.lv"]
+    x_handle: "nralv"
+    x_feeds: ["nralv"]
+    website: "https://nra.lv"
+    description: "Latvijas dienas laikraksts un ziņu portāls."
+    facts:
+      - field: owner
+        value: 'Izdevējs ir SIA "Mediju nams" (reģ. nr. 40003610627); pēc komercreģistra datiem 100% kapitāldaļu pieder SIA "ASKO R" (reģ. nr. 52403006871, Rēzekne).'
+        source_url: "https://www.firmas.lv/lv/uznemumi/mediju-nams/40003610627"
+        as_of: "2026-06-01"
+      - field: owner
+        value: 'SIA "Mediju nams" (portāla nra.lv un "Neatkarīgās" izdevēja) īpašniece un patiesā labuma guvēja kopš 2022. gada 23. decembra ir uzņēmēja Anastasija Udalova.'
+        source_url: "https://nra.lv/latvija/400845-par-mediju-nama-ipasnieci-klust-uznemeja-anastasija-udalova.htm"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts medijs; ieņēmumus veido reklāma un satura/abonēšanas ieņēmumi portālā nra.lv, kā arī īpašnieka finansējums.'
+        source_url: "https://rebaltica.lv/2024/10/izdeveja-uz-parada-kas-ir-neatkarigas-ipasniece-anastasija-udalova/"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Izdevējs SIA "Mediju nams" ir sabiedrība ar ierobežotu atbildību (SIA), reģistrācijas nr. 40003610627, reģistrēta 2002. gada 25. novembrī.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/mediju-nams/40003610627"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Galvenais redaktors: Ritums Rozenbergs. Ziņu portāla nra.lv vadītāja: Ilze Šteinfelde.'
+        source_url: "https://nra.lv/info/kontakti/"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Laikraksts "Neatkarīgā Rīta Avīze" ar šo nosaukumu sāka iznākt 1995. gada 1. jūlijā; izdevuma pirmsākumi meklējami padomju laika laikrakstā "Cīņa" (kopš 1904), kas pēc 1990. gada kļuva par "Neatkarīgo Cīņu" un vēlāk par "Neatkarīgo Rīta Avīzi". Kopš 2020. gada 5. maija iznāk tikai digitāli (portālā nra.lv); pēdējais drukātais izdevums iznāca 2020. gada 30. aprīlī.'
+        source_url: "https://en.wikipedia.org/wiki/Neatkar%C4%ABg%C4%81_R%C4%ABta_Av%C4%ABze"
+        as_of: "2026-06-01"
+
+  - short_name: la
+    name: "Latvijas Avīze"
+    type: print
+    language: lv
+    hosts: ["la.lv", "nasha.la.lv"]
+    website: "https://www.la.lv"
+    description: "Tradicionāls Latvijas dienas laikraksts."
+    facts:
+      - field: owner
+        value: 'Izdevējs ir AS "Latvijas Mediji" (reģ. Nr. 40103027253). Pēc komercreģistra datiem vienīgais akcionārs ir SIA "N & J", kam pieder 100% akciju; uzņēmuma patiesais labuma guvējs ir fiziska persona ar Latvijas pilsonību, kuras dzīvesvieta reģistrēta Monako.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/latvijas-mediji/40103027253"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts izdevums; ieņēmumi galvenokārt tiek gūti no abonēšanas un laikraksta pārdošanas, kā arī reklāmas. Uzņēmuma reģistrētais pamatdarbības veids (NACE 58.12) ir laikrakstu izdošana; uzņēmuma darbības jomas ietver arī preses izdevumu izdošanu un reklāmu.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/latvijas-mediji/40103027253"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Izdevējs ir akciju sabiedrība (AS) "Latvijas Mediji", reģistrācijas Nr. 40103027253, juridiskā adrese Toma iela 4, Rīga.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/latvijas-mediji/40103027253"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Laikraksta "Latvijas Avīze" galvenā redaktore ir Linda Rasa.'
+        source_url: "https://www.tvnet.lv/8106589/sapigs-lemums-pirmdienas-vairs-neiznaks-neviens-dienas-laikraksts-latviesu-valoda"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Izdevums pirmoreiz iznāca 1988. gadā ar nosaukumu "Lauku Avīze"; 2003. gadā pārdēvēts par "Latvijas Avīze".'
+        source_url: "https://en.wikipedia.org/wiki/Latvijas_Av%C4%ABze"
+        as_of: "2026-06-01"
+
+  - short_name: jauns
+    name: "Jauns.lv"
+    type: online
+    language: lv
+    hosts: ["jauns.lv"]
+    website: "https://jauns.lv"
+    description: "Plašas auditorijas Latvijas ziņu portāls."
+    facts:
+      - field: owner
+        value: 'Portāla izdevējs ir SIA "Izdevniecība Rīgas Viļņi" (reģ. Nr. 40003363975). Visas kapitāldaļas pieder SIA "Izdevniecība Pulss Plus" (reģ. Nr. 40003357771); patiesā labuma guvēja ir Aija Šmidre (reģistrēta no 2018. gada 8. novembra).'
+        source_url: "https://www.firmas.lv/lv/uznemumi/izdevnieciba-rigas-vilni/40003363975"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Privāts komercmedijs. Portāls piedāvā reklāmas izvietošanu (publicēts reklāmas cenrādis); izdevējs ir komercsabiedrība SIA "Izdevniecība Rīgas Viļņi".'
+        source_url: "https://www.rigasvilni.lv/lv/mediji/zinu-portali/jauns-lv.html"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Sabiedrība ar ierobežotu atbildību (SIA) "Izdevniecība Rīgas Viļņi", reģistrācijas numurs 40003363975, reģistrēta 1997. gada 23. oktobrī.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/izdevnieciba-rigas-vilni/40003363975"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'Portālu galvenais redaktors ir Kristaps Saulītis (izdevniecības "Rīgas Viļņi" izdevumu redaktoru sarakstā).'
+        source_url: "https://www.rigasvilni.lv/lv/izdevnieciba/izdevumu-redaktori/"
+        as_of: "2026-06-01"
+      - field: founded
+        value: 'Portāls dibināts 2009. gadā ar sākotnējo nosaukumu kasjauns.lv; 2017. gadā pārdēvēts par jauns.lv.'
+        source_url: "https://lv.wikipedia.org/wiki/Jauns.lv"
+        as_of: "2026-06-01"
+
+  - short_name: vestnesis
+    name: "Latvijas Vēstnesis"
+    type: official
+    language: lv
+    hosts: ["vestnesis.lv"]
+    website: "https://www.vestnesis.lv"
+    description: "Latvijas oficiālais izdevums — promulgētie tiesību akti un MK lēmumi."
+    volume_label: "dokumenti"
+    facts:
+      - field: owner
+        value: 'Latvijas valsts; visas kapitāla daļas pieder valstij, kapitāla daļu turētāja ir Tieslietu ministrija.'
+        source_url: "https://lv.lv/lv/par-mums/oficialais-izdevejs"
+        as_of: "2026-06-01"
+      - field: funding_model
+        value: 'Finansējumu nodrošina valsts budžeta dotācija valsts deleģēto uzdevumu veikšanai saskaņā ar Oficiālo publikāciju un tiesiskās informācijas likumu; oficiālās publikācijas kopš 2013. gada ir bez maksas.'
+        source_url: "https://www.tm.gov.lv/lv/latvijas-vestnesis"
+        as_of: "2026-06-01"
+      - field: legal_form
+        value: 'Valsts sabiedrība ar ierobežotu atbildību (VSIA) jeb valsts kapitālsabiedrība; sākotnēji dibināta kā valsts uzņēmums, 2000. gadā pārveidota par VSIA.'
+        source_url: "https://lv.lv/lv/par-mums/oficialais-izdevejs"
+        as_of: "2026-06-01"
+      - field: editorial_leadership
+        value: 'VSIA "Latvijas Vēstnesis" vada valdes locekle Ieva Viļuma (amatā kopš 2025. gada 8. novembra; iepriekš pildīja pienākumus uz laiku no 2024. gada 1. septembra).'
+        source_url: "https://lv.lv/lv/par-mums/oficialais-izdevejs/vadiba"
+        as_of: "2026-06-01"
+      - field: founded
+        value: '1993. gads (valsts uzņēmums dibināts 1993. gada 2. februārī ar Ministru Padomes lēmumu Nr. 47; pirmais oficiālā izdevuma numurs iznāca 1993. gada 25. februārī).'
+        source_url: "https://www.vestnesis.lv/oficialais-izdevums/vesture"
+        as_of: "2026-06-01"
+
+  - short_name: tv3
+    name: "TV3 (Latvija)"
+    type: private_tv
+    language: lv
+    hosts: ["tv3.lv", "zinas.tv3.lv"]
+    x_handle: "TV3zinas"
+    x_feeds: ["TV3zinas"]
+    website: "https://tv3.lv"
+    description: "Komerctelevīzijas kanāls TV3 un tā ziņu portāls tv3.lv; ietilpst Baltijas mediju grupā TV3 Group."
+    facts:
+      - field: owner
+        value: 'Izdevējs ir SIA "All Media Latvia", kuras 100% kapitāla daļu turētāja ir Lietuvas UAB "All Media Group" (TV3 Group), kas savukārt 100% pieder investīciju pārvaldnieka "Providence Equity Partners" fondiem. Kā patiesā labuma guvējas, kas īsteno faktisko kontroli, norādītas valdes locekles Ginta Salmane un Ieva Meļķe.'
+        source_url: "https://tv3.lv/kontakti/"
+        as_of: "2026-06-10"
+      - field: funding_model
+        value: 'Privāts komercmedijs; TV3 Group ieņēmumus veido bezmaksas televīzijas un digitālā reklāma (TV3 kanāli, TV3 Play, SmartAD platforma) un abonēšanas maksas par Go3 straumēšanas platformu.'
+        source_url: "https://tv3group.eu/about/our-story/"
+        as_of: "2026-06-10"
+      - field: legal_form
+        value: 'Sabiedrība ar ierobežotu atbildību (SIA). SIA "All Media Latvia", reģ. nr. 40103065880, reģistrēta 12.10.1992.'
+        source_url: "https://www.firmas.lv/lv/uznemumi/all-media-latvia/40103065880"
+        as_of: "2026-06-10"
+      - field: editorial_leadership
+        value: 'Portāla tv3.lv galvenais redaktors ir Ģirts Krastiņš.'
+        source_url: "https://tv3.lv/kontakti/"
+        as_of: "2026-06-10"
+      - field: founded
+        value: 'TV3 Latvijas tirgū ienāca 1998. gadā, iegādājoties kanālu "Channel 31", kas kļuva par TV3 Latvia.'
+        source_url: "https://tv3group.eu/about/our-story/"
+        as_of: "2026-06-10"
+
+  - short_name: ir
+    name: "IR žurnāls"
+    type: print
+    language: lv
+    hosts: ["ir.lv"]
+    x_handle: "irLV"
+    x_feeds: ["irLV"]
+    website: "https://ir.lv"
+    description: "Latvijas nedēļas žurnāls \"Ir\" (iznāk ceturtdienās) un tā ziņu portāls ir.lv."
+    facts:
+      - field: owner
+        value: 'Izdevējs ir AS "Cits medijs" (reģ. nr. 40103271624). Saskaņā ar Firmas.lv datiem akcijas pieder vairākiem individuāliem akcionāriem un lielākā atsevišķā līdzdalība ir 12,02%; pats medijs vietnē ir.lv/par-ir publicē pilnu 35 akcionāru sarakstu, kurā ietilpst arī redakcijas žurnālisti (t.sk. Pauls Raudseps, Aivars Ozoliņš). Padomes priekšsēdētājs ir Pauls Raudseps.'
+        source_url: "https://www.firmas.lv/profile/cits-medijs-as/40103271624"
+        as_of: "2026-06-10"
+      - field: funding_model
+        value: 'Privāts komercmedijs; ieņēmumus veido abonēšana (drukātais žurnāls un maksas saturs portālā ir.lv), reklāma un lasītāju ziedojumi.'
+        source_url: "https://ir.lv/par-ir"
+        as_of: "2026-06-10"
+      - field: legal_form
+        value: 'Akciju sabiedrība (AS) "Cits medijs", reģ. nr. 40103271624, reģistrēta Latvijas Republikas komercreģistrā 2010. gada 1. februārī; pamatkapitāls 276 752 EUR. Darbības nozare — žurnālu un periodisko izdevumu izdošana (NACE 58.13).'
+        source_url: "https://www.firmas.lv/profile/cits-medijs-as/40103271624"
+        as_of: "2026-06-10"
+      - field: editorial_leadership
+        value: 'Galvenā redaktore ir Nellija Ločmele, kura vada izdevumu kopš tā dibināšanas 2010. gadā un ir arī AS "Cits medijs" valdes locekle. Valdes priekšsēdētājs ir Edgars Arnītis.'
+        source_url: "https://ir.lv/par-ir"
+        as_of: "2026-06-10"
+      - field: founded
+        value: 'AS "Cits medijs" dibināta 2010. gada sākumā; pirmais žurnāla "Ir" numurs iznāca 2010. gada 8. aprīlī. Žurnālu izveidoja galvenokārt no laikraksta "Diena" aizgājušie žurnālisti.'
+        source_url: "https://lv.wikipedia.org/wiki/Ir_(%C5%BEurn%C4%81ls)"
+        as_of: "2026-06-10"

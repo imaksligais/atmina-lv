@@ -1,0 +1,231 @@
+# Agent API Inventory — post-F3g (2026-04-30)
+
+Šī ir inventarizācija visu vietu, kas importē no `src.*` ārpus pašu `src/` modulu cross-importiem. Tas definē "stable API" — funkciju nosaukumi un signatūras šeit nedrīkst ielūzt bez re-export shim.
+
+Izveidots ar Grep tool 2026-04-29; atjaunots F3g closure brīdī (2026-04-30).
+
+**Statuss 2026-04-30 (post F3g — F3 fully closed):**
+
+- Matcher funkcijas (`extract_twitter_author_handle`, `match_politicians`, `link_politicians_to_documents`) tagad dzīvo `src/matcher.py`. `src/ingest.py` glabā re-export shim — agentu prompti un legacy skripti turpina importēt no `src.ingest` bez izmaiņām.
+- DDL no `src/db.py::init_db()` izvilkta uz `src/schema.sql`. `init_db` callable signature un Python migrācijas bloki nemainīgi.
+- `src/saeima.py` (1425 LOC) sadalīts `src/saeima/` paketē ar 5 sub-moduļiem (`schema.py`, `bills.py`, `parsing.py`, `claims.py`, `votes.py`). 28 ārēji-importēti simboli eksponēti caur `src/saeima/__init__.py`.
+- **F3 fully closed (PR #5–#16, 2026-04-29 → 2026-04-30):** `src/generate.py` 4250 → 173 LOC kā re-export shim (-96%). 17 src/render/* moduļi: `_common` (leaf, ~795 LOC) + `_orchestrator` (444 LOC, owns `generate_public_site`) + 15 sub-page moduļi.
+- **Kanoniskais publiskais ceļš tagad: `from src.render import generate_public_site`.** `src/generate.py` paliek kā plašs re-export shim (~85 simboli) historical compatibility — tests, agents un legacy scripts var turpināt importēt no `src.generate` bez izmaiņām.
+- F3g-pre (PR #11): `_load_syntheses(atmina_dir)` signature change — output_dir-relative resolution, no CWD bug.
+- F3g.3 (PR #17): `_load_wiki_profile` promoted no `analyses.py` uz `_common.py` un callsite restored `politicians.py:310` (F3b regression fix from PR #7).
+- Byte-identity pierādījums: `tests/test_render_chars.py` (29 testi) salīdzina ~417+ HTML pages SHA-256 pret 10 iesaldētiem baseline failos (`tests/fixtures/render_baseline_*.json`).
+
+---
+
+## .claude/agents/ — agentu prompti
+
+### brief-writer.md
+- `from src.topic_map import get_all_group_names`
+- `from src.briefs import generate_daily_brief`
+- `from src.db import get_db`
+- `from src.tools import store_context_note`
+
+### claim-extractor.md
+- `from src.analyze import get_pending_politicians`
+- `from src.analyze import get_politician_documents, get_existing_claims`
+- `from src.analyze import save_analysis`
+- `from src.tools import store_contradiction`
+
+### contradiction-hunter.md
+- `from src.db import get_db`
+- `from src.db import store_contradiction`
+
+### devils-advocate.md
+- `from src.db import get_db`
+
+### graphics-designer.md
+- `from src.db import get_db`
+- `from src.graphics.storage import get_approved_image, save_error_row, compute_filename, save_image_row`
+- `from src.graphics.visual_map import get_visual`
+- `from src.graphics.prompt import build_prompt, DEFAULT_STYLE`
+- `from src.graphics.config import budget_check, load_gemini_key`
+- `from src.graphics.nanobanana import generate_image, SafetyError`
+- `from src.image_variants import make_variants`
+
+### mentions-monitor.md
+- `from src.social import fetch_all_mentions`
+- `from src.db import get_db`
+
+### quality-reviewer.md
+- `from src.db import get_db`
+- `from src.wiki_lint import lint_wiki_with_db`
+
+### saeima-tracker.md
+- `from src.saeima import parse_agenda_snapshot, upsert_bill, match_submitters_to_politicians`
+- `from src.saeima import init_saeima_tables, process_vote_snapshot`
+- `from src.saeima import resolve_bill_from_motif, append_bill_stage, _reading_from_motif`
+- `from src.db import get_db`
+
+### video-extractor.md
+- `from src.db import get_db, DB_PATH, now_lv`
+- `from src.analyze import save_analysis`
+
+---
+
+## scripts/ — operatīvie skripti
+
+| Skripts | Imports |
+|---------|---------|
+| audit_claim_attribution.py | `from src.db import get_db`; `from src.matcher import extract_twitter_author_handle` (post-F1) |
+| audit_junction_roles.py | `from src.db import get_db`; `from src.matcher import extract_twitter_author_handle` (post-F1) |
+| audit_saeima_vote_results.py | `from src.db import DB_PATH` |
+| backfill_base_law_slug.py | `from src.db import get_db`; `from src.saeima import _resolve_base_law_slug, load_laws_index` |
+| backfill_saeima_bills.py | `from src.db import DB_PATH, get_db`; `from src.saeima import (...)` |
+| fetch_profile_photos.py | `from src.x_pool import get_pool` |
+| fix_subject_role_leakage.py | `from src.db import get_db`; `from src.matcher import extract_twitter_author_handle` (post-F1) |
+| generate_synthesis_image.py | `from src.db import get_db, now_lv` |
+| reencode_brief_images.py | `from src.image_variants import VARIANTS, make_variants, variant_path` |
+| regen_172_v2.py | `from src.db import get_db`; `from src.image_variants import make_variants` |
+| register_tensions_2026_04_25.py | `from src.db import store_tension` |
+| relink_commentator_documents.py | `from src.matcher import link_politicians_to_documents` (post-F1) |
+| render_daily_drafts_pdf.py | `from src.db import get_db` |
+| render_infografiku_tweet_bank.py | `from src.db import get_db` |
+| seed_*.py | `from src.db import get_db, now_lv` |
+| seed_media_sources.py | `from src.db import get_db, now_lv` |
+| telegram_brief.py | `from src.briefs import generate_telegram_brief` |
+
+---
+
+## "Iesaldētie" funkciju nosaukumi (top-level)
+
+Šie funkciju nosaukumi NEDRĪKST mainīties bez re-export shim:
+
+### src.db
+`get_db`, `DB_PATH`, `now_lv`, `now_lv_dt`, `today_lv`, `init_db`, `insert_document`, `insert_chunks`, `link_politician_to_document`, `store_claim`, `store_contradiction`, `store_tension`, `search_similar`, `search_similar_claims`, `log_action`, `get_last_log`
+
+### src.analyze
+`save_analysis`, `get_pending_politicians`, `get_politician_documents`, `get_existing_claims`
+
+### src.tools
+`store_contradiction`, `store_context_note`
+
+### src.ingest (Fāze 1 paveikta — re-export shim aktīvs)
+`extract_twitter_author_handle`, `link_politicians_to_documents`, `match_politicians`, `match_politician`, `assign_unmatched_documents`, `_clear_politician_cache`, `_load_politician_forms`, `_latvian_surname_inflections`, `_surname_has_person_context`, `_match_politician_from_url` — visi tagad dzīvo `src/matcher.py`, bet eksponēti caur `from src.matcher import (...)` šim `src/ingest.py` augšā.
+
+### src.matcher (jauns post-F1, kanoniskais imports jaunajiem patērētājiem)
+`extract_twitter_author_handle`, `match_politicians`, `match_politician`, `link_politicians_to_documents`, `assign_unmatched_documents` + 5 privātās. Behavioral baseline iesaldēts `tests/fixtures/matcher_docs.json` + `tests/test_matcher.py`.
+
+### src.saeima (Fāze 4 paveikta — pakete ar __init__.py re-eksportu)
+Public + tests/agent-imported simboli (28 kopā), eksponēti caur `src/saeima/__init__.py.__all__`. Iekšējais split:
+- `src.saeima.schema` (DDL): `init_saeima_tables`, `init_saeima_bills`
+- `src.saeima.bills` (leaf): `_VALID_BILL_TYPES`, `_VALID_STAGE_NAMES`, `_canonicalize_stage_name`, motif regexes, `resolve_bill_from_motif`, `_reading_from_motif`, `_resolve_base_law_slug`, `LAW_TITLE_RE`, `load_laws_index`, `upsert_bill`, `append_bill_stage`, `AgendaBill`, `SAEIMA_BASE_URL`, `_resolve_vote_url`, `_parse_vote_datetime`
+- `src.saeima.parsing` (no bills): `parse_agenda_snapshot` + helperi
+- `src.saeima.claims` (leaf): `_stem`, `_word`, `_MOTIF_TOPIC_MAP`, `_motif_to_topic`, `_vote_salience`
+- `src.saeima.votes` (no bills + claims): `IndividualVote`, `VoteResult`, `parse_vote_snapshot`, `_build_name_index`, `match_deputies_to_politicians`, `match_submitters_to_politicians`, `store_vote`, `generate_claims_from_votes`, `process_vote_snapshot`
+
+Aģentu prompti un skripti (`@saeima-tracker`, `scripts/backfill_*.py`) turpina importēt **caur `from src.saeima import …`** — paketes __init__.py ir publiskais līgums.
+
+### src.render (post-F3g, **kanoniskais publiskais ceļš**)
+`generate_public_site`, `generate_statistika`. Re-eksportēti no `src/render/__init__.py` (kanonisks) un `src/generate.py` (legacy shim).
+
+### src.generate (Fāze 3 paveikta — re-export shim aktīvs)
+`generate_public_site`, `generate_statistika` (publiskais līgums). Plašs shim: ~85 papildu simboli no `src.render._common` + 15 sub-page moduļiem (visi pārvietotie privātie `_fetch_*`/`_render_og_cards`/`_enrich_*`/`_bill_slug`/`_get_last_activity`/`_get_law_titles`/`_fetch_x_data`/`_fetch_tensions`/`_fetch_graph_data`/`_fetch_blog_posts`/`_fetch_stats`/`_load_wiki_profile`/`_load_analyses`/`_load_syntheses`/`_map_syntheses_to_politicians`/`PZV1_TOPIC_COLORS`/`PARTY_COLORS`/...) — sk. nākamo § par detalizētu sub-modulu sadali.
+
+### src.render.* — 17 moduļi (post-F3g, 2026-04-30)
+
+**`src.render._common`** (leaf — nav iekšējo paketes importu, ~795 LOC):
+- Path roots: `PROJECT_ROOT`, `DEFAULT_DB_PATH`, `DEFAULT_OUTPUT_DIR`, `TEMPLATES_DIR`, `ASSETS_DIR`, `WIKI_DIR`, `CONTENT_DIR`
+- Konstantes: `BASE_URL`, `ELECTION_DATE`, `PARTY_COLORS`, `SEVERITY_LV`, `CATEGORY_LV`, `CLAIM_TYPE_LABEL`, `_SEVERITY_GLYPHS`, `_LV_TRANS`, `_LV_OFFSET_HOURS`, `_PARTY_LOWERCASE_WORDS`, `_BRACKET_RE`, `_BILL_REF_RE`, `_SAFE_HTML_TAGS`, `_SAFE_HTML_ATTRS`
+- Drošības filtri: `_sanitize_html`, `_safe_json_filter`, `_safe_url_filter`, `_autolink_bills_filter`
+- Markdown helperi: `_parse_frontmatter` (F3f.5), `_load_wiki_profile` (F3g.3 — promoted no analyses.py)
+- Format helperi: `_slugify`, `_party_short_name`, `_persona_category`, `_confidence_tier`, `_initials_from_name`, `_delta_days`, `_domain_from_url`, `_split_summary`, `_latvian_quotes`, `_photo_data_uri`, `_normalize_date`, `_date_sort_key`, `_format_tweet_time`, `_titlecase_party_name`
+- Cross-page domain: `_source_to_internal_link`, `_enrich_contradiction`, `_bill_slug`, `_get_last_activity`
+- Asset helperi: `_resolve_assets_version` (env override `ATMINA_ASSETS_VERSION` for char fixtures), `_download_chart_js`, `_download_annotation_plugin`
+- Page primitive: `_render_page`
+
+**`src.render._orchestrator`** (NEW post-F3g, ~444 LOC, depends on _common + every sub-page):
+- `generate_public_site(db_path=None, output_dir=None) -> str` — site entry-point. Pre-fetches all DB-backed data once and threads it through to each render_* sub-page.
+- `_generate_sitemap(atmina_dir, politicians, parties, blog_posts, analyses, contradictions, syntheses, bills) -> None` — sitemap.xml writer. Takes pre-fetched lists via positional args (parties via F3g.2 pass-through pattern).
+- `_generate_og_image(dest: Path) -> None` — 1200×630 OG card PNG generator.
+
+**`src.render.contradictions`** (depends on _common): `_fetch_contradictions`, `_render_og_cards`, `render_contradictions(env, atmina_dir, contradictions, all_parties)`. F3a (PR #5).
+
+**`src.render.politicians`** (depends on _common, post-F3g.3 imports `_load_wiki_profile`): `_fetch_politicians`, `_fetch_commentary_about`, `_fetch_politician_detail`, `render_politicians(env, db, atmina_dir, politicians, pid_to_syntheses)`. F3b (PR #7). 159 politiki/<slug>.html. Wiki profile body filled per-politician via `wiki/persons/<slug>.md` (F3g.3 fix; was hardcoded `None` from F3b until now).
+
+**`src.render.personas`** (depends on _common): `_fetch_personas`, `_fetch_personas_metrics`, `render_personas(env, db, atmina_dir)` (self-contained). F3b. Emits personas.html.
+
+**`src.render.parties`** (depends on _common): `_fetch_parties_page`, `_fetch_party_detail`, `render_parties(env, db, atmina_dir, parties) -> None`. F3c (PR #8) + F3g.2 self-contained — caller passes pre-fetched parties; sitemap consumes the same list.
+
+**`src.render.positions`** (depends on _common, `src.db.now_lv_dt`): `_fetch_claims`, `_fetch_pozicijas_metrics`, `PZV1_TOPIC_COLORS`, `render_positions(env, db, atmina_dir)` (self-contained). F3d (PR #9). Emits pozicijas.html + .json/.br/.gz.
+
+**`src.render.news`** (depends on _common): `_fetch_news`, `render_news(env, db, atmina_dir)` (self-contained). F3d. Emits zinas.html.
+
+**`src.render.statistika`** (depends on _common, `src.csp.tables`, `src.csp.insights`): `generate_statistika(output_dir, csp_db_path, events_path)` STANDALONE entrypoint (NOT in generate_public_site flow). 4 `_CSP_*` constants + 7 nested helper closures. F3d. Emits statistika.html + 10 statistika/<table_id>.html.
+
+**`src.render.bills`** (depends on _common, `src.saeima` lazy `load_laws_index`): `_LAW_TITLES_CACHE`, `_get_law_titles`, `_fetch_bills`, `_fetch_bill_detail`, `_generate_bill_pages`, `render_bills(env, db, atmina_dir) -> int`. F3e (PR #10). Emits ~151 likumprojekti/<slug>.html.
+
+**`src.render.laws`** (depends on _common, `src.saeima.LAW_TITLE_RE` + lazy `load_laws_index`): `_LAW_LIKUMI_LV_RE`, `_LAW_BODY_STRIP_RE`, `_fetch_law_pages`, `_generate_law_pages`, `_fetch_law_index_page`, `render_laws(env, db, atmina_dir) -> int`. F3e. Emits likumi.html + ~33 likumi/<slug>.html.
+
+**`src.render.votes`** (depends on _common, `src.coalition.get_coalition_map` lazy): `_enrich_faction_breakdown`, `_fetch_votes`, `_build_matrix_data`, `render_votes(env, db, atmina_dir, votes, bills, laws_index_count) -> None`. F3e. Emits balsojumi.html.
+
+**`src.render.x`** (depends on _common, `src.db.now_lv_dt`): `_fetch_x_data`, `render_x(env, db, atmina_dir)` (self-contained). F3f.2 (PR #12). Emits x.html.
+
+**`src.render.tensions`** (depends on _common): `_fetch_tensions(db)`, `render_tensions(env, db, atmina_dir, tensions)`. F3f.3 (PR #13). Emits spriedzes.html.
+
+**`src.render.links`** (depends on _common, lazy `json`/`sqlite3`): `_fetch_graph_data(db)`, `render_links(env, db, atmina_dir, tensions)`. F3f.3 (PR #13). Emits saites.html.
+
+**`src.render.analyses`** (depends on _common): `_load_analyses`, `render_analyses(env, atmina_dir, analyses)`. F3f.5 (PR #14). Emits analizes/<slug>.html. (`_load_wiki_profile` lived here from F3f.5 → moved to `_common` in F3g.3.)
+
+**`src.render.syntheses`** (depends on _common): `_load_syntheses(atmina_dir)`, `_map_syntheses_to_politicians`, `render_syntheses(env, atmina_dir, syntheses)`. F3f.5 (PR #14). Emits sintezes/<slug>.html. `_load_syntheses` worktree-portable post-F3g-pre (PR #11).
+
+**`src.render.blog`** (depends on _common, `src.briefs.strip_visual_brief_block`): `_fetch_blog_posts`, `_fetch_context_notes`, `_rewrite_shortener_link_labels`, `render_blog(env, atmina_dir, blog_posts)`. F3f.4 (PR #15). Emits blog.html + blog/<slug>.html.
+
+**`src.render.dashboard`** (depends on _common, `src.db.{today_lv, CLEAN_START_DATE}`): `_fetch_stats`, `_sparkline_svg`, `_fetch_hero_v2_data`, `_fetch_trends_data`, `render_dashboard(env, db, atmina_dir, stats, contradictions, votes, blog_posts, syntheses, analyses, trends_data, context_notes, days_until)`. F3f.1 (PR #16). Emits index.html + analizes.html (combined index — bundled with index hero per orchestrator design).
+
+**`src.render.__init__`** (post-F3g): re-eksportē `generate_public_site`, `_generate_sitemap`, `_generate_og_image` no `_orchestrator`, plus `generate_statistika` no `statistika`. Kanoniskais publiskais ceļš: `from src.render import generate_public_site`.
+
+### src.routine
+`print_routine`
+
+### src.briefs
+`generate_daily_brief`, `generate_telegram_brief`, `strip_visual_brief_block`, `parse_visual_brief`
+
+### src.topic_map
+`get_all_group_names`, `normalize_topic`, `TOPIC_GROUPS`
+
+### src.social
+`fetch_all_mentions`
+
+### src.wiki_lint
+`lint_wiki_with_db`
+
+### src.image_variants
+`VARIANTS`, `make_variants`, `variant_path`, `variant_filename`
+
+### src.graphics.*
+visa `src.graphics.storage`, `src.graphics.visual_map`, `src.graphics.prompt`, `src.graphics.config`, `src.graphics.nanobanana` API
+
+---
+
+## Refaktoringa secinājumi
+
+1. **Fāze 1 (matcher izvilkšana) — PAVEIKTA 2026-04-29 (PR #2, commit 4f4d25d).** Re-export shim `src/ingest.py` augšā.
+
+2. **Fāze 2 (schema.sql) — PAVEIKTA 2026-04-29 (PR #3, commit 94466aa).**
+
+3. **Fāze 4 (saeima šķelšana) — PAVEIKTA 2026-04-29 (commit 11ca874, PR #4).** `src/saeima/__init__.py.__all__` re-eksportē 28 simbolus.
+
+4. **Fāze 3 (generate.py šķelšana) — PILNĪGI PAVEIKTA 2026-04-30 (PR #5–#16 + F3g closure).**
+   - **Trajectory:** `src/generate.py` 4250 → 173 LOC (-96% — kā re-export shim). 17 src/render/* moduļi (1 leaf `_common` + 1 orchestrator + 15 sub-pages).
+   - **F3a-F3e + F3f.2 + F3f.3 + F3f.5 + F3f.4 + F3f.1:** sub-page carve-outs ar byte-identitāti.
+   - **F3g closure (PR #17, 2026-04-30):**
+     - `_orchestrator.py` jauns — owns `generate_public_site` + `_generate_sitemap` + `_generate_og_image`.
+     - `src/render/__init__.py` re-eksportē — kanoniskais `from src.render import generate_public_site`.
+     - `src/generate.py` kļuva par plašu re-export shim (~85 simboli, 173 LOC).
+     - `render_parties` self-contained (F3g.2): pieņem pre-fetched `parties`, neatgriež dictu.
+     - `_load_wiki_profile` callsite restored politicians.py:310 (F3g.3 — F3b regression fix).
+     - `_load_wiki_profile` promoted no analyses.py uz _common.py (politicians-concern, ne analyses-concern).
+
+5. **F3 implementation lessons (mācība F4+ un nākamajām paketēm):**
+   - **Pre-promote shared leaf helpers BEFORE writing peer sub-pages.** F3-prep + F3b + F3d + F3f.5 disciplīna kept the cycle closed.
+   - **`src/render/__init__.py` apzināti tukšs līdz F3g** — pirms tam re-eksports radītu cycle ar pre-shim `src/generate.py`. Post-F3g bug-free, jo `src/generate.py` ir tīrs shim.
+   - **Re-export shim from generate.py is wide, not narrow.** Tests + agents importē ~85 privātus simbolus; F3 phases progresīvi paplašināja shim.
+   - **Char fixture pattern** (`tests/test_render_chars.py` + 10 `tests/fixtures/render_baseline_*.json`) — session-scoped `generate_public_site(output_dir=tmp)` + SHA-256 hashes. REGEN=1 bootstraps; bare run asserts. Determinism guaranteed by `ATMINA_ASSETS_VERSION="test"` pin.
+   - **Self-contained vs pass-through orchestrators.** Self-contained when data not reused downstream (`render_personas`, `render_news`, `render_positions`, `render_bills`, `render_laws`, `render_x`). Pass-through when caller pre-fetched data shared across multiple consumers (`render_contradictions`, `render_politicians`, `render_parties` post-F3g.2, `render_votes`, `render_tensions` + `render_links`, `render_dashboard`, `render_blog`, `render_analyses`, `render_syntheses`).
+
+6. **`src.analyze` paliek neaiztikts** — 3 aģentu prompti (`claim-extractor`, `video-extractor`) importē 4 publiskās funkcijas. Tas nav refaktoringa plānā šobrīd, bet jāatzīmē kā high-stable API ja vēlāk nāks `src/analysis/` pakete.

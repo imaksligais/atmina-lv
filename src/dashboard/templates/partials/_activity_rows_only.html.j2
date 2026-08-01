@@ -1,0 +1,17 @@
+{# HTMX poll response — just the row groups, no panel chrome.
+
+Caller swaps this fragment into #activity-rows via HX-Swap=beforeend.
+Empty when nothing new (HTMX leaves the existing list intact).
+#}
+{% for group in activity.groups %}
+<div>
+  <h3 class="text-xs uppercase tracking-wide text-slate-400 mb-1 border-b border-slate-200 dark:border-slate-800 pb-1">
+    {{ group.label }}
+  </h3>
+  <ul class="divide-y divide-slate-100 dark:divide-slate-900">
+    {% for row in group.rows %}
+      {% include "partials/_activity_row.html.j2" %}
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
