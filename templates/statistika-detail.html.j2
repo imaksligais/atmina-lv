@@ -1,0 +1,244 @@
+{% extends "base.html.j2" %}
+{% set assets_prefix = "../" %}
+{% set active_page = "statistika" %}
+
+{% block title %}{{ meta.label_lv }}{% endblock %}
+
+{% block styles %}
+<style>
+/* ── Detail page styles ─────────────────────────── */
+.stat-breadcrumb { margin-top: 3rem; font-size: 0.85rem; }
+.stat-breadcrumb a { color: var(--text-muted); }
+.stat-breadcrumb a:hover { color: var(--text); }
+
+.stat-detail-header { padding: 1.5rem 0 2rem; }
+.stat-detail-title {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+}
+.stat-detail-title h1 { font-size: 2.25rem; }
+.stat-detail-meta {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;
+    font-size: 0.75rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.06em; align-items: center;
+}
+.stat-detail-meta .sep { opacity: 0.4; }
+.stat-detail-meta strong { color: var(--text); font-weight: 600; }
+
+.stat-hero-value {
+    display: flex; align-items: baseline; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;
+}
+.stat-hero-value .num {
+    font-size: 3.25rem; font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1; color: var(--text);
+}
+.stat-hero-change {
+    font-size: 0.95rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+}
+.stat-hero-change.positive { color: var(--green); background: rgba(34,197,94,0.12); }
+.stat-hero-change.negative { color: var(--red-soft); background: rgba(198,40,40,0.15); }
+
+.domain-chip {
+    display: inline-block; padding: 0.2rem 0.55rem; border-radius: 4px;
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.domain-chip.domain-economy { color: var(--domain-economy); background: rgba(144,164,174,0.12); }
+.domain-chip.domain-social  { color: var(--domain-social); background: rgba(179,136,199,0.12); }
+.domain-chip.domain-prices  { color: var(--orange); background: rgba(249,115,22,0.12); }
+.domain-chip.domain-state   { color: var(--green); background: rgba(34,197,94,0.12); }
+
+.stat-insight-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0;
+    font-size: 0.95rem; color: var(--text-muted); font-style: italic;
+    border-left: 3px solid var(--domain-color, var(--accent));
+}
+.stat-insight-card.domain-economy { border-left-color: var(--domain-economy); }
+.stat-insight-card.domain-social  { border-left-color: var(--domain-social); }
+.stat-insight-card.domain-prices  { border-left-color: var(--orange); }
+.stat-insight-card.domain-state   { border-left-color: var(--green); }
+
+.stat-chart-container {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0 1.5rem;
+}
+.stat-chart-wrap { position: relative; height: 440px; }
+
+/* Event chips */
+.stat-event-filter {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center;
+}
+.stat-event-filter-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-muted); font-weight: 600; margin-right: 0.25rem;
+}
+.stat-event-chip {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.3rem 0.75rem; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-muted); transition: all 0.2s ease; user-select: none;
+}
+.stat-event-chip:hover { color: var(--text); border-color: var(--accent); }
+.stat-event-chip.active { color: var(--text); border-color: transparent; }
+.stat-event-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--chip-color); }
+.stat-event-chip.active.cat-crisis    { background: rgba(198,40,40,0.15); border-color: rgba(198,40,40,0.4); }
+.stat-event-chip.active.cat-policy    { background: rgba(234,179,8,0.12); border-color: rgba(234,179,8,0.4); }
+.stat-event-chip.active.cat-elections { background: rgba(144,164,174,0.12); border-color: rgba(144,164,174,0.4); }
+.stat-event-chip.active.cat-milestone { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.4); }
+.stat-event-chip.active.cat-government{ background: rgba(249,115,22,0.12); border-color: rgba(249,115,22,0.4); }
+.stat-event-chip.cat-crisis    { --chip-color: #C62828; }
+.stat-event-chip.cat-policy    { --chip-color: var(--yellow); }
+.stat-event-chip.cat-elections { --chip-color: var(--accent); }
+.stat-event-chip.cat-milestone { --chip-color: var(--green); }
+.stat-event-chip.cat-government{ --chip-color: var(--orange); }
+
+/* Event legend */
+.stat-event-legend {
+    display: flex; flex-direction: column;
+    gap: 0.25rem; margin-top: 1rem; font-size: 0.78rem;
+}
+.stat-event-legend-item {
+    display: flex; align-items: baseline; gap: 0.6rem;
+    color: var(--text-muted); padding: 0.25rem 0.5rem;
+    border-radius: 4px; cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease; margin: 0 -0.5rem;
+}
+.stat-event-legend-item:hover, .stat-event-legend-item.hovered {
+    background: var(--overlay-hover); color: var(--text);
+}
+.stat-event-legend-item.hidden { display: none; }
+.stat-event-legend-item .marker {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0; transform: translateY(1px);
+}
+.stat-event-legend-item .date {
+    color: var(--text); font-weight: 600;
+    font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 64px;
+}
+
+/* Data table */
+details.stat-data-table-wrap { margin-top: 1.5rem; }
+details.stat-data-table-wrap summary {
+    cursor: pointer; color: var(--text-muted); font-size: 0.8rem;
+    padding: 0.75rem 1rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    list-style: none; text-transform: uppercase;
+    letter-spacing: 0.06em; font-weight: 600;
+}
+details.stat-data-table-wrap summary::-webkit-details-marker { display: none; }
+details.stat-data-table-wrap summary::before { content: '\25B8  '; }
+details.stat-data-table-wrap[open] summary::before { content: '\25BE  '; }
+details.stat-data-table-wrap summary:hover { color: var(--text); }
+.stat-data-table {
+    width: 100%; border-collapse: collapse; margin-top: 0.75rem;
+}
+.stat-data-table th, .stat-data-table td {
+    padding: 0.5rem 0.85rem; text-align: right;
+    border-bottom: 1px solid var(--border); font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+}
+.stat-data-table th {
+    color: var(--text-muted); font-weight: 600; text-align: left;
+    text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.08em;
+}
+.stat-data-table td:first-child { text-align: left; color: var(--text-muted); }
+.stat-data-table tr:last-child td { border-bottom: none; }
+
+.stat-source-note {
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted);
+}
+.stat-source-note a { color: var(--text-muted); text-decoration: underline; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="stat-breadcrumb">
+    <a href="../statistika.html">&larr; Atpakaļ uz pārskatu</a>
+</div>
+
+<header class="stat-detail-header">
+    <div class="stat-detail-title">
+        <div>
+            <h1>{{ meta.label_lv }}</h1>
+            <div class="stat-detail-meta">
+                <span class="domain-chip domain-{{ meta.domain }}">{{ meta.domain_label }}</span>
+                <span class="sep">&middot;</span>
+                <span><strong>{{ meta.unit }}</strong></span>
+                <span class="sep">&middot;</span>
+                <span>{{ meta.freq_label }}</span>
+                <span class="sep">&middot;</span>
+                <span>{{ meta.range_str }}</span>
+                {% if meta.csp_updated_short %}
+                <span class="sep">&middot;</span>
+                <span>Atj. {{ meta.csp_updated_short }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="stat-hero-value">
+            <span class="num">{{ latest.formatted }}</span>
+            {% if latest.change_formatted %}
+            <span class="stat-hero-change {{ 'positive' if latest.change_positive else 'negative' }}">
+                {{ latest.change_formatted }}
+            </span>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+{% if insight %}
+<div class="stat-insight-card domain-{{ meta.domain }}">{{ insight }}</div>
+{% endif %}
+
+{% if event_categories %}
+<div class="stat-event-filter" id="event-filter">
+    <span class="stat-event-filter-label">Notikumi:</span>
+    {% for cat in event_categories %}
+    <span class="stat-event-chip cat-{{ cat.id }} active" data-cat="{{ cat.id }}">
+        <span class="dot"></span>{{ cat.label }} ({{ cat.count }})
+    </span>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="stat-chart-container">
+    <div class="stat-chart-wrap">
+        <canvas id="main-chart"></canvas>
+    </div>
+    {% if events_list %}
+    <div class="stat-event-legend" id="event-legend">
+        {% for evt in events_list %}
+        <div class="stat-event-legend-item" data-cat="{{ evt.category }}" data-evt-idx="{{ evt.idx }}">
+            <span class="marker" style="background: {{ evt.color }}"></span>
+            <span class="date">{{ evt.date_label }}</span>
+            <span>{{ evt.text }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<details class="stat-data-table-wrap">
+    <summary>Datu tabula ({{ data_rows | length }} ieraksti)</summary>
+    <table class="stat-data-table">
+        <thead><tr><th>Periods</th><th>V&#275;rt&#299;ba</th></tr></thead>
+        <tbody>
+        {% for row in data_rows %}
+        <tr><td>{{ row.period }}</td><td>{{ row.formatted }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</details>
+
+<div class="stat-source-note">
+    Dati: <a href="https://data.stat.gov.lv/" target="_blank" rel="noopener">Centr&#257;l&#257; statistikas p&#257;rvalde</a>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="stat-detail">{{ detail_json | safe_json }}</script>
+<script src="{{ assets_prefix }}assets/chart.min.js"></script>
+<script src="{{ assets_prefix }}assets/chartjs-plugin-annotation.min.js"></script>
+<script src="{{ assets_prefix }}assets/stv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

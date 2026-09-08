@@ -1,0 +1,120 @@
+{# templates/_vad_panel.html.j2 — VAD deklarāciju panel partial.
+   Spec: docs/superpowers/specs/2026-05-02-vad-deklaracijas-design.md § 9
+   Konteksts: vad_data = list[VadDeclarationView] sorted year DESC. #}
+
+{% if not vad_data %}
+<p style="color:var(--text-muted);">Nav saglabātu deklarāciju.</p>
+{% else %}
+<div class="vad-year-tabs" role="tablist" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+  {% for v in vad_data[:5] %}
+  <button class="vad-year-tab {% if loop.first %}active{% endif %}"
+          data-decl-id="{{ v.declaration_id }}">
+    {{ v.year or v.kind }} <span style="opacity:0.6">{{ v.kind }}</span>
+  </button>
+  {% endfor %}
+</div>
+
+{% for v in vad_data[:5] %}
+<div class="vad-decl" id="vad-decl-{{ v.declaration_id }}" {% if not loop.first %}style="display:none;"{% endif %}>
+  <div class="vad-decl-meta" style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1rem;">
+    {{ v.position_title }} · {{ v.institution }} · iesniegts {{ v.submitted_at or '?' }} · publicēts {{ v.published_at or '?' }}
+  </div>
+
+  {% set sec_labels = [
+    ('positions', 'Citi amati'),
+    ('real_estate', 'Nekustamie īpašumi'),
+    ('companies', 'Komercsabiedrību kapitāldaļas'),
+    ('vehicles', 'Transports'),
+    ('savings', 'Naudas uzkrājumi'),
+    ('income', 'Ienākumi'),
+    ('transactions', 'Darījumi >20 MMA'),
+    ('debts', 'Parādsaistības >20 MMA'),
+    ('loans_given', 'Izsniegtie aizdevumi >20 MMA'),
+  ] %}
+
+  {% for sec_key, sec_label in sec_labels %}
+    {% set rows = v.sections.get(sec_key, []) %}
+    {% if rows %}
+    <details class="vad-section" open>
+      <summary style="font-weight:600; padding:0.5rem 0; cursor:pointer;">
+        {{ sec_label }} <span style="color:var(--text-muted); font-weight:normal;">({{ rows|length }})</span>
+      </summary>
+      <div class="table-wrap">
+        <table class="data-table">
+          <tbody>
+            {% for d in rows %}
+            <tr class="vad-delta-{{ d.delta }}">
+              <td style="white-space:nowrap;">
+                {% if d.delta == 'new' %}<span class="vad-delta-marker vad-delta-marker-new">jauns</span>
+                {% elif d.delta == 'modified' %}<span class="vad-delta-marker vad-delta-marker-modified">mainījies</span>
+                {% elif d.delta == 'removed' %}<span class="vad-delta-marker vad-delta-marker-removed">aizgāja</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if sec_key == 'positions' %}
+                  {{ d.payload.position_title }} — {{ d.payload.entity_name }}
+                {% elif sec_key == 'real_estate' %}
+                  {{ d.payload.property_type }} — {{ d.payload.location }} ({{ d.payload.ownership_status }})
+                {% elif sec_key == 'companies' %}
+                  {{ d.payload.company_name }} — {{ d.payload.units|round|int if d.payload.units else '' }} {{ d.payload.capital_kind|lower }}, {{ '%.2f'|format(d.payload.total_value or 0) }} {{ d.payload.currency or '' }}
+                {% elif sec_key == 'vehicles' %}
+                  {{ d.payload.vehicle_type }} {{ d.payload.brand }} ({{ d.payload.year_made or '?' }})
+                {% elif sec_key == 'savings' %}
+                  {{ d.payload.savings_kind|capitalize }}: {{ '%.2f'|format(d.payload.amount) }} {{ d.payload.currency }}{% if d.payload.holder_name %} — {{ d.payload.holder_name }}{% endif %}
+                {% elif sec_key == 'income' %}
+                  {{ d.payload.income_type }}: {{ '%.2f'|format(d.payload.amount) }} {{ d.payload.currency }} <span style="color:var(--text-muted);">no {{ d.payload.source[:60] }}</span>
+                {% elif sec_key == 'transactions' %}
+                  {{ d.payload.transaction_description[:120] }}
+                {% elif sec_key == 'debts' %}
+                  {{ '%.2f'|format(d.payload.amount) }} {{ d.payload.currency }} — {{ d.payload.creditor_name }}
+                {% elif sec_key == 'loans_given' %}
+                  {{ '%.2f'|format(d.payload.amount) }} {{ d.payload.currency }}
+                {% endif %}
+                {% if d.diff_text %}<div style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem;">{{ d.diff_text }}</div>{% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+    {% endif %}
+  {% endfor %}
+
+  {# Family — collapsed default #}
+  {% set family_rows = v.sections.get('family', []) %}
+  {% if family_rows %}
+  <details class="vad-section vad-section-family" style="margin-top:1rem;">
+    <summary style="font-weight:600; padding:0.5rem 0; cursor:pointer; color:var(--text-muted);">
+      Ģimene — publiska VID portālā ({{ family_rows|length }})
+    </summary>
+    <div class="table-wrap">
+      <table class="data-table">
+        <tbody>
+          {% for d in family_rows %}
+          <tr class="vad-delta-{{ d.delta }}">
+            <td>{{ d.payload.full_name }} <span style="color:var(--text-muted);">— {{ d.payload.relation|lower }}</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  {% endif %}
+
+  {% if v.has_private_pension is not none or v.has_life_insurance is not none %}
+  <p style="margin-top:1rem; color:var(--text-muted); font-size:0.85rem;">
+    Privātā pensija: <strong>{{ 'ir' if v.has_private_pension else 'nav' }}</strong> ·
+    Dzīvības apdrošināšana: <strong>{{ 'ir' if v.has_life_insurance else 'nav' }}</strong>
+  </p>
+  {% endif %}
+
+  <p style="margin-top:1rem; font-size:0.8rem; color:var(--text-muted);">
+    Avots: <a href="{{ v.source_url | safe_url }}" target="_blank" rel="noopener">VID Valsts amatpersonu deklarāciju portāls</a>
+    (atver search ar šo politiķi; izvēlies konkrēto deklarāciju no saraksta)
+  </p>
+</div>
+{% endfor %}
+{# VAD gada-cilņu pārslēgšana notiek ppv1.js — deleģēts klikšķis uz
+   [data-decl-id] (VAD panelis parādās tikai profila lapā). #}
+{% endif %}

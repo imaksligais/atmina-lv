@@ -1,0 +1,58 @@
+{# Shared "Turpini rakt" related-links block (profile / topic / pretruna pages).
+   Per-link rendering auto-detects the row type from available fields, so the
+   three builders can opt into richness independently without breaking:
+     • profile row  → link has `initials`  (avatar + name + optional party + dot)
+     • metric row   → link has `bar` (0–100) (name + count + proportional underline)
+     • generic row  → neither               (name + optional `sub`)
+   digging = {"columns": [{"title": str, "links": [ {label, href, ...} ]}]} #}
+{% if digging and digging.columns %}
+<section class="keep-digging">
+  <div class="keep-digging-kicker"><span class="keep-digging-pick" aria-hidden="true">⛏</span>Turpini rakt</div>
+  <div class="keep-digging-grid">
+    {% for col in digging.columns %}
+      {% if col.links %}
+      <div class="keep-digging-card">
+        <h3 class="keep-digging-title">{{ col.title }}</h3>
+        <ul class="keep-digging-list">
+          {% for l in col.links %}
+            {% if l.initials is defined %}
+            <li class="kd-row kd-profile">
+              <a href="{{ l.href }}">
+                {%- if l.photo %}
+                <img class="kd-avatar kd-avatar-photo kd-avatar--{{ l.coalition | default('other') }}" src="{{ assets_prefix | default('../') }}assets/photos/{{ l.slug }}.jpg" alt="" width="27" height="27" loading="lazy" decoding="async">
+                {%- else %}
+                <span class="kd-avatar kd-avatar--{{ l.coalition | default('other') }}" aria-hidden="true">{{ l.initials }}</span>
+                {%- endif %}
+                <span class="kd-meta">
+                  <span class="kd-name">{{ l.label }}</span>
+                  {% if l.sub %}<span class="kd-party"><span class="kd-dot kd-dot--{{ l.coalition | default('other') }}" aria-hidden="true"></span>{{ l.sub }}</span>{% endif %}
+                </span>
+                <span class="kd-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            {% elif l.bar is defined %}
+            <li class="kd-row kd-topic">
+              <a href="{{ l.href }}">
+                <span class="kd-topic-name">{{ l.label }}</span>
+                <span class="kd-topic-count">{{ l.count }}<span class="kd-topic-unit"> poz.</span></span>
+                <span class="kd-arrow" aria-hidden="true">&rarr;</span>
+                <span class="kd-bar" style="width: {{ l.bar }}%" aria-hidden="true"></span>
+              </a>
+            </li>
+            {% else %}
+            <li class="kd-row kd-generic">
+              <a href="{{ l.href }}">
+                <span class="kd-name">{{ l.label }}</span>
+                {% if l.sub %}<span class="kd-sub">{{ l.sub }}</span>{% endif %}
+                <span class="kd-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

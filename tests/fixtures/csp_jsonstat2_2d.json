@@ -1,0 +1,32 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Registered unemployment rate",
+  "source": "Centrālā statistikas pārvalde",
+  "updated": "2026-08-28T07:00:00Z",
+  "id": ["ContentsCode", "TIME"],
+  "size": [1, 4],
+  "dimension": {
+    "ContentsCode": {
+      "label": "Rādītājs",
+      "category": {
+        "index": {"EliminatedValue": 0},
+        "label": {"EliminatedValue": "Reģistrētais bezdarba līmenis"},
+        "unit": {"EliminatedValue": {"base": "%", "decimals": 1}}
+      }
+    },
+    "TIME": {
+      "label": "Periods",
+      "category": {
+        "index": {"2026M03": 0, "2026M04": 1, "2026M05": 2, "2026M06": 3},
+        "label": {
+          "2026M03": "2026M03",
+          "2026M04": "2026M04",
+          "2026M05": "2026M05",
+          "2026M06": "2026M06"
+        }
+      }
+    }
+  },
+  "value": [6.4, 6.2, 6.0, null]
+}

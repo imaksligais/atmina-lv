@@ -1,0 +1,40 @@
+/* atmina ops — design tokens beyond Tailwind config.
+ *
+ * Tailwind handles the bulk via `tailwind.config` in `_base.html.j2`.
+ * This file is for status palette CSS vars + minor overrides.
+ */
+
+:root {
+  /* Status palette — WCAG AA in light mode */
+  --status-success-bg: #DCFCE7;
+  --status-success-fg: #14532D;
+  --status-warning-bg: #FEF3C7;
+  --status-warning-fg: #78350F;
+  --status-danger-bg:  #FECACA;
+  --status-danger-fg:  #7F1D1D;
+  --status-info-bg:    #DBEAFE;
+  --status-info-fg:    #1E3A8A;
+}
+
+html.dark {
+  /* Status palette — WCAG AA in dark mode */
+  --status-success-bg: #14532D;
+  --status-success-fg: #86EFAC;
+  --status-warning-bg: #78350F;
+  --status-warning-fg: #FCD34D;
+  --status-danger-bg:  #7F1D1D;
+  --status-danger-fg:  #FCA5A5;
+  --status-info-bg:    #1E3A8A;
+  --status-info-fg:    #93C5FD;
+}
+
+.status-success { background: var(--status-success-bg); color: var(--status-success-fg); }
+.status-warning { background: var(--status-warning-bg); color: var(--status-warning-fg); }
+.status-danger  { background: var(--status-danger-bg);  color: var(--status-danger-fg);  }
+.status-info    { background: var(--status-info-bg);    color: var(--status-info-fg);    }
+
+/* Brief preview prose uses serif for brand continuity with atmina.lv */
+.brief-prose { font-family: Georgia, serif; line-height: 1.55; }
+
+/* Data tables / IDs use mono for tabular alignment */
+.data-mono { font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; }

@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+{% set assets_prefix = "/" %}
+
+{% block title %}404 — Lapa nav atrasta{% endblock %}
+{% block description %}Meklētā lapa neeksistē vai ir pārvietota. Atgriezieties uz atmina.lv sākumlapu.{% endblock %}
+{% block og_title %}404 — Lapa nav atrasta · atmina.lv{% endblock %}
+
+{% block content %}
+<section class="section" style="text-align:center; padding: 5rem 0 4rem;">
+  <div style="font-size: 6rem; font-weight: 800; line-height: 1; color: var(--accent-highlight); margin-bottom: 0.5rem;">404</div>
+  <h1 style="font-size: 1.75rem; margin: 0 0 1rem;">Lapa nav atrasta</h1>
+  <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7;">
+    Šī lapa neeksistē vai ir pārvietota. Iespējams, saite ir novecojusi vai satura struktūra ir mainījusies.
+  </p>
+  <div style="display:flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+    <a href="/" style="background: var(--accent); color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Uz sākumlapu</a>
+    <a href="/personas.html" style="background: transparent; border: 1px solid var(--border); color: var(--text); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Politiķi</a>
+    <a href="/pretrunas.html" style="background: transparent; border: 1px solid var(--border); color: var(--text); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Pretrunas</a>
+  </div>
+</section>
+{% endblock %}

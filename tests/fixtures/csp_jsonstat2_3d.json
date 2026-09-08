@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Average gross/net monthly wage",
+  "source": "Centrālā statistikas pārvalde",
+  "updated": "2026-08-30T07:00:00Z",
+  "id": ["GRS_NET", "ContentsCode", "TIME"],
+  "size": [2, 1, 3],
+  "dimension": {
+    "GRS_NET": {
+      "label": "Bruto/neto",
+      "category": {
+        "index": {"GRS": 0, "NET": 1},
+        "label": {"GRS": "Bruto", "NET": "Neto"}
+      }
+    },
+    "ContentsCode": {
+      "label": "Rādītājs",
+      "category": {
+        "index": {"EliminatedValue": 0},
+        "label": {"EliminatedValue": "Vidējā darba samaksa"}
+      }
+    },
+    "TIME": {
+      "label": "Periods",
+      "category": {
+        "index": {"2026M04": 0, "2026M05": 1, "2026M06": 2},
+        "label": {"2026M04": "2026M04", "2026M05": "2026M05", "2026M06": "2026M06"}
+      }
+    }
+  },
+  "value": [1710.0, 1745.0, 1780.0, 1240.0, 1265.0, 1290.0]
+}

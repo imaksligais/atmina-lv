@@ -1,0 +1,40 @@
+{# Footer — image budget bar + git SHA + nav links.
+
+Args:
+  pending: dict from get_pending_actions() — keys: image_budget, build_sha,
+           scheduled (rendered alongside, sotto voce).
+#}
+<footer class="border-t border-slate-200 dark:border-slate-800 mt-8 px-6 py-3
+               text-xs text-slate-500 dark:text-slate-400">
+  <div class="flex flex-wrap items-center gap-x-6 gap-y-2 max-w-screen-2xl mx-auto">
+    <span class="data-mono">
+      attēlu budžets
+      <span class="text-ink dark:text-slate-100">
+        ${{ "%.3f" | format(pending.image_budget.used_usd) }} /
+        ${{ "%.2f" | format(pending.image_budget.max_usd) }}
+        ({{ pending.image_budget.percent }}%)
+      </span>
+    </span>
+    <span class="data-mono">build {{ pending.build_sha }}</span>
+    <span class="data-mono">M1 scaffold</span>
+    {% if pending.scheduled %}
+    <span class="hidden sm:inline-block ml-auto text-slate-400 dark:text-slate-500">
+      nākamais:
+      {% for s in pending.scheduled %}{{ s.time_label }} {{ s.message }}{% if not loop.last %} · {% endif %}{% endfor %}
+    </span>
+    {% endif %}
+    <span class="ml-auto sm:ml-0 flex items-center gap-3">
+      <button type="button"
+              hx-get="/api/deploy/confirm"
+              hx-target="body"
+              hx-swap="beforeend"
+              data-shortcut="D"
+              title="Atver deploy konfirmācijas modal"
+              class="rounded border border-slate-300 dark:border-slate-700 px-2 py-0.5 hover:bg-slate-100 dark:hover:bg-slate-800">
+        🚀 Deploy [D]
+      </button>
+      <a href="https://github.com/imaksligais/atmina" class="hover:text-sarkans">github</a>
+      <a href="https://atmina.lv" class="hover:text-sarkans">atmina.lv</a>
+    </span>
+  </div>
+</footer>

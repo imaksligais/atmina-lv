@@ -1,0 +1,167 @@
+# Notikumi, kas anotē statistikas grafikus.
+# tables: "all" vai saraksts ar CSP tabulu ID, uz kuriem notikums ir relevants.
+# category: crisis | milestone | policy | elections | government
+
+events:
+  # ── Milestones (visi grafiki) ─────────────────────────────
+  - date: "2004-03-29"
+    label: "Iestāšanās NATO"
+    category: milestone
+    tables: all
+
+  - date: "2004-05-01"
+    label: "Iestāšanās ES"
+    category: milestone
+    tables: all
+
+  - date: "2014-01-01"
+    label: "Eiro ieviešana"
+    category: milestone
+    tables: all
+
+  # ── Krīzes (visi grafiki) ─────────────────────────────────
+  - date: "2008-09-15"
+    label: "Lehman / globālā finanšu krīze"
+    category: crisis
+    tables: all
+
+  - date: "2008-12-19"
+    label: "SVF/ES aizdevums Latvijai"
+    category: crisis
+    tables: all
+
+  - date: "2009-06-01"
+    label: "Iekšējā devalvācija, budžeta griezumi"
+    category: crisis
+    tables: all
+
+  - date: "2020-03-13"
+    label: "COVID ārkārtas stāvoklis"
+    category: crisis
+    tables: all
+
+  - date: "2022-02-24"
+    label: "Krievijas iebrukums Ukrainā"
+    category: crisis
+    tables: all
+
+  - date: "2022-09-01"
+    label: "Enerģētikas krīze / gāzes cenu šoks"
+    category: crisis
+    tables: all
+
+  # ASV 2025-04-02 paziņo 20 % tarifu ES precēm (10 % spēkā 05.04., augstākie 09.04.).
+  # Tiešā ietekme uz Latviju ir neliela — uz ASV iet 2,8 % preču eksporta, aplēse
+  # ~0,3 p.p. no IKP pieauguma —, tāpēc NAV likts uz visiem grafikiem, tikai uz
+  # uzņēmēju konfidenci un IKP.
+  - date: "2025-04-02"
+    label: "ASV tarifi ES precēm (20 %)"
+    category: crisis
+    tables: [KRE020m, IKP010, ISP010c]
+
+  # ── Enerģētika un aizsardzība ─────────────────────────────
+  # Baltijas valstis 2025-02-08 atslēdzās no BRELL un 2025-02-09 plkst. 14.05
+  # sinhronizējās ar kontinentālās Eiropas tīklu. Datums = sinhronizācija.
+  - date: "2025-02-09"
+    label: "Sinhronizācija ar Eiropas elektrotīklu"
+    category: milestone
+    tables: all
+
+  # NATO samits Hāgā 2025-06-24/25: apņemšanās līdz 2035. gadam novirzīt
+  # aizsardzībai 5 % no IKP (3,5 % tiešie + 1,5 % noturība). Liekam uz IKP un
+  # parāda grafikiem, jo tas ir fiskāls, ne cenu notikums.
+  - date: "2025-06-25"
+    label: "NATO: 5 % no IKP aizsardzībai līdz 2035"
+    category: milestone
+    tables: [IKP010, ISP010c, VFV050]
+
+  # ── Minimālā alga (tikai algu grafiks) ────────────────────
+  - date: "2014-01-01"
+    label: "Minimālā alga €320"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2015-01-01"
+    label: "Minimālā alga €360"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2017-01-01"
+    label: "Minimālā alga €380"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2018-01-01"
+    label: "Minimālā alga €430"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2021-01-01"
+    label: "Minimālā alga €500"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2023-01-01"
+    label: "Minimālā alga €620"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2024-01-01"
+    label: "Minimālā alga €700"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2025-01-01"
+    label: "Minimālā alga €740"
+    category: policy
+    tables: [DSV010m]
+
+  - date: "2026-01-01"
+    label: "Minimālā alga €780"
+    category: policy
+    tables: [DSV010m]
+
+  # ── Nodokļi ───────────────────────────────────────────────
+  # No 2025-01-01: viens fiksēts neapliekamais minimums 510 EUR visām algām
+  # (iepriekš diferencēts), IIN 25,5 % līdz 8 775 EUR/mēn. un 33 % virs tā.
+  # NB: DSV010m rāda BRUTO algu, ko ienākuma nodoklis nekustina — šeit tas ir
+  # konteksts lasītājam, ne cēlonis līknei. Nevienlīdzības grafikam tas ir tiešs.
+  - date: "2025-01-01"
+    label: "Darbaspēka nodokļu reforma (neapliekamais minimums €510)"
+    category: policy
+    tables: [DSV010m, NNI030]
+
+  # ── Infrastruktūra (tikai IKP + parāds) ───────────────────
+  - date: "2019-05-15"
+    label: "Rail Baltica būvdarbu sākums"
+    category: milestone
+    tables: [IKP010, ISP010c, VFV050, KRE020m]
+
+  # ── Vēlēšanas (visi) ──────────────────────────────────────
+  - date: "2018-10-06"
+    label: "13. Saeimas vēlēšanas"
+    category: elections
+    tables: all
+
+  - date: "2022-10-01"
+    label: "14. Saeimas vēlēšanas"
+    category: elections
+    tables: all
+
+  - date: "2026-10-03"
+    label: "15. Saeimas vēlēšanas"
+    category: elections
+    tables: all
+
+  # ── Valdība ───────────────────────────────────────────────
+  - date: "2023-09-15"
+    label: "Siliņas valdība"
+    category: government
+    tables: all
+
+  # Saeima izteica uzticību 2026-05-28 plkst. 17:20 (66 par : 25 pret : 0 atturas),
+  # balsojums saeima_votes id pēc motīva "Uzticības izteikšana Ministru kabinetam".
+  - date: "2026-05-28"
+    label: "Kulberga valdība"
+    category: government
+    tables: all
