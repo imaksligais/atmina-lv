@@ -1,0 +1,8 @@
+# Cloudflare Workers Static Assets: ko NEaugšupielādēt no output/atmina/.
+# Formāts kā .gitignore; failam jābūt koka saknē (renderis to kopē ar
+# _copy_host_config). Hostinga konfigurācija nav publisks saturs:
+.htaccess
+assets/htaccess.template
+assets/_headers
+assets/_redirects
+assets/.assetsignore

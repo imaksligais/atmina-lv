@@ -1,0 +1,50 @@
+{% extends "base.html.j2" %}
+{% set active_page = "mediji" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Mediji{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Mediju caurskatāmība</div>
+      <h1 class="pagehead-h1">Mediji</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Mediji</span>
+        <span class="pagehead-metric-value">{{ metrics.total }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Publikācijas</span>
+        <span class="pagehead-metric-value">{{ metrics.total_articles }}</span>
+      </div>
+    </div>
+  </header>
+
+  <p class="muted" style="margin-bottom:1.5rem;">Mediju īpašnieki, finansējums un faktiskais
+     politiskais pārklājums — aprēķināts no atmina datiem. Aprakstoši dati, bez vērtējuma.</p>
+
+  <div class="parties-grid">
+    {% for o in outlets %}
+    <div class="party-card" style="cursor:pointer;" data-card-href="mediji/{{ o.slug }}.html">
+      <div class="party-card-header">
+        <h3>{{ o.name }}</h3>
+        {% if o.type_label %}<span class="badge badge-muted">{{ o.type_label }}</span>{% endif %}
+      </div>
+      {% set outlet_lang = o.language if (o.language and o.language != 'lv') else '' %}
+      {% set outlet_site = (o.website | replace('https://', '') | replace('http://', '')) if o.website else '' %}
+      {% if outlet_lang or outlet_site %}
+      <div class="party-card-ideology">{{ outlet_lang|upper }}{% if outlet_lang and outlet_site %} · {% endif %}{{ outlet_site }}</div>
+      {% endif %}
+      <div class="party-card-stats">
+        <span>{{ o.volume_phrase }}</span>
+        {% if o.top_party %}<span><span class="cover-dot" style="background:{{ o.top_party_color }}"></span>visvairāk: {{ o.top_party }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

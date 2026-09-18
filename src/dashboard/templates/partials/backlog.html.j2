@@ -1,0 +1,69 @@
+{# Extraction backlog panel — per-platform totals + top-5 pid table.
+
+Args:
+  backlog: dict from get_backlog_context() — keys: platforms, top_pids,
+           today_unreviewed, total_unreviewed.
+#}
+<section id="backlog-panel"
+         class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6">
+
+  <header class="flex items-baseline justify-between">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Ekstrakcijas rinda
+    </h2>
+  </header>
+
+  {% if backlog.total_unreviewed == 0 %}
+    <div class="mt-4 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
+      <div class="text-3xl mb-2" aria-hidden="true">🌱</div>
+      <p class="text-sm font-medium">Nav neapstrādātu dokumentu.</p>
+      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+        Lielisks darbs! Nākamais ingest pēc plāna.
+      </p>
+    </div>
+  {% else %}
+    <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+      <div>
+        <dt class="text-xs text-slate-500 dark:text-slate-400">Šodien</dt>
+        <dd class="data-mono text-2xl font-semibold">{{ backlog.today_unreviewed }}</dd>
+      </div>
+      <div>
+        <dt class="text-xs text-slate-500 dark:text-slate-400">Kopā</dt>
+        <dd class="data-mono text-2xl font-semibold">{{ backlog.total_unreviewed }}</dd>
+      </div>
+    </dl>
+
+    {% if backlog.platforms %}
+    <ul class="mt-4 space-y-1 text-xs data-mono">
+      {% for p in backlog.platforms %}
+      <li class="flex items-center justify-between">
+        <span>{{ p.platform }}</span>
+        <span>
+          {% if p.today > 0 %}<span class="text-sarkans">{{ p.today }} šodien</span> · {% endif %}
+          {{ p.total }} kopā
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if backlog.top_pids %}
+    <h3 class="mt-4 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Top politiķi (jāekstraktē)
+    </h3>
+    <table class="mt-2 w-full text-xs">
+      <tbody>
+        {% for pid in backlog.top_pids %}
+        <tr class="border-t border-slate-100 dark:border-slate-900">
+          <td class="py-1">
+            <a href="/politiki/{{ pid.pid }}" class="hover:text-sarkans">{{ pid.name }}</a>
+            <span class="data-mono text-slate-400 ml-1">[{{ pid.party }}]</span>
+          </td>
+          <td class="py-1 text-right data-mono">{{ pid.doc_count }} doc</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  {% endif %}
+</section>

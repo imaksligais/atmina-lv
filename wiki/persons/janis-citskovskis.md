@@ -1,0 +1,12 @@
+---
+name: Jānis Citskovskis
+party: JKP
+role: JKP premjera amata kandidāts, Rīgas saraksta līderis
+positions: 1
+votes: 0
+contradictions: 0
+mentioned_in: 79
+last_active: '2026-08-16 00:00:00'
+top_topics:
+- Korupcija un KNAB
+---

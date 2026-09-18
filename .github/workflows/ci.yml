@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    # master = private dev repo; main = public release repo (imaksligais/atmina-lv).
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+# Cancel in-progress runs when a new push lands on the same ref.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: ruff + pytest
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: pip
+          # ci.yml is part of the key so that changing the install strategy
+          # below invalidates a pip cache primed with the old (CUDA) wheels.
+          cache-dependency-path: |
+            requirements.txt
+            .github/workflows/ci.yml
+
+      - name: Install dependencies
+        # torch/torchaudio MUST come from the PyTorch CPU index first. The
+        # default PyPI wheel for linux/x86_64 is the CUDA build: it drags in
+        # ~2 GB of compressed nvidia_* wheels (cublas, cudnn, nccl, cufft,
+        # cusolver, …) plus triton, which unpack to several GB and blow out
+        # the runner's disk — `OSError: [Errno 28] No space left on device`
+        # mid-install (run 81777561652, 2026-07-25). CI has no GPU, so the
+        # CUDA runtime is dead weight. `==2.13.0` is satisfied by `2.13.0+cpu`
+        # (PEP 440 ignores the local version segment), so the requirements.txt
+        # pins below see torch as already installed and never touch PyPI's.
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu \
+            torch==2.13.0 torchaudio==2.11.0
+          pip install -r requirements.txt
+
+      - name: Apply twikit local patches
+        run: python scripts/patch_twikit.py
+
+      - name: Install Playwright browser
+        # The render byte-identical tests and the social quote-card render
+        # generate PNGs / og-images by launching Chromium via Playwright. The
+        # pip package ships no browser binary, so CI must fetch it (+ system
+        # libs) or those tests error at BrowserType.launch.
+        run: python -m playwright install --with-deps chromium
+
+      - name: ruff check
+        run: python -m ruff check src scripts tests
+
+      - name: pytest
+        # CI runs the fast suite only:
+        # - `integration` tests hit real APIs (Twitter / Saeima / Anthropic) — no credentials in CI
+        # - `slow` tests exceed 5s each — skipped to keep CI under timeout
+        # The full suite + generate_public_site smoke run locally via `bash scripts/check.sh`
+        # (developer's last-mile gate; needs a populated data/atmina.db fixture).
+        run: python -m pytest tests -q -m "not integration and not slow"

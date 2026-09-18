@@ -1,0 +1,91 @@
+# Partiju tests — 14 startējošie saraksti (15. Saeimas vēlēšanas 2026).
+# Vienīgā patiesība sarakstu kopai — aizstāj bijušo STARTING literāli.
+# Secība = izlozētais CVK saraksta numurs (dati.cvk.lv/SV2026/kandidatu-saraksti).
+# lideris_id ir operatora lauks (3. līmeņa šūnu pārbaudēm; null = izteikums šūnas noraidītas).
+# majaslapa — partijas/saraksta oficiālā vietne; pilna_programma_url — pilnās programmas
+# adrese tajā pašā domēnā (2. līmeņa šūnu avots; nav, ja programma nav publicēta/pieejama).
+# pilna_programma_piezime — īss iemesls, kāpēc pilna_programma_url nav (tikai ja url nav).
+- short_name: SV-AJ
+  cvk_numurs: 1
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/
+  majaslapa: https://suverenavara.lv
+  pilna_programma_url: https://suverenavara.lv/musu-piedavajums-tautai-15-saeimas-velesanas-programma/
+  lideris_id: 236
+- short_name: MMN
+  cvk_numurs: 2
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus
+  majaslapa: https://mmn.lv
+  pilna_programma_url: https://mmn.lv/programma-15sv
+  lideris_id: 30
+- short_name: SC
+  cvk_numurs: 3
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/politisko-partiju-apvieniba-saskanas-centrs
+  majaslapa: https://www.saskanascentrs.lv
+  lideris_id: 232
+  pilna_programma_piezime: "pilnās programmas nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma)"
+- short_name: ZZS
+  cvk_numurs: 4
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba
+  majaslapa: https://zzs.lv
+  pilna_programma_url: https://zzs.lv/velesanas/programma-2026-2030/
+  lideris_id: 25
+- short_name: NA
+  cvk_numurs: 5
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk
+  majaslapa: https://nacionalaapvieniba.lv
+  pilna_programma_url: https://nacionalaapvieniba.lv/15-saeimas-velesanas/
+  lideris_id: 72
+- short_name: GS
+  cvk_numurs: 6
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts
+  majaslapa: https://gobzemasaraksts.lv
+  pilna_programma_url: https://gobzemasaraksts.lv/programma
+  lideris_id: 234
+- short_name: AS
+  cvk_numurs: 7
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija
+  majaslapa: https://apvienotaissaraksts.lv
+  pilna_programma_url: https://www.apvienotaissaraksts.lv/15-saeimas-velesanu-programma
+  lideris_id: 10
+- short_name: LPV
+  cvk_numurs: 8
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta
+  majaslapa: https://latvijapirmajavieta.lv
+  pilna_programma_url: https://latvijapirmajavieta.lv/programma-2026/
+  lideris_id: 3
+- short_name: JV
+  cvk_numurs: 9
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba
+  majaslapa: https://jaunavienotiba.lv
+  pilna_programma_url: https://jaunavienotiba.lv/programma-2026
+  lideris_id: 15
+- short_name: JKP
+  cvk_numurs: 10
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija
+  majaslapa: https://partijajkp.lv
+  pilna_programma_url: https://partijajkp.lv/saeimas-velesanas-2026
+  lideris_id: 233
+- short_name: LA
+  cvk_numurs: 11
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvijas-attistibai
+  majaslapa: https://latvijasattistibai.lv
+  lideris_id: 23
+  pilna_programma_piezime: "mājaslapa nav pieejama (latvijasattistibai.lv, HTTP 403, 2026-09-14)"
+- short_name: ASL
+  cvk_numurs: 12
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai
+  majaslapa: https://www.austsaule.lv
+  pilna_programma_url: https://www.austsaule.lv/programma/
+  lideris_id: 183
+- short_name: ST
+  cvk_numurs: 13
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei
+  majaslapa: https://partijastabilitatei.lv
+  pilna_programma_url: https://www.partijastabilitatei.lv/programma/
+  lideris_id: 84
+- short_name: PRO
+  cvk_numurs: 14
+  cvk_url: https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie
+  majaslapa: https://progresivie.lv
+  pilna_programma_url: https://progresivie.lv/velesanas/programma
+  lideris_id: 12

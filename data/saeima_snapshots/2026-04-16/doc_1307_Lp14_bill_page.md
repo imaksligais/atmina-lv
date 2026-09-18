@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2] [cursor=pointer]:
+    - generic [ref=e3]:
+      - img [ref=e4]
+      - text: Drukāt
+    - generic [ref=e5]:
+      - img [ref=e6]
+      - text: Aizvērt
+  - generic [ref=e10]:
+    - generic [ref=e11] [cursor=pointer]:
+      - img "Savērst" [ref=e12]
+      - text: Oriģinālais dokumenta saturs
+    - paragraph [ref=e13]:
+      - link "1307.pdf 1307.pdf" [ref=e14] [cursor=pointer]:
+        - /url: /LIVS14/saeimalivs14.nsf/0/bd1c8ef533c89a2cc2258dd50035a636/$FILE/1307.pdf
+        - img "1307.pdf" [ref=e15]
+        - generic [ref=e16]: 1307.pdf

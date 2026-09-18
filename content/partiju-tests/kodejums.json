@@ -1,0 +1,948 @@
+{
+  "q01": {
+    "JV": {
+      "nostaja": "par",
+      "claim_id": 532668,
+      "citats": "Turpināsim visaptverošu politisku, militāru un diplomātisku atbalstu Ukrainai līdz taisnīgam mieram",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba",
+      "avots": "cvk"
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "claim_id": 547897,
+      "citats": "nelokāms atbalsts Ukrainai un Latvijas uzņēmēju iesaiste tās atjaunošanā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "avots": "cvk"
+    },
+    "NA": {
+      "nostaja": "par",
+      "claim_id": 532708,
+      "citats": "Atbalstīsim Ukrainu militāri, politiski un ekonomiski līdz uzvarai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "avots": "cvk"
+    },
+    "AS": {
+      "nostaja": "par",
+      "claim_id": 532842,
+      "citats": "Turpināsim nelokāmu atbalstu Ukrainai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija",
+      "avots": "cvk"
+    },
+    "LA": {
+      "nostaja": "par",
+      "claim_id": 547869,
+      "citats": "Turpināsim visaptverošu politisko, militāro un humāno atbalstu Ukrainai līdz taisnīga un ilgtspējīga miera panākšanai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvijas-attistibai",
+      "avots": "cvk"
+    },
+    "JKP": {
+      "nostaja": "par",
+      "claim_id": 532795,
+      "citats": "Veidosim MILITĀRI TEHNOLOĢISKU ALIANSI AR UKRAINU, pārņemot kara pieredzi",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "avots": "cvk"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "claim_id": 532611,
+      "citats": "Atbalstīsim Ukrainas ceļu uz NATO",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "avots": "cvk"
+    },
+    "ST": {
+      "nostaja": "pret",
+      "claim_id": 532586,
+      "citats": "Valsts neitralitātes atjaunošana un atteikšanās no dalības militāros konfliktos starp citām valstīm",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "GS": {
+      "nostaja": "pret",
+      "claim_id": 532766,
+      "citats": "Krievijas un Ukrainas konfliktā Latvija neieņems aktīvu, priekšplānā ejošu pozīciju",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "pret",
+      "claim_id": 547988,
+      "citats": "nepieļaut Latvijas iesaistīšanos militārajos konfliktos",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma min sadarbību ar Ukrainu NATO flanga kontekstā, bet atbalstu kara laikā neformulē. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): min Ukrainu sadarbības partneru sarakstā; atbalstu kara laikā nemin. Izteikums (3. līmenis, 2026-01-29, progresivie.lv): Šuvajevs — „nedrīkstam zaudēt fokusu … uz atbalstu Ukrainai”; avots DB nav, gaida ingest."
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola atbalstīt Ukrainas iestāšanos ES; par atbalstu kara laikā neizsakās. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): sola 'atbalstīsim Ukrainas iestāšanos ES'; atbalstu kara laikā nemin. Izteikums (3. līmenis, 2026-05-12, doc 70312): „Mēs esam konsekventi atbalstījuši Ukrainu” — par pagātni, ne par atbalsta turpināšanu līdz kara beigām."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: Ukraina minēta kā sabiedrotais divpusējās attiecībās; atbalsts kara laikā nav formulēts. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): min Ukrainu tikai sabiedroto sarakstā ('stiprināsim divpusējas attiecības ar … Ukrainu'). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma nosoda Krievijas agresiju un atbalsta diplomātiju taisnīgam mieram; par atbalsta turpināšanu kara laikā tieši neizsakās. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q02": {
+    "JV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532665,
+      "citats": "Nodrošināsim aizsardzības finansējumu 5% no IKP un attīstīsim NATO sabiedroto pastāvīgu klātbūtni Latvijā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba"
+    },
+    "PRO": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532636,
+      "citats": "Saglabāsim finansējumu aizsardzības nozarei vismaz 5% apjomā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie"
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547882,
+      "citats": "aizsardzībai – virs 5% no IKP",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba"
+    },
+    "NA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532704,
+      "citats": "Aizsardzības finansējumu palielināsim virs 5% no IKP, attīstot vietējo militāro industriju",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk"
+    },
+    "LA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547868,
+      "citats": "saglabāsim aizsardzības finansējumu vismaz 5 % apmērā no iekšzemes kopprodukta",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvijas-attistibai"
+    },
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 547988,
+      "citats": "pārdalīt aizsardzības budžetu iekšējās drošības garantēšanai un infrastruktūrai, nodrošinot papildu finansējumu medicīnai un glābšanas dienestiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "AS": {
+      "nostaja": "par",
+      "avots": "izteikums",
+      "runatajs": 10,
+      "datums": "2026-08-22",
+      "document_id": 92475,
+      "url": "https://x.com/AndrisKulbergs/status/2091047167054000557",
+      "citats": "No 2027. gada Latvija aizsardzībai tērēs vismaz 5% no IKP."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola pretgaisa aizsardzības sistēmas; budžeta apjomu nenosauc. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma runā par VAD atcelšanu; aizsardzības budžeta apjomu nenosauc. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola modernu aizsardzības sistēmu un ES/NATO finansējuma izmantošanu; IKP daļu nenosauc. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): sola 'pašpietiekamu un modernu valsts aizsardzības sistēmu'; IKP daļu nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola NBS spējas un policijas algas; aizsardzības budžeta apjomu pret IKP nenosauc. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola iekšlietu un VAD atlīdzību; aizsardzības budžeta apjomu nenosauc. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola iekšējās drošības algas; par aizsardzības budžetu neizsakās. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola apvienot ministrijas un iepirkumus no ASV; budžeta apjomu nenosauc. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q03": {
+    "AS": {
+      "nostaja": "par",
+      "claim_id": 532820,
+      "citats": "Paplašināsim Valsts aizsardzības dienestu, piedāvājot papildu dienesta virzienus",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija",
+      "avots": "cvk"
+    },
+    "JKP": {
+      "nostaja": "par",
+      "claim_id": 532794,
+      "citats": "Pilnveidosim VALSTS AIZSARDZĪBAS DIENESTU UN ZEMESSARDZI",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "avots": "cvk"
+    },
+    "NA": {
+      "nostaja": "par",
+      "claim_id": 532704,
+      "citats": "Paplašināsim atbalstu pilsoņiem, kuri dien NBS, ZS un VAD",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "avots": "cvk"
+    },
+    "SC": {
+      "nostaja": "par",
+      "claim_id": 532692,
+      "citats": "Palielināsim atlīdzību VAD dalībniekiem: iesauktajiem - 500 €, brīvprātīgajiem - 800 €",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politisko-partiju-apvieniba-saskanas-centrs",
+      "avots": "cvk"
+    },
+    "ST": {
+      "nostaja": "pret",
+      "claim_id": 532588,
+      "citats": "Atteikties no obligātā valsts aizsardzības dienesta",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "pret",
+      "claim_id": 547988,
+      "citats": "atcelt jauniešu obligāto iesaukšanu Valsts aizsardzības dienestā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola stiprināt NBS un Zemessardzi; VAD tieši nemin. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): VAD nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma VAD nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): VAD nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola stiprināt NBS un Zemessardzi; VAD tieši nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): VAD nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma VAD nemin. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): VAD nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola brīvprātīgo vienības un rezerves; VAD nemin. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): sola 'brīvprātīgās vienības un decentralizētas rezerves novados'; VAD nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola attīstīt NBS un Zemessardzi; VAD tieši nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "izteikums",
+      "runatajs": 183,
+      "datums": "2026-09-14",
+      "document_id": 107951,
+      "url": "https://x.com/RaivisZeltits/status/2099413872843071738",
+      "citats": "Dienests VAD un Zemessardzē ir katra vīrieša pašcieņas jautājums un priekšnosacījums lemšanai par valsts lietām, sievietēm — brīvprātīgs."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola militāro prasmju apguvi sabiedrībā; VAD nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): VAD/iesaukšanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q04": {
+    "JV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532666,
+      "citats": "noteiksim stingrākus nosacījumus trešo valstu pilsoņu uzturēšanās, studiju un nodarbinātības jomā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba"
+    },
+    "NA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532706,
+      "citats": "Ieviesīsim striktas kvotas uzturēšanās atļaujām pilsoņiem no trešajām valstīm",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532789,
+      "citats": "totāla trešo valstu imigrācijas ierobežošana",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus"
+    },
+    "JKP": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532796,
+      "citats": "Iestāsimies par STINGRU UN KONTROLĒTU IMIGRĀCIJAS POLITIKU",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532597,
+      "citats": "Padarīsim uzturēšanās atļauju izsniegšanas kārtību stingrāku",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "GS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532765,
+      "citats": "Mēs kategoriski iebilstam pret masveida migrāciju un migrācijas kvotām",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola gudru un cieņpilnu migrācijas politiku; par darbaspēka ierobežošanu neizsakās. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): sola 'gudru, tālredzīgu un drošu migrācijas politiku' — ierobežojumu neformulē. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola nepieļaut nelegālu imigrāciju un dot priekšroku kvalificētam darbaspēkam; par ierobežošanu darbinieku trūkuma apstākļos neizsakās. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'nepieļaut nelegālu imigrāciju; priekšroka augsti kvalificētam darbaspēkam'. Izteikums (3. līmenis, 2026-07-30, doc 76654): Valainis rosina kontrolēt trešo valstu pilsoņu izmitināšanas apstākļus — par uzturēšanās nosacījumiem, ne par darbaspēka ievešanas apjomu."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "izteikums",
+      "runatajs": 3,
+      "datums": "2026-06-28",
+      "document_id": 60108,
+      "url": "https://x.com/SlesersAinars/status/2071205341484683663",
+      "citats": "Pateicoties tādiem kā Tu, Latviju ir pārpludinājuši migranti no trešām pasaules valstīm, kuri nerunā ne latviešu, ne krievu valodā!"
+    },
+    "AS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532829,
+      "citats": "Imigrāciju īstenosim kontrolēti",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija"
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma imigrāciju nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma imigrāciju nemin; runā par remigrāciju. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): imigrāciju/darbaspēka ievešanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma imigrāciju nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547993,
+      "citats": "nepieļaut augstskolu un izglītības sistēmas izmantošanu lētā darbaspēka ieviešanai valstī",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    }
+  },
+  "q05": {
+    "ST": {
+      "nostaja": "par",
+      "claim_id": 532593,
+      "citats": "Nodrošināt plašākas iespējas krievu valodas lietošanai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "claim_id": 547985,
+      "citats": "atjaunot skolās krievu valodas apguvi izvēles kārtībā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "SC": {
+      "nostaja": "par",
+      "claim_id": 532697,
+      "citats": "nodrošinot izglītību mazākumtautību valodās",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politisko-partiju-apvieniba-saskanas-centrs",
+      "avots": "cvk"
+    },
+    "NA": {
+      "nostaja": "pret",
+      "claim_id": 532700,
+      "citats": "Noteiksim, ka valsts un pašvaldību iestādēs amatpersonu un darbinieku savstarpējā saziņa notiek valsts valodā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "avots": "cvk"
+    },
+    "ASL": {
+      "nostaja": "pret",
+      "claim_id": 532598,
+      "citats": "Nodrošināsim darba vidi, apkalpošanu un saziņu, kā arī mediju darbu un reklāmas tikai valsts valodā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "avots": "cvk"
+    },
+    "JKP": {
+      "nostaja": "pret",
+      "claim_id": 532814,
+      "citats": "Stiprināsim LATVIEŠU VALODAS LOMU izglītībā, publiskajā telpā un valsts pārvaldē",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "pret",
+      "avots": "pilna_programma",
+      "document_id": 107753,
+      "url": "https://jaunavienotiba.lv/programma-2026",
+      "citats": "Stingri iestāsimies par kvalitatīvu un atbildīgu valsts valodas lietojumu visās jomās. Paplašināsim latviešu valodas apguves iespējas un pētniecību."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma valodu politiku nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): mazākumtautību valodas nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma valodu politiku nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): mazākumtautību valodas nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "izteikums",
+      "runatajs": 3,
+      "datums": "2026-06-27",
+      "document_id": 59648,
+      "url": "https://x.com/SlesersAinars/status/2070963446766768326",
+      "citats": "Arī Latvijā cilvēkiem ir jābūt tiesībām runāt savā dzimtā valodā!"
+    },
+    "AS": {
+      "nostaja": "pret",
+      "avots": "izteikums",
+      "runatajs": 10,
+      "datums": "2026-06-10",
+      "document_id": 51779,
+      "url": "https://x.com/AndrisKulbergs/status/2064782973275156742",
+      "citats": "Galvenā prioritāte, ko pilnībā atbalstu, ir latviešu valodas nostiprināšana mediju telpā un Satversmes tiesas sprieduma ieviešana."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma valodu politiku nemin. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): mazākumtautību valodas nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma valodu politiku nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma valodu politiku nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): mazākumtautību valodas nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q06": {
+    "LPV": {
+      "nostaja": "par",
+      "claim_id": 532642,
+      "citats": "Atcelsim nekustamā īpašuma nodokli vienīgajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "avots": "cvk"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "claim_id": 532772,
+      "citats": "atcelsim NĪN vienīgajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "avots": "cvk"
+    },
+    "ST": {
+      "nostaja": "par",
+      "claim_id": 532590,
+      "citats": "Atcelt nekustamā īpašuma nodokli vienīgajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "JKP": {
+      "nostaja": "par",
+      "claim_id": 532798,
+      "citats": "Rosināsim NEKUSTAMĀ ĪPAŠUMA NODOKĻA ATCELŠANU MĀJOKĻIEM",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "avots": "cvk"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "claim_id": 532600,
+      "citats": "Atcelsim NĪN vienīgajam ģimenes mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "avots": "cvk"
+    },
+    "GS": {
+      "nostaja": "par",
+      "claim_id": 532817,
+      "citats": "Mēs pilnībā atcelsim nekustamā īpašuma nodokli mājsaimniecībām par to vienīgo mājokli",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "claim_id": 547973,
+      "citats": "atcelt nekustamā īpašuma nodokli visiem mājokļiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "claim_id": 547879,
+      "citats": "NĪN 0% primārajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "pret",
+      "avots": "pilna_programma",
+      "document_id": 107753,
+      "url": "https://jaunavienotiba.lv/programma-2026",
+      "citats": "Padarīsim nekustamā īpašuma nodokli par pilnvērtīgu pašvaldību nodokli ar prognozējamību un sociālo taisnīgumu."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma NĪN nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): NĪN nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma NĪN nemin. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): NĪN atcelšanu nemin; sola mājokļa grantus. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma NĪN nemin. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): NĪN nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma NĪN nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola luksusa un neizmantotā īpašuma nodokli; par NĪN mājoklim neizsakās. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q07": {
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532643,
+      "citats": "pusi no UIN atdosim pašvaldībām",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547983,
+      "citats": "atjaunot pašvaldībām IIN proporciju 95% apmērā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "JKP": {
+      "nostaja": "par",
+      "avots": "pilna_programma",
+      "document_id": 107754,
+      "url": "https://partijajkp.lv/saeimas-velesanas-2026",
+      "citats": "Daļu UIN un PVN novirzīsim uzņēmuma darbības vietas pašvaldībai, radot pašvaldībām tiešu ieinteresētību investīciju un uzņēmējdarbības piesaistē."
+    },
+    "ASL": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532602,
+      "citats": "IIN pilnībā ieskaitīsim valsts budžetā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola taisnīgu ieņēmumu sadali starp pašvaldībām un valsti, virzienu nenosauc. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): 'taisnīgu nodokļu ieņēmumu sadali starp pašvaldībām un valsti' — virzienu nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): 'taisnīgu un stabilu pašvaldību finanšu izlīdzināšanas modeli' — virzienu nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'lielāka pašvaldību rīcības brīvība', 'pašvaldību finanšu ilgtspēja'; nodokļu daļu nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): pašvaldību nodokļu daļu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola taisnīgāku pašvaldību finanšu modeli, virzienu nenosauc. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): 'taisnīgāku pašvaldību finanšu modeli' — virzienu nenosauc. Izteikums (3. līmenis): Kulberga 2026. gada izteikumi pašvaldību nodokļu daļu tieši neadresē."
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532779,
+      "citats": "20% no uzņēmuma nomaksātā UIN novirzot pašvaldībai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus"
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): pašvaldību nodokļu daļu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): pašvaldību nodokļu daļu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q08": {
+    "ZZS": {
+      "nostaja": "par",
+      "claim_id": 547892,
+      "citats": "ministriju skaita samazināšana un funkciju deleģēšana",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "avots": "cvk"
+    },
+    "ST": {
+      "nostaja": "par",
+      "claim_id": 532591,
+      "citats": "Apvienot ministrijas: Aizsardzības ministriju ar Iekšlietu ministriju",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "claim_id": 532601,
+      "citats": "apvienosim un likvidēsim liekās ministrijas",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "avots": "cvk"
+    },
+    "LPV": {
+      "nostaja": "par",
+      "claim_id": 532663,
+      "citats": "apvienosim valsts iestādes un ministrijas",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "claim_id": 547990,
+      "citats": "apvienojot atsevišķas ministrijas, samazināt ierēdņu skaitu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "claim_id": 532771,
+      "citats": "reorganizēsim vai likvidēsim ministrijas un padotības iestādes, kas dublē funkcijas",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola vērtēt ministrus pēc rezultātiem; ministriju skaitu nemin. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): ministriju apvienošanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola birokrātijas sloga novērtējumu; ministriju skaitu nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): ministriju apvienošanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola pārskatīt funkciju dublēšanos; par ministriju apvienošanu neizsakās. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): 'pārskatīsim funkciju dublēšanos starp ministrijām un pašvaldībām' — pārskatīšana, ne apvienošana. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola amatpersonu rotāciju un Civildienesta reformu; ministriju skaitu nemin. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): ministriju apvienošanu nemin. Izteikums (3. līmenis): Kulberga 2026. gada izteikumi ministriju skaitu tieši neadresē."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola mazināt birokrātiju; ministriju skaitu nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola izvērtēt iestāžu apvienošanas iespējas; ministrijas tieši nemin. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): ministriju apvienošanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ministriju skaitu nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ministriju skaitu nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): ministriju apvienošanu nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q09": {
+    "LPV": {
+      "nostaja": "par",
+      "claim_id": 532642,
+      "citats": "Samazināsim PVN likmi apkurei, plašākam pārtikas produktu klāstam",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "avots": "cvk"
+    },
+    "ST": {
+      "nostaja": "par",
+      "claim_id": 532590,
+      "citats": "Samazināt PVN līdz 12% pamatpārtikas produktiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "avots": "cvk"
+    },
+    "GS": {
+      "nostaja": "par",
+      "claim_id": 532817,
+      "citats": "Pārtikas produktiem noteiksim PVN likmi 12 procentu apmērā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "claim_id": 547973,
+      "citats": "samazināt PVN pārtikai, sabiedriskai ēdināšanai un viesmīlībai līdz 5%",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "claim_id": 547879,
+      "citats": "PVN 5% pirmās nepieciešamības pārtikai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma min 0% PVN pirmajam mājoklim; PVN pārtikai nemin. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): sola PVN 0 % pirmā mājokļa iegādei jaunos projektos un PVN samazinājumu pierobežas zonā; PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma PVN pārtikai nemin. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): PVN pārtikai nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola samazināt PVN zālēm; PVN pārtikai nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q10": {
+    "LPV": {
+      "nostaja": "par",
+      "claim_id": 532661,
+      "citats": "Dosim tiesības cilvēkiem izņemt līdzekļus no 2. pensiju līmeņa",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "avots": "cvk"
+    },
+    "GS": {
+      "nostaja": "par",
+      "claim_id": 532762,
+      "citats": "fondēto pensiju līmeni par pilnībā brīvprātīgu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "avots": "cvk"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "claim_id": 547971,
+      "citats": "atļaut izņemt pensijas 2.līmeni",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "avots": "cvk"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "claim_id": 532603,
+      "citats": "2. pensiju līmenis jānovirza tautsaimniecībā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "avots": "cvk"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "claim_id": 532777,
+      "citats": "Pensiju 2. līmenis — priekšlaicīgas izmaksas gadījumā valsts nedrīkst regulēt iedzīvotāju uzkrājumu izlietojumu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "avots": "cvk"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): pensiju 2. līmeni nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): pensiju 2. līmeni nemin. Izteikums (3. līmenis, 2026-05-05, LSM): Šuvajevs noraida pat šauru 2. līmeņa izņemšanu; DB tikai RSS stubs (doc 29910), gaida pilna teksta ingest."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'stabila pensiju sistēma'; 2. līmeni nemin. Izteikums (3. līmenis, 2026-04-27, LSM): Valainis atbalsta uzkrājuma izņemšanu tikai medicīniski pamatotos gadījumos — par brīvprātīgumu kopumā neizsakās."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola 2. līmeņa uzkrājumu pārmantošanu; par brīvprātīgumu neizsakās. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): sola '2. pensiju līmeņa uzkrājumu automātisku pārmantošanu ģimenē' — brīvprātību nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): 2. pensiju līmeni nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): pensiju 2. līmeni nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola paplašināt tiesības ietekmēt 2. līmeņa pārvaldīšanu, saglabājot uzkrājumu drošību; par izņemšanu neizsakās. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): '2. pensiju līmeņa uzkrājumu sistēmas pilnveidošanu… saglabājot uzkrājumu drošību un ilgtspēju' — brīvprātību nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma pensiju 2. līmeni nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q11": {
+    "PRO": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532632,
+      "citats": "Progresīvie iestājas par klimatneitralitāti",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie"
+    },
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 547979,
+      "citats": "atteikties no “Zaļā kursa” noteikumiem, kas apgrūtina iedzīvotāju un uzņēmēju dzīvi",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "LPV": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532648,
+      "citats": "Samazināsim tās \"zaļā kursa\" prasības, kas ir pretrunā ar Latvijas nacionālajām interesēm",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "AS": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532836,
+      "citats": "Pārskatīsim zaļā kursa ieviešanu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma saka, ka ES Zaļā kursa prasības nedrīkst vājināt drošību un konkurētspēju, bet klimatneitralitātes termiņu ne noraida, ne apstiprina. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): 'ES Zaļā kursa prasības nedrīkst vājināt Latvijas drošību…' — ierobežojums, ne noraidījums. Izteikums (3. līmenis, 2026-09-04, doc 101178): Baško noraida „vīzijas 2050. gadam” un „zaļā kursa jautājumu”, bet klimatneitralitāti un ES termiņu nenosauc — nostāju bez interpretācijas nolasīt nevar."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola 'saprātīgu zaļās vienošanās ieviešanu' — termiņu ne noraida, ne apstiprina. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'saprātīga zaļā vienošanās ieviešana' — hedžings. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola klimata pasākumus īstenot, 'izvērtējot ietekmi uz sociāli ekonomisko attīstību' — termiņu ne noraida, ne apstiprina. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): 'klimata pasākumus īstenosim, izvērtējot ietekmi' — hedžings. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola taisnīgu zaļo pāreju; par klimatneitralitātes termiņu un izmaksām neizsakās. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): 'taisnīgu zaļo pāreju' — hedžings, termiņu nenosauc. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma saka, ka klimata politikai jākļūst par konkurētspējas priekšrocību; virzienu pret izmaksām nenosauc. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola likvidēt Klimata ministriju; par klimatneitralitāti neizsakās. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): sola 'likvidēt Klimata un enerģētikas ministriju'; neitralitātes termiņu nenoraida. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma klimatneitralitāti nemin. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): klimatneitralitāti nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma klimatneitralitāti nemin. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): klimatneitralitāti nemin. Izteikums (3. līmenis, 2026-09-14, doc 107951): Zeltīts iebilst pret „zaļā kursa pārmērībām”, termiņu nenoraida — paliek klusē."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma klimatneitralitāti nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma klimatneitralitāti nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): klimatneitralitāti nemin. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  },
+  "q12": {
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532652,
+      "citats": "Satversmē nostiprināsim dabiskas ģimenes definīciju, kurā tēvs ir vīrietis un māte – sieviete",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547972,
+      "citats": "novērst un nepieļaut ģimenes vērtības graujošu ideoloģiju (Stambulas konvencija un tml.) izglītībā, medijos un likumdošanā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532604,
+      "citats": "Pārtrauksim tādu starptautisko un nacionālo dokumentu darbību, kas grauj ģimenes un bioloģiskā dzimuma jēdzienus",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "PRO": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532622,
+      "citats": "Atbalstīsim vienlīdzīgas tiesības, t.sk. laulību vienlīdzību un visu ģimeņu aizsardzību",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma runā par stiprām ģimenēm demogrāfijas kontekstā; definīciju nemin. Pilnā programma (jaunavienotiba.lv, ~12 tūkst. zīmju): 'stiprām ģimenēm'; definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola stiprināt Satversmē noteiktos ģimenes pamatus; jaunu definīciju neprasa. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'Satversmē noteikto ģimenes un sabiedrības pamatu stiprināšana' — definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma (nacionalaapvieniba.lv, ~14 tūkst. zīmju): 'ģimeni kā Latvijas nākotnes pamatvērtību' — definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma (apvienotaissaraksts.lv, ~12 tūkst. zīmju): sola atbalstu ģimenēm (mājokļa granti, īres programmas); definīciju nedod. Izteikums (3. līmenis, 2026-05-25, LSM): Kulbergs apzināti atsakās „cilāt šķeļošus jautājumus” — atteikums no nostājas, ne nostāja."
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma min stipru ģimeni kā vērtību; definīciju Satversmē neprasa. Pilnā programma (mmn.lv, ~13 tūkst. zīmju): sola 'stipru ģimeni kā sabiedrības pamatu'; definīciju nedod. Izteikums (3. līmenis, 2026-07-11, doc 67030): Baško prasa atteikties no Stambulas konvencijas, bet ģimenes definīciju neizsaka un norāda, ka partijā tas būtu brīvais balsojums — personiska, ne saraksta nostāja."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma (partijastabilitatei.lv, ~6 tūkst. zīmju): ģimenes definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma (partijajkp.lv, ~13 tūkst. zīmju): 'izstāšanos no Stambulas konvencijas pieļaujama vien tad, ja…' — ģimenes definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma ģimenes definīciju nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma). Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "CVK: programma sola atteikties no sociālajiem eksperimentiem; ģimenes definīciju tieši nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): izvirza 'tradicionālo ģimeni' kā centru; vīrietis+sieviete definīciju nedod. Izteikums (3. līmenis): līdera 2026. gada izteikums, kas apgalvojumu adresē tieši, nav atrasts (meklēts 2026-09-17)."
+    }
+  }
+}

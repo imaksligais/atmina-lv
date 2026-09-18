@@ -1,0 +1,40 @@
+{% extends "base.html.j2" %}
+{% set active_page = "temas" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Tēmas{% endblock %}
+{% block description %}atmina.lv tēmu direktorija — Latvijas politiķu pozīcijas un pretrunas pa {{ topics|length }} tēmu grupām.{% endblock %}
+
+{% block og_title %}Tēmas — atmina.lv{% endblock %}
+{% block og_description %}Pārlūko Latvijas politiķu pozīcijas un pretrunas pa tēmu grupām.{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Tēmu direktorija</div>
+      <h1 class="pagehead-h1">Tēmas</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Tēmas</span>
+        <span class="pagehead-metric-value">{{ topics|length }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="temas-grid">
+    {% for t in topics %}
+    <a class="tema-card" href="temas/{{ t.slug }}.html">
+      <span class="tema-card-dot" style="background: {{ t.color }}" aria-hidden="true"></span>
+      <span class="tema-card-name">{{ t.name }}</span>
+      <span class="tema-card-counts">
+        <span class="tema-card-count">{{ t.position_count }} {{ t.position_count|lv_plural("pozīcija", "pozīcijas") }}</span>
+        {% if t.contradiction_count %}<span class="tema-card-count">{{ t.contradiction_count }} {{ t.contradiction_count|lv_plural("pretruna", "pretrunas") }}</span>{% endif %}
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

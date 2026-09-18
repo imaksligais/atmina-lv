@@ -1,0 +1,62 @@
+# Partiju tests — 12 apgalvojumi (operatora apstiprināti 2026-09-10, T2).
+# tema = kanoniskais claims.topic nosaukums; piekrit_nozime = kodētāja atgādne.
+- id: q01
+  tema: "Ukraina un Krievija"
+  apgalvojums: "Latvijai jāturpina atbalstīt Ukrainu, kamēr karš nav beidzies."
+  piekrit_nozime: "par = atbalsts Ukrainai; pret = neitralitāte, neiesaistīties, nefinansēt"
+  quiz: false
+- id: q02
+  tema: "Aizsardzība un drošība"
+  apgalvojums: "Aizsardzībai jāatvēl vismaz 5 % no IKP."
+  piekrit_nozime: "par = 5 % vai vairāk; pret = samazināt vai pārdalīt aizsardzības budžetu"
+  quiz: false
+- id: q03
+  tema: "Aizsardzība un drošība"
+  apgalvojums: "Obligātais valsts aizsardzības dienests jāsaglabā."
+  piekrit_nozime: "par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu"
+  quiz: false
+- id: q04
+  tema: "Imigrācija"
+  apgalvojums: "Darbaspēka ievešana no trešajām valstīm jāierobežo."
+  piekrit_nozime: "par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu"
+  quiz: false
+- id: q05
+  tema: "Valodu politika"
+  apgalvojums: "Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē."
+  piekrit_nozime: "par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības"
+  quiz: false
+- id: q06
+  tema: "Budžets un finanses"
+  apgalvojums: "Nekustamā īpašuma nodoklis vienīgajam mājoklim jāatceļ."
+  piekrit_nozime: "par = atcelt NĪN vienīgajam mājoklim; pret = saglabāt vai stiprināt NĪN"
+  quiz: false
+- id: q07
+  tema: "Pašvaldības"
+  apgalvojums: "Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām."
+  piekrit_nozime: "par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā"
+  quiz: false
+- id: q08
+  tema: "Valsts pārvalde"
+  apgalvojums: "Ministriju skaits jāsamazina, tās apvienojot."
+  piekrit_nozime: "par = apvienot vai likvidēt ministrijas; pret = nav"
+  quiz: false
+- id: q09
+  tema: "Budžets un finanses"
+  apgalvojums: "Pievienotās vērtības nodoklis pārtikai jāsamazina."
+  piekrit_nozime: "par = samazināt PVN pārtikai; pret = PVN nemainīt vai celt"
+  quiz: false
+- id: q10
+  tema: "Pensijas"
+  apgalvojums: "Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt."
+  piekrit_nozime: "par = brīvprātīgs, izņemt, pārcelt uz 1. līmeni; pret = saglabāt obligātu"
+  quiz: false
+- id: q11
+  tema: "Klimats"
+  apgalvojums: "Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā."
+  piekrit_nozime: "par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē"
+  quiz: false
+- id: q12
+  tema: "Sociālā politika"
+  apgalvojums: "Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai."
+  piekrit_nozime: "par = ģimene/laulība = vīrietis + sieviete likumos vai starptautiskos dokumentos (Satversme, Stambulas konvencija); pret = laulību vienlīdzība, visu ģimeņu aizsardzība"
+  quiz: false
