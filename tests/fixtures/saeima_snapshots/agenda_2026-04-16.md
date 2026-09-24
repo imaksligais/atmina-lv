@@ -1,0 +1,1535 @@
+- table [ref=e3]:
+  - rowgroup [ref=e4]:
+    - row [ref=e5]:
+      - cell [ref=e6]:
+        - img [ref=e7]
+      - cell [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - link [ref=e11] [cursor=pointer]:
+              - /url: https://www.saeima.lv
+              - img [ref=e12]
+            - img [ref=e13]
+          - generic [ref=e14]: LATVIJAS REPUBLIKAS
+          - generic [ref=e15]: 14.SAEIMA
+          - table [ref=e17]:
+            - rowgroup [ref=e18]:
+              - row "LIKUMPROJEKTI LĒMUMU PROJEKTI PIEPRASĪJUMI JAUTĀJUMI DARBA KĀRTĪBAS" [ref=e19]:
+                - cell [ref=e20]
+                - cell "LIKUMPROJEKTI" [ref=e21]:
+                  - link "LIKUMPROJEKTI" [ref=e22] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webAll?OpenView
+                - cell "LĒMUMU PROJEKTI" [ref=e23]:
+                  - link "LĒMUMU PROJEKTI" [ref=e24] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webAll?OpenView
+                - cell "PIEPRASĪJUMI" [ref=e25]:
+                  - link "PIEPRASĪJUMI" [ref=e26] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEB_requests?OpenView
+                - cell "JAUTĀJUMI" [ref=e27]:
+                  - link "JAUTĀJUMI" [ref=e28] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEB_questions?OpenView
+                - cell "DARBA KĀRTĪBAS" [ref=e29]:
+                  - link "DARBA KĀRTĪBAS" [ref=e30] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs2_dk.nsf
+                - cell [ref=e31]:
+                  - img [ref=e32]
+                - cell [ref=e33]
+          - generic [ref=e34]:
+            - generic [ref=e35] [cursor=pointer]:
+              - img [ref=e36]
+              - text: Rādīt saistītos dokumentus
+              - img [ref=e37]
+              - text: Atslēgt lapas automātisko pārlādi
+            - generic [ref=e38] [cursor=pointer]:
+              - text: "Teksta izmērs:"
+              - generic [ref=e39]: A | A
+            - generic [ref=e41] [cursor=pointer]:
+              - text: Drukāt
+              - img "Drukāt" [ref=e42]
+        - table [ref=e43]:
+          - rowgroup [ref=e44]:
+            - row [ref=e45]:
+              - cell [ref=e46]:
+                - img [ref=e47]
+            - row [ref=e48]:
+              - 'cell "Darba kārtības Aktuālās: Saeimas 16.04.2026. kārtējā sēde Saeimas 04.05.2026. svinīgā sēde Visas Saeimas sēžu darba kārtības Detalizēta meklēšana meklēt pēc nosaukuma (arī nepilna) Sēdes datums no līdz (formātā - dd.mm.gggg) Meklēt Dokumenti Aktuālo Saeimas sēžu dokumenti Statistika Sēdes statistika Likumdošanas statistika Arhīvs 13.Saeimas sēžu darba kārtības 12.Saeimas sēžu darba kārtības 11.Saeimas sēžu darba kārtības 10.Saeimas sēžu darba kārtības 9.Saeimas sēžu darba kārtības 8.Saeimas sēžu darba kārtības" [ref=e49]':
+                - generic [ref=e50]: Darba kārtības
+                - generic [ref=e55]:
+                  - text: "Aktuālās:"
+                  - link "Saeimas 16.04.2026. kārtējā sēde" [ref=e57] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&actual=1
+                  - link "Saeimas 04.05.2026. svinīgā sēde" [ref=e59] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&nr=1fd28820-d8a6-4c2d-b0cb-9ad191a667b0
+                  - link "Visas Saeimas sēžu darba kārtības" [ref=e62] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&calendar=1
+                - generic [ref=e66]:
+                  - generic [ref=e67]:
+                    - img [ref=e68]
+                    - text: Detalizēta meklēšana
+                  - generic [ref=e70]:
+                    - textbox [ref=e71]
+                    - generic [ref=e72]: meklēt pēc nosaukuma (arī nepilna)
+                  - generic [ref=e73]:
+                    - generic [ref=e74]: Sēdes datums
+                    - generic [ref=e75]:
+                      - text: "no"
+                      - textbox [ref=e76]
+                      - text: līdz
+                      - textbox [ref=e77]
+                    - generic [ref=e78]: (formātā - dd.mm.gggg)
+                  - button "Meklēt" [ref=e80]
+                - generic [ref=e81]:
+                  - generic [ref=e82]: Dokumenti
+                  - link "Aktuālo Saeimas sēžu dokumenti" [ref=e90] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/activeDocuments.xsp
+                - generic [ref=e91]:
+                  - generic [ref=e92]: Statistika
+                  - generic [ref=e97]:
+                    - link "Sēdes statistika" [ref=e100] [cursor=pointer]:
+                      - /url: ./Statistics?ReadForm&key=1&stat=1&rt=L
+                    - link "Likumdošanas statistika" [ref=e103] [cursor=pointer]:
+                      - /url: ./Statistics?ReadForm&key=1&stat=1&rt=S
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Arhīvs
+                  - generic [ref=e110]:
+                    - link "13.Saeimas sēžu darba kārtības" [ref=e113] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS13/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "12.Saeimas sēžu darba kārtības" [ref=e116] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS12/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "11.Saeimas sēžu darba kārtības" [ref=e119] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS11/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "10.Saeimas sēžu darba kārtības" [ref=e122] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS10/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "9.Saeimas sēžu darba kārtības" [ref=e125] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "8.Saeimas sēžu darba kārtības" [ref=e128] [cursor=pointer]:
+                      - /url: https://saeima.lv/lv/par-saeimu/arhivs/8-saeima/8-saeimas-sezu-darba-kartibas/
+              - cell [ref=e129]:
+                - img [ref=e130]
+              - cell [ref=e131]:
+                - generic [ref=e132]:
+                  - generic [ref=e133]:
+                    - generic [ref=e134]: 2026.gada 16.aprīļa Saeimas kārtējās sēdes darba kārtība
+                    - generic [ref=e135]:
+                      - link "Projekts" [ref=e137] [cursor=pointer]:
+                        - /url: ./DK?ReadForm&nr=01945b61-73bb-4d34-bac1-5cd2db8d4ae1&stage=2
+                      - text: "|"
+                      - link "Apstiprināta" [ref=e139] [cursor=pointer]:
+                        - /url: ./DK?ReadForm&nr=01945b61-73bb-4d34-bac1-5cd2db8d4ae1&stage=3
+                      - text: "|"
+                      - link "Aktīvā darba kārtība" [ref=e141] [cursor=pointer]:
+                        - /url: ./DK?ReadForm&actual=1
+                  - generic [ref=e142]:
+                    - generic [ref=e144]:
+                      - text: Latvijas Republikas Saeimas
+                      - text: 2026.gada 16.aprīļa
+                      - text: kārtējā sēdes darba kārtība 09:00
+                    - table [ref=e147]:
+                      - rowgroup [ref=e148]:
+                        - row "I. Prezidija ziņojumi" [ref=e149]:
+                          - cell "I. Prezidija ziņojumi" [ref=e150]
+                        - row "1. Par iesniegtajiem likumprojektiem" [ref=e151]:
+                          - cell "1. Par iesniegtajiem likumprojektiem" [ref=e152]
+                        - row
+                        - row "Ar sēdes norisi saistīti jautājumi" [ref=e153]:
+                          - cell "Ar sēdes norisi saistīti jautājumi" [ref=e154]:
+                            - img [ref=e155]
+                            - link "Ar sēdes norisi saistīti jautājumi" [ref=e156] [cursor=pointer]:
+                              - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&tp=ut&dkp1=&dkp2=e8ee3055-f869-4dba-80ee-07c13a4617dd&actual=1&rnd=0.6336440014687464", "Teche8ee3055f8694dba80ee07c13a4617dd", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                        - 'row "1. 1. Likumprojekts Grozījumi Saeimas vēlēšanu likumā (1292/Lp14) (Dok. Nr. 4595, 4595A)Balsojums: par 21, pret 44, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e157]':
+                          - 'cell "1. 1. Likumprojekts Grozījumi Saeimas vēlēšanu likumā (1292/Lp14) (Dok. Nr. 4595, 4595A)Balsojums: par 21, pret 44, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e158]':
+                            - table [ref=e161]:
+                              - rowgroup [ref=e162]:
+                                - 'row "1. 1. Likumprojekts Grozījumi Saeimas vēlēšanu likumā (1292/Lp14) (Dok. Nr. 4595, 4595A)Balsojums: par 21, pret 44, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e163]':
+                                  - cell "1." [ref=e164]
+                                  - 'cell "1. Likumprojekts Grozījumi Saeimas vēlēšanu likumā (1292/Lp14) (Dok. Nr. 4595, 4595A)Balsojums: par 21, pret 44, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e165]':
+                                    - generic [ref=e166]:
+                                      - text: 1. Likumprojekts Grozījumi Saeimas vēlēšanu likumā
+                                      - generic [ref=e168]:
+                                        - text: (
+                                        - link "1292/Lp14" [ref=e169] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1292/Lp14
+                                        - text: )
+                                    - generic [ref=e170]:
+                                      - generic [ref=e171]:
+                                        - text: (Dok. Nr.
+                                        - link "4595" [ref=e172] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1292/Lp14|4595|
+                                        - text: ","
+                                        - link "4595A" [ref=e173] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1292/Lp14|4595A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e175] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=e8ee3055-f869-4dba-80ee-07c13a4617dd', 'Balse8ee3055f8694dba80ee07c13a4617dd','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e176]: par 21, pret 44, atturas 12 Noraidīts
+                                    - generic [ref=e177]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e179] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=e8ee3055-f869-4dba-80ee-07c13a4617dd&actual=1&rnd=0.9368660558220048", "Debe8ee3055f8694dba80ee07c13a4617dd", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e180]
+                                      - text: Debates
+                        - 'row "2. 2. Likumprojekts Grozījumi Pašvaldības domes vēlēšanu likumā (1293/Lp14) (Dok. Nr. 4596, 4596A)Balsojums: par 17, pret 53, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e181]':
+                          - 'cell "2. 2. Likumprojekts Grozījumi Pašvaldības domes vēlēšanu likumā (1293/Lp14) (Dok. Nr. 4596, 4596A)Balsojums: par 17, pret 53, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e182]':
+                            - table [ref=e185]:
+                              - rowgroup [ref=e186]:
+                                - 'row "2. 2. Likumprojekts Grozījumi Pašvaldības domes vēlēšanu likumā (1293/Lp14) (Dok. Nr. 4596, 4596A)Balsojums: par 17, pret 53, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e187]':
+                                  - cell "2." [ref=e188]
+                                  - 'cell "2. Likumprojekts Grozījumi Pašvaldības domes vēlēšanu likumā (1293/Lp14) (Dok. Nr. 4596, 4596A)Balsojums: par 17, pret 53, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e189]':
+                                    - generic [ref=e190]:
+                                      - text: 2. Likumprojekts Grozījumi Pašvaldības domes vēlēšanu likumā
+                                      - generic [ref=e192]:
+                                        - text: (
+                                        - link "1293/Lp14" [ref=e193] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1293/Lp14
+                                        - text: )
+                                    - generic [ref=e194]:
+                                      - generic [ref=e195]:
+                                        - text: (Dok. Nr.
+                                        - link "4596" [ref=e196] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1293/Lp14|4596|
+                                        - text: ","
+                                        - link "4596A" [ref=e197] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1293/Lp14|4596A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e199] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=27e0adc5-136d-4b3c-b852-cbca341a1a18', 'Bals27e0adc5136d4b3cb852cbca341a1a18','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e200]: par 17, pret 53, atturas 14 Noraidīts
+                                    - generic [ref=e201]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e203] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=27e0adc5-136d-4b3c-b852-cbca341a1a18&actual=1&rnd=0.7173698348443986", "Deb27e0adc5136d4b3cb852cbca341a1a18", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e204]
+                                      - text: Debates
+                        - 'row "3. 3. Likumprojekts Grozījumi Ministru kabineta iekārtas likumā (1294/Lp14) (Dok. Nr. 4597, 4597A)Balsojums: par 17, pret 49, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e205]':
+                          - 'cell "3. 3. Likumprojekts Grozījumi Ministru kabineta iekārtas likumā (1294/Lp14) (Dok. Nr. 4597, 4597A)Balsojums: par 17, pret 49, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e206]':
+                            - table [ref=e209]:
+                              - rowgroup [ref=e210]:
+                                - 'row "3. 3. Likumprojekts Grozījumi Ministru kabineta iekārtas likumā (1294/Lp14) (Dok. Nr. 4597, 4597A)Balsojums: par 17, pret 49, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e211]':
+                                  - cell "3." [ref=e212]
+                                  - 'cell "3. Likumprojekts Grozījumi Ministru kabineta iekārtas likumā (1294/Lp14) (Dok. Nr. 4597, 4597A)Balsojums: par 17, pret 49, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e213]':
+                                    - generic [ref=e214]:
+                                      - text: 3. Likumprojekts Grozījumi Ministru kabineta iekārtas likumā
+                                      - generic [ref=e216]:
+                                        - text: (
+                                        - link "1294/Lp14" [ref=e217] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1294/Lp14
+                                        - text: )
+                                    - generic [ref=e218]:
+                                      - generic [ref=e219]:
+                                        - text: (Dok. Nr.
+                                        - link "4597" [ref=e220] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1294/Lp14|4597|
+                                        - text: ","
+                                        - link "4597A" [ref=e221] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1294/Lp14|4597A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e223] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=e2170868-9f40-43c2-8006-27d37d62a039', 'Balse21708689f4043c2800627d37d62a039','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e224]: par 17, pret 49, atturas 14 Noraidīts
+                                    - generic [ref=e225]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e227] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=e2170868-9f40-43c2-8006-27d37d62a039&actual=1&rnd=0.4107125542850626", "Debe21708689f4043c2800627d37d62a039", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e228]
+                                      - text: Debates
+                        - 'row "4. 4. Likumprojekts Grozījumi Valsts pārvaldes iekārtas likumā (1295/Lp14) (Dok. Nr. 4598, 4598A)Balsojums: par 18, pret 48, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e229]':
+                          - 'cell "4. 4. Likumprojekts Grozījumi Valsts pārvaldes iekārtas likumā (1295/Lp14) (Dok. Nr. 4598, 4598A)Balsojums: par 18, pret 48, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e230]':
+                            - table [ref=e233]:
+                              - rowgroup [ref=e234]:
+                                - 'row "4. 4. Likumprojekts Grozījumi Valsts pārvaldes iekārtas likumā (1295/Lp14) (Dok. Nr. 4598, 4598A)Balsojums: par 18, pret 48, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e235]':
+                                  - cell "4." [ref=e236]
+                                  - 'cell "4. Likumprojekts Grozījumi Valsts pārvaldes iekārtas likumā (1295/Lp14) (Dok. Nr. 4598, 4598A)Balsojums: par 18, pret 48, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e237]':
+                                    - generic [ref=e238]:
+                                      - text: 4. Likumprojekts Grozījumi Valsts pārvaldes iekārtas likumā
+                                      - generic [ref=e240]:
+                                        - text: (
+                                        - link "1295/Lp14" [ref=e241] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1295/Lp14
+                                        - text: )
+                                    - generic [ref=e242]:
+                                      - generic [ref=e243]:
+                                        - text: (Dok. Nr.
+                                        - link "4598" [ref=e244] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1295/Lp14|4598|
+                                        - text: ","
+                                        - link "4598A" [ref=e245] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1295/Lp14|4598A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e247] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=7faf05b2-b002-4686-90e1-0e89c20886a4', 'Bals7faf05b2b002468690e10e89c20886a4','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e248]: par 18, pret 48, atturas 12 Noraidīts
+                                    - generic [ref=e249]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                        - 'row "5. 5. Likumprojekts Grozījumi Eiropas Parlamenta vēlēšanu likumā (1296/Lp14) (Dok. Nr. 4599, 4599A)Balsojums: par 20, pret 50, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e250]':
+                          - 'cell "5. 5. Likumprojekts Grozījumi Eiropas Parlamenta vēlēšanu likumā (1296/Lp14) (Dok. Nr. 4599, 4599A)Balsojums: par 20, pret 50, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e251]':
+                            - table [ref=e254]:
+                              - rowgroup [ref=e255]:
+                                - 'row "5. 5. Likumprojekts Grozījumi Eiropas Parlamenta vēlēšanu likumā (1296/Lp14) (Dok. Nr. 4599, 4599A)Balsojums: par 20, pret 50, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e256]':
+                                  - cell "5." [ref=e257]
+                                  - 'cell "5. Likumprojekts Grozījumi Eiropas Parlamenta vēlēšanu likumā (1296/Lp14) (Dok. Nr. 4599, 4599A)Balsojums: par 20, pret 50, atturas 12 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e258]':
+                                    - generic [ref=e259]:
+                                      - text: 5. Likumprojekts Grozījumi Eiropas Parlamenta vēlēšanu likumā
+                                      - generic [ref=e261]:
+                                        - text: (
+                                        - link "1296/Lp14" [ref=e262] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1296/Lp14
+                                        - text: )
+                                    - generic [ref=e263]:
+                                      - generic [ref=e264]:
+                                        - text: (Dok. Nr.
+                                        - link "4599" [ref=e265] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1296/Lp14|4599|
+                                        - text: ","
+                                        - link "4599A" [ref=e266] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1296/Lp14|4599A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e268] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=c00f398a-9e00-4ff0-aa5a-813b6354e2fa', 'Balsc00f398a9e004ff0aa5a813b6354e2fa','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e269]: par 20, pret 50, atturas 12 Noraidīts
+                                    - generic [ref=e270]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e272] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=c00f398a-9e00-4ff0-aa5a-813b6354e2fa&actual=1&rnd=0.6368672622133854", "Debc00f398a9e004ff0aa5a813b6354e2fa", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e273]
+                                      - text: Debates
+                        - 'row "6. 6. Likumprojekts Grozījumi Valsts drošības iestāžu likumā (1297/Lp14) (Dok. Nr. 4600, 4600A)Balsojums: par 31, pret 44, atturas 9 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e274]':
+                          - 'cell "6. 6. Likumprojekts Grozījumi Valsts drošības iestāžu likumā (1297/Lp14) (Dok. Nr. 4600, 4600A)Balsojums: par 31, pret 44, atturas 9 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e275]':
+                            - table [ref=e278]:
+                              - rowgroup [ref=e279]:
+                                - 'row "6. 6. Likumprojekts Grozījumi Valsts drošības iestāžu likumā (1297/Lp14) (Dok. Nr. 4600, 4600A)Balsojums: par 31, pret 44, atturas 9 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e280]':
+                                  - cell "6." [ref=e281]
+                                  - 'cell "6. Likumprojekts Grozījumi Valsts drošības iestāžu likumā (1297/Lp14) (Dok. Nr. 4600, 4600A)Balsojums: par 31, pret 44, atturas 9 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e282]':
+                                    - generic [ref=e283]:
+                                      - text: 6. Likumprojekts Grozījumi Valsts drošības iestāžu likumā
+                                      - generic [ref=e285]:
+                                        - text: (
+                                        - link "1297/Lp14" [ref=e286] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1297/Lp14
+                                        - text: )
+                                    - generic [ref=e287]:
+                                      - generic [ref=e288]:
+                                        - text: (Dok. Nr.
+                                        - link "4600" [ref=e289] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1297/Lp14|4600|
+                                        - text: ","
+                                        - link "4600A" [ref=e290] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1297/Lp14|4600A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e292] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=59d08dcb-72e6-429f-9047-53d11d40fba6', 'Bals59d08dcb72e6429f904753d11d40fba6','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e293]: par 31, pret 44, atturas 9 Noraidīts
+                                    - generic [ref=e294]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e296] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=59d08dcb-72e6-429f-9047-53d11d40fba6&actual=1&rnd=0.6195076542105972", "Deb59d08dcb72e6429f904753d11d40fba6", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e297]
+                                      - text: Debates
+                        - 'row "7. 7. Likumprojekts Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā (1298/Lp14) (Dok. Nr. 4601, 4601A)Balsojums: par 23, pret 45, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e298]':
+                          - 'cell "7. 7. Likumprojekts Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā (1298/Lp14) (Dok. Nr. 4601, 4601A)Balsojums: par 23, pret 45, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e299]':
+                            - table [ref=e302]:
+                              - rowgroup [ref=e303]:
+                                - 'row "7. 7. Likumprojekts Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā (1298/Lp14) (Dok. Nr. 4601, 4601A)Balsojums: par 23, pret 45, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e304]':
+                                  - cell "7." [ref=e305]
+                                  - 'cell "7. Likumprojekts Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā (1298/Lp14) (Dok. Nr. 4601, 4601A)Balsojums: par 23, pret 45, atturas 14 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova" [ref=e306]':
+                                    - generic [ref=e307]:
+                                      - text: 7. Likumprojekts Grozījumi Korupcijas novēršanas un apkarošanas biroja likumā
+                                      - generic [ref=e309]:
+                                        - text: (
+                                        - link "1298/Lp14" [ref=e310] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1298/Lp14
+                                        - text: )
+                                    - generic [ref=e311]:
+                                      - generic [ref=e312]:
+                                        - text: (Dok. Nr.
+                                        - link "4601" [ref=e313] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1298/Lp14|4601|
+                                        - text: ","
+                                        - link "4601A" [ref=e314] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1298/Lp14|4601A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e316] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=5234f1ea-56f0-4bbc-a903-dbc459e19055', 'Bals5234f1ea56f04bbca903dbc459e19055','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e317]: par 23, pret 45, atturas 14 Noraidīts
+                                    - generic [ref=e318]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                        - 'row "8. 8. Likumprojekts Grozījumi likumā “Par Centrālo vēlēšanu komisiju” (1299/Lp14) (Dok. Nr. 4602, 4602A)Balsojums: par 23, pret 40, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e319]':
+                          - 'cell "8. 8. Likumprojekts Grozījumi likumā “Par Centrālo vēlēšanu komisiju” (1299/Lp14) (Dok. Nr. 4602, 4602A)Balsojums: par 23, pret 40, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e320]':
+                            - table [ref=e323]:
+                              - rowgroup [ref=e324]:
+                                - 'row "8. 8. Likumprojekts Grozījumi likumā “Par Centrālo vēlēšanu komisiju” (1299/Lp14) (Dok. Nr. 4602, 4602A)Balsojums: par 23, pret 40, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e325]':
+                                  - cell "8." [ref=e326]
+                                  - 'cell "8. Likumprojekts Grozījumi likumā “Par Centrālo vēlēšanu komisiju” (1299/Lp14) (Dok. Nr. 4602, 4602A)Balsojums: par 23, pret 40, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e327]':
+                                    - generic [ref=e328]:
+                                      - text: 8. Likumprojekts Grozījumi likumā “Par Centrālo vēlēšanu komisiju”
+                                      - generic [ref=e330]:
+                                        - text: (
+                                        - link "1299/Lp14" [ref=e331] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1299/Lp14
+                                        - text: )
+                                    - generic [ref=e332]:
+                                      - generic [ref=e333]:
+                                        - text: (Dok. Nr.
+                                        - link "4602" [ref=e334] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1299/Lp14|4602|
+                                        - text: ","
+                                        - link "4602A" [ref=e335] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1299/Lp14|4602A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e337] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=50e016cb-247a-40b3-946f-60f5366276ff', 'Bals50e016cb247a40b3946f60f5366276ff','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e338]: par 23, pret 40, atturas 13 Noraidīts
+                                    - generic [ref=e339]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e341] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=50e016cb-247a-40b3-946f-60f5366276ff&actual=1&rnd=0.8126208123114294", "Deb50e016cb247a40b3946f60f5366276ff", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e342]
+                                      - text: Debates
+                        - 'row "9. 9. Likumprojekts Grozījumi Latvijas Bankas likumā (1300/Lp14) (Dok. Nr. 4603, 4603A)Balsojums: par 20, pret 42, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e343]':
+                          - 'cell "9. 9. Likumprojekts Grozījumi Latvijas Bankas likumā (1300/Lp14) (Dok. Nr. 4603, 4603A)Balsojums: par 20, pret 42, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e344]':
+                            - table [ref=e347]:
+                              - rowgroup [ref=e348]:
+                                - 'row "9. 9. Likumprojekts Grozījumi Latvijas Bankas likumā (1300/Lp14) (Dok. Nr. 4603, 4603A)Balsojums: par 20, pret 42, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e349]':
+                                  - cell "9." [ref=e350]
+                                  - 'cell "9. Likumprojekts Grozījumi Latvijas Bankas likumā (1300/Lp14) (Dok. Nr. 4603, 4603A)Balsojums: par 20, pret 42, atturas 13 Noraidīts Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova Debates" [ref=e351]':
+                                    - generic [ref=e352]:
+                                      - text: 9. Likumprojekts Grozījumi Latvijas Bankas likumā
+                                      - generic [ref=e354]:
+                                        - text: (
+                                        - link "1300/Lp14" [ref=e355] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1300/Lp14
+                                        - text: )
+                                    - generic [ref=e356]:
+                                      - generic [ref=e357]:
+                                        - text: (Dok. Nr.
+                                        - link "4603" [ref=e358] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1300/Lp14|4603|
+                                        - text: ","
+                                        - link "4603A" [ref=e359] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1300/Lp14|4603A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e361] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=ea29805d-59bd-43c3-8ead-c8ef31a5b94e', 'Balsea29805d59bd43c38eadc8ef31a5b94e','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e362]: par 20, pret 42, atturas 13 Noraidīts
+                                    - generic [ref=e363]: Deputāti Maija Armaņeva, Linda Liepiņa, Mārcis Jencītis, Ričards Šlesers, Ilze Stobova
+                                    - link "Debates" [ref=e365] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=ea29805d-59bd-43c3-8ead-c8ef31a5b94e&actual=1&rnd=0.04999695943012228", "Debea29805d59bd43c38eadc8ef31a5b94e", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e366]
+                                      - text: Debates
+                        - 'row "10. 10. Likumprojekts Grozījumi Aizsargjoslu likumā (1305/Lp14) (Dok. Nr. 4622, 4622A) Ministru kabinets Nodots komisijai: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija(atbildīgā)" [ref=e367]':
+                          - 'cell "10. 10. Likumprojekts Grozījumi Aizsargjoslu likumā (1305/Lp14) (Dok. Nr. 4622, 4622A) Ministru kabinets Nodots komisijai: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija(atbildīgā)" [ref=e368]':
+                            - table [ref=e371]:
+                              - rowgroup [ref=e372]:
+                                - 'row "10. 10. Likumprojekts Grozījumi Aizsargjoslu likumā (1305/Lp14) (Dok. Nr. 4622, 4622A) Ministru kabinets Nodots komisijai: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija(atbildīgā)" [ref=e373]':
+                                  - cell "10." [ref=e374]
+                                  - 'cell "10. Likumprojekts Grozījumi Aizsargjoslu likumā (1305/Lp14) (Dok. Nr. 4622, 4622A) Ministru kabinets Nodots komisijai: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija(atbildīgā)" [ref=e375]':
+                                    - generic [ref=e376]:
+                                      - text: 10. Likumprojekts Grozījumi Aizsargjoslu likumā
+                                      - generic [ref=e378]:
+                                        - text: (
+                                        - link "1305/Lp14" [ref=e379] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1305/Lp14
+                                        - text: )
+                                    - generic [ref=e381]:
+                                      - text: (Dok. Nr.
+                                      - link "4622" [ref=e382] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1305/Lp14|4622|
+                                      - text: ","
+                                      - link "4622A" [ref=e383] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1305/Lp14|4622A|
+                                      - text: )
+                                    - generic [ref=e384]: Ministru kabinets
+                                    - generic [ref=e385]: "Nodots komisijai: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija(atbildīgā)"
+                        - 'row "11. 11. Likumprojekts Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums (1306/Lp14) (Dok. Nr. 4623, 4623A) Ministru kabinets Nodots komisijai: Budžeta un finanšu (nodokļu) komisija(atbildīgā)" [ref=e386]':
+                          - 'cell "11. 11. Likumprojekts Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums (1306/Lp14) (Dok. Nr. 4623, 4623A) Ministru kabinets Nodots komisijai: Budžeta un finanšu (nodokļu) komisija(atbildīgā)" [ref=e387]':
+                            - table [ref=e390]:
+                              - rowgroup [ref=e391]:
+                                - 'row "11. 11. Likumprojekts Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums (1306/Lp14) (Dok. Nr. 4623, 4623A) Ministru kabinets Nodots komisijai: Budžeta un finanšu (nodokļu) komisija(atbildīgā)" [ref=e392]':
+                                  - cell "11." [ref=e393]
+                                  - 'cell "11. Likumprojekts Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums (1306/Lp14) (Dok. Nr. 4623, 4623A) Ministru kabinets Nodots komisijai: Budžeta un finanšu (nodokļu) komisija(atbildīgā)" [ref=e394]':
+                                    - generic [ref=e395]:
+                                      - text: 11. Likumprojekts Eiropas Ekonomikas zonas finanšu instrumenta un Norvēģijas finanšu instrumenta 2021.–2028. gada perioda vadības likums
+                                      - generic [ref=e397]:
+                                        - text: (
+                                        - link "1306/Lp14" [ref=e398] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1306/Lp14
+                                        - text: )
+                                    - generic [ref=e400]:
+                                      - text: (Dok. Nr.
+                                      - link "4623" [ref=e401] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1306/Lp14|4623|
+                                      - text: ","
+                                      - link "4623A" [ref=e402] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1306/Lp14|4623A|
+                                      - text: )
+                                    - generic [ref=e403]: Ministru kabinets
+                                    - generic [ref=e404]: "Nodots komisijai: Budžeta un finanšu (nodokļu) komisija(atbildīgā)"
+                        - 'row "12. 12. Likumprojekts Grozījumi Ieroču aprites likumā (1307/Lp14) (Dok. Nr. 4625, 4625A)Balsojums: par 73, pret 3, atturas 0 Nod. kom. Deputāti Edvīns Šnore, Jānis Vitenbergs, Artūrs Butāns, Uģis Mitrevics, Jānis Grasbergs Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e405]':
+                          - 'cell "12. 12. Likumprojekts Grozījumi Ieroču aprites likumā (1307/Lp14) (Dok. Nr. 4625, 4625A)Balsojums: par 73, pret 3, atturas 0 Nod. kom. Deputāti Edvīns Šnore, Jānis Vitenbergs, Artūrs Butāns, Uģis Mitrevics, Jānis Grasbergs Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e406]':
+                            - table [ref=e409]:
+                              - rowgroup [ref=e410]:
+                                - 'row "12. 12. Likumprojekts Grozījumi Ieroču aprites likumā (1307/Lp14) (Dok. Nr. 4625, 4625A)Balsojums: par 73, pret 3, atturas 0 Nod. kom. Deputāti Edvīns Šnore, Jānis Vitenbergs, Artūrs Butāns, Uģis Mitrevics, Jānis Grasbergs Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e411]':
+                                  - cell "12." [ref=e412]
+                                  - 'cell "12. Likumprojekts Grozījumi Ieroču aprites likumā (1307/Lp14) (Dok. Nr. 4625, 4625A)Balsojums: par 73, pret 3, atturas 0 Nod. kom. Deputāti Edvīns Šnore, Jānis Vitenbergs, Artūrs Butāns, Uģis Mitrevics, Jānis Grasbergs Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e413]':
+                                    - generic [ref=e414]:
+                                      - text: 12. Likumprojekts Grozījumi Ieroču aprites likumā
+                                      - generic [ref=e416]:
+                                        - text: (
+                                        - link "1307/Lp14" [ref=e417] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1307/Lp14
+                                        - text: )
+                                    - generic [ref=e418]:
+                                      - generic [ref=e419]:
+                                        - text: (Dok. Nr.
+                                        - link "4625" [ref=e420] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1307/Lp14|4625|
+                                        - text: ","
+                                        - link "4625A" [ref=e421] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1307/Lp14|4625A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e423] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=58b34b2f-b61c-4304-b35d-e48b527f1946', 'Bals58b34b2fb61c4304b35de48b527f1946','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e424]: par 73, pret 3, atturas 0 Nod. kom.
+                                    - generic [ref=e425]: Deputāti Edvīns Šnore, Jānis Vitenbergs, Artūrs Butāns, Uģis Mitrevics, Jānis Grasbergs
+                                    - generic [ref=e426]: "Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā)"
+                                    - link "Debates" [ref=e428] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=58b34b2f-b61c-4304-b35d-e48b527f1946&actual=1&rnd=0.6057056013027955", "Deb58b34b2fb61c4304b35de48b527f1946", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e429]
+                                      - text: Debates
+                        - 'row "13. 13. Likumprojekts Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā (1308/Lp14) (Dok. Nr. 4626, 4626A)Balsojums: par 68, pret 16, atturas 0 Nod. kom. Deputāti Edmunds Jurēvics, Zanda Kalniņa-Lukaševica, Agnese Krasta, Dāvis Mārtiņš Daugavietis, Mārtiņš Felss Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e430]':
+                          - 'cell "13. 13. Likumprojekts Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā (1308/Lp14) (Dok. Nr. 4626, 4626A)Balsojums: par 68, pret 16, atturas 0 Nod. kom. Deputāti Edmunds Jurēvics, Zanda Kalniņa-Lukaševica, Agnese Krasta, Dāvis Mārtiņš Daugavietis, Mārtiņš Felss Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e431]':
+                            - table [ref=e434]:
+                              - rowgroup [ref=e435]:
+                                - 'row "13. 13. Likumprojekts Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā (1308/Lp14) (Dok. Nr. 4626, 4626A)Balsojums: par 68, pret 16, atturas 0 Nod. kom. Deputāti Edmunds Jurēvics, Zanda Kalniņa-Lukaševica, Agnese Krasta, Dāvis Mārtiņš Daugavietis, Mārtiņš Felss Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e436]':
+                                  - cell "13." [ref=e437]
+                                  - 'cell "13. Likumprojekts Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā (1308/Lp14) (Dok. Nr. 4626, 4626A)Balsojums: par 68, pret 16, atturas 0 Nod. kom. Deputāti Edmunds Jurēvics, Zanda Kalniņa-Lukaševica, Agnese Krasta, Dāvis Mārtiņš Daugavietis, Mārtiņš Felss Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā) Debates" [ref=e438]':
+                                    - generic [ref=e439]:
+                                      - text: 13. Likumprojekts Grozījumi Ukrainas civiliedzīvotāju atbalsta likumā
+                                      - generic [ref=e441]:
+                                        - text: (
+                                        - link "1308/Lp14" [ref=e442] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1308/Lp14
+                                        - text: )
+                                    - generic [ref=e443]:
+                                      - generic [ref=e444]:
+                                        - text: (Dok. Nr.
+                                        - link "4626" [ref=e445] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1308/Lp14|4626|
+                                        - text: ","
+                                        - link "4626A" [ref=e446] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1308/Lp14|4626A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e448] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=b7d1d623-db4e-4460-9489-9cae1f66c776', 'Balsb7d1d623db4e446094899cae1f66c776','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e449]: par 68, pret 16, atturas 0 Nod. kom.
+                                    - generic [ref=e450]: Deputāti Edmunds Jurēvics, Zanda Kalniņa-Lukaševica, Agnese Krasta, Dāvis Mārtiņš Daugavietis, Mārtiņš Felss
+                                    - generic [ref=e451]: "Nodots komisijai: Aizsardzības, iekšlietu un korupcijas novēršanas komisija(atbildīgā)"
+                                    - link "Debates" [ref=e453] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=b7d1d623-db4e-4460-9489-9cae1f66c776&actual=1&rnd=0.025329287994696026", "Debb7d1d623db4e446094899cae1f66c776", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e454]
+                                      - text: Debates
+                        - 'row "34. 14. Likumprojekts Grozījumi Augstskolu likumā (1309/Lp14) (Dok. Nr. 4630) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e455]':
+                          - 'cell "34. 14. Likumprojekts Grozījumi Augstskolu likumā (1309/Lp14) (Dok. Nr. 4630) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e456]':
+                            - table [ref=e459]:
+                              - rowgroup [ref=e460]:
+                                - 'row "34. 14. Likumprojekts Grozījumi Augstskolu likumā (1309/Lp14) (Dok. Nr. 4630) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e461]':
+                                  - cell "34." [ref=e462]
+                                  - 'cell "14. Likumprojekts Grozījumi Augstskolu likumā (1309/Lp14) (Dok. Nr. 4630) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e463]':
+                                    - generic [ref=e464]:
+                                      - text: 14. Likumprojekts Grozījumi Augstskolu likumā
+                                      - generic [ref=e466]:
+                                        - text: (
+                                        - link "1309/Lp14" [ref=e467] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1309/Lp14
+                                        - text: )
+                                    - generic [ref=e469]:
+                                      - text: (Dok. Nr.
+                                      - link "4630" [ref=e470] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1309/Lp14|4630|
+                                      - text: )
+                                    - generic [ref=e471]: Ministru kabinets
+                                    - generic [ref=e472]: "Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)"
+                        - 'row "35. 15. Likumprojekts Grozījumi Zinātniskās darbības likumā (1310/Lp14) (Dok. Nr. 4631) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e473]':
+                          - 'cell "35. 15. Likumprojekts Grozījumi Zinātniskās darbības likumā (1310/Lp14) (Dok. Nr. 4631) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e474]':
+                            - table [ref=e477]:
+                              - rowgroup [ref=e478]:
+                                - 'row "35. 15. Likumprojekts Grozījumi Zinātniskās darbības likumā (1310/Lp14) (Dok. Nr. 4631) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e479]':
+                                  - cell "35." [ref=e480]
+                                  - 'cell "15. Likumprojekts Grozījumi Zinātniskās darbības likumā (1310/Lp14) (Dok. Nr. 4631) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e481]':
+                                    - generic [ref=e482]:
+                                      - text: 15. Likumprojekts Grozījumi Zinātniskās darbības likumā
+                                      - generic [ref=e484]:
+                                        - text: (
+                                        - link "1310/Lp14" [ref=e485] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1310/Lp14
+                                        - text: )
+                                    - generic [ref=e487]:
+                                      - text: (Dok. Nr.
+                                      - link "4631" [ref=e488] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1310/Lp14|4631|
+                                      - text: )
+                                    - generic [ref=e489]: Ministru kabinets
+                                    - generic [ref=e490]: "Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)"
+                        - 'row "36. 16. Likumprojekts Grozījumi Profesionālās izglītības likumā (1311/Lp14) (Dok. Nr. 4632) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e491]':
+                          - 'cell "36. 16. Likumprojekts Grozījumi Profesionālās izglītības likumā (1311/Lp14) (Dok. Nr. 4632) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e492]':
+                            - table [ref=e495]:
+                              - rowgroup [ref=e496]:
+                                - 'row "36. 16. Likumprojekts Grozījumi Profesionālās izglītības likumā (1311/Lp14) (Dok. Nr. 4632) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e497]':
+                                  - cell "36." [ref=e498]
+                                  - 'cell "16. Likumprojekts Grozījumi Profesionālās izglītības likumā (1311/Lp14) (Dok. Nr. 4632) Ministru kabinets Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)" [ref=e499]':
+                                    - generic [ref=e500]:
+                                      - text: 16. Likumprojekts Grozījumi Profesionālās izglītības likumā
+                                      - generic [ref=e502]:
+                                        - text: (
+                                        - link "1311/Lp14" [ref=e503] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1311/Lp14
+                                        - text: )
+                                    - generic [ref=e505]:
+                                      - text: (Dok. Nr.
+                                      - link "4632" [ref=e506] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1311/Lp14|4632|
+                                      - text: )
+                                    - generic [ref=e507]: Ministru kabinets
+                                    - generic [ref=e508]: "Nodots komisijai: Izglītības, kultūras un zinātnes komisija(atbildīgā)"
+                        - 'row "38. 17. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (Dok. Nr. 4634) Juridiskā komisija Nodots komisijai: Juridiskā komisija(atbildīgā)" [ref=e509]':
+                          - 'cell "38. 17. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (Dok. Nr. 4634) Juridiskā komisija Nodots komisijai: Juridiskā komisija(atbildīgā)" [ref=e510]':
+                            - table [ref=e513]:
+                              - rowgroup [ref=e514]:
+                                - 'row "38. 17. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (Dok. Nr. 4634) Juridiskā komisija Nodots komisijai: Juridiskā komisija(atbildīgā)" [ref=e515]':
+                                  - cell "38." [ref=e516]
+                                  - 'cell "17. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (Dok. Nr. 4634) Juridiskā komisija Nodots komisijai: Juridiskā komisija(atbildīgā)" [ref=e517]':
+                                    - generic [ref=e518]:
+                                      - text: 17. Likumprojekts Grozījumi Kriminālprocesa likumā
+                                      - generic [ref=e520]:
+                                        - text: (
+                                        - link "1312/Lp14" [ref=e521] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1312/Lp14
+                                        - text: )
+                                    - generic [ref=e523]:
+                                      - text: (Dok. Nr.
+                                      - link "4634" [ref=e524] [cursor=pointer]:
+                                        - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1312/Lp14|4634|
+                                      - text: )
+                                    - generic [ref=e525]: Juridiskā komisija
+                                    - generic [ref=e526]: "Nodots komisijai: Juridiskā komisija(atbildīgā)"
+                        - row "II. Amatpersonu ievēlēšana, apstiprināšana, iecelšana, atbrīvošana vai atlaišana no amata, uzticības vai neuzticības izteikšana" [ref=e527]:
+                          - cell "II. Amatpersonu ievēlēšana, apstiprināšana, iecelšana, atbrīvošana vai atlaišana no amata, uzticības vai neuzticības izteikšana" [ref=e528]
+                        - 'row "37. Lēmuma projekts Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi (942/Lm14) (Dok. Nr. 4633)Balsojums: par 82, pret 0, atturas 0 Paziņojums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e529]':
+                          - 'cell "37. Lēmuma projekts Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi (942/Lm14) (Dok. Nr. 4633)Balsojums: par 82, pret 0, atturas 0 Paziņojums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e530]':
+                            - table [ref=e533]:
+                              - rowgroup [ref=e534]:
+                                - 'row "37. Lēmuma projekts Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi (942/Lm14) (Dok. Nr. 4633)Balsojums: par 82, pret 0, atturas 0 Paziņojums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e535]':
+                                  - cell "37." [ref=e536]
+                                  - 'cell "Lēmuma projekts Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi (942/Lm14) (Dok. Nr. 4633)Balsojums: par 82, pret 0, atturas 0 Paziņojums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e537]':
+                                    - generic [ref=e538]:
+                                      - text: Lēmuma projekts Par Rolanda Stūra iecelšanu par rajona (pilsētas) tiesas tiesnesi
+                                      - generic [ref=e540]:
+                                        - text: (
+                                        - link "942/Lm14" [ref=e541] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=942/Lm14
+                                        - text: )
+                                    - generic [ref=e542]:
+                                      - generic [ref=e543]:
+                                        - text: (Dok. Nr.
+                                        - link "4633" [ref=e544] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=942/Lm14|4633|
+                                        - text: )
+                                      - link "Balsojums" [ref=e546] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=cfb4f01c-640f-4ac8-8351-633a670eb4d0', 'Balscfb4f01c640f4ac88351633a670eb4d0','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e547]: par 82, pret 0, atturas 0 Paziņojums
+                                    - generic [ref=e548]: "Juridiskā komisija (Referents: Selma Teodora Levrence)"
+                        - row "Ar sēdes norisi saistīti jautājumi" [ref=e549]:
+                          - cell "Ar sēdes norisi saistīti jautājumi" [ref=e550]:
+                            - img [ref=e551]
+                            - link "Ar sēdes norisi saistīti jautājumi" [ref=e552] [cursor=pointer]:
+                              - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&tp=ut&dkp1=cfb4f01c-640f-4ac8-8351-633a670eb4d0&dkp2=fe881d54-ac4e-4a6e-92a2-b8b639bc6c5d&actual=1&rnd=0.8342936531854118", "Techfe881d54ac4e4a6e92a2b8b639bc6c5d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                        - row "III. Deputātu pieprasījumu izskatīšana" [ref=e553]:
+                          - cell "III. Deputātu pieprasījumu izskatīšana" [ref=e554]
+                        - row "1. Par saņemtajiem deputātu pieprasījumiem" [ref=e555]:
+                          - cell "1. Par saņemtajiem deputātu pieprasījumiem" [ref=e556]
+                        - row "45. 1. Pieprasījums Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu' (128/P14) (Dok. Nr. 4656) Nodots Pieprasījumu komisijai Deputāti Edvards Smiltēns, Edgars Tavars, Andris Kulbergs, Juris Viļums, Linda Matisone, Edgars Putra, Česlavs Batņa, Aiva Vīksna, Lauris Lizbovskis, Andrejs Svilāns Debates" [ref=e557]:
+                          - cell "45. 1. Pieprasījums Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu' (128/P14) (Dok. Nr. 4656) Nodots Pieprasījumu komisijai Deputāti Edvards Smiltēns, Edgars Tavars, Andris Kulbergs, Juris Viļums, Linda Matisone, Edgars Putra, Česlavs Batņa, Aiva Vīksna, Lauris Lizbovskis, Andrejs Svilāns Debates" [ref=e558]:
+                            - table [ref=e561]:
+                              - rowgroup [ref=e562]:
+                                - row "45. 1. Pieprasījums Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu' (128/P14) (Dok. Nr. 4656) Nodots Pieprasījumu komisijai Deputāti Edvards Smiltēns, Edgars Tavars, Andris Kulbergs, Juris Viļums, Linda Matisone, Edgars Putra, Česlavs Batņa, Aiva Vīksna, Lauris Lizbovskis, Andrejs Svilāns Debates" [ref=e563]:
+                                  - cell "45." [ref=e564]
+                                  - cell "1. Pieprasījums Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu' (128/P14) (Dok. Nr. 4656) Nodots Pieprasījumu komisijai Deputāti Edvards Smiltēns, Edgars Tavars, Andris Kulbergs, Juris Viļums, Linda Matisone, Edgars Putra, Česlavs Batņa, Aiva Vīksna, Lauris Lizbovskis, Andrejs Svilāns Debates" [ref=e565]:
+                                    - generic [ref=e566]:
+                                      - text: 1. Pieprasījums Ministru prezidentei Evikai Siliņai 'Par publisko informāciju saistībā ar Amsterdamas lidostas VIP pakalpojumu izmantošanu'
+                                      - generic [ref=e568]:
+                                        - text: (
+                                        - link "128/P14" [ref=e569] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=128/P14
+                                        - text: )
+                                    - generic [ref=e570]:
+                                      - generic [ref=e571]:
+                                        - text: (Dok. Nr.
+                                        - link "4656" [ref=e572] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=128/P14|4656|
+                                        - text: )
+                                      - generic [ref=e573]: Nodots Pieprasījumu komisijai
+                                    - generic [ref=e574]: Deputāti Edvards Smiltēns, Edgars Tavars, Andris Kulbergs, Juris Viļums, Linda Matisone, Edgars Putra, Česlavs Batņa, Aiva Vīksna, Lauris Lizbovskis, Andrejs Svilāns
+                                    - link "Debates" [ref=e576] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=fe881d54-ac4e-4a6e-92a2-b8b639bc6c5d&actual=1&rnd=0.09077759467426494", "Debfe881d54ac4e4a6e92a2b8b639bc6c5d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e577]
+                                      - text: Debates
+                        - row "46. 2. Pieprasījums viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē' (129/P14) (Dok. Nr. 4658) Nodots Pieprasījumu komisijai Deputāti Viktorija Pleškāne, Edmunds Zivtiņš, Maija Armaņeva, Linda Liepiņa, Kristaps Krištopans, Mārcis Jencītis, Jeļena Kļaviņa, Jekaterina Drelinga, Ilze Stobova, Ramona Petraviča Debates" [ref=e578]:
+                          - cell "46. 2. Pieprasījums viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē' (129/P14) (Dok. Nr. 4658) Nodots Pieprasījumu komisijai Deputāti Viktorija Pleškāne, Edmunds Zivtiņš, Maija Armaņeva, Linda Liepiņa, Kristaps Krištopans, Mārcis Jencītis, Jeļena Kļaviņa, Jekaterina Drelinga, Ilze Stobova, Ramona Petraviča Debates" [ref=e579]:
+                            - table [ref=e582]:
+                              - rowgroup [ref=e583]:
+                                - row "46. 2. Pieprasījums viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē' (129/P14) (Dok. Nr. 4658) Nodots Pieprasījumu komisijai Deputāti Viktorija Pleškāne, Edmunds Zivtiņš, Maija Armaņeva, Linda Liepiņa, Kristaps Krištopans, Mārcis Jencītis, Jeļena Kļaviņa, Jekaterina Drelinga, Ilze Stobova, Ramona Petraviča Debates" [ref=e584]:
+                                  - cell "46." [ref=e585]
+                                  - cell "2. Pieprasījums viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē' (129/P14) (Dok. Nr. 4658) Nodots Pieprasījumu komisijai Deputāti Viktorija Pleškāne, Edmunds Zivtiņš, Maija Armaņeva, Linda Liepiņa, Kristaps Krištopans, Mārcis Jencītis, Jeļena Kļaviņa, Jekaterina Drelinga, Ilze Stobova, Ramona Petraviča Debates" [ref=e586]:
+                                    - generic [ref=e587]:
+                                      - text: 2. Pieprasījums viedās administrācijas un reģionālās attīstības ministram Raimondam Čudaram 'Par otra domes priekšsēdētāja ievēlēšanu Rēzeknes valstspilsētas domē'
+                                      - generic [ref=e589]:
+                                        - text: (
+                                        - link "129/P14" [ref=e590] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=129/P14
+                                        - text: )
+                                    - generic [ref=e591]:
+                                      - generic [ref=e592]:
+                                        - text: (Dok. Nr.
+                                        - link "4658" [ref=e593] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=129/P14|4658|
+                                        - text: )
+                                      - generic [ref=e594]: Nodots Pieprasījumu komisijai
+                                    - generic [ref=e595]: Deputāti Viktorija Pleškāne, Edmunds Zivtiņš, Maija Armaņeva, Linda Liepiņa, Kristaps Krištopans, Mārcis Jencītis, Jeļena Kļaviņa, Jekaterina Drelinga, Ilze Stobova, Ramona Petraviča
+                                    - link "Debates" [ref=e597] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=534f2a88-c8f3-4d68-8a24-2e0a2f19d974&actual=1&rnd=0.37439955878672904", "Deb534f2a88c8f34d688a242e0a2f19d974", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e598]
+                                      - text: Debates
+                        - row "2. Pieprasījumu komisijas atzinums" [ref=e599]:
+                          - cell "2. Pieprasījumu komisijas atzinums" [ref=e600]
+                        - 'row "14. Deputātu Edgara Tavara, Edvarda Smiltēna, Edgara Putras, Česlava Batņas, Aivas Vīksnas, Laura Lizbovska, Māra Kučinska, Jura Viļuma, Lindas Matisones, Andreja Svilāna pieprasījums Ministru prezidentei Evikai Siliņai ''Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei'' (124/P14) (Dok. Nr. 4550, 4550A)Balsojums: par 41, pret 50, atturas 1 Noraidīts Pieprasījumu komisija (Referents: Inga Bērziņa) Debates" [ref=e601]':
+                          - 'cell "14. Deputātu Edgara Tavara, Edvarda Smiltēna, Edgara Putras, Česlava Batņas, Aivas Vīksnas, Laura Lizbovska, Māra Kučinska, Jura Viļuma, Lindas Matisones, Andreja Svilāna pieprasījums Ministru prezidentei Evikai Siliņai ''Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei'' (124/P14) (Dok. Nr. 4550, 4550A)Balsojums: par 41, pret 50, atturas 1 Noraidīts Pieprasījumu komisija (Referents: Inga Bērziņa) Debates" [ref=e602]':
+                            - table [ref=e605]:
+                              - rowgroup [ref=e606]:
+                                - 'row "14. Deputātu Edgara Tavara, Edvarda Smiltēna, Edgara Putras, Česlava Batņas, Aivas Vīksnas, Laura Lizbovska, Māra Kučinska, Jura Viļuma, Lindas Matisones, Andreja Svilāna pieprasījums Ministru prezidentei Evikai Siliņai ''Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei'' (124/P14) (Dok. Nr. 4550, 4550A)Balsojums: par 41, pret 50, atturas 1 Noraidīts Pieprasījumu komisija (Referents: Inga Bērziņa) Debates" [ref=e607]':
+                                  - cell "14." [ref=e608]
+                                  - 'cell "Deputātu Edgara Tavara, Edvarda Smiltēna, Edgara Putras, Česlava Batņas, Aivas Vīksnas, Laura Lizbovska, Māra Kučinska, Jura Viļuma, Lindas Matisones, Andreja Svilāna pieprasījums Ministru prezidentei Evikai Siliņai ''Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei'' (124/P14) (Dok. Nr. 4550, 4550A)Balsojums: par 41, pret 50, atturas 1 Noraidīts Pieprasījumu komisija (Referents: Inga Bērziņa) Debates" [ref=e609]':
+                                    - generic [ref=e610]:
+                                      - text: Deputātu Edgara Tavara, Edvarda Smiltēna, Edgara Putras, Česlava Batņas, Aivas Vīksnas, Laura Lizbovska, Māra Kučinska, Jura Viļuma, Lindas Matisones, Andreja Svilāna pieprasījums Ministru prezidentei Evikai Siliņai 'Par iespējamu politisko spiedienu un patiesībai neatbilstošas informācijas sniegšanu tiesību aizsardzības iestādei'
+                                      - generic [ref=e612]:
+                                        - text: (
+                                        - link "124/P14" [ref=e613] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=124/P14
+                                        - text: )
+                                    - generic [ref=e614]:
+                                      - generic [ref=e615]:
+                                        - text: (Dok. Nr.
+                                        - link "4550" [ref=e616] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=124/P14|4550|
+                                        - text: ","
+                                        - link "4550A" [ref=e617] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=124/P14|4550A|
+                                        - text: )
+                                      - link "Balsojums" [ref=e619] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=9fa4d829-54cd-4230-974d-8ae5cd19e813', 'Bals9fa4d82954cd4230974d8ae5cd19e813','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e620]: par 41, pret 50, atturas 1 Noraidīts
+                                    - generic [ref=e621]: "Pieprasījumu komisija (Referents: Inga Bērziņa)"
+                                    - link "Debates" [ref=e623] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=9fa4d829-54cd-4230-974d-8ae5cd19e813&actual=1&rnd=0.687950801922821", "Deb9fa4d82954cd4230974d8ae5cd19e813", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e624]
+                                      - text: Debates
+                        - row "IV. Lēmumu projektu izskatīšana" [ref=e625]:
+                          - cell "IV. Lēmumu projektu izskatīšana" [ref=e626]
+                        - 'row "43. Lēmuma projekts Par likumprojekta “Grozījumi likumā ''Par piesārņojumu''” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam (950/Lm14) (Dok. Nr. 4654)Balsojums: par 89, pret 0, atturas 0 Pieņemts Valsts pārvaldes un pašvaldības komisija" [ref=e627]':
+                          - 'cell "43. Lēmuma projekts Par likumprojekta “Grozījumi likumā ''Par piesārņojumu''” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam (950/Lm14) (Dok. Nr. 4654)Balsojums: par 89, pret 0, atturas 0 Pieņemts Valsts pārvaldes un pašvaldības komisija" [ref=e628]':
+                            - table [ref=e631]:
+                              - rowgroup [ref=e632]:
+                                - 'row "43. Lēmuma projekts Par likumprojekta “Grozījumi likumā ''Par piesārņojumu''” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam (950/Lm14) (Dok. Nr. 4654)Balsojums: par 89, pret 0, atturas 0 Pieņemts Valsts pārvaldes un pašvaldības komisija" [ref=e633]':
+                                  - cell "43." [ref=e634]
+                                  - 'cell "Lēmuma projekts Par likumprojekta “Grozījumi likumā ''Par piesārņojumu''” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam (950/Lm14) (Dok. Nr. 4654)Balsojums: par 89, pret 0, atturas 0 Pieņemts Valsts pārvaldes un pašvaldības komisija" [ref=e635]':
+                                    - generic [ref=e636]:
+                                      - text: Lēmuma projekts Par likumprojekta “Grozījumi likumā 'Par piesārņojumu'” (Nr. 1274/Lp14) (steidzams) izskatīšanas Saeimas sēdē datuma maiņu no 2026. gada 16. aprīļa uz 2026. gada 14. maiju un priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta otrajam lasījumam līdz 2026. gada 6. maijam
+                                      - generic [ref=e638]:
+                                        - text: (
+                                        - link "950/Lm14" [ref=e639] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=950/Lm14
+                                        - text: )
+                                    - generic [ref=e640]:
+                                      - generic [ref=e641]:
+                                        - text: (Dok. Nr.
+                                        - link "4654" [ref=e642] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=950/Lm14|4654|
+                                        - text: )
+                                      - link "Balsojums" [ref=e644] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=e2365c84-42ad-4c42-a4e4-5e54de4b3ff3', 'Balse2365c8442ad4c42a4e45e54de4b3ff3','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e645]: par 89, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e646]: Valsts pārvaldes un pašvaldības komisija
+                        - row "V. Likumprojektu izskatīšana" [ref=e647]:
+                          - cell "V. Likumprojektu izskatīšana" [ref=e648]
+                        - 'row "15. 1. Likumprojekts Grozījumi Vides aizsardzības likumā (1269/Lp14) (2. lasījums) (Steidzams) (8 priekšlikumi) (Dok. Nr. 4504B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e649]':
+                          - 'cell "15. 1. Likumprojekts Grozījumi Vides aizsardzības likumā (1269/Lp14) (2. lasījums) (Steidzams) (8 priekšlikumi) (Dok. Nr. 4504B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e650]':
+                            - table [ref=e653]:
+                              - rowgroup [ref=e654]:
+                                - 'row "15. 1. Likumprojekts Grozījumi Vides aizsardzības likumā (1269/Lp14) (2. lasījums) (Steidzams) (8 priekšlikumi) (Dok. Nr. 4504B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e655]':
+                                  - cell "15." [ref=e656]
+                                  - 'cell "1. Likumprojekts Grozījumi Vides aizsardzības likumā (1269/Lp14) (2. lasījums) (Steidzams) (8 priekšlikumi) (Dok. Nr. 4504B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e657]':
+                                    - generic [ref=e658]:
+                                      - text: 1. Likumprojekts Grozījumi Vides aizsardzības likumā
+                                      - generic [ref=e660]:
+                                        - text: (
+                                        - link "1269/Lp14" [ref=e661] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1269/Lp14
+                                        - text: )
+                                    - generic [ref=e662]: (2. lasījums) (Steidzams) (8 priekšlikumi)
+                                    - generic [ref=e663]:
+                                      - generic [ref=e664]:
+                                        - text: (Dok. Nr.
+                                        - link "4504B" [ref=e665] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1269/Lp14|4504B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e667] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=b67dd118-caf3-4e55-9c03-35655e901626', 'Balsb67dd118caf34e559c0335655e901626','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e668]: par 92, pret 0, atturas 0 Likums
+                                    - generic [ref=e669]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "16. 2. Likumprojekts Grozījumi likumā “Par zemes dzīlēm” (1271/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4506B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e670]':
+                          - 'cell "16. 2. Likumprojekts Grozījumi likumā “Par zemes dzīlēm” (1271/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4506B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e671]':
+                            - table [ref=e674]:
+                              - rowgroup [ref=e675]:
+                                - 'row "16. 2. Likumprojekts Grozījumi likumā “Par zemes dzīlēm” (1271/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4506B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e676]':
+                                  - cell "16." [ref=e677]
+                                  - 'cell "2. Likumprojekts Grozījumi likumā “Par zemes dzīlēm” (1271/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4506B)Balsojums: par 92, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e678]':
+                                    - generic [ref=e679]:
+                                      - text: 2. Likumprojekts Grozījumi likumā “Par zemes dzīlēm”
+                                      - generic [ref=e681]:
+                                        - text: (
+                                        - link "1271/Lp14" [ref=e682] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1271/Lp14
+                                        - text: )
+                                    - generic [ref=e683]: (2. lasījums) (Steidzams) (6 priekšlikumi)
+                                    - generic [ref=e684]:
+                                      - generic [ref=e685]:
+                                        - text: (Dok. Nr.
+                                        - link "4506B" [ref=e686] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1271/Lp14|4506B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e688] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=ab126dce-fc60-4a6e-a690-c991ec28970e', 'Balsab126dcefc604a6ea690c991ec28970e','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e689]: par 92, pret 0, atturas 0 Likums
+                                    - generic [ref=e690]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "17. 3. Likumprojekts Grozījumi likumā “Par radiācijas drošību un kodoldrošību” (1272/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4507B)Balsojums: par 96, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e691]':
+                          - 'cell "17. 3. Likumprojekts Grozījumi likumā “Par radiācijas drošību un kodoldrošību” (1272/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4507B)Balsojums: par 96, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e692]':
+                            - table [ref=e695]:
+                              - rowgroup [ref=e696]:
+                                - 'row "17. 3. Likumprojekts Grozījumi likumā “Par radiācijas drošību un kodoldrošību” (1272/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4507B)Balsojums: par 96, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e697]':
+                                  - cell "17." [ref=e698]
+                                  - 'cell "3. Likumprojekts Grozījumi likumā “Par radiācijas drošību un kodoldrošību” (1272/Lp14) (2. lasījums) (Steidzams) (6 priekšlikumi) (Dok. Nr. 4507B)Balsojums: par 96, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e699]':
+                                    - generic [ref=e700]:
+                                      - text: 3. Likumprojekts Grozījumi likumā “Par radiācijas drošību un kodoldrošību”
+                                      - generic [ref=e702]:
+                                        - text: (
+                                        - link "1272/Lp14" [ref=e703] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1272/Lp14
+                                        - text: )
+                                    - generic [ref=e704]: (2. lasījums) (Steidzams) (6 priekšlikumi)
+                                    - generic [ref=e705]:
+                                      - generic [ref=e706]:
+                                        - text: (Dok. Nr.
+                                        - link "4507B" [ref=e707] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1272/Lp14|4507B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e709] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=f3a248eb-8ec6-4555-ae25-a4f0903d4b6c', 'Balsf3a248eb8ec64555ae25a4f0903d4b6c','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e710]: par 96, pret 0, atturas 0 Likums
+                                    - generic [ref=e711]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "18. 4. Likumprojekts Grozījumi Ķīmisko vielu likumā (1273/Lp14) (2. lasījums) (Steidzams) (3 priekšlikumi) (Dok. Nr. 4508B)Balsojums: par 94, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e712]':
+                          - 'cell "18. 4. Likumprojekts Grozījumi Ķīmisko vielu likumā (1273/Lp14) (2. lasījums) (Steidzams) (3 priekšlikumi) (Dok. Nr. 4508B)Balsojums: par 94, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e713]':
+                            - table [ref=e716]:
+                              - rowgroup [ref=e717]:
+                                - 'row "18. 4. Likumprojekts Grozījumi Ķīmisko vielu likumā (1273/Lp14) (2. lasījums) (Steidzams) (3 priekšlikumi) (Dok. Nr. 4508B)Balsojums: par 94, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e718]':
+                                  - cell "18." [ref=e719]
+                                  - 'cell "4. Likumprojekts Grozījumi Ķīmisko vielu likumā (1273/Lp14) (2. lasījums) (Steidzams) (3 priekšlikumi) (Dok. Nr. 4508B)Balsojums: par 94, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e720]':
+                                    - generic [ref=e721]:
+                                      - text: 4. Likumprojekts Grozījumi Ķīmisko vielu likumā
+                                      - generic [ref=e723]:
+                                        - text: (
+                                        - link "1273/Lp14" [ref=e724] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1273/Lp14
+                                        - text: )
+                                    - generic [ref=e725]: (2. lasījums) (Steidzams) (3 priekšlikumi)
+                                    - generic [ref=e726]:
+                                      - generic [ref=e727]:
+                                        - text: (Dok. Nr.
+                                        - link "4508B" [ref=e728] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1273/Lp14|4508B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e730] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=e897e6af-50b8-4174-af34-82b2fa14659f', 'Balse897e6af50b84174af3482b2fa14659f','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e731]: par 94, pret 0, atturas 0 Likums
+                                    - generic [ref=e732]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - row "Ar sēdes norisi saistīti jautājumi" [ref=e733]:
+                          - cell "Ar sēdes norisi saistīti jautājumi" [ref=e734]:
+                            - img [ref=e735]
+                            - link "Ar sēdes norisi saistīti jautājumi" [ref=e736] [cursor=pointer]:
+                              - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&tp=ut&dkp1=e897e6af-50b8-4174-af34-82b2fa14659f&dkp2=c84105bf-ab08-44c3-95e2-20c1044e6924&actual=1&rnd=0.4049839271902319", "Techc84105bfab0844c395e220c1044e6924", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                        - 'row "20. 5. Likumprojekts Grozījumi Ūdens apsaimniekošanas likumā (1275/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4510B)Balsojums: par 66, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e737]':
+                          - 'cell "20. 5. Likumprojekts Grozījumi Ūdens apsaimniekošanas likumā (1275/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4510B)Balsojums: par 66, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e738]':
+                            - table [ref=e741]:
+                              - rowgroup [ref=e742]:
+                                - 'row "20. 5. Likumprojekts Grozījumi Ūdens apsaimniekošanas likumā (1275/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4510B)Balsojums: par 66, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e743]':
+                                  - cell "20." [ref=e744]
+                                  - 'cell "5. Likumprojekts Grozījumi Ūdens apsaimniekošanas likumā (1275/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4510B)Balsojums: par 66, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e745]':
+                                    - generic [ref=e746]:
+                                      - text: 5. Likumprojekts Grozījumi Ūdens apsaimniekošanas likumā
+                                      - generic [ref=e748]:
+                                        - text: (
+                                        - link "1275/Lp14" [ref=e749] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1275/Lp14
+                                        - text: )
+                                    - generic [ref=e750]: (2. lasījums) (Steidzams) (4 priekšlikumi)
+                                    - generic [ref=e751]:
+                                      - generic [ref=e752]:
+                                        - text: (Dok. Nr.
+                                        - link "4510B" [ref=e753] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1275/Lp14|4510B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e755] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=c84105bf-ab08-44c3-95e2-20c1044e6924', 'Balsc84105bfab0844c395e220c1044e6924','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e756]: par 66, pret 0, atturas 0 Likums
+                                    - generic [ref=e757]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "21. 6. Likumprojekts Grozījumi likumā “Par ietekmes uz vidi novērtējumu” (1276/Lp14) (2. lasījums) (Steidzams) (5 priekšlikumi) (Dok. Nr. 4511B)Balsojums: par 74, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e758]':
+                          - 'cell "21. 6. Likumprojekts Grozījumi likumā “Par ietekmes uz vidi novērtējumu” (1276/Lp14) (2. lasījums) (Steidzams) (5 priekšlikumi) (Dok. Nr. 4511B)Balsojums: par 74, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e759]':
+                            - table [ref=e762]:
+                              - rowgroup [ref=e763]:
+                                - 'row "21. 6. Likumprojekts Grozījumi likumā “Par ietekmes uz vidi novērtējumu” (1276/Lp14) (2. lasījums) (Steidzams) (5 priekšlikumi) (Dok. Nr. 4511B)Balsojums: par 74, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e764]':
+                                  - cell "21." [ref=e765]
+                                  - 'cell "6. Likumprojekts Grozījumi likumā “Par ietekmes uz vidi novērtējumu” (1276/Lp14) (2. lasījums) (Steidzams) (5 priekšlikumi) (Dok. Nr. 4511B)Balsojums: par 74, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e766]':
+                                    - generic [ref=e767]:
+                                      - text: 6. Likumprojekts Grozījumi likumā “Par ietekmes uz vidi novērtējumu”
+                                      - generic [ref=e769]:
+                                        - text: (
+                                        - link "1276/Lp14" [ref=e770] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1276/Lp14
+                                        - text: )
+                                    - generic [ref=e771]: (2. lasījums) (Steidzams) (5 priekšlikumi)
+                                    - generic [ref=e772]:
+                                      - generic [ref=e773]:
+                                        - text: (Dok. Nr.
+                                        - link "4511B" [ref=e774] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1276/Lp14|4511B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e776] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=5cd3ad96-2839-4a8c-9d99-96804ba8d1f2', 'Bals5cd3ad9628394a8c9d9996804ba8d1f2','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e777]: par 74, pret 0, atturas 0 Likums
+                                    - generic [ref=e778]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "22. 7. Likumprojekts Grozījumi Sugu un biotopu aizsardzības likumā (1277/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4512B)Balsojums: par 76, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e779]':
+                          - 'cell "22. 7. Likumprojekts Grozījumi Sugu un biotopu aizsardzības likumā (1277/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4512B)Balsojums: par 76, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e780]':
+                            - table [ref=e783]:
+                              - rowgroup [ref=e784]:
+                                - 'row "22. 7. Likumprojekts Grozījumi Sugu un biotopu aizsardzības likumā (1277/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4512B)Balsojums: par 76, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e785]':
+                                  - cell "22." [ref=e786]
+                                  - 'cell "7. Likumprojekts Grozījumi Sugu un biotopu aizsardzības likumā (1277/Lp14) (2. lasījums) (Steidzams) (4 priekšlikumi) (Dok. Nr. 4512B)Balsojums: par 76, pret 0, atturas 0 Likums Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e787]':
+                                    - generic [ref=e788]:
+                                      - text: 7. Likumprojekts Grozījumi Sugu un biotopu aizsardzības likumā
+                                      - generic [ref=e790]:
+                                        - text: (
+                                        - link "1277/Lp14" [ref=e791] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1277/Lp14
+                                        - text: )
+                                    - generic [ref=e792]: (2. lasījums) (Steidzams) (4 priekšlikumi)
+                                    - generic [ref=e793]:
+                                      - generic [ref=e794]:
+                                        - text: (Dok. Nr.
+                                        - link "4512B" [ref=e795] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1277/Lp14|4512B|
+                                        - text: )
+                                      - link "Balsojums" [ref=e797] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=e549dc85-0d3f-4bd7-8d45-f67f243ce752', 'Balse549dc850d3f4bd78d45f67f243ce752','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e798]: par 76, pret 0, atturas 0 Likums
+                                    - generic [ref=e799]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                        - 'row "23. 8. Likumprojekts Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14) (3. lasījums) (7 priekšlikumi) (Dok. Nr. 4531)Balsojums: par 84, pret 0, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Alīna Gendele) DKP izskatīšanas gaita" [ref=e800]':
+                          - 'cell "23. 8. Likumprojekts Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14) (3. lasījums) (7 priekšlikumi) (Dok. Nr. 4531)Balsojums: par 84, pret 0, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Alīna Gendele) DKP izskatīšanas gaita" [ref=e801]':
+                            - table [ref=e804]:
+                              - rowgroup [ref=e805]:
+                                - 'row "23. 8. Likumprojekts Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14) (3. lasījums) (7 priekšlikumi) (Dok. Nr. 4531)Balsojums: par 84, pret 0, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Alīna Gendele) DKP izskatīšanas gaita" [ref=e806]':
+                                  - cell "23." [ref=e807]
+                                  - 'cell "8. Likumprojekts Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14) (3. lasījums) (7 priekšlikumi) (Dok. Nr. 4531)Balsojums: par 84, pret 0, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Alīna Gendele) DKP izskatīšanas gaita" [ref=e808]':
+                                    - generic [ref=e809]:
+                                      - text: 8. Likumprojekts Grozījumi likumā “Par valsts sociālo apdrošināšanu”
+                                      - generic [ref=e811]:
+                                        - text: (
+                                        - link "991/Lp14" [ref=e812] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=991/Lp14
+                                        - text: )
+                                    - generic [ref=e813]: (3. lasījums) (7 priekšlikumi)
+                                    - generic [ref=e814]:
+                                      - generic [ref=e815]:
+                                        - text: (Dok. Nr.
+                                        - link "4531" [ref=e816] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=991/Lp14|4531|
+                                        - text: )
+                                      - link "Balsojums" [ref=e818] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=fa5c0624-654d-475c-90ce-67cc59d178f6', 'Balsfa5c0624654d475c90ce67cc59d178f6','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e819]: par 84, pret 0, atturas 0 Likums
+                                    - generic [ref=e820]: "Sociālo un darba lietu komisija (Referents: Alīna Gendele)"
+                                    - link "DKP izskatīšanas gaita" [ref=e822] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=fa5c0624-654d-475c-90ce-67cc59d178f6&tLevel=1&actual=1&rnd=0.28420928933191014", "Techfa5c0624654d475c90ce67cc59d178f6", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e823]
+                                      - text: DKP izskatīšanas gaita
+                        - 'row "24. 9. Likumprojekts Sabiedrības interesēs iesaistīto personu aizsardzības likums (1186/Lp14) (3. lasījums) (3 priekšlikumi) (Dok. Nr. 4611)Balsojums: par 79, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Selma Teodora Levrence) DKP izskatīšanas gaita" [ref=e824]':
+                          - 'cell "24. 9. Likumprojekts Sabiedrības interesēs iesaistīto personu aizsardzības likums (1186/Lp14) (3. lasījums) (3 priekšlikumi) (Dok. Nr. 4611)Balsojums: par 79, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Selma Teodora Levrence) DKP izskatīšanas gaita" [ref=e825]':
+                            - table [ref=e828]:
+                              - rowgroup [ref=e829]:
+                                - 'row "24. 9. Likumprojekts Sabiedrības interesēs iesaistīto personu aizsardzības likums (1186/Lp14) (3. lasījums) (3 priekšlikumi) (Dok. Nr. 4611)Balsojums: par 79, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Selma Teodora Levrence) DKP izskatīšanas gaita" [ref=e830]':
+                                  - cell "24." [ref=e831]
+                                  - 'cell "9. Likumprojekts Sabiedrības interesēs iesaistīto personu aizsardzības likums (1186/Lp14) (3. lasījums) (3 priekšlikumi) (Dok. Nr. 4611)Balsojums: par 79, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Selma Teodora Levrence) DKP izskatīšanas gaita" [ref=e832]':
+                                    - generic [ref=e833]:
+                                      - text: 9. Likumprojekts Sabiedrības interesēs iesaistīto personu aizsardzības likums
+                                      - generic [ref=e835]:
+                                        - text: (
+                                        - link "1186/Lp14" [ref=e836] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1186/Lp14
+                                        - text: )
+                                    - generic [ref=e837]: (3. lasījums) (3 priekšlikumi)
+                                    - generic [ref=e838]:
+                                      - generic [ref=e839]:
+                                        - text: (Dok. Nr.
+                                        - link "4611" [ref=e840] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1186/Lp14|4611|
+                                        - text: )
+                                      - link "Balsojums" [ref=e842] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=f86c3d7e-fecc-4680-ac26-3146f318dc0d', 'Balsf86c3d7efecc4680ac263146f318dc0d','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e843]: par 79, pret 0, atturas 0 Likums
+                                    - generic [ref=e844]: "Juridiskā komisija (Referents: Selma Teodora Levrence)"
+                                    - link "DKP izskatīšanas gaita" [ref=e846] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=f86c3d7e-fecc-4680-ac26-3146f318dc0d&tLevel=1&actual=1&rnd=0.04563315533280099", "Techf86c3d7efecc4680ac263146f318dc0d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e847]
+                                      - text: DKP izskatīšanas gaita
+                        - 'row "25. 10. Likumprojekts Grozījumi Civilprocesa likumā (1187/Lp14) (3. lasījums) (Nav priekšlikumu) (Dok. Nr. 4612)Balsojums: par 82, pret 0, atturas 1 Likums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e848]':
+                          - 'cell "25. 10. Likumprojekts Grozījumi Civilprocesa likumā (1187/Lp14) (3. lasījums) (Nav priekšlikumu) (Dok. Nr. 4612)Balsojums: par 82, pret 0, atturas 1 Likums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e849]':
+                            - table [ref=e852]:
+                              - rowgroup [ref=e853]:
+                                - 'row "25. 10. Likumprojekts Grozījumi Civilprocesa likumā (1187/Lp14) (3. lasījums) (Nav priekšlikumu) (Dok. Nr. 4612)Balsojums: par 82, pret 0, atturas 1 Likums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e854]':
+                                  - cell "25." [ref=e855]
+                                  - 'cell "10. Likumprojekts Grozījumi Civilprocesa likumā (1187/Lp14) (3. lasījums) (Nav priekšlikumu) (Dok. Nr. 4612)Balsojums: par 82, pret 0, atturas 1 Likums Juridiskā komisija (Referents: Selma Teodora Levrence)" [ref=e856]':
+                                    - generic [ref=e857]:
+                                      - text: 10. Likumprojekts Grozījumi Civilprocesa likumā
+                                      - generic [ref=e859]:
+                                        - text: (
+                                        - link "1187/Lp14" [ref=e860] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1187/Lp14
+                                        - text: )
+                                    - generic [ref=e861]: (3. lasījums) (Nav priekšlikumu)
+                                    - generic [ref=e862]:
+                                      - generic [ref=e863]:
+                                        - text: (Dok. Nr.
+                                        - link "4612" [ref=e864] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1187/Lp14|4612|
+                                        - text: )
+                                      - link "Balsojums" [ref=e866] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=936f2a74-94d0-4ee4-b4ae-e82aabfa9ac7', 'Bals936f2a7494d04ee4b4aee82aabfa9ac7','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e867]: par 82, pret 0, atturas 1 Likums
+                                    - generic [ref=e868]: "Juridiskā komisija (Referents: Selma Teodora Levrence)"
+                        - 'row "26. 11. Likumprojekts Grozījumi likumā “Par valsts kompensāciju cietušajiem” (1156/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4614)Balsojums: par 81, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e869]':
+                          - 'cell "26. 11. Likumprojekts Grozījumi likumā “Par valsts kompensāciju cietušajiem” (1156/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4614)Balsojums: par 81, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e870]':
+                            - table [ref=e873]:
+                              - rowgroup [ref=e874]:
+                                - 'row "26. 11. Likumprojekts Grozījumi likumā “Par valsts kompensāciju cietušajiem” (1156/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4614)Balsojums: par 81, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e875]':
+                                  - cell "26." [ref=e876]
+                                  - 'cell "11. Likumprojekts Grozījumi likumā “Par valsts kompensāciju cietušajiem” (1156/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4614)Balsojums: par 81, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e877]':
+                                    - generic [ref=e878]:
+                                      - text: 11. Likumprojekts Grozījumi likumā “Par valsts kompensāciju cietušajiem”
+                                      - generic [ref=e880]:
+                                        - text: (
+                                        - link "1156/Lp14" [ref=e881] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1156/Lp14
+                                        - text: )
+                                    - generic [ref=e882]: (3. lasījums) (2 priekšlikumi)
+                                    - generic [ref=e883]:
+                                      - generic [ref=e884]:
+                                        - text: (Dok. Nr.
+                                        - link "4614" [ref=e885] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1156/Lp14|4614|
+                                        - text: )
+                                      - link "Balsojums" [ref=e887] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=5f3cdb2d-bd36-422e-a6b7-be252028c979', 'Bals5f3cdb2dbd36422ea6b7be252028c979','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e888]: par 81, pret 0, atturas 0 Likums
+                                    - generic [ref=e889]: "Juridiskā komisija (Referents: Andrejs Judins)"
+                        - 'row "27. 12. Likumprojekts Grozījumi Epidemioloģiskās drošības likumā (1139/Lp14) (3. lasījums) (6 priekšlikumi) (Dok. Nr. 4616)Balsojums: par 80, pret 4, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Ingrīda Circene) DKP izskatīšanas gaita" [ref=e890]':
+                          - 'cell "27. 12. Likumprojekts Grozījumi Epidemioloģiskās drošības likumā (1139/Lp14) (3. lasījums) (6 priekšlikumi) (Dok. Nr. 4616)Balsojums: par 80, pret 4, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Ingrīda Circene) DKP izskatīšanas gaita" [ref=e891]':
+                            - table [ref=e894]:
+                              - rowgroup [ref=e895]:
+                                - 'row "27. 12. Likumprojekts Grozījumi Epidemioloģiskās drošības likumā (1139/Lp14) (3. lasījums) (6 priekšlikumi) (Dok. Nr. 4616)Balsojums: par 80, pret 4, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Ingrīda Circene) DKP izskatīšanas gaita" [ref=e896]':
+                                  - cell "27." [ref=e897]
+                                  - 'cell "12. Likumprojekts Grozījumi Epidemioloģiskās drošības likumā (1139/Lp14) (3. lasījums) (6 priekšlikumi) (Dok. Nr. 4616)Balsojums: par 80, pret 4, atturas 0 Likums Sociālo un darba lietu komisija (Referents: Ingrīda Circene) DKP izskatīšanas gaita" [ref=e898]':
+                                    - generic [ref=e899]:
+                                      - text: 12. Likumprojekts Grozījumi Epidemioloģiskās drošības likumā
+                                      - generic [ref=e901]:
+                                        - text: (
+                                        - link "1139/Lp14" [ref=e902] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1139/Lp14
+                                        - text: )
+                                    - generic [ref=e903]: (3. lasījums) (6 priekšlikumi)
+                                    - generic [ref=e904]:
+                                      - generic [ref=e905]:
+                                        - text: (Dok. Nr.
+                                        - link "4616" [ref=e906] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1139/Lp14|4616|
+                                        - text: )
+                                      - link "Balsojums" [ref=e908] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=9449ea60-8bbd-4c86-9091-50d858e12abf', 'Bals9449ea608bbd4c86909150d858e12abf','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e909]: par 80, pret 4, atturas 0 Likums
+                                    - generic [ref=e910]: "Sociālo un darba lietu komisija (Referents: Ingrīda Circene)"
+                                    - link "DKP izskatīšanas gaita" [ref=e912] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=9449ea60-8bbd-4c86-9091-50d858e12abf&tLevel=1&actual=1&rnd=0.7219101143392319", "Tech9449ea608bbd4c86909150d858e12abf", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e913]
+                                      - text: DKP izskatīšanas gaita
+                        - 'row "28. 13. Likumprojekts Grozījumi Valsts robežsardzes likumā (1197/Lp14) (3. lasījums) (1 priekšlikums) (Dok. Nr. 4618)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Raimonds Bergmanis)" [ref=e914]':
+                          - 'cell "28. 13. Likumprojekts Grozījumi Valsts robežsardzes likumā (1197/Lp14) (3. lasījums) (1 priekšlikums) (Dok. Nr. 4618)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Raimonds Bergmanis)" [ref=e915]':
+                            - table [ref=e918]:
+                              - rowgroup [ref=e919]:
+                                - 'row "28. 13. Likumprojekts Grozījumi Valsts robežsardzes likumā (1197/Lp14) (3. lasījums) (1 priekšlikums) (Dok. Nr. 4618)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Raimonds Bergmanis)" [ref=e920]':
+                                  - cell "28." [ref=e921]
+                                  - 'cell "13. Likumprojekts Grozījumi Valsts robežsardzes likumā (1197/Lp14) (3. lasījums) (1 priekšlikums) (Dok. Nr. 4618)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Raimonds Bergmanis)" [ref=e922]':
+                                    - generic [ref=e923]:
+                                      - text: 13. Likumprojekts Grozījumi Valsts robežsardzes likumā
+                                      - generic [ref=e925]:
+                                        - text: (
+                                        - link "1197/Lp14" [ref=e926] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1197/Lp14
+                                        - text: )
+                                    - generic [ref=e927]: (3. lasījums) (1 priekšlikums)
+                                    - generic [ref=e928]:
+                                      - generic [ref=e929]:
+                                        - text: (Dok. Nr.
+                                        - link "4618" [ref=e930] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1197/Lp14|4618|
+                                        - text: )
+                                      - link "Balsojums" [ref=e932] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=70d4d54a-4b90-42a4-a19e-c5c3cec2672c', 'Bals70d4d54a4b9042a4a19ec5c3cec2672c','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e933]: par 86, pret 0, atturas 0 Likums
+                                    - generic [ref=e934]: "Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Raimonds Bergmanis)"
+                        - 'row "29. 14. Likumprojekts Grozījumi Biometrijas datu apstrādes sistēmas likumā (1203/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4619)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Jānis Skrastiņš)" [ref=e935]':
+                          - 'cell "29. 14. Likumprojekts Grozījumi Biometrijas datu apstrādes sistēmas likumā (1203/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4619)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Jānis Skrastiņš)" [ref=e936]':
+                            - table [ref=e939]:
+                              - rowgroup [ref=e940]:
+                                - 'row "29. 14. Likumprojekts Grozījumi Biometrijas datu apstrādes sistēmas likumā (1203/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4619)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Jānis Skrastiņš)" [ref=e941]':
+                                  - cell "29." [ref=e942]
+                                  - 'cell "14. Likumprojekts Grozījumi Biometrijas datu apstrādes sistēmas likumā (1203/Lp14) (3. lasījums) (2 priekšlikumi) (Dok. Nr. 4619)Balsojums: par 86, pret 0, atturas 0 Likums Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Jānis Skrastiņš)" [ref=e943]':
+                                    - generic [ref=e944]:
+                                      - text: 14. Likumprojekts Grozījumi Biometrijas datu apstrādes sistēmas likumā
+                                      - generic [ref=e946]:
+                                        - text: (
+                                        - link "1203/Lp14" [ref=e947] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1203/Lp14
+                                        - text: )
+                                    - generic [ref=e948]: (3. lasījums) (2 priekšlikumi)
+                                    - generic [ref=e949]:
+                                      - generic [ref=e950]:
+                                        - text: (Dok. Nr.
+                                        - link "4619" [ref=e951] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1203/Lp14|4619|
+                                        - text: )
+                                      - link "Balsojums" [ref=e953] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=6ce9b08a-55ea-4b29-bcb5-867e55d2924c', 'Bals6ce9b08a55ea4b29bcb5867e55d2924c','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e954]: par 86, pret 0, atturas 0 Likums
+                                    - generic [ref=e955]: "Aizsardzības, iekšlietu un korupcijas novēršanas komisija (Referents: Jānis Skrastiņš)"
+                        - 'row "30. 15. Likumprojekts Grozījumi Bibliotēku likumā (1284/Lp14) (1. lasījums) (Dok. Nr. 4547, 4592)Balsojums: par 85, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Agita Zariņa-Stūre) Debates" [ref=e956]':
+                          - 'cell "30. 15. Likumprojekts Grozījumi Bibliotēku likumā (1284/Lp14) (1. lasījums) (Dok. Nr. 4547, 4592)Balsojums: par 85, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Agita Zariņa-Stūre) Debates" [ref=e957]':
+                            - table [ref=e960]:
+                              - rowgroup [ref=e961]:
+                                - 'row "30. 15. Likumprojekts Grozījumi Bibliotēku likumā (1284/Lp14) (1. lasījums) (Dok. Nr. 4547, 4592)Balsojums: par 85, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Agita Zariņa-Stūre) Debates" [ref=e962]':
+                                  - cell "30." [ref=e963]
+                                  - 'cell "15. Likumprojekts Grozījumi Bibliotēku likumā (1284/Lp14) (1. lasījums) (Dok. Nr. 4547, 4592)Balsojums: par 85, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Agita Zariņa-Stūre) Debates" [ref=e964]':
+                                    - generic [ref=e965]:
+                                      - text: 15. Likumprojekts Grozījumi Bibliotēku likumā
+                                      - generic [ref=e967]:
+                                        - text: (
+                                        - link "1284/Lp14" [ref=e968] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1284/Lp14
+                                        - text: )
+                                    - generic [ref=e969]: (1. lasījums)
+                                    - generic [ref=e970]:
+                                      - generic [ref=e971]:
+                                        - text: (Dok. Nr.
+                                        - link "4547" [ref=e972] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1284/Lp14|4547|
+                                        - text: ","
+                                        - link "4592" [ref=e973] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1284/Lp14|4592|
+                                        - text: )
+                                      - link "Balsojums" [ref=e975] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=f9fc993e-a6e2-4201-a328-e30126923b93', 'Balsf9fc993ea6e24201a328e30126923b93','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e976]: par 85, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e977]: "Izglītības, kultūras un zinātnes komisija (Referents: Agita Zariņa-Stūre)"
+                                    - link "Debates" [ref=e979] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=f9fc993e-a6e2-4201-a328-e30126923b93&actual=1&rnd=0.9763227276560584", "Debf9fc993ea6e24201a328e30126923b93", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e980]
+                                      - text: Debates
+                        - 'row "31. 16. Likumprojekts Grozījums Operatīvās darbības likumā (1252/Lp14) (2. lasījums) (4 priekšlikumi) (Dok. Nr. 4615)Balsojums: par 83, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins)" [ref=e981]':
+                          - 'cell "31. 16. Likumprojekts Grozījums Operatīvās darbības likumā (1252/Lp14) (2. lasījums) (4 priekšlikumi) (Dok. Nr. 4615)Balsojums: par 83, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins)" [ref=e982]':
+                            - table [ref=e985]:
+                              - rowgroup [ref=e986]:
+                                - 'row "31. 16. Likumprojekts Grozījums Operatīvās darbības likumā (1252/Lp14) (2. lasījums) (4 priekšlikumi) (Dok. Nr. 4615)Balsojums: par 83, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins)" [ref=e987]':
+                                  - cell "31." [ref=e988]
+                                  - 'cell "16. Likumprojekts Grozījums Operatīvās darbības likumā (1252/Lp14) (2. lasījums) (4 priekšlikumi) (Dok. Nr. 4615)Balsojums: par 83, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins)" [ref=e989]':
+                                    - generic [ref=e990]:
+                                      - text: 16. Likumprojekts Grozījums Operatīvās darbības likumā
+                                      - generic [ref=e992]:
+                                        - text: (
+                                        - link "1252/Lp14" [ref=e993] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1252/Lp14
+                                        - text: )
+                                    - generic [ref=e994]: (2. lasījums) (4 priekšlikumi)
+                                    - generic [ref=e995]:
+                                      - generic [ref=e996]:
+                                        - text: (Dok. Nr.
+                                        - link "4615" [ref=e997] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1252/Lp14|4615|
+                                        - text: )
+                                      - link "Balsojums" [ref=e999] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=662bf852-0185-41d4-a11d-3b7829395fee', 'Bals662bf852018541d4a11d3b7829395fee','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1000]: par 83, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1001]: "Juridiskā komisija (Referents: Andrejs Judins)"
+                        - 'row "32. 17. Likumprojekts Grozījumi Civilprocesa likumā (1198/Lp14) (2. lasījums) (18 priekšlikumi) (Dok. Nr. 4617)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Agnese Krasta)" [ref=e1002]':
+                          - 'cell "32. 17. Likumprojekts Grozījumi Civilprocesa likumā (1198/Lp14) (2. lasījums) (18 priekšlikumi) (Dok. Nr. 4617)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Agnese Krasta)" [ref=e1003]':
+                            - table [ref=e1006]:
+                              - rowgroup [ref=e1007]:
+                                - 'row "32. 17. Likumprojekts Grozījumi Civilprocesa likumā (1198/Lp14) (2. lasījums) (18 priekšlikumi) (Dok. Nr. 4617)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Agnese Krasta)" [ref=e1008]':
+                                  - cell "32." [ref=e1009]
+                                  - 'cell "17. Likumprojekts Grozījumi Civilprocesa likumā (1198/Lp14) (2. lasījums) (18 priekšlikumi) (Dok. Nr. 4617)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Agnese Krasta)" [ref=e1010]':
+                                    - generic [ref=e1011]:
+                                      - text: 17. Likumprojekts Grozījumi Civilprocesa likumā
+                                      - generic [ref=e1013]:
+                                        - text: (
+                                        - link "1198/Lp14" [ref=e1014] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1198/Lp14
+                                        - text: )
+                                    - generic [ref=e1015]: (2. lasījums) (18 priekšlikumi)
+                                    - generic [ref=e1016]:
+                                      - generic [ref=e1017]:
+                                        - text: (Dok. Nr.
+                                        - link "4617" [ref=e1018] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1198/Lp14|4617|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1020] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=ba943587-80e9-49bb-900c-3926644a5d3e', 'Balsba94358780e949bb900c3926644a5d3e','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1021]: par 86, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1022]: "Juridiskā komisija (Referents: Agnese Krasta)"
+                        - 'row "33. 18. Likumprojekts Grozījumi Rail Baltica projekta īstenošanas likumā (1149/Lp14) (2. lasījums) (28 priekšlikumi) (Dok. Nr. 4621)Balsojums: par 71, pret 7, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Andris Kulbergs) DKP izskatīšanas gaita" [ref=e1023]':
+                          - 'cell "33. 18. Likumprojekts Grozījumi Rail Baltica projekta īstenošanas likumā (1149/Lp14) (2. lasījums) (28 priekšlikumi) (Dok. Nr. 4621)Balsojums: par 71, pret 7, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Andris Kulbergs) DKP izskatīšanas gaita" [ref=e1024]':
+                            - table [ref=e1027]:
+                              - rowgroup [ref=e1028]:
+                                - 'row "33. 18. Likumprojekts Grozījumi Rail Baltica projekta īstenošanas likumā (1149/Lp14) (2. lasījums) (28 priekšlikumi) (Dok. Nr. 4621)Balsojums: par 71, pret 7, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Andris Kulbergs) DKP izskatīšanas gaita" [ref=e1029]':
+                                  - cell "33." [ref=e1030]
+                                  - 'cell "18. Likumprojekts Grozījumi Rail Baltica projekta īstenošanas likumā (1149/Lp14) (2. lasījums) (28 priekšlikumi) (Dok. Nr. 4621)Balsojums: par 71, pret 7, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Andris Kulbergs) DKP izskatīšanas gaita" [ref=e1031]':
+                                    - generic [ref=e1032]:
+                                      - text: 18. Likumprojekts Grozījumi Rail Baltica projekta īstenošanas likumā
+                                      - generic [ref=e1034]:
+                                        - text: (
+                                        - link "1149/Lp14" [ref=e1035] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1149/Lp14
+                                        - text: )
+                                    - generic [ref=e1036]: (2. lasījums) (28 priekšlikumi)
+                                    - generic [ref=e1037]:
+                                      - generic [ref=e1038]:
+                                        - text: (Dok. Nr.
+                                        - link "4621" [ref=e1039] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1149/Lp14|4621|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1041] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=8e3e7b88-cca5-4ec6-b235-4f8865d13186', 'Bals8e3e7b88cca54ec6b2354f8865d13186','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1042]: par 71, pret 7, atturas 0 Pieņemts
+                                    - generic [ref=e1043]: "Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Andris Kulbergs)"
+                                    - link "DKP izskatīšanas gaita" [ref=e1045] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=8e3e7b88-cca5-4ec6-b235-4f8865d13186&tLevel=1&actual=1&rnd=0.8014541138331305", "Tech8e3e7b88cca54ec6b2354f8865d13186", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e1046]
+                                      - text: DKP izskatīšanas gaita
+                        - row "VI. Lēmumu projektu izskatīšana" [ref=e1047]:
+                          - cell "VI. Lēmumu projektu izskatīšana" [ref=e1048]
+                        - 'row "48. Lēmuma projekts Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14) (Dok. Nr. 4662)Balsojums: par 49, pret 23, atturas 1 Paziņojums Budžeta un finanšu (nodokļu) komisija (Referents: Anda Čakša) Debates" [ref=e1049]':
+                          - 'cell "48. Lēmuma projekts Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14) (Dok. Nr. 4662)Balsojums: par 49, pret 23, atturas 1 Paziņojums Budžeta un finanšu (nodokļu) komisija (Referents: Anda Čakša) Debates" [ref=e1050]':
+                            - table [ref=e1053]:
+                              - rowgroup [ref=e1054]:
+                                - 'row "48. Lēmuma projekts Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14) (Dok. Nr. 4662)Balsojums: par 49, pret 23, atturas 1 Paziņojums Budžeta un finanšu (nodokļu) komisija (Referents: Anda Čakša) Debates" [ref=e1055]':
+                                  - cell "48." [ref=e1056]
+                                  - 'cell "Lēmuma projekts Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14) (Dok. Nr. 4662)Balsojums: par 49, pret 23, atturas 1 Paziņojums Budžeta un finanšu (nodokļu) komisija (Referents: Anda Čakša) Debates" [ref=e1057]':
+                                    - generic [ref=e1058]:
+                                      - text: Lēmuma projekts Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation”
+                                      - generic [ref=e1060]:
+                                        - text: (
+                                        - link "953/Lm14" [ref=e1061] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=953/Lm14
+                                        - text: )
+                                    - generic [ref=e1062]:
+                                      - generic [ref=e1063]:
+                                        - text: (Dok. Nr.
+                                        - link "4662" [ref=e1064] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEBRespDocumByNum?OpenView&restricttocategory=953/Lm14|4662|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1066] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=4e7fc213-d6f8-4532-8e4e-b5667fa18a97', 'Bals4e7fc213d6f845328e4eb5667fa18a97','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1067]: par 49, pret 23, atturas 1 Paziņojums
+                                    - generic [ref=e1068]: "Budžeta un finanšu (nodokļu) komisija (Referents: Anda Čakša)"
+                                    - link "Debates" [ref=e1070] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=4e7fc213-d6f8-4532-8e4e-b5667fa18a97&actual=1&rnd=0.5008450360266423", "Deb4e7fc213d6f845328e4eb5667fa18a97", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e1071]
+                                      - text: Debates
+                        - row "Ar sēdes norisi saistīti jautājumi" [ref=e1072]:
+                          - cell "Ar sēdes norisi saistīti jautājumi" [ref=e1073]:
+                            - img [ref=e1074]
+                            - link "Ar sēdes norisi saistīti jautājumi" [ref=e1075] [cursor=pointer]:
+                              - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&tp=ut&dkp1=4e7fc213-d6f8-4532-8e4e-b5667fa18a97&dkp2=8100507d-78ab-4eec-b8ab-f391029be63d&actual=1&rnd=0.8782876532996988", "Tech8100507d78ab4eecb8abf391029be63d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                        - row "VII. Likumprojektu izskatīšana" [ref=e1076]:
+                          - cell "VII. Likumprojektu izskatīšana" [ref=e1077]
+                        - 'row "39. 1. Likumprojekts Grozījumi Augstskolu likumā (1302/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4607, 4649)Balsojums: par 83, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) Debates DKP izskatīšanas gaita" [ref=e1078]':
+                          - 'cell "39. 1. Likumprojekts Grozījumi Augstskolu likumā (1302/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4607, 4649)Balsojums: par 83, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) Debates DKP izskatīšanas gaita" [ref=e1079]':
+                            - table [ref=e1082]:
+                              - rowgroup [ref=e1083]:
+                                - 'row "39. 1. Likumprojekts Grozījumi Augstskolu likumā (1302/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4607, 4649)Balsojums: par 83, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) Debates DKP izskatīšanas gaita" [ref=e1084]':
+                                  - cell "39." [ref=e1085]
+                                  - 'cell "1. Likumprojekts Grozījumi Augstskolu likumā (1302/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4607, 4649)Balsojums: par 83, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) Debates DKP izskatīšanas gaita" [ref=e1086]':
+                                    - generic [ref=e1087]:
+                                      - text: 1. Likumprojekts Grozījumi Augstskolu likumā
+                                      - generic [ref=e1089]:
+                                        - text: (
+                                        - link "1302/Lp14" [ref=e1090] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1302/Lp14
+                                        - text: )
+                                    - generic [ref=e1091]: (1. lasījums) (Komisija ierosina atzīt par steidzamu)
+                                    - generic [ref=e1092]:
+                                      - generic [ref=e1093]:
+                                        - text: (Dok. Nr.
+                                        - link "4607" [ref=e1094] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1302/Lp14|4607|
+                                        - text: ","
+                                        - link "4649" [ref=e1095] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1302/Lp14|4649|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1097] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=8100507d-78ab-4eec-b8ab-f391029be63d', 'Bals8100507d78ab4eecb8abf391029be63d','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1098]: par 83, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1099]: "Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa)"
+                                    - generic [ref=e1100]:
+                                      - link "Debates" [ref=e1101] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=8100507d-78ab-4eec-b8ab-f391029be63d&actual=1&rnd=0.8046495424946613", "Deb8100507d78ab4eecb8abf391029be63d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1102]
+                                        - text: Debates
+                                      - link "DKP izskatīšanas gaita" [ref=e1103] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=8100507d-78ab-4eec-b8ab-f391029be63d&tLevel=1&actual=1&rnd=0.4960864270860683", "Tech8100507d78ab4eecb8abf391029be63d", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1104]
+                                        - text: DKP izskatīšanas gaita
+                        - 'row "40. 2. Likumprojekts Grozījumi Izglītības likumā (1303/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4608, 4650)Balsojums: par 77, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1105]':
+                          - 'cell "40. 2. Likumprojekts Grozījumi Izglītības likumā (1303/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4608, 4650)Balsojums: par 77, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1106]':
+                            - table [ref=e1109]:
+                              - rowgroup [ref=e1110]:
+                                - 'row "40. 2. Likumprojekts Grozījumi Izglītības likumā (1303/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4608, 4650)Balsojums: par 77, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1111]':
+                                  - cell "40." [ref=e1112]
+                                  - 'cell "2. Likumprojekts Grozījumi Izglītības likumā (1303/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4608, 4650)Balsojums: par 77, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1113]':
+                                    - generic [ref=e1114]:
+                                      - text: 2. Likumprojekts Grozījumi Izglītības likumā
+                                      - generic [ref=e1116]:
+                                        - text: (
+                                        - link "1303/Lp14" [ref=e1117] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1303/Lp14
+                                        - text: )
+                                    - generic [ref=e1118]: (1. lasījums) (Komisija ierosina atzīt par steidzamu)
+                                    - generic [ref=e1119]:
+                                      - generic [ref=e1120]:
+                                        - text: (Dok. Nr.
+                                        - link "4608" [ref=e1121] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1303/Lp14|4608|
+                                        - text: ","
+                                        - link "4650" [ref=e1122] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1303/Lp14|4650|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1124] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=9a7379a5-7a2c-4c51-ab88-b89cc228a489', 'Bals9a7379a57a2c4c51ab88b89cc228a489','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1125]: par 77, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1126]: "Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa)"
+                                    - link "DKP izskatīšanas gaita" [ref=e1128] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=9a7379a5-7a2c-4c51-ab88-b89cc228a489&tLevel=1&actual=1&rnd=0.009791337186794813", "Tech9a7379a57a2c4c51ab88b89cc228a489", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e1129]
+                                      - text: DKP izskatīšanas gaita
+                        - 'row "41. 3. Likumprojekts Grozījumi Profesionālās izglītības likumā (1304/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4609, 4651)Balsojums: par 81, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1130]':
+                          - 'cell "41. 3. Likumprojekts Grozījumi Profesionālās izglītības likumā (1304/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4609, 4651)Balsojums: par 81, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1131]':
+                            - table [ref=e1134]:
+                              - rowgroup [ref=e1135]:
+                                - 'row "41. 3. Likumprojekts Grozījumi Profesionālās izglītības likumā (1304/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4609, 4651)Balsojums: par 81, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1136]':
+                                  - cell "41." [ref=e1137]
+                                  - 'cell "3. Likumprojekts Grozījumi Profesionālās izglītības likumā (1304/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4609, 4651)Balsojums: par 81, pret 0, atturas 0 Pieņemts Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa) DKP izskatīšanas gaita" [ref=e1138]':
+                                    - generic [ref=e1139]:
+                                      - text: 3. Likumprojekts Grozījumi Profesionālās izglītības likumā
+                                      - generic [ref=e1141]:
+                                        - text: (
+                                        - link "1304/Lp14" [ref=e1142] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1304/Lp14
+                                        - text: )
+                                    - generic [ref=e1143]: (1. lasījums) (Komisija ierosina atzīt par steidzamu)
+                                    - generic [ref=e1144]:
+                                      - generic [ref=e1145]:
+                                        - text: (Dok. Nr.
+                                        - link "4609" [ref=e1146] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1304/Lp14|4609|
+                                        - text: ","
+                                        - link "4651" [ref=e1147] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1304/Lp14|4651|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1149] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=5060c6ac-dec8-4de9-9e91-ee4d24a490a5', 'Bals5060c6acdec84de99e91ee4d24a490a5','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1150]: par 81, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1151]: "Izglītības, kultūras un zinātnes komisija (Referents: Antoņina Ņenaševa)"
+                                    - link "DKP izskatīšanas gaita" [ref=e1153] [cursor=pointer]:
+                                      - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=5060c6ac-dec8-4de9-9e91-ee4d24a490a5&tLevel=1&actual=1&rnd=0.7755849067938343", "Tech5060c6acdec84de99e91ee4d24a490a5", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                      - img [ref=e1154]
+                                      - text: DKP izskatīšanas gaita
+                        - 'row "42. 4. Likumprojekts Grozījumi Ceļu satiksmes likumā (1286/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4569, 4652)Balsojums: par 88, pret 0, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Valdis Maslovskis) Debates DKP izskatīšanas gaita" [ref=e1155]':
+                          - 'cell "42. 4. Likumprojekts Grozījumi Ceļu satiksmes likumā (1286/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4569, 4652)Balsojums: par 88, pret 0, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Valdis Maslovskis) Debates DKP izskatīšanas gaita" [ref=e1156]':
+                            - table [ref=e1159]:
+                              - rowgroup [ref=e1160]:
+                                - 'row "42. 4. Likumprojekts Grozījumi Ceļu satiksmes likumā (1286/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4569, 4652)Balsojums: par 88, pret 0, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Valdis Maslovskis) Debates DKP izskatīšanas gaita" [ref=e1161]':
+                                  - cell "42." [ref=e1162]
+                                  - 'cell "4. Likumprojekts Grozījumi Ceļu satiksmes likumā (1286/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4569, 4652)Balsojums: par 88, pret 0, atturas 0 Pieņemts Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Valdis Maslovskis) Debates DKP izskatīšanas gaita" [ref=e1163]':
+                                    - generic [ref=e1164]:
+                                      - text: 4. Likumprojekts Grozījumi Ceļu satiksmes likumā
+                                      - generic [ref=e1166]:
+                                        - text: (
+                                        - link "1286/Lp14" [ref=e1167] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1286/Lp14
+                                        - text: )
+                                    - generic [ref=e1168]: (1. lasījums) (Komisija ierosina atzīt par steidzamu)
+                                    - generic [ref=e1169]:
+                                      - generic [ref=e1170]:
+                                        - text: (Dok. Nr.
+                                        - link "4569" [ref=e1171] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1286/Lp14|4569|
+                                        - text: ","
+                                        - link "4652" [ref=e1172] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1286/Lp14|4652|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1174] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=494af9cd-a236-47e4-bbd6-38653feae88b', 'Bals494af9cda23647e4bbd638653feae88b','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1175]: par 88, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1176]: "Tautsaimniecības, agrārās, vides un reģionālās politikas komisija (Referents: Valdis Maslovskis)"
+                                    - generic [ref=e1177]:
+                                      - link "Debates" [ref=e1178] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=494af9cd-a236-47e4-bbd6-38653feae88b&actual=1&rnd=0.7635588634599214", "Deb494af9cda23647e4bbd638653feae88b", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1179]
+                                        - text: Debates
+                                      - link "DKP izskatīšanas gaita" [ref=e1180] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=494af9cd-a236-47e4-bbd6-38653feae88b&tLevel=1&actual=1&rnd=0.8092509148405942", "Tech494af9cda23647e4bbd638653feae88b", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1181]
+                                        - text: DKP izskatīšanas gaita
+                        - 'row "47. 5. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins) Debates DKP izskatīšanas gaita" [ref=e1182]':
+                          - 'cell "47. 5. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins) Debates DKP izskatīšanas gaita" [ref=e1183]':
+                            - table [ref=e1186]:
+                              - rowgroup [ref=e1187]:
+                                - 'row "47. 5. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins) Debates DKP izskatīšanas gaita" [ref=e1188]':
+                                  - cell "47." [ref=e1189]
+                                  - 'cell "5. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (1. lasījums) (Komisija ierosina atzīt par steidzamu) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Pieņemts Juridiskā komisija (Referents: Andrejs Judins) Debates DKP izskatīšanas gaita" [ref=e1190]':
+                                    - generic [ref=e1191]:
+                                      - text: 5. Likumprojekts Grozījumi Kriminālprocesa likumā
+                                      - generic [ref=e1193]:
+                                        - text: (
+                                        - link "1312/Lp14" [ref=e1194] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1312/Lp14
+                                        - text: )
+                                    - generic [ref=e1195]: (1. lasījums) (Komisija ierosina atzīt par steidzamu)
+                                    - generic [ref=e1196]:
+                                      - generic [ref=e1197]:
+                                        - text: (Dok. Nr.
+                                        - link "4634" [ref=e1198] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1312/Lp14|4634|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1200] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=efee258a-356c-40b1-a9c6-ed6072fa62db', 'Balsefee258a356c40b1a9c6ed6072fa62db','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1201]: par 86, pret 0, atturas 0 Pieņemts
+                                    - generic [ref=e1202]: "Juridiskā komisija (Referents: Andrejs Judins)"
+                                    - generic [ref=e1203]:
+                                      - link "Debates" [ref=e1204] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getDebates?OpenAgent&dkp=efee258a-356c-40b1-a9c6-ed6072fa62db&actual=1&rnd=0.5247077320840632", "Debefee258a356c40b1a9c6ed6072fa62db", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1205]
+                                        - text: Debates
+                                      - link "DKP izskatīšanas gaita" [ref=e1206] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&dkp=efee258a-356c-40b1-a9c6-ed6072fa62db&tLevel=1&actual=1&rnd=0.37852816016100055", "Techefee258a356c40b1a9c6ed6072fa62db", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                                        - img [ref=e1207]
+                                        - text: DKP izskatīšanas gaita
+                        - 'row "49. 6. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (2. lasījums) (Steidzams) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e1208]':
+                          - 'cell "49. 6. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (2. lasījums) (Steidzams) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e1209]':
+                            - table [ref=e1212]:
+                              - rowgroup [ref=e1213]:
+                                - 'row "49. 6. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (2. lasījums) (Steidzams) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e1214]':
+                                  - cell "49." [ref=e1215]
+                                  - 'cell "6. Likumprojekts Grozījumi Kriminālprocesa likumā (1312/Lp14) (2. lasījums) (Steidzams) (Dok. Nr. 4634)Balsojums: par 86, pret 0, atturas 0 Likums Juridiskā komisija (Referents: Andrejs Judins)" [ref=e1216]':
+                                    - generic [ref=e1217]:
+                                      - text: 6. Likumprojekts Grozījumi Kriminālprocesa likumā
+                                      - generic [ref=e1219]:
+                                        - text: (
+                                        - link "1312/Lp14" [ref=e1220] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1312/Lp14
+                                        - text: )
+                                    - generic [ref=e1221]: (2. lasījums) (Steidzams)
+                                    - generic [ref=e1222]:
+                                      - generic [ref=e1223]:
+                                        - text: (Dok. Nr.
+                                        - link "4634" [ref=e1224] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/WEBRespDocumByNum?OpenView&restricttocategory=1312/Lp14|4634|
+                                        - text: )
+                                      - link "Balsojums" [ref=e1226] [cursor=pointer]:
+                                        - /url: javascript:var wnd=window.open('./Voting?ReadForm&parentID=63aadd0e-33d3-4fd0-9aeb-afd2a567f828', 'Bals63aadd0e33d34fd09aebafd2a567f828','resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=700, width=825');wnd.focus()
+                                      - text: ":"
+                                      - generic [ref=e1227]: par 86, pret 0, atturas 0 Likums
+                                    - generic [ref=e1228]: "Juridiskā komisija (Referents: Andrejs Judins)"
+                        - row "Ar sēdes norisi saistīti jautājumi" [ref=e1229]:
+                          - cell "Ar sēdes norisi saistīti jautājumi" [ref=e1230]:
+                            - img [ref=e1231]
+                            - link "Ar sēdes norisi saistīti jautājumi" [ref=e1232] [cursor=pointer]:
+                              - /url: javascript:var wnd=window.open("./getTechDKP?OpenAgent&tp=ut&dkp1=63aadd0e-33d3-4fd0-9aeb-afd2a567f828&dkp2=d95cdec6-5282-4412-bf24-e9eb917bb504&actual=1&rnd=0.3423435115543828", "Techd95cdec652824412bf24e9eb917bb504", "resizable=yes,scrollbars=yes,location=no,menubar=no,status=no,height=400, width=825");wnd.focus();
+                        - row "VIII. Izslēgtie no darba kārtības" [ref=e1233]:
+                          - cell "VIII. Izslēgtie no darba kārtības" [ref=e1234]
+                        - 'row "19. Likumprojekts Grozījumi likumā “Par piesārņojumu” (1274/Lp14) Ar lēmuma projektu Nr.950/Lm14 mainīts likumprojekta izskatīšanas Saeimas sēdē datums uz 2026. gada 14. maiju (2. lasījums) (Steidzams) Izslēgts no DK Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e1235]':
+                          - 'cell "19. Likumprojekts Grozījumi likumā “Par piesārņojumu” (1274/Lp14) Ar lēmuma projektu Nr.950/Lm14 mainīts likumprojekta izskatīšanas Saeimas sēdē datums uz 2026. gada 14. maiju (2. lasījums) (Steidzams) Izslēgts no DK Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e1236]':
+                            - table [ref=e1239]:
+                              - rowgroup [ref=e1240]:
+                                - 'row "19. Likumprojekts Grozījumi likumā “Par piesārņojumu” (1274/Lp14) Ar lēmuma projektu Nr.950/Lm14 mainīts likumprojekta izskatīšanas Saeimas sēdē datums uz 2026. gada 14. maiju (2. lasījums) (Steidzams) Izslēgts no DK Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e1241]':
+                                  - cell "19." [ref=e1242]
+                                  - 'cell "Likumprojekts Grozījumi likumā “Par piesārņojumu” (1274/Lp14) Ar lēmuma projektu Nr.950/Lm14 mainīts likumprojekta izskatīšanas Saeimas sēdē datums uz 2026. gada 14. maiju (2. lasījums) (Steidzams) Izslēgts no DK Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)" [ref=e1243]':
+                                    - generic [ref=e1244]:
+                                      - text: Likumprojekts Grozījumi likumā “Par piesārņojumu”
+                                      - generic [ref=e1246]:
+                                        - text: (
+                                        - link "1274/Lp14" [ref=e1247] [cursor=pointer]:
+                                          - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1274/Lp14
+                                        - text: )
+                                    - generic [ref=e1248]: Ar lēmuma projektu Nr.950/Lm14 mainīts likumprojekta izskatīšanas Saeimas sēdē datums uz 2026. gada 14. maiju
+                                    - generic [ref=e1249]: (2. lasījums) (Steidzams)
+                                    - generic [ref=e1251]: Izslēgts no DK
+                                    - generic [ref=e1252]: "Valsts pārvaldes un pašvaldības komisija (Referents: Oļegs Burovs)"
+                  - generic [ref=e1253]: Sēde beigusies 16.04.2026 16:33
+      - cell [ref=e1254]:
+        - img [ref=e1255]
+    - row [ref=e1256]:
+      - cell [ref=e1257]:
+        - img [ref=e1258]

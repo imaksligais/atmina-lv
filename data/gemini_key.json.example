@@ -1,0 +1,4 @@
+{
+  "api_key": "your-google-genai-api-key-here",
+  "model": "gemini-3.1-flash-image"
+}

@@ -1,0 +1,963 @@
+{
+  "q01": {
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "nepieļaut Latvijas iesaistīšanos militārajos konfliktos, tai skaitā to finansēšanu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "CVK piemin Ukrainu tikai kā vienu no sabiedrotajiem divpusējo attiecību uzskaitījumā, bet kara atbalsta nostāju nedod; pilnā programma satur to pašu uzskaitījumu bez atbalsta solījuma."
+    },
+    "SC": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atbalstīsim proaktīvu diplomātiju taisnīgam mieram, saglabājot Ukrainas suverenitāti, teritoriālo integritāti un drošības garantijas.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politisko-partiju-apvieniba-saskanas-centrs",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "nelokāms atbalsts Ukrainai un Latvijas uzņēmēju iesaiste tās atjaunošanā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atbalstīsim Ukrainu militāri, politiski un ekonomiski līdz uzvarai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "GS": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532766,
+      "citats": "Krievijas un Ukrainas konfliktā Latvija neieņems aktīvu, priekšplānā ejošu pozīciju, kas nepamatoti palielina riskus mūsu pašu drošībai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts"
+    },
+    "AS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532842,
+      "citats": "Turpināsim nelokāmu atbalstu Ukrainai, vienlaikus stiprinot Latvijas aizsardzības industriju, militāro mobilitāti un noturību pret Krievijas agresiju un hibrīduzbrukumiem.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija"
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532657,
+      "citats": "Atbalstīsim Ukrainas iestāšanos ES.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "JV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Turpināsim visaptverošu politisku, militāru un diplomātisku atbalstu Ukrainai līdz taisnīgam mieram un Ukrainas eiroatlantiskajai integrācijai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Militāri tehnoloģiska alianse ar Ukrainu pieredzes pārņemšanai un kopīgiem projektiem nedod tiešu kara atbalsta nostāju."
+    },
+    "LA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Turpināsim visaptverošu politisko, militāro un humāno atbalstu Ukrainai līdz taisnīga un ilgtspējīga miera panākšanai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvijas-attistibai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532611,
+      "citats": "Atbalstīsim Ukrainas ceļu uz NATO",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "ST": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Valsts neitralitātes atjaunošana un atteikšanās no dalības militāros konfliktos starp citām valstīm.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "NATO sadarbība ar Ukrainu draudu novēršanā minēta bez tiešas kara atbalsta nostājas."
+    }
+  },
+  "q02": {
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "pārdalīt aizsardzības budžetu iekšējās drošības garantēšanai un infrastruktūrai, nodrošinot papildu finansējumu medicīnai un glābšanas dienestiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "Abos dokumentos ir vispārīga drošības stiprināšana bez 5 % skaitļa un bez aizsardzības budžeta samazinājuma, tāpēc nostājas nav."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Drošība, NATO sadarbība un kiberaizsardzība minēta bez 5 % skaitļa un bez budžeta samazinājuma, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "aizsardzībai – virs 5% no IKP",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Aizsardzības finansējumu palielināsim virs 5% no IKP, attīstot vietējo militāro industriju.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Iekšējā drošība, droni un pretgaisa aizsardzība minēti bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Drošības investīcijas un robeža minētas bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "Alianse, droni un iepirkumi minēti bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "JV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Nodrošināsim aizsardzības finansējumu 5% no IKP",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jauna-vienotiba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Aizsardzības sistēma, NATO un militārā industrija minētas bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "LA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "saglabāsim aizsardzības finansējumu vismaz 5 % apmērā no iekšzemes kopprodukta",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvijas-attistibai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "NBS gatavība un sadarbība ar ASV minētas bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Abos dokumentos minēta vispārīga drošība un enerģētika bez 5 % skaitļa un bez budžeta samazinājuma."
+    },
+    "PRO": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Saglabāsim finansējumu aizsardzības nozarei vismaz 5% apjomā.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie",
+      "piezime": "claim nav; citāts dokumentā ir"
+    }
+  },
+  "q03": {
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 547988,
+      "citats": "atcelt jauniešu obligāto iesaukšanu Valsts aizsardzības dienestā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts nevienā dokumentā, un brīvprātīgās vienības novados nav nostāja par obligāto dienestu."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "VAD dalībniekiem solītas citas dienesta vietas un lielāka atlīdzība, bet saglabāšanas vai paplašināšanas nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts, un vienīgais dienests tekstā ir ārlietu dienests, tāpēc nostājas nav."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Atbalsts NBS, Zemessardzes un VAD dienējošajiem minēts bez dienesta saglabāšanas vai paplašināšanas nostājas."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts vispār, tāpēc nostājas nav."
+    },
+    "AS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532820,
+      "citats": "Paplašināsim Valsts aizsardzības dienestu, piedāvājot papildu dienesta virzienus, kas nepieciešami visaptverošai valsts aizsardzībai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija"
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts vispār, tāpēc nostājas nav."
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts, un obligātā izglītība nav nostāja par dienestu, tāpēc nostājas nav."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "VAD pilnveidošana un pielāgošana minēta bez saglabāšanas vai paplašināšanas nostājas."
+    },
+    "LA": {
+      "nostaja": "par",
+      "avots": "pilna_programma",
+      "document_id": 112114,
+      "citats": "Paplašināsim Valsts aizsardzības dienestu (VAD), veicināsim, lai pēc iespējas lielāks skaits dienētu, izvēloties tādas specializācijas kā karavīrs, kiberdrošības speciālists, medicīnas vai loģistikas atbalsts.",
+      "url": "https://attistibai.lv/programma2026/"
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "Atbalsts VAD beidzējiem studiju turpināšanā minēts bez dienesta saglabāšanas vai paplašināšanas nostājas."
+    },
+    "ST": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atteikties no obligātā valsts aizsardzības dienesta.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "VAD nav minēts vispār, tāpēc nostājas nav."
+    }
+  },
+  "q04": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "nepieļaut augstskolu un izglītības sistēmas izmantošanu lētā darbaspēka ieviešanai valstī",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532789,
+      "citats": "totāla trešo valstu imigrācijas ierobežošana, uzturēšanās atļauju izsniegšana uz noteiktu laiku tikai Latvijā nepieejamiem kvalificētiem speciālistiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus"
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Migrācija un imigrācija programmā nav minēta vispār, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "Gudra imigrācija ar nelegālās novēršanu un kvalificēta darbaspēka priekšroku nedod tiešu trešo valstu darbaspēka ierobežošanas nostāju."
+    },
+    "NA": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Ieviesīsim striktas kvotas uzturēšanās atļaujām pilsoņiem no trešajām valstīm.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "GS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Mēs esam par vietējo uzņēmēju un kapitālu, nevis ārvalstu lētā darbaspēka importu.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "AS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532829,
+      "citats": "Imigrāciju īstenosim kontrolēti, uzturēšanās sasaistot uzturēšanās atļaujas ar tiesisku nodarbinātību, integrāciju un latviešu valodas apguvi.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija"
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "Nelegālās migrācijas apkarošana un darbaspēka nodokļi minēti bez trešo valstu darbaspēka ievešanas ierobežošanas nostājas."
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Minēts tikai darbaspēka nodokļu slogs, bet imigrācijas nostājas nav vispār."
+    },
+    "JKP": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532796,
+      "citats": "Iestāsimies par STINGRU UN KONTROLĒTU IMIGRĀCIJAS POLITIKU, nosakot augstas integrācijas prasības un prioritāti Latvijas ilgtermiņa interesēm.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija"
+    },
+    "LA": {
+      "nostaja": "par",
+      "avots": "pilna_programma",
+      "document_id": 112114,
+      "citats": "Darba migrāciju no trešajām valstīm padarīsim selektīvu un balstītu valsts interesēs.",
+      "url": "https://attistibai.lv/programma2026/"
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Veicināsim trešo valstu imigrantu izceļošanu no Latvijas.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Minēta tikai remigrācijas programma bez trešo valstu darbaspēka ievešanas nostājas."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Gudra migrācijas politika cilvēcienīgiem apstākļiem nedod darbaspēka ievešanas ierobežošanas vai atvieglošanas nostāju."
+    }
+  },
+  "q05": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "nodrošināt akadēmisko brīvību privātskolās, izvēloties apmācību arī mazākumtautību valodās ar iespēju turpināt augstāko izglītību valsts valodā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "Valoda minēta tikai vispārīgi kā izdzīvošanas jautājums, bet mazākumtautību valodu un krievu valodas nostājas nav nevienā dokumentā."
+    },
+    "SC": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Izvirzīsim Mazākumtautību izglītības iestāžu likumu, nodrošinot izglītību mazākumtautību valodās, garantējot pilnvērtīgu valsts valodas apguvi",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politisko-partiju-apvieniba-saskanas-centrs",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "Latviešu valodas loma minēta bez mazākumtautību valodu nostājas, tāpēc nostājas nav."
+    },
+    "NA": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Valsts atbalstu dosim medijiem, kas veido kvalitatīvu saturu tikai latviešu valodā.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/nacionala-apvieniba-visu-latvijai-tevzemei-un-brivibailnnk",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Valodas un kultūras aizsardzība minēta vispārīgi bez mazākumtautību valodu nostājas."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Skola2030 un imigrantu valodas prasības minētas bez mazākumtautību valodu tiesību nostājas."
+    },
+    "LPV": {
+      "nostaja": "klusē",
+      "piezime": "Saliedētība neatkarīgi no dzimtās valodas un angļu valoda minētas bez mazākumtautību un krievu valodas nostājas."
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Valsts valodas lietojums visās jomās un latviešu valodas veicināšana minēti bez mazākumtautību valodu ierobežojuma nostājas."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Latviešu valodas lomas stiprināšana minēta bez mazākumtautību valodu nostājas."
+    },
+    "LA": {
+      "nostaja": "pret",
+      "avots": "pilna_programma",
+      "document_id": 112114,
+      "citats": "Turpināsim veidot vienotu skolu sistēmu Latvijā, pakāpeniski pārtraucot segregētu mazākumtautību skolu pastāvēšanu, vienlaikus nodrošinot fakultatīvas iespējas apgūt dažādu Latvijas mazākumtautību kultūras mantojumu.",
+      "url": "https://attistibai.lv/programma2026/"
+    },
+    "ASL": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532598,
+      "citats": "Nodrošināsim darba vidi, apkalpošanu un saziņu, kā arī mediju darbu un reklāmas tikai valsts valodā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "ST": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Nodrošināt plašākas iespējas krievu valodas lietošanai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Identitāte, valoda un kultūra minētas vispārīgi bez mazākumtautību valodu nostājas."
+    }
+  },
+  "q06": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "atcelt nekustamā īpašuma nodokli visiem mājokļiem",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "atcelsim NĪN vienīgajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "NĪ minēts tikai kā ievedams luksusa un neizmantotā īpašuma nodoklis, bet vienīgā mājokļa nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "NĪN 0% primārajam mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Mājoklis minēts tikai atgriešanās atbalstā, bet NĪN nostājas nav nevienā dokumentā."
+    },
+    "GS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Mēs pilnībā atcelsim nekustamā īpašuma nodokli mājsaimniecībām par to vienīgo mājokli.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "NĪN un nekustamais īpašums nav minēts vispār, tāpēc nostājas nav."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atcelsim nekustamā īpašuma nodokli vienīgajam mājoklim.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "NĪN kā pašvaldību nodoklis minēts bez atcelšanas vai saglabāšanas nostājas."
+    },
+    "JKP": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Rosināsim NEKUSTAMĀ ĪPAŠUMA NODOKĻA ATCELŠANU MĀJOKĻIEM.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "CVK klusē, un pilnajā programmā mājokļu cenas un attīstītāju atvieglojumi nedod NĪN nostāju."
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atcelsim NĪN vienīgajam ģimenes mājoklim",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ST": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atcelt nekustamā īpašuma nodokli vienīgajam mājoklim.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Mājokļa izdevumu un nabadzības riska minējums nedod NĪN nostāju."
+    }
+  },
+  "q07": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547983,
+      "citats": "sadalīt IIN starp pamata darbavietu un dzīvesvietu, atjaunot pašvaldībām IIN proporciju 95% apmērā, lemt par UIN pārdali par labu pašvaldībām",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "20% no uzņēmuma nomaksātā UIN novirzot pašvaldībai, kurā uzņēmums veic saimniecisko darbību",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Iepirkumi un izdevumu caurskatāmība minēti bez nodokļu ieņēmumu sadales nostājas, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "Pašvaldību finanšu ilgtspēja un rīcības brīvība minētas bez nodokļu ieņēmumu daļas nostājas, tāpēc nostājas nav."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Funkciju dublēšanās pārskatīšana minēta bez nodokļu ieņēmumu sadales nostājas, tāpēc nostājas nav."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Nodokļu samazinājumi minēti bez pašvaldību ieņēmumu daļas nostājas, tāpēc nostājas nav."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Taisnīgāks pašvaldību finanšu modelis un pašu ieņēmumi minēti bez nodokļu daļas virziena, tāpēc nostājas nav."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532643,
+      "citats": "Lai veicinātu reģionu attīstību, pusi no UIN atdosim pašvaldībām.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Taisnīga nodokļu sadale minēta bez virziena par lielāku pašvaldību daļu, tāpēc nostājas nav."
+    },
+    "JKP": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Daļu UIN un PVN novirzīsim uzņēmuma darbības vietas pašvaldībai, radot pašvaldībām tiešu ieinteresētību investīciju un uzņēmējdarbības piesaistē.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/jkp-jauna-konservativa-partija",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Pašvaldību kapacitāte un jauns finansēšanas modelis minēti bez nodokļu daļas virziena, tāpēc nostājas nav."
+    },
+    "ASL": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 532602,
+      "citats": "Reformēsim pašvaldību finansēšanas sistēmu, nodrošinot taisnīgāku izlīdzināšanu – IIN pilnībā ieskaitīsim valsts budžetā, dotējot pašvaldības atbilstoši to finansējuma līdzšinējam īpatsvaram valsts kopbudžetā.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Atgriešanās atbalsts minēts bez nodokļu ieņēmumu sadales nostājas."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Izlīdzināšanas modelis minēts bez virziena par lielāku pašvaldību daļu, tāpēc nostājas nav."
+    }
+  },
+  "q08": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 547990,
+      "citats": "veikt valsts pārvaldes funkcionālo auditu, pārskatot iestāžu funkcijas un apvienojot atsevišķas ministrijas, samazināt ierēdņu skaitu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "reorganizēsim vai likvidēsim ministrijas un padotības iestādes, kas dublē funkcijas",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Pārvaldes audits un birokrātijas samazinājums minēti bez ministriju apvienošanas solījuma, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "ministriju skaita samazināšana un funkciju deleģēšana, kur tas lietderīgi",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Funkciju dublēšanās pārskatīšana minēta bez ministriju apvienošanas vai likvidēšanas solījuma."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Pārvaldes reorganizācija un ierēdņu samazinājums minēti bez ministriju apvienošanas solījuma."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Pārvaldes atbildība minēta bez ministriju apvienošanas vai likvidēšanas solījuma."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532653,
+      "citats": "Apvienosim Iekšlietu un Aizsardzības ministrijas, lai garantētu valsts drošību un ieviestu vienotu atalgojuma sistēmu militārpersonām, policistiem, ugunsdzēsējiem un glābējiem.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Pārvaldes modernizācija minēta bez ministriju apvienošanas solījuma."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Funkciju izvērtēšana un apvienošanas iespējas minētas bez apvienošanas vai likvidēšanas solījuma."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Maza un efektīva pārvalde ar funkciju konsolidāciju minēta bez ministriju apvienošanas solījuma."
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532601,
+      "citats": "apvienosim un likvidēsim liekās ministrijas",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai"
+    },
+    "ST": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Likvidēt Klimata un enerģētikas ministriju.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Mērķi, budžets un atbildība minēti bez ministriju apvienošanas solījuma."
+    }
+  },
+  "q09": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "samazināt PVN pārtikai, sabiedriskai ēdināšanai un viesmīlībai līdz 5%",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "PVN atvieglojumi attiecas uz pirmo mājokli un pierobežu, bet pārtikas PVN samazinājuma nav; pārtika minēta tikai iepirkumu izcelsmē."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Zāļu PVN samazinājums un pārtikas cenu caurskatāmība minēti bez pārtikas PVN samazinājuma, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "PVN 5% pirmās nepieciešamības pārtikai",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "PVN un pārtika nav minēta vispār, tāpēc nostājas nav."
+    },
+    "GS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Pārtikas produktiem noteiksim PVN likmi 12 procentu apmērā.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Vietējā pārtika iepirkumos minēta bez pārtikas PVN samazinājuma, tāpēc nostājas nav."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Samazināsim PVN likmi apkurei, plašākam pārtikas produktu klāstam, bērnu higiēnas un zīdaiņu precēm, tūrisma un ēdināšanas nozarēm līdz 10%.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Latvijas pārtikas prioritāte iepirkumos minēta bez pārtikas PVN samazinājuma."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Vietējā pārtikas ražošana un pārstrāde minēta bez pārtikas PVN samazinājuma."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Augstas pievienotās vērtības ekonomika minēta bez pārtikas PVN nostājas, tāpēc nostājas nav."
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "Pārtikas pašpietiekamība un eksportspēja minētas bez pārtikas PVN samazinājuma."
+    },
+    "ST": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Samazināt PVN līdz 12% pamatpārtikas produktiem.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/politiska-partija-stabilitatei",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Mežu pievienotā vērtība minēta bez pārtikas PVN nostājas, tāpēc nostājas nav."
+    }
+  },
+  "q10": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "atļaut izņemt pensijas 2.līmeni",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532777,
+      "citats": "Pensiju 2. līmenis — priekšlaicīgas izmaksas gadījumā valsts nedrīkst regulēt iedzīvotāju uzkrājumu izlietojumu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/mes-mainam-noteikumus"
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Minimālā pensija un indeksācija minētas bez 2. līmeņa brīvprātības vai izņemšanas nostājas, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "Stabila pensiju sistēma un bāzes pensija minētas bez 2. līmeņa brīvprātības vai izņemšanas nostājas."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Uzkrājumu veidošana un pārmantošana minēta bez brīvprātības vai izņemšanas nostājas, tāpēc nostājas nav."
+    },
+    "GS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532762,
+      "citats": "Mēs pārveidosim 2. fondēto pensiju līmeni par pilnībā brīvprātīgu",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/gobzema-saraksts"
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Pensiju sasaiste ar bērnu audzināšanu minēta bez 2. līmeņa brīvprātības vai izņemšanas nostājas."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": 532661,
+      "citats": "Dosim tiesības cilvēkiem izņemt līdzekļus no 2. pensiju līmeņa un pašiem rīkoties ar savu uzkrāto naudu.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Pensiju 2. līmenis un uzkrājumi nav minēti vispār, tāpēc nostājas nav."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Uzkrājumu pārvaldīšanas tiesību paplašināšana, saglabājot ilgtspēju, nedod brīvprātības vai izņemšanas nostāju."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Darba mūžs un pensiju drošība minēti bez 2. līmeņa brīvprātības vai izņemšanas nostājas."
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "2. pensiju līmenis jānovirza tautsaimniecībā, samazinot sociālo iemaksu darba ņēmēja daļu par 6 %, uzkrājumus ieskaitot pensiju 1. līmenī un pakļaujot tos personalizētai indeksācijai.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Pensijas un uzkrājumi nav minēti vispār, tāpēc nostājas nav."
+    },
+    "PRO": {
+      "nostaja": "klusē",
+      "piezime": "Pensiju paaugstināšana un stāža piemaksa minētas bez 2. līmeņa brīvprātības vai izņemšanas nostājas."
+    }
+  },
+  "q11": {
+    "SV-AJ": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": 547979,
+      "citats": "atteikties no “Zaļā kursa” noteikumiem, kas apgrūtina iedzīvotāju un uzņēmēju dzīvi",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "Zaļā kursa prasību nosacīšana ar drošību un konkurētspēju ir ieviešanas atruna bez zaļā kursa noraidījuma, tāpēc nostājas nav."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Klimats un Zaļais kurss nav minēti, un zaļā ražošana nav neitralitātes nostāja, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "klusē",
+      "piezime": "Klimats un Zaļais kurss nav minēti nevienā dokumentā, tāpēc nostājas nav."
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Klimata pasākumu sasaiste ar sociālekonomisko ietekmi nedod neitralitātes termiņa nostāju."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Klimats un Zaļais kurss nav minēti vispār, tāpēc nostājas nav."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Zaļā kursa ieviešanas pārskatīšana un klimata mērķu sasaiste ar konkurētspēju nedod termiņa noraidījumu, tāpēc nostājas nav."
+    },
+    "LPV": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Samazināsim tās \"zaļā kursa\" prasības, kas ir pretrunā ar Latvijas nacionālajām interesēm un sadārdzina mūsu ražojumu cenas.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Taisnīga zaļā pāreja un klimata tehnoloģijas minētas bez klimatneitralitātes termiņa nostājas."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "Klimats un Zaļais kurss nav minēti vispār, tāpēc nostājas nav."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Klimata politika kā konkurētspēja minēta bez neitralitātes termiņa nostājas abos dokumentos."
+    },
+    "ASL": {
+      "nostaja": "klusē",
+      "piezime": "Klimats un Zaļais kurss nav minēti vispār, tāpēc nostājas nav."
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Klimata ministrijas likvidēšana nedod klimatneitralitātes termiņa nostāju, un Zaļais kurss nav minēts."
+    },
+    "PRO": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Progresīvie iestājas par klimatneitralitāti un pāreju uz ekonomiku, kas respektē planētas resursu ierobežotību un cilvēka tiesības uz veselīgu vidi.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie",
+      "piezime": "claim nav; citāts dokumentā ir"
+    }
+  },
+  "q12": {
+    "SV-AJ": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "novērst un nepieļaut ģimenes vērtības graujošu ideoloģiju (Stambulas konvencija un tml.) izglītībā, medijos un likumdošanā",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/suverena-vara--apvieniba-jaunlatviesi/",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "MMN": {
+      "nostaja": "klusē",
+      "piezime": "Ģimene atbalstīta kā vērtība un politikas mērķis, bet vīrietis un sieviete definīcijas un Stambulas atsauces nav nevienā dokumentā."
+    },
+    "SC": {
+      "nostaja": "klusē",
+      "piezime": "Pabalsti un izglītības pieejamība minēti bez ģimenes un laulības definīcijas, tāpēc nostājas nav."
+    },
+    "ZZS": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Satversmē noteikto ģimenes un sabiedrības pamatu stiprināšana",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/zalo-un-zemnieku-savieniba",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "NA": {
+      "nostaja": "klusē",
+      "piezime": "Stipru ģimeņu atbalsts minēts bez vīrietis un sieviete definīcijas un bez Stambulas atsauces."
+    },
+    "GS": {
+      "nostaja": "klusē",
+      "piezime": "Tradicionālā ģimene kā politikas centrs minēta bez vīrietis un sieviete juridiskās definīcijas un bez Stambulas atsauces."
+    },
+    "AS": {
+      "nostaja": "klusē",
+      "piezime": "Ģimeņu atbalsts un vardarbības novēršana minēti bez ģimenes un laulības definīcijas."
+    },
+    "LPV": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Satversmē nostiprināsim dabiskas ģimenes definīciju, kurā tēvs ir vīrietis un māte – sieviete.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/latvija-pirmaja-vieta",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "JV": {
+      "nostaja": "klusē",
+      "piezime": "Stipras ģimenes, cilvēktiesības un vardarbības novēršana minētas bez ģimenes definīcijas."
+    },
+    "JKP": {
+      "nostaja": "klusē",
+      "piezime": "CVK ģimeņu politika nedod definīciju, un pilnajā programmā Stambulas izstāšanās pieļaujama tikai tvēruma pārsniegšanas gadījumā bez vīrietis un sieviete nostājas."
+    },
+    "LA": {
+      "nostaja": "klusē",
+      "piezime": "Ģimeņu politika un bērnu tiesības minētas bez ģimenes un laulības definīcijas."
+    },
+    "ASL": {
+      "nostaja": "par",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Pārtrauksim tādu starptautisko un nacionālo dokumentu darbību, kas grauj ģimenes un bioloģiskā dzimuma jēdzienus",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/austosa-saule-latvijai",
+      "piezime": "claim nav; citāts dokumentā ir"
+    },
+    "ST": {
+      "nostaja": "klusē",
+      "piezime": "Finansiāls atbalsts ģimenēm minēts bez ģimenes un laulības definīcijas."
+    },
+    "PRO": {
+      "nostaja": "pret",
+      "avots": "cvk",
+      "claim_id": null,
+      "citats": "Atbalstīsim vienlīdzīgas tiesības, t.sk. laulību vienlīdzību un visu ģimeņu aizsardzību.",
+      "url": "https://dati.cvk.lv/SV2026/kandidatu-saraksti/progresivie",
+      "piezime": "claim nav; citāts dokumentā ir"
+    }
+  }
+}

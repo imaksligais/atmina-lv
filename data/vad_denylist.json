@@ -1,0 +1,830 @@
+{
+ "_readme": [
+  "VAD homonīmu deny-list. Bloķē zināmo svešo deklarāciju atkārtotu ievākšanu.",
+  "Pirmie ieraksti: pid=146 Andris Bērziņš — LPP/LC homonīms (cita persona,",
+  "tāds pats Vārds Uzvārds). Avots: data/NVO/izpete_2026-08-12/vad_homonimu_adjudikacija.md,",
+  "purge data/rollback_vad_homonimu_purge_2026-08-12.sql (rindas 3401-3407).",
+  "",
+  "Divas kājas: ieraksts ar match {kind, year} ir STABILS (pāri sesijām);",
+  "ieraksts bez match ir tikai vad_uuid kāja — VID var rotēt uuid per-session,",
+  "tad kāja klusi zaudē spēku. Gads nav rekonstruējams no search etiķetes",
+  "(interim/end/post_year_*), un stabila (kind) kāja bez gada bloķētu arī paša",
+  "politiķa likumīgās nākotnes deklarācijas — tāpēc šīs paliek uuid-only.",
+  "Papildināt tikai ar operatora apstiprinājumu (standing rule: ne auto-add)."
+ ],
+ "entries": [
+  {
+   "pid": 146,
+   "vad_uuid": "30252e0c-bfe5-4450-a24e-9e43c874d975",
+   "match": {
+    "kind": "annual",
+    "year": 2009
+   },
+   "reason": "LPP/LC Bērziņa 2009. gada deklarācija (dzēstās rindas id 3404)"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "ce33959f-47f3-4403-bb4b-03ba70191433",
+   "match": {
+    "kind": "annual",
+    "year": 2010
+   },
+   "reason": "LPP/LC Bērziņa 2010. gada deklarācija (rollback rinda 3402)"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "5f4a657d-6586-4c3c-aabd-9e795a6eb14f",
+   "match": null,
+   "reason": "LPP/LC Bērziņa interim deklarācija, gads search etiķetē nav (rollback 3401); uuid-only — rotācijas gadījumā jāpārbauda manuāli pēc sweep"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "9043ab80-b4e2-4696-8645-936048c28017",
+   "match": null,
+   "reason": "LPP/LC Bērziņa interim deklarācija, gads nav (rollback 3403); uuid-only"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "3a717b8d-8da2-44d9-b1a1-b046a446f3af",
+   "match": null,
+   "reason": "LPP/LC Bērziņa beigu (end) deklarācija, gads nav (rollback 3405); uuid-only"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "d14c1bd3-f47c-4129-a015-0e91a1e2f1bf",
+   "match": null,
+   "reason": "LPP/LC Bērziņa deklarācija par pirmo gadu pēc pilnvaru beigām, gads nav (rollback 3406); uuid-only"
+  },
+  {
+   "pid": 146,
+   "vad_uuid": "257f51e4-b7cd-4717-98fd-85442d1ddc9e",
+   "match": null,
+   "reason": "LPP/LC Bērziņa deklarācija par otro gadu pēc pilnvaru beigām, gads nav (rollback 3407); uuid-only"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "41e159bd-c314-43c7-89e0-4358e1f78884",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Sabiedrība ar ierobežotu atbildību \"Daugavpils reģ / Iepirkuma komisijas priekšsēdē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 723)"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "0378252c-4efc-422e-a04f-6c67725a9132",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Sabiedrība ar ierobežotu atbildību \"Daugavpils reģ / Iepirkuma komisijas priekšsēdē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 724)",
+   "match": {
+    "kind": "annual",
+    "year": 2020
+   }
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "76faa217-33f6-4971-a997-97c1da64c384",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Sabiedrība ar ierobežotu atbildību \"Daugavpils reģ / Iepirkumu komisijas priekšsēdē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 725)"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "897fdba5-a87a-4ffd-b926-667732b53814",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Sabiedrība ar ierobežotu atbildību \"Daugavpils reģ / Iepirkumu komisijas priekšsēdē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 726)"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "f14cd867-0a66-4e26-966f-2b368c500e44",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Sabiedrība ar ierobežotu atbildību \"Daugavpils reģ / Iepirkuma komisijas priekšsēdē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 727)",
+   "match": {
+    "kind": "annual",
+    "year": 2021
+   }
+  },
+  {
+   "pid": 52,
+   "vad_uuid": "6d6183d7-cf26-4ab8-994b-d17e3760db5a",
+   "reason": "Edgars Tavars: svešs tādvārdis (Valsts robežsardze / Inspektora palīgs); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1020)"
+  },
+  {
+   "pid": 52,
+   "vad_uuid": "6eda2203-5c33-449a-9dc9-886bd27759b1",
+   "reason": "Edgars Tavars: svešs tādvārdis (Valsts robežsardze / Inspektora palīgs); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1021)"
+  },
+  {
+   "pid": 72,
+   "vad_uuid": "d231a5e1-ff93-497b-a1fb-9402961f1744",
+   "reason": "Ilze Indriksone: svešs tādvārdis ('BANKU AUGSTSKOLAS UZŅĒMĒJDARBĪBAS KOLEDŽA' / Kredītu piešķiršanas komisijas); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1291)"
+  },
+  {
+   "pid": 72,
+   "vad_uuid": "94509c57-e09e-441b-b654-dc59368c7f66",
+   "reason": "Ilze Indriksone: svešs tādvārdis ('BANKU AUGSTSKOLAS UZŅĒMĒJDARBĪBAS KOLEDŽA' / Kredītu piešķiršanas komisijas); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1292)",
+   "match": {
+    "kind": "annual",
+    "year": 2015
+   }
+  },
+  {
+   "pid": 72,
+   "vad_uuid": "3dd87f31-1f64-4a61-b595-7bde3e641f83",
+   "reason": "Ilze Indriksone: svešs tādvārdis ('BANKU AUGSTSKOLAS UZŅĒMĒJDARBĪBAS KOLEDŽA' / Kredītu piešķiršanas komisijas); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1293)",
+   "match": {
+    "kind": "annual",
+    "year": 2016
+   }
+  },
+  {
+   "pid": 72,
+   "vad_uuid": "db92dd10-80c2-4b79-b085-001cd7331972",
+   "reason": "Ilze Indriksone: svešs tādvārdis ('BANKU AUGSTSKOLAS UZŅĒMĒJDARBĪBAS KOLEDŽA' / Kredītu piešķiršanas komisijas); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1294)"
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "0fd2b299-96b0-4c38-bfd6-b97be754f2a1",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Latvijas Republikas Aizsardzības ministrijas Nacio / Finansists); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1806)"
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "e8ef1afa-59bb-4286-936c-69bc95ebcacd",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Zemessardzes štābs / Karavīra amata pienākumu veicē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1807)",
+   "match": {
+    "kind": "annual",
+    "year": 2018
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "6739f592-d193-490a-9e50-e0da4306ebcd",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Zemessardzes štābs / Karavīra amata pienākumu veicē); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 1808)"
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "23fff7b5-aa6d-4302-b3f6-cecf795a457c",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3475)"
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "92f0ed08-5cd4-4989-a6ce-ba4a857f7c9d",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3476)",
+   "match": {
+    "kind": "annual",
+    "year": 2015
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "c086b9f3-3f6e-4fa1-a9ad-10cebf017b07",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3477)",
+   "match": {
+    "kind": "annual",
+    "year": 2016
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "c5be09b8-cec8-4dba-8903-988387fc8262",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3478)",
+   "match": {
+    "kind": "annual",
+    "year": 2017
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "3d36e751-c10c-4f65-911c-2d88e99bde03",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3479)",
+   "match": {
+    "kind": "annual",
+    "year": 2018
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "9cc912cf-5ac1-4895-aeb2-db971c20fb27",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3480)",
+   "match": {
+    "kind": "annual",
+    "year": 2019
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "6824ea3a-d3e2-4944-adaf-d393ef9ca56a",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3481)",
+   "match": {
+    "kind": "annual",
+    "year": 2020
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "e9882ff3-ebe9-40a2-a452-703d95ab5be4",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3482)",
+   "match": {
+    "kind": "annual",
+    "year": 2021
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "d9e9e41b-a14d-4929-bdde-f3a48a655c5c",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3483)",
+   "match": {
+    "kind": "annual",
+    "year": 2022
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "a00307af-9927-4c4e-af08-bf4be0778a8f",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3484)",
+   "match": {
+    "kind": "annual",
+    "year": 2023
+   }
+  },
+  {
+   "pid": 138,
+   "vad_uuid": "929abe70-f449-40ef-9ba9-f6b7b4fe1966",
+   "reason": "Jānis Zariņš: svešs tādvārdis (Valsts meža dienests / Mežzinis); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 3485)",
+   "match": {
+    "kind": "annual",
+    "year": 2024
+   }
+  },
+  {
+   "pid": 173,
+   "vad_uuid": "706637b3-0045-4e62-85c2-0e9cac7709f6",
+   "reason": "Mārtiņš Štāls: svešs tādvārdis (Valsts ugunsdzēsības un glābšanas dienests / ugunsdzēsēja glābēja (autovadī); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2847)"
+  },
+  {
+   "pid": 173,
+   "vad_uuid": "b2b9316a-731c-4eae-83a1-b3a0d1c80466",
+   "reason": "Mārtiņš Štāls: svešs tādvārdis (Latvijas Republikas Aizsardzības ministrijas Nacio / Karavīrs); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2848)"
+  },
+  {
+   "pid": 74,
+   "vad_uuid": "a8e76d43-7253-44e9-acc5-e4afdb4290a6",
+   "reason": "Oļegs Burovs: svešs tādvārdis (Rīgas pašvaldības sabiedrība ar ierobežotu atbildī / Speciālists); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2896)"
+  },
+  {
+   "pid": 74,
+   "vad_uuid": "11037de8-a0d7-44bc-81cf-44308f6d2e29",
+   "reason": "Oļegs Burovs: svešs tādvārdis (Rīgas pašvaldības sabiedrība ar ierobežotu atbildī / Speciālists); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2897)",
+   "match": {
+    "kind": "annual",
+    "year": 2020
+   }
+  },
+  {
+   "pid": 74,
+   "vad_uuid": "742dd7d5-76c2-4cfe-9a5f-a5201fb2b2e4",
+   "reason": "Oļegs Burovs: svešs tādvārdis (Rīgas pašvaldības sabiedrība ar ierobežotu atbildī / Speciālists); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2898)"
+  },
+  {
+   "pid": 74,
+   "vad_uuid": "83155650-9e0b-4af1-a7a0-2030cd114194",
+   "reason": "Oļegs Burovs: svešs tādvārdis (Rīgas pašvaldības sabiedrība ar ierobežotu atbildī / Speciālists); vecāku paraksts nesakrīt; Jev noul<=0.31 (decl id 2899)",
+   "match": {
+    "kind": "annual",
+    "year": 2021
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "6be13e94-672f-4317-81fb-2e848630554f",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Nodaļas priekšnieks); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1794)",
+   "match": {
+    "kind": "annual",
+    "year": 2002
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "c2564ecd-dce4-42ae-998d-f92baf6498cd",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Lietvede); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1795)",
+   "match": {
+    "kind": "annual",
+    "year": 2003
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "b0fb592f-3637-4c16-8d1e-4f3e1936e082",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Speciālists); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1796)",
+   "match": {
+    "kind": "annual",
+    "year": 2004
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "892f24c6-e715-4745-9bb7-cc4d05821594",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Speciālists); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1797)",
+   "match": {
+    "kind": "annual",
+    "year": 2005
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "595cf65b-1972-4ab6-a668-8692efbc5f60",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Speciālists); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1798)",
+   "match": {
+    "kind": "annual",
+    "year": 2006
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "322cd247-bc2d-4dfe-9579-c7fdacd31407",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Speciālists); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1799)",
+   "match": {
+    "kind": "annual",
+    "year": 2007
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "57e4c44f-4c7c-4f40-b19b-3e6c329087ed",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Speciālists); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1800)",
+   "match": {
+    "kind": "annual",
+    "year": 2008
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "c395de6d-e2b2-4555-bc6c-af5fc54858b4",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Personālsastāva daļas 4.klases speciālis); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1801)",
+   "match": {
+    "kind": "annual",
+    "year": 2009
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "85bd7aee-a97a-4ae6-8386-a6a4f29283c3",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Personālsastāva daļas 4.klases speciālis); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1802)",
+   "match": {
+    "kind": "annual",
+    "year": 2010
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "5412a8af-5406-4970-8f29-72893d13ee77",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Personālsastāva daļas 4.klases speciālis); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1803)",
+   "match": {
+    "kind": "annual",
+    "year": 2011
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "64fd7bb0-152a-4f29-84e3-2633a9d88e80",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Personālsastāva daļas 4.klases speciālis); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1804)",
+   "match": {
+    "kind": "annual",
+    "year": 2012
+   }
+  },
+  {
+   "pid": 73,
+   "vad_uuid": "0129dc5b-f25c-47b0-9d1a-eceed37e159a",
+   "reason": "Ināra Mūrniece: svešs tādvārdis (Personālsastāva daļas 4.klases speciālis); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1805)"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "c067a258-a34f-48c1-a408-1144708439c0",
+   "reason": "Artūrs Butāns: svešs tādvārdis (jaunākais darba inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 719)"
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "57bcaecc-5ecd-4227-9821-f34b3f1db159",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Valsts darba inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 720)",
+   "match": {
+    "kind": "annual",
+    "year": 2006
+   }
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "67ee7a06-1457-4b19-a4fa-39f8e97dfd80",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Valsts darba inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 721)",
+   "match": {
+    "kind": "annual",
+    "year": 2007
+   }
+  },
+  {
+   "pid": 82,
+   "vad_uuid": "ac9d5646-263d-48f2-a186-45270371c454",
+   "reason": "Artūrs Butāns: svešs tādvārdis (Valsts darba inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 722)"
+  },
+  {
+   "pid": 23,
+   "vad_uuid": "f0ff0966-7c5e-4e15-b0dd-1a9ce88527b7",
+   "reason": "Ivars Ijabs: svešs tādvārdis (Autovadītājs); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 1837)"
+  },
+  {
+   "pid": 164,
+   "vad_uuid": "35358138-5acd-440b-b13d-1c1ef3e4e35a",
+   "reason": "Andrejs Elksniņš: svešs tādvārdis (Inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 309)"
+  },
+  {
+   "pid": 164,
+   "vad_uuid": "1c21dd30-6cf5-4080-833e-cde64b1d43cb",
+   "reason": "Andrejs Elksniņš: svešs tādvārdis (Inspektors); Jev noul<=0.34, karjera nesader ar biogrāfiju (decl id 310)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "2878b06d-b5f6-4cfa-9c0d-76bddf0c0398",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālā darba organizatore @ tukša, None); vecāku paraksts/karjera nesader (decl id 3725)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "c43ad30d-41e9-4324-a309-eb4f21523045",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālā darba organizators @ tukša, 2006); vecāku paraksts/karjera nesader (decl id 3726)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "06517dca-5908-417b-a812-21aba4fd1aaa",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālā darbiniece @ tukša, 2007); vecāku paraksts/karjera nesader (decl id 3727)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "3820bce0-b7fd-4fdf-a564-cdfb7fd3ae4f",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālā darbiniece @ tukša, 2008); vecāku paraksts/karjera nesader (decl id 3728)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "555599d7-5433-422b-8f2d-688bc2881720",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ tukša, 2009); vecāku paraksts/karjera nesader (decl id 3729)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "b7cfeac2-0c69-4385-b08b-9d75ff4c541e",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ tukša, 2010); vecāku paraksts/karjera nesader (decl id 3730)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "be109c1e-da83-4429-ad76-f0bb8d4333a9",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ tukša, 2011); vecāku paraksts/karjera nesader (decl id 3731)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "c59ad37a-d60c-41c7-9318-afbcb28a2e8a",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ tukša, 2012); vecāku paraksts/karjera nesader (decl id 3732)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "fa653917-a540-4b9c-a8c2-738515f71723",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ tukša, 2013); vecāku paraksts/karjera nesader (decl id 3733)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "43dac5e6-f55f-423d-bef0-a2c61bef664a",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas Sociālais dienests, 2014); vecāku paraksts/karjera nesader (decl id 3734)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "ae6f33e0-05ee-4f25-94be-6c5bdbd483c1",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas Sociālais dienests, 2015); vecāku paraksts/karjera nesader (decl id 3735)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "097d32ab-8aba-4d67-bc53-523b84bccd2b",
+   "reason": "Inga Priede: svešs tādvārdis (sociālā darbiniece @ Rīgas Sociālais dienests, 2016); vecāku paraksts/karjera nesader (decl id 3736)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "cf8df7f6-51e4-453d-b2d5-9171ea3d3ec7",
+   "reason": "Inga Priede: svešs tādvārdis (sociālais darbiniece @ Rīgas Sociālais dienests, 2017); vecāku paraksts/karjera nesader (decl id 3737)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "da11c33b-cc17-4f4d-8f56-840867668c4c",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas valstspilsētas pašvaldība, 2018); vecāku paraksts/karjera nesader (decl id 3738)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "eff98882-bb85-4d50-8077-9df4687cf349",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas valstspilsētas pašvaldība, 2019); vecāku paraksts/karjera nesader (decl id 3739)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "9afa3410-d8e4-4073-9abb-4e8ac96f1f60",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas valstspilsētas pašvaldība, 2020); vecāku paraksts/karjera nesader (decl id 3740)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "8d32eb2c-c1c2-40c6-aa65-d1e93f12d5dc",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas valstspilsētas pašvaldība, 2021); vecāku paraksts/karjera nesader (decl id 3741)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "ab2cd88f-809e-4f7a-bd2f-81b2fc9275f7",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Rīgas valstspilsētas pašvaldība, 2022); vecāku paraksts/karjera nesader (decl id 3742)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "9dfec26f-e330-4fb7-a01f-c393574ff259",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Jēkabpils novada pašvaldība, 2023); vecāku paraksts/karjera nesader (decl id 3743)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "553a7672-eb8d-4a3c-b616-ffdf1fd1ca57",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Jēkabpils novada pašvaldība, 2024); vecāku paraksts/karjera nesader (decl id 3744)"
+  },
+  {
+   "pid": 230,
+   "vad_uuid": "3b9810c8-c422-4e8d-a40d-5fc26d07588f",
+   "reason": "Inga Priede: svešs tādvārdis (Sociālais darbinieks @ Jēkabpils novada pašvaldība, 2025); vecāku paraksts/karjera nesader (decl id 3745)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "f8eae867-0a20-48b2-817d-d119c91d91db",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kadets @ tukša, None); vecāku paraksts/karjera nesader (decl id 3784)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "c509822e-92c8-4fe5-805d-35c93ae99322",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kadets @ tukša, 2013); vecāku paraksts/karjera nesader (decl id 3785)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "e8c24c41-4d82-43f0-9f75-912b7c95d125",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kadets @ Valsts policijas koledža, 2018); vecāku paraksts/karjera nesader (decl id 3786)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "d3d152bd-d47f-48d6-89f6-3db39ca5130e",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kārtībnieks @ Valsts policija, 2014); vecāku paraksts/karjera nesader (decl id 3787)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "b0058420-81f6-42de-aca3-fba35f8c022f",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kārtībnieks @ Valsts policija, 2015); vecāku paraksts/karjera nesader (decl id 3788)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "5e0ed3ac-15cf-4ae1-8b16-eb7c3028f47a",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kārtībnieks @ Valsts policija, 2016); vecāku paraksts/karjera nesader (decl id 3789)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "86da31a6-d891-4ff2-87a4-bb6ed8f13aa6",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kārtībnieks @ Valsts policija, 2017); vecāku paraksts/karjera nesader (decl id 3790)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "2174bbc0-3292-4d11-92e3-96ad5b0e2b9c",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Kārtībnieks @ Valsts policija, 2020); vecāku paraksts/karjera nesader (decl id 3791)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "5e5dd2eb-7718-4be5-bb6a-b2a1d6b964b5",
+   "reason": "Jānis Eglīts: svešs tādvārdis (inspektors @ Valsts policija, 2019); vecāku paraksts/karjera nesader (decl id 3792)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "c4744f27-c472-420c-9736-3b8714cfce3b",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Inspektors @ Valsts policija, 2021); vecāku paraksts/karjera nesader (decl id 3793)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "f4933e7b-f636-4189-a825-3047cfda2edd",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Inspektors @ Valsts policija, 2022); vecāku paraksts/karjera nesader (decl id 3794)"
+  },
+  {
+   "pid": 228,
+   "vad_uuid": "1d61ce7a-215c-4296-b6e9-0e8a5a8d4cfe",
+   "reason": "Jānis Eglīts: svešs tādvārdis (Inspektors @ Valsts policija, None); vecāku paraksts/karjera nesader (decl id 3795)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "5990eee1-f6ee-4840-9f1d-c15cf2b654b3",
+   "reason": "Jānis Hermanis: svešs tādvārdis (iepirkuma komisijas loceklis @ Valsts administrācijas skola, None); vecāku paraksts/karjera nesader (decl id 3806)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "e89e701a-b689-400c-902a-f18b89eda457",
+   "reason": "Jānis Hermanis: svešs tādvārdis (iepirkuma komisijas loceklis @ Valsts administrācijas skola, 2016); vecāku paraksts/karjera nesader (decl id 3807)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "acaac1e5-afba-494a-84d0-77e14785c282",
+   "reason": "Jānis Hermanis: svešs tādvārdis (Konsultants @ Valsts kanceleja, None); vecāku paraksts/karjera nesader (decl id 3808)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "98af75f6-0193-44d7-98f1-af192c2c7b77",
+   "reason": "Jānis Hermanis: svešs tādvārdis (Vērtēšanas komisijas loceklis @ Latvijas Investīciju un attīstības aģent, None); vecāku paraksts/karjera nesader (decl id 3809)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "b336b8c0-885f-40b2-9020-169a869f88a9",
+   "reason": "Jānis Hermanis: svešs tādvārdis (Vērtēšanas komisijas loceklis @ Latvijas Investīciju un attīstības aģent, None); vecāku paraksts/karjera nesader (decl id 3810)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "d31620ad-d76a-45c6-af6c-0c84235b8b08",
+   "reason": "Jānis Hermanis: svešs tādvārdis (Kaprālis @ tukša, 2002); vecāku paraksts/karjera nesader (decl id 3811)"
+  },
+  {
+   "pid": 13,
+   "vad_uuid": "47770599-b195-4d0b-b457-b2924903fdc6",
+   "reason": "Jānis Hermanis: svešs tādvārdis (Kaprālis @ tukša, None); vecāku paraksts/karjera nesader (decl id 3812)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "24a203f6-4469-45f6-ac67-3cccffbc60a7",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2002); vecāku paraksts/karjera nesader (decl id 3813)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "90367c9e-19c5-41ff-8f8e-7106dd5e580d",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2003); vecāku paraksts/karjera nesader (decl id 3814)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "f9be2354-93f4-47ff-bf42-41f98f03234b",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2004); vecāku paraksts/karjera nesader (decl id 3815)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "0be0b230-0899-43de-bfd8-826aaa6f2063",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2005); vecāku paraksts/karjera nesader (decl id 3816)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "21ef89c8-2439-4062-8fc9-e2ac53a8037e",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2006); vecāku paraksts/karjera nesader (decl id 3817)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "7f04adc3-3d53-41df-bb44-52a6e5997949",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Autovadītājs @ tukša, 2007); vecāku paraksts/karjera nesader (decl id 3818)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "706f6d9a-a6cd-42ec-a0e8-db3f2519b530",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Vecākais autovadītājs @ tukša, 2008); vecāku paraksts/karjera nesader (decl id 3819)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "bf888943-758b-40fe-9226-072c6224afe3",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Vecakais autovaditajs-sakarnieks @ tukša, 2009); vecāku paraksts/karjera nesader (decl id 3820)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "2f7e7c20-1fab-48d8-b9e5-3366ff42f247",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (kajnieka vada vecakais autovaditajs-saka @ tukša, 2010); vecāku paraksts/karjera nesader (decl id 3821)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "674b2e86-0150-4c63-8d7e-b7054a135f61",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (kajnieka vada vecakais sakarnieks @ tukša, 2011); vecāku paraksts/karjera nesader (decl id 3822)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "28dfc885-fa41-49cf-b477-82a558bbc618",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (rotas tehniķis @ tukša, 2012); vecāku paraksts/karjera nesader (decl id 3823)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "098a88d4-6ea7-4d1a-a351-898cf6eb2864",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (rotas tehniķis @ tukša, 2013); vecāku paraksts/karjera nesader (decl id 3824)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "deaba58a-47f8-4f36-b30e-f9bfd24030e6",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (vecakais izluks @ Latvijas Republikas Aizsardzības ministr, 2014); vecāku paraksts/karjera nesader (decl id 3825)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "ace278a2-5642-44fd-bfea-ac8c1bbedf7a",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (vecākais izlūks @ Latvijas Republikas Aizsardzības ministr, 2015); vecāku paraksts/karjera nesader (decl id 3826)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "88b5e53f-3b32-4e63-bd27-836d0dadc145",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2016); vecāku paraksts/karjera nesader (decl id 3827)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "057b6068-72aa-4043-a987-d9e782cec5e2",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2017); vecāku paraksts/karjera nesader (decl id 3828)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "d83f5a66-9c06-4034-851c-bb438a8b3108",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2018); vecāku paraksts/karjera nesader (decl id 3829)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "b00e0f10-8b7d-4347-93f4-439c728b58cd",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2019); vecāku paraksts/karjera nesader (decl id 3830)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "86ab0a56-ffac-4679-8177-488af562bd03",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2020); vecāku paraksts/karjera nesader (decl id 3831)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "22e70c04-2bae-4642-b91a-4a5e39cae9bc",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2021); vecāku paraksts/karjera nesader (decl id 3832)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "f8dd981e-0b57-4b8e-abdb-473733965f9c",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2022); vecāku paraksts/karjera nesader (decl id 3833)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "9359b5d4-e142-4d79-b231-cadd5e0d6360",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2023); vecāku paraksts/karjera nesader (decl id 3834)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "eee2e243-6b2e-47cf-b7a2-fa069ddbc9a9",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2024); vecāku paraksts/karjera nesader (decl id 3835)"
+  },
+  {
+   "pid": 232,
+   "vad_uuid": "14ff52bc-7057-45ae-baee-ef1d70b8124c",
+   "reason": "Jānis Urbanovičs: svešs tādvārdis (Karavīrs @ Latvijas Republikas Aizsardzības ministr, 2025); vecāku paraksts/karjera nesader (decl id 3836)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "c89b0201-0de6-4081-88f4-cf469219ad1b",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (BŪVJU UZMĒRĪŠANAS NODAĻAS VADĪTĀJA VIETN @ tukša, None); vecāku paraksts/karjera nesader (decl id 3946)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "2bf3327a-fb5c-449d-bba2-d91af5fac601",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Adresācijas nodaļas vadītājs @ tukša, 2012); vecāku paraksts/karjera nesader (decl id 3947)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "1e2cc1c1-182a-4e85-8ddc-aa95c087eca1",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētvides dizaina pārvaldes vadītājs @ tukša, 2013); vecāku paraksts/karjera nesader (decl id 3948)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "987bc3de-8d1e-4111-acd3-ea8fdf1defe8",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētvides dizaina pārvaldes vadītājs @ Rīgas pilsētas būvvalde, 2014); vecāku paraksts/karjera nesader (decl id 3949)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "70101ea8-1f2f-4436-a849-fbc99f14f2e5",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētvides dizaina pārvaldes vadītājs @ Rīgas pilsētas būvvalde, 2015); vecāku paraksts/karjera nesader (decl id 3950)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "1dae2b0a-487c-4283-8c57-8d0a395caeb3",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētvides dizaina pārvaldes vadītājs @ Rīgas pilsētas būvvalde, 2016); vecāku paraksts/karjera nesader (decl id 3951)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "67e9deb2-8614-420f-9ad0-a825e76c1f45",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pārvaldes vadītājs @ Rīgas pilsētas būvvalde, 2017); vecāku paraksts/karjera nesader (decl id 3952)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "87d2edbd-9e7c-45e4-81f0-acc8ae03a650",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Simbolikas komisijas priekšsēdētāja viet @ Rīgas valstspilsētas pašvaldība, 2018); vecāku paraksts/karjera nesader (decl id 3953)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "1116cd37-a6b6-4a3e-85f4-73b955340201",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Iepirkumu komisijas loceklis @ Rīgas valstspilsētas pašvaldība, 2019); vecāku paraksts/karjera nesader (decl id 3954)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "19063068-0d31-4570-a5ea-15e84f2157e1",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pārvaldes vadītājs @ Rīgas valstspilsētas pašvaldība, 2020); vecāku paraksts/karjera nesader (decl id 3955)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "4e3fe33c-9d57-4e27-9d20-3db27b709f80",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pārvaldes vadītājs @ Rīgas valstspilsētas pašvaldība, 2021); vecāku paraksts/karjera nesader (decl id 3956)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "8226fae9-256b-4ecc-8f5b-f0662e1e9fc5",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pārvaldes vadītājs @ Rīgas valstspilsētas pašvaldība, 2022); vecāku paraksts/karjera nesader (decl id 3957)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "a4dcf00b-99f2-4011-b939-0ccb038e8594",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētas attīstības departamenta Pilsētv @ Rīgas valstspilsētas pašvaldība, 2023); vecāku paraksts/karjera nesader (decl id 3958)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "cae3bf2c-f425-4bd3-86be-e9d21013fca5",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētas attīstības departamenta Pilsētv @ Rīgas valstspilsētas pašvaldība, 2024); vecāku paraksts/karjera nesader (decl id 3959)"
+  },
+  {
+   "pid": 229,
+   "vad_uuid": "b10caaf3-955f-4c71-9941-394346a9a7dd",
+   "reason": "Valdis Dombrovskis: svešs tādvārdis (Pilsētas attīstības departamenta Pilsētv @ Rīgas valstspilsētas pašvaldība, 2025); vecāku paraksts/karjera nesader (decl id 3960)"
+  }
+ ]
+}

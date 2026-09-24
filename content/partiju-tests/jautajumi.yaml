@@ -1,0 +1,62 @@
+# Partiju tests — 12 apgalvojumi (operatora apstiprināti 2026-09-10, T2).
+# tema = kanoniskais claims.topic nosaukums; piekrit_nozime = kodētāja atgādne.
+- id: q01
+  tema: "Ukraina un Krievija"
+  apgalvojums: "Latvijai jāturpina atbalstīt Ukrainu, kamēr karš nav beidzies."
+  piekrit_nozime: "par = atbalsts Ukrainai (militārs, politisks, ekonomisks, humānais; arī sankcijas pret Krieviju un Ukrainas ceļš uz ES/NATO); pret = atbalsta atteikšana vai pārtraukšana: neitralitāte, aizliegums iesaistīties militāros konfliktos, tai skaitā tos finansēt. Tikai „neieņemsim aktīvu pozīciju” vai „diplomātija un miers” bez atbalsta noliegšanas = klusē — apgalvojums prasa atbalstu, ne līderību (D1b 2026-09-22)"
+  quiz: false
+- id: q02
+  tema: "Aizsardzība un drošība"
+  apgalvojums: "Aizsardzībai jāatvēl vismaz 5 % no IKP."
+  piekrit_nozime: "par = aizsardzībai vismaz 5 % no IKP (arī „virs 5 %” vai solījums noturēt 5 %); pret = aizsardzības budžeta samazināšana vai pārdale citām nozarēm. Citu nozaru pārdale, kas aizsardzību neskar, = klusē"
+  quiz: false
+- id: q03
+  tema: "Aizsardzība un drošība"
+  apgalvojums: "Obligātais valsts aizsardzības dienests jāsaglabā."
+  piekrit_nozime: "par = saglabāt, paplašināt vai pilnveidot VAD (paplašināšana ietver saglabāšanu), arī vīriešu obligātā dienesta atzīšana par normu; pret = atcelt obligāto iesaukšanu. Atlīdzība vai atbalsts VAD dalībniekiem pati par sevi = klusē"
+  quiz: false
+- id: q04
+  tema: "Imigrācija"
+  apgalvojums: "Darbaspēka ievešana no trešajām valstīm jāierobežo."
+  piekrit_nozime: "par = programmas teikums grib SAMAZINĀT vai APGRŪTINĀT trešo valstu darbaspēka/imigrācijas plūsmu (ierobežot, apturēt, kvotas, stingrāki vai selektīvāki nosacījumi — ar ierobežojuma vārdu vai salīdzinājuma pakāpi); pret = atvieglot vai paplašināt darbaspēka ievešanu. „Kontrolēta”, „sakārtota”, „gudra” imigrācija bez ierobežojuma = klusē (tā ir kārtība, ne apjoms); cīņa ar NELEGĀLO migrāciju = klusē (apgalvojums ir par legālu darbaspēku). „Kvotas” vērtē pēc jēgas, ne pēc vārda: arī „iebilstam pret kvotām” kopā ar iebildumu pret masveida migrāciju ir ierobežojoša nostāja (D1b 2026-09-22)"
+  quiz: false
+- id: q05
+  tema: "Valodu politika"
+  apgalvojums: "Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē."
+  piekrit_nozime: "par = plašākas iespējas mazākumtautību valodām (izglītība mazākumtautību valodās, krievu valoda skolās, plašāka lietošana sabiedriskajā dzīvē); pret = prasība lietot tikai valsts valodu vai ierobežot citu valodu lietojumu. „Stiprināsim latviešu valodu” ir pret TIKAI tad, ja teikums skar arī citu valodu lietojumu; latviešu valodas apguves uzlabošana pati par sevi = klusē (D1b 2026-09-22)"
+  quiz: false
+- id: q06
+  tema: "Budžets un finanses"
+  apgalvojums: "Nekustamā īpašuma nodoklis vienīgajam mājoklim jāatceļ."
+  piekrit_nozime: "par = atcelt NĪN vienīgajam (primārajam, ģimenes) mājoklim, arī 0 % likme vai atcelšana visiem mājokļiem; pret = saglabāt NĪN vienīgajam mājoklim. NĪN celšana citiem īpašumiem (luksuss, neizmantots, otrais mājoklis) = klusē — apgalvojums ir tikai par vienīgo mājokli"
+  quiz: false
+- id: q07
+  tema: "Pašvaldības"
+  apgalvojums: "Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām."
+  piekrit_nozime: "par = pašvaldības patur LIELĀKO daļu no attiecīgā nodokļa (piem., IIN 95 %); pret = pašvaldību ieņēmumu centralizēšana valsts budžetā. „Daļa”, „puse”, „20 %” vai pārdale starp pašvaldībām = klusē — apgalvojums prasa lielāko daļu, ne kādu daļu (D1b 2026-09-22)"
+  quiz: false
+- id: q08
+  tema: "Valsts pārvalde"
+  apgalvojums: "Ministriju skaits jāsamazina, tās apvienojot."
+  piekrit_nozime: "par = samazināt ministriju skaitu, tās apvienojot vai likvidējot; pret = saglabāt esošo ministriju skaitu vai noraidīt apvienošanu. Funkciju dublēšanās, ierēdņu skaita vai aģentūru apvienošana, neminot ministriju skaitu, = klusē. NB: neviens no 14 sarakstiem pret neiestājas — tukšā „iebilst” kolonna ir atradums, ne rubrikas noteikums (D1b 2026-09-22)"
+  quiz: false
+- id: q09
+  tema: "Budžets un finanses"
+  apgalvojums: "Pievienotās vērtības nodoklis pārtikai jāsamazina."
+  piekrit_nozime: "par = samazināt PVN pārtikai (arī konkrēta zemāka likme pārtikas produktiem); pret = PVN pārtikai nemainīt vai celt. PVN izmaiņas citām precēm (mājoklis, medikamenti, apkure), pārtiku neminot, = klusē"
+  quiz: false
+- id: q10
+  tema: "Pensijas"
+  apgalvojums: "Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt."
+  piekrit_nozime: "par = brīvprātīgs 2. līmenis VAI tiesības uzkrājumu izņemt (indivīda izvēle); pret = saglabāt obligātu vai iebilst pret izņemšanas tiesībām. 2. līmeņa likvidēšana vai ieskaitīšana 1. līmenī BEZ indivīda izvēles = klusē — apgalvojums runā par indivīda tiesībām, ne par valsts pārņemšanu (operatora lēmums 2026-09-20; līdz tam zars „pārcelt uz 1. līmeni” = par bija rubrikas kļūda, ASL kodēta par). Uzkrājuma IZLIETOJUMS pēc izmaksas nav tas pats, kas tiesības to izņemt, = klusē (D1b 2026-09-22)"
+  quiz: false
+- id: q11
+  tema: "Klimats"
+  apgalvojums: "Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā."
+  piekrit_nozime: "par = atbalsts klimatneitralitātei vai ES termiņam; pret = klimatneitralitātes vai termiņa noraidījums, VAI beznosacījuma prasība atteikties no zaļā kursa. Nosacīta prasība („tās prasības, kas…”, „savienojami ar konkurētspēju”, „saprātīga ieviešana”) = klusē — tas ir tas pats mīkstinājums, kas jau noteikts ZZS, NA un MMN šūnām. Zaļais kurss ir instruments, ne mērķis: neviena programma termiņu nenosauc (D1b 2026-09-22)"
+  quiz: false
+- id: q12
+  tema: "Sociālā politika"
+  apgalvojums: "Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai."
+  piekrit_nozime: "par = prasība likumā (arī Satversmē) noteikt vai saglabāt, ka ģimene vai laulība ir vīrieša un sievietes savienība; pret = laulību vienlīdzība vai visu ģimeņu aizsardzība. Stambulas konvencijas denonsēšana, „ģimenes vērtību” aizsardzība vai starptautisku dokumentu kritika BEZ laulības definīcijas = klusē — apgalvojums runā par definīciju likumos (D1b 2026-09-22)"
+  quiz: false
