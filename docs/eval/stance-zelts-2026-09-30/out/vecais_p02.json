@@ -1,0 +1,113 @@
+[
+  {
+    "doc_id": 23753,
+    "pid": 16,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 23753,
+        "topic": "Aizsardzība un drošība",
+        "stance": "Paziņo, ka pieņēmis Aizsardzības ministrijas valsts sekretāra Aivara Puriņa atlūgumu, un norāda uz pastiprinātu spiedienu uz aizsardzības nozari: publiskajā telpā tiek tiražēti apgalvojumi un pārmetumi, ko viņš raksturo kā nepamatotus un kas, pēc viņa teiktā, mēģina apšaubīt nozares progresu vai mazināt uzticību.",
+        "quote": "Šobrīd novērojam pastiprinātu spiedienu uz aizsardzības nozari – publiskajā telpā tiek tiražēti nepamatoti apgalvojumi un pārmetumi, mēģinot apšaubīt nozares progresu vai mazināt uzticību.",
+        "confidence": 0.8,
+        "reasoning": "Paša tvīts (first_party). Paziņojums par valsts sekretāra atlūguma pieņemšanu ir ierāmēts ar paša vērtējumu, ka publiskajā telpā pret aizsardzības nozari tiek tiražēti nepamatoti pārmetumi — ar šo apgalvojumu var nepiekrist, tāpēc tā ir pozīcija. Citāts ir nepārtraukts teikums no tvīta; «nepamatoti» ietīts atrunā kā runātāja apzīmējums. Pateicība Puriņam un vispārīgā formula «prioritātes paliek nemainīgas» nav atsevišķas pozīcijas.",
+        "salience": 0.8,
+        "stated_at": "2026-04-22"
+      }
+    ]
+  },
+  {
+    "doc_id": 7504,
+    "pid": 70,
+    "decision": "empty",
+    "empty_reason": "Diskusijas anonss: paziņo par dalību Latvijas Bankas diskusijā un uzskaita tās jautājumus; visi ir jautājumi bez atbildes, paša nostāja par valsts parādu nav pausta.",
+    "claims": []
+  },
+  {
+    "doc_id": 26370,
+    "pid": 10,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 26370,
+        "topic": "Pilsētvide",
+        "stance": "Iebilst pret ceļa bloķēšanu, izsmej tās apzīmējumu «modālais filtrs» un apgalvo, ka 100 cilvēku sūdzību un iegribu dēļ cietīs 15 000 apkaimes iedzīvotāju; PRO pārmet, ka tiem «galvenais kaut ko salauzt».",
+        "quote": "Tagad dēļ katru 100 cilvēku sūdzības un iegribām cietīs 15 000  apkaimes iedzīvotāji",
+        "confidence": 0.55,
+        "reasoning": "NEEDS_REVIEW: ironija/sarkasms — tvīts ir emocionāls un sarkastisks, iela vai vieta tajā nav nosaukta (to nepievienoju no citiem avotiem). Tomēr nostāja pret konkrēto ceļa bloķēšanu jeb modālo filtru izriet no paša teksta tieši: 15 000 apkaimes iedzīvotāju cietīšot 100 cilvēku sūdzību dēļ. Citāts verbatim, ar avota pareizrakstību un dubulto atstarpi; noslēguma pieturzīmes avotā nav. Amata titulu stance nelieku, jo avots to nemin.",
+        "salience": 0.5,
+        "stated_at": "2026-04-25"
+      }
+    ]
+  },
+  {
+    "doc_id": 28022,
+    "pid": 178,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28022,
+        "topic": "Pilsētvide",
+        "stance": "Norāda, ka dienesti pirms satiksmes organizācijas izmaiņām Vārnu ielā bija informēti, un sagaida, ka nākamās dienas sapulcē ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "quote": "Rīt sapulcē kopā ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "confidence": 0.7,
+        "reasoning": "Paša tvīts. Konkrēta pilsētvides nostāja: aizstāv Vārnu ielas izmaiņu saskaņošanu ar dienestiem un virza modālā filtra principu, kas būtu lietojams arī citur Rīgā. Kvalifikatori saglabāti — «varēs nonākt», «būtu lietojams» ir nodoms/sagaidāmais iznākums, ne pieņemts lēmums. «Apsveicami, ka šodien VUGD veic mācības» un «Rīgai jābūt drošai» nav atsevišķas pozīcijas. Īss tvīts, tāpēc confidence 0.7, ne augstāk.",
+        "salience": 0.4,
+        "stated_at": "2026-04-29"
+      }
+    ]
+  },
+  {
+    "doc_id": 13281,
+    "pid": 15,
+    "decision": "empty",
+    "empty_reason": "Apsveikuma/prieka žanrs: prieks par Francijas pilsoņu atbrīvošanu no Irānas un atzinība Francijas diplomātiem; nav nosaukts neviens Latvijas politikas instruments vai konkrēts solis — rituāls, ne pozīcija.",
+    "claims": []
+  },
+  {
+    "doc_id": 4731,
+    "pid": 30,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 4731,
+        "topic": "Valsts pārvalde",
+        "stance": "Uzskata, ka birokrātiju nevar apkarot ar birokrātisku recepti un ka vienīgās zāles pret birokrātijas pārmērībām ir valsts samazināšana, savstarpējas uzticēšanās vairošana (arī stiprinot sabiedrības neformālās institūcijas) un individuālas atbildības likšana pāri procesa reglamentēšanai.",
+        "quote": "Valsts samazināšana, savstarpējas uzticēšanās vairošana (tai skaitā ar sabiedrības neformālo institūciju stiprināšanu) un individuālas atbildības likšana pāri procesa reglamentēšanai ir vienīgās zāles pret birokrātijas pārmērībām.",
+        "confidence": 0.85,
+        "reasoning": "Paša tvīts ar skaidri formulētu nostāju par birokrātijas mazināšanu valsts pārvaldē. Citāts ir pilns teikums verbatim. Aicinājums pievienoties partijai un «MMN atgriezīs Latvijā politiku» ir kampaņas formula, ne atsevišķa pozīcija. stated_at = tvīta diena (raidījums bija «aizvakar», bet šis izteikums ir paša tvīta teksts).",
+        "salience": 0.55,
+        "stated_at": "2026-03-18"
+      }
+    ]
+  },
+  {
+    "doc_id": 5479,
+    "pid": 49,
+    "decision": "empty",
+    "empty_reason": "Izplata Alvja Hermaņa frāzi «MĒS MAINĀM NOTEIKUMUS» ar vispārīgu komentāru par stipriem cilvēkiem un ikdienas inerci; nav politikas satura, un vērtējums pieder citam cilvēkam.",
+    "claims": []
+  },
+  {
+    "doc_id": 20568,
+    "pid": 25,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 20568,
+        "topic": "Pašvaldības",
+        "stance": "Kritizē Rīgas domi par bērnu pieteikšanu vasaras nometnēm: vietne nestrādā, vietu skaits ir ierobežots un liela daļa vecāku paliek bez iespējas bērnam piedāvāt drošu vasaru; uzskata, ka Rīgas dome «pat ar šo» nespēj tikt galā.",
+        "quote": "Pat ar šo @RigasDome nespēj tikt galā.",
+        "confidence": 0.7,
+        "reasoning": "Paša tvīts ar tiešu kritiku pret Rīgas domes darbu konkrētā jautājumā — vasaras nometņu pieteikšanā. Citāts ir pilns teikums verbatim. Tēma Pašvaldības, jo kritikas kodols ir pašvaldības pārvaldes spēja, ne izglītības politika. Īss tvīts, confidence 0.7.",
+        "salience": 0.4,
+        "stated_at": "2026-04-16"
+      }
+    ]
+  }
+]

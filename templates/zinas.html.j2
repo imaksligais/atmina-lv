@@ -1,0 +1,141 @@
+{% extends "base.html.j2" %}
+{% set active_page = "zinas" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Ziņas{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Mediju publikācijas un pieminējumi</div>
+      <h1 class="pagehead-h1">Ziņas</h1>
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Kopā</span>
+        <span class="pagehead-metric-value">{{ "{:,}".format(metrics.total).replace(",", " ") }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Pēdējā nedēļā</span>
+        <span class="pagehead-metric-value">{{ metrics.last_week }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Avoti</span>
+        <span class="pagehead-metric-value">{{ metrics.sources }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="multi-select" id="source-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="source-trigger">
+        <span>Visi avoti</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt avotus" placeholder="Meklēt...">
+        {% for src in sources %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ src }}">
+          <span class="checkbox"></span>
+          <span>{{ src }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="topic-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="topic-trigger">
+        <span>Visas tēmas</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt tēmas" placeholder="Meklēt...">
+        {% for topic in topics %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ topic }}">
+          <span class="checkbox"></span>
+          <span>{{ topic }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="mentioned-person-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="mentioned-person-trigger">
+        <span>Persona</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt personu" placeholder="Meklēt personu...">
+        {% for person in mentioned_persons %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ person }}">
+          <span class="checkbox"></span>
+          <span>{{ person }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="mentioned-party-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="mentioned-party-trigger">
+        <span>Partija</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt partiju" placeholder="Meklēt partiju...">
+        {% for party in mentioned_parties %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ party }}">
+          <span class="checkbox"></span>
+          <span>{{ party }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="news-list">
+    {% for n in news %}
+    <div class="news-card" data-source="{{ n.source_domain }}" data-persons="{{ n.persons_str }}" data-parties="{{ n.parties_str }}" data-topics="{{ n.topics_str }}">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+        <div style="flex:1; min-width:0;">
+          <a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="news-title" style="font-weight:600; font-size:0.95rem; line-height:1.4; display:block; margin-bottom:0.3rem;">{{ n.headline }}<span class="ext-arrow" aria-hidden="true">↗</span></a>
+          <div style="font-size:0.82rem; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center;">
+            <span>{{ n.date }}</span>
+            <span style="opacity:0.4;">·</span>
+            <a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="news-source-link" title="Atvērt avotā">{{ n.source_domain }} ↗</a>
+          </div>
+        </div>
+        <div style="flex-shrink:0; max-width:45%; display:flex; flex-direction:column; align-items:flex-end; gap:0.3rem;">
+          {% for p in n.persons[:5] %}
+          <a href="politiki/{{ p.slug }}.html" class="party-tag" style="font-size:0.78rem;{% if p.is_commentator %} opacity:0.7;{% endif %}"{% if p.is_commentator %} title="Komentētājs"{% endif %}>{{ p.name }}</a>
+          {% endfor %}
+          {% if n.persons|length > 5 %}
+          <span class="party-tag" style="font-size:0.72rem; opacity:0.7;">+{{ n.persons|length - 5 }} vēl</span>
+          {% endif %}
+          {% if n.has_commentator %}
+          <span class="party-tag" style="font-size:0.72rem; opacity:0.7;">Komentētājs</span>
+          {% endif %}
+        </div>
+      </div>
+      {% if n.topics_list %}
+      <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.3rem;">
+        {% for t in n.topics_list %}
+        <span class="topic-tag" style="font-size:0.72rem;">{{ t }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/znv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

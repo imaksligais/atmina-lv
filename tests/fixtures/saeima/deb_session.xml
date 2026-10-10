@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DKroot>
+  <LAST_VERSION>"AAAAAAKadhE="</LAST_VERSION>
+  <DK_ID>ac98bfc2-1cdd-4fba-b646-8bae0629117a</DK_ID>
+  <DK_STATUS>6</DK_STATUS>
+  <DEBATES>
+    <DKP_ID>fc5dd32b-f989-4198-853f-381a6fb90118</DKP_ID>
+    <DKP_NUMBER>1</DKP_NUMBER>
+    <ALTPARENTID />
+    <LIVSDOCUMENTID>1105/Lm14</LIVSDOCUMENTID>
+    <ORIGDKPTYPE>2</ORIGDKPTYPE>
+    <QDKPTEXT />
+    <DKP_SEQUENCE>00001</DKP_SEQUENCE>
+    <TITLE>Par neuzticības izteikšanu veselības ministram Hosamam Abu Meri</TITLE>
+    <WITHOUT_REGISTER_NUMBER>0</WITHOUT_REGISTER_NUMBER>
+    <DEBATE_NAME>Ramona#Hosams#Zane#Līga#Maija#Viktorija#Andris#Līga#Ģirts#Kristaps#Jānis</DEBATE_NAME>
+    <DEBATE_SURNAME>Petraviča#Abu Meri#Skujiņa-Rubene#Kozlovska#Armaņeva#Pleškāne#Šuvajevs#Kļaviņa#Štekerhofs#Krištopans#Vucāns</DEBATE_SURNAME>
+    <DEBATE_SUFFIX>##########</DEBATE_SUFFIX>
+    <DEBATE_FRACTION>LPV##JV#ZZS#LPV##PRO#ZZS#ZZS#LPV#ZZS</DEBATE_FRACTION>
+    <DEBATE_TIME>35:26#20:05#06:05#10:57#05:04#20:04#04:09#04:33#09:57#01:19#04:30</DEBATE_TIME>
+    <DEBATE_INFO>Dep.#VesM#Dep.#1x, Dep.#1x, Dep.#1x, Dep.#1x, Dep.#1x, Dep.#1x, Dep.#1x, Dep.#1x, Dep.</DEBATE_INFO>
+    <DEBATE_STATUS>5#5#5#5#5#5#5#5#5#5#5</DEBATE_STATUS>
+    <DEBATE_LASTCHANGE>11."AAAAAAKYBsQ="</DEBATE_LASTCHANGE>
+    <DEBATE_OPINION>Referents iesniedzēju vārdā##Frakc. viedoklis########</DEBATE_OPINION>
+    <SPEAKER />
+  </DEBATES>
+  <DEBATES>
+    <DKP_ID>46faefb3-27d0-4f95-b865-6ddb981445f1</DKP_ID>
+    <DKP_NUMBER>8</DKP_NUMBER>
+    <ALTPARENTID />
+    <LIVSDOCUMENTID>1512/Lp14</LIVSDOCUMENTID>
+    <ORIGDKPTYPE>1</ORIGDKPTYPE>
+    <QDKPTEXT />
+    <DKP_SEQUENCE>00008</DKP_SEQUENCE>
+    <TITLE>Grozījumi Valsts sociālo pabalstu likumā</TITLE>
+    <WITHOUT_REGISTER_NUMBER>0</WITHOUT_REGISTER_NUMBER>
+    <DEBATE_NAME>Viktorija#Edmunds</DEBATE_NAME>
+    <DEBATE_SURNAME>Pleškāne#Jurēvics</DEBATE_SURNAME>
+    <DEBATE_SUFFIX>#</DEBATE_SUFFIX>
+    <DEBATE_FRACTION>#JV</DEBATE_FRACTION>
+    <DEBATE_TIME>03:38#01:26</DEBATE_TIME>
+    <DEBATE_INFO>Dep.#Dep.</DEBATE_INFO>
+    <DEBATE_STATUS>5#5</DEBATE_STATUS>
+    <DEBATE_LASTCHANGE>2."AAAAAAKYKHw="</DEBATE_LASTCHANGE>
+    <DEBATE_OPINION>Par#Pret</DEBATE_OPINION>
+    <SPEAKER />
+  </DEBATES>
+  <DEBATES>
+    <DKP_ID>34dc647d-cb33-4cc0-81e1-adbc9eee3d27</DKP_ID>
+    <DKP_NUMBER />
+    <ALTPARENTID />
+    <LIVSDOCUMENTID />
+    <ORIGDKPTYPE />
+    <QDKPTEXT />
+    <DKP_SEQUENCE>00021.0000.901</DKP_SEQUENCE>
+    <TITLE>  Par iekļaušanu nākamās kārtējās sēdes darba kārtībā</TITLE>
+    <WITHOUT_REGISTER_NUMBER />
+    <DEBATE_NAME>Mārcis</DEBATE_NAME>
+    <DEBATE_SURNAME>Jencītis</DEBATE_SURNAME>
+    <DEBATE_SUFFIX />
+    <DEBATE_FRACTION>LPV</DEBATE_FRACTION>
+    <DEBATE_TIME>04:21</DEBATE_TIME>
+    <DEBATE_INFO>Dep.</DEBATE_INFO>
+    <DEBATE_STATUS>5</DEBATE_STATUS>
+    <DEBATE_LASTCHANGE>1."AAAAAAKYb6k="</DEBATE_LASTCHANGE>
+    <DEBATE_OPINION>Par</DEBATE_OPINION>
+    <SPEAKER />
+  </DEBATES>
+  <!-- KONSTRUĒTS (nav no avota): DEBATE_FRACTION ir 2 elementi, citi 3 —
+       masīvu garuma nesakritība; visam DKP jāiet failures, nekas neglabājas. -->
+  <DEBATES>
+    <DKP_ID>00000000-crafted-mismatch</DKP_ID>
+    <DKP_NUMBER>98</DKP_NUMBER>
+    <LIVSDOCUMENTID>9999/Lp14</LIVSDOCUMENTID>
+    <DKP_SEQUENCE>00098</DKP_SEQUENCE>
+    <TITLE>Konstruēts punkts ar nesakritīgiem masīviem</TITLE>
+    <DEBATE_NAME>Anna#Jānis#Ilze</DEBATE_NAME>
+    <DEBATE_SURNAME>Testa#Pārbaude#Fiktīvā</DEBATE_SURNAME>
+    <DEBATE_SUFFIX>##</DEBATE_SUFFIX>
+    <DEBATE_FRACTION>JV#NA</DEBATE_FRACTION>
+    <DEBATE_TIME>01:00#02:00#03:00</DEBATE_TIME>
+    <DEBATE_INFO>Dep.#Dep.#Dep.</DEBATE_INFO>
+    <DEBATE_OPINION>##</DEBATE_OPINION>
+  </DEBATES>
+  <!-- KONSTRUĒTS (nav no avota): punkts bez runātājiem (tukšs DEBATE_SURNAME) — izlaiž, NAV failure. -->
+  <DEBATES>
+    <DKP_ID>00000000-crafted-nospeakers</DKP_ID>
+    <DKP_NUMBER>99</DKP_NUMBER>
+    <LIVSDOCUMENTID />
+    <DKP_SEQUENCE>00099</DKP_SEQUENCE>
+    <TITLE>Konstruēts punkts bez debatēm</TITLE>
+    <DEBATE_NAME />
+    <DEBATE_SURNAME />
+    <DEBATE_SUFFIX />
+    <DEBATE_FRACTION />
+    <DEBATE_TIME />
+    <DEBATE_INFO />
+    <DEBATE_OPINION />
+  </DEBATES>
+</DKroot>

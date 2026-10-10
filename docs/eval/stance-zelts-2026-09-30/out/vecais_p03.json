@@ -1,0 +1,123 @@
+[
+ {
+  "doc_id": 13003,
+  "pid": 64,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 13003,
+    "topic": "Ārpolitika",
+    "stance": "Norāda, ka naftas cena iepriekšējā dienā noslīdēja atpakaļ zem 100, brīžiem krītot pat par 22 %, un uzskata, ka deeskalācija kļūs par realitāti, ja de facto atsāksies kuģošana Hormuzā.",
+    "quote": "Naftas cena tikmēr vakar novēlās atpakaļ zem 100, vienubrīd pat par 22%, bet, ja de facto atsāksies kuģošana Hormuzā, tad deeskalācija kļūs par realitāti.",
+    "confidence": 0.55,
+    "reasoning": "NEEDS_REVIEW: ironija un jautājuma forma apkārtējā tekstā («Madmans theory nostrādāja?», sarkastisks noslēgums par LSM kā «glavļitu»); glabāts tikai vidējais teikums — analītisks vērtējums ar nosacījumu (ja atsāksies kuģošana), pēc 2026-09-05 precedenta (a) par datu izteikumu finanšu eksperta slotā. Sarkastiskais pēdējais teikums par LSM netiek ekstraktēts (insinuācija bez konkrētas politikas nostājas). Tēma: Irānas konflikta deeskalācija → Ārpolitika, nevis Degviela un enerģētika, jo naftas cena ir rādītājs, nevis izteikuma kodols.",
+    "salience": 0.4,
+    "stated_at": "2026-04-08"
+   }
+  ]
+ },
+ {
+  "doc_id": 71133,
+  "pid": 65,
+  "decision": "empty",
+  "empty_reason": "Atbilde (@saliktengriba) bez redzama konteksta: pirmais teikums ir faktu skaidrojums par sociālo dzīvokļu prasībām, otrais — retorisks jautājums bez izteiktas atbildes; skaidra pirmās personas nostāja netiek formulēta.",
+  "claims": []
+ },
+ {
+  "doc_id": 26996,
+  "pid": 15,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 26996,
+    "topic": "Ukraina un Krievija",
+    "stance": "Paziņo, ka ir nolēmusi iekļaut trīs Krievijas pilsoņus — Mihailu Švidkoju, Anastasiju Karnejevu un Jekaterinu Vinokurovu — Latvijas nevēlamo personu (persona non grata) sarakstā un aizliegt viņiem ieceļot Latvijā uz nenoteiktu laiku saskaņā ar Imigrācijas likuma 61. panta 2. daļu.",
+    "quote": "Esmu lēmusi LR nevēlamo personu (persona non grata) sarakstā iekļaut 3 KF pilsoņus un aizliegt Mihailam Švidkojam, Anastasijai Karnejevai, Jekaterinai Vinokurovai ieceļot 🇱🇻 uz nenoteiktu laiku, saskaņā ar Imigrācijas likuma 61.p. 2.d.",
+    "confidence": 0.9,
+    "reasoning": "Ārlietu ministres pašas tvīts pirmajā personā par konkrētu lēmumu (ieceļošanas aizliegums trim nosauktiem KF pilsoņiem). Iemesls avotā nav nosaukts, tāpēc stance to nepiemin. Tēma: instruments ir Imigrācijas likums, bet pasākums vērsts pret Krievijas pilsoņiem → Ukraina un Krievija (nevis Imigrācija, jo migrācijas pamatojums avotā nav minēts).",
+    "salience": 0.6,
+    "stated_at": "2026-04-27"
+   }
+  ]
+ },
+ {
+  "doc_id": 85504,
+  "pid": 242,
+  "decision": "empty",
+  "empty_reason": "Žurnālistes relay slots (journalist|relay, noklusējums empty); tvīts komentē Valaiņa vērtējumu par Kulberga valdību — pozīcija pieder Valainim, ne slotam.",
+  "claims": []
+ },
+ {
+  "doc_id": 28123,
+  "pid": 192,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 28123,
+    "topic": "Pašvaldības",
+    "stance": "Ironiski kritizē dzirdēto ziņu, ka jūnijā divpadsmit Rīgas domes kapsētu pārvaldes darbinieki par 20 tūkstošiem eiro esot paredzējuši braukt komandējumā uz Turīnu uz kapsētu konferenci.",
+    "quote": "Dzirdēju,ka jūnijā divpadsmit Rīgas domes kapsētu pārvaldes darbinieki par nieka 20 tūkstošiem eiro braukšot komandējumā uz Turīnu.",
+    "confidence": 0.5,
+    "reasoning": "NEEDS_REVIEW: ironija un jautājuma forma («par nieka 20 tūkstošiem», «Nez, VIP kapliča arī būs?»); fakts ir runātāja paša «dzirdēts» (atstāstījuma izteiksme «braukšot», «būšot» saglabāta stance ar «esot paredzējuši»). Kritika vērsta pret nosauktu iestādi un konkrētu izdevumu, tāpēc glabāts ar zemu confidence, ne kā tīra nostāja.",
+    "salience": 0.3,
+    "stated_at": "2026-04-26"
+   }
+  ]
+ },
+ {
+  "doc_id": 6387,
+  "pid": 61,
+  "decision": "empty",
+  "empty_reason": "Sarkastisks viena teikuma aizskārums («Klauns ne ministre») un retorisks jautājums par Bražes izteikumu — insinuācija bez konkrētas politikas nostājas.",
+  "claims": []
+ },
+ {
+  "doc_id": 28120,
+  "pid": 192,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 28120,
+    "topic": "Koalīcija un partijas",
+    "stance": "Apgalvo, ka visās valstīs, kurās jebkad valdījuši marksisti vai viņiem līdzīgie, viss vienmēr beidzies ar totalitārismu, diktatūru un līķu kalniem, un kritizē Šuvajevu, kurš, pēc Seržanta teiktā, joprojām ir pārliecināts, ka Marksa idejas tomēr var izdoties īstenot.",
+    "quote": "Absolūti visās valstīs,kurās jebkad ir valdījuši marksisti vai viņiem līdzīgie, vienmēr viss ir beidzies ar totalitārismu,diktatūru un līķu kalniem.",
+    "confidence": 0.7,
+    "reasoning": "NEEDS_REVIEW: ideoloģisks vērtējums un kritika pret konkrētu politiķi neiederas nevienā no 33 grupām tieši; labākais minējums Koalīcija un partijas (partiju ideoloģiskā polemika). Nostāja ir paša tvītā pirmajā personā; Šuvajeva pārliecība ir Seržanta raksturojums, tāpēc stance to ietin ar «pēc Seržanta teiktā».",
+    "salience": 0.4,
+    "stated_at": "2026-04-28"
+   }
+  ]
+ },
+ {
+  "doc_id": 6616,
+  "pid": 29,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 6616,
+    "topic": "Droni",
+    "stance": "Kritizē, ka piektajā kara gadā joprojām nav izveidota dronu apmācības skola, un paziņo, ka MMN partijā apsver iespēju negaidīt politiķus, kuru rīcību viņš raksturo kā sabotāžu, bet ar sabiedrības līdzekļiem nodibināt privātu dronu apmācības centru aptuveni 500 jaunu cilvēku sagatavošanai; MMN apņemas noorganizēt instruktorus no Ukrainas veterāniem, un, ja būs atbalsts, skolu varētu atvērt jau 1. septembrī.",
+    "quote": "Apmācības instruktorus MMN partija varētu noorganizēt no Ukrainas veterāniem. To mēs ņemam uz sevi.",
+    "confidence": 0.8,
+    "reasoning": "Paša ieraksts pirmajā personā ar konkrētu priekšlikumu (privāts dronu apmācības centrs, ~500 cilvēku, instruktori no Ukrainas veterāniem, termiņš 1. septembris ar nosacījumu «ja būs atbalsts»). Kvalifikatori saglabāti: «varbūt» → «apsver», «varētu». «Sabotāža» ietīta atrunā. Tēma Droni — bez vārda «drons» pozīcija sabrūk.",
+    "salience": 0.7,
+    "stated_at": "2026-04-04"
+   },
+   {
+    "document_id": 6616,
+    "topic": "Aizsardzība un drošība",
+    "stance": "Uzskata, ka latviešu vīriešiem, nevis strīdoties, vai ārzemnieki Latviju aizstāvēs, drīzāk jākoncentrējas un steidzami jādomā, kā pašiem maksimāli uzkrāt spēkus, lai paši varētu par sevi parūpēties; apgalvo, ka neviens Latviju nekad nepataisīs par buferzonu, ja mēs paši to nepieļausim.",
+    "quote": "Latviešu vīriešiem drīzāk vajag sakoncentrēties un ar steigu domāt, kā pašiem max uzkrāt spēkus, lai paši varētu parūpēties par sevi.",
+    "confidence": 0.75,
+    "reasoning": "Normatīvs paša apgalvojums par pašpaļāvību aizsardzībā (atsevišķs no dronu skolas priekšlikuma, cits pamatojums — tāpēc cita tēma). «Drīzāk» saglabāts kā kontrasts ar ievadā aprakstīto mediju strīdu.",
+    "salience": 0.6,
+    "stated_at": "2026-04-04"
+   }
+  ]
+ }
+]

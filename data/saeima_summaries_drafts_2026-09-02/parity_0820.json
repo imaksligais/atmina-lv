@@ -1,0 +1,314 @@
+[
+  {
+    "date": "2026-07-23",
+    "uuid": "886631a9-c2b2-4de0-9d9d-34adbcf3d4ae",
+    "session_type": "arkartas_sesija",
+    "agenda_votes": 109,
+    "present_by_url": 48,
+    "present_by_datetime": 61,
+    "missing": [],
+    "known_unloadable": [],
+    "unreadable": [],
+    "error": null
+  },
+  {
+    "date": "2026-07-23",
+    "uuid": "8abc70de-a562-4b85-b496-ae6b612a60ea",
+    "session_type": "arkartas_sesija",
+    "agenda_votes": 6,
+    "present_by_url": 6,
+    "present_by_datetime": 0,
+    "missing": [],
+    "known_unloadable": [],
+    "unreadable": [],
+    "error": null
+  },
+  {
+    "date": "2026-07-23",
+    "uuid": "22e434ff-e3bb-4739-92c8-a35868e69d0c",
+    "session_type": "arkartas_sesija",
+    "agenda_votes": 3,
+    "present_by_url": 3,
+    "present_by_datetime": 0,
+    "missing": [],
+    "known_unloadable": [],
+    "unreadable": [],
+    "error": null
+  },
+  {
+    "date": "2026-08-20",
+    "uuid": "1e7e7e11-79ce-4c04-ac9d-2911f97d4f23",
+    "session_type": "arkartas_sesija",
+    "agenda_votes": 11,
+    "present_by_url": 0,
+    "present_by_datetime": 0,
+    "missing": [
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/F40B52502EC242A3C2258E59005AB2B8?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:53:55",
+        "motif": "Grozījumi Nacionālās drošības likumā (1494/Lp14), 1.lasījums",
+        "par": 77,
+        "pret": 4,
+        "atturas": 0,
+        "deputies": 86
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/C76B19994FE6010BC2258E59005AB2BC?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:56:43",
+        "motif": "Grozījumi likumā “Par maternitātes un slimības apdrošināšanu” (1484/Lp14), 1.lasījums",
+        "par": 84,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 86
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/FCE348F4CEA3ED90C2258E59005AB2AB?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:46:09",
+        "motif": "“Air Baltic Corporation AS” finanšu stabilizācijas pasākumu likums (1495/Lp14), 2.lasījums, steidzams",
+        "par": 54,
+        "pret": 21,
+        "atturas": 1,
+        "deputies": 83
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/99CAD3AD328ED901C2258E59005AB2CD?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:29:20",
+        "motif": "Deputātu klātbūtnes reģistrācija",
+        "par": 0,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 100
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/8EAA35F2FC52A936C2258E59005AB2C1?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:57:46",
+        "motif": "Deputātu klātbūtnes reģistrācija",
+        "par": 0,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 100
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/B68FA81C18B55FBEC2258E59005AB2BA?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:48:39",
+        "motif": "Par likumprojekta atzīšanu par steidzamu. Grozījumi Nacionālās drošības likumā (1494/Lp14), 1.lasījums",
+        "par": 77,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 85
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/53342781B51FFCEDC2258E59005AB2BE?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:56:15",
+        "motif": "Par likumprojekta atzīšanu par steidzamu. Grozījumi likumā “Par maternitātes un slimības apdrošināšanu” (1484/Lp14), 1.lasījums",
+        "par": 80,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 86
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/BFD4ADE2E90A2A93C2258E59005AB2AD?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:40:07",
+        "motif": "Par priekšlikumu Nr.2. “Air Baltic Corporation AS” finanšu stabilizācijas pasākumu likums (1495/Lp14), 2.lasījums, steidzams",
+        "par": 18,
+        "pret": 50,
+        "atturas": 1,
+        "deputies": 83
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/28135238C23A903EC2258E59005AB2CB?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:27:12",
+        "motif": "Par priekšlikumu Nr.1. Grozījumi likumā “Par maternitātes un slimības apdrošināšanu” (1484/Lp14), 2.lasījums, steidzams",
+        "par": 22,
+        "pret": 1,
+        "atturas": 46,
+        "deputies": 74
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/1D92A21938D0D257C2258E59005AB2AF?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "17:44:37",
+        "motif": "Par priekšlikumu Nr.3. “Air Baltic Corporation AS” finanšu stabilizācijas pasākumu likums (1495/Lp14), 2.lasījums, steidzams",
+        "par": 60,
+        "pret": 4,
+        "atturas": 9,
+        "deputies": 85
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/7ED9D2C9E2D6387FC2258E59005AB2C9?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:28:42",
+        "motif": "Grozījumi likumā “Par maternitātes un slimības apdrošināšanu” (1484/Lp14), 2.lasījums, steidzams",
+        "par": 72,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 75
+      }
+    ],
+    "known_unloadable": [],
+    "unreadable": [],
+    "error": null
+  },
+  {
+    "date": "2026-08-20",
+    "uuid": "b9ead3f2-c350-4729-80a8-644fb2726374",
+    "session_type": "arkartas_sesija",
+    "agenda_votes": 75,
+    "present_by_url": 0,
+    "present_by_datetime": 61,
+    "missing": [
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/A99E36C0F130ED18C2258E5A000AFDD8?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:34:44",
+        "motif": "Grozījumi Ieguldījumu pārvaldes sabiedrību likumā (1384/Lp14), 2.lasījums",
+        "par": 47,
+        "pret": 22,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/2BDDE8EAA2CD0772C2258E5A000AFDE6?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:47:55",
+        "motif": "Grozījumi Maksājumu pakalpojumu un elektroniskās naudas likumā (1388/Lp14), 2.lasījums",
+        "par": 48,
+        "pret": 24,
+        "atturas": 0,
+        "deputies": 75
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/A0B34CC49C13FD77C2258E5A000AFDF3?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:54:04",
+        "motif": "Grozījumi Civilprocesa likumā (1392/Lp14), 2.lasījums",
+        "par": 49,
+        "pret": 26,
+        "atturas": 0,
+        "deputies": 77
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/CDD26DF950589D87C2258E5A000AFDD4?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:32:05",
+        "motif": "Par priekšlikumu Nr.2. Grozījumi Alternatīvo ieguldījumu fondu un to pārvaldnieku likumā (1382/Lp14), 2.lasījums",
+        "par": 22,
+        "pret": 48,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/88DDCE64510D2328C2258E5A000AFDF5?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:55:22",
+        "motif": "Grozījumi Kolektīvās finansēšanas pakalpojumu likumā (1393/Lp14), 2.lasījums",
+        "par": 47,
+        "pret": 27,
+        "atturas": 0,
+        "deputies": 78
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/F925421838B12794C2258E5A000AFDEA?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:51:04",
+        "motif": "Grozījumi Starptautisko un Latvijas Republikas nacionālo sankciju likumā (1390/Lp14), 2.lasījums",
+        "par": 57,
+        "pret": 14,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/69DB39FC786D9F7BC2258E5A000AFDE8?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:49:24",
+        "motif": "Grozījumi Reklāmas likumā (1389/Lp14), 2.lasījums",
+        "par": 49,
+        "pret": 25,
+        "atturas": 0,
+        "deputies": 75
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/EC7E101DBF5E0D07C2258E5A000AFDF1?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:52:12",
+        "motif": "Grozījumi Privāto pensiju fondu likumā (1391/Lp14), 2.lasījums",
+        "par": 48,
+        "pret": 24,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/31705722265EAB72C2258E5A000AFDD6?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:33:40",
+        "motif": "Grozījumi Finanšu instrumentu tirgus likumā (1383/Lp14), 2.lasījums",
+        "par": 49,
+        "pret": 21,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/CBE5D550165D6938C2258E5A000AFDF7?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:56:04",
+        "motif": "Deputātu klātbūtnes reģistrācija",
+        "par": 0,
+        "pret": 0,
+        "atturas": 0,
+        "deputies": 100
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/8879877E2E3952B8C2258E5A000AFDDC?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:44:52",
+        "motif": "Grozījumi Noziedzīgi iegūtu līdzekļu legalizācijas un terorisma un proliferācijas finansēšanas novēršanas likumā (1386/Lp14), 2.lasījums",
+        "par": 60,
+        "pret": 15,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/4D70E495C4B56CACC2258E5A000AFDE4?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:46:02",
+        "motif": "Grozījumi Preču un pakalpojumu piekļūstamības likumā (1387/Lp14), 2.lasījums",
+        "par": 50,
+        "pret": 25,
+        "atturas": 0,
+        "deputies": 77
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/22C33C187DD99B32C2258E5A000AFDCC?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:32:33",
+        "motif": "Grozījumi Alternatīvo ieguldījumu fondu un to pārvaldnieku likumā (1382/Lp14), 2.lasījums",
+        "par": 46,
+        "pret": 24,
+        "atturas": 0,
+        "deputies": 76
+      },
+      {
+        "url": "https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/99462A1AAC26206EC2258E5A000AFDDA?OpenDocument",
+        "vote_date": "2026-08-20",
+        "vote_time": "19:35:59",
+        "motif": "Grozījumi Negodīgas komercprakses aizlieguma likumā (1385/Lp14), 2.lasījums",
+        "par": 48,
+        "pret": 26,
+        "atturas": 0,
+        "deputies": 76
+      }
+    ],
+    "known_unloadable": [],
+    "unreadable": [],
+    "error": null
+  }
+]

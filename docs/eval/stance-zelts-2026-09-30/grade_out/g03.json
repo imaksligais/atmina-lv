@@ -1,0 +1,14 @@
+[
+ {"sid": "s018", "grade": "D_OK", "why": "Faithfully restates the cautious optimism as shadow rapporteur and all three listed positives; 'daudzgades' mirrors the source's own form.", "matches_reference": "yes"},
+ {"sid": "s019", "grade": "D_OK", "why": "Faithful restatement of the tweet including all three positives; keeping the source's 'MFF' abbreviation is a stylistic matter only.", "matches_reference": "yes"},
+ {"sid": "s046", "grade": "D_OK", "why": "Supported by Braže's own quote on TVP ('Tā vienkārši nav taisnība') rejecting Ukrainian officials' claim of a Russian occupation plan by 2027.", "matches_reference": null},
+ {"sid": "s045", "grade": "D_OK", "why": "Matches the reported TVP statement that Ukrainian intelligence sources are wrong and her quote that it is simply not true.", "matches_reference": null},
+ {"sid": "s009", "grade": "D_OK", "why": "Accurately captures the ironic criticism of the rumoured 20k-euro cemetery-conference trip to Turin, keeping the hearsay hedge 'esot'.", "matches_reference": "yes"},
+ {"sid": "s010", "grade": "D_OK", "why": "Faithful to the tweet's irony, figures and hearsay framing ('braukšot'), quoting 'nieka' as in the source.", "matches_reference": "yes"},
+ {"sid": "s015", "grade": "D_OK", "why": "Faithfully restates the complaint that Guardsmen still wait to learn modern warfare skills in the fifth year of war and the rhetorical sabotage question.", "matches_reference": "yes"},
+ {"sid": "s014", "grade": "D_OK", "why": "Correctly renders the criticism and the rhetorical question as a question; only omits the 'fifth year of war' detail.", "matches_reference": "yes"},
+ {"sid": "s034", "grade": "D_OK", "why": "Supported: mocks 'modālais filtrs' as a blocked road, claims 15,000 residents suffer for 100 people's complaints, and says PRO's main aim is to break things.", "matches_reference": "yes"},
+ {"sid": "s033", "grade": "D_OK", "why": "Faithful: opposes the road blocking, ridicules the term 'modālais filtrs', repeats the 100 vs 15,000 claim and the jab at PRO.", "matches_reference": "yes"},
+ {"sid": "s011", "grade": "D_OK", "why": "Accurately states the oil-price drop below 100 (at one point by 22%) and keeps the conditional that de-escalation becomes real if Hormuz shipping resumes.", "matches_reference": "partial"},
+ {"sid": "s012", "grade": "D_OK", "why": "Faithful to the tweet's conditional view on de-escalation if shipping through Hormuz de facto resumes.", "matches_reference": "no"}
+]

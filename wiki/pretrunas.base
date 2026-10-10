@@ -1,0 +1,48 @@
+# atmina — pretrunu fokuss (Obsidian Bases)
+# Operatora "kam pievērst uzmanību" saraksts: politiķi UN partijas ar pretrunām.
+# Statisks fails; wiki_sync() neaiztiek (raksta tikai *.md).
+formulas:
+  karogs: 'if(contradictions > 0, "⚠️", "")'
+
+properties:
+  party:
+    displayName: "Partija"
+  role:
+    displayName: "Loma"
+  contradictions:
+    displayName: "Pretrunas"
+  positions:
+    displayName: "Pozīcijas"
+  mentioned_in:
+    displayName: "Pieminēts"
+  members:
+    displayName: "Deputāti"
+  formula.karogs:
+    displayName: ""
+
+views:
+  - type: table
+    name: "Politiķi ar pretrunām"
+    filters:
+      and:
+        - file.inFolder("persons")
+        - 'contradictions > 0'
+    order:
+      - formula.karogs
+      - file.name
+      - party
+      - contradictions
+      - positions
+      - mentioned_in
+
+  - type: table
+    name: "Partijas ar pretrunām"
+    filters:
+      and:
+        - file.inFolder("parties")
+        - 'contradictions > 0'
+    order:
+      - formula.karogs
+      - file.name
+      - members
+      - contradictions

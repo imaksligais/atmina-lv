@@ -1,0 +1,30 @@
+{
+  "_doc": "Frozen characterization fixture for src.saeima motif helpers. Generated 2026-04-29 by capturing real outputs of resolve_bill_from_motif, _reading_from_motif, _motif_to_topic on representative motifs sampled from saeima_votes table. DO NOT hand-edit values — regenerate via scripts/regen_saeima_chars.py if observed behavior intentionally changes.",
+  "motifs": [
+    "Grozījumi likumā “Par piesārņojumu” (1274/Lp14), 1.lasījums",
+    "Grozījumi Imigrācijas likumā (1180/Lp14), 3.lasījums",
+    "Grozījumi likumā “Par valsts sociālo apdrošināšanu” (991/Lp14), 3.lasījums",
+    "Par Saeimas piekrišanu valsts īstermiņa aizdevuma izsniegšanai AS “Air Baltic Corporation” (953/Lm14)",
+    "Grozījums Saeimas vēlēšanu likumā (1288/Lp14), 1.lasījums",
+    "Grozījumi Kriminālprocesa likumā (1312/Lp14), 2.lasījums, steidzams",
+    "Grozījumi Civilprocesa likumā (1187/Lp14), 3.lasījums",
+    "Grozījumi Izglītības likumā (1303/Lp14), 1.lasījums",
+    "Grozījums Bērnu tiesību aizsardzības likumā (1257/Lp14), 1.lasījums",
+    "Grozījums Meža likumā (1291/Lp14), nodošana komisijām",
+    "Par Jura Rancāna iecelšanu par rajona (pilsētas) tiesas tiesnesi (938/Lm14)",
+    "Grozījumi Atkritumu apsaimniekošanas likumā (1270/Lp14), 1.lasījums",
+    "Grozījumi Valsts drošības iestāžu likumā (1297/Lp14), nodošana komisijām",
+    "Grozījumi Gaisa kuģu pasažieru datu apstrādes likumā (1072/Lp14), 3.lasījums",
+    "Par 10 177 Latvijas pilsoņu kolektīvā iesnieguma “Par atklātu algu valsts pārvaldē” turpmāko virzību (928/Lm14)",
+    "Grozījumi Dzīvokļa īpašuma likumā (1153/Lp14), 2.lasījums",
+    "Par priekšlikumu iesniegšanas termiņa pagarināšanu likumprojekta “Imigrācijas likums” (Nr.56/Lp14) trešajam lasījumam līdz 2026. gada 9. aprīlim (940/Lm14)",
+    "Grozījums likumā “Par Latvijas Republikas Uzņēmumu reģistru” (1265/Lp14), 1.lasījums",
+    "Grozījumi likumā “Par nekustamā īpašuma nodokli” (1280/Lp14), nodošana komisijām",
+    "Grozījumi likumā “Par akcīzes nodokli” (913/Lp14), 1.lasījums",
+    "Grozījumi Ieslodzījuma vietu pārvaldes likumā (1052/Lp14), 2.lasījums",
+    "Grozījumi Energoresursu cenu ārkārtēja pieauguma samazinājuma pasākumu likumā (99/Lp14)",
+    "Grozījumi Autortiesību likumā (726/Lp14), 1.lasījums",
+    "Grozījumi Administratīvo teritoriju un apdzīvoto vietu likumā (572/Lp14), nodošana komisijām",
+    "Grozījums Covid-19 infekcijas izplatības seku pārvarēšanas likumā (519/Lp14), 2.lasījums"
+  ]
+}

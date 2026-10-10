@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="lv" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{% block title %}atmina ops{% if pending and pending.count > 0 %} · {{ pending.count }} pending{% endif %}{% endblock %}</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='14' font-family='Georgia' fill='%239F1B1B'%3Ea%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    // Block flash-of-wrong-theme: apply theme class BEFORE first paint.
+    (function () {
+      var saved = localStorage.getItem('ops:theme'); // 'light' | 'dark' | null
+      var dark = saved === 'dark' ||
+        (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F0',
+            ink: '#1A1A1A',
+            sarkans: '#9F1B1B',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', '"Cascadia Code"', 'Consolas', 'monospace'],
+            serif: ['Georgia', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.13.10/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='ops.css') }}" />
+</head>
+<body class="h-full bg-cream text-ink dark:bg-slate-900 dark:text-slate-100 font-sans antialiased">
+
+  <header class="border-b border-slate-200 dark:border-slate-800 px-6 py-4 flex items-baseline justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold leading-tight">atmina ops</h1>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+        operatora panelis · localhost:8080
+      </p>
+    </div>
+    <div class="flex items-center gap-3">
+      <button type="button"
+              hx-get="/api/keyboard-help"
+              hx-target="body"
+              hx-swap="beforeend"
+              data-shortcut="?"
+              aria-label="Atvērt klaviatūras saīsnes"
+              title="Klaviatūras saīsnes [?]"
+              class="rounded border border-slate-300 dark:border-slate-700 px-2 py-1 text-sm font-mono hover:bg-slate-100 dark:hover:bg-slate-800">
+        ?
+      </button>
+      <button id="theme-toggle"
+              type="button"
+              aria-label="Pārslēgt motīvu"
+              title="Pārslēgt motīvu: auto / gaišs / tumšs"
+              class="rounded border border-slate-300 dark:border-slate-700 px-2 py-1 text-sm font-mono hover:bg-slate-100 dark:hover:bg-slate-800">
+        <span data-theme-label>◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="px-6 py-6 max-w-screen-2xl mx-auto">
+    {% if pending %}{% include "partials/_banner.html.j2" %}{% endif %}
+    {% block content %}{% endblock %}
+  </main>
+
+  {% if pending %}
+    {% include "partials/_footer.html.j2" %}
+  {% else %}
+    <footer class="border-t border-slate-200 dark:border-slate-800 px-6 py-3 text-xs text-slate-500 dark:text-slate-400 flex flex-wrap items-center gap-4">
+      <span class="font-mono">atmina ops · M1 scaffold</span>
+      <a href="https://github.com/imaksligais/atmina" class="hover:text-sarkans">github</a>
+      <a href="https://atmina.lv" class="hover:text-sarkans">atmina.lv</a>
+    </footer>
+  {% endif %}
+
+  <div id="toast-container"
+       class="fixed top-4 right-4 z-50 flex flex-col gap-2 pointer-events-none"
+       aria-live="polite"></div>
+
+  <script src="{{ url_for('static', filename='ops.js') }}"></script>
+</body>
+</html>

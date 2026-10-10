@@ -1,0 +1,51 @@
+# Apzināti pieņemtie robi uzbūvētajā kokā (scripts/check_output.py).
+#
+# Viens paterns rindā; sakritība pēc apakšvirknes gan pret atsauces URL, gan
+# pret lapas ceļu. Katram ierakstam OBLIGĀTI jābūt iemeslam un, ja tas ir
+# atvērts darbs, norādei uz BACKLOG sadaļu.
+#
+# Šis saraksts ir apzināti tievs. Ja tas sāk augt, tas nozīmē, ka kaut kas
+# ražo robus — nevis to, ka vajag garāku allowlist.
+
+# --- IZŅEMTS 2026-08-09: 2026-05-19 un 2026-05-22 pārskatu attēlu paterni ---
+# Tie apklusināja 404 hero/og:image abos ierakstos. Cēlonis novērsts 2026-08-08
+# (`eaf87887` — brief attēlu variantu pašdziedināšanās renderī), un abas lapas
+# tagad nes noklusējuma `og:image`. Mērīts 2026-08-09: abi paterni uzbūvētajā
+# kokā apklusināja **0** robus, t.i. tie bija miruši ieraksti, kas dzīvoja ilgāk
+# par savu cēloni. Miris allowlist ieraksts nav nekaitīgs — ja tā pati klase
+# atgriežas, tas to apklusina klusi. Tāpēc saraksts tagad ir vārti pats sev:
+# `check_output` katrā palaidienā nosauc paternus, kas neapslāpēja neko.
+
+# --- Bezpaplašinājuma sintēžu saites pārskatā #184 (2026-08-01, PĀRVĒRTĒTS 2026-08-03) ---
+# context_notes #184 (pārskats 2026-04-30) tekstā ir divi iekšēji URL bez
+# `.html`: /sintezes/saeima-2026-04-30-balsojumi un /sintezes/spruda-uzbrukumu-
+# konvergence.
+#
+# 2026-08-03 mērīts ar HTTP: DZĪVAJĀ VIETNĒ ABAS FORMAS ATGRIEŽ 200 un atdod
+# vienu un to pašu lapu (31 132 baiti, identisks <title>). Sākotnējais ieraksts
+# apgalvoja, ka tās ved uz 404 — tas bija nepareizi, un uz tā pamata gandrīz tika
+# mainīts publicēta pārskata teksts.
+#
+# Tāpēc šie divi ieraksti NAV pagaidu apiešana un NEGAIDA DB labojumu. Tie ir
+# pastāvīga vidēju atšķirības atzīme: `check_output.py` staigā pa UZBŪVĒTO KOKU,
+# kur lapas eksistē tikai ar `.html`, kamēr serveris bezpaplašinājuma formu
+# atrisina pats. Nedzēs tos, cerot „salabot" pārskatu.
+atmina.lv/sintezes/saeima-2026-04-30-balsojumi
+atmina.lv/sintezes/spruda-uzbrukumu-konvergence
+
+# --- publish-gate: vēsturiskais brief #222 bez approved=1 (2026-08-09) ---
+# blog/2026-05-22.html ir publicēts kopš 2026. maija — attēlu vārti toreiz
+# neeksistēja. Izņēmums attiecas TIKAI uz šo vēsturisko lapu; jauni briefi bez
+# attēla apstiprinājuma publish-gate bloķē (T15). Ja lapai kādreiz pārģenerē
+# attēlu, šo ierakstu var dzēst.
+blog/2026-05-22.html
+
+# --- publish-gate: vēsturiskais brief #219 bez approved=1 (2026-08-18) ---
+# blog/2026-05-19.html ir tā PATI klase kā 2026-05-22 (attēls approved=2 =
+# noraidīts, 2026. maijs, pirms attēlu vārtiem). Līdz 2026-08-18 to apslāpēja
+# nevis šis saraksts, bet publish-gate pati: v1 kartēja briefus pēc subjekta
+# DATUMA, un nedēļas pārskats #225 ('nedēļas pārskats 2026-05-19..25') ar
+# apstiprinātu attēlu pārņēma šo datumu, tāpēc dienas lapa izskatījās
+# apstiprināta. Vārti tagad kartē pēc lapas SLUGA (nedela- prefikss), un šis
+# ieraksts ir tas, ko tā atsedza — nevis jauns robs.
+blog/2026-05-19.html

@@ -1,0 +1,4315 @@
+# CVK SV2026 kandidātu ziņas (kandidāta sniegtajā redakcijā) — ģenerēts ar
+# scripts/fetch_cvk_candidates.py. Renders rāda TIKAI status: ok.
+# Review rindu operators var pārslēgt uz ok pēc pārbaudes (reason → null).
+- politician_id: 2
+  name: Evika Siliņa
+  cvk_id: 78560
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78560-evika-silina/
+  fetched_at: '2026-10-05 08:18:59'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1975
+  education:
+  - institution: Latvijas Universitāte
+    year: 1997
+    degree: Bakalaura grāds tiesību zinātnē, jurista kvalifikācija
+  - institution: Rīgas Juridiskā augstskola
+    year: 2001
+    degree: Sociālo zinātņu maģistra grāds tiesību zinātnē, starptautiskās tiesības un Eiropas tiesības
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāte
+  - employer: Partiju apvienība "Jaunā VIENOTĪBA"
+    position: Valdes priekšsēdētāja
+  - employer: Partija "VIENOTĪBA"
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 3
+  name: Ainārs Šlesers
+  cvk_id: 81230
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81230-ainars-slesers/
+  fetched_at: '2026-10-05 08:18:59'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1970
+  education:
+  - institution: Rīgas Industriālais Tehnikums
+    year: 1989
+    degree: Vidējā izglītība
+  - institution: Norvēģijas Kristīgā tautas augstskola
+    year: 1991
+    degree: null
+  workplaces:
+  - employer: Rīgas pilsētas pašvaldība
+    position: domes deputāts
+  - employer: Politiskā partija LATVIJA PIRMAJĀ VIETĀ
+    position: Valdes loceklis
+  - employer: Biedrība LATVIJA PIRMĀ
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 6
+  name: Jānis Dombrava
+  cvk_id: 82680
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82680-janis-dombrava/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1988
+  education:
+  - institution: Latvijas Universitāte
+    year: 2010
+    degree: Bakalaura grāds vēsturē
+  workplaces:
+  - employer: Latvijas Republikas Iekšlietu ministrija
+    position: Iekšlietu ministrs
+  - employer: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+    position: Valdes loceklis
+  - employer: '"Vidzemes Latviešu biedrība"'
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 7
+  name: Edvīns Šnore
+  cvk_id: 81810
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81810-edvins-snore/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1974
+  education:
+  - institution: Latvijas Universitāte
+    year: 2013
+    degree: vēstures doktors
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Iekšlietu ministrija
+    position: Parlamentārais sekretārs
+  status: ok
+  reason: null
+- politician_id: 9
+  name: Kristaps Krištopans
+  cvk_id: 80120
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80120-kristaps-kristopans/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1983
+  education:
+  - institution: Floridas Atlantijas Universitāte
+    year: 2005
+    degree: bakalaura grāds biznesa administrācijā
+  - institution: Miami Universitāte
+    year: 2008
+    degree: MBA Biznesa administrācijā
+  workplaces:
+  - employer: LR Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 10
+  name: Andris Kulbergs
+  cvk_id: 92490
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92490-andris-kulbergs/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1979
+  education:
+  - institution: Starptautiskā Konkordijas Universitāte
+    year: 2002
+    degree: Bakalaura grāds starptautiskajā biznesā
+  workplaces:
+  - employer: Latvijas Republikas Ministru kabinets
+    position: Ministru prezidents
+  - employer: Biedrība "Latvijas Restarts"
+    position: Valdes priekšsēdētājs
+  - employer: Biedrība "AUTO ASOCIĀCIJA"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 12
+  name: Andris Šuvajevs
+  cvk_id: 86840
+  source_url: https://dati.cvk.lv/SV2026/kandidati/86840-andris-suvajevs/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1991
+  education:
+  - institution: Oksfordas universitāte
+    year: 2016
+    degree: Sociālo zinātņu maģistra grāds sociālajā antropoloģijā
+  - institution: Glāzgovas universitāte
+    year: 2015
+    degree: Sociālo zinātņu bakalaura grāds socioloģijā (pabeigts ar izcilību)
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Brīvības un solidaritātes fonds
+    position: Valdes loceklis
+  - employer: Rīgas Stradiņa universitāte
+    position: Pasniedzējs
+  - employer: PROGRESĪVIE
+    position: Valdes loceklis
+  - employer: PROGRESĪVIE
+    position: Līdzpriekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 13
+  name: Jānis Hermanis
+  cvk_id: 90240
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90240-janis-hermanis/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1973
+  education:
+  - institution: Latvijas Universitāte
+    year: 1998
+    degree: uzņēmējdarbības ekonomika
+  workplaces:
+  - employer: Latvijas Darba devēju konfederācija
+    position: finanšu un nodokļu eksperts
+  status: ok
+  reason: null
+- politician_id: 14
+  name: Edmunds Jurēvics
+  cvk_id: 78860
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78860-edmunds-jurevics/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1992
+  education:
+  - institution: Latvijas Universitāte
+    year: 2020
+    degree: Politikas zinātne (Publiskā politika un pārvalde)
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: 14. Saeimas deputāts, Saeimas frakcijas "Jaunā Vienotība" priekšsēdētājs
+  - employer: Partija "VIENOTĪBA"
+    position: Valdes priekšsēdētājs
+  - employer: Partiju apvienība "Jaunā VIENOTĪBA"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 15
+  name: Baiba Braže
+  cvk_id: 78220
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78220-baiba-braze/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1966
+  education:
+  - institution: Latvijas Valsts Universitāte, Juridiskā fakultāte
+    year: 1990
+    degree: Maģistra grāds, jurists
+  - institution: Latvijas Universitāte, Sociālo zinātņu fakultāte
+    year: 2002
+    degree: Sociālo zinātņu maģistre komunikācijas zinātnē
+  workplaces:
+  - employer: Valsts kanceleja
+    position: LR Ārlietu ministre
+  - employer: Zemessardzes 13. Kājnieku bataljona štāba un apgādes rota
+    position: Sakaru nodaļas operatore (OR-2; 06GB)
+  - employer: ANO Izglītības, Zinātnes, Kultūras komisijas Latvijas Nacionālā komisija
+    position: Viceprezidents
+  status: ok
+  reason: null
+- politician_id: 16
+  name: Andris Sprūds
+  cvk_id: 87990
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87990-andris-spruds/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1971
+  education:
+  - institution: Jagieloņu Universitāte (Krakova, Polija)
+    year: 2005
+    degree: Doktora grāds politikas zinātnē
+  - institution: Latvijas Universitāte
+    year: 1998
+    degree: Politikas zinātnes maģistra grāds starptautiskajās attiecībās
+  - institution: Centrāleiropas Universitāte (Budapešta, Ungārija)
+    year: 1997
+    degree: Maģistra grāds Centrāleiropas vēsturē
+  - institution: Latvijas Universitāte
+    year: 1994
+    degree: Vēsturnieka un vēstures pasniedzēja kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāts
+  - employer: Rīgas Stradiņa universitāte
+    position: profesors
+  status: ok
+  reason: null
+- politician_id: 17
+  name: Daiga Mieriņa
+  cvk_id: 83950
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83950-daiga-mierina/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1969
+  education:
+  - institution: Bulduru Dārzkopības tehnikums
+    year: 1988
+    degree: agronoms-dārzkopis
+  - institution: Latvijas Biozinātņu un tehnoloģiju universitāte
+    year: 1995
+    degree: diplomēts agronoms
+  - institution: Rīgas Tehniskā universitāte
+    year: 2009
+    degree: profesionālais maģistra grāds visaptverošajā kvalitātes vadībā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas priekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 19
+  name: Arvils Ašeradens
+  cvk_id: 78040
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78040-arvils-aseradens/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1962
+  education:
+  - institution: Latvijas Valsts Universitāte
+    year: 1985
+    degree: Ekonomiskā ģeogrāfija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Politiskā partija "Vienotība"
+    position: Valdes loceklis
+  - employer: Politisko partiju apvienība "Jaunā Vienotība"
+    position: Valdes loceklis
+  - employer: Biedrība ''Rojas jahtklubs''
+    position: Valdes loceklis
+  - employer: Nodibinājums ''Mediju brīvības un attīstības fonds''
+    position: Pārstāvis
+  status: ok
+  reason: null
+- politician_id: 25
+  name: Viktors Valainis
+  cvk_id: 83870
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83870-viktors-valainis/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1986
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2011
+    degree: Profesionālais maģistra grāds būvuzņēmējdarbībā un nekustamā īpašuma vadība
+  workplaces:
+  - employer: Ekonomikas ministrija
+    position: Ministrs
+  - employer: LATVIJAS ZEMNIEKU SAVIENĪBA
+    position: Valdes priekšsēdētājs
+  - employer: Sabiedrības integrācijas fonds
+    position: Padomes loceklis
+  - employer: Zaļo un Zemnieku savienība
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 26
+  name: Atis Švinka
+  cvk_id: 86360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/86360-atis-svinka/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1973
+  education:
+  - institution: Latvijas universitāte
+    year: 2002
+    degree: bakalaura grāds
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāts
+  - employer: Partija Progresīvie
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 29
+  name: Alvis Hermanis
+  cvk_id: 90990
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90990-alvis-hermanis/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1965
+  education:
+  - institution: Latvijas valsts konservatorija
+    year: 1988
+    degree: dramatiskā teātra aktieris
+  workplaces:
+  - employer: Jaunais Rīgas teātris
+    position: mākslinieciskais vadītājs
+  status: ok
+  reason: null
+- politician_id: 30
+  name: Jāzeps Baško
+  cvk_id: 87450
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87450-jazeps-basko/
+  fetched_at: '2026-10-05 08:19:00'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1984
+  education:
+  - institution: Ventspils Augstskola
+    year: 2007
+    degree: Datorzinātņu bakalaura grāds
+  workplaces:
+  - employer: Mēs mainām noteikumus
+    position: ģenerālsekretārs, valdes loceklis
+  - employer: Kodoka SIA
+    position: valdes loceklis
+  - employer: Konservatīvās domas konference
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 31
+  name: Ēriks Pucens
+  cvk_id: 90270
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90270-eriks-pucens/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1986
+  education:
+  - institution: Kuldīgas 78. arodvidusskola
+    year: 2005
+    degree: Profesionālā
+  - institution: Laidu pamatskola
+    year: 2002
+    degree: pamatskola
+  - institution: Kuldīgas 78. arodvidusskola
+    year: 2006
+    degree: Vidējā
+  workplaces:
+  - employer: Kuldīgas novada dome
+    position: Deputāts
+  - employer: Sia Kalna Rinkas
+    position: Īpašnieks, Saimniecības vadītājs
+  - employer: Sia Energy Green EU
+    position: Uzņēmuma vadītājs
+  - employer: SIA Bandava Energy
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 39
+  name: Gints Aizupietis
+  cvk_id: 91130
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91130-gints-aizupietis/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1978
+  education:
+  - institution: Rīgas tirdzniecības tehnikums
+    year: 1997
+    degree: Ēdināšanas uzņēmējdarbība
+  workplaces:
+  - employer: SIA Kompromiss
+    position: Valdes loceklis
+  - employer: SIA LB66
+    position: Valdes loceklis
+  - employer: SIA Burgers 66
+    position: Valdes loceklis
+  - employer: SIA Raganas burgers
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 41
+  name: Edvarts Krusts
+  cvk_id: 90620
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90620-edvarts-krusts/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 2000
+  education:
+  - institution: Latvijas Universitāte
+    year: 2024
+    degree: Humanitāro zinātņu maģistra grāds vēsturē un arheoloģijā
+  workplaces:
+  - employer: Latvijas Kara muzejs
+    position: Vēsturnieks
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāta palīgs
+  - employer: Mount Titano Media (ASV)
+    position: Redaktors
+  status: ok
+  reason: null
+- politician_id: 49
+  name: Ainars Mielavs
+  cvk_id: 91110
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91110-ainars-mielavs/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1960
+  education:
+  - institution: Valsts Mākslas akadēmija
+    year: 1985
+    degree: Mākslinieks konstruktors
+  workplaces:
+  - employer: SIA "Mūzikas prāmis"
+    position: Producents
+  status: ok
+  reason: null
+- politician_id: 52
+  name: Edgars Tavars
+  cvk_id: 87670
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87670-edgars-tavars/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1982
+  education:
+  - institution: Banku augstskola
+    year: 2012
+    degree: Maģistra grāds inovāciju ekonomikā
+  - institution: Rīgas Pedagoģijas un izglītības vadības akadēmija
+    year: 2010
+    degree: Bakalaura grāds ekonomikā
+  - institution: Rīgas Celtniecības koledža
+    year: 2003
+    degree: Vidējā izglītība, būvdarbu vadītāja kvalifikācija
+  workplaces:
+  - employer: Viedās administrācijas un reģionālās attīstības ministrija
+    position: Ministrs
+  - employer: Politisko partiju apvienība "APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"
+    position: Valdes līdzpriekšsēdētājs
+  - employer: Politiskā partija "Latvijas Zaļā partija"
+    position: Valdes priekšsēdētājs
+  - employer: Cēsu rajona Zosēnu pagasta zemnieku saimniecība "SPULGAS"
+    position: Īpašnieks
+  status: ok
+  reason: null
+- politician_id: 53
+  name: Maija Armaņeva
+  cvk_id: 79890
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79890-maija-armaneva/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1983
+  education:
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Bakalaura grāds Teoloģijā un reliģiju zinātnēs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  status: ok
+  reason: null
+- politician_id: 54
+  name: Selma Teodora Levrence
+  cvk_id: 87350
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87350-selma-teodora-levrence/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 2000
+  education:
+  - institution: Bar-Ilan universitāte
+    year: 2022
+    degree: Sociālo zinātņu bakalaura grāds komunikācijas zinātnē un politikas zinātnē
+  - institution: Rīgas Valsts vācu ģimnāzija
+    year: 2018
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Jaunatnes organizācija "Protests"
+    position: politikas konsultante
+  - employer: Saimnieciskās darbības veicēja
+    position: null
+  status: ok
+  reason: null
+- politician_id: 55
+  name: Augusts Brigmanis
+  cvk_id: 83270
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83270-augusts-brigmanis/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1952
+  education:
+  - institution: Latvijas Lauksaimniecības akadēmija
+    year: 1975
+    degree: agronoms ekonomists
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Z/S "Priedule"
+    position: Īpašnieks
+  - employer: LATVIJAS ZEMNIEKU SAVIENĪBA
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 56
+  name: Ričards Šlesers
+  cvk_id: 81240
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81240-ricards-slesers/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1997
+  education:
+  - institution: Birmingemas Pilsētas Universitāte
+    year: 2018
+    degree: Bakalaura grāds, Filmu tehnoloģijas un vizuālie efekti
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Politiskā partija LATVIJA PIRMAJĀ VIETĀ
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 64
+  name: Guntars Vītols
+  cvk_id: 87550
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87550-guntars-vitols/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1972
+  education:
+  - institution: Umea Universitāte, Zviedrija
+    year: 1994
+    degree: Maģistra grāds, fizikā
+  - institution: Latvijas Universitāte
+    year: 1999
+    degree: Maģistra grāds, ekonomikā
+  - institution: Rīgas 1. vidusskola
+    year: 1990
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Finanšu ministrija
+    position: Ministra padomnieks
+  - employer: Biedrība "Latvijas Restarts"
+    position: Valdes loceklis
+  - employer: Biedrība "BEZ PARTIJĀM"
+    position: Valdes loceklis
+  - employer: SIA "TEK Solutions"
+    position: Valdes loceklis
+  - employer: SIA "TEK Invest"
+    position: Valdes loceklis
+  - employer: SIA "Algorego Documents"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 67
+  name: Kaspars Briškens
+  cvk_id: 89560
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89560-kaspars-briskens/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1982
+  education:
+  - institution: Stokholmas universitāte
+    year: 2010
+    degree: Maģistra grāds ekonomikā
+  - institution: Rīgas Ekonomikas augstskola
+    year: 2005
+    degree: Bakalaura grāds ekonomikā un biznesa vadībā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: 14.Saeimas deputāts
+  status: ok
+  reason: null
+- politician_id: 68
+  name: Andrejs Judins
+  cvk_id: 78320
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78320-andrejs-judins/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1970
+  education:
+  - institution: Latvijas Universitāte
+    year: 1993
+    degree: jurista kvalifikācija
+  - institution: Latvijas policijas akadēmija
+    year: 1997
+    degree: tiesību maģistra grāds
+  - institution: Latvijas policijas akadēmija
+    year: 2007
+    degree: tiesību zinātņu doktors
+  workplaces:
+  - employer: LR Saeima
+    position: deputāts
+  status: ok
+  reason: null
+- politician_id: 69
+  name: Edvards Smiltēns
+  cvk_id: 87690
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87690-edvards-smiltens/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1984
+  education:
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Profesionālais maģistra grāds tiesību zinātnē, jurista kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Tieslietu ministrija
+    position: Ministrs
+  status: ok
+  reason: null
+- politician_id: 70
+  name: Uldis Augulis
+  cvk_id: 83830
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83830-uldis-augulis/
+  fetched_at: '2026-10-05 08:19:01'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1972
+  education:
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: Bakalaurs Finanšu vadībā
+  workplaces:
+  - employer: Zemkopības ministrija
+    position: Ministrs
+  - employer: '"LATVIJAS ZEMNIEKU SAVIENĪBA"'
+    position: Valdes loceklis
+  - employer: Zaļo un Zemnieku savienības
+    position: Valdes loceklis
+  - employer: Auguļa zemnieku saimniecība "AUGUĻI"
+    position: Īpašnieks
+  status: ok
+  reason: null
+- politician_id: 71
+  name: Nauris Puntulis
+  cvk_id: 81300
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81300-nauris-puntulis/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1961
+  education:
+  - institution: Latvijas Mūzikas Akadēmija
+    year: 1994
+    degree: maģistrs
+  workplaces:
+  - employer: Valsts kanceleja
+    position: Kultūras ministrs
+  - employer: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+    position: Valdes loceklis
+  - employer: UNESCO Latvijas Nacionālās komisijas
+    position: Prezidents
+  - employer: SAB Usma
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 72
+  name: Ilze Indriksone
+  cvk_id: 82800
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82800-ilze-indriksone/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1974
+  education:
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: Maģistra grāds vides pārvaldībā
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 1998
+    degree: Vides saimniecības inženiere
+  workplaces:
+  - employer: Latvijas Republikas Izglītības un zinātnes ministrija
+    position: Ministre
+  - employer: Nacionālā apvienība “Visu Latvijai!”-“Tēvzemei un Brīvībai/LNNK”
+    position: Priekšsēdētāja
+  - employer: '"Pedvāle"'
+    position: Valdes locekle
+  - employer: '"Pedvāles mākslas parka fonds"'
+    position: Valdes locekle
+  - employer: UNESCO Latvijas Nacionālās komisijas
+    position: Viceprezidente
+  - employer: Saimnieciska darbība
+    position: Lauku tūrisms
+  status: ok
+  reason: null
+- politician_id: 73
+  name: Ināra Mūrniece
+  cvk_id: 81090
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81090-inara-murniece/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1970
+  education:
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Tulkotāja
+  - institution: Ekonomikas un Kultūras augstskola
+    year: 2007
+    degree: Profesionālā bakalaura grāds tulkošanā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāte
+  - employer: Latvijas Republikas Saeima
+    position: Ārlietu komisijas priekšsēdētāja
+  - employer: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 74
+  name: Oļegs Burovs
+  cvk_id: 83160
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83160-olegs-burovs/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1960
+  education:
+  - institution: Sociālās Ekonomikas institūta Darba un sociālo attiecību akadēmija
+    year: 1994
+    degree: darba ekonomika un socioloģija
+  - institution: Rīgas 4.medicīnas skola
+    year: 1986
+    degree: felšeris
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Partija "Gods kalpot Rīgai"
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 75
+  name: Juris Viļums
+  cvk_id: 87820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87820-juris-vilums/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1982
+  education:
+  - institution: Latvijas Universitāte
+    year: 2010
+    degree: Maģistra grāds vadības zinībās
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2004
+    degree: Bakalaura grāds ekonomikā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, frakcijas priekšsēdētājs
+  - employer: Politiskā partija "Latvijas Reģionu Apvienība"
+    position: Valdes loceklis
+  - employer: Biedrība "Latgolys Saeima"
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 79
+  name: Česlavs Batņa
+  cvk_id: 78000
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78000-ceslavs-batna/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1979
+  education:
+  - institution: Latvijas Biznesa koledža
+    year: 2016
+    degree: Jurista palīgs
+  - institution: Rīgas pedagoģijas un izglītības vadības augstskola
+    year: 2012
+    degree: Maģistra grāds skolvadībā
+  - institution: Jāzepa Vītola Latvijas Mūzikas akadēmija
+    year: 2005
+    degree: Maģistra grāds mūzikā, diriģenta specialitāte
+  - institution: Jāzepa Vītola Latvijas Mūzikas akadēmija
+    year: 2003
+    degree: Bakalaura grāds mūzikā, diriģenta specialitāte
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Izglītības, kultūras un zinātnes komisijas priekšsēdētājs
+  - employer: Jāzepa Mediņa Rīgas 1. mūzikas skola
+    position: Skolotājs
+  status: ok
+  reason: null
+- politician_id: 80
+  name: Raimonds Bergmanis
+  cvk_id: 88060
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88060-raimonds-bergmanis/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1966
+  education:
+  - institution: Rīgas Tehniskā Universitāte
+    year: 1991
+    degree: Maģistra grāds, piektā līmeņa profesionālā kvalifikācija
+  - institution: Latvijas Sporta Pedagoģijas Akadēmija
+    year: 2003
+    degree: Maģistra grāds, piektā līmeņa profesionālā kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Aizsardzības, iekšlietu un korupcijas novēršanas komisijas priekšsēdētājs
+  - employer: Politisko partiju apvienība "APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"
+    position: Valdes loceklis
+  - employer: Politiskā partija "Latvijas Zaļā partija"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas Šaušanas federācija"
+    position: Prezidents
+  - employer: Biedrība "Latvijas Olimpiešu klubs"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 81
+  name: Mārtiņš Daģis
+  cvk_id: 78900
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78900-martins-dagis/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1976
+  education:
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: pedagogs
+  workplaces:
+  - employer: Latvijas Republikas 14. Saeima
+    position: deputāts
+  status: ok
+  reason: null
+- politician_id: 82
+  name: Artūrs Butāns
+  cvk_id: 82820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82820-arturs-butans/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1992
+  education:
+  - institution: Rīgas Tālmācības vidusskola
+    year: 2012
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Frakcijas "Nacionālā apvienība" priekšsēdētāja vietnieks
+  - employer: Nacionālā apvienība “Visu Latvijai!”-“Tēvzemei un Brīvībai/LNNK”
+    position: Valdes loceklis, Liepājas nodaļas vadītājs
+  - employer: Latvijas Republikas Zemessardze
+    position: Vecākais zemessargs
+  - employer: Biedrība "Spriestspēja"
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 84
+  name: Svetlana Čulkova
+  cvk_id: 79080
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79080-svetlana-culkova/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Politiskā partija "Stabilitātei!"
+  birth_year: 1989
+  education:
+  - institution: Informācijas sistēmu menedžmenta augstskola
+    year: 2013
+    degree: Uzņēmējdarbība vadībā un tūrisma uzņēmējdarbības vadītāja profesionāla kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  - employer: Politiskā partija "Stabilitātei!"
+    position: Valdes locekle
+  - employer: BSC ''Baltic seafarer`s community" biedrība
+    position: Valdes priekšsēdētāja
+  - employer: '"Stabilitātei-Jā!" biedrība'
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 85
+  name: Dāvis Mārtiņš Daugavietis
+  cvk_id: 78240
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78240-davis-martins-daugavietis/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1996
+  education:
+  - institution: Rīgas Juridiskā augstskola
+    year: 2018
+    degree: Starptautiskās tiesības un diplomātija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Partija "VIENOTĪBA"
+    position: Valdes loceklis
+  - employer: '"LATVIJAS FUTBOLA ARODBIEDRĪBA"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 86
+  name: Jānis Dinevičs
+  cvk_id: 83430
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83430-janis-dinevics/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1948
+  education:
+  - institution: Rīgas Politehniskais institūts
+    year: 1971
+    degree: Inženieris
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Zaļo un Zemnieku savienība
+    position: Valdes loceklis
+  - employer: Latvijas sociāldemokrātiskā strādnieku partija
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 87
+  name: Jekaterina Drelinga
+  cvk_id: 80070
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80070-jekaterina-drelinga/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1997
+  education:
+  - institution: Daugavpils universitāte
+    year: 2019
+    degree: Humanitāro zinātņu bakalaura grāds angļu filoloģijā
+  - institution: Daugavpils universitāte
+    year: 2023
+    degree: Profesionālais bakalaura grāds izglītībā, kvalifikācija "Pirmsskolas un pamatizglītības (1.-3.kl.) skolotāja"
+  - institution: Daugavpils universitāte
+    year: 2026
+    degree: Izglītības zinātnes maģistra grāds, kvalifikācija Izglītības vadība
+  workplaces:
+  - employer: Saeima
+    position: Saeimas deputāte
+  status: ok
+  reason: null
+- politician_id: 88
+  name: Mārtiņš Felss
+  cvk_id: 78920
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78920-martins-felss/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1984
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2009
+    degree: Sociālo zinātņu maģistrs ekonomikā
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2006
+    degree: Programmēšanas inženieris
+  - institution: Jēkabpils 3. vidusskola
+    year: 2002
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Politiskā partija "Vienotība"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 89
+  name: Jānis Grasbergs
+  cvk_id: 82810
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82810-janis-grasbergs/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1986
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2020
+    degree: Maģistra grāds lauksaimniecības zinātnē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, 14. Saeimas sekretārs
+  - employer: Nacionālā apvienība “Visu Latvijai!”-“Tēvzemei un Brīvībai/LNNK”
+    position: Valmieras nodaļas vadītājs
+  - employer: Kocēnu pagasta zemnieku saimniecība "Jaunbeņķi"
+    position: Īpašnieks
+  - employer: Biedrība "Latvijas Holšteinas šķirnes lopu audzētāju asociācija"
+    position: Valdes loceklis
+  - employer: Biedrība "Stiprais pamats"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 90
+  name: Liene Gātere
+  cvk_id: 86140
+  source_url: https://dati.cvk.lv/SV2026/kandidati/86140-liene-gatere/
+  fetched_at: '2026-10-05 08:19:02'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1984
+  education:
+  - institution: Latvijas universitāte
+    year: 2013
+    degree: Maģistra grāds politikas zinātnē
+  - institution: Latvijas universitāte
+    year: 2011
+    degree: Bakalaura grāds politikas zinātnē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāte
+  - employer: Saimnieciskās darbības veicēja/pašnodarbinātā pētniece un lektore
+    position: null
+  status: ok
+  reason: null
+- politician_id: 91
+  name: Alīna Gendele
+  cvk_id: 79190
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79190-alina-gendele/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1959
+  education:
+  - institution: Latvijas Sporta pedagoģijas akadēmija
+    year: 1983
+    degree: Fiziskās kultūras un sporta pasniedzējs
+  - institution: Daugavpils Universitāte
+    year: 2011
+    degree: Izglītības zinātņu maģistra grāds pedagoģijā
+  workplaces:
+  - employer: Latvijas Republikas 14.Saeima
+    position: deputāte
+  - employer: Latgales partija
+    position: valdes priekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 93
+  name: Ligita Gintere
+  cvk_id: 83180
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83180-ligita-gintere/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1956
+  education:
+  - institution: Liepājas Pedagoģiskais Institūts
+    year: 1978
+    degree: Skolotāja
+  - institution: Latvijas Universitāte
+    year: 1997
+    degree: maģistrs sabiedrības pārvaldē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāte
+  status: ok
+  reason: null
+- politician_id: 95
+  name: Juris Jakovins
+  cvk_id: 83230
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83230-juris-jakovins/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1961
+  education:
+  - institution: Rīgas Medicīnas institūts
+    year: 1986
+    degree: Ārsts
+  workplaces:
+  - employer: SIA ''KĀRVINS''
+    position: Ģimenes ārsts
+  - employer: SIA ''LEILANDS UN PUTNIS''
+    position: Arodārsts
+  - employer: LR Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 96
+  name: Aleksandrs Kiršteins
+  cvk_id: 92240
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92240-aleksandrs-kirsteins/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: '"Mēs mainām noteikumus"'
+  birth_year: 1948
+  education:
+  - institution: Rīgas Politehniskais institūts
+    year: 1972
+    degree: Arhitekts
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 97
+  name: Jefimijs Klementjevs
+  cvk_id: 84650
+  source_url: https://dati.cvk.lv/SV2026/kandidati/84650-jefimijs-klementjevs/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Politiskā partija "Stabilitātei!"
+  birth_year: 1963
+  education:
+  - institution: Latvijas Sporta pedagoģijas akadēmija
+    year: 1999
+    degree: Bakalaura grāds, Sporta zinātnes
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: '"Stabilitātei- Jā!" biedrība'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 98
+  name: Jurģis Klotiņš
+  cvk_id: 81070
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81070-jurgis-klotins/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1985
+  education:
+  - institution: Latvijas Kultūras akadēmija
+    year: 2012
+    degree: maģistra grāds, kultūras menedžments
+  - institution: Jāzepa Vītola Latvijas Mūzikas akadēmija
+    year: 2010
+    degree: bakalaura grāds, kontrabasa spēles specialitāte
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Saeimas Cilvēktiesību un sabiedrisko lietu komisijas sekretārs
+  - employer: Nodibinājums "Baznīcu nakts fonds"
+    position: Valdes loceklis
+  - employer: Nodibinājums "Lestenes baznīcas atjaunošanas fonds"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas kūrortu atjaunotnes biedrība"
+    position: Valdes loceklis
+  - employer: Biedrība "Griezes Pastorāts. Garīgais un kultūras centrs"
+    position: Valdes loceklis
+  - employer: Eiropas konservatīvo un reformistu grupas dibināts fonds "New Direction"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 99
+  name: Zanda Kalniņa-Lukaševica
+  cvk_id: 78350
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78350-zanda-kalnina-lukasevica/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1978
+  education:
+  - institution: Latvijas Universitāte
+    year: 2013
+    degree: Doktora grāds vadības zinātnē
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Maģistra grāds vadības zinātnē
+  - institution: Latvijas Kristīgā akadēmija
+    year: 2002
+    degree: Sociāli karitatīvā darba kvalifikācja
+  - institution: Jelgavas Spīdolas skola - ģimnāzija
+    year: 1996
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte, Saeimas priekšsēdētājas biedre
+  - employer: Latvijas Universitāte, Ekonomikas un sociālo zinātņu fakultāte
+    position: Pasniedzēja un studiju noslēgumu darbu komisijas locekle
+  - employer: Politiskā partija "Vienotība"
+    position: Valdes locekle
+  - employer: Eiropas kustība Latvijā
+    position: Valdes locekle
+  - employer: Eiropas Politikas pētījumu institūts
+    position: Vadošā pētniece ekonomikā
+  - employer: European Council of Foreign Relations
+    position: Member of the Council (Domnīcas European Council of Foreign Relations padomes locekle)
+  - employer: Friends of Europe
+    position: Trustee (member of Friends of Europe Board of Trustees / Domnīcas Friends of Europe pilvaroto padomes locekle)
+  - employer: Eiropas Padomes Parlamentārā asambleja
+    position: Eiropas Padomes Parlamentārās asamblejas Latvijas delegācijas vadītāja
+  - employer: Eiropas Padomes Parlamentārā asambleja
+    position: Eiropas Padomes Parlamentārās asamblejas Eiropas Tautas partijas (EPP) grupas viceprezidente
+  status: ok
+  reason: null
+- politician_id: 100
+  name: Jeļena Kļaviņa
+  cvk_id: 79800
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79800-jelena-klavina/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1979
+  education:
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: Sociālo zinātņu bakalaura grāds psiholoģijā
+  - institution: Latvijas Universitāte Paula Stradiņa Medicīnas Koledža
+    year: 2015
+    degree: Pirmā līmeņa profesionālā augstākā medicīniskā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 103
+  name: Irma Kalniņa
+  cvk_id: 78340
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78340-irma-kalnina/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1950
+  education:
+  - institution: Ohaio Universitāte
+    year: 1973
+    degree: Bakalaurs izglītības zinātnē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  - employer: Sv. Pestītāja Anglikāņu baznīca
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 104
+  name: Līga Kļaviņa
+  cvk_id: 83150
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83150-liga-klavina/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1968
+  education:
+  - institution: Latvijas Universitāte
+    year: 1991
+    degree: filologs, angļu valodas un literatūras pasniedzēja
+  - institution: Daugavpils Universitāte
+    year: 2002
+    degree: Izglītības zinātņu maģistra grāds pedagoģijā-skolvadībā
+  - institution: Rēzeknes Augstskola
+    year: 2006
+    degree: Finanšu un grāmatvedības vadītājs, ekonomists
+  - institution: Rīgas Tehniskā Universitāte
+    year: 2008
+    degree: Maģistrantūras studijas programmā "Starptautiskā un reģionālā ekonomika", maģistra grāds ekonomikā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  status: ok
+  reason: null
+- politician_id: 105
+  name: Māris Kučinskis
+  cvk_id: 87940
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87940-maris-kucinskis/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1961
+  education:
+  - institution: Latvijas Valsts Universitāte
+    year: 1988
+    degree: Ekonomista kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Finanšu ministrija
+    position: Ministrs
+  - employer: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+    position: Valdes loceklis
+  - employer: '"LIEPĀJAS PARTIJA"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 106
+  name: Līga Kozlovska
+  cvk_id: 83100
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83100-liga-kozlovska/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1957
+  education:
+  - institution: Rīgas Medicīnas institūts
+    year: 1982
+    degree: ārsts, profesionālais maģistrs
+  - institution: Rīgas Stradiņa Universitāte
+    year: 1992
+    degree: specialitāte - ģimenes ārsts
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāte
+  - employer: iu L.Kozlovskas ģimenes ārstes prakse
+    position: ģimenes ārste
+  - employer: Rīgas Stradiņa Universitāte
+    position: rezidentūras programmas vadītāja, lektore
+  - employer: Latvijas lauku ģimenes ārstu asociācija
+    position: valdes locekle
+  status: ok
+  reason: null
+- politician_id: 107
+  name: Linda Liepiņa
+  cvk_id: 81290
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81290-linda-liepina/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1974
+  education:
+  - institution: Baltijas Krievu Institūts
+    year: 2003
+    degree: uzņēmējdarbības vadība
+  - institution: Baltijas Krievu Institūts
+    year: 2005
+    degree: maģistrs uzņēmējdarbības vadībā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāte
+  status: ok
+  reason: null
+- politician_id: 108
+  name: Agnese Krasta
+  cvk_id: 78360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78360-agnese-krasta/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1986
+  education:
+  - institution: Latvijas Universitāte
+    year: 2012
+    degree: Sociālo zinātņu bakalaurs tiesību zinātnē
+  - institution: Latvijas Universitāte
+    year: 2008
+    degree: Sociālo zinātņu bakalaurs politikas zinātnē
+  - institution: Latvijas Universitāte
+    year: 2017
+    degree: Profesionālā maģistra grāds tiesību zinātnē, jurists
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāte, Saeimas frakcijas "Jaunā Vienotība" priekšsēdētāja vietniece
+  - employer: Partija "VIENOTĪBA"
+    position: Valdes locekle
+  - employer: Latvijas Republikas Zemessardze
+    position: Zemessargs
+  status: ok
+  reason: null
+- politician_id: 109
+  name: Ingmārs Līdaka
+  cvk_id: 87710
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87710-ingmars-lidaka/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1966
+  education:
+  - institution: Latvijas Universitāte
+    year: 2000
+    degree: 2. līmeņa profesionālā augstākā pedagoģiskā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Latvijas Zaļā partija
+    position: Domes priekšsēdētājs
+  - employer: '"Zooloģiskā dārza atbalsta biedrība"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 110
+  name: Gunārs Kūtris
+  cvk_id: 83290
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83290-gunars-kutris/
+  fetched_at: '2026-10-05 08:19:03'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1960
+  education:
+  - institution: Latvijas universitāte
+    year: 1982
+    degree: tiesību maģistrs, profesionālais maģistra grāds
+  - institution: Latvijas universitāte
+    year: 1994
+    degree: akadēmiskais maģistra grāds, Mg.iur.
+  - institution: Latvijas universitāte
+    year: 2024
+    degree: tiesību zinātņu doktors (Ph.D.)
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāts
+  - employer: Latvijas universitāte
+    position: docents
+  status: ok
+  reason: null
+- politician_id: 111
+  name: Nataļja Marčenko-Jodko
+  cvk_id: 84560
+  source_url: https://dati.cvk.lv/SV2026/kandidati/84560-natalja-marcenko-jodko/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Politiskā partija "Stabilitātei!"
+  birth_year: 1978
+  education:
+  - institution: Informācijas sistēmu menedžmenta augstskola
+    year: 2024
+    degree: Bakalaurs, Uzņēmējdarbības vadība un uzņēmuma vadītāja kvalifikācija
+  - institution: Rīgas Ziemeļvalsts augstskola
+    year: 2026
+    degree: Maģistra grāds, Uzņēmējdarbības vadība un organizācijas vadītāja kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  - employer: Politiskā partija "Stabilitātei!"
+    position: Valdes locekle
+  - employer: '"Stabilitātei-Jā!" biedrība'
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 112
+  name: Atis Labucis
+  cvk_id: 78650
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78650-atis-labucis/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1986
+  education:
+  - institution: Latvijas Universitāte
+    year: 2023
+    degree: Zinātnes doktora grāds (Ph.D) dabaszinātnēs (bioloģijā)
+  - institution: Latvijas Universitāte
+    year: 2011
+    degree: Maģistra grāds dabaszinātnēs (bioloģijā)
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Bakalaura grāds dabaszinātnēs (bioloģijā)
+  - institution: Rīgas 49. vidusskola
+    year: 2006
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Latvijas Hidroekoloģijas institūts
+    position: Pētnieks
+  status: ok
+  reason: null
+- politician_id: 113
+  name: Linda Matisone
+  cvk_id: 87920
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87920-linda-matisone/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1976
+  education:
+  - institution: Baltijas Starptautiskā Akadēmija
+    year: 2003
+    degree: Tiesību zinātnes, jurista kvalifikācija
+  - institution: Baltijas Starptautiskā Akadēmija
+    year: 2004
+    degree: Profesionālais maģistra grāds, uzņēmējdarbības vadīšana un administrēšana
+  - institution: Rīgas Tehniskā Universitāte
+    year: 1999
+    degree: Ekonomikas bakalaura grāds, uzņēmējdarbībā un vadīšanā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte, Saeimas priekšsēdētājas biedre
+  - employer: LATVIJAS EVAŅĢĒLISKI LUTERISKĀS BAZNĪCAS LIEPĀJAS SVĒTĀS ANNAS DRAUDZE
+    position: Padomes locekle
+  - employer: Biedrība “Liepājnieki”
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 114
+  name: Ainars Latkovskis
+  cvk_id: 78660
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78660-ainars-latkovskis/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1967
+  education:
+  - institution: Džordža Vašingtona Universitāte, Vašingtona, ASV
+    year: 1995
+    degree: Starptautisko attiecību maģistrs
+  - institution: Latvijas Universitāte
+    year: 1993
+    degree: Diploms, vēsturnieks
+  workplaces:
+  - employer: LR Saeima
+    position: Deputāts, Nacionālās drošības komisijas priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 115
+  name: Uģis Mitrevics
+  cvk_id: 80750
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80750-ugis-mitrevics/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1967
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2003
+    degree: Inženiera kvalifikācija, apakšprogrammā Mežinženieris
+  - institution: Latvijas Universitāte
+    year: 1995
+    degree: Ekonomista kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Ilgtspējīgas attīstības komisijas priekšsēdētājs
+  - employer: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+    position: Valdes loceklis
+  - employer: '"Par labām pārmaiņām"'
+    position: Valdes loceklis
+  - employer: Medību un sporta klubs "Krīvi"
+    position: Valdes loceklis
+  - employer: '"Mēs esam siguldieši"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 116
+  name: Gatis Liepiņš
+  cvk_id: 78390
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78390-gatis-liepins/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1989
+  education:
+  - institution: Latvijas Universitātes Vēstures un filozofijas fakultāte
+    year: 2012
+    degree: Humanitāro zinātņu bakalaura grāds vēsturē
+  - institution: Latvijas Universitātes Vēstures un filozofijas fakultāte
+    year: 2016
+    degree: Humanitāro zinātņu maģistra grāds vēsturē
+  workplaces:
+  - employer: Latvijas Republikas Satiksmes ministrija
+    position: Ministra ārštata padomnieks Rīgas metropoles areāla transporta jautājumos
+  - employer: Latvijas Republikas Zemessardze
+    position: Zemessargs
+  status: ok
+  reason: null
+- politician_id: 117
+  name: Ramona Petraviča
+  cvk_id: 81130
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81130-ramona-petravica/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1967
+  education:
+  - institution: Rīgas Tehniskā Universitāte
+    year: 1992
+    degree: inženieris- ķīmiķis
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāte
+  status: ok
+  reason: null
+- politician_id: 118
+  name: Antoņina Ņenaševa
+  cvk_id: 85930
+  source_url: https://dati.cvk.lv/SV2026/kandidati/85930-antonina-nenaseva/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1988
+  education:
+  - institution: Londonas Ekonomikas un politikas zinātnes skola (LSE)
+    year: 2015
+    degree: Maģistra grāds sociālajā politikā
+  - institution: Baltijas Starptautiskā akadēmija
+    year: 2011
+    degree: Bakalaura grāds politoloģijā - Eiropas studijas
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: 14.Saeimas deputāte un Saeimas sekretāra biedre
+  - employer: PROGRESĪVIE
+    position: Revīzijas komisijas locekle
+  status: ok
+  reason: null
+- politician_id: 119
+  name: Viktorija Pleškāne
+  cvk_id: 79850
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79850-viktorija-pleskane/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1975
+  education:
+  - institution: Latvijas Universitāte
+    year: 2012
+    degree: Augstākā. Profesionālais maģistra grāds darba aizsardzībā, darba aizsardzības vecāka speciālista kvalifikācija
+  - institution: Rēzeknes Augstskola
+    year: 2003
+    degree: Augstākā. Sociālo zinātņu maģistra vadības zinātnē akadēmiskais grāds
+  - institution: Rēzeknes Augstskola
+    year: 1998
+    degree: Augstākā. Ekonomikas bakalaura grāds, ekonomista kvalifikācijas tūrisma un viesnīcu uzņēmējdarbības vadībā
+  - institution: Rēzeknes komercskola
+    year: 1993
+    degree: Vidēja
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 120
+  name: Jānis Patmalnieks
+  cvk_id: 78470
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78470-janis-patmalnieks/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1980
+  education:
+  - institution: Latvijas Universitāte
+    year: 2008
+    degree: Humanitāro zinātņu maģistrs filozofijā
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: Jurista kvalifikācija
+  - institution: Rīgas Valsts vācu ģimnāzija (Āgenskalna ģimnāzija)
+    year: 1998
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Biedrība "Juglas attīstības biedrība"
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 122
+  name: Edgars Putra
+  cvk_id: 87650
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87650-edgars-putra/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1983
+  education:
+  - institution: Liepājas Universitāte
+    year: 2006
+    degree: Bakalaura grāds, Iestādes un uzņēmumu vadība
+  - institution: Ata Kronvalda Durbes vidusskola
+    year: 2001
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Latvijas Republikas Finanšu ministrija
+    position: Parlamentārais sekretārs
+  status: ok
+  reason: null
+- politician_id: 123
+  name: Anna Rancāne
+  cvk_id: 78200
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78200-anna-rancane/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1959
+  education:
+  - institution: Latvijas Valsts Universitāte
+    year: 1982
+    degree: Mg. oec - inženieris ekonomists
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  status: ok
+  reason: null
+- politician_id: 125
+  name: Līga Rasnača
+  cvk_id: 89650
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89650-liga-rasnaca/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1956
+  education:
+  - institution: Latvijas Universitāte
+    year: 2012
+    degree: Sociālo zinātņu doktora grāds
+  workplaces:
+  - employer: Latvijas Univesrsitāte, Ekonomikas un sociālo zinātņu fakultāte
+    position: Asociētā profesore
+  status: ok
+  reason: null
+- politician_id: 126
+  name: Harijs Rokpelnis
+  cvk_id: 83130
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83130-harijs-rokpelnis/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1987
+  education:
+  - institution: Rīgas Ekonomikas augstskola
+    year: 2010
+    degree: Bakalaurs ekonomikā un uzņēmējdarbībā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Latvijas Zemnieku Savienība
+    position: Valdes loceklis
+  - employer: Valmieras novada - Giterslo reģiona sadarbībai
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 127
+  name: Vilis Sruoģis
+  cvk_id: 85360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/85360-vilis-sruogis/
+  fetched_at: '2026-10-05 08:19:04'
+  list_name: Politiskā partija "Stabilitātei!"
+  birth_year: 1962
+  education:
+  - institution: Latvijas policijas akadēmija
+    year: 2004
+    degree: Jurista kvalifikācija
+  - institution: Latvijas universitāte
+    year: 2010
+    degree: Sociālo zinātņu maģistra grāds tiesību zinātnē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 128
+  name: Uģis Rotbergs
+  cvk_id: 78510
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78510-ugis-rotbergs/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1961
+  education:
+  - institution: Rīgas Biznesa institūts
+    year: 2007
+    degree: EMBA, augstākā līmeņa vadzinību maģistrs
+  - institution: Latvijas Lauksaimniecības akadēmija
+    year: 1984
+    degree: Inženieris - mežkopis
+  workplaces:
+  - employer: LR Saeima
+    position: Deputāts
+  - employer: Pasaules Dabas Fonds
+    position: Padomes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 129
+  name: Ilze Stobova
+  cvk_id: 80110
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80110-ilze-stobova/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1976
+  education:
+  - institution: Latvijas Universitāte
+    year: 2021
+    degree: Maģistra grāds izglītības vadībā
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: Maģistra grāds politikas zinātnē
+  - institution: Sociālā darba un sociālās pedagoģijas augstskola “Attīstība”
+    year: 1999
+    degree: Bakalaura grāds sociālajā pedagoģijā
+  - institution: Latvijas Sarkanā krusta medicīnas māsu skola
+    year: 1995
+    degree: medicīnas māsa
+  workplaces:
+  - employer: Latvijas republikas Saeima
+    position: deputāte
+  - employer: Rīgas V.Zālīša sākumskola
+    position: pedagogs
+  - employer: Rīgas 13. vidusskola
+    position: pedagogs
+  - employer: Partija Latvija Pirmajā Vietā
+    position: valdes locekle
+  status: ok
+  reason: null
+- politician_id: 130
+  name: Jana Simanovska
+  cvk_id: 89360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89360-jana-simanovska/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1971
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2012
+    degree: Inženierzinātņu doktore vides inženierzinātnēs
+  - institution: Latvijas Universitāte
+    year: 1997
+    degree: Profesionālās kvalifikācijas sertifikāts starptautiskajās ekonomiskājās attiecībās
+  - institution: Latvijas Universitāte
+    year: 1997
+    degree: Maģistra grāds vides zinātnē un pārvaldē
+  - institution: Latvijas Universitāte
+    year: 1994
+    degree: Bakalaura grāds ķīmijā
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: 14. Saeimas deputāte
+  - employer: Vidzemes Augstskola
+    position: Zinātniskā asistente
+  - employer: Nodibinājums "Brīvības un solidaritātes fonds"
+    position: Valdes locekle
+  - employer: Biedrība "Latvijas Vecāku forums"
+    position: Valdes locekle
+  - employer: PROGRESĪVIE
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 131
+  name: Andrejs Svilāns
+  cvk_id: 87540
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87540-andrejs-svilans/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1968
+  education:
+  - institution: Latvijas Universitāte
+    year: 1993
+    degree: Maģistra grāds bioloģijā, profesionālā kvalifikācija – biologs, augu fiziologs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Nacionālais botāniskais dārzs
+    position: Dabas izglītības speciālists
+  - employer: Salaspils 1. vidusskola
+    position: Pedagogs
+  - employer: Stādu audzētāju biedrība
+    position: Ētikas padomes loceklis
+  - employer: Biedrība "Dārza Pērles"
+    position: Valdes loceklis
+  - employer: Politiskā partija "Latvijas Zaļā partija"
+    position: Revīzijas komisijas priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 132
+  name: Jānis Skrastiņš
+  cvk_id: 78800
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78800-janis-skrastins/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1970
+  education:
+  - institution: Rīgas Pedagoģijas un izglītības vadības augstskola
+    year: 2007
+    degree: Uzņēmumu un iestāžu vadītāja kvalifikācija, profesionālais bakalaura grāds uzņēmējdarbībā
+  workplaces:
+  - employer: LR Saeima
+    position: Deputāts
+  - employer: Politisko partiju apvienība "Jaunā Vienotība"
+    position: Valdes loceklis
+  - employer: Politiskā partija "Valmierai un Vidzemei"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 133
+  name: Zane Skujiņa-Rubene
+  cvk_id: 78520
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78520-zane-skujina-rubene/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1993
+  education:
+  - institution: Rīgas Stradiņa Universitāte
+    year: 2018
+    degree: Maģistra grāds stratēģiskajā un sabiedrisko attiecību vadībā
+  - institution: Latvijas Universitāte
+    year: 2015
+    degree: Sociālo zinātņu bakalaura grāds komunikācijā
+  - institution: Rīgas 85.vidusskola
+    year: 2012
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: 14.Saeimas deputāte
+  status: ok
+  reason: null
+- politician_id: 135
+  name: Ilze Vergina
+  cvk_id: 88370
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88370-ilze-vergina/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1969
+  education:
+  - institution: Liepājas pedagoģiskais institūts
+    year: 1996
+    degree: Humanitāro zinātņu maģistra grāds filoloģijā
+  - institution: Liepājas pedagoģiskā augstskola
+    year: 1992
+    degree: Profesionālais maģistra grāds latviešu valodā un literatūrā, skolotāja kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  - employer: Smiltenes vidusskola
+    position: Skolotāja
+  status: ok
+  reason: null
+- politician_id: 136
+  name: Edmunds Teirumnieks
+  cvk_id: 80640
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80640-edmunds-teirumnieks/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1977
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2007
+    degree: Inženierzinātņu doktors ķīmijas inženierzinātnē
+  - institution: Rīgas Tehniskā universitāte
+    year: 2003
+    degree: Inženierzinātņu maģistrs ķīmijā
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: Dabas zinātņu maģistrs vides zinātnē
+  - institution: Rēzeknes Augstskola
+    year: 2000
+    degree: Bakalaurs vides zinātnēs
+  - institution: Rēzeknes Augstskola
+    year: 2000
+    degree: Vides aizsardzības inženieris – ekotehnologs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+    position: Valdes loceklis
+  - employer: Latvijas Tehnoloģisko universitāšu un augstskolu konsorcijs
+    position: Valdes loceklis
+  - employer: Latvijas Inovatoru apvienība
+    position: Valdes loceklis
+  - employer: Rīgas Tehniskā universitāte Rēzeknes akadēmija
+    position: Profesors
+  - employer: Rīgas Tehniskā universitāte Rēzeknes akadēmija
+    position: Vadošais pētnieks
+  - employer: Rīgas Tehniskā universitāte
+    position: Profesoru padomes loceklis
+  - employer: Rīgas Tehniskā universitāte
+    position: Doktora darbu recenzents
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: Profesoru padomes loceklis
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: Doktora darbu recenzents
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: Promocijas padomes loceklis
+  status: ok
+  reason: null
+- politician_id: 137
+  name: Jānis Vucāns
+  cvk_id: 83200
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83200-janis-vucans/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1956
+  education:
+  - institution: Latvijas Universitāte
+    year: 1992
+    degree: Matemātikas doktors
+  - institution: Baltkrievijas Valsts universitāte
+    year: 1988
+    degree: Fizikas un matemātikas zinātņu kandidāts matemātiskās fizikas un parciālo diferenciālvienādojumu specialitātē
+  - institution: Latvijas Valsts universitāte (tagad - Latvijas Universitāte)
+    year: 1979
+    degree: Augstākā profesionālā (5 gadu) izglītība pielietojamajā matemātikā
+  - institution: Rīgas 1.vidusskola (tagad - Rīgas Valsts 1.ģimnāzija)
+    year: 1974
+    degree: Vispārējā vidējā izglītība ar fizikas un matemātikas novirzienu
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Mandātu, ētikas un iesniegumu komisijas priekšsēdētājs, Ārlietu komisijas Baltijas lietu apakškomisijas priekšsēdētājs
+  - employer: Ventspils Augstskola
+    position: Vadošais pētnieks, viesprofesors
+  - employer: SIA "IT kompetences centrs"
+    position: Vadošais pētnieks - zinātniskā virziena vadītājs
+  - employer: Baltijas Asambleja
+    position: Prezidija loceklis, viceprezidents, Latvijas pastāvīgās delegācijas vadītājs
+  - employer: SIA "Biznesa, mākslas un tehnoloģiju augstskola "RISEBA""
+    position: Valsts pārbaudījumu komisijas priekšsēdētājs
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: Valsts pārbaudījumu komisijas priekšsēdētājs
+  - employer: Biedrība "Tehnoloģiju attīstības forums"
+    position: Valdes loceklis
+  - employer: Poltiskā partija "Latvijai un Ventspilij"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas Statistiķu asociācija"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 138
+  name: Jānis Zariņš
+  cvk_id: 78810
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78810-janis-zarins/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1996
+  education:
+  - institution: Latvijas Universitāte
+    year: 2020
+    degree: Bakalaura grāds, politikas zinātne
+  - institution: Priekuļu tehnikums
+    year: 2017
+    degree: Vidējā profesionālā, Lauku īpašuma apsaimniekotājs
+  workplaces:
+  - employer: Politisko partiju apvienība "Jaunā VIENOTĪBA"
+    position: Reģionālās politikas padomnieks
+  status: ok
+  reason: null
+- politician_id: 139
+  name: Jānis Vitenbergs
+  cvk_id: 81820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81820-janis-vitenbergs/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1985
+  education:
+  - institution: Latvijas Biozinātņu un tehnoloģiju universitāte
+    year: 2026
+    degree: Maģistra grāds uzņēmējdarbībā un vadīšanā
+  - institution: Liepājas Universitāte
+    year: 2008
+    degree: Bakalaura grāds uzņēmējdarbības vadībā
+  workplaces:
+  - employer: Ministru kabinets
+    position: Klimata un enerģētikas ministrs
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitātē
+    position: Pasniedzējs
+  - employer: Nacionālā apvienība „Visu Latvijai!” – „Tēvzemei un Brīvībai/LNNK”
+    position: Valdes loceklis
+  - employer: Zemessardzes 13. kājnieku bataljons
+    position: Zemessargs
+  status: ok
+  reason: null
+- politician_id: 140
+  name: Viesturs Zariņš
+  cvk_id: 78820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78820-viesturs-zarins/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1979
+  education:
+  - institution: SIA "BIZNESA AUGSTSKOLA TURĪBA"
+    year: 2006
+    degree: Maģistra grāds tiesību zinātnēs
+  - institution: Latvijas Policijas akadēmija
+    year: 2003
+    degree: Jurista kvalifikācija
+  workplaces:
+  - employer: Politiskā partija "Vienotība"
+    position: Valkas nodaļas vadītājs
+  status: ok
+  reason: null
+- politician_id: 141
+  name: Aiva Vīksna
+  cvk_id: 79100
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79100-aiva-viksna/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1967
+  education:
+  - institution: Latvijas Universitāte
+    year: 1991
+    degree: Maģistra grāds, ķīmiķe, pasniedzēja kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte, Budžeta un finanšu (nodokļu) komisijas priekšsēdētāja
+  - employer: Biedrība "LĪDERE"
+    position: Valdes priekšsēdētāja
+  - employer: Biedrība "Latvijas Restarts"
+    position: Valdes priekšsēdētāja vietniece
+  - employer: Biedrība "Junior Achievment Latvia"
+    position: Padomes priekšsēdētāja vietniece
+  status: ok
+  reason: null
+- politician_id: 142
+  name: Didzis Zemmers
+  cvk_id: 83660
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83660-didzis-zemmers/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1969
+  education:
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Amatu mācības un kultūras vēstures skolotāja kvalifikācija
+  - institution: Daugavpils Universitāte
+    year: 2010
+    degree: Sabiedrības pārvalde un iestāžu vadītājs
+  workplaces:
+  - employer: Zemnieku saimniecība "Mežgaiļi"
+    position: Īpašnieks
+  status: ok
+  reason: null
+- politician_id: 143
+  name: Agita Zariņa-Stūre
+  cvk_id: 78790
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78790-agita-zarina-sture/
+  fetched_at: '2026-10-05 08:19:05'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1971
+  education:
+  - institution: Latvijas Universitātes Pedagoģijas un psiholoģijas fakultāte
+    year: 1994
+    degree: latviešu valodas un literatūras skolotājs, audzināšanas darba metodika
+  - institution: Rīgas Pedagoģijas un izglītības kvalitātes augstskola
+    year: 2004
+    degree: skolvadības maģistrs
+  - institution: Latvijas Universitāte
+    year: 2012
+    degree: pielīdzināts pedagoģijas maģistrs
+  workplaces:
+  - employer: LR Saeima
+    position: deputāte
+  - employer: Valmieras 2.vidusskola
+    position: skolotāja
+  status: ok
+  reason: null
+- politician_id: 144
+  name: Inga Bērziņa
+  cvk_id: 78100
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78100-inga-berzina/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1963
+  education:
+  - institution: Latvijas Valsts Universitāte
+    year: 1986
+    degree: Ģeogrāfs, ģeogrāfijas pasniedzējs
+  - institution: Latvijas Universitāte
+    year: 1997
+    degree: Ģeogrāfijas maģistra grāds
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte
+  - employer: Politisko partiju apvienība "Jaunā Vienotība"
+    position: Valdes locekle
+  - employer: Politiskā partija "Kuldīgas novadam"
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 145
+  name: Andrejs Ceļapīters
+  cvk_id: 83140
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83140-andrejs-celapiters/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1964
+  education:
+  - institution: Latvijas Universitāte
+    year: 1990
+    degree: Tiesību zinātnes,jurists
+  workplaces:
+  - employer: LR Saeima
+    position: Saeimas deputāts
+  - employer: Praulienas pagasta A.Ceļapītera Zemnieku saimniecība "Kamatauskas"
+    position: Īpašnieks
+  - employer: Mednieku kolektīvs Prauliena
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 146
+  name: Andris Bērziņš
+  cvk_id: 83210
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83210-andris-berzins/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1955
+  education:
+  - institution: Latvijas Universitāte
+    year: 1979
+    degree: Franču valodas un literatūras specialitāte, filologa, pasniedzēja un tulka kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Latvijas Bērnu fonds
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 147
+  name: Valdis Maslovskis
+  cvk_id: 83250
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83250-valdis-maslovskis/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1974
+  education:
+  - institution: Latvijas Policijas akadēmija
+    year: 2001
+    degree: Jurists, profesionālais maģistra grāds
+  workplaces:
+  - employer: Zemkopības ministrija
+    position: Ministra arštata padomnieks Latvijas austrumu pierobežas jautājumos
+  status: ok
+  reason: null
+- politician_id: 151
+  name: Leila Rasima
+  cvk_id: 90190
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90190-leila-rasima/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1987
+  education:
+  - institution: Rēzeknes Augstskola
+    year: 2012
+    degree: Maģistra grāds izglītībā Karjeras konsultanta specialitātē
+  - institution: Rēzeknes Augstskola
+    year: 2010
+    degree: Bakalaura grāds izglītībā Svešvalodas (angļu) skolotāja specialitātē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāte
+  - employer: '"Latgales Multimediju darbnīca"'
+    position: Izpildinstitūcija
+  status: ok
+  reason: null
+- politician_id: 152
+  name: Lauris Lizbovskis
+  cvk_id: 87890
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87890-lauris-lizbovskis/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1973
+  education:
+  - institution: Ventspils 1. vidusskola
+    year: 1991
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 153
+  name: Edmunds Zivtiņš
+  cvk_id: 79980
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79980-edmunds-zivtins/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1969
+  education:
+  - institution: Latvijas Policijas akadēmija
+    year: 2000
+    degree: jurists
+  - institution: Latvijas Policijas akadēmija
+    year: 2006
+    degree: maģistra grāds tiesību zinātnēs
+  - institution: Ogres Meža Tehnikums
+    year: 1988
+    degree: Mežistrādes tehnologs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāts
+  - employer: Politiskā partija "Latvija Pirmajā Vietā"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 154
+  name: Armands Krauze
+  cvk_id: 83820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83820-armands-krauze/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1970
+  education:
+  - institution: Vecbebru tehnikums
+    year: 1988
+    degree: biškopis
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 1996
+    degree: agronoms-dārzkopis
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2000
+    degree: lauksaimniecības maģistrs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts
+  - employer: Latvijas Zemnieku savienība
+    position: Valdes priekšsēdētāja vietnieks
+  - employer: Zaļo un zemnieku savienība
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 155
+  name: Dace Melbārde
+  cvk_id: 78090
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78090-dace-melbarde/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1971
+  education:
+  - institution: Latvijas Kultūras akadēmija
+    year: 1996
+    degree: Maģistra grads kultūras teorijā
+  - institution: Latvijas Universitātes Vēstures un filozofijas fakultāte
+    year: 1994
+    degree: Bakalaura grāds vēsturē
+  - institution: Latvijas Universitātes Ekonomikas un vadības fakultāte
+    year: 2001
+    degree: Maģistra grāds sabiedrības vadībā
+  workplaces:
+  - employer: Politiskā partija "Vienotība"
+    position: valdes locekle
+  status: ok
+  reason: null
+- politician_id: 156
+  name: Rihards Kozlovskis
+  cvk_id: 78180
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78180-rihards-kozlovskis/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1969
+  education:
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: jurists
+  - institution: Latvijas Sporta pedagoģijas akadēmija
+    year: 1993
+    degree: sporta pedaogs
+  - institution: Murjāņu sporta ģimnāzija
+    year: 1987
+    degree: vidējā izglītība
+  workplaces:
+  - employer: Valsts kanceleja
+    position: Satiksmes ministrs
+  - employer: Politiskā partija "Vienotība"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 157
+  name: Kaspars Melnis
+  cvk_id: 83310
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83310-kaspars-melnis/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1989
+  education:
+  - institution: Rēzeknes Tehnoloģiju akadēmijas
+    year: 2019
+    degree: Vadības zinības, Akadēmiskā maģistra studiju programma
+  - institution: Juridiskā koledža
+    year: 2017
+    degree: Jurista palīgs (Tiesību zinātne)
+  - institution: Malnavas koledža
+    year: 2014
+    degree: Uzņēmējdarbības speciālista lauksaimniecībā.
+  - institution: Rīgas Tehniskā universitāte
+    year: 2013
+    degree: Būvniecības Fakultāte, profesionālā bakalaura studijas transportbūvē
+  - institution: Rēzeknes Valsts ģimnāzija
+    year: 2008
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: 14. Saeima
+    position: Deputāts
+  - employer: Latvijas Zemnieku Savienība
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 158
+  name: Agnese Lāce
+  cvk_id: 87300
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87300-agnese-lace/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1987
+  education:
+  - institution: Amsterdamas Universitāte, Deusto Universitāte, Osnabrikas Universitāte
+    year: 2013
+    degree: Maģistra grāds socioloģijā
+  - institution: Latvijas Universitāte
+    year: 2011
+    degree: Maģistra grāds politikas zinātnē
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Bakalaura grāds politikas zinātnē
+  workplaces:
+  - employer: PROGRESĪVIE
+    position: Valdes locekle
+  - employer: PROGRESĪVIE
+    position: Līdzpriekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 159
+  name: Reinis Uzulnieks
+  cvk_id: 83840
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83840-reinis-uzulnieks/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1986
+  education:
+  - institution: Talsu valsts ģimnāzija
+    year: 2005
+    degree: Diploms par piešķirto vidējo izglītību ar ekonomikas novirzienu
+  - institution: Latvijas policijas akadēmija
+    year: 2009
+    degree: Profesionālais bakalaura grāds publiskajās tiesībās un jurista kvalifikācija
+  - institution: Biznesa augstskola Turība
+    year: 2012
+    degree: Profesionālais maģistra grāds uzņēmējdarbības vadībā un uzņēmumu, iestāžu vadītāja kvalifikācija
+  workplaces:
+  - employer: Valsts kanceleja
+    position: Labklājības ministrs
+  - employer: Sabiedrības integrācijas fonds
+    position: Padomes loceklis
+  - employer: Biedrība "Sporto Latvija"
+    position: Valdes loceklis
+  - employer: LATVIJAS ZEMNIEKU SAVIENĪBA
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 160
+  name: Inese Lībiņa-Egnere
+  cvk_id: 78410
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78410-inese-libina-egnere/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1977
+  education:
+  - institution: Latvijas Universitāte
+    year: 2007
+    degree: Doktora grāds tiesību zinātnē (dr.iur)
+  - institution: Freiburgas Alberta-Ludviga Universitāte
+    year: 2002
+    degree: LL.M. grāds (Legum Magister) iegūts ar izcilību
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: Jurista kvalifikācija
+  - institution: Draudzīgā aicinājuma Liepājas pilsētas 5. vidusskola
+    year: 1996
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: LR Saeima
+    position: Deputāte
+  - employer: Latvijas Universitāte Juridiskā fakultāte
+    position: Docente
+  - employer: Politiskā partija "Vienotība"
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 161
+  name: Hosams Abu Meri
+  cvk_id: 78590
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78590-hosams-abu-meri/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1974
+  education:
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: internās medicīnas specialitāte
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: gastroenteroloģijas specialitāte
+  - institution: Latvijas medicīnas akadēmija
+    year: 1999
+    degree: ārsta grāds
+  workplaces:
+  - employer: Valsts Kanceleja
+    position: Veselības ministrs
+  - employer: SIA Jelgavas klīnika
+    position: gastroenterologs
+  - employer: SIA AMH
+    position: gastroenterologs
+  - employer: Latvijas- Libānas kultūras biedrība
+    position: Valdes loceklis
+  - employer: Biedrība "Arābu kultūras centrs"
+    position: Valdes loceklis
+  - employer: Partija "Vienotība"
+    position: Domes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 162
+  name: Raimonds Čudars
+  cvk_id: 78630
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78630-raimonds-cudars/
+  fetched_at: '2026-10-05 08:19:06'
+  list_name: Jaunā VIENOTĪBA
+  birth_year: 1974
+  education:
+  - institution: Latvijas Universitāte
+    year: 1996
+    degree: bakalaura grāds tiesību zinātnē, jurista kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāts, Publisko izdevumu un revīzijas komisijas priekšsēdētāja biedrs
+  - employer: Partija "Vienotība"
+    position: Valdes loceklis
+  - employer: Latvijas Republikas Zemessardze
+    position: Vecākais zemessargs
+  status: ok
+  reason: null
+- politician_id: 163
+  name: Māris Mežals
+  cvk_id: 79900
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79900-maris-mezals/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1977
+  education:
+  - institution: Latvijas Policijas Akadēmija
+    year: 1998
+    degree: Kriminālpolicijas inspektors
+  workplaces:
+  - employer: LR SAEIMA
+    position: Saeimas deputāta palīgs
+  - employer: Eiroparlaments
+    position: Eiroparlamenta deputāta palīgs
+  - employer: SIA MM EXPERT
+    position: Īpašnieks, valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 173
+  name: Mārtiņš Štāls
+  cvk_id: 78020
+  source_url: https://dati.cvk.lv/SV2026/kandidati/78020-martins-stals/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: JKP Jaunā konservatīvā partija
+  birth_year: 1982
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2018
+    degree: Inženierzinātņu maģistra grāds datorvadībā un dartorzinātnē
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2011
+    degree: Inženierzinātņu bakalaura grāds datorvadībā un datorzinātnē
+  - institution: Latvijas Universitāte
+    year: 2013
+    degree: Sociālo zinātņu maģistra grāds ekonomikā (uzņēmējdarbības ekonomika)
+  workplaces:
+  - employer: Jelgavas valstpilsētas dome
+    position: priekšsēdētāja vietnieks tautsaimniecības jautājumu programmā
+  - employer: Zemgales reģionālā enerģētikas aģentūra
+    position: valdes priekšsēdētājs
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: pasniedzējs
+  - employer: JKP Jaunā konservatīvā partija
+    position: valdes priekšsēdētāja vietnieks
+  status: ok
+  reason: null
+- politician_id: 181
+  name: Aleksandrs Bartaševičs
+  cvk_id: 80050
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80050-aleksandrs-bartasevics/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1965
+  education:
+  - institution: Rīgas tehniska universitāte
+    year: 1990
+    degree: Rūpnieciskā un civilā celtniecība
+  workplaces:
+  - employer: Rēzeknes valstspilsētas pašvaldība
+    position: Pašvaldības domes deputāts
+  - employer: Rēzeknes valstspilsētas pašvaldība
+    position: Pilsētas attīstības, infrastruktūras un sabiedriskās kārtības komitejas priekšsēdētājs
+  - employer: Latgales plānošanas reģions
+    position: Attīstības padomes loceklis
+  - employer: Politiskā partija "KOPĀ LATVIJAI"
+    position: valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 183
+  name: Raivis Zeltīts
+  cvk_id: 82890
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82890-raivis-zeltits/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"Austošā Saule Latvijai"'
+  birth_year: 1992
+  education:
+  - institution: Latvijas Universitāte
+    year: 2015
+    degree: Bakalaura grāds vēstures zinātnē
+  workplaces:
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Valdes priekšsēdētājs
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Ģenerālsekretārs
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Tautsaimniecības, ekonomikas un investīciju darba grupas vadītājs
+  - employer: Biedrība "Austošā Saule"
+    position: Valdes priekšsēdētājs
+  - employer: Baložu vidusskola
+    position: Vēstures un sociālo zinātņu skolotājs
+  - employer: Zemessardzes Studentu kājnieku bataljons
+    position: Vecākais zemessargs
+  - employer: Biedrība "ĢIMENE.TAUTA.VALSTS."
+    position: Likvidators
+  status: ok
+  reason: null
+- politician_id: 184
+  name: Dace Lindberga
+  cvk_id: 82960
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82960-dace-lindberga/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"Austošā Saule Latvijai"'
+  birth_year: 1976
+  education:
+  - institution: Latvijas Sporta pedagoģijas akadēmija
+    year: 1998
+    degree: Bakalaura grāds sporta pedagoģijā, sporta pedagoga specialitāte, papildkvalifikācija – sporta menedžere.
+  workplaces:
+  - employer: Austošā Saule Latvijai
+    position: Valdes locekle
+  - employer: DaLi Real Estate
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 185
+  name: Andris Velps
+  cvk_id: 82370
+  source_url: https://dati.cvk.lv/SV2026/kandidati/82370-andris-velps/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"Austošā Saule Latvijai"'
+  birth_year: 1986
+  education:
+  - institution: Ekonomikas un kultūras augstskola
+    year: 2026
+    degree: Profesionālais Bakalaura grāds datorzinātnēs, programmēšanas inženiera kvalifikācija
+  workplaces:
+  - employer: SIA Zinātniski tehniskā firma "Lāsma"
+    position: Programmēšanas inženieris
+  - employer: '"Austošā Saule Latvijai"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 186
+  name: Jānis Zalāns
+  cvk_id: 81830
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81830-janis-zalans/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"Austošā Saule Latvijai"'
+  birth_year: 1987
+  education:
+  - institution: Ventspils 4. vidusskola
+    year: 2006
+    degree: vispārējā vidējā izglītība
+  workplaces:
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Valdes priekšsēdētāja vietnieks
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Konservatīvo vērtību darba grupas vadītājs
+  - employer: Politiskā partija "Austošā Saule Latvijai"
+    position: Biedru uzņemšanas komisijas vadītājs
+  status: ok
+  reason: null
+- politician_id: 189
+  name: Juris Pūce
+  cvk_id: 92150
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92150-juris-puce/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"Latvijas attīstībai"'
+  birth_year: 1980
+  education:
+  - institution: Latvijas Universitāte
+    year: 2005
+    degree: vadības zinātnes maģistrs
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: tiesību zinātņu maģistrs
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: jurists
+  workplaces:
+  - employer: Latvijas attīstībai
+    position: valdes priekšsēdētājs
+  - employer: SIA EPKO
+    position: valdes loceklis
+  - employer: SIA Energy Projects and Solutions
+    position: valdes loceklis
+  - employer: Ekonomistu apvienība
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 192
+  name: Kārlis Seržants
+  cvk_id: 87840
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87840-karlis-serzants/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1959
+  education:
+  - institution: Latvijas Universitāte
+    year: 1988
+    degree: Maģistra grāds vēsturē
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāta palīgs
+  status: ok
+  reason: null
+- politician_id: 203
+  name: Aivis Ceriņš
+  cvk_id: 88200
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88200-aivis-cerins/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1988
+  education:
+  - institution: Rīgas Celtniecības koledža
+    year: 2010
+    degree: Būvdarbu vadītaja specialitāte
+  workplaces:
+  - employer: SIA “AC Production”
+    position: Valdes loceklis
+  - employer: SIA "AC Trans”
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 206
+  name: Mairita Lūse
+  cvk_id: 86260
+  source_url: https://dati.cvk.lv/SV2026/kandidati/86260-mairita-luse/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1986
+  education:
+  - institution: Mursijas Universitāte,
+    year: 2012
+    degree: Maģistra grāds ekonomiskajā sadarbībā un attīstībā
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Bakalaura grāds Somugru studijās
+  workplaces:
+  - employer: Rīgas valstpilsētas pašvaldība
+    position: deputāte
+  - employer: Rīgas valstpilsētas pašvaldība
+    position: Rīgas vides aizsardzības fonda padomes locekle
+  - employer: '"PROGRESĪVIE"'
+    position: Valdes locekle
+  - employer: '"Brīvības un solidaritātes fonds"'
+    position: Amatpersona
+  - employer: '"Abinitio"'
+    position: Likvidators
+  status: ok
+  reason: null
+- politician_id: 209
+  name: Ģirts Štekerhofs
+  cvk_id: 83120
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83120-girts-stekerhofs/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: Zaļo un Zemnieku savienība
+  birth_year: 1964
+  education:
+  - institution: Rīgas Medicīnas institūts
+    year: 1988
+    degree: ārsts
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: deputāts
+  - employer: SIA Ziemeļkurzemes reģionālā slimnīca
+    position: ārsts
+  - employer: SIA Klīnika Zinta
+    position: ārsts
+  - employer: Medicīnas sabiedrība ar ierobežotu atbildību "Dokotorāts Elite"
+    position: ārsts
+  status: ok
+  reason: null
+- politician_id: 226
+  name: Raivis Kalējs
+  cvk_id: 88080
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88080-raivis-kalejs/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1989
+  education:
+  - institution: Rīgas Stradiņa universitāte
+    year: 2014
+    degree: Profesionālā maģistra grāds programmā "Bizness un tiesības Eiropas Savienībā", uzņēmumu un organizāciju (iestāžu) vadītāja profesionālā kvalifikācija
+  - institution: Rīgas Tehniskā universitāte
+    year: 2012
+    degree: Profesionālā bakalaura grāds uzņēmējdarbībā un vadīšanā, ekonomista kvalifikācija
+  - institution: Nīderlandes lietišķo Zinātņu universitāte
+    year: 2011
+    degree: Programma "Starptautiskā biznesa vadība", sertifikāts
+  - institution: Austrālijas Ērgļa akadēmija
+    year: 2019
+    degree: Programma "Sports un rekreācija", sertifikāts
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts, Ārlietu komisijas loceklis, Ilgtspējīgas attīstības komisijas loceklis
+  status: ok
+  reason: null
+- politician_id: 227
+  name: Dāvis Melnalksnis
+  cvk_id: 79220
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79220-davis-melnalksnis/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1993
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2018
+    degree: Profesionālais maģistra grāds ekonomikā, pilsētu un reģionu inženierekonomika, ekonomista kvalifikācija
+  - institution: Rīgas Tehniskā universitāte
+    year: 2016
+    degree: Profesionālais bakalaura grāds, reģionālās attīstības un pilsētekonomikas inženierija, teritoriju attīstības plānošanas inženiera kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 228
+  name: Jānis Eglīts
+  cvk_id: 85050
+  source_url: https://dati.cvk.lv/SV2026/kandidati/85050-janis-eglits/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1979
+  education:
+  - institution: Daugavpils Universitāte
+    year: 2023
+    degree: Maģistrs, psihologs
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  - employer: Nacionālā apvienība “Visu Latvijai!”-“Tēvzemei un Brīvībai/LNNK”
+    position: Saulkrastu nodaļas vadītājs
+  - employer: Saimnieciskās darbības veicējs
+    position: Psihologa konsultācijas
+  status: ok
+  reason: null
+- politician_id: 230
+  name: Inga Priede
+  cvk_id: 87700
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87700-inga-priede/
+  fetched_at: '2026-10-05 08:19:07'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1966
+  education:
+  - institution: Rīgas Kultūras un izglītības darbinieku tehnikums
+    year: 1984
+    degree: Bibliotēku zinātne
+  - institution: Liepājas Universitāte
+    year: 2005
+    degree: Iestāžu un uzņēmumu vadība ar specializāciju pašvaldību vadībā
+  - institution: Biznesa augstskola "Turība"
+    year: 2008
+    degree: Sociālo zinātņu maģistra grāds, sabiedrisko attiecību vadība
+  workplaces:
+  - employer: Latvijas Republikas Saeima
+    position: Deputāte, frakcijas priekšsēdētāja vietniece
+  - employer: Politiskā partija "Latvijas Zaļā partija"
+    position: Valdes locekle
+  - employer: Politisko partiju apvienība "APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"
+    position: Valdes locekle
+  - employer: Biedrība "Latvijas Basketbola Savienība"
+    position: padomes locekle
+  - employer: Lībagu pagasta iedzīvotāju padome
+    position: padomes locekle
+  status: ok
+  reason: null
+- politician_id: 231
+  name: Krišjānis Kļaviņš
+  cvk_id: 85450
+  source_url: https://dati.cvk.lv/SV2026/kandidati/85450-krisjanis-klavins/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1984
+  education:
+  - institution: Priekuļu vidusskola
+    year: 2003
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: null
+    position: Žurnālists
+  status: ok
+  reason: null
+- politician_id: 232
+  name: Jānis Urbanovičs
+  cvk_id: 79910
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79910-janis-urbanovics/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: Politisko partiju apvienība "Saskaņas Centrs"
+  birth_year: 1959
+  education:
+  - institution: Latvijas Lauksaimniecības Akadēmija
+    year: 1982
+    degree: Inženieris - hidrotehniķis
+  workplaces:
+  - employer: '"SASKAŅA" sociāldemokrātiskā partija'
+    position: Valdes priekšsēdētājs
+  - employer: Politisko Partiju Apvienība "Saskaņas Centrs"
+    position: Valdes loceklis
+  - employer: Biedrība "Baltijas forums"
+    position: Valdes loceklis
+  - employer: Nodibinājums "BF"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas - Krievijas draudzības biedrība"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas - Kazahstānas draudzības biedrība"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 233
+  name: Jānis Citskovskis
+  cvk_id: 79450
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79450-janis-citskovskis/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: JKP Jaunā konservatīvā partija
+  birth_year: 1975
+  education:
+  - institution: LU
+    year: 2006
+    degree: Sociālo zinātņu maģistrs tiesību zinātnē
+  - institution: RTU
+    year: 2000
+    degree: Maģistrs transporta un satiksmes zinātnē
+  workplaces:
+  - employer: Pilsonības un migrācijas lietu pārvade
+    position: Projekta vadītājs
+  status: ok
+  reason: null
+- politician_id: 234
+  name: Arigo Toro
+  cvk_id: 89580
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89580-arigo-toro/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: '"Gobzema saraksts"'
+  birth_year: 1978
+  education:
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: Maģistra grāds tiesību zinātnē, jurista kvalifikācija
+  workplaces:
+  - employer: Gobzema saraksts
+    position: Sabiedrisko attiecību speciālists
+  status: ok
+  reason: null
+- politician_id: 235
+  name: Roberts Ķipurs
+  cvk_id: 83700
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83700-roberts-kipurs/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1977
+  education:
+  - institution: Latvijas Universitāte
+    year: 2008
+    degree: maģistra grāds vēsturē
+  workplaces:
+  - employer: Rīgas Mākslas un mediju tehnikums
+    position: Skolotājs
+  - employer: Rīgas Valsts 1. Ģimnāzija
+    position: Skolotājs
+  - employer: Latvijas Universitāte
+    position: Lektors
+  - employer: Rīgas Izglītības un informatīvi metodiskais centrs (RIIMC)
+    position: Metodiķis
+  - employer: Latvijas Republikas Saeima
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 236
+  name: Jūlija Stepaņenko
+  cvk_id: 93420
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93420-julija-stepanenko/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1977
+  education:
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: 'Profesionālā augstākā izglītība tiesību zinātnē, kvalifikācija: jurists'
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: Valstspilsētas domes deputāts
+  - employer: Politisko partiju apvienība SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+    position: Valdes loceklis
+  - employer: Politiskā partija "SUVERĒNĀ VARA"
+    position: Valdes loceklis
+  - employer: Sabiedrība ar ierobežotu atbildību "WAVE MEDIA"
+    position: Valdes loceklis
+  - employer: ZAB ABSOLVO SIA
+    position: Valdes loceklis
+  - employer: Biedrība "TAUTAS VARA"
+    position: Amatpersona
+  status: ok
+  reason: null
+- politician_id: 237
+  name: Austris Stankevics
+  cvk_id: 83300
+  source_url: https://dati.cvk.lv/SV2026/kandidati/83300-austris-stankevics/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 2000
+  education:
+  - institution: Bauskas 2. vidusskola
+    year: 2019
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Biedrība ''Latvija Latviešiem''
+    position: Valdes loceklis
+  - employer: Latvijas Republikas Saeima
+    position: Saeimas deputāta Edvīna Šnores palīgs
+  - employer: Nacionālā apvienība “Visu Latvijai!”-“Tēvzemei un Brīvībai/LNNK”
+    position: Jaunatnes organizācijas valdes loceklis
+  - employer: Rīgas dome
+    position: Centrālās administrācijas Dokumentu vadības un domes atbalsta pārvaldes Deputātu darbības nodrošināšanas nodaļas Komiteju sēžu nodrošināšanas sektora Galvenais referents
+  status: ok
+  reason: null
+- politician_id: 247
+  name: Agris Freifalts
+  cvk_id: 80590
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80590-agris-freifalts/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: '"Gobzema saraksts"'
+  birth_year: 1967
+  education:
+  - institution: Rīgas 11 profesionāli tehniskā vidusskola
+    year: 1985
+    degree: Vidējā tehniskā, Dīzeļlokomotīves mašīnista palīgs
+  workplaces:
+  - employer: SIA HEKTO development
+    position: Valdes priekšsēdētājs
+  - employer: Gobzema saraksts
+    position: Valdes loceklis
+  - employer: Biedrība “P21”
+    position: Valdes loceklis
+  - employer: Distreom OU
+    position: Kapitāldaļu turētējs
+  status: ok
+  reason: null
+- politician_id: 248
+  name: Jānis Jenzis
+  cvk_id: 87740
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87740-janis-jenzis/
+  fetched_at: '2026-10-05 08:19:08'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1973
+  education:
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: Bakalaura grāds vadībzinātnē
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Maģistra grāds sabiedrības vadībā
+  workplaces:
+  - employer: Latvijas Biozinātņu un tehnoloģiju universitāte
+    position: Docents
+  - employer: Biznesa augstskola "Turība"
+    position: Viesdocents
+  - employer: '"Latvijas Restorānu biedrība"'
+    position: Prezidents
+  - employer: '"Latvijas Nacionālā simfoniskā orķestra fonds"'
+    position: Valdes priekšsēdētājs
+  - employer: SIA "ĢIMENES ĀRSTU PRAKSE"
+    position: Valdes loceklis
+  - employer: Šveices Sadarbības programma
+    position: Koordinators
+  - employer: Sadarbības tīkls kultūras tūrismā
+    position: Projekta vadītājs
+  - employer: SIA "Inspirante"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 249
+  name: Līga Meņģelsone
+  cvk_id: 92600
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92600-liga-mengelsone/
+  fetched_at: '2026-10-05 08:19:09'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1972
+  education:
+  - institution: Latvijas Universitāte
+    year: 1999
+    degree: Profesionālā augstākā Starptautisko ekonomisko sakaru vadībā
+  - institution: Latvijas Kultūras Akadēmija
+    year: 1996
+    degree: Bakalaura grāds Teorijā un administrēšanā
+  - institution: Latvijas Universitāte
+    year: 2024
+    degree: Maģistra grāds, sabiedrības vadība
+  - institution: Rīgas Tehniskās universitātes Rīgas Biznesa skola
+    year: 2026
+    degree: Profesionālais maģistra grāds uzņēmumu un organizāciju vadīšanā, organizācijas vadītāja kvalifikācija
+  workplaces:
+  - employer: Rīgas Stradiņa Universitāte
+    position: Padomes locekle
+  - employer: Biedrība "Latvijas Sarkanais Krusts"
+    position: Padomes priekšsēdētājs
+  - employer: Pilnsabiedrība "SEP"
+    position: Padomes loceklis
+  - employer: '"Ārstes Ilzes Aizsilnieces fonds"'
+    position: Valdes locekle
+  - employer: Biedrība "Latvijas Burāšanas Savienība"
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 250
+  name: Karīna Miķelsone
+  cvk_id: 92500
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92500-karina-mikelsone/
+  fetched_at: '2026-10-05 08:19:10'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1983
+  education:
+  - institution: Rūgas Tehniskā universitāte
+    year: 2024
+    degree: Maģistrs grāds Līderībā un vadībā
+  - institution: Rīgas Dzelzceļnieku koledža
+    year: 2003
+    degree: 1. līmeņa augstākā izglītība - Dzelzceļa transporta kustības un vadības tehniķis
+  - institution: Rīgas Tehniskā universitāte
+    year: 2011
+    degree: Bakalaura grāds ekonomikā
+  workplaces:
+  - employer: Ādažu novada pašvaldības dome
+    position: Deputāte
+  - employer: Eiropas reģionu komiteja
+    position: Eiropas reģionu komitejas locekle
+  - employer: Latvijas Pašvaldību savienība
+    position: Valdes locekle
+  status: ok
+  reason: null
+- politician_id: 251
+  name: Mārtiņš Brencis
+  cvk_id: 91540
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91540-martins-brencis/
+  fetched_at: '2026-10-05 08:19:11'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1981
+  education:
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Tiesību zinātņu augstākā līmeņa profesionālā studiju programma, profesionālā kvalifikācija - jurists
+  workplaces:
+  - employer: Valsts kanceleja
+    position: Ministru prezidenta padomnieks
+  - employer: Latvijas Universitāte
+    position: Padomes loceklis
+  - employer: Biedrība "Latvijas Univeristātes Absolventu klubs"
+    position: Valdes loceklis
+  - employer: Biedrība "Brīvības 177"
+    position: Valdes loceklis
+  - employer: Biedrība "Latvijas Restarts"
+    position: Projektu vadītājs
+  status: ok
+  reason: null
+- politician_id: 252
+  name: Liene Apine
+  cvk_id: 93080
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93080-liene-apine/
+  fetched_at: '2026-10-05 08:19:12'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1977
+  education:
+  - institution: Latvijas Kultūras akadēmija
+    year: 2000
+    degree: Mākslas bakalaurs, starpkultūru sakari Latvija-Francija
+  workplaces:
+  - employer: Latvijas Paralimpiskā komiteja
+    position: Ģenerālsekretāre
+  - employer: Latvijas Sporta federāciju padome
+    position: Viceprezidente, Šaušanas instruktoru sertifikācijas komisijas vadītāja
+  - employer: Latvijas Republikas Saeima
+    position: Deputāta palīdze
+  - employer: World Abilitysport
+    position: Valdes locekle
+  - employer: Latvijas Paralimpiskā sporta centra fonds
+    position: Valdes locekle
+  - employer: Biedrība "Ģertrūdes iela 16"
+    position: Valdes locekle
+  - employer: Latvijas Invalīdu sporta federācija
+    position: Valdes locekle
+  - employer: Biedrība "Domas spēks"
+    position: Valdes priekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 253
+  name: Edgars Štelmahers
+  cvk_id: 92360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92360-edgars-stelmahers/
+  fetched_at: '2026-10-05 08:19:13'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1969
+  education:
+  - institution: Biznesa augstskola "Turība"
+    year: 2003
+    degree: Bakalaura grāds, biznesa administrācija un vadība
+  workplaces:
+  - employer: SIA "NEW ROSME"
+    position: Valdes loceklis
+  - employer: SIA "REWORK AGENCY"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 254
+  name: Jānis Urtāns
+  cvk_id: 87800
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87800-janis-urtans/
+  fetched_at: '2026-10-05 08:19:14'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1990
+  education:
+  - institution: Latvijas Jūras akadēmija
+    year: 2017
+    degree: Profesionālais maģistra grāds jūras transportā
+  - institution: Latvijas Jūras akadēmija
+    year: 2014
+    degree: Profesionālais bakalaura grāds jūras transportā ar kuģa vadītāja kvalifikāciju
+  workplaces:
+  - employer: Valsts vides dienests
+    position: Vecākais eksperts
+  - employer: Rīgas Āgenskalna baptistu draudze
+    position: Padomes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 255
+  name: Viesturs Vitovskis
+  cvk_id: 92410
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92410-viesturs-vitovskis/
+  fetched_at: '2026-10-05 08:19:15'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1983
+  education:
+  - institution: Latvijas Universitātes
+    year: 2007
+    degree: Maģistra grāds, jurista kvalifikācija
+  workplaces:
+  - employer: Latvijas Republikas Tieslietu ministrija
+    position: Parlamentārais sekretārs
+  - employer: Latvijas Zvērinātu advokātu kolēģija
+    position: Zvērināta advokāta palīgs (darbība apturēta)
+  status: ok
+  reason: null
+- politician_id: 256
+  name: Māris Ozoliņš
+  cvk_id: 93010
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93010-maris-ozolins/
+  fetched_at: '2026-10-05 08:19:16'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1979
+  education:
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: Sociālo zinātņu bakalaura grāds vadībzinātnē
+  - institution: Latvijas Universitāte
+    year: 2003
+    degree: Sociālo zinātņu maģistra grāds vadībzinātnē
+  workplaces:
+  - employer: SIA "EON"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 257
+  name: Jānis Stērninieks
+  cvk_id: 87790
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87790-janis-sterninieks/
+  fetched_at: '2026-10-05 08:19:17'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1970
+  education:
+  - institution: Latvijas sporta pedagogijas akadēmija
+    year: 1992
+    degree: Sporta pedagogs, treneris
+  - institution: Latvijas Universitāte
+    year: 2000
+    degree: Jurists
+  workplaces:
+  - employer: SIA "FORUMS Investīcijas"
+    position: Valdes loceklis
+  - employer: SIA "KUBI"
+    position: Valdes loceklis
+  - employer: Biedrība “Lady Lacrose”
+    position: Valdes loceklis
+  - employer: Biedrība “Latvijas aizsardzības industrijas asociācija”
+    position: Izpildinstitūcija
+  - employer: Biedrība “Jaunsvirlauka”
+    position: Likvidators
+  - employer: SIA “Lady Cab”
+    position: Likvidators
+  status: ok
+  reason: null
+- politician_id: 258
+  name: Agnese Kupača
+  cvk_id: 87500
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87500-agnese-kupaca/
+  fetched_at: '2026-10-05 08:19:19'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1984
+  education:
+  - institution: Biznesa augstskola "Turība"
+    year: 2007
+    degree: Bakalaura grāds tiesību zinātnēs
+  - institution: Biznesa augstskola "Turība"
+    year: 2008
+    degree: Maģistra grāds iestāžu un uzņēmumu vadībā
+  workplaces:
+  - employer: Eiropas Parlamenta deputāts Reinis Pozņaks
+    position: Vietējais palīgs
+  - employer: Politiskā partija "Latvijas Reģionu Apvienība"
+    position: Valdes locekle, domes priekšsēdētāja
+  - employer: Biedrība "Vecāku Alianse"
+    position: Valdes locekle
+  - employer: Biedrība "Ķekavas novada attīstības biedrība"
+    position: Valdes priekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 259
+  name: Dagnis Straubergs
+  cvk_id: 87610
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87610-dagnis-straubergs/
+  fetched_at: '2026-10-05 08:19:20'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1969
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 1994
+    degree: Maģistra grāds arhitektūrā
+  workplaces:
+  - employer: Limbažu novada pašvaldība
+    position: Deputāts
+  - employer: Politisko partiju apvienība "APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 260
+  name: Pēteris Dimants
+  cvk_id: 88050
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88050-peteris-dimants/
+  fetched_at: '2026-10-05 08:19:21'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1980
+  education:
+  - institution: Biznesa vadības augstskola "Turība"
+    year: 2007
+    degree: maģistra grāds, uzņēmējdarbība
+  workplaces:
+  - employer: Viedās administrācijas un reģionālās attīstības ministrija
+    position: Ministra padomnieks
+  - employer: Politiskā partija “Latvijas Zaļā partija”
+    position: Valdes loceklis
+  - employer: SIA “Ventspils briežu dārzs”
+    position: Valdes loceklis
+  - employer: Biedrība “Latvijas Aizsardzības industrijas asociācija”
+    position: izpildinstitūcija
+  status: ok
+  reason: null
+- politician_id: 261
+  name: Renārs Putniņš
+  cvk_id: 88090
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88090-renars-putnins/
+  fetched_at: '2026-10-05 08:19:22'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1976
+  education:
+  - institution: Rīgas 15. arodvidusskola
+    year: 1995
+    degree: Vidējā izglītība
+  - institution: Latvijas Universitāte
+    year: 2002
+    degree: Otrā cikla profesionālā augstākā izglītība medicīnā - ārsta grāds
+  - institution: Latvijas Universitāte
+    year: 2008
+    degree: Ārsta speciālista kvalifikācija neiroķirurģijā
+  workplaces:
+  - employer: Paula Stradiņa klīniskā universitātes slimnīca
+    position: Neiroķirurgs
+  - employer: '"Nacionālais rehabilitācijas centrs "Vaivari""'
+    position: Valdes loceklis
+  - employer: Neatliekamās medicīniskās palīdzības dienests
+    position: Neiroķirurgs
+  - employer: Jelgavas klīnika
+    position: Neiroķirurgs
+  - employer: Bauskas slimnīca
+    position: Neiroķirurgs
+  status: ok
+  reason: null
+- politician_id: 262
+  name: Anete Biķe
+  cvk_id: 92440
+  source_url: https://dati.cvk.lv/SV2026/kandidati/92440-anete-bike/
+  fetched_at: '2026-10-05 08:19:23'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1998
+  education:
+  - institution: Parīzes Politikas zinātnes institūts (Sciences Po)
+    year: 2024
+    degree: Maģistra grāds starptautiskajā drošībā
+  - institution: Parīzes Politikas zinātnes institūts (Sciences Po)
+    year: 2021
+    degree: Bakalaura grāds starptautiskajās attiecībās
+  - institution: Rīgas Valsts 1. ģimnāzija
+    year: 2018
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Latvijas Republikas Tieslietu ministrija
+    position: Ministra padomniece starptautisko tiesību un drošības jautājumos
+  - employer: Biedrība “Sievietes drošībai”
+    position: Valdes locekle
+  - employer: Jesajas Berlina biedrība
+    position: Valdes priekšsedētāja
+  status: ok
+  reason: null
+- politician_id: 263
+  name: Valdis Kārkliņš
+  cvk_id: 88140
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88140-valdis-karklins/
+  fetched_at: '2026-10-05 08:19:24'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1983
+  education:
+  - institution: Biznesa augstskola "Turība"
+    year: 2017
+    degree: Profesionālais maģistra grāds uzņēmējdarbības vadībā (MBA)
+  workplaces:
+  - employer: Mārupes novada pašvaldība
+    position: Domes priekšsēdētāja vietnieks
+  - employer: Biedrība "Mārupes aukstumpeldētāji"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 264
+  name: Andis Caunītis
+  cvk_id: 79180
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79180-andis-caunitis/
+  fetched_at: '2026-10-05 08:19:25'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1971
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 1994
+    degree: Maģistra grāds, mežsaimniecības inženieris
+  workplaces:
+  - employer: Gulbenes novada pašvaldība
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 265
+  name: Mārtiņš Prīsis
+  cvk_id: 87980
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87980-martins-prisis/
+  fetched_at: '2026-10-05 08:19:26'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1980
+  education:
+  - institution: Latvijas Lauksaimniecības universitāte
+    year: 2005
+    degree: Būvinženieris
+  - institution: Rīgas Tehniskā universitāte
+    year: 2007
+    degree: Maģistra grāds darba aizsardzībā
+  - institution: Rīgas Tehniskā universitāte
+    year: 2015
+    degree: Maģistra grāds ēku apsaimniekošanā un pārvaldīšanā
+  workplaces:
+  - employer: Sabiedrība ar ierobežotu atbildību "AKP Būve"
+    position: Būvdarbu vadītājs
+  - employer: SIA "DL BŪVE"
+    position: Būvdarbu vadītājs
+  - employer: Sabiedrība ar ierobežotu atbildību "BD & C"
+    position: Būvdarbu vadītājs
+  - employer: SIA "Arka-B"
+    position: Būvdarbu vadītājs
+  - employer: SIA "Būve VL"
+    position: Būvdarbu vadītājs
+  - employer: SIA "MB Holding"
+    position: Būvdarbu vadītājs
+  - employer: Sabiedrība ar ierobežotu atbildību EDGARS BŪVĒ
+    position: Būvdarbu vadītājs
+  - employer: CREOMOD OU
+    position: Valdes loceklis
+  - employer: Biedrība "My Papa Agency"
+    position: Valdes loceklis
+  - employer: Biedrība "BASKETBOLA AKADĒMIJA MĀRUPE"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 266
+  name: Valdis Kotāns
+  cvk_id: 91440
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91440-valdis-kotans/
+  fetched_at: '2026-10-05 08:19:27'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1983
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2010
+    degree: Muitas eksperts (koledža)
+  - institution: Rīgas Tehniskā universitāte
+    year: 2012
+    degree: Bakalaura grāds, muitas iestādes struktūrvienības vadība
+  workplaces:
+  - employer: Pašnodarbinātais
+    position: CSN instruktors un pasniedzējs
+  status: ok
+  reason: null
+- politician_id: 267
+  name: Raimonds Vējonis
+  cvk_id: 91430
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91430-raimonds-vejonis/
+  fetched_at: '2026-10-05 08:19:28'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1966
+  education:
+  - institution: Pētera Stučkas Latvijas Valsts Universitāte
+    year: 1989
+    degree: Biologs, bioloģijas un ķīmijas skolotājs
+  - institution: Latvijas Universitāte
+    year: 1995
+    degree: Maģistra grāds bioloģijā
+  workplaces:
+  - employer: Latvijas Basketbola Savienība
+    position: Prezidents
+  - employer: '"Latvijas Komandu sporta spēļu asociācija"'
+    position: Valdes loceklis
+  - employer: SIA "Baltic Waste & Energy Group"
+    position: Padomes priekšsēdētāja vietnieks
+  - employer: Latvijas Republikas Viedās administrācijas un reģionālās attīstības ministrija
+    position: Ministra ārštata padomnieks stratēģiskās attīstības un politikas jautājumos
+  status: ok
+  reason: null
+- politician_id: 268
+  name: Jānis Džeriņš
+  cvk_id: 91690
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91690-janis-dzerins/
+  fetched_at: '2026-10-05 08:19:29'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1977
+  education:
+  - institution: Baltijas Krievu Institūts
+    year: 2005
+    degree: Maģistra grāds, Uzņēmējdarbības administrēšana
+  - institution: Liepājas Pedagoģijas akadēmija
+    year: 2003
+    degree: 2. līmeņa augstākā, Uzņēmuma un iestādes vadītājs
+  - institution: Rīgas Tehniskās universitātes Liepājas mācību zinātniski tehniskais komplekss
+    year: 2001
+    degree: 1. līmeņa augstākā, Mārketings
+  - institution: Rīgas Tehniskās universitātes Liepājas mācību zinātniski tehniskais komplekss
+    year: 1998
+    degree: Grāmatvedība
+  workplaces:
+  - employer: Liepājas valstpilsētas pašvaldības dome
+    position: Domes priekšsēdētāja vietnieks
+  - employer: Liepājas valstpilsētas pašvaldības dome
+    position: Izglītības, kultūras un sporta komitejas priekšsēdētājs
+  - employer: Liepājas valstpilsētas pašvaldības dome
+    position: Sporta komisijas priekšsēdētājs
+  - employer: Liepājas valstpilsētas pašvaldības dome
+    position: Izglītības komisijas priekšsēdētājs
+  - employer: '"LIEPĀJAS PARTIJA"'
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 269
+  name: Nellija Kleinberga
+  cvk_id: 88020
+  source_url: https://dati.cvk.lv/SV2026/kandidati/88020-nellija-kleinberga/
+  fetched_at: '2026-10-05 08:19:30'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1964
+  education:
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: Maģistra grāds, sociālās zinātnes, sabiedrības vadība
+  - institution: Jāzepa Vītola Latvijas Mūzikas akadēmija
+    year: 1991
+    degree: Maģistra grāds, kultūrizglītības darba speciālists
+  workplaces:
+  - employer: Saldus novada pašvaldība
+    position: Izpilddirektore
+  status: ok
+  reason: null
+- politician_id: 270
+  name: Andris Skride
+  cvk_id: 91600
+  source_url: https://dati.cvk.lv/SV2026/kandidati/91600-andris-skride/
+  fetched_at: '2026-10-05 08:19:31'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1982
+  education:
+  - institution: Rīgas Stradiņa universitāte
+    year: 2018
+    degree: Zinātņu doktors klīniskā medicīna
+  - institution: Latvijas Universitāte
+    year: 2011
+    degree: Ārsts kardiologs
+  - institution: Latvijas Universitāte
+    year: 2009
+    degree: Ārsts internists
+  - institution: Rīgas Stradiņa universitāte
+    year: 2006
+    degree: Ārsta grāds
+  - institution: Cesvaines ģimnāzija
+    year: 2000
+    degree: Vispārējā vidējā izglītība
+  workplaces:
+  - employer: Paula Stradiņa Klīniskā universitātes slimnīca
+    position: Ārsts kardiologs un reto slimību kabineta atbildīgais ārsts
+  - employer: Rīgas Stradiņa universitāte
+    position: Asociētais profesors un galvenais pētnieks
+  - employer: Reto slimību speciālistu asociācija
+    position: Valdes priekšsēdētājs
+  - employer: Politiskā Partija Izaugsme
+    position: Valdes loceklis
+  - employer: Profesora Skrides Sirds klīnika SIA
+    position: Valdes priekšsēdētājs
+  - employer: Personalizētā medicīna un klīniskie pētījumi SIA
+    position: Ārsts kardiologs
+  - employer: Skrides fonds
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 271
+  name: Ilmārs Luksts
+  cvk_id: 93320
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93320-ilmars-luksts/
+  fetched_at: '2026-10-05 08:19:32'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1987
+  education:
+  - institution: Baltijas Straptautiskā akadēmija
+    year: 2015
+    degree: Tiesību zinātnes, juriskonsults
+  - institution: Jēkabpils 3. vidusskola
+    year: 2006
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: Jēkabpils novada pašvaldība
+    position: Deputāts, civilās aizsardzības inženieris
+  status: ok
+  reason: null
+- politician_id: 272
+  name: Juris Lazdiņš
+  cvk_id: 93160
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93160-juris-lazdins/
+  fetched_at: '2026-10-05 08:19:33'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1971
+  education:
+  - institution: Dobeles 1. vidusskola
+    year: 1989
+    degree: Vidējā izglītība
+  workplaces:
+  - employer: LAP uzraudzības komiteja
+    position: Loceklis
+  - employer: Lauksaimniecības konsultatīvā padome
+    position: Loceklis
+  - employer: Kopējās lauksaimniecības politikas Stratēģiskā plāna 2023-2027 uzraudzības komiteja
+    position: Loceklis
+  - employer: Medību koordinācijas komisija
+    position: Loceklis
+  - employer: Dobeles rajona Krimūnu pagasta zemnieku saimniecība "LAZDIŅI"
+    position: Īpašnieks
+  - employer: SIA "Paugurīši A.J."
+    position: Valdes priekšsēdētājs
+  - employer: Lauksaimniecības pakalpojumu kooperatīvā sabiedrība "LATRAPS"
+    position: Padomes loceklis
+  - employer: Šaušanas sporta klubs Dobele
+    position: Amatpersona
+  - employer: Zemnieku saeima
+    position: Valdes priekšsēdētājs
+  status: ok
+  reason: null
+- politician_id: 273
+  name: Baiba Atmane
+  cvk_id: 87590
+  source_url: https://dati.cvk.lv/SV2026/kandidati/87590-baiba-atmane/
+  fetched_at: '2026-10-05 08:19:34'
+  list_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  birth_year: 1982
+  education:
+  - institution: Liepājas Pedagoģijas akadēmija
+    year: 2007
+    degree: Izglītības zinātņu maģistrs
+  - institution: Liepājas Pedagoģijas akadēmija
+    year: 2005
+    degree: Vēstures un sociālo zinību skolotāja kvalifikācija
+  workplaces:
+  - employer: Jelgavas Spīdolas Valsts ģimnāzija
+    position: Skolotāja
+  - employer: Jelgavas novada pašvaldība
+    position: Deputāte
+  - employer: Vēstures un sociālo zinībus skolotāju biedrība
+    position: Valdes priekšsēdētāja
+  status: ok
+  reason: null
+- politician_id: 274
+  name: Regīna Ločmele
+  cvk_id: 79920
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79920-regina-locmele/
+  fetched_at: '2026-10-05 08:19:35'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1966
+  education:
+  - institution: Latvijas Unversitāte
+    year: 2007
+    degree: Sociālo zinātņu maģistra grāds vadībzinātnē
+  - institution: Latvijas Unversitātes Starptautisko attiecību Institūts
+    year: 1994
+    degree: Starptautisko attiecību speciālists
+  - institution: Latvijas Universitāte
+    year: 1988
+    degree: Profesionālāis maģistra grāds žurnālistikā
+  workplaces:
+  - employer: Regīna Ločmele
+    position: Pašnodarbinātā persona
+  - employer: MEKLĒŠANAS VIENĪBA “SKAUTS”, biedrība
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 275
+  name: Andrejs Klementjevs
+  cvk_id: 79240
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79240-andrejs-klementjevs/
+  fetched_at: '2026-10-05 08:19:36'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1973
+  education:
+  - institution: Latvijas Universitāte
+    year: 2011
+    degree: Sociālo zinātņu maģistra grāds
+  - institution: Rīgas Aviācijas Universitāte
+    year: 1998
+    degree: Ekonomikas zinātņu bakalaura grāds
+  workplaces:
+  - employer: Rīgas Dome
+    position: Deputāts
+  - employer: LR Saeima
+    position: Deputāta palīgs
+  status: ok
+  reason: null
+- politician_id: 276
+  name: Roberts Žemaitis
+  cvk_id: 79390
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79390-roberts-zemaitis/
+  fetched_at: '2026-10-05 08:19:37'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1985
+  education:
+  - institution: Rīgas tehniskā universitāte
+    year: 2007
+    degree: Inženierzinātņu bakalaura grāds elektrozinātnē
+  - institution: Rīgas tehniskā universitāte
+    year: 2009
+    degree: Inženierzinātņu maģistrs grāds elektrozinātnē
+  - institution: Latvijas universitāte
+    year: 2014
+    degree: Profesionālais maģistra grāds vadībzinātnē
+  workplaces:
+  - employer: Eiropas Parlaments
+    position: Eiropas parlamenta deputāta palīgs
+  - employer: SIA Quatenta
+    position: Valdes priekšsēdētājs
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: Valstspilsētas domes deputāts
+  status: ok
+  reason: null
+- politician_id: 277
+  name: Jevgēnija Šafraneka
+  cvk_id: 79310
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79310-jevgenija-safraneka/
+  fetched_at: '2026-10-05 08:19:38'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1981
+  education:
+  - institution: Latvijas Universitāte
+    year: 2026
+    degree: Humanitāro zinātņu maģistrs
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Humanitāro zinātņu bakalurs
+  workplaces:
+  - employer: Merķeļa Fonds
+    position: Valdes loceklis
+  - employer: Rīgas Dome
+    position: Deputāts
+  - employer: Pašnodarbināta persona
+    position: null
+  - employer: Rīgas Rīnūžu vidussklola
+    position: Interešu izglītības skolotāja
+  status: ok
+  reason: null
+- politician_id: 278
+  name: Dana Šlesere
+  cvk_id: 80970
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80970-dana-slesere/
+  fetched_at: '2026-10-05 08:19:39'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1999
+  education:
+  - institution: Rīgas Komerczinību skola
+    year: 2018
+    degree: Sabiedrisko attiecību speciāliste
+  workplaces:
+  - employer: Biedrība '' Latvija pirmā''
+    position: Projektu Vadītāja
+  status: ok
+  reason: null
+- politician_id: 279
+  name: Eduards Zivtiņš
+  cvk_id: 79740
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79740-eduards-zivtins/
+  fetched_at: '2026-10-05 08:19:40'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 2000
+  education:
+  - institution: Rīgas Juridiskā augstskola
+    year: 2023
+    degree: Tiesību zinātne
+  workplaces:
+  - employer: Rīgas pilsētas tiesa
+    position: tiesneša palīgs
+  - employer: Rīgas Dome
+    position: deputāts
+  status: ok
+  reason: null
+- politician_id: 280
+  name: Olga Petkeviča
+  cvk_id: 79820
+  source_url: https://dati.cvk.lv/SV2026/kandidati/79820-olga-petkevica/
+  fetched_at: '2026-10-05 08:19:41'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1985
+  education:
+  - institution: Daugavpils universitāte
+    year: 2007
+    degree: angļu filoloģijas bakalaurs
+  - institution: Daugavpils universitāte
+    year: 2012
+    degree: maģistra grāds angļu filoloģijā, tulka/tulkotāja kvalifikācija
+  - institution: Daugavpils universitāte
+    year: 2015
+    degree: bakalaura grāds tiesību zinātnē
+  - institution: Daugavpils universitāte
+    year: 2018
+    degree: maģistra grāds tiesību zinātne, jurista kvalifikācija
+  workplaces:
+  - employer: SIA "Daugavpils siltumtīkli"
+    position: sabiedrisko attiecību speciāliste
+  - employer: Olga Petkeviča
+    position: pašnodarbināta persona
+  - employer: Politiskā partija "Daugavpils - mana pils"
+    position: valdes priekšsēdētāja
+  - employer: SIA "VSD Trans"
+    position: valdes locekle
+  status: ok
+  reason: null
+- politician_id: 281
+  name: Aleksejs Mackevičs
+  cvk_id: 80340
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80340-aleksejs-mackevics/
+  fetched_at: '2026-10-05 08:19:42'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1982
+  education:
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Sociālo zinātņu bakalaura programma politikas zinātnēs
+  - institution: Daugavpils Universitāte
+    year: 2008
+    degree: Profesionālā maģistra programma sabiedrības pārvaldē un iestāžu vadītāja kvalifikācija
+  workplaces:
+  - employer: Augšdaugavas novada pašvaldības dome
+    position: Deputāts
+  - employer: Biķernieku pamatskola
+    position: Direktors
+  - employer: Daugavpils Tehnoloģiju un tūrisma tehnikums
+    position: Konventa priekšsēdētāja vietnieks
+  - employer: Naujenes pirmsskolas izglītības iestāde "Rūķītis"
+    position: Padomes loceklis
+  status: ok
+  reason: null
+- politician_id: 282
+  name: Jekaterina Ivanova
+  cvk_id: 80360
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80360-jekaterina-ivanova/
+  fetched_at: '2026-10-05 08:19:43'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1960
+  education:
+  - institution: Rēzeknes augstskola
+    year: 2009
+    degree: Profesionālais maģistra grāds vides aizsardzībā
+  - institution: Mācību centrs BUTS
+    year: 2008
+    degree: Pedagogu izglītība, Profesionālās izglītības pedagogu pedagoģiskās pamatizglītības programma
+  workplaces:
+  - employer: Rēzeknes novada pašvaldība
+    position: deputāts
+  - employer: Politiskā partija"Kopā Latvijai"
+    position: valdes locekle
+  status: ok
+  reason: null
+- politician_id: 283
+  name: Aivars Kraps
+  cvk_id: 80150
+  source_url: https://dati.cvk.lv/SV2026/kandidati/80150-aivars-kraps/
+  fetched_at: '2026-10-05 08:19:44'
+  list_name: LATVIJA PIRMAJĀ VIETĀ
+  birth_year: 1975
+  education:
+  - institution: Rēzeknes augstskola
+    year: 2010
+    degree: ekonomists
+  workplaces:
+  - employer: Jēkabpils novada pašvaldība
+    position: Deputāts
+  status: ok
+  reason: null
+- politician_id: 284
+  name: Rūdolfs Brēmanis
+  cvk_id: 89530
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89530-rudolfs-bremanis/
+  fetched_at: '2026-10-05 08:19:45'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1983
+  education:
+  - institution: Latvijas Universitāte
+    year: 2007
+    degree: Maģistra grāds politikā un starptautiskajās attiecībās
+  - institution: Konkordijas Audentes universitāte Tallinā
+    year: 2004
+    degree: Bakalaura grāds politikā un starptautiskajās attiecībās
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: Deputāts
+  - employer: Politiskā partija Apvienība Jaunlatvieši
+    position: Valdes priekšsēdētājs
+  - employer: Partiju apvienība "Suverēnā Vara / Apvienība Jaunlatvieši"
+    position: Valdes loceklis
+  - employer: Biedrība "Vēstures entuziastu klubs"'
+    position: Valdes loceklis
+  - employer: SIA "Attīstības aģentūra Imperium"
+    position: Valdes loceklis
+  - employer: SIA "Middle East Latvia Holding"
+    position: Valdes priekšsēdētājs
+  - employer: Rūdolfs Brēmanis
+    position: Individuālais komersants
+  - employer: Rīgas domes Pretkorupcijas un labas pārvaldības komisija
+    position: Komisijas loceklis
+  - employer: Rīgas domes Pilsētvides attīstības un kvalitātes komisija
+    position: Komisijas loceklis
+  - employer: Rīgas valstspilsētas pašvaldības īpašuma privatizācijas komisija
+    position: Komisijas loceklis
+  - employer: Rīgas apkaimju attīstības komisija
+    position: Komisijas loceklis
+  - employer: Rīgas domes Izglītības, kultūras un sporta komitejas Sporta komisija
+    position: Komisijas loceklis
+  - employer: Rīgas domes attīstības komiteja
+    position: Komitejas loceklis
+  - employer: Rīgas domes īpašuma komiteja
+    position: Komitejas loceklis
+  status: ok
+  reason: null
+- politician_id: 285
+  name: Ļubova Švecova
+  cvk_id: 90020
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90020-lubova-svecova/
+  fetched_at: '2026-10-05 08:19:46'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1970
+  education:
+  - institution: Latvijas Universitāte
+    year: 1995
+    degree: Maģistra grāds tiesību zinātnēs
+  - institution: Latvijas Universitāte
+    year: 2004
+    degree: Maģistra grāds, sociālās zinātnes ekonomikā
+  workplaces:
+  - employer: SIA "Hergensoresinvest"
+    position: izpilddirektore
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: domes deputāte
+  - employer: Partija "Suverēnā vara"
+    position: valdes locekle
+  - employer: Biedrība "Tautas Vara"
+    position: valdes locekle
+  - employer: Rīgas domes Veselības aprūpes koordinācijas padomes
+    position: padomes locekle
+  - employer: Rīgas domes Izglītības, kultūras un sporta komitejas Kultūras komisija
+    position: komisijas locekle
+  - employer: Partija "Suverēnā vara"
+    position: Ekonomiskās grupas vadītāja
+  - employer: Rīgas domes Pasažieru komercpārvadājumu liecncēšanas komisija
+    position: komisijas locekle
+  status: ok
+  reason: null
+- politician_id: 286
+  name: Jūlija Sohina
+  cvk_id: 93310
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93310-julija-sohina/
+  fetched_at: '2026-10-05 08:19:47'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1977
+  education:
+  - institution: Starptautiskā Komercuniversitāte
+    year: 1999
+    degree: Ekonomikas bakalaura kvalifikācija, specialitāte - pasaules ekonomika
+  - institution: Maskavas valsts industriālā universitāte
+    year: 2000
+    degree: Profesionālā kvalifikācija - ekonomiste-menedžere
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: deputāte
+  - employer: Latvijas Krievu savienība
+    position: valdes locekle
+  - employer: SIA Advanced Promotions Group
+    position: valdes locekle
+  - employer: Garāžu īpašnieku kooperatīvā sabiedrība "PURVCIEMS 3"
+    position: valdes locekle
+  - employer: Līdzfinansējuma piešķiršanas komisija Rīgas sportistu un Rīgas sporta spēļu komandu dalībai pasaules čempionātos, Eiropas čempionātos, starptautiskās sacensībās un sacensībās Latvijā
+    position: komisijas locekle
+  - employer: Līdzfinansējuma piešķiršanas komisija bērnu un jauniešu nometnēm un brīvā laika aktivitātēm
+    position: komisijas locekle
+  - employer: Līdzfinansējuma piešķiršanas komisija jaunatnes organizāciju kapacitātes stiprināšanai
+    position: komisijas locekle
+  - employer: Līdzfinansējuma piešķiršanas komisija citu darba ar jaunatni un aktīvās atpūtas iespēju sekmējošu pasākumu īstenošanai
+    position: komisijas locekle
+  status: ok
+  reason: null
+- politician_id: 287
+  name: Natālija Ābola
+  cvk_id: 90070
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90070-natalija-abola/
+  fetched_at: '2026-10-05 08:19:48'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1953
+  education:
+  - institution: Ar Darba Sarkanā Karoga ordeni apbalvotā Pētera Stučkas Latvijas Valsts universitāte
+    year: 1981
+    degree: Vēsturnieka, vēstures un sabiedrības mācības pasniedzēja
+  workplaces:
+  - employer: TV Alter A SIA
+    position: Valdes priekšsēdētāja
+  - employer: Dzīvokļu īpašnieku biedrība Ormaņu 6
+    position: valdes locekle
+  - employer: Patstāvīgo sieviešu apvienība Femina
+    position: amatpersona
+  status: ok
+  reason: null
+- politician_id: 288
+  name: Inna Djeri
+  cvk_id: 89910
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89910-inna-djeri/
+  fetched_at: '2026-10-05 08:19:50'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1978
+  education:
+  - institution: Akronas Universitāte (ASV)
+    year: 2001
+    degree: Maģistra grāds biznesa vadībā
+  - institution: Latvijas Universitāte
+    year: 2000
+    degree: Sociālo zinātņu bakalaura grāds vadībzinātnē
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: domes deputāte
+  - employer: Household Maestro SIA
+    position: pārdošanas vadītāja
+  - employer: KVOTA-D
+    position: finanšu direktore
+  - employer: Rīgas domes Konsultatīvā padome sabiedrības integrācijas jautājumos
+    position: padomes locekle
+  - employer: Rīgas domes Jaunatnes lietu konsultatīvā komisija
+    position: komisijas locekle
+  - employer: Rīgas domes Pieminekļu padome
+    position: padomes locekle
+  - employer: Konkursa "Līdzfinansējums privātpersonu organizēto festivālu īstenošanai" vērtēšanas komisija
+    position: komisijas locekle
+  - employer: Rīgas valstspilsētas pašvaldības Izglītības, kultūras un sporta departamenta padotībā esošo izglītības iestāžu vadītāju atlases konkursa komisija
+    position: komisijas locekle
+  status: ok
+  reason: null
+- politician_id: 289
+  name: Artūrs Klēbahs
+  cvk_id: 89550
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89550-arturs-klebahs/
+  fetched_at: '2026-10-05 08:19:51'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1979
+  education:
+  - institution: Transporta un sakaru institūts
+    year: 2001
+    degree: Ekonomika un socialās zinātnes, bakalaurs
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: deputāts
+  - employer: Politiskā partija APVIENĪBA JAUNLATVIEŠI
+    position: valdes loceklis
+  - employer: Politisko partiju apvienība SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+    position: valdes loceklis
+  - employer: VĒSTURES ENTUZIASTU KLUBS
+    position: valdes loceklis
+  - employer: Pro tehnika SIA
+    position: valdes loceklis
+  - employer: Līdzfinansējuma piešķiršanas komisija privātpersonu organizētajiem kultūras un mākslas nozares pasākumiem
+    position: komisijas loceklis
+  - employer: Līdzfinansējuma piešķiršanas komisija privāto akreditēto privātpersonu muzeju atbalstam
+    position: komisijas loceklis
+  - employer: Rīgas domes Drošības, kārtības un korupcijas novēršanas jautājumu komiteja
+    position: komitejas loceklis
+  - employer: Rīgas domes Ārtelpas un mobilitātes komiteja
+    position: komitejas loceklis
+  status: ok
+  reason: null
+- politician_id: 290
+  name: Karina Sprūde
+  cvk_id: 89070
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89070-karina-sprude/
+  fetched_at: '2026-10-05 08:19:52'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1988
+  education:
+  - institution: Rīgas Tehniskā universitāte
+    year: 2013
+    degree: prof.Maģistra grāds muitas un nodokļu administrēšanā
+  workplaces:
+  - employer: Ādažu novada dome
+    position: deputāte
+  - employer: Politiskā partija “SUVERĒNĀ VARA”
+    position: valdes loceklis
+  - employer: Ādažu novada pašvaldības iepirkumu komisija
+    position: komisijas loceklis
+  status: ok
+  reason: null
+- politician_id: 291
+  name: Aleksejs Ignatjevs
+  cvk_id: 89330
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89330-aleksejs-ignatjevs/
+  fetched_at: '2026-10-05 08:19:53'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1973
+  education:
+  - institution: Baltijas Starptautiska akademija
+    year: 2006
+    degree: Bakalaurs
+  workplaces:
+  - employer: Latvijas vieglo taksometru nozares darba devēju organizācija
+    position: prezidents
+  - employer: SIA "Smile loģistika"
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 292
+  name: Vjačeslavs Stepaņenko
+  cvk_id: 93430
+  source_url: https://dati.cvk.lv/SV2026/kandidati/93430-vjaceslavs-stepanenko/
+  fetched_at: '2026-10-05 08:19:54'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1977
+  education:
+  - institution: Latvijas Universitāte
+    year: 2001
+    degree: 'Profesionālā augstākā izglītība tiesību zinātnē, kvalifikācija: jurists'
+  workplaces:
+  - employer: Rīgas valstspilsētas pašvaldība
+    position: valstspilsētas domes deputāts
+  - employer: Politiskā partija "SUVERĒNĀ VARA"
+    position: valdes loceklis
+  - employer: Politisko partiju apvienība SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+    position: valdes loceklis
+  - employer: ZAB ABSOLVO SIA
+    position: prokūrists, zvērināts advokāts
+  - employer: SIA WAVE MEDIA
+    position: prokūrists
+  - employer: Sabiedrība ar ierobežotu atbildību "Valmieras 28"
+    position: valdes loceklis
+  - employer: Sabiedrība ar ierobežotu atbildību "CDN Baltic"
+    position: valdes loceklis
+  - employer: SIA AT4
+    position: valdes loceklis
+  - employer: Biedrība "Metropolia Liberta"
+    position: valdes loceklis
+  - employer: Biedrība "Vienoti Eiropai"
+    position: amatpersona
+  - employer: Rīgas vides aizsardzības fonds
+    position: fonda loceklis
+  - employer: Siltumapgādes jautājumu komisija
+    position: komisijas loceklis
+  - employer: Dzīvojamo telpu izīrēšanas komisija
+    position: komisijas loceklis
+  status: ok
+  reason: null
+- politician_id: 293
+  name: Andrejs Jakovļevs
+  cvk_id: 89230
+  source_url: https://dati.cvk.lv/SV2026/kandidati/89230-andrejs-jakovlevs/
+  fetched_at: '2026-10-05 08:19:55'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1974
+  education:
+  - institution: Rīgas Starptautiskā ekonomikas un biznesa administrācijas augstskola
+    year: 2005
+    degree: Uzņēmējdarbības vadītāja kvalifikācija
+  workplaces:
+  - employer: Politiskā partija “SUVERĒNĀ VARA”
+    position: Tehniskais darbinieks
+  status: ok
+  reason: null
+- politician_id: 294
+  name: Edgars Dārznieks
+  cvk_id: 90080
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90080-edgars-darznieks/
+  fetched_at: '2026-10-05 08:19:56'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1980
+  education:
+  - institution: Rīgas 36. vidusskola
+    year: 1996
+    degree: pamatizglītība
+  workplaces:
+  - employer: Partiju apvienība "SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI"
+    position: Valdes loceklis
+  - employer: Politiskā partija "APVIENĪBA JAUNLATVIEŠI"
+    position: Valdes loceklis
+  - employer: VĒSTURES ENTUZIASTU KLUBS
+    position: Valdes priekšsēdētājs
+  - employer: SIA BALTĀS SMILTIS
+    position: Valdes priekšsēdētājs
+  - employer: SIA SMILŠU IEGUVE
+    position: Valdes loceklis
+  - employer: SIA Honest Enterprise
+    position: Valdes priekšsēdētājs
+  - employer: Vēstures un senatnes pētītāju biedrība
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 295
+  name: Andrejs Pagors
+  cvk_id: 90380
+  source_url: https://dati.cvk.lv/SV2026/kandidati/90380-andrejs-pagors/
+  fetched_at: '2026-10-05 08:19:57'
+  list_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  birth_year: 1986
+  education:
+  - institution: Latvijas Universitāte
+    year: 2012
+    degree: sociālo zinātņu bakalaura grāds tiesību zinātnē
+  - institution: Latvijas Policijas akadēmija
+    year: 2008
+    degree: pirmā līmeņa profesionālā augsākā izglītība, speciālists policijas darbā
+  workplaces:
+  - employer: Jelgavas valstspilsētas dome
+    position: deputāts
+  - employer: Politiskā partija "Latvijas Krievu savienība"
+    position: valdes loceklis
+  - employer: Vēsturiskā mantojuma fonds
+    position: valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 296
+  name: Ivars Āboliņš
+  cvk_id: 81460
+  source_url: https://dati.cvk.lv/SV2026/kandidati/81460-ivars-abolins/
+  fetched_at: '2026-10-05 08:19:58'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1980
+  education:
+  - institution: Latvijas Universitāte
+    year: 2025
+    degree: sociālo zinātņu maģistra grāds vadībā
+  - institution: Latvijas Universitāte
+    year: 2014
+    degree: sociālo zinātņu bakalaura grāds politikas zinātnē
+  - institution: Rīgas 64. vidusskola
+    year: 1998
+    degree: vidējā izglītība
+  - institution: Rīgas 85. vidusskola
+    year: 1995
+    degree: pamata izglītība
+  workplaces:
+  - employer: Kultūras ministrija
+    position: Parlamentārais sekretārs
+  status: ok
+  reason: null
+- politician_id: 297
+  name: Rolands Keišs
+  cvk_id: 84440
+  source_url: https://dati.cvk.lv/SV2026/kandidati/84440-rolands-keiss/
+  fetched_at: '2026-10-05 08:19:59'
+  list_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  birth_year: 1992
+  education:
+  - institution: Rēzeknes Augstskola
+    year: 2015
+    degree: Bakaulaura grāds uzņēmējdarbībā ar specializāciju uzņēmējdarbības tiesībās
+  workplaces:
+  - employer: Z/S Kotiņi
+    position: Projektu koordinators
+  - employer: Z/S Sābri
+    position: Projektu koordinators
+  - employer: IK Re Pakalpojumi
+    position: Īpašnieks
+  - employer: Biedrība "Jaunieši Baltinavai"
+    position: Valdes loceklis
+  status: ok
+  reason: null
+- politician_id: 298
+  name: Mārtiņš Hiršs
+  cvk_id: 86160
+  source_url: https://dati.cvk.lv/SV2026/kandidati/86160-martins-hirss/
+  fetched_at: '2026-10-05 08:20:00'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1988
+  education:
+  - institution: Latvijas Universitāte
+    year: 2021
+    degree: Doktora grāds
+  - institution: Ņujorkas Universitāte
+    year: 2014
+    degree: Maģistra grāds
+  - institution: Latvijas Universitāte
+    year: 2011
+    degree: Bakalaura grāds
+  workplaces:
+  - employer: Drošības pētījumu un inovāciju centrs
+    position: Viespētnieks
+  - employer: SIA MH Analytics
+    position: Valdes priekšsēdētājs
+  - employer: Biedrība "Skeptiskā Biedrība"
+    position: Valdes loceklis
+  - employer: Rīgas Juridiskā Augstskola
+    position: Docētājs
+  status: ok
+  reason: null
+- politician_id: 299
+  name: Krista Burāne
+  cvk_id: 85980
+  source_url: https://dati.cvk.lv/SV2026/kandidati/85980-krista-burane/
+  fetched_at: '2026-10-05 08:20:01'
+  list_name: '"PROGRESĪVIE"'
+  birth_year: 1971
+  education:
+  - institution: Latvijas Universitāte
+    year: 1996
+    degree: Filozofijas maģistra grāds
+  - institution: Latvijas Kultūras akadēmija
+    year: 2011
+    degree: Humanitāro zinātņu maģistra grāds mākslās
+  workplaces:
+  - employer: Latvijas Kultūras akadēmija
+    position: Zinātniskā asistente
+  - employer: Kino un teātra režisore
+    position: null
+  status: ok
+  reason: null

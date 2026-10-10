@@ -1,0 +1,13 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="atmina.lv">
+  <!-- Two opposing arrows: memory loop + contradiction -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#37474F" stroke-width="5">
+      <path d="M15.09 25.84 A18 18 0 0 1 48.91 25.84"/>
+      <path d="M44.31 21.98 L48.91 25.84 L49.95 19.93"/>
+    </g>
+    <g stroke="#B71C1C" stroke-width="5">
+      <path d="M48.91 38.16 A18 18 0 0 1 15.09 38.16"/>
+      <path d="M19.69 42.02 L15.09 38.16 L14.05 44.07"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma sola attīstīt NBS un Zemessardzi; VAD tieši nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q04 | Imigrācija | Darbaspēka ievešana no trešajām valstīm jāierobežo. | par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu
+  piezīme: CVK: programma imigrāciju nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q05 | Valodu politika | Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē. | par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības
+  piezīme: CVK: programma valodu politiku nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q06 | Budžets un finanses | Nekustamā īpašuma nodoklis vienīgajam mājoklim jāatceļ. | par = atcelt NĪN vienīgajam mājoklim; pret = saglabāt vai stiprināt NĪN
+  piezīme: CVK: programma NĪN nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q07 | Pašvaldības | Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām. | par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā
+  piezīme: CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q08 | Valsts pārvalde | Ministriju skaits jāsamazina, tās apvienojot. | par = apvienot vai likvidēt ministrijas; pret = nav
+  piezīme: CVK: programma sola mazināt birokrātiju; ministriju skaitu nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q09 | Budžets un finanses | Pievienotās vērtības nodoklis pārtikai jāsamazina. | par = samazināt PVN pārtikai; pret = PVN nemainīt vai celt
+  piezīme: CVK: programma PVN pārtikai nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q10 | Pensijas | Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt. | par = brīvprātīgs, izņemt, pārcelt uz 1. līmeni; pret = saglabāt obligātu
+  piezīme: CVK: programma pensiju 2. līmeni nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q11 | Klimats | Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā. | par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē
+  piezīme: CVK: programma saka, ka klimata politikai jākļūst par konkurētspējas priekšrocību; virzienu pret izmaksām nenosauc. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).
+q12 | Sociālā politika | Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai. | par = ģimene/laulība = vīrietis + sieviete likumos vai starptautiskos dokumentos (Satversme, Stambulas konvencija); pret = laulību vienlīdzība, visu ģimeņu aizsardzība
+  piezīme: CVK: programma ģimenes definīciju nemin. Pilnā programma: latvijasattistibai.lv nav pieejama (HTTP 403, 2026-09-14).

@@ -1,0 +1,3 @@
+# Shell skriptiem obligāti LF — CRLF lauž bash (WSL/Git Bash: "$'\r': command not found").
+# 2026-08-21: check.sh bija saglabāts ar CRLF un check.sh vairs nepalaidās; deploy.sh jau bija LF.
+*.sh text eol=lf

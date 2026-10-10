@@ -1,0 +1,195 @@
+{% extends "base.html.j2" %}
+{% set active_page = "saeima" %}
+{% set assets_prefix = "" %}
+
+{% block title %}15. Saeima{% endblock %}
+{% block description %}Visi 100 ievēlētie 15. Saeimas deputāti vienā puslokā: saraksts, balsojumi 14. Saeimā, pozīcijas un pretrunas.{% endblock %}
+{% block og_title %}15. Saeima — atmina.lv{% endblock %}
+{% block og_description %}Visi 100 ievēlētie deputāti vienā puslokā — ko katrs saka un kā balsojis.{% endblock %}
+
+{#- 15. Saeimas pusloks (src/render/saeima.py). Lēcu pārslēgšana = data-lens uz
+    .slv saknes; krāsas un teksti pārslēdzas CSS (assets/style.css «Saeima
+    pusloks»). Bez JS strādā «Saraksta» lēca, sēdvieta ved uz rindu sarakstā. -#}
+{% macro dep_card(s) -%}
+<div class="slv-card">
+  <div class="slv-card-top">
+    {% if s.has_photo %}<img class="slv-card-avatar" src="assets/photos/{{ s.slug }}.jpg" alt="" loading="lazy" decoding="async" width="48" height="48">{% else %}<div class="slv-card-avatar slv-card-avatar-ph" aria-hidden="true">{{ s.name[0]|upper }}</div>{% endif %}
+    <div class="slv-card-ident">
+      <div class="slv-card-eyebrow"><span class="slv-swatch" aria-hidden="true"></span>{{ s.list.short }}{% if s.region %} · {{ s.region }}{% endif %}</div>
+      <div class="slv-card-name">{{ s.name }}</div>
+    </div>
+  </div>
+  {% if s.tracked %}
+  <dl class="slv-facts">
+    <div class="slv-fact">
+      <dt>Pozīcijas {{ window_days }} dienās</dt>
+      <dd>{{ s.pos90 }}</dd>
+    </div>
+    <div class="slv-fact{% if s.ctr %} is-red{% endif %}">
+      <dt>Pretrunas</dt>
+      <dd>{% if s.ctr %}<a href="politiki/{{ s.slug }}.html#pretrunas">{{ s.ctr }}</a>{% else %}0{% endif %}</dd>
+    </div>
+    <div class="slv-fact">
+      <dt>Balsoja 14. Saeimā</dt>
+      <dd>{% if s.voted14 %}jā{% else %}nē{% endif %}</dd>
+    </div>
+  </dl>
+  {% if s.latest %}
+  <div class="slv-latest">
+    <div class="slv-latest-meta">Jaunākā pozīcija · {{ s.latest.date }}{% if s.latest.topic %} · {{ s.latest.topic }}{% endif %}</div>
+    <p class="slv-latest-stance">{{ s.latest.stance }}</p>
+    {% if s.latest.source_url %}<a class="slv-latest-src" href="{{ s.latest.source_url|safe_url }}" target="_blank" rel="noopener">Avots ↗</a>{% endif %}
+  </div>
+  {% else %}
+  <p class="slv-card-note">Pozīciju vēl nav.</p>
+  {% endif %}
+  <a class="slv-card-cta" href="politiki/{{ s.slug }}.html">Pilnais profils →</a>
+  {% else %}
+  <p class="slv-card-note">Profils vēl nav izveidots.</p>
+  {% endif %}
+</div>
+{%- endmacro %}
+
+{% block content %}
+<section class="pagehead-section slv" data-lens="saraksts" id="slv">
+
+  <header class="pagehead-header slv-head">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Saeimas sastāvs · 2026–2030</div>
+      <h1 class="pagehead-h1">15. Saeima</h1>
+      <p class="slv-lead">Visi {{ total }} ievēlētie deputāti vienā skatā. Pieskaries sēdvietai, lai redzētu pozīcijas, pretrunas un balsojumus.</p>
+      {% if provisional %}<p class="slv-status"><span class="badge badge-yellow">Provizoriski — CVK aprēķins{% if updated_short %}, {{ updated_short }}{% endif %}</span> <a href="{{ source_url|safe_url }}" target="_blank" rel="noopener">CVK avots ↗</a></p>{% endif %}
+    </div>
+    <div class="pagehead-metrics">
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Deputāti</span>
+        <span class="pagehead-metric-value">{{ total }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Saraksti</span>
+        <span class="pagehead-metric-value">{{ lists|length }}</span>
+      </div>
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Ar profilu</span>
+        <span class="pagehead-metric-value">{{ tracked_n }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="slv-lenses" role="group" aria-label="Ko rāda krāsas" hidden>
+    <button type="button" class="slv-lens" data-lens="saraksts" aria-pressed="true">Saraksts</button>
+    <button type="button" class="slv-lens" data-lens="v14" aria-pressed="false"><span class="slv-long">Balsoja </span>14. Saeimā</button>
+    <button type="button" class="slv-lens" data-lens="pozicijas" aria-pressed="false">Pozīcijas</button>
+    <button type="button" class="slv-lens" data-lens="pretrunas" aria-pressed="false">Pretrunas</button>
+  </div>
+
+  <div class="slv-stage">
+    <div class="slv-chamber">
+      <div class="slv-arc">
+        <svg class="slv-svg" viewBox="-212 -212 424 222" role="group" aria-label="15. Saeimas sēdvietas pa sarakstiem">
+          {%- for s in seats %}
+          <a href="#dep-{{ s.slug }}" class="seat" data-slug="{{ s.slug }}" data-list="{{ s.list.nr }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}" aria-label="{{ s.name }}, {{ s.list.short }}" style="--seat-list:{{ s.list.color }}"><title>{{ s.name }} · {{ s.list.short }}</title><circle class="seat-hit" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ hit_r }}"/><circle class="seat-dot" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ dot_r }}"/></a>
+          {%- endfor %}
+        </svg>
+        <div class="slv-center" aria-hidden="true">
+          <span class="slv-center-n">{{ total }}</span>
+          <span class="slv-center-l">deputāti</span>
+        </div>
+      </div>
+
+      <p class="slv-summary">
+        <span data-lens-for="saraksts">{{ total }} deputāti no {{ lists|length }} sarakstiem</span>
+        <span data-lens-for="v14">{{ voted_n }} no {{ total }} balsoja arī 14. Saeimā</span>
+        <span data-lens-for="pozicijas">{{ pos_total_text }} {{ pos_total|lv_plural("pozīcija", "pozīcijas") }} pēdējās {{ window_days }} dienās</span>
+        <span data-lens-for="pretrunas">{% if ctr_people %}{{ ctr_people }} {{ ctr_people|lv_plural("deputātam", "deputātiem") }} ir publicētas pretrunas{% else %}Publicētu pretrunu nav{% endif %}</span>
+      </p>
+
+      <div class="slv-legend" data-lens-for="saraksts">
+        <ul class="slv-keys">
+          {% for l in lists %}<li style="--seat-list:{{ l.color }}"><span class="slv-key slv-key-list" aria-hidden="true"></span>{{ l.short }} <span class="slv-key-n">{{ l.seats }}</span></li>{% endfor %}
+        </ul>
+        <p class="slv-legend-note">Krāsa — saraksts, no kura deputāts ievēlēts. Kārtība — pēc saņemto vietu skaita, ne pēc politiskā spektra. Dati par {{ total }} no {{ total }}.</p>
+      </div>
+      <div class="slv-legend" data-lens-for="v14">
+        <ul class="slv-keys">
+          <li><span class="slv-key slv-key-v14-ja" aria-hidden="true"></span>balsoja <span class="slv-key-n">{{ voted_n }}</span></li>
+          <li><span class="slv-key slv-key-v14-ne" aria-hidden="true"></span>nebalsoja <span class="slv-key-n">{{ total - voted_n }}</span></li>
+        </ul>
+        <p class="slv-legend-note">Vai deputāts 14. Saeimā (2022–2026) ir balsojis vismaz vienu reizi. Ministrs, kurš nolika mandātu, balsojumos neparādās. Dati par {{ total }} no {{ total }}.</p>
+      </div>
+      <div class="slv-legend" data-lens-for="pozicijas">
+        <ul class="slv-keys">
+          <li><span class="slv-key slv-key-pos-0" aria-hidden="true"></span>0 <span class="slv-key-n">{{ pos_counts['0'] }}</span></li>
+          <li><span class="slv-key slv-key-pos-1" aria-hidden="true"></span>1–4 <span class="slv-key-n">{{ pos_counts['1'] }}</span></li>
+          <li><span class="slv-key slv-key-pos-5" aria-hidden="true"></span>5–19 <span class="slv-key-n">{{ pos_counts['5'] }}</span></li>
+          <li><span class="slv-key slv-key-pos-20" aria-hidden="true"></span>20+ <span class="slv-key-n">{{ pos_counts['20'] }}</span></li>
+          {% if pos_counts['nav'] %}<li><span class="slv-key slv-key-nav" aria-hidden="true"></span>nav datu <span class="slv-key-n">{{ pos_counts['nav'] }}</span></li>{% endif %}
+        </ul>
+        <p class="slv-legend-note">Publiski izteikumi, ko esam fiksējuši pēdējās {{ window_days }} dienās. Dati par {{ tracked_n }} no {{ total }}{% if untracked_n %} — {{ untracked_n }} {{ untracked_n|lv_plural("deputātam", "deputātiem") }} profila vēl nav{% endif %}.</p>
+      </div>
+      <div class="slv-legend" data-lens-for="pretrunas">
+        <ul class="slv-keys">
+          <li><span class="slv-key slv-key-ctr-0" aria-hidden="true"></span>0 <span class="slv-key-n">{{ ctr_counts['0'] }}</span></li>
+          <li><span class="slv-key slv-key-ctr-1" aria-hidden="true"></span>1 <span class="slv-key-n">{{ ctr_counts['1'] }}</span></li>
+          <li><span class="slv-key slv-key-ctr-2" aria-hidden="true"></span>2 un vairāk <span class="slv-key-n">{{ ctr_counts['2'] }}</span></li>
+          {% if ctr_counts['nav'] %}<li><span class="slv-key slv-key-nav" aria-hidden="true"></span>nav datu <span class="slv-key-n">{{ ctr_counts['nav'] }}</span></li>{% endif %}
+        </ul>
+        <p class="slv-legend-note">Publicētās pretrunas — visā laikā, kopš sekojam deputātam. Dati par {{ tracked_n }} no {{ total }}.</p>
+      </div>
+    </div>
+
+    <aside class="slv-pop" id="slv-pop" aria-label="Deputāta kartīte" hidden>
+      <div class="slv-pop-bar">
+        <span class="slv-pop-grip" aria-hidden="true"></span>
+        <button type="button" class="slv-pop-close" aria-label="Aizvērt kartīti">✕</button>
+      </div>
+      <div class="slv-pop-hint">
+        <div class="slv-pop-hint-title">Izvēlies sēdvietu</div>
+        <p>Pieskaries jebkuram aplim puslokā — šeit parādīsies deputāta kartīte.</p>
+      </div>
+      <div class="slv-pop-body"></div>
+    </aside>
+  </div>
+  <div class="slv-backdrop" hidden></div>
+
+  <section class="slv-lists" aria-labelledby="slv-lists-title">
+    <div class="section-head">
+      <div>
+        <div class="section-head-kicker">Visi {{ total }}</div>
+        <h2 class="section-head-title" id="slv-lists-title">Deputāti pa sarakstiem</h2>
+      </div>
+    </div>
+    {% for l in lists %}
+    <details class="slv-group" open style="--seat-list:{{ l.color }}">
+      <summary class="slv-group-sum">
+        <span class="slv-key slv-key-list" aria-hidden="true"></span>
+        <span class="slv-group-name">{{ l.name }}</span>
+        <span class="slv-group-n">{{ l.seats_text }}</span>
+      </summary>
+      <div class="slv-deps">
+        {% for s in l.members %}
+        <details class="slv-dep" id="dep-{{ s.slug }}" data-slug="{{ s.slug }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}">
+          <summary class="slv-dep-sum">
+            <span class="slv-dep-dot" aria-hidden="true"></span>
+            {% if s.has_photo %}<img class="slv-dep-avatar" src="assets/photos/{{ s.slug }}.jpg" alt="" loading="lazy" decoding="async" width="36" height="36">{% else %}<span class="slv-dep-avatar slv-dep-avatar-ph" aria-hidden="true">{{ s.name.split()|map('first')|join('')|upper }}</span>{% endif %}
+            <span class="slv-dep-ident">
+              <span class="slv-dep-name">{{ s.name }}</span>
+              <span class="slv-dep-region">{{ s.region }}</span>
+            </span>
+            <span class="slv-val" data-lens-val="v14">{{ s.v14_text }}</span>
+            <span class="slv-val" data-lens-val="pos">{{ s.pos_text }}</span>
+            <span class="slv-val" data-lens-val="ctr">{{ s.ctr_text }}</span>
+          </summary>
+          {{ dep_card(s) }}
+        </details>
+        {% endfor %}
+      </div>
+    </details>
+    {% endfor %}
+  </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/slv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{#- Atsauktas PUBLICĒTAS pretrunas labojuma lapa (contradictions.confirmed = -1,
+    plāns docs/plans/2026-09-30-pretrunas-atsaukums.md). Lapa eksistē tikai tāpēc,
+    ka publicēti pārskati uz pretrunas/<id>.html saista — tā ir noindex, nav
+    sitemapā, nav sarakstos un tai nav savas OG kartītes. Bez inline JS (CSP). -#}
+{% extends "base.html.j2" %}
+{% set active_page = "pretrunas" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}Pretruna atsaukta{% if c.politician_name %} · {{ c.politician_name }}{% endif %}{% endblock %}
+{% block description %}{{ c.withdrawn_note|truncate(160) }}{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+{% block og_title %}Pretruna atsaukta{% endblock %}
+{% block og_description %}{{ c.withdrawn_note|truncate(200) }}{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <div class="prv2-detail-back">
+    <a href="../pretrunas.html">← Visas pretrunas</a>
+  </div>
+
+  <div class="prv2-detail-wrap">
+    <article class="prv2-card prv2-withdrawn" id="pretruna-{{ c.id }}">
+      <header class="prv2-summary">
+        <h1>Pretruna atsaukta</h1>
+        <p>
+          {%- if c.politician_name -%}
+            {%- if c.profile_exists -%}
+            <a class="prv2-name" href="{{ assets_prefix }}politiki/{{ c.slug }}.html">{{ c.politician_name }}</a>
+            {%- else -%}
+            {{ c.politician_name }}
+            {%- endif %}
+          {%- endif %}
+          {%- if c.topic %} · Tēma: {{ c.topic }}{% endif %}
+          {%- if c.withdrawn_date %} · Atsaukta <time datetime="{{ c.withdrawn_date }}">{{ c.withdrawn_date }}</time>{% endif -%}
+        </p>
+      </header>
+
+      <section class="prv2-summary">
+        <div class="prv2-kicker">Labojums</div>
+        <p>{{ c.withdrawn_note }}</p>
+      </section>
+
+      {% if c.summary %}
+      <aside class="prv2-context">
+        <span class="prv2-context-kicker">Sākotnējais teksts (atsaukts)</span>
+        {{ c.summary }}
+      </aside>
+      {% endif %}
+
+      <footer class="prv2-foot">
+        <div class="prv2-foot-meta">
+          <span class="prv2-foot-id">ID {{ '%03d' % c.id }}</span>
+          {%- if c.detected_date %} · Sākotnēji konstatēta {{ c.detected_date }}{% endif %}
+        </div>
+      </footer>
+    </article>
+  </div>
+</section>
+{% endblock %}

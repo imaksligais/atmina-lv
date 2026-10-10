@@ -1,0 +1,88 @@
+[
+  {
+    "doc_id": 27071,
+    "pid": 61,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 27071,
+        "topic": "Aizsardzība un drošība",
+        "stance": "Kritizē, ka zemessargiem joprojām jāgaida iespēja apgūt mūsdienu kara pamatprasmes, un retoriski jautā, vai tā nav sabotāža.",
+        "quote": "Zemessargi vēlētos apgūt mūsdienu kara pamatprasmes… bet nu… vēl jāpagaida.",
+        "confidence": 0.5,
+        "reasoning": "NEEDS_REVIEW: ironija un jautājuma forma, ļoti īss tvīts bez redzama konteksta (nav nosaukts, ko tieši gaida). Paša tvīts, kritika par zemessargu apmācības kavēšanos; «sabotāža» paliek jautājuma formā, ne kā apgalvojums.",
+        "salience": 0.5,
+        "stated_at": "2026-04-27"
+      }
+    ]
+  },
+  {
+    "doc_id": 28226,
+    "pid": 178,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28226,
+        "topic": "Pilsētvide",
+        "stance": "Aizstāv Vārnu ielā ieviesto modālo filtru kā gājēju drošības uzlabojumu, norāda, ka dienesti par satiksmes organizācijas izmaiņām tika informēti iepriekš, un saka, ka sapulcē ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "quote": "Rīgai jābūt drošai. Pirms satiksmes organizācijas izmaiņu ieviešanas dienesti tika informēti par pārmaiņām Vārnu ielā. Apsveicami, ka šodien VUGD veic mācības. Rīt sapulcē kopā ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "confidence": 0.8,
+        "reasoning": "NRA raksts citē Kotello paša tvītu (29.04.) pilnā tekstā; gājēju drošības mērķis ņemts no raksta atstāsta par viņas komentāru. Amata tituls stance tekstā apzināti nav minēts (raksta un profila tituli atšķiras). Pārējo runātāju (Cipule, komentētāji) teikumi nav viņas.",
+        "salience": 0.5,
+        "stated_at": "2026-04-29"
+      }
+    ]
+  },
+  {
+    "doc_id": 26555,
+    "pid": 25,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 26555,
+        "topic": "Sabiedriskie mediji",
+        "stance": "Kritizē LSM vērtējumu par ZZS priekšlikumu 2. pensiju līmeni izmantot veselības aprūpei: pēc viņa teiktā, LSM to sākumā nosauc par populismu, bet pēc tam atzīst, ka tas ir iespējams un pat būtu labi, tāpēc vērtējums viņam drīzāk izklausās pēc tā, ko viņš raksturo kā nepatiku pret ZZS kā idejas virzītājiem, nevis pēc objektīva vērtējuma pēc būtības.",
+        "quote": "LSM sākumā pasaka, ka priekšlikums par 2. pensiju līmeņa izmantošanu veselības aprūpei ir populisms, bet pēc tam, ka tomēr var un pat būtu labi, pat ejot vēl plašāk. Hmm.. drīzāk izklausās pēc nepatikas pret ZZS kā idejas virzītājiem, nevis objektīva vērtējuma pēc būtības.",
+        "confidence": 0.65,
+        "reasoning": "Paša tvīts par nosauktu institūciju (LSM); kvalifikators «drīzāk izklausās» saglabāts, strīdīgais apzīmējums ietīts atrunā. Tēma pēc izteikuma kodola — sabiedriskā medija objektivitāte, ne pensiju politika. Confidence mērena, jo reakcija uz konkrētu LSM materiālu, kas dokumentā nav redzams.",
+        "salience": 0.5,
+        "stated_at": "2026-04-27"
+      }
+    ]
+  },
+  {
+    "doc_id": 15446,
+    "pid": 63,
+    "decision": "empty",
+    "empty_reason": "Tvīts tikai izplata The Economist faktus (Ukrainas un Eiropas aizsardzības kopuzņēmumi, EK programma) ar atsauci uz @TheEconomist; nav paša vērtējuma vai nostājas.",
+    "claims": []
+  },
+  {
+    "doc_id": 5423,
+    "pid": 15,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 5423,
+        "topic": "Aizsardzība un drošība",
+        "stance": "Polijas televīzijas TVP raidījumā uzskata, ka Ukrainas izlūkdienestu avoti kļūdās, apgalvojot, ka Krievija līdz 2027. gadam plāno okupēt Baltijas valstis, un saka, ka tā vienkārši nav taisnība.",
+        "quote": "Man nav ne jausmas, kāpēc Ukrainas amatpersonas ko tādu saka. Tā vienkārši nav taisnība,",
+        "confidence": 0.75,
+        "reasoning": "Delfi marta apkopojums, Edvarda Lūkasa sleja atstāsta Bražes interviju TVP ar tiešu citātu (tulkots). Ekstrahēts tikai Bražes bloks; pārējie runātāji (Mežviets, Siliņa, AM) nav viņas. Interviju datums tekstā nav norādīts, tāpēc stated_at = publicēšanas diena.",
+        "salience": 0.8,
+        "stated_at": "2026-04-03"
+      }
+    ]
+  },
+  {
+    "doc_id": 4262,
+    "pid": 1,
+    "decision": "empty",
+    "empty_reason": "Operatīvs brīdinājums par iespējamu apdraudējumu gaisa telpā ar saiti uz citu paziņojumu; nav politiskas nostājas.",
+    "claims": []
+  }
+]

@@ -1,0 +1,87 @@
+{# Slot health panel — 6-card grid, 4 endpoints per card, guardrail surfacing.
+
+Args:
+  slots: dict from get_slot_snapshot() — keys: slots, healthy_search_count,
+         total_slots, guardrail_min, guardrail_tripped, age_seconds.
+#}
+{% set endpoints = ('get_user', 'user_tweets', 'user_replies', 'search_tweet') %}
+
+<section id="slot-panel"
+         class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 lg:col-span-2">
+
+  <header class="flex items-baseline justify-between gap-3 flex-wrap">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      X cookie pool
+    </h2>
+    <div class="flex items-center gap-2 text-xs">
+      <span class="data-mono text-slate-500 dark:text-slate-400">
+        {% if slots.probed_at %}probed {{ slots.age_seconds }}s ago{% else %}not yet probed{% endif %}
+      </span>
+      <button type="button"
+              hx-post="/api/slots/refresh"
+              hx-target="#slot-panel"
+              hx-swap="outerHTML"
+              hx-indicator="#slot-spinner"
+              data-shortcut="R"
+              title="Pārmērīt visus slot endpoints (≈8 s)"
+              class="rounded border border-slate-300 dark:border-slate-700 px-2 py-0.5 hover:bg-slate-100 dark:hover:bg-slate-800">
+        ↻ Pārbaudīt [R]
+      </button>
+      <span id="slot-spinner"
+            class="htmx-indicator data-mono text-slate-400">probē…</span>
+    </div>
+  </header>
+
+  {% if slots.slots %}
+  <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {% for slot in slots.slots %}
+    <div id="slot-{{ slot.slot }}"
+         class="rounded border border-slate-200 dark:border-slate-800 p-3 text-sm">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-medium">slot {{ slot.slot }}</span>
+        <span class="data-mono text-xs text-slate-500 dark:text-slate-400">{{ slot.file }}</span>
+      </div>
+      <div class="grid grid-cols-4 gap-1 text-xs">
+        {% for endpoint in endpoints %}
+          {% set value = slot[endpoint] %}
+          {% if value and value.startswith('FAIL') %}
+            <span class="status-danger rounded text-center py-1" title="{{ endpoint }}: {{ value }}">❌</span>
+          {% elif value and not value.startswith('FAIL') %}
+            <span class="status-success rounded text-center py-1" title="{{ endpoint }}: {{ value }}">✅</span>
+          {% else %}
+            <span class="status-info rounded text-center py-1" title="{{ endpoint }}: n/a">·</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="grid grid-cols-4 gap-1 mt-1 text-[10px] text-slate-400 text-center">
+        <span>user</span><span>tw</span><span>rpl</span><span>srch</span>
+      </div>
+      {% if slot.error %}
+        <p class="mt-2 text-xs status-danger rounded px-1 py-0.5">{{ slot.error }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="mt-4 flex items-center gap-3 text-sm">
+    {% if slots.guardrail_tripped %}
+      <span class="status-warning rounded px-2 py-1">
+        ⚠ search_tweet healthy: {{ slots.healthy_search_count }}/{{ slots.total_slots }}
+        — guardrail will fall back to timeline strategy
+      </span>
+    {% else %}
+      <span class="status-success rounded px-2 py-1">
+        ✓ search_tweet healthy: {{ slots.healthy_search_count }}/{{ slots.total_slots }}
+      </span>
+    {% endif %}
+  </div>
+  {% else %}
+  <div class="mt-4 rounded border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
+    <p class="text-sm">Nav kuku slotu vēl probed.</p>
+    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+      Pārbaudi <code class="data-mono">data/x_cookies/</code> vai palaid
+      <code class="data-mono">python scripts/probe_x_cookies.py</code> manuāli.
+    </p>
+  </div>
+  {% endif %}
+</section>

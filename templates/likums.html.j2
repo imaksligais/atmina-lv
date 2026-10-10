@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+{% set active_page = "" %}
+{% set assets_prefix = "../" %}
+
+{% block title %}{{ law.title }}{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <header class="pagehead-header">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Likums</div>
+      <h1 class="pagehead-h1">{{ law.title }}</h1>
+    </div>
+    <div class="pagehead-metrics">
+      {% if law.likumi_lv_url %}
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Avots</span>
+        <a href="{{ law.likumi_lv_url | safe_url }}" target="_blank" rel="noopener" class="pagehead-metric-value">likumi.lv ↗</a>
+      </div>
+      {% endif %}
+      <div class="pagehead-metric">
+        <span class="pagehead-metric-label">Likumprojekti</span>
+        <span class="pagehead-metric-value">{{ law.bills_count }}</span>
+      </div>
+    </div>
+  </header>
+</section>
+
+<div class="law-content post-content">
+  {{ law.body_html | safe }}
+</div>
+{% endblock %}
