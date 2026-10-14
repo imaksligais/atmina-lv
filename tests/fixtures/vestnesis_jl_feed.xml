@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Latvijas Vēstnesis — jaunākie likumi</title>
+    <link>https://www.vestnesis.lv/</link>
+    <description>Jaunākie tiesību akti</description>
+    <item>
+      <title>Grozījumi Ministru kabineta noteikumos Nr. 158</title>
+      <link>https://www.vestnesis.lv/ta/id/360111-grozijumi-mk-noteikumos-nr-158</link>
+      <pubDate>Thu, 03 Sep 2026 08:15:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Par Valsts prezidenta apžēlošanas kārtību</title>
+      <link>https://www.vestnesis.lv/ta/id/360112-par-apzelosanas-kartibu</link>
+      <pubDate>Wed, 02 Sep 2026 09:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Kategorijas lapa, nevis akts — nav /ta/id/ ceļa</title>
+      <link>https://www.vestnesis.lv/kategorija/jaunakie-likumi</link>
+      <pubDate>Thu, 03 Sep 2026 07:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Vecs akts — ārpus max_age_days loga</title>
+      <link>https://www.vestnesis.lv/ta/id/359001-vecs-akts</link>
+      <pubDate>Mon, 03 Aug 2026 08:00:00 +0300</pubDate>
+    </item>
+    <item>
+      <title>Akts ar nesaprotamu pubDate</title>
+      <link>https://www.vestnesis.lv/ta/id/360113-nesaprotams-datums</link>
+      <pubDate>nezināms datums</pubDate>
+    </item>
+    <item>
+      <title>Akts pavisam bez pubDate elementa</title>
+      <link>https://www.vestnesis.lv/ta/id/360114-bez-datuma</link>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>atmina.lv - 9:16 prezentācija</title>
+  <style>
+    :root {
+      --bg: #0d1014;
+      --surface: #161a22;
+      --surface-2: #242838;
+      --text: #e2e4e9;
+      --muted: #8b8fa3;
+      --accent: #90a4ae;
+      --brand: #37474f;
+      --red: #b71c1c;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --border: #2d3148;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #07090d;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .phone {
+      width: min(100vw, calc(100vh * 9 / 16), 420px);
+      aspect-ratio: 9 / 16;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 76% 18%, rgba(144, 164, 174, 0.15), transparent 28%),
+        radial-gradient(circle at 12% 84%, rgba(183, 28, 28, 0.14), transparent 28%),
+        linear-gradient(180deg, #10141b 0%, var(--bg) 48%, #090c11 100%);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+      isolation: isolate;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(144, 164, 174, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(144, 164, 174, 0.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+      z-index: -2;
+    }
+
+    .phone::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 7px;
+      background: var(--red);
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      padding: 42px 34px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: scene 28s infinite both;
+    }
+
+    .scene:nth-child(1) { animation-delay: 0s; }
+    .scene:nth-child(2) { animation-delay: 4s; }
+    .scene:nth-child(3) { animation-delay: 8s; }
+    .scene:nth-child(4) { animation-delay: 12s; }
+    .scene:nth-child(5) { animation-delay: 16s; }
+    .scene:nth-child(6) { animation-delay: 20s; }
+    .scene:nth-child(7) { animation-delay: 24s; }
+
+    @keyframes scene {
+      0% { opacity: 0; transform: translateY(18px); }
+      4%, 14% { opacity: 1; transform: translateY(0); }
+      18%, 100% { opacity: 0; transform: translateY(-16px); }
+    }
+
+    .brand-row {
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy {
+      margin-top: 24px;
+    }
+
+    .visual {
+      margin: 22px 0 26px;
+      position: relative;
+    }
+
+    .hero-visual {
+      height: 178px;
+      border: 1px solid rgba(144, 164, 174, 0.18);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(36, 40, 56, 0.72), rgba(22, 26, 34, 0.58)),
+        repeating-linear-gradient(0deg, transparent 0 24px, rgba(144, 164, 174, 0.055) 25px 26px);
+      overflow: hidden;
+    }
+
+    .memory-card {
+      position: absolute;
+      left: 20px;
+      width: 132px;
+      height: 58px;
+      padding: 11px 12px;
+      border-radius: 8px;
+      background: rgba(13, 16, 20, 0.82);
+      border: 1px solid rgba(144, 164, 174, 0.22);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .memory-card:nth-child(1) { top: 22px; }
+    .memory-card:nth-child(2) { top: 96px; left: 54px; opacity: 0.78; }
+
+    .memory-card b,
+    .clarity-panel b,
+    .mini-record b {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .mini-lines {
+      display: grid;
+      gap: 5px;
+    }
+
+    .mini-lines i {
+      display: block;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(144, 164, 174, 0.44);
+    }
+
+    .mini-lines i:nth-child(2) { width: 72%; }
+    .mini-lines i:nth-child(3) { width: 48%; background: rgba(183, 28, 28, 0.72); }
+
+    .memory-river {
+      position: absolute;
+      left: 170px;
+      right: 152px;
+      top: 82px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(144, 164, 174, 0.1), rgba(144, 164, 174, 0.86));
+    }
+
+    .memory-river::before,
+    .memory-river::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: -5px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+    }
+
+    .memory-river::before { left: 28%; }
+    .memory-river::after { right: -7px; border-color: var(--accent); }
+
+    .clarity-panel {
+      position: absolute;
+      right: 18px;
+      top: 36px;
+      width: 118px;
+      min-height: 104px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.94);
+      border: 1px solid rgba(144, 164, 174, 0.25);
+      overflow: hidden;
+    }
+
+    .clarity-bars {
+      display: grid;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .clarity-bars span {
+      display: block;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .clarity-bars span:nth-child(1) { width: 88%; }
+    .clarity-bars span:nth-child(2) { width: 64%; background: #6f8189; }
+    .clarity-bars span:nth-child(3) { width: 34%; background: var(--red); }
+
+    .source-pipeline {
+      min-height: 240px;
+      display: grid;
+      grid-template-columns: 1fr 74px 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .source-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .source-card,
+    .result-card {
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.88);
+      border: 1px solid var(--border);
+      padding: 12px;
+      min-height: 58px;
+    }
+
+    .source-card {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .source-card .glyph {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background:
+        linear-gradient(135deg, rgba(144, 164, 174, 0.18), rgba(144, 164, 174, 0.05));
+      border: 1px solid rgba(144, 164, 174, 0.24);
+      position: relative;
+    }
+
+    .source-card .glyph::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: 9px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 7px 0 rgba(144, 164, 174, 0.55);
+    }
+
+    .source-card strong,
+    .result-card strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .source-card small,
+    .result-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .pipe-lines {
+      height: 150px;
+      position: relative;
+    }
+
+    .pipe-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(144, 164, 174, 0), rgba(144, 164, 174, 0.75), rgba(183, 28, 28, 0.9));
+      transform-origin: right center;
+    }
+
+    .pipe-lines span:nth-child(1) { top: 22px; transform: rotate(18deg); }
+    .pipe-lines span:nth-child(2) { top: 74px; }
+    .pipe-lines span:nth-child(3) { bottom: 22px; transform: rotate(-18deg); }
+
+    .result-card {
+      min-height: 176px;
+      border-color: rgba(183, 28, 28, 0.44);
+      background:
+        linear-gradient(180deg, rgba(183, 28, 28, 0.14), rgba(22, 26, 34, 0.92) 46%),
+        var(--surface);
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .result-grid span {
+      height: 30px;
+      border-radius: 6px;
+      background: rgba(144, 164, 174, 0.13);
+      border: 1px solid rgba(144, 164, 174, 0.16);
+    }
+
+    .result-grid span:nth-child(2),
+    .result-grid span:nth-child(6) {
+      background: rgba(183, 28, 28, 0.22);
+      border-color: rgba(183, 28, 28, 0.28);
+    }
+
+    .analysis-visual {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .analysis-row {
+      min-height: 64px;
+      border: 1px solid rgba(144, 164, 174, 0.2);
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.78);
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .analysis-row::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent);
+    }
+
+    .analysis-row.contradiction::before { background: var(--red); }
+    .analysis-row.trend::before { background: var(--yellow); }
+
+    .analysis-row b {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .row-line {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .row-line span {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(144, 164, 174, 0.45);
+      flex: 1;
+    }
+
+    .row-line span.short { flex: 0.42; background: rgba(183, 28, 28, 0.7); }
+
+    .metrics-board {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .metric {
+      min-height: 116px;
+      padding: 16px 16px 30px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.88);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      inset: auto 12px 14px 12px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--red));
+      opacity: 0.7;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      color: var(--muted);
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.28;
+    }
+
+    .metric-wide {
+      grid-column: 1 / -1;
+      min-height: 106px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .spark {
+      display: flex;
+      align-items: end;
+      gap: 6px;
+      height: 44px;
+      padding-bottom: 14px;
+    }
+
+    .spark i {
+      flex: 1;
+      border-radius: 999px 999px 0 0;
+      background: rgba(144, 164, 174, 0.48);
+    }
+
+    .spark i:nth-child(1) { height: 22px; }
+    .spark i:nth-child(2) { height: 31px; }
+    .spark i:nth-child(3) { height: 17px; }
+    .spark i:nth-child(4) { height: 39px; background: rgba(183, 28, 28, 0.7); }
+    .spark i:nth-child(5) { height: 28px; }
+
+    .outputs-visual {
+      margin-top: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .output-card {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid rgba(144, 164, 174, 0.2);
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.86);
+    }
+
+    .output-card.accented {
+      border-color: rgba(183, 28, 28, 0.42);
+      background:
+        linear-gradient(90deg, rgba(183, 28, 28, 0.12), rgba(22, 26, 34, 0.88) 44%),
+        var(--surface);
+    }
+
+    .output-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      border: 1px solid rgba(144, 164, 174, 0.28);
+      background: rgba(144, 164, 174, 0.1);
+      position: relative;
+    }
+
+    .output-icon::before,
+    .output-icon::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .output-icon::before { top: 13px; }
+    .output-icon::after {
+      top: 24px;
+      right: 17px;
+      background: rgba(183, 28, 28, 0.78);
+    }
+
+    .output-card b {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .output-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.26;
+    }
+
+    .context-strip {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .context-strip span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(144, 164, 174, 0.2);
+      color: var(--accent);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 10px;
+      background: rgba(13, 16, 20, 0.52);
+    }
+
+    .closing-visual {
+      height: 142px;
+      margin-top: 24px;
+      position: relative;
+    }
+
+    .mini-record {
+      position: absolute;
+      width: 168px;
+      height: 88px;
+      border-radius: 8px;
+      border: 1px solid rgba(144, 164, 174, 0.2);
+      background: rgba(22, 26, 34, 0.86);
+      padding: 14px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+    }
+
+    .mini-record.one { left: 4px; top: 8px; transform: rotate(-4deg); }
+    .mini-record.two { right: 4px; top: 36px; transform: rotate(4deg); border-color: rgba(183, 28, 28, 0.4); }
+
+    .record-thread {
+      position: absolute;
+      left: 76px;
+      right: 78px;
+      top: 82px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--red));
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 55px;
+      font-weight: 780;
+    }
+
+    h2 {
+      font-size: 39px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.32;
+    }
+
+    .big-number {
+      font-size: 96px;
+      line-height: 0.9;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0;
+      margin: 22px 0 10px;
+    }
+
+    .red { color: var(--red); }
+    .accent { color: var(--accent); }
+
+    .cards {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .card {
+      min-height: 68px;
+      padding: 14px 16px;
+      background: rgba(22, 26, 34, 0.88);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card strong {
+      font-size: 18px;
+      font-weight: 680;
+    }
+
+    .card span {
+      color: var(--accent);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid rgba(144, 164, 174, 0.22);
+      border-radius: 8px;
+      background: rgba(36, 40, 56, 0.5);
+    }
+
+    .dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(144, 164, 174, 0.12);
+      color: var(--accent);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 14px;
+      border: 1px solid rgba(144, 164, 174, 0.32);
+    }
+
+    .step b {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 2px;
+    }
+
+    .step small {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .network {
+      position: relative;
+      height: 238px;
+      width: 330px;
+      max-width: 100%;
+      margin: 34px auto 0;
+    }
+
+    .network-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    .network-lines line {
+      stroke: rgba(144, 164, 174, 0.54);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+    }
+
+    .network-lines .signal {
+      stroke: rgba(183, 28, 28, 0.8);
+    }
+
+    .node {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 11px;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+      z-index: 1;
+    }
+
+    .node.one { left: 16px; top: 38px; }
+    .node.two { left: 230px; top: 80px; border-color: rgba(183, 28, 28, 0.55); }
+    .node.three { left: 76px; top: 154px; }
+    .node.four { left: 198px; top: 146px; }
+
+    .quote {
+      margin-top: 34px;
+      padding: 24px;
+      border-radius: 8px;
+      background: rgba(22, 26, 34, 0.9);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 24px;
+      line-height: 1.28;
+    }
+
+    .quote::before {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 5px;
+      background: var(--red);
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 7px;
+      width: 100%;
+      background: var(--red);
+      transform-origin: left center;
+      animation: progress 28s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes progress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    html[data-frame] .scene {
+      animation: none;
+      opacity: 0;
+      transform: none;
+    }
+
+    html[data-frame="1"] .scene:nth-child(1),
+    html[data-frame="2"] .scene:nth-child(2),
+    html[data-frame="3"] .scene:nth-child(3),
+    html[data-frame="4"] .scene:nth-child(4),
+    html[data-frame="5"] .scene:nth-child(5),
+    html[data-frame="6"] .scene:nth-child(6),
+    html[data-frame="7"] .scene:nth-child(7) {
+      opacity: 1;
+      transform: none;
+    }
+
+    html[data-frame] .progress {
+      display: none;
+    }
+
+    @media (max-width: 420px) {
+      .phone { width: 100vw; }
+      .scene { padding: 34px 28px 28px; }
+      .visual { margin: 18px 0 20px; }
+      .hero-visual { height: 132px; }
+      .hero-copy { margin-top: 18px; }
+      h1 { font-size: 42px; }
+      h2 { font-size: 34px; }
+      p { font-size: 17px; line-height: 1.28; }
+      .memory-card { width: 112px; height: 52px; left: 14px; padding: 9px 10px; }
+      .memory-card:nth-child(1) { top: 16px; }
+      .memory-card:nth-child(2) { top: 74px; left: 22px; }
+      .memory-card b, .clarity-panel b, .mini-record b { font-size: 11px; margin-bottom: 5px; }
+      .memory-river { left: 134px; right: 122px; top: 67px; }
+      .clarity-panel { width: 98px; min-height: 86px; top: 25px; right: 12px; padding: 11px; }
+      .clarity-bars { gap: 6px; margin-top: 9px; }
+      .clarity-bars span { height: 6px; }
+      .source-pipeline { grid-template-columns: 1fr 58px 1fr; }
+      .source-card, .result-card { padding: 10px; }
+      .metric { min-height: 108px; padding: 15px 14px 30px; }
+      .metric strong { font-size: 30px; }
+      .metric span { font-size: 12px; line-height: 1.25; }
+      .metric-wide { min-height: 102px; }
+      .outputs-visual { margin-top: 20px; gap: 9px; }
+      .output-card { min-height: 70px; padding: 11px; grid-template-columns: 38px 1fr; }
+      .output-icon { width: 38px; height: 38px; }
+      .output-card b { font-size: 16px; }
+      .output-card small { font-size: 12px; }
+      .network { width: 318px; height: 226px; }
+      .node { width: 68px; height: 68px; }
+      .node.one { left: 12px; top: 34px; }
+      .node.two { left: 224px; top: 74px; }
+      .node.three { left: 70px; top: 146px; }
+      .node.four { left: 188px; top: 140px; }
+      .closing-visual { height: 106px; margin-top: 18px; }
+      .mini-record { width: 138px; height: 68px; padding: 11px; }
+      .mini-record.two { top: 28px; }
+      .record-thread { left: 58px; right: 58px; top: 62px; }
+      .quote { margin-top: 18px; padding: 20px; font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="phone" aria-label="atmina.lv 9 pret 16 prezentācijas video">
+    <article class="scene">
+      <div>
+        <div class="brand-row">
+          <span>atmina.lv</span>
+        </div>
+        <div class="visual hero-visual" aria-hidden="true">
+          <div class="memory-card">
+            <b>publisks avots</b>
+            <span class="mini-lines"><i></i><i></i><i></i></span>
+          </div>
+          <div class="memory-card">
+            <b>vēsturiska pēda</b>
+            <span class="mini-lines"><i></i><i></i><i></i></span>
+          </div>
+          <span class="memory-river"></span>
+          <div class="clarity-panel">
+            <b>pārbaudīts</b>
+            <div class="clarity-bars"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <div class="kicker">Politiskā atmiņa</div>
+          <h1>Ko viņi teica. Ko viņi darīja.</h1>
+          <p>Strukturēta, pārbaudāma informācija par Latvijas politisko darbību.</p>
+        </div>
+      </div>
+      <div class="footer"><span>Pozīcijas</span><span>Pretrunas</span><span>Balsojumi</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="kicker">Ko apkopojam</div>
+        <h2>No publiskiem avotiem līdz skaidrai bildei</h2>
+        <div class="visual source-pipeline" aria-hidden="true">
+          <div class="source-stack">
+            <div class="source-card"><span class="glyph"></span><div><strong>Ziņu raksti</strong><small>avots + datums</small></div></div>
+            <div class="source-card"><span class="glyph"></span><div><strong>X ieraksti</strong><small>publiska retorika</small></div></div>
+            <div class="source-card"><span class="glyph"></span><div><strong>Balsojumi</strong><small>darbi Saeimā</small></div></div>
+          </div>
+          <div class="pipe-lines"><span></span><span></span><span></span></div>
+          <div class="result-card">
+            <strong>Skaidrā bilde</strong>
+            <small>tēmas, avoti, sakritības, pretrunas</small>
+            <div class="result-grid"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Viss ar saitēm uz avotiem</span><span>atmina.lv</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="kicker">Ko meklējam</div>
+        <h2>Pozīcijas, pretrunas un tendences</h2>
+        <div class="visual analysis-visual" aria-hidden="true">
+          <div class="analysis-row">
+            <b>Pozīcija</b>
+            <div class="row-line"><span></span><span></span><span class="short"></span></div>
+          </div>
+          <div class="analysis-row contradiction">
+            <b>Pretruna</b>
+            <div class="row-line"><span></span><span class="short"></span><span></span></div>
+          </div>
+          <div class="analysis-row trend">
+            <b>Tendence</b>
+            <div class="row-line"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Nevis sajūtas</span><span>bet pārbaudāmi ieraksti</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="kicker">Mērogs</div>
+        <h2>Politika, kas paliek izsekojama</h2>
+        <div class="visual metrics-board" aria-hidden="true">
+          <div class="metric"><strong>150</strong><span>politiķi un publiskās personas</span></div>
+          <div class="metric"><strong>26</strong><span>kanoniskās tēmas</span></div>
+          <div class="metric metric-wide">
+            <div><strong>10k+</strong><span>pozīcijas, balsojumi, ieraksti</span></div>
+            <div class="spark"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Skaitļi aug līdz ar datiem</span><span>2026</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="kicker">Ko vēl dodam</div>
+        <h2>Sintēzes, pārskati un komentāri</h2>
+        <div class="visual outputs-visual" aria-hidden="true">
+          <div class="output-card accented">
+            <span class="output-icon"></span>
+            <div><b>Dienas pārskati</b><small>kas mainījās šodien un kāpēc tas svarīgi</small></div>
+          </div>
+          <div class="output-card">
+            <span class="output-icon"></span>
+            <div><b>Sintēzes</b><small>kopaina pa tēmām, partijām un laika līnijām</small></div>
+          </div>
+          <div class="output-card">
+            <span class="output-icon"></span>
+            <div><b>Komentāri</b><small>trešo pušu teiktais par politiķiem ar avotiem</small></div>
+          </div>
+          <div class="context-strip">
+            <span>konteksts</span>
+            <span>tendences</span>
+            <span>saistītās analīzes</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>Ne tikai ieraksti</span><span>arī kopaina</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="kicker">Kāpēc tas svarīgi</div>
+        <h2>Atmiņa pret informācijas troksni</h2>
+        <div class="network">
+          <svg class="network-lines" viewBox="0 0 330 238" aria-hidden="true">
+            <line x1="52" y1="74" x2="266" y2="116"></line>
+            <line x1="52" y1="74" x2="234" y2="182"></line>
+            <line class="signal" x1="112" y1="190" x2="266" y2="116"></line>
+          </svg>
+          <span class="node one">avots</span>
+          <span class="node two red">pretruna</span>
+          <span class="node three">tēma</span>
+          <span class="node four">balsojums</span>
+        </div>
+      </div>
+      <div class="footer"><span>Atceramies ilgāk par virsrakstu ciklu</span></div>
+    </article>
+
+    <article class="scene">
+      <div>
+        <div class="brand-row">
+          <span>atmina.lv</span>
+        </div>
+        <div class="closing-visual" aria-hidden="true">
+          <div class="mini-record one">
+            <b>pozīcija</b>
+            <span class="mini-lines"><i></i><i></i><i></i></span>
+          </div>
+          <span class="record-thread"></span>
+          <div class="mini-record two">
+            <b>pretruna</b>
+            <span class="mini-lines"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <div class="quote">Pozīcijas, pretrunas, balsojumi un pārskati vienuviet.</div>
+        <p>Politiskai caurskatāmībai vajag atmiņu.</p>
+      </div>
+      <div class="footer"><span>atmina.lv</span><span class="accent">Politiskā atmiņa</span></div>
+    </article>
+
+    <div class="progress" aria-hidden="true"></div>
+  </section>
+  <script>
+    const frame = new URLSearchParams(window.location.search).get("frame");
+    if (/^[1-7]$/.test(frame || "")) {
+      document.documentElement.dataset.frame = frame;
+    }
+  </script>
+</body>
+</html>

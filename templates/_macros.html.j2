@@ -1,0 +1,36 @@
+{#- Kopīgi veidņu gabali. Importē ar
+      {% from "_macros.html.j2" import pagehead, metric %}
+
+    pagehead — lapas galvene (kicker + h1 + labā puse). Labās puses saturs
+    nāk no `{% call %}` ķermeņa: parasti `metric()` rindas, kuras makro ietin
+    `.pagehead-metrics`; ar metrics=false ķermenis iet tieši (piem. tēmas
+    lapas dalīšanās poga). Lieto 2 atstarpju atkāpē zem <section> un aizver ar
+    `{%- endcall %}`, lai izvade sakrīt baitu līdz baitam ar roku rakstīto.
+      kicker       — virsrinda virs h1 (var būt {% set %} bloks ar marķējumu)
+      title        — h1 teksts
+      header_class — papildu klase <header> elementam
+      lead         — marķējums zem h1 (sākas ar jaunu rindu + 6 atstarpēm)
+    metric — viens rādītājs .pagehead-metrics iekšā (6 atstarpju atkāpē).
+      label_title — title atribūts etiķetei; href — vērtība kā ārēja saite. -#}
+
+{% macro pagehead(kicker, title, header_class="", lead=none, metrics=true) -%}
+<header class="pagehead-header{% if header_class %} {{ header_class }}{% endif %}">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">{{ kicker }}</div>
+      <h1 class="pagehead-h1">{{ title }}</h1>
+{%- if lead %}{{ lead }}{% endif %}
+    </div>
+{%- if metrics %}
+    <div class="pagehead-metrics">
+{{- caller() }}
+    </div>
+{%- else %}{{ caller() }}{% endif %}
+  </header>
+{%- endmacro %}
+
+{% macro metric(label, value, label_title=none, href=none) -%}
+<div class="pagehead-metric">
+        <span class="pagehead-metric-label"{% if label_title %} title="{{ label_title }}"{% endif %}>{{ label }}</span>
+        {% if href %}<a href="{{ href }}" target="_blank" rel="noopener" class="pagehead-metric-value">{{ value }}</a>{% else %}<span class="pagehead-metric-value">{{ value }}</span>{% endif %}
+      </div>
+{%- endmacro %}

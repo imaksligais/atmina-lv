@@ -1,0 +1,55 @@
+{# Keyboard help modal — triggered by `?` keystroke or the header button.
+
+No args. Renders as a fragment for HTMX hx-swap="beforeend" injection.
+The modal removes itself from the DOM on close so re-opens see a fresh
+Alpine state.
+#}
+<div id="keyboard-help-modal"
+     x-data="{ open: true }"
+     x-show="open"
+     x-cloak
+     class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+     @click.self="open = false; setTimeout(() => document.getElementById('keyboard-help-modal').remove(), 200)"
+     @keydown.escape.window="open = false; setTimeout(() => document.getElementById('keyboard-help-modal').remove(), 200)">
+  <div class="bg-white dark:bg-slate-900 rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+    <h3 class="text-lg font-semibold mb-3">Klaviatūras saīsnes</h3>
+
+    <table class="w-full text-sm">
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+        <tr>
+          <td class="py-1 w-16"><kbd class="data-mono px-1.5 py-0.5 border rounded">?</kbd></td>
+          <td class="py-1 text-slate-600 dark:text-slate-400">atvērt šo paneli</td>
+        </tr>
+        <tr>
+          <td class="py-1"><kbd class="data-mono px-1.5 py-0.5 border rounded">A</kbd></td>
+          <td class="py-1 text-slate-600 dark:text-slate-400">apstiprināt fokusēto image (briefa panelis)</td>
+        </tr>
+        <tr>
+          <td class="py-1"><kbd class="data-mono px-1.5 py-0.5 border rounded">R</kbd></td>
+          <td class="py-1 text-slate-600 dark:text-slate-400">pārbaudīt slot health (≈8 s)</td>
+        </tr>
+        <tr>
+          <td class="py-1"><kbd class="data-mono px-1.5 py-0.5 border rounded">D</kbd></td>
+          <td class="py-1 text-slate-600 dark:text-slate-400">atvērt deploy konfirmācijas modal</td>
+        </tr>
+        <tr>
+          <td class="py-1"><kbd class="data-mono px-1.5 py-0.5 border rounded">Esc</kbd></td>
+          <td class="py-1 text-slate-600 dark:text-slate-400">aizvērt jebkuru modālo logu</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+      Saīsnes nedarbojas, kad rakstī text laukā (input, textarea) —
+      lai netraucētu rakstīšanai.
+    </p>
+
+    <div class="mt-4 text-right">
+      <button type="button"
+              @click="open = false; setTimeout(() => document.getElementById('keyboard-help-modal').remove(), 200)"
+              class="rounded px-3 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+        Aizvērt
+      </button>
+    </div>
+  </div>
+</div>

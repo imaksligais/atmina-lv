@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>OG card — {{ c.id }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0d1014;
+      color: #e2e4e9;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    :root {
+      --sev-direct_contradiction: #dc2626;
+      --sev-reversal: #f97316;
+      --sev-minor_shift: #eab308;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --text: #e2e4e9;
+      --text-muted: #8b8fa3;
+      --surface2: #242838;
+      --border-soft: #1f2432;
+    }
+    .card {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      padding: 48px 56px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+    }
+    .sev-rail {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: var(--sev);
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      color: var(--text-muted);
+    }
+    .brand-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--sev);
+    }
+    .severity-chip {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--sev);
+      border: 2px solid var(--sev);
+      padding: 8px 18px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .severity-glyph {
+      font-family: var(--mono);
+      font-size: 22px;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .photo {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 3px solid var(--pc, var(--border-soft));
+      background: var(--surface2);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .avatar-fallback {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 3px solid var(--pc, var(--border-soft));
+      background: var(--surface2);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 72px;
+      letter-spacing: 2px;
+    }
+    .persona {
+      min-width: 0;
+    }
+    .name {
+      font-family: Georgia, serif;
+      font-size: 58px;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .role {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .topic {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--text);
+      border-bottom: 3px solid var(--sev);
+      padding-bottom: 4px;
+    }
+
+    .stances {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 8px;
+    }
+    .stance-block {
+      min-width: 0;
+    }
+    .stance-label {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .stance-label.then { color: var(--text-muted); }
+    .stance-label.now { color: var(--sev); }
+    .stance-text {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.3;
+      color: var(--text);
+    }
+    .stance-quote {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.3;
+      color: var(--text-muted);
+      margin-top: 10px;
+      padding-left: 12px;
+      border-left: 2px solid var(--sev);
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+    .foot-brand strong {
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+    .foot-id {
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="card"
+       style="--sev: var(--sev-{{ c.severity }}, var(--sev-minor_shift)); --pc: {{ c.party_color or '#1f2432' }};">
+    <div class="sev-rail"></div>
+
+    <div class="brand-row">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>atmina.lv</span>
+        <span style="color: #3a4052;">·</span>
+        <span>Pretruna #{{ '%03d' % c.id }}</span>
+      </div>
+      <div class="severity-chip">
+        <span class="severity-glyph">{{ c.severity_glyph }}</span>
+        {{ c.category_label or c.severity_lv }}
+      </div>
+    </div>
+
+    <div class="main">
+      {% if c.photo_data_uri %}
+      <img class="photo" src="{{ c.photo_data_uri }}" alt="">
+      {% else %}
+      <div class="avatar-fallback">{{ c.initials }}</div>
+      {% endif %}
+
+      <div class="persona">
+        <div class="name">{{ c.politician_name }}</div>
+        <div class="role">
+          {%- if c.role %}{{ c.role }} · {% endif -%}
+          {{ c.party_short }}
+        </div>
+        {% if c.topic %}
+        <div class="topic">{{ c.topic }}</div>
+        {% endif %}
+
+        <div class="stances">
+          <div class="stance-block">
+            <div class="stance-label then">{{ c.old_label or 'Iepriekš' }} · {{ c.old_date }}</div>
+            <div class="stance-text">{{ c.old_stance or c.old_quote }}</div>
+            {% if c.old_quote and c.old_quote != c.old_stance %}
+            <div class="stance-quote">{{ c.old_quote }}</div>
+            {% endif %}
+          </div>
+          <div class="stance-block">
+            <div class="stance-label now">{{ c.new_label or 'Pašlaik' }} · {{ c.new_date }}</div>
+            <div class="stance-text">{{ c.new_stance or c.new_quote }}</div>
+            {% if c.new_quote and c.new_quote != c.new_stance %}
+            <div class="stance-quote">{{ c.new_quote }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="foot-brand"><strong>atmina.lv</strong> — Politiskā atmiņa</div>
+      <div class="foot-id">pretrunas/{{ c.id }}.html</div>
+    </div>
+  </div>
+</body>
+</html>

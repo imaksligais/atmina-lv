@@ -1,0 +1,740 @@
+{
+ "sibling": [
+  {
+   "id": 14486,
+   "pol": "Kārlis Seržants",
+   "len": 259,
+   "why": "Text criticises Šuvājevs' belief that Marx's ideas can be realised; 'popularizēšana publiskajā telpā' and the first name 'Igora' are not in the text.",
+   "cur": "Iebilst pret marksisma ideju popularizēšanu publiskajā telpā (konkrēti Igora Šuvājeva pozīcijai), apgalvojot, ka marksistu valdīšana vienmēr beigusies ar totalitārismu un masu represijām.",
+   "final": "Apgalvo, ka visās valstīs, kurās valdījuši marksisti vai viņiem līdzīgie, viss beidzies ar totalitārismu, diktatūru un līķu kalniem, un kritizē Šuvājeva pārliecību, ka Marksa idejas tomēr var izdoties realizēt."
+  },
+  {
+   "id": 11302,
+   "pol": "Andris Kulbergs",
+   "len": 114,
+   "why": "'norādot uz iepirkumu procedūras apiešanu' imputes circumvention; the text only says bought without competition from a one-person SIA.",
+   "cur": "Kritizē Rīgas Siltuma 'veicināšanas pakalpojuma' iepirkumu — papildina iepriekšējo atklājumu: pakalpojums iepirkts bez konkursa no viena cilvēka SIA Energise, norādot uz iepirkumu procedūras apiešanu.",
+   "final": "Norāda, ka «veicināšanas pakalpojums» iepirkts bez konkursa no viena cilvēka SIA «Energise»."
+  },
+  {
+   "id": 16,
+   "pol": "Jānis Dombrava",
+   "len": 252,
+   "why": "Criticism of LTRK is his; 'iebilst pret imigrācijas atvieglojumiem un valodas prasību mazināšanu' is inferred, not stated. Keep to what LTRK is accused of.",
+   "cur": "Kritizē LTRK par masu imigrācijas lobēšanu, iebilst pret imigrācijas atvieglojumiem un valodas prasību mazināšanu",
+   "final": "Kritizē LTRK vadību par to, ka tā atklāti lobē masu imigrāciju, iebilstot pret imigrācijas apturēšanu, pienācīgu latviešu valodas apguvi un ierobežojumiem ārvalstu studentiem strādāt."
+  },
+  {
+   "id": 14348,
+   "pol": "Baiba Braže",
+   "len": 239,
+   "why": "Her own documented act (rule 1), but the stored tweet never mentions the Venice Biennale; that link comes from world knowledge or a sibling doc.",
+   "cur": "Iekļauj Latvijas nevēlamo personu sarakstā 3 Krievijas pilsoņus (Mihailu Švidkoju, Anastasiju Karnejevu, Jekaterinu Vinokurovu) saistībā ar Krievijas pārstāvniecību Venēcijas biennālē — aizliegums ieceļot uz nenoteiktu laiku saskaņā ar Imigrācijas likuma 61. panta 2. daļu",
+   "final": "Paziņo par lēmumu iekļaut Latvijas nevēlamo personu sarakstā trīs Krievijas pilsoņus – Mihailu Švidkoju, Anastasiju Karnejevu un Jekaterinu Vinokurovu – un aizliegt viņiem ieceļot Latvijā uz nenoteiktu laiku saskaņā ar Imigrācijas likuma 61. panta 2. daļu."
+  },
+  {
+   "id": 704347,
+   "pol": "Andris Kulbergs",
+   "len": 2229,
+   "why": "His reply is correct, but Sīle's point is reframed: she said he too should not be paid for sitting; 'rādīt piemēru un atteikties no algas' is not in the text.",
+   "cur": "Aizstāv valdības 1. septembra lēmumu izslēgt no Memoranda padomes nolikuma atlīdzību nevalstisko organizāciju pārstāvjiem par dalību sēdēs, uzstājot, ka valsts nauda ir jātērē lietderīgi un ka samaksa par sēdēšanu sēdēs tāda nav. Noraida nodibinājuma «Ilgtspējas fonds» vadītājas aicinājumu pašam rādīt piemēru un atteikties no algas, norādot, ka premjeram maksā par darbu valsts labā, nevis par sēžu apmeklēšanu.",
+   "final": "Aizstāv valdības lēmumu vairs nemaksāt nevalstisko organizāciju pārstāvjiem par darbu Memoranda padomē, uzstājot, ka valsts nauda jātērē lietderīgi un samaksa par sēdēšanu sēdēs tāda nav, bet uz iebildumu, ka tad par sēdēšanu nevajadzētu maksāt arī viņam, atbild, ka premjeram maksā par darbu, nevis par sēdēšanu."
+  },
+  {
+   "id": 1526,
+   "pol": "Nauris Puntulis",
+   "len": 279,
+   "why": "Support for pension relief is inferred, not stated; he says the feeling of not being forgotten must be restored. Also missing comma before 'ka'.",
+   "cur": "Atbalsta pensionēšanās atvieglojumus barikāžu dalībniekiem — valstij jāparāda ka nav aizmirsusi",
+   "final": "Uzskata, ka barikāžu dalībniekiem jāatjauno sajūta, ka valsts viņus nav aizmirsusi, un norāda, ka pašiem dalībniekiem tā bieži ir svarīgāka par finansiālu ieguvumu."
+  },
+  {
+   "id": 11247,
+   "pol": "Baiba Braže",
+   "len": 303,
+   "why": "Overreach: the tweet says they discussed bilateral trade growth and the peace process with Armenia; it does not state that she 'supports' the peace process or that she 'expands' relations. The memorandum signing is stated.",
+   "cur": "Paplašina Latvijas un Azerbaidžānas divpusējās attiecības — paraksta memorandu par sadarbību konsulārajos jautājumos; atbalsta Armēnijas un Azerbaidžānas miera procesu",
+   "final": "Norāda, ka tikšanās laikā ar Azerbaidžānas ārlietu ministru Baku pārrunāta divpusējās tirdzniecības paplašināšana, miera process ar Armēniju, atbalsts Ukrainai un attiecības ar ES un ka abu valstu ārlietu ministrijas parakstījušas memorandu par konsulāro sadarbību."
+  },
+  {
+   "id": 14503,
+   "pol": "Marta Kotello",
+   "len": 311,
+   "why": "'pēc VUGD piekļuves problēmām' is thread context; she does not say she convenes the meeting or that she defends keeping the filter.",
+   "cur": "Aizstāv modālā filtra saglabāšanu Vārnu ielā pēc VUGD piekļuves problēmām; uzsver, ka dienesti tika informēti pirms ieviešanas, un sasauc starpiestāžu sapulci ar NMPD, VP un Ārtelpas un mobilitātes departamentu, lai izstrādātu modālā filtra principu plašākai lietošanai Rīgā.",
+   "final": "Uzsver, ka Rīgai jābūt drošai un ka dienesti par Vārnu ielas pārmaiņām tika informēti pirms to ieviešanas, atzinīgi vērtē VUGD mācības un norāda, ka sapulcē ar NMPD, VP un ĀMD varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā."
+  },
+  {
+   "id": 7418,
+   "pol": "Maija Armaņeva",
+   "len": 284,
+   "why": "Tweet never names JV ('viņiem' refers to the linked video); 'nespēju atbildēt' overstates 'cik neērti viņiem bija atbildēt'.",
+   "cur": "Kritizē JV politiķus par nespēju atbildēt uz tiešiem jautājumiem — atzinīgi vērtē LTV žurnālistiku",
+   "final": "Dēvē video par četrām kaunpilnām minūtēm, norāda, cik neērti tajā redzamajiem bijis atbildēt uz LTV Ziņu dienesta tiešajiem un neērtajiem jautājumiem, un atzinīgi vērtē šo žurnālistiku."
+  },
+  {
+   "id": 6898,
+   "pol": "Jurģis Liepnieks",
+   "len": 138,
+   "why": "Case error ('ministri Baibas Bražes' should be 'ministres'); 'Stoltenberga polemiku' is thread context not in the text.",
+   "cur": "Kritizē ārlietu ministri Baibas Bražes atbildi uz Stoltenberga polemiku — sauc viņu par klaunu, nevis ministri",
+   "final": "Kritizē ārlietu ministres Baibas Bražes apgalvojumu par dezinformācijas uzbrukumu NATO un sauc viņu par klaunu, nevis ministri."
+  }
+ ],
+ "tense": [
+  {
+   "id": 7490,
+   "pol": "Edvīns Šnore",
+   "len": 242,
+   "why": "Headless stance; 'ko mācīties no Ungārijas' shifts his 'ko padomāt' (changed modality).",
+   "cur": "LSM ir ko mācīties no Ungārijas — jaunais premjers pārtrauks sabiedriskā medija raidīšanu, iekams kļūs objektīvs",
+   "final": "Norāda, ka jaunais Ungārijas premjers pārtrauks sabiedriskā medija raidīšanu, līdz tas kļūs objektīvs, un uzskata, ka LSM, kuru vēl nesen Baltijā vērtēja kā visneobjektīvāko, ir par ko padomāt."
+  },
+  {
+   "id": 6863,
+   "pol": "Evika Siliņa",
+   "len": 4076,
+   "why": "Stance is the reporter's narrative (deadline passed, list unpublished), in past tense; her actual position is rejecting ministers' excuses and awaiting the list.",
+   "cur": "Noteica termiņu EM un FM publicēt Krievijas/Baltkrievijas eksportētāju sarakstu — termiņš beidzies, saraksts joprojām nav publicēts",
+   "final": "Noraida ministru atsauces uz juridiskiem šķēršļiem kā nepietiekamu attaisnojumu un sagaida, ka abi ministri, īpaši ekonomikas ministrs, iesniegs informāciju par uzņēmumiem, kuri turpina sadarbību ar agresorvalstīm."
+  },
+  {
+   "id": 14381,
+   "pol": "Marta Kotello",
+   "len": 3693,
+   "why": "'piedāvā 6 mēnešu testēšanas periodu' changes modality (she states the city will test for half a year); 'par spīti iedzīvotāju iebildumiem' is the reporter's framing. QUOTE FLAG: quote is reporter paraphrase.",
+   "cur": "Aizstāv satiksmes reorganizāciju un modāla filtra saglabāšanu Vārnu ielā Grīziņkalnā par spīti iedzīvotāju iebildumiem; piedāvā 6 mēnešu testēšanas periodu pirms lēmuma par izmaiņām.",
+   "final": "Skaidro, ka Vārnu ielas sadalīšana ir nepieciešama, lai ielu neizmantotu tranzītam, un ka pašvaldība pusgadu testēs izmaiņu ietekmi un tikai tad lems par pārmaiņām."
+  },
+  {
+   "id": 7526,
+   "pol": "Andris Šuvajevs",
+   "len": 251,
+   "why": "Text says deputies will vote for the transport minister's proposed SOLUTION, not for 'ministra atbildību'; past tense 'Pateicās'.",
+   "cur": "Pateicās uzņēmējiem par spiedienu - deputāti balsos par SM ministra atbildību",
+   "final": "Pateicas uzņēmējiem un sabiedrībai par spiedienu uz politiķiem un norāda, ka deputāti balsos par satiksmes ministra piedāvāto risinājumu."
+  },
+  {
+   "id": 7192,
+   "pol": "Andris Sprūds",
+   "len": 5018,
+   "why": "Tense changed: 'tiek piedzīvoti regulāri' (happen regularly) turned into a forecast 'būs regulāri'.",
+   "cur": "Atzīst, ka gaisa telpu pilnībā aizzīmogot nav iespējams — pierobežā incidenti būs regulāri",
+   "final": "Atzīst, ka šādi dronu incidenti pierobežā notiek regulāri un pilnībā aizzīmogot gaisa telpu nav iespējams."
+  },
+  {
+   "id": 7437,
+   "pol": "Jānis Dombrava",
+   "len": 213,
+   "why": "Source opposes being 'replaced' by immigrants and hushing the issue; 'iebilst pret imigrāciju' widens it to immigration as such.",
+   "cur": "Iebilst pret imigrāciju, uzskatot to par latviešu aizstāšanu",
+   "final": "Uzskata, ka latviešiem nav jāsamierinās ar to, ka viņus aizstāj ar imigrantiem, un apgalvo, ka kosmopolītiem neizdosies imigrācijas problēmu «paslaucīt zem paklāja»."
+  },
+  {
+   "id": 10959,
+   "pol": "Viktors Valainis",
+   "len": 5119,
+   "why": "The delegation is upcoming ('nākamnedēļ dosies'), so present 'Vada' changes tense; the sector framing is LIAA's, while his own quote is about the forums as a purposeful step.",
+   "cur": "Vada Latvijas uzņēmēju delegāciju uz Poliju un Ukrainu — stiprina ekonomisko sadarbību aizsardzības, tehnoloģiju un enerģētikas jomās",
+   "final": "Uzsver, ka biznesa forumi Polijā un Ukrainā, uz kuriem dosies viņa vadītā uzņēmēju delegācija, ir mērķtiecīgs solis, lai stiprinātu Latvijas uzņēmumu klātbūtni ārvalstu tirgos."
+  },
+  {
+   "id": 14336,
+   "pol": "Uldis Augulis",
+   "len": 1985,
+   "why": "Source: 'valstij īstermiņā jādomā par atbalsta mehānismiem' (should consider) hardened into 'Atbalsta' (modality change).",
+   "cur": "Atbalsta īstermiņa valsts atbalsta mehānismus iedzīvotājiem augsto degvielas cenu pārvarēšanai, ievērojot ES valsts atbalsta noteikumus.",
+   "final": "Uzskata, ka valstij īstermiņā jādomā par atbalsta mehānismiem, kas palīdzētu iedzīvotājiem pārvarēt augsto degvielas cenu periodu, vienlaikus ievērojot ES valsts atbalsta noteikumus."
+  },
+  {
+   "id": 7187,
+   "pol": "Hosams Abu Meri",
+   "len": 4242,
+   "why": "Reporter's background line says he expressed dissatisfaction 'and' the chair later resigned; 'veicinot atkāpšanos' invents causation. Quote is reporter narration, not his words.",
+   "cur": "Izteicis neapmierinātību ar RAKUS padomes darbu, veicinot padomes priekšsēdētāja Edgara Labsvīra atkāpšanos",
+   "final": "Ir izteicis neapmierinātību ar RAKUS padomes darbu pēc Normunda Staņēviča aiziešanas no slimnīcas valdes."
+  },
+  {
+   "id": 14323,
+   "pol": "Andris Kulbergs",
+   "len": 305,
+   "why": "Tense changed: text says 15 000 residents 'cietīs' (will suffer), stance 'apgrūtina'; 'bremzēšanu' softens his 'PRO galvenais kaut ko salauzt'.",
+   "cur": "Iebilst pret ielu slēgšanas (“modālo filtru”) lēmumiem, kas Kulberga skatījumā 100 sūdzību iesniedzēju dēļ apgrūtina 15 000 apkaimes iedzīvotāju; plašāk pārmet Progresīvajiem (PRO) infrastruktūras bremzēšanu (airBaltic, Rail Baltica, Satiksmes ministrija).",
+   "final": "Iebilst pret ceļu bloķēšanu jeb «modālajiem filtriem», uzskatot, ka 100 cilvēku sūdzību un iegribu dēļ cietīs 15 000 apkaimes iedzīvotāji, un pārmet Progresīvajiem, ka viņiem galvenais ir kaut ko salauzt."
+  }
+ ],
+ "scope": [
+  {
+   "id": 11339,
+   "pol": "Andris Kulbergs",
+   "len": 367,
+   "why": "Wider group: text says 'Latvijas krievu sabiedrības daļa' (Russians), stance says 'krievvalodīgā'; 'spēja ir 63%' is awkward.",
+   "cur": "Brīdina, ka Latvijas sabiedrības spēja skaidri identificēt Krieviju kā vainīgo Ukrainas iebrukumā ir tikai 63% — nostāda Latviju vienā grupā ar Ungāriju, Slovākiju, Bulgāriju; norāda uz Krievijas ietekmi Latvijas krievvalodīgajā sabiedrībā un kontrastē ar Lietuvu, kur krievu kopiena ir tikai 6%.",
+   "final": "Uzskata par problēmu, ka Latvija praktiski ir vienā grupā ar Ungāriju, Slovākiju un Bulgāriju, jo tikai 63 % sabiedrības spēj skaidri pateikt, ka Krievija ir vainīga iebrukumā Ukrainā, un saista to ar Krievijas ietekmi uz salīdzinoši lielo Latvijas krievu sabiedrības daļu."
+  },
+  {
+   "id": 6779,
+   "pol": "Andrejs Elksniņš",
+   "len": 104,
+   "why": "Source names one deputy (Smiltēns); stance widens to all deputies and adds 'Latgales intereses'; typo 'iestajjas'. FLAG: quote is a third-person headline.",
+   "cur": "Aicina Saeimas deputātus dzīvot reģionos par kuriem lemj, iestajjas par Latgales interesēm",
+   "final": "Aicina Saeimas deputātu Smiltēnu pārcelties dzīvot uz Latgali."
+  },
+  {
+   "id": 11007,
+   "pol": "Atis Švinka",
+   "len": 2292,
+   "why": "He only explained the goal: balancing all road users' interests (not 'drošību'), protecting pedestrians; the rule list is Delfi's explainer folded in as his support.",
+   "cur": "Atbalsta stingrākus mikromobilitātes noteikumus (OCTA, CSDD reģistrācija pašgājējiem, vecuma ierobežojumi, ķiveres obligātums līdz 17 g.v.) — mērķis ir līdzsvarot visu satiksmes dalībnieku drošību",
+   "final": "Skaidro, ka stingrāko mikromobilitātes noteikumu mērķis ir līdzsvarot visu satiksmes dalībnieku intereses, īpaši aizsargājot gājējus (bērnus un seniorus), sakārtot pārvietošanos pa ietvēm pilsētās un veicināt cieņpilnu pārvietošanās kultūru."
+  },
+  {
+   "id": 6701,
+   "pol": "Baiba Braže",
+   "len": 245,
+   "why": "'ķīlniekus' and Iran's 'prakse' generalise one case; she says 'wrongful imprisonment' of two people and praises French diplomacy.",
+   "cur": "Atzinīgi novērtē Francijas diplomātu panākumu atbrīvot ķīlniekus no Irānas — atzīst Irānas nelikumīgo ieslodzīšanas praksi",
+   "final": "Pauž prieku, ka divi Irānā netaisnīgi ieslodzītie cilvēki ir atgriezušies brīvībā Francijā, un izsaka cieņu Francijas diplomātiskajam dienestam, kas smagi strādāja, lai to panāktu."
+  },
+  {
+   "id": 10958,
+   "pol": "Viktors Valainis",
+   "len": 227,
+   "why": "Criticism of Riga City Council is his; but the text says 'liela daļa' is left without a place, not parents in general (wider group).",
+   "cur": "Kritizē Rīgas domi par nespēju nodrošināt darbojošos vasaras nometņu pieteikšanas sistēmu — vecāki paliek bez iespējām bērniem",
+   "final": "Kritizē Rīgas domi, jo vasaras nometņu pieteikšanās lapa nestrādā, vietu skaits ir ierobežots un liela daļa vecāku paliek bez iespējas piedāvāt bērnam drošu vasaru."
+  },
+  {
+   "id": 11131,
+   "pol": "Lato Lapsa",
+   "len": 669,
+   "why": "He blames teachers at schools that did not post the information, not all ~600 schools; wider group than the text.",
+   "cur": "Apsūdz Latvijas skolas (~600 skolas) par slinkumu vai bailēm izplatīt informāciju par grāmatu 'Pret likteni stāvēdami' — norāda uz skolotāju bailēm no 'cekas' rājiena",
+   "final": "Pārmet skolotājām slinkumu vai bailes no strēlnieku tēmas, jo, pēc viņa teiktā, no aptuveni 600 skolām, kurām nosūtīts grāmatas \"Pret likteni stāvēdami\" konkursa nolikums, izdevies atrast mazāk nekā desmit, kur informācija būtu izlikta."
+  },
+  {
+   "id": 7332,
+   "pol": "Alvis Hermanis",
+   "len": 557,
+   "why": "Wider group: he describes HIS personal format ('Man ir cits formāts'), not an MMN campaign format.",
+   "cur": "MMN kampaņas formāts ir mazas 7 cilvēku tikšanās visā Latvijā — pretstatīts masu propagandai kultūras namos",
+   "final": "Apraksta savu tikšanās formātu: nevis aģitē par jauno partiju kultūras namos, bet brauc visur, kur viņu uzaicina septiņi cilvēki, kas vēlas divas stundas apmainīties ar idejām, jo lielā barā var tikai nodarboties ar propagandu, bet mazā kompānijā latvieši var normāli parunāt."
+  },
+  {
+   "id": 17931,
+   "pol": "Reinis Uzulnieks",
+   "len": 2629,
+   "why": "Text links the base supplement to the problems of those who worked until 1996/in the Soviet period generally; 'tieši šī problēma' (lost documents) is the extractor's link. The text does call the base pension the only remedy.",
+   "cur": "Atzīst, ka Labklājības ministrija nevar palīdzēt senioriem, kuru padomju laika darba stāža dokumenti gājuši bojā vai nav saglabājušies arhīvā, un norāda, ka tieši šī problēma ir pamatā bāzes piemaksai pensijām strādājušajiem līdz 1996. gadam.",
+   "final": "Atzīst, ka Labklājības ministrija nevar palīdzēt senioriem, kuri nevar pierādīt nostrādāto darba stāžu, piemēram, tāpēc, ka dokumenti gājuši bojā, un par vienīgo risinājumu šādiem senioriem, kas lielākoties strādājuši padomju laikā, uzskata bāzes pensijas summas ikgadēju palielināšanu."
+  },
+  {
+   "id": 1604,
+   "pol": "Lato Lapsa",
+   "len": 144,
+   "why": "Generalised to 'nacionālā mantojuma pasākumiem' and 'ģimenēm'; the tweet mocks exclusion from one Taurupe event and says 'Pierodiet!'.",
+   "cur": "Komunistu kolaborantiem un viņu ģimenēm jāliedz pieeja nacionālā mantojuma pasākumiem — Taurupes piemērs",
+   "final": "Izsmej «komunistu kolaborantus», kuri nesaprot, kāpēc viņiem liegta ieeja Taurupes pasākumā, un aicina viņus pie tā pierast."
+  },
+  {
+   "id": 7409,
+   "pol": "Andris Kulbergs",
+   "len": 547,
+   "why": "Implicit 'we all know how this addiction will end' hardened into an explicit claim that the company will collapse.",
+   "cur": "Pieprasa premjerei skaidru airBaltic 380M EUR parāda restrukturizācijas plānu — bez tā kompānija ies bojā",
+   "final": "Pieprasa premjerei nākt klajā ar skaidru airBaltic 380 miljonu eiro parāda restrukturizācijas plānu un norāda, ka bez tā visi zina, ar ko beigsies aviokompānijas atkarība no nodokļu naudas."
+  }
+ ],
+ "otherwords": [
+  {
+   "id": 11044,
+   "pol": "Hosams Abu Meri",
+   "len": 9473,
+   "why": "'Piecu gadu laikā' is one of the ministry's options in the reporter's text, not his words; he called gradual expansion 'a variant' and also floated equal partial compensation.",
+   "cur": "Atbalsta pakāpenisku (piecu gadu laikā) 1. tipa diabēta pacientu grupu paplašināšanu glikozes sensoru un insulīna sūkņu kompensācijai, nevis tūlītēju visu pacientu nodrošināšanu",
+   "final": "Norāda, ka patlaban nav naudas, lai visiem pacientiem apmaksātu glikozes sensorus un insulīna sūkņus, un kā iespējamu variantu min pakāpenisku to 1. tipa diabēta pacientu grupu paplašināšanu, kam valsts šīs tehnoloģijas nodrošina."
+  },
+  {
+   "id": 689511,
+   "pol": "Anastasija Tetarenko-Supe",
+   "len": 268,
+   "why": "The substantive criticism is Valainis's, which she relays; her own words are only 'skumji/frustrējoši', and their object is ambiguous. Relay of an evaluative excerpt: rewrite as 'Izplata'.",
+   "cur": "Vērtē Andra Kulberga vadītās valdības darbību kritiski, izceļot ministra Viktora Valaiņa vērtējumu par to un nosaucot situāciju par skumju un frustrējošu",
+   "final": "Izplata Andra Kulberga vadītās valdības ministra Viktora Valaiņa kritisko vērtējumu par šo valdību, nosauc to par diezgan dramatisku un piebilst: «Diezgan skumji. Un diezgan frustrējoši.»"
+  },
+  {
+   "id": 403,
+   "pol": "Ainars Mielavs",
+   "len": 163,
+   "why": "The words are formatted as a quote of @AlvisHermanis1 with a 💯 endorsement, i.e. a share of another person's evaluative line. Stored quote is Hermanis's words, not Mielavs's.",
+   "cur": "Pastiprina MMN vēstījumu — partija nav priekš mīkstajiem, noteikumu maiņa prasa stiprus cilvēkus",
+   "final": "Izplata ar piekrišanas zīmi Alvja Hermaņa viedokli, kurā pausts, ka «Mēs mainām noteikumus» nav domāts mīkstajiem un ka ikdienas inerci izmainīt spēj tikai stipri cilvēki."
+  },
+  {
+   "id": 11103,
+   "pol": "Ansis Pūpols",
+   "len": 360,
+   "why": "Text says 'daudzu žurnālistu vidū' (many), not the whole journalist milieu; Bērtule's issue is asking PMLP about the residence permit, not collaboration; 'lionizēšana' is an anglicism.",
+   "cur": "Kritizē Latvijas žurnālistus (jo īpaši @jemberga un @ABertule) par to, ka nav izteikuši nožēlu par sadarbību ar Leonīdu Ragozinu — apsūdz žurnālistu vidi par 'krievu šovinista' lionizēšanu, kurš par fašistiem dēvē Azov un Nacionālo apvienību",
+   "final": "Pārmet @jemberga un @ABertule, ka tās nav paudušas nožēlu — pirmā par sadarbību ar Ragozinu, otrā par PMLP paskaidrojumu pieprasīšanu par viņa uzturēšanās atļauju; apgalvo, ka daudzu Latvijas žurnālistu vidū Ragozins joprojām ir varonis."
+  },
+  {
+   "id": 6648,
+   "pol": "Viesturs Kleinbergs",
+   "len": 1356,
+   "why": "Drops the conditions: only third-party-owned courtyards and only where ambulance/fire access is endangered.",
+   "cur": "Izstrādā noteikumus iekšpagalmu piespiedu sakārtošanai — pašvaldība sakārtos un piestādīs rēķinu zemes īpašniekam",
+   "final": "Paziņo, ka Rīgas dome izstrādā saistošos noteikumus, lai pašvaldība varētu piespiedu kārtā sakārtot trešajām personām piederošus iekšpagalmus, kuros apdraudēta ātrās palīdzības vai ugunsdzēsēju piekļuve, ja zemes īpašnieki pēc brīdinājuma to neizdara paši, un pēc tam piestādīt viņiem rēķinu."
+  },
+  {
+   "id": 7381,
+   "pol": "Ansis Pūpols",
+   "len": 183,
+   "why": "Text says Orbán's defeat scared JV into a trip to Italy to relabel fair elections as 'influenced'; 'oportūnisms' is the extractor's framing. Also missing comma before 'lai'.",
+   "cur": "Apsūdz JV par oportūnismu pēc Orbāna sakāves — devās uz Itāliju lai \"pārdēvētu godīgas vēlēšanas par ietekmētām\"",
+   "final": "Ironizē, ka Orbāna sagrāve Jauno Vienotību tā nobiedējusi, ka tās pārstāvji grupveidā devušies uz Itāliju izdomāt, kā godīgas vēlēšanas pārdēvēt par \"ietekmētām\"."
+  },
+  {
+   "id": 14438,
+   "pol": "Atis Švinka",
+   "len": 3901,
+   "why": "'cenu pārrēķina metodika' comes from the article's background, not his words; 'pēc LCB kritikas' is reporter framing.",
+   "cur": "Apliecina, ka Satiksmes ministrijas informatīvais ziņojums par ceļu būves nozares krīzes atbalsta mehānismiem (cenu pārrēķina metodika līgumiem) tiek precizēts un tuvākajā laikā tiks iesniegts izskatīšanai Ministru kabinetā — pēc Latvijas ceļu būvētāju biedrības publiskās kritikas par valdības klusēšanu.",
+   "final": "Norāda, ka Satiksmes ministrijas informatīvais ziņojums par risinājumiem ceļu nozarei tiek precizēts un papildināts un tuvākajā laikā šis jautājums tiks skatīts valdībā."
+  },
+  {
+   "id": 7501,
+   "pol": "Māris Mežals",
+   "len": 1155,
+   "why": "Stance is Citkovskis' account; a relay with his own evaluation (rule 4) should read as 'Izplata ...' plus his conclusion.",
+   "cur": "Publisko Citkovska LTV intervijā teikto: Valsts kancelejas vadītājs atteicās apmaksāt Evikas Siliņas rēķinu par Amsterdamas lidostas VIP zonu, un pēc tam viņš tika atlaists no darba.",
+   "final": "Atstāsta Citkovska LTV intervijā teikto, ka viņš atlaists no darba pēc tam, kad atteicās apmaksāt Siliņas Amsterdamas lidostas VIP zonas rēķinu, un secina, ka premjeri Kariņš un Siliņa tērē naudu, to neskaitot."
+  },
+  {
+   "id": 6716,
+   "pol": "Viktors Valainis",
+   "len": 2363,
+   "why": "His own act (submitted proposals) per NRA, but the union-consent rule concerns dismissing a trade-union member, not any employee. Quote is reporter text about LDDK support, not his words.",
+   "cur": "Iesniedzis priekšlikumus Darba likumā — atcelt koplīguma spēkā esamību pēc termiņa beigām un arodbiedrības piekrišanas prasību pirms darbinieka atlaišanas",
+   "final": "Iesniedz Darba likuma grozījumu priekšlikumus, kas neparedz darba koplīguma noteikumu spēkā esamību pēc tā termiņa beigām un izslēdz prasību saņemt arodbiedrības piekrišanu darba līguma uzteikšanai arodbiedrības biedram."
+  },
+  {
+   "id": 89,
+   "pol": "Andris Sprūds",
+   "len": 1434,
+   "why": "Appended 'netieša atzīšana par aizsardzības nepilnībām' is atmina's own interpretation; cell broadcast is warning, not defence. Stored quote is the reporter's indirect speech, not verbatim.",
+   "cur": "Atzīst, ka šūnapraide par Krāslavas dronu bija jāiedarbina — netieša atzīšana par aizsardzības nepilnībām",
+   "final": "Atzīst, ka par Krāslavas novadā nogāzušos dronu bija jāiedarbina šūnapraide, un uzsver, ka turpmāk pie pirmajām apdraudējuma pazīmēm tā jāiedarbina."
+  }
+ ],
+ "other": [
+  {
+   "id": 7081,
+   "pol": "Lato Lapsa",
+   "len": 132,
+   "why": "Text targets one unnamed person ('Šitas'), not 'modern administration defenders', and the date is 26 March, not 25.",
+   "cur": "Salīdzina mūsdienu pārvaldes aizstāvjus ar tiem, kas 1949.g. 25. martā aplaudēja staļiniskajām represijām",
+   "final": "Pielīdzina kādu nenosauktu personu tiem, kuri 1949. gada 26. martā aplaudēja staļiniskajiem bendēm un vēstīja, ka valsts pārvaldīšana ir sarežģīta lieta."
+  },
+  {
+   "id": 7464,
+   "pol": "Elīna Treija",
+   "len": 217,
+   "why": "Source is a Re:Baltica tweet reporting her claim; stance folds in the fact-checker's verdict via a garbled parenthetical ('neatiestās') and lacks a comma before 'ka'. Quote includes Re:Baltica's own sentence 'Taču tādu datu nav.'",
+   "cur": "Apgalvo ka Vācijā puse bērnu līdz 12 gadiem ir pirmās paaudzes islāmticīgie imigranti (Re:Baltica faktpārbaude — neatiestās)",
+   "final": "Apgalvo, ka Vācijā puse bērnu vecumā līdz 12 gadiem ir pirmās paaudzes imigranti – islāmticīgie."
+  },
+  {
+   "id": 7340,
+   "pol": "Edvards Smiltēns",
+   "len": 154,
+   "why": "Tweet only says early results show change is very likely, plus a champagne emoji; 'Atbalsta politiskas pārmaiņas' overstates it.",
+   "cur": "Atbalsta politiskas pārmaiņas Ungārijā",
+   "final": "Atzinīgi vērtē Ungārijas vēlēšanu pirmos rezultātus, kas, viņaprāt, liecina, ka pārmaiņas ir ļoti ticamas."
+  },
+  {
+   "id": 6937,
+   "pol": "Alvis Hermanis",
+   "len": 11621,
+   "why": "Source says 'Tas vienkārši nav nopietni' (the situation), not that the three officials 'nav nopietni'; 'Neuzticētos … drošību' is also the wrong (reflexive) verb form.",
+   "cur": "Neuzticētos esošajam aizsardzības ministram, premjerei un virspavēlniekam bērnu drošību — viņi nav nopietni un Latvija piektajā kara gadā nav gatava karam",
+   "final": "Pauž, ka krīzes brīdī savu bērnu drošību nekādos apstākļos neuzticētu pašreizējam aizsardzības ministram, premjerei un virspavēlniekam, un uzskata, ka Latvija piektajā kara gadā joprojām nav gatava karam."
+  },
+  {
+   "id": 155,
+   "pol": "Edvards Ratnieks",
+   "len": 100,
+   "why": "Tweet says guest workers harass Latvian female students; stance widens to 'sievietēm' and adds an inferred anti-labour-immigration position; no leading verb.",
+   "cur": "Viesstrādnieki rada drošības apdraudējumu latviešu sievietēm — pretestība darbaspēka imigrācijai no drošības perspektīvas",
+   "final": "Apgalvo, ka viesstrādnieki uzmācas latviešu studentēm un tās nejūtas drošībā."
+  },
+  {
+   "id": 11400,
+   "pol": "Evika Siliņa",
+   "len": 844,
+   "why": "'Pieprasa' (demands) hardens the source's 'Latvijai ir svarīgi, lai ES turpina atbalstīt'.",
+   "cur": "Pieprasa, lai ES turpina atbalstīt Rail Baltica projekta finansēšanu — pozicionē to nevis kā Baltijas valstu, bet kā visas Eiropas drošības jautājumu.",
+   "final": "Uzsver, ka Latvijai ir svarīgi, lai ES turpinātu atbalstīt «Rail Baltica», jo tas nav tikai Baltijas valstu projekts, bet visas Eiropas drošības jautājums."
+  },
+  {
+   "id": 7367,
+   "pol": "Evika Siliņa",
+   "len": 6757,
+   "why": "PM's written reply (sent via her adviser, in her first person) says 'the real fight' against illegal migration is at the Belarus border; 'galvenais nelegālās migrācijas avots' reframes it.",
+   "cur": "Norāda uz hibrīddraudu spiedienu uz Latvijas-Baltkrievijas robežas kā galveno nelegālās migrācijas avotu",
+   "final": "Uzsver, ka īstā cīņa ar nelegālo migrāciju notiek uz Latvijas–Baltkrievijas robežas, kur joprojām saglabājas paaugstināts hibrīdapdraudējuma radīts spiediens."
+  },
+  {
+   "id": 7500,
+   "pol": "Māris Mežals",
+   "len": 610,
+   "why": "Stance frames it as a disclosure ('Atsedz') and drops his evaluative point (the cost equals two police officers' or teachers' monthly pay).",
+   "cur": "Atsedz Siliņas VIP zāles izdevumus - 4184 EUR par divām dienām Amsterdamas lidostā ar padomnieci un miesassargu",
+   "final": "Kritizē premjeri Siliņu, norādot, ka viņas, padomnieces un miesassarga divu dienu uzturēšanās Amsterdamas lidostas VIP zālē izmaksājusi 4184 eiro, un salīdzina šo summu ar divu policistu vai divu skolotāju mēnešalgām."
+  },
+  {
+   "id": 6675,
+   "pol": "Guntars Vītols",
+   "len": 2569,
+   "why": "Numbers are invented: text says a 60 kWh battery costs ~EUR 17k and lasts ~20 years (lifetime, not payback), making storage ~EUR 140/month vs ~100 from the grid. No leading verb.",
+   "cur": "Saules enerģijas uzkrāšana mājas apstākļos ir ļoti dārga — akumulatora izmaksas 10-15k EUR, atmaksāšanās vismaz 20 gadi",
+   "final": "Aprēķina, ka saules enerģijas uzkrāšana mājsaimniecībā ir dārgāka par elektrības pirkšanu no tīkla: 60 kWh akumulators ap 17 tūkstošu eiro vērtībā kopā ar finansējuma un amortizācijas izmaksām maksā ap 140 eiro mēnesī, bet elektrība no tīkla — ap 100 eiro."
+  },
+  {
+   "id": 14343,
+   "pol": "Ainārs Šlesers",
+   "len": 222,
+   "why": "He blames 'Progresīvie LGBT politiķi', not an activists' campaign led by Progresīvie; the group is reframed.",
+   "cur": "Apsūdz Progresīvos LGBT aktīvistu kampaņas vadīšanā pret LPV pēc Rēzeknes biroja aplīmēšanas",
+   "final": "Apgalvo, ka \"Progresīvie LGBT politiķi\" uzsākuši kampaņu pret LPV un viņu pašu, un saista to ar LPV biroja aplīmēšanu Rēzeknē."
+  }
+ ],
+ "WITHDRAW": [
+  {
+   "id": 160,
+   "pol": "Edgars Rinkēvičs",
+   "len": 62,
+   "why": "Pure relay of an alert ('Iespējams APDRAUDĒJUMS GAISA TELPĀ!' plus a link) with no evaluative content of his own; the tweet is complete, so this is not merely an incomplete text.",
+   "cur": "Reaģējis uz bezpilotlidaparāta incidentu pie Latvijas robežas; uzsver gaisa telpas apdraudējumu",
+   "final": null
+  },
+  {
+   "id": 7394,
+   "pol": "Filips Rajevskis",
+   "len": 298,
+   "why": "Pure relay of an Economist news fact (joint ventures, EC programme) with no evaluative content of his own; 'Atbalsta' invented (stance also has 'kopuznemumus' without diacritics).",
+   "cur": "Atbalsta Ukrainas aizsardzības ražotāju kopuznemumus ar ES valstīm (t.sk. Latviju) dronu tehnoloģiju jomā",
+   "final": null
+  },
+  {
+   "id": 7337,
+   "pol": "Viktors Valainis",
+   "len": 5019,
+   "why": "Administrative fact stated by the Economics Ministry (no extra budget funding needed), not Valainis' words and not a political position; stance has no verb.",
+   "cur": "Solidaritātes maksājuma mehānisms degvielas tirgotājiem tiks ieviests bez papildu valsts budžeta finansējuma — no EM esošajiem resursiem",
+   "final": null
+  },
+  {
+   "id": 7188,
+   "pol": "Evika Siliņa",
+   "len": 15000,
+   "why": "Commentator interview; the stance is the commentator's assessment that she could not explain the 25% goal. Her only words are a three-word fragment in an editor's note ('vīzija viņas galvā') carrying no position.",
+   "cur": "Mērķi samazināt birokrātiju par 25% apraksta kā \"vīziju galvā\", bez konkrēta skaidrojuma vai tas attiecas uz ierēdņu skaitu, izdevumiem vai slogu iedzīvotājiem",
+   "final": null
+  },
+  {
+   "id": 401,
+   "pol": "Baiba Braže",
+   "len": 8284,
+   "why": "The IRIS-T support-centre item and quote are the Defence Ministry's announcement in a Delfi roundup; Braže says nothing about it. Stored quote is not hers.",
+   "cur": "Latvijā top Vācijas IRIS-T pretgaisa aizsardzības sistēmas atbalsta centrs — Diehl Defence un Ripo remonta centrs parakstījuši memorandu",
+   "final": null
+  },
+  {
+   "id": 7402,
+   "pol": "Baiba Braže",
+   "len": 131,
+   "why": "Borderline: own tweet is a plain news fact (Rafale landed at Lielvārde) plus flags and #WeAreNATO; no evaluative words, so 'Atzinīgi novērtē' is invented (round-1 rule 4). Contrast Sprūds 7411, which has evaluative text.",
+   "cur": "Atzinīgi novērtē Francijas Rafale iznīcinātāju izvietošanu Lielvārdē NATO gaisa patrulēšanas misijā",
+   "final": null
+  },
+  {
+   "id": 1570,
+   "pol": "Uldis Augulis",
+   "len": 732,
+   "why": "The question is the title of a Latvijas Banka discussion he announces he will attend; the bullets are the event agenda. Invitation to watch, no stated view; 'apšauba valdības spēju' invented.",
+   "cur": "Bažījas par valsts parāda tuvojošanos kritiskajam slieksnim — apšauba valdības spēju samazināt parādu izaugsmes laikā",
+   "final": null
+  },
+  {
+   "id": 20794,
+   "pol": "Elīna Treija",
+   "len": 160,
+   "why": "A pointer to Siliņš' opinion (linked, not stored); 'iezīmē kā problemātisku' is inferred from typography only. Rewrite as the act she performed (quoted phrase kept verbatim).",
+   "cur": "Publiski iezīmē Alpha Shipping līdzīpašnieka Valda Siliņa nostāju par 'pragmātiskām biznesa attiecībām ar Krieviju' kā problemātisku.",
+   "final": null
+  },
+  {
+   "id": 11070,
+   "pol": "Kaspars Melnis",
+   "len": 3767,
+   "why": "Support for the EU approach, ending Russian energy dependence and Ukraine/Moldova is said by Commissioner Jørgensen and EU/G7+ participants, not Melnis; quote empty. Only his attendance and presenting Latvia's cost-cutting measures are stated (re-storable as a documented act if wanted).",
+   "cur": "Piedalās ES enerģētikas padomes sanāksmē un atbalsta ES kopīgo pieeju enerģijas cenu krīzei, atkarības no Krievijas enerģijas izbeigšanai un atbalstam Ukrainai un Moldovai",
+   "final": null
+  },
+  {
+   "id": 7450,
+   "pol": "Oļegs Burovs",
+   "len": 304,
+   "why": "Event report of a Youth Saeima session and a commission he chaired; he states no view on youth participation, so the stance is absent from the text.",
+   "cur": "Atbalsta jauniešu līdzdalības veicināšanu vēlēšanās",
+   "final": null
+  }
+ ],
+ "question": [
+  {
+   "id": 7082,
+   "pol": "Ēriks Stendzenieks",
+   "len": 72,
+   "why": "Text says 'nedaudz skauž' in an ironic tone; stance drops 'nedaudz' and 'skaudīgs par' is not idiomatic.",
+   "cur": "Uzskata, ka Jurēvics ir skaudīgs par Progresīvo reitingiem",
+   "final": "Ironizē, ka Jurēvics nedaudz apskauž Progresīvo reitingus."
+  },
+  {
+   "id": 14487,
+   "pol": "Kārlis Seržants",
+   "len": 223,
+   "why": "Hearsay hedge ('Dzirdēju', 'braukšot') dropped; the verdict 'nesaimnieciska tērēšana' is inferred from sarcasm.",
+   "cur": "Kritizē Rīgas domes Kapsētu pārvaldes 20 000 EUR komandējumu uz Turīnas kapsētu konferenci kā nesaimniecisku tērēšanu.",
+   "final": "Ironizē par dzirdēto, ka divpadsmit Rīgas domes kapsētu pārvaldes darbinieki jūnijā par 20 000 eiro braukšot komandējumā uz kapsētu konferenci Turīnā."
+  },
+  {
+   "id": 6654,
+   "pol": "Guntars Vītols",
+   "len": 404,
+   "why": "He asks 'Madmans theory nostrādāja?' - a question hardened into an assessment; missing comma before 'ka'.",
+   "cur": "Novērtē ka Trampa Madman theory nostrādāja — ķīnieši piezvanījuši irāņiem, naftas cena kritusies",
+   "final": "Jautā, vai Trampa \"Trakā cilvēka teorija\" ir nostrādājusi, norādot, ka pat ķīnieši esot aicinājuši irāņus būt pielaidīgākiem un naftas cena noslīdējusi zem 100."
+  },
+  {
+   "id": 548481,
+   "pol": "Elīna Treija",
+   "len": 311,
+   "why": "Her 'deklasētie elementi' point is a rhetorical question, hardened into an assertion ('norādot, ka neviena ... neatbilst').",
+   "cur": "Aizstāv sociālo dzīvokļu piešķiršanas kārtību: uzsver, ka prasības ir specifiskas (1-2 istabu dzīvokļi pieejami personām ar invaliditāti) un noraida priekšstatu par \"nepareizajiem\" īrniekiem, norādot, ka neviena likumā noteiktā sociālo klientu grupa neatbilst \"deklasētiem elementiem\".",
+   "final": "Aizstāv sociālo dzīvokļu piešķiršanas kārtību, norādot, ka prasības ir specifiskas (1–2 istabu dzīvokļi pieejami personām ar invaliditāti), un, iebilstot pret runām par «nepareizajiem» īrniekiem, retoriski jautā, kura no likumā noteiktajām sociālo klientu grupām atbilst deklasētiem elementiem."
+  },
+  {
+   "id": 14366,
+   "pol": "Jurģis Liepnieks",
+   "len": 142,
+   "why": "His rhetorical 'Kas tas ir, ja ne sabotāža?' is his, but the text names no culprit — 'Apvaino valsti' adds the target.",
+   "cur": "Apvaino valsti par zemessargu apmācības kavēšanu — kvalificē kā sabotāžu kara piektajā gadā",
+   "final": "Kritizē, ka kara piektajā gadā zemessargiem joprojām jāgaida iespēja apgūt mūsdienu kara pamatprasmes, un retoriski jautā, kas tas ir, ja ne sabotāža."
+  },
+  {
+   "id": 11182,
+   "pol": "Andris Kulbergs",
+   "len": 1688,
+   "why": "A (rhetorical) question hardened into 'prasa atbildību'. Same content as #11195 (duplicate across tweet and nra.lv).",
+   "cur": "Apšauba SPRK regulatora darbību, kas akceptē Rīgas Siltuma tarifā iekļautos tēriņus — prasa atbildību par to, ar ko SPRK visus šos gadus nodarbojas, regulējot siltuma tarifu.",
+   "final": "Apšauba SPRK darbu un jautā, ar ko regulators visus šos gadus nodarbojies, regulējot siltuma tarifu un akceptējot tajā Rīgas siltuma neadekvātos tēriņus."
+  },
+  {
+   "id": 14462,
+   "pol": "Juris Pūce",
+   "len": 281,
+   "why": "He agrees the populist risk exists and asks a rhetorical question about which government 'stole' part of pillar 2; 'iepriekšējo valdību' and the assertive framing are not in the text.",
+   "cur": "Aizstāv pensiju 2.līmeni un kritizē iepriekšējo valdību par tā samazinājumu deficīta dēļ",
+   "final": "Piekrīt, ka pastāv risks, ka populisti sabojās pensiju 2. līmeni, taču retoriski jautā, kura valdība budžeta deficīta dēļ jau nolēma daļu no tā «nozagt» nākotnes pensionāriem, un pieļauj, ka tāpēc populisti jūtas tik droši."
+  },
+  {
+   "id": 11085,
+   "pol": "Evika Siliņa",
+   "len": 3701,
+   "why": "She answered a general question on whether she uses VIP lounges; 'aizstāv Amsterdamas izdevumus kā atbilstošus kārtībai' is an inference not in the text; also no leading verb.",
+   "cur": "VIP zāļu izmantošana augstām amatpersonām ir normāla prakse un paredzēta normatīvajos aktos — aizstāv Amsterdamas izdevumus kā atbilstošus kārtībai",
+   "final": "Uzskata, ka augstām amatpersonām privilēģija izmantot lidostu VIP zāles pienākas saskaņā ar normatīvajiem aktiem, tāda kārtība ir visā pasaulē un tas ir normāli."
+  },
+  {
+   "id": 7351,
+   "pol": "Lato Lapsa",
+   "len": 174,
+   "why": "Rhetorical question hardened; 'korupcija' is not in the text — the insinuation is about people like ex-policeman Rosļikovs 'waiting for their time'.",
+   "cur": "Norāda uz sistēmisku korupciju Latvijas policijā — uzskata, ka simtiem korumpētu bijušo policistu joprojām strādā sistēmā",
+   "final": "Retoriski jautā, cik vēl simtu tādu kā bijušais policists Rosļikovs klusi sēž Latvijas policijā un gaida savu laiku."
+  },
+  {
+   "id": 1569,
+   "pol": "Uldis Augulis",
+   "len": 331,
+   "why": "Rhetorical question in a TV-show announcement hardened into an assertion; stance also lacks the comma before 'ka'.",
+   "cur": "Uzskata ka autotransporta nozare pārslogota ar obligātajiem maksājumiem un nodokļiem",
+   "final": "Jautā, vai autotransporta nozare spēs izturēt tai uzkrauto obligāto maksājumu un nodokļu apmēru."
+  }
+ ],
+ "hedge": [
+  {
+   "id": 14475,
+   "pol": "Inese Vaidere",
+   "len": 252,
+   "why": "Source is conditional ('būtu nepieņemami ļaut ... būvēt'); stance states the oligarchs are already building.",
+   "cur": "Iebilst pret to, ka krievu oligarhi Rīgā būvē lielveikalu; uzskata to par Krievijas ietekmes Eiropā paplašināšanas paveidu",
+   "final": "Uzskata, ka būtu pilnīgi nepieņemami ļaut krievu oligarhiem būvēt lielveikalu Rīgā, jo tieši šādi Krievija gadiem ilgi veidojusi savu ietekmi Eiropā."
+  },
+  {
+   "id": 11234,
+   "pol": "Rihards Kols",
+   "len": 1967,
+   "why": "'jāatbild' is not his wording, 'Kola ieskatā' is an odd self-reference, and 'Apgalvojums nav neatkarīgi pārbaudīts' is atmina's own editorial add-on, not his position.",
+   "cur": "Apgalvo, ka EK komisārei Kos jāatbild par iespējamu saistību ar Dienvidslāvijas laika slepeno dienestu — Kola ieskatā publiskotie arhīva materiāli esot pretrunā ar viņas teikto 2024. gada apstiprināšanas uzklausīšanā. Apgalvojums nav neatkarīgi pārbaudīts.",
+   "final": "Apgalvo, ka publiskotie arhīva dokumenti liecinot par EK komisāres Martas Kos iespējamu sadarbību ar Dienvidslāvijas slepeno dienestu un esot pretrunā ar viņas teikto 2024. gada apstiprināšanas uzklausīšanā, un uzsver, ka tas ir jautājums par raksturu un uzticamību. Apgalvojums nav neatkarīgi pārbaudīts."
+  },
+  {
+   "id": 14532,
+   "pol": "Roberts Zīle",
+   "len": 304,
+   "why": "He expresses 'piesardzīgs optimisms'; the hedge is dropped in 'Atbalsta'.",
+   "cur": "Atbalsta nākamā ES daudzgades budžeta (MFF) pozīciju, kurā Austrumu robežas rīcības plāns būtu tieši integrēts MFF, kohēzijas finansējuma noteikumi būtu fleksibli un militārā mobilitāte tiktu atzīta par ģeopolitiski būtisku prioritāti.",
+   "final": "Pauž piesardzīgu optimismu par pieņemto EP pozīciju par nākamo ES daudzgadu budžetu un kā panākto pozitīvo min prasības tieši integrēt tajā Austrumu robežas rīcības plānu, padarīt kohēzijas finansējuma noteikumus elastīgus un atzīt militāro mobilitāti par ģeopolitiski būtisku."
+  },
+  {
+   "id": 6788,
+   "pol": "Ēriks Pucens",
+   "len": 128,
+   "why": "He only asserts NA and Konservatīvie covertly support Riga Pride; 'Iebilst pret Riga Pride' is not stated.",
+   "cur": "Iebilst pret Riga Pride — kritizē NA un Konservatīvos par slēptu atbalstu praida pasākumam",
+   "final": "Apgalvo, ka gan Nacionālā apvienība, gan Konservatīvie slēpti atbalsta Riga Pride."
+  },
+  {
+   "id": 14456,
+   "pol": "Rihards Freidenfelds",
+   "len": 302,
+   "why": "Text says those who 'postulate democracy' are its monopolisers and destroyers, not SIF recipients monopolising discussion; he works to restore 'petīciju' (a petition), not a petition mechanism. 'Apsūdz ... monopolizēt un grauj' is also broken grammar.",
+   "cur": "Apsūdz SIF naudas saņēmējus monopolizēt sabiedrības diskusiju un grauj brīvas izteikšanās iespējas; strādā pie petīciju mehānisma atjaunošanas.",
+   "final": "Apgalvo, ka SIF naudas apguvēji, “pļekarētāji” un citi nedraugi darīs visu iespējamo, lai sabiedrībai nebūtu iespējas brīvi izteikties, un ka tie, kas postulē demokrātiju un pilsoņu tiesības, īstenībā ilgstoši bijuši to monopolizētāji un grāvēji, turklāt risina jautājumu par petīcijas atjaunošanu."
+  },
+  {
+   "id": 1530,
+   "pol": "Ilze Indriksone",
+   "len": 301,
+   "why": "Conditional 'kamēr nav caurspīdības, nav uzticības' turned into absolute 'pašreiz nav ne uzticības, ne skaidrības'; 'pilnīgu' added; also 'katrs eiro jābūt' needs dative 'katram'.",
+   "cur": "Prasa pilnīgu budžeta caurspīdīgumu — katrs eiro jābūt pamatotam, pašreiz nav ne uzticības, ne skaidrības",
+   "final": "Uzskata, ka Latvija nevar atļauties budžetu, kuru neviens līdz galam nesaprot, un ka tai vajag budžetu, kurā katrs eiro ir pamatots, jo, kamēr nav caurspīdīguma, nav arī uzticības."
+  },
+  {
+   "id": 14449,
+   "pol": "Mārtiņš Staķis",
+   "len": 1278,
+   "why": "First part faithful; 'netieši pretojas Hermaņa-Šlesera alianses leģitimitātei' contradicts the text, which explicitly says everyone in a Western democracy has their own political choices and allies.",
+   "cur": "Nosoda Alvja Hermaņa salīdzinājumu starp Progresīvajiem un 1941./1949. gada deportāciju īstenotājiem kā naida retoriku un sabiedrības šķelšanu; netieši pretojas Hermaņa-Šlesera alianses leģitimitātei vēlēšanās",
+   "final": "Nosoda Alvja Hermaņa paziņojumu, kurā Progresīvie salīdzināti ar okupantiem un nodevējiem, kuri 1941. un 1949. gadā izsūtīja latviešu ģimenes, uzskata to par naida retoriku un sabiedrības šķelšanu un aicina Hermani apdomāties."
+  },
+  {
+   "id": 472,
+   "pol": "Alvis Hermanis",
+   "len": 1156,
+   "why": "The source floats the idea that the public chip in to found the centre, with MMN supplying instructors, and says the school could open on 1 Sept 'ja būs atbalsts'; the stance drops the hedge and makes MMN the founder.",
+   "cur": "Ierosina MMN dibināt privātu dronu apmācības skolu ar Ukrainas veterānu instruktoriem — mērķis 500 apmācīti cilvēki, plānota atklāšana 1. septembrī",
+   "final": "Rosina, ka sabiedrība pati varētu samesties privāta dronu apmācības centra izveidei, lai sagatavotu ap 500 jaunu cilvēku, sola, ka MMN noorganizēs instruktorus no Ukrainas veterāniem, un norāda, ka atbalsta gadījumā skolu varētu atvērt 1. septembrī."
+  },
+  {
+   "id": 257,
+   "pol": "Andris Šuvajevs",
+   "len": 192,
+   "why": "Hedge 'faktiski' dropped and 'prettiesiskus' is folded into what Progresīvie will not support; no leading verb.",
+   "cur": "Progresīvie neatbalstīs prettiesiskus lēmumus par mežu izciršanu — Krauze virza sabiedrības interesēm pretējus lēmumus",
+   "final": "Pārmet Krauzes kungam faktiski prettiesisku lēmumu virzīšanu ar vēlmi izcirst vairāk Latvijas mežu un norāda, ka Progresīvie neatbalstīs lēmumus, kas ir pretēji sabiedrības interesēm."
+  },
+  {
+   "id": 14351,
+   "pol": "Viktors Valainis",
+   "len": 275,
+   "why": "Hedge dropped: he says LSM's assessment 'drīzāk izklausās pēc nepatikas pret ZZS', not that it 'is' politically motivated; he does not explicitly defend the proposal.",
+   "cur": "Aizstāv ZZS priekšlikumu izmantot 2. pensiju līmeņa līdzekļus veselības aprūpei — uzskata, ka LSM kritika ir politiski motivēta nepatika pret ZZS, nevis objektīvs vērtējums pēc būtības",
+   "final": "Kritizē LSM vērtējumu par ZZS priekšlikumu izmantot 2. pensiju līmeņa līdzekļus veselības aprūpei, norādot, ka tas drīzāk izklausās pēc nepatikas pret ZZS kā idejas virzītājiem, nevis pēc objektīva vērtējuma."
+  }
+ ],
+ "cause": [
+  {
+   "id": 7375,
+   "pol": "Jānis Dombrava",
+   "len": 785,
+   "why": "Evaluative relay of a police quote ('skaidru brīdinājumu'); 'izmanto ..., lai pamatotu bažas' imputes motive. Quote flag: the stored quote is the police's words, not his.",
+   "cur": "Izmanto Valsts policijas brīdinājumu Saeimas komisijā, lai pamatotu bažas par etnisku noziedzīgu grupu veidošanos no Āzijas un Āfrikas ieceļotājiem",
+   "final": "Izplata Valsts policijas Saeimas Imigrācijas izmeklēšanas komisijā pausto vērtējumu, kurā, cita starpā atsaucoties uz strauji augošo Āzijas un Āfrikas ieceļotāju skaitu, prognozēts, ka Latvijā tuvākajā laikā iespējama etnisku noziedzīgu grupu veidošanās, un nosauc to par skaidru brīdinājumu."
+  },
+  {
+   "id": 7488,
+   "pol": "Jurģis Liepnieks",
+   "len": 371,
+   "why": "Comparison inverted: he says airBaltic is at least as important as (if not more than) Rīgas satiksme; also omits that he agrees with Siliņa. No leading verb.",
+   "cur": "Rīgas satiksmes subsīdijas (100M+ gadā) nav mazāk svarīgas par airBaltic atbalstu — dubultstandarts",
+   "final": "Piekrīt Evikai Siliņai, ka airBaltic valsts interesēm ir vismaz tikpat svarīgs kā Rīgas satiksme, kurā katru gadu tiek ieguldīti vairāk nekā 100 miljoni, un kritizē tos, kas skaidro, kāpēc airBaltic atbalstīt nevar."
+  },
+  {
+   "id": 6692,
+   "pol": "Rihards Kols",
+   "len": 831,
+   "why": "Inverted: the tweet says Hungary works with Moscow to LIFT oligarch sanctions; the stance says it blocks sanction lifting. Also no leading verb.",
+   "cur": "Ungārija uztur tiešu sakaru līniju ar Kremli — aktīvi bloķē Ukrainas ES ceļu un sankciju atcelšanu",
+   "final": "Apgalvo, ka Ungārija uztur \"karsto līniju\" ar Kremli un saskaņo rīcību ar Maskavu, lai bloķētu Ukrainas ceļu uz ES, panāktu oligarhu sankciju atcelšanu un saglabātu Krievijas naftas plūsmu."
+  },
+  {
+   "id": 14495,
+   "pol": "Ilze Indriksone",
+   "len": 249,
+   "why": "'Stingrāka sankciju piemērošana' and 'aizliedz neformāli darījumus' are not in the tweet, which only condemns trade with Russia.",
+   "cur": "Atbalsta sankciju režīma stingrāku piemērošanu un aizliedz neformāli darījumus ar Krieviju — tirdzniecība ar agresorvalsti tiek raksturota kā apzināta nostāja, kas uztur Krievijas ekonomiku un karu pret Ukrainu.",
+   "final": "Uzskata, ka piektajā kara gadā ikviens darījums ar Krieviju ir asiņains un vairs nav nejaušība, bet apzināta nostāja, un ka uzņēmumi, kas tirgojas ar Krieviju, pēc būtības palīdz uzturēt agresorvalsts ekonomiku un karu pret Ukrainu."
+  },
+  {
+   "id": 7383,
+   "pol": "Ēriks Stendzenieks",
+   "len": 76,
+   "why": "Text: 'JV aicina, bet JV finmins Ašeradens aizliedz'; airBaltic and what is called for are not in the stored text.",
+   "cur": "Norāda uz JV iekšējo pretrunu — JV aicina rīkoties airBaltic jautājumā, bet JV finanšu ministrs Ašeradens to aizliedz",
+   "final": "Norāda uz pretrunu Jaunajā Vienotībā: partija aicina, bet tās finanšu ministrs Ašeradens aizliedz."
+  },
+  {
+   "id": 7330,
+   "pol": "Guntars Vītols",
+   "len": 312,
+   "why": "He says 'fair' division would break up the state; the stance attributes that outcome to populism, inverting his point.",
+   "cur": "Uzskata, ka valsts labklājībai nepieciešama nepopulāra politika — godīgums nav ekonomiska kategorija, populisms ved uz valsts sadalīšanu",
+   "final": "Uzskata, ka valsti nevar sakārtot \"godīgi\", jo godīgums nav ekonomiska kategorija, un, lai valsts kļūtu turīga, jādara tas, kas vajadzīgs, lai gan šāda politika nebūs populāra."
+  },
+  {
+   "id": 6726,
+   "pol": "Raimonds Čudars",
+   "len": 1849,
+   "why": "Stance opens with critics'/reporter's framing ('izvairās'); his own position (general allegations, case-by-case, insufficient facts, await checks) is in the text.",
+   "cur": "Pēc kritiķu ieskata izvairās no tiešas atbildes par IT iepirkumu lietu, norādot uz formāliem pārbaudes procesiem un nepietiekamiem faktiem",
+   "final": "Uzskata, ka pārmetumi par valsts informācijas sistēmu iepirkumiem ir vispārīgi apgalvojumi, ka katrs gadījums jāizvērtē atsevišķi, ka rīcībā nav pietiekamu faktu par pārkāpumiem un ka jāgaida oficiālas pārbaudes."
+  },
+  {
+   "id": 171,
+   "pol": "Ēriks Pucens",
+   "len": 296,
+   "why": "The five named deputies are his former organisation colleagues, not 'JV deputāti' (he calls them Vienotība's and Kariņš's servants); stance also lacks a leading verb.",
+   "cur": "Asa kritika pret JV deputātiem — viņi nav deputāti, bet Vienotības un Kariņa kalpi, kas nodod vēlētājus PVN balsojumā",
+   "final": "Pauž kaunu, ka ir bijis vienā organizācijā ar Ivetu Benhenu-Bēkenu, Aivaru Geidānu, Janīnu Kursīti, Ivaru Pugu un Ati Zakatistovu; apgalvo, ka PVN tiktu samazināts, ja viņi balsotu, kā solīja pirms vēlēšanām, un sauc viņus par Vienotības un Kariņa kalpiem."
+  },
+  {
+   "id": 240,
+   "pol": "Jāzeps Baško",
+   "len": 430,
+   "why": "Source opposes attempts to make the Satversmes tiesa a positive legislator; 'klusēšanu' garbles/inverts the meaning.",
+   "cur": "Iebilst pret Satversmes tiesas klusēšanu par pozitīvu likumdevēju — tas ved valsti uz morālu un finansiālu bankrotu",
+   "final": "Iebilst pret mēģinājumiem padarīt Satversmes tiesu par pozitīvu likumdevēju un uzskata, ka prasība visus Satversmē ielasītos nodrošinājumus strikti garantēt likumos ved valsti uz morālu un finansiālu bankrotu."
+  },
+  {
+   "id": 1573,
+   "pol": "Uldis Augulis",
+   "len": 353,
+   "why": "Source is specific (ZZS refused the short-term airBaltic loan in the budget committee); 'riskantus finanšu lēmumus' is a vaguer, wider framing not in the text.",
+   "cur": "Nav gatavs spēlēties ar nodokļu maksātāju naudu — ZZS atsakās atbalstīt riskantus finanšu lēmumus",
+   "final": "Pamato ZZS lēmumu budžeta komisijā neatbalstīt īstermiņa aizdevumu airBaltic ar to, ka nav gatavs spēlēties ar nodokļu maksātāju naudu, un uzskata, ka aviokompānija aizdevumu nespēs atmaksāt."
+  }
+ ]
+}

@@ -1,0 +1,1248 @@
+- name: Jānis Jenzis
+  first: Jānis
+  surname: Jenzis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 4
+  score: 88986
+  rank: 2
+  name_forms:
+  - Jānis Jenzis
+  - Jenzis
+  - Janis Jenzis
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: LSM AS candidate list shows FB+IG only. @JanisJenzis exists (0 tweets, empty
+    bio, no tie) - not accepted.
+- name: Līga Meņģelsone
+  first: Līga
+  surname: Meņģelsone
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 5
+  score: 87665
+  rank: 3
+  name_forms:
+  - Līga Meņģelsone
+  - Meņģelsone
+  - Liga Mengelsone
+  - Mengelsone
+  role: 15. Saeimā ievēlēta — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: Former health minister. No social links on LSM list. @LMengelsone / @LigaMengelsone
+    exist but 0-1 tweets, empty bio - no tie, not accepted.
+- name: Karīna Miķelsone
+  first: Karīna
+  surname: Miķelsone
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 2
+  score: 85599
+  rank: 4
+  name_forms:
+  - Karīna Miķelsone
+  - Miķelsone
+  - Karina Mikelsone
+  - Mikelsone
+  role: 15. Saeimā ievēlēta — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only. @KarinaMikelsone exists (1 tweet, empty bio) - no tie.
+    @KMikelsone is Kristīne Miķelsone (different person).'
+- name: Mārtiņš Brencis
+  first: Mārtiņš
+  surname: Brencis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 13
+  score: 83515
+  rank: 6
+  name_forms:
+  - Mārtiņš Brencis
+  - Brencis
+  - Martins Brencis
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: MBrencis
+  x_evidence: https://www.lsm.lv/velesanas-2026/kandidati/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija/
+  homonym_of: null
+  common_word: null
+  notes: 'LSM AS candidate table links x.com/MBrencis; X bio: ''Ministru prezidenta
+    padomnieks, 25+ gadu pieredze valsts pārvaldē'' (matches CVK). ~5090 tweets.'
+- name: Liene Apine
+  first: Liene
+  surname: Apine
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 16
+  score: 83333
+  rank: 7
+  name_forms:
+  - Liene Apine
+  - Apine
+  role: 15. Saeimā ievēlēta — AS, Rīga
+  x_handle: LieneA
+  x_evidence: https://www.lsm.lv/velesanas-2026/kandidati/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija/
+  homonym_of: null
+  common_word: false
+  notes: 'LSM AS candidate table links x.com/LieneA (X display name ''Liene Apine'',
+    bio empty, ~1584 tweets). Tie rests on LSM link only. Note: a Liene Apine ran
+    for Pašcieņa in Rīga 2025 municipal election - likely same person, worth a glance.
+    Operatora lēmums 2026-10-05: bez _COMMON_WORD_FORMS sarga; vārdabrāļus ķer T13
+    audits.'
+- name: Edgars Štelmahers
+  first: Edgars
+  surname: Štelmahers
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 10
+  score: 83280
+  rank: 8
+  name_forms:
+  - Edgars Štelmahers
+  - Štelmahers
+  - Edgars Stelmahers
+  - Stelmahers
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'No social links on LSM list; no account found. Homonym: a basketball player
+    of the same name (b.1994) exists.'
+- name: Jānis Urtāns
+  first: Jānis
+  surname: Urtāns
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 28
+  score: 82878
+  rank: 9
+  name_forms:
+  - Jānis Urtāns
+  - Urtāns
+  - Janis Urtans
+  - Urtans
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only; no X account found.'
+- name: Viesturs Vitovskis
+  first: Viesturs
+  surname: Vitovskis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 23
+  score: 82870
+  rank: 10
+  name_forms:
+  - Viesturs Vitovskis
+  - Vitovskis
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB+IG only; no X account found.'
+- name: Māris Ozoliņš
+  first: Māris
+  surname: Ozoliņš
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 27
+  score: 82737
+  rank: 11
+  name_forms:
+  - Māris Ozoliņš
+  - Ozoliņš
+  - Maris Ozolins
+  - Ozolins
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: false
+  notes: 'Editor of iAuto.lv (media - flag: journalist-type; if seeded consider feed_type
+    relay). No socials on LSM list. @MarisOzolins exists (14 tweets, empty bio) -
+    no tie. @iAutolv is the outlet account, not personal. Operatora lēmums 2026-10-05:
+    bez _COMMON_WORD_FORMS sarga; vārdabrāļus ķer T13 audits.'
+- name: Jānis Stērninieks
+  first: Jānis
+  surname: Stērninieks
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 11
+  score: 82700
+  rank: 12
+  name_forms:
+  - Jānis Stērninieks
+  - Stērninieks
+  - Janis Sterninieks
+  - Sterninieks
+  role: 15. Saeimā ievēlēts — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only. @sterninieks (''janis'', 0 tweets, empty bio) - no tie.'
+- name: Agnese Kupača
+  first: Agnese
+  surname: Kupača
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Rīga
+  pos: 15
+  score: 82693
+  rank: 13
+  name_forms:
+  - Agnese Kupača
+  - Kupača
+  - Agnese Kupaca
+  - Kupaca
+  role: 15. Saeimā ievēlēta — AS, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB+IG only; no X account found.'
+- name: Dagnis Straubergs
+  first: Dagnis
+  surname: Straubergs
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 8
+  score: 95663
+  rank: 5
+  name_forms:
+  - Dagnis Straubergs
+  - Straubergs
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: D_Straubergs
+  x_evidence: https://x.com/D_Straubergs
+  homonym_of: null
+  common_word: null
+  notes: 'X bio: ''Salacgrīvas novada domes priekšsēdētājs'', location Salacgriva
+    - his former office (lv.wikipedia). BUT 0 tweets: account inactive, useless as
+    a feed. Not on LSM list.'
+- name: Pēteris Dimants
+  first: Pēteris
+  surname: Dimants
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 31
+  score: 94618
+  rank: 7
+  name_forms:
+  - Pēteris Dimants
+  - Dimants
+  - Peteris Dimants
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: true
+  notes: 'LSM list: FB only; no X account found.'
+- name: Renārs Putniņš
+  first: Renārs
+  surname: Putniņš
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 13
+  score: 94272
+  rank: 8
+  name_forms:
+  - Renārs Putniņš
+  - Putniņš
+  - Renars Putnins
+  - Putnins
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: RPutnins
+  x_evidence: https://x.com/RPutnins
+  homonym_of: null
+  common_word: true
+  notes: 'X bio: ''P.Stradiņa KUS neiroķirurgs, Jēkabpils slimnīcas valdes loceklis''
+    - matches CVK (neurosurgeon, PSKUS, b.1976); also listed on Wikidata Q40649266.
+    ~1375 tweets. Former 12th Saeima deputy. Not on LSM list (FB+IG only).'
+- name: Anete Biķe
+  first: Anete
+  surname: Biķe
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 16
+  score: 93395
+  rank: 10
+  name_forms:
+  - Anete Biķe
+  - Biķe
+  - Anete Bike
+  role: 15. Saeimā ievēlēta — AS, Vidzeme
+  x_handle: AneteBike
+  x_evidence: https://x.com/AneteBike
+  homonym_of: null
+  common_word: null
+  notes: 'X bio: ''Nr. 16 Vidzemē @Apvienotais_'', ''Starptautiskās drošības maģistrs
+    @SciencesPo'' - matches list position 16 Vidzeme in YAML. ~106 tweets. Operatora
+    lēmums 2026-10-05: bez ASCII «Bike» formas (angļu «bike»).'
+- name: Valdis Kārkliņš
+  first: Valdis
+  surname: Kārkliņš
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 11
+  score: 93283
+  rank: 11
+  name_forms:
+  - Valdis Kārkliņš
+  - Kārkliņš
+  - Valdis Karklins
+  - Karklins
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: false
+  notes: 'HOMONYM: elected one is Mārupe municipality deputy chair, b.1983 (CVK) -
+    not the political scientist. LSM list: FB+IG only. @ValdisKarklins exists (0 tweets,
+    empty bio) - no tie, not accepted. Operatora lēmums 2026-10-05: bez _COMMON_WORD_FORMS
+    sarga; vārdabrāļus ķer T13 audits.'
+- name: Andis Caunītis
+  first: Andis
+  surname: Caunītis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 12
+  score: 93141
+  rank: 12
+  name_forms:
+  - Andis Caunītis
+  - Caunītis
+  - Andis Caunitis
+  - Caunitis
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: false
+  notes: 'Gulbene council chair, ex-10th Saeima. @caunitis is a bicycle mechanic,
+    not him. No X found. Operatora lēmums 2026-10-05: bez _COMMON_WORD_FORMS sarga;
+    vārdabrāļus ķer T13 audits.'
+- name: Mārtiņš Prīsis
+  first: Mārtiņš
+  surname: Prīsis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Vidzeme
+  pos: 20
+  score: 93084
+  rank: 13
+  name_forms:
+  - Mārtiņš Prīsis
+  - Prīsis
+  - Martins Prisis
+  - Prisis
+  role: 15. Saeimā ievēlēts — AS, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: IG only; no X account found.'
+- name: Valdis Kotāns
+  first: Valdis
+  surname: Kotāns
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Latgale
+  pos: 15
+  score: 17152
+  rank: 2
+  name_forms:
+  - Valdis Kotāns
+  - Kotāns
+  - Valdis Kotans
+  - Kotans
+  role: 15. Saeimā ievēlēts — AS, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB+IG only; no X account found.'
+- name: Raimonds Vējonis
+  first: Raimonds
+  surname: Vējonis
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Latgale
+  pos: 2
+  score: 17140
+  rank: 3
+  name_forms:
+  - Raimonds Vējonis
+  - Vējonis
+  - Raimonds Vejonis
+  - Vejonis
+  role: 15. Saeimā ievēlēts — AS, Latgale
+  x_handle: Vejonis
+  x_evidence: https://x.com/Vejonis
+  homonym_of: null
+  common_word: null
+  notes: 'HOMONYM CHECK: the elected AS deputy IS the former President. CVK 91430:
+    b.1966, biologist (LVU 1989, MSc 1995), president of Latvijas Basketbola savienība
+    - identical to ex-President Vējonis; LSM election coverage names him ''ekspresidents''.
+    X bio: ''Valsts prezidents (2015-2019), joprojām vienkārši cilvēks'', ~5149 tweets.
+    LSM list shows only FB.'
+- name: Jānis Džeriņš
+  first: Jānis
+  surname: Džeriņš
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Kurzeme
+  pos: 9
+  score: 46445
+  rank: 5
+  name_forms:
+  - Jānis Džeriņš
+  - Džeriņš
+  - Janis Dzerins
+  - Dzerins
+  role: 15. Saeimā ievēlēts — AS, Kurzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only; no X account found.'
+- name: Nellija Kleinberga
+  first: Nellija
+  surname: Kleinberga
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Kurzeme
+  pos: 10
+  score: 46133
+  rank: 6
+  name_forms:
+  - Nellija Kleinberga
+  - Kleinberga
+  role: 15. Saeimā ievēlēta — AS, Kurzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: 5
+  common_word: null
+  notes: 'HOMONYM: Nellija Kleinberga (b.1964, ex-Skrunda chair, ex-12th Saeima, LRA)
+    is NOT Viesturs Kleinbergs (@VKleinbergs in DB, Progresīvie). LSM list: FB+IG
+    only. @NKleinberga is ''Nena Kleinberga'' - different person.'
+- name: Andris Skride
+  first: Andris
+  surname: Skride
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Zemgale
+  pos: 3
+  score: 46821
+  rank: 2
+  name_forms:
+  - Andris Skride
+  - Skride
+  role: 15. Saeimā ievēlēts — AS, Zemgale
+  x_handle: AndrisSkride
+  x_evidence: https://www.lsm.lv/velesanas-2026/kandidati/apvienotais-saraksts---latvijas-zala-partija-latvijas-regionu-apvieniba-liepajas-partija/
+  homonym_of: null
+  common_word: null
+  notes: 'LSM AS candidate table links x.com/AndrisSkride; X bio: ''Apvienotais Saraksts.
+    Nr. 3 Zemgalē'' (matches YAML pos 3 Zemgale). ~4970 tweets. Cardiologist, ex-Saeima.'
+- name: Ilmārs Luksts
+  first: Ilmārs
+  surname: Luksts
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Zemgale
+  pos: 7
+  score: 44524
+  rank: 3
+  name_forms:
+  - Ilmārs Luksts
+  - Luksts
+  - Ilmars Luksts
+  role: 15. Saeimā ievēlēts — AS, Zemgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only. @IlmarsLuksts display name ''Ilmārs'', 0 tweets, empty
+    bio - no tie.'
+- name: Juris Lazdiņš
+  first: Juris
+  surname: Lazdiņš
+  female: false
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Zemgale
+  pos: 6
+  score: 43516
+  rank: 5
+  name_forms:
+  - Juris Lazdiņš
+  - Lazdiņš
+  - Juris Lazdins
+  - Lazdins
+  role: 15. Saeimā ievēlēts — AS, Zemgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: false
+  notes: 'Farmer from Dobele (CVK). @jurislazdins exists (335 tweets, empty bio) -
+    no tie to this person, not accepted. Operatora lēmums 2026-10-05: bez _COMMON_WORD_FORMS
+    sarga; vārdabrāļus ķer T13 audits.'
+- name: Baiba Atmane
+  first: Baiba
+  surname: Atmane
+  female: true
+  list_nr: 7
+  list_short: AS
+  party: Apvienotais saraksts
+  region: Zemgale
+  pos: 15
+  score: 43216
+  rank: 6
+  name_forms:
+  - Baiba Atmane
+  - Atmane
+  role: 15. Saeimā ievēlēta — AS, Zemgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'LSM list: FB only. @baibaatmane exists (display ''Baiba'', 23 tweets, empty
+    bio) - no tie, not accepted; could be checked by hand.'
+- name: Regīna Ločmele
+  first: Regīna
+  surname: Ločmele
+  female: true
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Rīga
+  pos: 4
+  score: 42154
+  rank: 2
+  name_forms:
+  - Regīna Ločmele
+  - Ločmele
+  - Regina Locmele
+  - Locmele
+  role: 15. Saeimā ievēlēta — LPV, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'X kandidāts @Regina_Locmele (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Display name ''Regīna Ločmele'', location Riga, bio ''Media & PR & Master of Social
+    Science'' (her career: journalist/PR). DORMANT: only 1 tweet (2014, Russian),
+    so it yields no feed. Ex-journalist, but now an elected politician -> first_party
+    if seeded at all. Verified via api.fxtwitter.com/Regina_Locmele (x.com returns
+    402).'
+- name: Andrejs Klementjevs
+  first: Andrejs
+  surname: Klementjevs
+  female: false
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Rīga
+  pos: 2
+  score: 41279
+  rank: 3
+  name_forms:
+  - Andrejs Klementjevs
+  - Klementjevs
+  role: 15. Saeimā ievēlēts — LPV, Rīga
+  x_handle: Klementjevs
+  x_evidence: https://x.com/Klementjevs
+  homonym_of: null
+  common_word: null
+  notes: 'Display name ''Andrejs Klementjevs'', 1787 tweets, active through 2026-10-02
+    (LPV-line posts on Progresīvie/Rasima/airBaltic). Reposts of TV24 #presesklubs
+    naming ''Andrejs Klementjevs, Rīgas domes LPV''. Homonym check: not Jefimijs/Ivans
+    Klementjevs.'
+- name: Roberts Žemaitis
+  first: Roberts
+  surname: Žemaitis
+  female: false
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Rīga
+  pos: 6
+  score: 40900
+  rank: 4
+  name_forms:
+  - Roberts Žemaitis
+  - Žemaitis
+  - Roberts Zemaitis
+  - Zemaitis
+  role: 15. Saeimā ievēlēts — LPV, Rīga
+  x_handle: robertszemaitis
+  x_evidence: https://x.com/robertszemaitis
+  homonym_of: null
+  common_word: null
+  notes: Display name 'Roberts Žemaitis', bio empty, 397 tweets, active Sep-Oct 2026
+    with LPV-line content ('Šleseram ir taisnība! RAILBALTICA...', fuel prices). Self-styled
+    blogger/digital creator (jauns.lv 'Blogeri ... kas tika Rīgas domē') - now politician,
+    first_party.
+- name: Jevgēnija Šafraneka
+  first: Jevgēnija
+  surname: Šafraneka
+  female: true
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Rīga
+  pos: 7
+  score: 40321
+  rank: 6
+  name_forms:
+  - Jevgēnija Šafraneka
+  - Šafraneka
+  - Jevgenija Safraneka
+  - Safraneka
+  role: 15. Saeimā ievēlēta — LPV, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'X kandidāts @JSafraneka (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Found by handle probe, NOT linked from any page. Display name ''Jevgēnija Šafraneka''
+    (exact diacritics, very rare surname), bio empty, 235 tweets, LV/RU commentary
+    on Latvian politics (mentions Rīgas dome, Latkovskis, Hermanis); latest tweet
+    seen 2024-03-21. No explicit LPV/office tie -> operator check before seeding.
+    Described in search snippets as journalist/YouTube channel director -> flag for
+    feed_type.'
+- name: Dana Šlesere
+  first: Dana
+  surname: Šlesere
+  female: true
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Vidzeme
+  pos: 17
+  score: 25626
+  rank: 2
+  name_forms:
+  - Dana Šlesere
+  - Šlesere
+  - Dana Slesere
+  - Slesere
+  role: 15. Saeimā ievēlēta — LPV, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: 3
+  common_word: null
+  notes: No X account found (probed DanaSlesere, Dana_Slesere, danaslesere, itsdanisle
+    - none). Has TikTok @itsdanisle. Did NOT use SlesersAinars or Ričards Šlesers'
+    accounts.
+- name: Eduards Zivtiņš
+  first: Eduards
+  surname: Zivtiņš
+  female: false
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Vidzeme
+  pos: 20
+  score: 25456
+  rank: 3
+  name_forms:
+  - Eduards Zivtiņš
+  - Zivtiņš
+  - Eduards Zivtins
+  - Zivtins
+  role: 15. Saeimā ievēlēts — LPV, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: 153
+  common_word: null
+  notes: x.com/EduardsZivtins exists with display name 'Eduards Zivtiņš' (joined 2022-09-20,
+    0 tweets, empty bio) - nothing ties it to him and it carries no content; not proposed.
+    Not Edmunds Zivtiņš' account.
+- name: Olga Petkeviča
+  first: Olga
+  surname: Petkeviča
+  female: true
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Latgale
+  pos: 4
+  score: 34727
+  rank: 1
+  name_forms:
+  - Olga Petkeviča
+  - Petkeviča
+  - Olga Petkevica
+  - Petkevica
+  role: 15. Saeimā ievēlēta — LPV, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'X kandidāts @OlgaPetkevica (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Display name ''Olga Petkevica'', bio empty, 108 tweets; content = Daugavpils activist
+    style posts linking to her TikTok (@olgapetkevica, same handle, RU/LV videos on
+    Latvian state/language issues). DORMANT: latest tweet seen 2023-10-04. Not to
+    be confused with @Como70Olga (Olga Petkevich).'
+- name: Aleksejs Mackevičs
+  first: Aleksejs
+  surname: Mackevičs
+  female: false
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Latgale
+  pos: 5
+  score: 28300
+  rank: 3
+  name_forms:
+  - Aleksejs Mackevičs
+  - Mackevičs
+  - Aleksejs Mackevics
+  - Mackevics
+  role: 15. Saeimā ievēlēts — LPV, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found (search + probes; @mackevics is a 'Jānis', @aleksejs_m
+    is unrelated). School director in Augšdaugavas novads.
+- name: Jekaterina Ivanova
+  first: Jekaterina
+  surname: Ivanova
+  female: true
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Latgale
+  pos: 9
+  score: 26080
+  rank: 5
+  name_forms:
+  - Jekaterina Ivanova
+  - Ivanova
+  role: 15. Saeimā ievēlēta — LPV, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found; very common name (many homonyms), would need an explicit
+    link. Ex-Viļāni council chair, Rēzeknes novads.
+- name: Aivars Kraps
+  first: Aivars
+  surname: Kraps
+  female: false
+  list_nr: 8
+  list_short: LPV
+  party: Latvija Pirmajā Vietā
+  region: Zemgale
+  pos: 2
+  score: 12472
+  rank: 2
+  name_forms:
+  - Aivars Kraps
+  - Kraps
+  role: 15. Saeimā ievēlēts — LPV, Zemgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: false
+  notes: 'No X account found (search + probes AivarsKraps, aivarskraps, KrapsAivars).
+    Ex-Jēkabpils mayor. Operatora lēmums 2026-10-05: bez _COMMON_WORD_FORMS sarga;
+    vārdabrāļus ķer T13 audits.'
+- name: Rūdolfs Brēmanis
+  first: Rūdolfs
+  surname: Brēmanis
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 2
+  score: 55387
+  rank: 2
+  name_forms:
+  - Rūdolfs Brēmanis
+  - Brēmanis
+  - Rudolfs Bremanis
+  - Bremanis
+  role: 15. Saeimā ievēlēts — SV/AJ, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'X kandidāts @BmanRudolfs (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Bio only ''Latvian''; content ties it: posts SV/AJ campaign (''MĒS JAU NOBALSOJĀM''),
+    shares ''Ārpolitikas debates: Brēmanis vs Smiltēns'' (retweeted by party leader
+    @StepanenkoJulij, 2026-09-29). 179 followers, active. Verified via twikit profile+timeline
+    (x.com returns 402 to fetch). Not a journalist (party leader/activist; also runs
+    TikTok/YouTube).'
+- name: Ļubova Švecova
+  first: Ļubova
+  surname: Švecova
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 3
+  score: 52893
+  rank: 3
+  name_forms:
+  - Ļubova Švecova
+  - Švecova
+  - Lubova Svecova
+  - Svecova
+  role: 15. Saeimā ievēlēta — SV/AJ, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found (web + X user search, LV and RU spellings). Active on
+    Facebook (lubova.svec). @LubovaS / @LubovSvecova not tied to her.
+- name: Jūlija Sohina
+  first: Jūlija
+  surname: Sohina
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 6
+  score: 52713
+  rank: 4
+  name_forms:
+  - Jūlija Sohina
+  - Sohina
+  - Julija Sohina
+  role: 15. Saeimā ievēlēta — SV/AJ, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found (web + X search Sohina/Сохина). Only an empty 'юлия сохина'
+    account with 0 tweets, untied.
+- name: Natālija Ābola
+  first: Natālija
+  surname: Ābola
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 7
+  score: 51907
+  rank: 5
+  name_forms:
+  - Natālija Ābola
+  - Ābola
+  - Natalija Abola
+  - Abola
+  role: 15. Saeimā ievēlēta — SV/AJ, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: true
+  notes: 'X kandidāts @NatalijaAbola (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Dormant (11 tweets, last 2019-01). 2017 tweets promote party ''Gods kalpot mūsu
+    Latvijai'' candidates/women''s slate — matches her GKR/GKL political history (lv.wikipedia
+    Natālija Ābola). Empty bio. JOURNALIST FLAG: TV presenter/producer (TV Alter A).
+    Ignore @AbolaNatalija (''adult teenager'', 0 tweets).'
+- name: Inna Djeri
+  first: Inna
+  surname: Djeri
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 4
+  score: 50369
+  rank: 6
+  name_forms:
+  - Inna Djeri
+  - Djeri
+  role: 15. Saeimā ievēlēta — SV/AJ, Rīga
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: 'X kandidāts @DjeriInna (medium) — operatora lēmums 2026-10-05: nepievienots.
+    Dormant (1 tweet, 2020). Bio (RU) ''Недвижимость, политика, социальная справедливость''
+    matches her real-estate profession; only tweet is RT of @savieniba naming ''Rīgas
+    domes deputātes kandidāte Inna Djeri''. Main channels are Telegram/TikTok.'
+- name: Artūrs Klēbahs
+  first: Artūrs
+  surname: Klēbahs
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Rīga
+  pos: 5
+  score: 49780
+  rank: 7
+  name_forms:
+  - Artūrs Klēbahs
+  - Klēbahs
+  - Arturs Klebahs
+  - Klebahs
+  role: 15. Saeimā ievēlēts — SV/AJ, Rīga
+  x_handle: AKlebahs
+  x_evidence: https://x.com/AKlebahs
+  homonym_of: null
+  common_word: null
+  notes: 'Low activity (14 tweets, 21 followers) but self-identifying: 2026-01-06
+    tweet ''Pilna tiešraide manos profilos Artūrs Klēbahs #artursklebahs #apvienibajaunlatviesi
+    #rigasdome''.'
+- name: Karina Sprūde
+  first: Karina
+  surname: Sprūde
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Vidzeme
+  pos: 1
+  score: 22278
+  rank: 1
+  name_forms:
+  - Karina Sprūde
+  - Sprūde
+  - Karina Sprude
+  - Sprude
+  role: 15. Saeimā ievēlēta — SV/AJ, Vidzeme
+  x_handle: KarinaSprude
+  x_evidence: https://suverenavara.lv/parstavniecibas/
+  homonym_of: null
+  common_word: null
+  notes: 'Party site links x.com/KarinaSprude; bio ''Ādažu novada deputāte / 13.Saeimas
+    deputāte''; uses #karinasprude. 40 tweets, active Sep 2026.'
+- name: Aleksejs Ignatjevs
+  first: Aleksejs
+  surname: Ignatjevs
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Vidzeme
+  pos: 3
+  score: 20748
+  rank: 2
+  name_forms:
+  - Aleksejs Ignatjevs
+  - Ignatjevs
+  role: 15. Saeimā ievēlēts — SV/AJ, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found; namesake accounts (@AIgnatjevs, @TTVAleksejs08 etc.)
+    empty and untied.
+- name: Gita Plaude
+  first: Gita
+  surname: Plaude
+  female: true
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Vidzeme
+  pos: 2
+  score: 20227
+  rank: 3
+  name_forms:
+  - Gita Plaude
+  - Plaude
+  role: 15. Saeimā ievēlēta — SV/AJ, Vidzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found; @Bagami123 'Gita Plaude' has 0 tweets/0 followers, untied.
+- name: Vjačeslavs Stepaņenko
+  first: Vjačeslavs
+  surname: Stepaņenko
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Latgale
+  pos: 1
+  score: 21037
+  rank: 1
+  name_forms:
+  - Vjačeslavs Stepaņenko
+  - Stepaņenko
+  - Vjaceslavs Stepanenko
+  - Stepanenko
+  role: 15. Saeimā ievēlēts — SV/AJ, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: 236
+  common_word: null
+  notes: 'HOMONYM: no account tied to him (LV/RU searches give only unrelated Вячеслав
+    Степаненко accounts). Do NOT confuse with wife''s account @StepanenkoJulij (Jūlija
+    Stepaņenko, 2.3k followers) — note: that handle is NOT in the DB for tracked Jūlija
+    Stepaņenko (x_handle NULL, no social_accounts row); separate seeding gap for the
+    orchestrator.'
+- name: Andrejs Jakovļevs
+  first: Andrejs
+  surname: Jakovļevs
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Latgale
+  pos: 2
+  score: 16778
+  rank: 2
+  name_forms:
+  - Andrejs Jakovļevs
+  - Jakovļevs
+  - Andrejs Jakovlevs
+  - Jakovlevs
+  role: 15. Saeimā ievēlēts — SV/AJ, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No tied account. @Andrejs__ (Riga, last tweet 2013, jokes/marathon RTs) and
+    @aicis_sa (3 tweets 2013) have no political/Latgale tie — not proposed.
+- name: Leontijs Morozs
+  first: Leontijs
+  surname: Morozs
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Latgale
+  pos: 3
+  score: 16633
+  rank: 3
+  name_forms:
+  - Leontijs Morozs
+  - Morozs
+  role: 15. Saeimā ievēlēts — SV/AJ, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found (Morozs / Леонтий Мороз searches).
+- name: Edgars Dārznieks
+  first: Edgars
+  surname: Dārznieks
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Kurzeme
+  pos: 1
+  score: 6668
+  rank: 1
+  name_forms:
+  - Edgars Dārznieks
+  - Dārznieks
+  - Edgars Darznieks
+  - Darznieks
+  role: 15. Saeimā ievēlēts — SV/AJ, Kurzeme
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: true
+  notes: Common-word surname, noisy. Namesake accounts @EdgarsDarznieks (Genshin RT,
+    3 tweets), @EdiDcap (0 tweets), @darznieks (unrelated) — none tied to him.
+- name: Andrejs Pagors
+  first: Andrejs
+  surname: Pagors
+  female: false
+  list_nr: 1
+  list_short: SV/AJ
+  party: Suverēnā vara/Jaunlatvieši
+  region: Zemgale
+  pos: 1
+  score: 14807
+  rank: 1
+  name_forms:
+  - Andrejs Pagors
+  - Pagors
+  role: 15. Saeimā ievēlēts — SV/AJ, Zemgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found.
+- name: Ivars Āboliņš
+  first: Ivars
+  surname: Āboliņš
+  female: false
+  list_nr: 5
+  list_short: NA
+  party: Nacionālā apvienība
+  region: Rīga
+  pos: 3
+  score: 19198
+  rank: 3
+  name_forms:
+  - Ivars Āboliņš
+  - Āboliņš
+  - Ivars Abolins
+  - Abolins
+  role: 15. Saeimā ievēlēts — NA, Rīga
+  x_handle: Ivars_Abolins
+  x_evidence: https://x.com/Ivars_Abolins
+  homonym_of: null
+  common_word: true
+  notes: 'Bio ''Kultūras ministrijas parlamentārais sekretārs'' (his office since
+    June 2026, NA); earlier bio ''NEPLP priekšsēdētājs'' (tvnet/apollo coverage of
+    his tweets). 3.35k followers, very active. JOURNALIST FLAG: former TV journalist/NEPLP
+    chair, now NA politician — first-party.'
+- name: Rolands Keišs
+  first: Rolands
+  surname: Keišs
+  female: false
+  list_nr: 5
+  list_short: NA
+  party: Nacionālā apvienība
+  region: Latgale
+  pos: 3
+  score: 7469
+  rank: 1
+  name_forms:
+  - Rolands Keišs
+  - Keišs
+  - Rolands Keiss
+  - Keiss
+  role: 15. Saeimā ievēlēts — NA, Latgale
+  x_handle: null
+  x_evidence: null
+  homonym_of: null
+  common_word: null
+  notes: No X account found (Keišs/Keiss searches; only unrelated namesakes).
+- name: Mārtiņš Hiršs
+  first: Mārtiņš
+  surname: Hiršs
+  female: false
+  list_nr: 14
+  list_short: PRO
+  party: Progresīvie
+  region: Rīga
+  pos: 43
+  score: 38015
+  rank: 4
+  name_forms:
+  - Mārtiņš Hiršs
+  - Hiršs
+  - Martins Hirss
+  - Hirss
+  role: 15. Saeimā ievēlēts — PRO, Rīga
+  x_handle: MHirss
+  x_evidence: https://x.com/MHirss
+  homonym_of: null
+  common_word: null
+  notes: Display name Mārtiņš Hiršs, bio 'Politikas & starptautisko attiecību PhD'
+    matches CVK CV (PhD politics & IR); tweets on Russian influence (his research
+    field, TED talk). 588 followers, active 2026.
+- name: Krista Burāne
+  first: Krista
+  surname: Burāne
+  female: true
+  list_nr: 14
+  list_short: PRO
+  party: Progresīvie
+  region: Rīga
+  pos: 6
+  score: 37000
+  rank: 6
+  name_forms:
+  - Krista Burāne
+  - Burāne
+  - Krista Burane
+  - Burane
+  role: 15. Saeimā ievēlēta — PRO, Rīga
+  x_handle: KristaBurane
+  x_evidence: https://x.com/KristaBurane
+  homonym_of: null
+  common_word: null
+  notes: Profile website link resolves to https://www.kristaburane.com/ (her personal
+    director site); location Rīga; theatre-related RTs. 1.6k followers; last own activity
+    Jan 2025 (semi-dormant).

@@ -1,0 +1,180 @@
+[
+ {
+  "doc_id": 13003,
+  "pid": 64,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 13003,
+    "topic": "Ārpolitika",
+    "stance": "Uzskata, ka deeskalācija kļūs par realitāti, ja de facto atsāksies kuģošana Hormuzā.",
+    "support": [
+     "ja de facto atsāksies kuģošana Hormuzā, tad deeskalācija kļūs par realitāti"
+    ],
+    "quote": "Naftas cena tikmēr vakar novēlās atpakaļ zem 100, vienubrīd pat par 22%, bet, ja de facto atsāksies kuģošana Hormuzā, tad deeskalācija kļūs par realitāti.",
+    "confidence": 0.7,
+    "reasoning": "Paša Vītola tvīts; nosacīta prognoze par deeskalāciju, nosacījums «ja» saglabāts. Sākuma jautājums («Madmans theory nostrādāja?») un dzirdētais par ķīniešiem nav pārvērsti apgalvojumā; ironiskā piezīme par LSM beigās apzināti netiek ekstraktēta kā pozīcija.",
+    "salience": 0.6,
+    "stated_at": "2026-04-08"
+   }
+  ]
+ },
+ {
+  "doc_id": 71133,
+  "pid": 65,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 71133,
+    "topic": "Sociālā politika",
+    "stance": "Atbildē norāda, ka sociālo dzīvokļu prasības ir specifiskas, un jautā, kura no likumā noteiktajām sociālo klientu grupām atbilst «deklasētiem elementiem», apšaubot runu par «nepareizajiem» īrniekiem.",
+    "support": [
+     "Sociālo dzīvokļu prasības ir specifiskas: 1-2istabas pieejamas personām",
+     "Par “nepareizajiem” īrniekiem - kura grupa no likumā noteiktajiem soc.klientiem atbilst deklasētiem elementiem?"
+    ],
+    "quote": null,
+    "confidence": 0.55,
+    "reasoning": "NEEDS_REVIEW: reakcija bez redzama konteksta (atbilde @saliktengriba) un jautājuma forma. Paša Treijas atbilde; skaidrs faktiskais apgalvojums par prasībām un iebildums pret «nepareizo» īrnieku ierāmējumu jautājuma formā.",
+    "salience": 0.5,
+    "stated_at": "2026-07-20"
+   }
+  ]
+ },
+ {
+  "doc_id": 26996,
+  "pid": 15,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 26996,
+    "topic": "Ukraina un Krievija",
+    "stance": "Paziņo, ka ir lēmusi iekļaut trīs Krievijas pilsoņus — Mihailu Švidkoju, Anastasiju Karnejevu un Jekaterinu Vinokurovu — Latvijas nevēlamo personu sarakstā un aizliegt viņiem ieceļot uz nenoteiktu laiku.",
+    "support": [
+     "Esmu lēmusi LR nevēlamo personu (persona non grata) sarakstā iekļaut 3 KF pilsoņus",
+     "aizliegt Mihailam Švidkojam, Anastasijai Karnejevai, Jekaterinai Vinokurovai ieceļot",
+     "uz nenoteiktu laiku, saskaņā ar Imigrācijas likuma 61.p. 2.d."
+    ],
+    "quote": "Esmu lēmusi LR nevēlamo personu (persona non grata) sarakstā iekļaut 3 KF pilsoņus un aizliegt Mihailam Švidkojam, Anastasijai Karnejevai, Jekaterinai Vinokurovai ieceļot 🇱🇻 uz nenoteiktu laiku, saskaņā ar Imigrācijas likuma 61.p. 2.d.",
+    "confidence": 0.9,
+    "reasoning": "Paša Bražes tvīts pirmajā personā par viņas pieņemtu lēmumu — dokumentēta paša rīcība. Pamatojums tekstā nav dots; tēma pēc lēmuma adresāta (Krievijas pilsoņi).",
+    "salience": 0.7,
+    "stated_at": "2026-04-27"
+   }
+  ]
+ },
+ {
+  "doc_id": 85504,
+  "pid": 242,
+  "decision": "empty",
+  "empty_reason": "Žurnālista relay slots (journalist|relay): atklāšanas kanāls, ne pozīciju avots. Tvīts komentē Valaiņa vērtējumu par Kulberga valdību; tas nav paša žurnālista parakstīts viedokļraksts.",
+  "claims": []
+ },
+ {
+  "doc_id": 28123,
+  "pid": 192,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 28123,
+    "topic": "Pašvaldības",
+    "stance": "Ironizē par dzirdēto, ka jūnijā divpadsmit Rīgas domes kapsētu pārvaldes darbinieki par «nieka» 20 tūkstošiem eiro braukšot komandējumā uz kapsētu konferenci Turīnā.",
+    "support": [
+     "Dzirdēju,ka jūnijā divpadsmit Rīgas domes kapsētu pārvaldes darbinieki par nieka 20 tūkstošiem eiro braukšot komandējumā uz Turīnu",
+     "Nopietns pieredzes apmaiņas pasākums būšot- kapsētu konference",
+     "Nez, VIP kapliča arī būs?"
+    ],
+    "quote": null,
+    "confidence": 0.55,
+    "reasoning": "NEEDS_REVIEW: ironija un dzirdēta (nepārbaudīta) informācija. Paša Seržanta tvīts; kritika izteikta ironiski, tāpēc citāts netiek glabāts un «dzirdēju»/«braukšot» atruna saglabāta.",
+    "salience": 0.4,
+    "stated_at": "2026-04-26"
+   }
+  ]
+ },
+ {
+  "doc_id": 6387,
+  "pid": 61,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 6387,
+    "topic": "Ārpolitika",
+    "stance": "Ironizē par formulējumu «dezinformācijas uzbrukums NATO», jautā, vai Bražes kundzei identificēt sevi ar NATO nav mazliet pārspīlējums, un raksturo viņu kā «klaunu, ne ministri».",
+    "support": [
+     "wow, dezinformācijas uzbrukums NATO",
+     "vai identificēt sevi ar NATO nav mazliet pārspīlējums Bražes kundze?",
+     "Klauns ne ministre"
+    ],
+    "quote": null,
+    "confidence": 0.5,
+    "reasoning": "NEEDS_REVIEW: ironija, jautājuma forma un reakcija bez redzama konteksta; ļoti īss teksts. Neutral slots ar first_party — paša Liepnieka tvīts; vērtējums par ministri nosaukts tieši («Klauns ne ministre»), tāpēc tā ir pozīcija, nevis tīrs sarkasms.",
+    "salience": 0.4,
+    "stated_at": "2026-04-04"
+   }
+  ]
+ },
+ {
+  "doc_id": 28120,
+  "pid": 192,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 28120,
+    "topic": "Koalīcija un partijas",
+    "stance": "Apgalvo, ka visās valstīs, kurās valdījuši marksisti vai viņiem līdzīgie, viss beidzies ar totalitārismu, diktatūru un «līķu kalniem», un kritizē Šuvajevu, kurš, viņaprāt, joprojām esot pārliecināts, ka Marksa idejas var izdoties realizēt.",
+    "support": [
+     "Absolūti visās valstīs,kurās jebkad ir valdījuši marksisti vai viņiem līdzīgie, vienmēr viss ir beidzies ar totalitārismu,diktatūru un līķu kalniem.",
+     "Bet Šuvājevs joprojām ir pārliecināts,ka Marksa idejas tomēr var izdoties realizēt"
+    ],
+    "quote": "Absolūti visās valstīs,kurās jebkad ir valdījuši marksisti vai viņiem līdzīgie, vienmēr viss ir beidzies ar totalitārismu,diktatūru un līķu kalniem.",
+    "confidence": 0.6,
+    "reasoning": "NEEDS_REVIEW: tēma neiederas skaidri nevienā grupā — ideoloģiska kritika pret politisko oponentu, izvēlēta «Koalīcija un partijas». Paša Seržanta tvīts; apgalvojums par marksismu tiešs, raksturojums par Šuvajeva pārliecību ietīts atrunā.",
+    "salience": 0.4,
+    "stated_at": "2026-04-28"
+   }
+  ]
+ },
+ {
+  "doc_id": 6616,
+  "pid": 29,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 6616,
+    "topic": "Aizsardzība un drošība",
+    "stance": "Uzskata, ka latviešu vīriešiem drīzāk vajag koncentrēties uz to, kā pašiem uzkrāt spēkus, lai varētu parūpēties par sevi, un ka neviens «mūs» nepataisīs par buferzonu, ja paši to nepieļausim.",
+    "support": [
+     "Latviešu vīriešiem drīzāk vajag sakoncentrēties un ar steigu domāt, kā pašiem max uzkrāt spēkus, lai paši varētu parūpēties par sevi.",
+     "Neviens mūs nekad mūžā par buferzonu nepataisīs, ja mēs paši to nepieļausim."
+    ],
+    "quote": "Neviens mūs nekad mūžā par buferzonu nepataisīs, ja mēs paši to nepieļausim.",
+    "confidence": 0.8,
+    "reasoning": "Paša Hermaņa ieraksts; skaidra nostāja par pašpaļāvību aizsardzībā, «drīzāk» un nosacījums «ja» saglabāti.",
+    "salience": 0.8,
+    "stated_at": "2026-04-04"
+   },
+   {
+    "document_id": 6616,
+    "topic": "Droni",
+    "stance": "Kritizē, ka piektajā kara gadā joprojām nav dronu apmācības skolas, un vēsta, ka MMN apsver, vai tautai pašai nesamesties privātam dronu apmācības centram ap 500 cilvēkiem ar Ukrainas veterāniem kā instruktoriem; aicina palīdzēt ar telpām.",
+    "support": [
+     "Iet piektais kara gads, bet joprojām nav izveidota dronu apmācības skola.",
+     "MMN partijā domā - varbūt negaidīt līdz mūsu mīkstie politiķi turpina nodarboties ar sabotāžu un tautai pašai samesties, lai nodibinātu privāto dronu apmācības centru? Ar mērķi sagatavot kādus 500 jaunus cilvēkus. Apmācības instruktorus MMN partija varētu noorganizēt no Ukrainas veterāniem.",
+     "Vajadzētu palīdzību ar telpām un vietējiem cilvēkiem."
+    ],
+    "quote": "Iet piektais kara gads, bet joprojām nav izveidota dronu apmācības skola.",
+    "confidence": 0.8,
+    "reasoning": "Paša Hermaņa ieraksts partijas vārdā; kritika un iecere ir viņa. Vilcinājums («domā - varbūt», «varētu») saglabāts ar «apsver»; strīdīgais «sabotāžas» apzīmējums politiķiem stance netiek atkārtots. Atšķirīgs pamatojums no pašpaļāvības pozīcijas, tāpēc cita tēma.",
+    "salience": 0.7,
+    "stated_at": "2026-04-04"
+   }
+  ]
+ }
+]

@@ -1,0 +1,18 @@
+q01 | Ukraina un Krievija | Latvijai jāturpina atbalstīt Ukrainu, kamēr karš nav beidzies. | par = atbalsts Ukrainai; pret = neitralitāte, neiesaistīties, nefinansēt
+  piezīme: CVK: programma min sadarbību ar Ukrainu NATO flanga kontekstā, bet atbalstu kara laikā neformulē. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): min Ukrainu sadarbības partneru sarakstā; atbalstu kara laikā nemin.
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma VAD nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): VAD nemin.
+q04 | Imigrācija | Darbaspēka ievešana no trešajām valstīm jāierobežo. | par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu
+  piezīme: CVK: programma sola gudru un cieņpilnu migrācijas politiku; par darbaspēka ierobežošanu neizsakās. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): sola 'gudru, tālredzīgu un drošu migrācijas politiku' — ierobežojumu neformulē.
+q05 | Valodu politika | Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē. | par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības
+  piezīme: CVK: programma valodu politiku nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): mazākumtautību valodas nemin.
+q06 | Budžets un finanses | Nekustamā īpašuma nodoklis vienīgajam mājoklim jāatceļ. | par = atcelt NĪN vienīgajam mājoklim; pret = saglabāt vai stiprināt NĪN
+  piezīme: CVK: programma NĪN nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): NĪN nemin.
+q07 | Pašvaldības | Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām. | par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā
+  piezīme: CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): 'taisnīgu un stabilu pašvaldību finanšu izlīdzināšanas modeli' — virzienu nenosauc.
+q08 | Valsts pārvalde | Ministriju skaits jāsamazina, tās apvienojot. | par = apvienot vai likvidēt ministrijas; pret = nav
+  piezīme: CVK: programma sola birokrātijas sloga novērtējumu; ministriju skaitu nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): ministriju apvienošanu nemin.
+q09 | Budžets un finanses | Pievienotās vērtības nodoklis pārtikai jāsamazina. | par = samazināt PVN pārtikai; pret = PVN nemainīt vai celt
+  piezīme: CVK: programma PVN pārtikai nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): PVN pārtikai nemin.
+q10 | Pensijas | Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt. | par = brīvprātīgs, izņemt, pārcelt uz 1. līmeni; pret = saglabāt obligātu
+  piezīme: CVK: programma pensiju 2. līmeni nemin. Pilnā programma (progresivie.lv, ~16 tūkst. zīmju, saīsinātā versija): pensiju 2. līmeni nemin.

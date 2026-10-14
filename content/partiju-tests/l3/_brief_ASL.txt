@@ -1,0 +1,8 @@
+q02 | Aizsardzība un drošība | Aizsardzībai jāatvēl vismaz 5 % no IKP. | par = 5 % vai vairāk; pret = samazināt vai pārdalīt aizsardzības budžetu
+  piezīme: CVK: programma sola NBS spējas un policijas algas; aizsardzības budžeta apjomu pret IKP nenosauc. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc.
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma min atbalstu VAD beidzējiem, bet par dienesta obligātumu neizsakās. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): sola atbalsta mehānismus 'Valsts aizsardzības dienesta beidzējiem' — VAD saglabāšanu netieši pieņem, bet neformulē.
+q09 | Budžets un finanses | Pievienotās vērtības nodoklis pārtikai jāsamazina. | par = samazināt PVN pārtikai; pret = PVN nemainīt vai celt
+  piezīme: CVK: programma PVN pārtikai nemin. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): PVN pārtikai nemin.
+q11 | Klimats | Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā. | par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē
+  piezīme: CVK: programma klimatneitralitāti nemin. Pilnā programma (austsaule.lv, ~11 tūkst. zīmju): klimatneitralitāti nemin.

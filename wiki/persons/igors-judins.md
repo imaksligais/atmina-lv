@@ -1,0 +1,14 @@
+---
+name: Igors Judins
+party: Stabilitātei!
+role: Saeimas deputāts (ārpus frakcijām)
+relationship_type: tracked
+positions: 3
+votes: 7242
+contradictions: 0
+mentioned_in: 48
+top_topics:
+- Degviela un enerģētika
+- Valsts pārvalde
+- Vēlēšanas
+---

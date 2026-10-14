@@ -1,0 +1,167 @@
+[
+  {
+    "doc_id": 24366,
+    "pid": 10,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 24366,
+        "topic": "Ukraina un Krievija",
+        "stance": "Uzskata par problēmu, ka Latvijā tikai 63 % sabiedrības spēj skaidri pateikt, ka Krievija ir vainīga iebrukumā Ukrainā, un šajā ziņā Latvija praktiski ir «vienā maisā» ar Ungāriju, Slovākiju un Bulgāriju; norāda uz Krievijas ietekmi uz salīdzinoši lielo Latvijas krievu sabiedrības daļu.",
+        "support": [
+          "Šī ir problēma, 🇱🇻 praktiski ir vienā maisā ar Ungāriju, Slovākiju, Bulgāriju",
+          "mēs Latvija tikai 63% sabiedrības spējam skaidri pateikt, ka 🇷🇺 ir vainīga pie iebrukuma 🇺🇦",
+          "Kāda tomēr ir 🇷🇺 ietekme uz salīdzinoši lielo Latvijas krievu sabiedrības daļu."
+        ],
+        "quote": "Šī ir problēma, 🇱🇻 praktiski ir vienā maisā ar Ungāriju, Slovākiju, Bulgāriju...",
+        "confidence": 0.8,
+        "reasoning": "Paša Kulberga tvīts; valstis apzīmētas ar karodziņiem, nozīme skaidra no konteksta. Skaidri nosauc problēmu; cēloņsakarību starp krievu kopienu un 63 % stance neapgalvo, tikai atstāsta abus apgalvojumus.",
+        "salience": 0.7,
+        "stated_at": "2026-04-24"
+      }
+    ]
+  },
+  {
+    "doc_id": 28048,
+    "pid": 188,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28048,
+        "topic": "Ukraina un Krievija",
+        "stance": "Uzskata, ka laikā, kad Krievija jau vairāk nekā četrus gadus karo Ukrainā, būtu pilnīgi nepieņemami ļaut krievu oligarhiem būvēt lielveikalu Rīgā, jo tieši šādi Krievija gadiem ilgi veidoja savu ietekmi Eiropā.",
+        "support": [
+          "Laikā, kad Krievija jau vairāk nekā četrus gadus karo Ukrainā, būtu pilnīgi nepieņemami ļaut krievu oligarhiem būvēt lielveikalu Rīgā.",
+          "Tieši šādi Krievija gadiem ilgi veidoja savu ietekmi Eiropā"
+        ],
+        "quote": "Laikā, kad Krievija jau vairāk nekā četrus gadus karo Ukrainā, būtu pilnīgi nepieņemami ļaut krievu oligarhiem būvēt lielveikalu Rīgā.",
+        "confidence": 0.9,
+        "reasoning": "Paša Vaideres tvīts ar tiešu, nepārprotamu vērtējumu; nosacījuma izteiksme «būtu» saglabāta. Tēma pēc pamatojuma (Krievijas ietekme), ne pēc instrumenta (būvniecība Rīgā).",
+        "salience": 0.6,
+        "stated_at": "2026-03-10"
+      }
+    ]
+  },
+  {
+    "doc_id": 26490,
+    "pid": 70,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 26490,
+        "topic": "Degviela un enerģētika",
+        "stance": "Uzskata, ka valstij jāmeklē risinājumi degvielas cenu kāpuma ierobežošanai: virspeļņas jeb solidaritātes maksājums var kalpot kā instruments nepamatota cenu kāpuma ierobežošanai, Latvijai būtu jāanalizē, piemēram, Polijas pieredze, un īstermiņā jādomā par atbalsta mehānismiem.",
+        "support": [
+          "valstij šajā situācijā ir jāmeklē risinājumi, kā tās ierobežot",
+          "tas var kalpot kā instruments, lai ierobežotu nepamatotu cenu kāpumu",
+          "Viņš uzskata, ka Latvijai būtu jāanalizē šādi piemēri un jāmeklē līdzīgi risinājumi"
+        ],
+        "quote": null,
+        "confidence": 0.65,
+        "reasoning": "Skaidrs atstāsts: la.lv atstāsta Auguļa teikto TV24 raidījumā «Ziņu top» ar atsauces verbiem («norāda», «uzsver», «viņaprāt»), teksts pilns, nostāja izriet tieši. Virsraksta «nekavējoties» ir redakcijas ierāmējums, stance to neņem. Amata titulu nelieku: raksts viņu sauc par Saeimas deputātu, ne ministru. Datums — publiskošanas diena (raidījuma datums nav norādīts).",
+        "salience": 0.7,
+        "stated_at": "2026-04-26"
+      }
+    ]
+  },
+  {
+    "doc_id": 3159,
+    "pid": 16,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 3159,
+        "topic": "Droni",
+        "stance": "Uzskata, ka šūnu apraides paziņojumu par dronu Krāslavas novadā vajadzēja nosūtīt, vienlaikus norāda, ka absolūti aizzīmogot gaisa telpu nav iespējams, bet detekcijas spēja un apziņošana jāpilnveido visu laiku.",
+        "support": [
+          "Šūnu apraides paziņojumu par dronu Krāslavas novadā vajadzēja nosūtīt, šādu uzskatu piektdien, 27. martā, LTV raidījumā \"Rīta panorāma\" pauda aizsardzības ministrs Andris Sprūds",
+          "Šādi incidenti pierobežā tiek piedzīvoti regulāri un absolūti aizzīmogot gaisa telpu nav iespējams",
+          "detekcijas spēja un apziņošana jāpilnveido visu laiku"
+        ],
+        "quote": "Šādi incidenti pierobežā tiek piedzīvoti regulāri un absolūti aizzīmogot gaisa telpu nav iespējams,",
+        "confidence": 0.75,
+        "reasoning": "Sprūds pats runā LTV «Rīta panorāmā»; Delfi atstāsta ar atsauces verbiem un tiešiem citātiem. Tēma Droni — bez drona pozīcija sabrūk. NBS iepriekšējais skaidrojums (incidents par īsu) ir cita avota balss, stance to neņem. Datums no teksta: piektdien, 27. martā.",
+        "salience": 0.8,
+        "stated_at": "2026-03-27"
+      },
+      {
+        "document_id": 3159,
+        "topic": "Aizsardzība un drošība",
+        "stance": "Uzsver kopīgā Baltijas valstu aizsardzības ministru paziņojumā, ka jāturpina stiprināt daudzslāņaina pretgaisa aizsardzība, un aicina būtiski palielināt un ilgtermiņā iezīmēt ES aizsardzības finansējumu, tostarp austrumu robežas stiprināšanai.",
+        "support": [
+          "apliecina nepieciešamību turpināt stiprināt daudzslāņainu pretgaisa aizsardzību",
+          "Mēs uzsveram nepieciešamību būtiski palielināt un ilgtermiņā iezīmēt Eiropas Savienības aizsardzības finansējumu, tostarp tās austrumu robežas stiprināšanai"
+        ],
+        "quote": null,
+        "confidence": 0.55,
+        "reasoning": "NEEDS_REVIEW: kopīgs trīs Baltijas valstu aizsardzības ministru paziņojums, ko Delfi nodeva Aizsardzības ministrija, nevis Sprūda individuāla runa; Sprūds kā ministrs ir viens no paziņojuma autoriem, tāpēc tas ir viņa dokumentēts akts, bet formulējums ir kolektīvs.",
+        "salience": 0.8,
+        "stated_at": "2026-03-27"
+      }
+    ]
+  },
+  {
+    "doc_id": 15393,
+    "pid": 24,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 15393,
+        "topic": "ES politika",
+        "stance": "Apsveic @magyarpeterMP un Ungārijas tautu ar vēsturisku vēlēšanu rezultātu un uzskata, ka tas rada iespēju pāriet no gadiem ilgas obstrukcijas uz paredzamāku un atbildīgāku iesaisti Eiropā, īpaši Ukrainas un kopīgās drošības jautājumos.",
+        "support": [
+          "Congratulations to @magyarpeterMP and the Hungarian people on a landmark result.",
+          "Hungary has shown that even a deeply entrenched system can be changed at the ballot box.",
+          "This creates an opening to move away from years of obstruction towards more predictable, responsible engagement in Europe - especially on Ukraine and shared security at a critical moment in time."
+        ],
+        "quote": "This creates an opening to move away from years of obstruction towards more predictable, responsible engagement in Europe - especially on Ukraine and shared security at a critical moment in time.",
+        "confidence": 0.6,
+        "reasoning": "Paša Kola tvīts angliski; apsveikuma ierāmējums, tāpēc 0.6 klase. Nav tikai rituāls apsveikums: satur vērtējumu, ar ko var nepiekrist (Ungārijas līdzšinējā rīcība — obstrukcija, rezultāts rada iespēju mainīt iesaisti Eiropā).",
+        "salience": 0.6,
+        "stated_at": "2026-04-13"
+      }
+    ]
+  },
+  {
+    "doc_id": 13712,
+    "pid": 118,
+    "decision": "empty",
+    "empty_reason": "Retorisks jautājums / sarkasms bez nosaukta viedokļa: Ņenaševa atstāsta Zivtiņa teikto un to izsmej ar jautājumu un emocijzīmēm, bet pašas nostāju apgalvojumā nenosauc.",
+    "claims": []
+  },
+  {
+    "doc_id": 13288,
+    "pid": 24,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 13288,
+        "topic": "ES politika",
+        "stance": "Apgalvo, ka Ungārija uztur «Kremļa karsto līniju», saskaņojot rīcību ar Maskavu, lai bloķētu Ukrainas ceļu uz ES, atceltu oligarhu sankcijas un saglabātu Krievijas naftas plūsmu, un Orbāna rīcību raksturo kā kalpību, nevis Ungārijas interešu aizstāvību.",
+        "support": [
+          "Hungary runs a Kremlin hotline - actively synchronising with Moscow to block Ukraine’s EU path, lift oligarch sanctions, and keep Russian oil flowing.",
+          "This is not defending Hungarian interests or sovereignty. This is just servility with a flag on it.",
+          "Makes you look small, Viktor."
+        ],
+        "quote": "This is not defending Hungarian interests or sovereignty.",
+        "confidence": 0.85,
+        "reasoning": "Paša Kola tvīts angliski ar tiešu, asu vērtējumu par Ungārijas valdību un Orbānu. Strīdīgie apzīmējumi atstāti kā viņa apgalvojums («Apgalvo», «raksturo kā»).",
+        "salience": 0.7,
+        "stated_at": "2026-04-08"
+      }
+    ]
+  },
+  {
+    "doc_id": 15125,
+    "pid": 57,
+    "decision": "empty",
+    "empty_reason": "Žurnālista slots (journalist, relay) — atklāšanas kanāls, ne pozīciju avots; turklāt teksts ir retorisks jautājums bez nosaukta viedokļa un bez izsekota politiķa.",
+    "claims": []
+  }
+]

@@ -1,0 +1,98 @@
+{% extends "base.html.j2" %}
+{% set active_page = "spriedzes" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}Spriedzes{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+{% set spv_lead %}
+      <p class="pagehead-lead">Kurš kuram uzbrūk, kurš kuru atbalsta un kur nostājas saduras: politiķu publiskie izteikumi par citiem politiķiem.</p>{% endset %}
+  {% call pagehead("Politisko spriedžu reģistrs", "Spriedzes", lead=spv_lead) %}
+      {{ metric("Kopā", tensions|length) }}
+  {%- endcall %}
+
+  <div class="filter-bar">
+    <div class="multi-select" id="type-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="type-trigger">
+        <span>Visi tipi</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt tipus" placeholder="Meklēt...">
+        {% for tt in tension_types %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ tt }}">
+          <span class="checkbox"></span>
+          <span>{{ type_labels.get(tt, tt) }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="party-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="party-trigger">
+        <span>Visas partijas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt partijas" placeholder="Meklēt...">
+        {% for party in parties %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ party }}">
+          <span class="checkbox"></span>
+          <span>{{ party }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+
+    <div class="multi-select" id="person-select">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="person-trigger">
+        <span>Visas personas</span>
+        <span class="arrow">&#9660;</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="Meklēt personas" placeholder="Meklēt...">
+        {% for person in persons %}
+        <div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ person }}">
+          <span class="checkbox"></span>
+          <span>{{ person }}</span>
+        </div>
+        {% endfor %}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" id="tensions-grid">
+    {% for t in tensions %}
+    <article class="card spv-card" data-type="{{ t.tension_type }}" data-party="{{ t.source_party or '' }}" data-source-person="{{ t.source_name }}" data-target-person="{{ t.target_name }}">
+      <div class="spv-head">
+        <p class="spv-pair">
+          <span class="spv-person"><a href="politiki/{{ t.source_slug }}.html" class="spv-name">{{ t.source_name }}</a>{% if t.source_party_chip %} <span class="pp-party-chip"{% if t.source_party_chip.color %} style="--party-color: {{ t.source_party_chip.color }}"{% endif %} title="{{ t.source_party_chip.name }}">{{ t.source_party_chip.short }}</span>{% endif %}</span>
+          <span class="spv-person"><span class="spv-arrow" aria-hidden="true">→</span><a href="politiki/{{ t.target_slug }}.html" class="spv-name">{{ t.target_name }}</a>{% if t.target_party_chip %} <span class="pp-party-chip"{% if t.target_party_chip.color %} style="--party-color: {{ t.target_party_chip.color }}"{% endif %} title="{{ t.target_party_chip.name }}">{{ t.target_party_chip.short }}</span>{% endif %}</span>
+        </p>
+        <span class="badge {{ t.badge }}">{{ t.type_label }}</span>
+      </div>
+      <p class="spv-desc">{{ t.description }}</p>
+      <div class="spv-foot">
+        {% if t.topic %}<span class="spv-topic">{{ t.topic }}</span>{% endif %}
+        <span class="spv-meta">
+          {%- if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">{{ t.source_domain or 'Avots' }} ↗</a> · {% endif -%}
+          {%- if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener">Atbilde ↗</a> · {% endif -%}
+          <time datetime="{{ t.date }}">{{ t.date }}</time>
+        </span>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/spv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

@@ -1,0 +1,137 @@
+# CVK 15. Saeimas vēlēšanu (2026-10-03) rezultāti — ģenerēts ar
+# scripts/fetch_cvk_results.py. `official` operators pārslēdz ar roku pēc
+# CVK oficiālā apstiprinājuma; skripts to pārnes nemainītu.
+source_url: https://dati.cvk.lv/SV2026/velesanu-rezultati/
+fetched_at: '2026-10-04 23:15:07'
+cvk_updated_at: 2026-10-04 23:08
+precincts_counted: 1059
+precincts_total: 1059
+provisional: true
+official: false
+eligible_voters: 1557615
+voted: 806641
+turnout_percent: 51.79
+valid_envelopes: 804501
+valid_marks: 793846
+seats_total: 100
+lists:
+- list_nr: 1
+  cvk_name: SUVERĒNĀ VARA / APVIENĪBA JAUNLATVIEŠI
+  votes: 94211
+  percent: 11.71
+  seats: 15
+  party_id: 19
+- list_nr: 2
+  cvk_name: '"Mēs mainām noteikumus"'
+  votes: 27579
+  percent: 3.428
+  seats: 0
+  party_id: 7
+- list_nr: 3
+  cvk_name: Politisko partiju apvienība "Saskaņas Centrs"
+  votes: 6598
+  percent: 0.82
+  seats: 0
+  party_id: 17
+- list_nr: 4
+  cvk_name: Zaļo un Zemnieku savienība
+  votes: 35405
+  percent: 4.401
+  seats: 0
+  party_id: 3
+- list_nr: 5
+  cvk_name: Nacionālā apvienība "Visu Latvijai!"-"Tēvzemei un Brīvībai/LNNK"
+  votes: 71579
+  percent: 8.897
+  seats: 10
+  party_id: 4
+- list_nr: 6
+  cvk_name: '"Gobzema saraksts"'
+  votes: 7900
+  percent: 0.982
+  seats: 0
+  party_id: 18
+- list_nr: 7
+  cvk_name: '"APVIENOTAIS SARAKSTS - Latvijas Zaļā partija, Latvijas Reģionu Apvienība, Liepājas partija"'
+  votes: 283892
+  percent: 35.288
+  seats: 41
+  party_id: 6
+- list_nr: 8
+  cvk_name: LATVIJA PIRMAJĀ VIETĀ
+  votes: 105198
+  percent: 13.076
+  seats: 17
+  party_id: 5
+- list_nr: 9
+  cvk_name: Jaunā VIENOTĪBA
+  votes: 51183
+  percent: 6.362
+  seats: 7
+  party_id: 1
+- list_nr: 10
+  cvk_name: JKP Jaunā konservatīvā partija
+  votes: 2628
+  percent: 0.327
+  seats: 0
+  party_id: 15
+- list_nr: 11
+  cvk_name: '"Latvijas attīstībai"'
+  votes: 17533
+  percent: 2.179
+  seats: 0
+  party_id: 8
+- list_nr: 12
+  cvk_name: '"Austošā Saule Latvijai"'
+  votes: 10696
+  percent: 1.33
+  seats: 0
+  party_id: 16
+- list_nr: 13
+  cvk_name: Politiskā partija "Stabilitātei!"
+  votes: 16062
+  percent: 1.997
+  seats: 0
+  party_id: 9
+- list_nr: 14
+  cvk_name: '"PROGRESĪVIE"'
+  votes: 63382
+  percent: 7.878
+  seats: 10
+  party_id: 2
+regions:
+- name: Rīga
+  eligible: 599242
+  voted: 278247
+  valid_envelopes: 276468
+  valid_marks: 273189
+  precincts_counted: 283
+  precincts_total: 283
+- name: Vidzeme
+  eligible: 400969
+  voted: 236783
+  valid_envelopes: 236618
+  valid_marks: 233707
+  precincts_counted: 273
+  precincts_total: 273
+- name: Latgale
+  eligible: 183759
+  voted: 86685
+  valid_envelopes: 86607
+  valid_marks: 84862
+  precincts_counted: 199
+  precincts_total: 199
+- name: Kurzeme
+  eligible: 174176
+  voted: 96250
+  valid_envelopes: 96197
+  valid_marks: 94879
+  precincts_counted: 148
+  precincts_total: 148
+- name: Zemgale
+  eligible: 199469
+  voted: 108676
+  valid_envelopes: 108611
+  valid_marks: 107209
+  precincts_counted: 156
+  precincts_total: 156

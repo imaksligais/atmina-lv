@@ -1,0 +1,2792 @@
+[
+ {
+  "id": 1,
+  "name": "Edgars Rinkēvičs",
+  "party": "Bezpartejisks",
+  "role": "Valsts prezidents",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Rinkēvičs\",\"Rinkēviča\",\"Rinkēvičam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "edgarsrinkevics"
+ },
+ {
+  "id": 2,
+  "name": "Evika Siliņa",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāte, Eiropas lietu komisijas priekšsēdētāja, bijusī Ministru prezidente",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Siliņa\",\"Siliņas\",\"Siliņai\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EvikaSilina"
+ },
+ {
+  "id": 3,
+  "name": "Ainārs Šlesers",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "LPV priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Šlesers\",\"Šlesera\",\"Šleseram\"]",
+  "negative_patterns": "[]",
+  "x_handle": "SlesersAinars"
+ },
+ {
+  "id": 5,
+  "name": "Viesturs Kleinbergs",
+  "party": "Progresīvie",
+  "role": "Rīgas mērs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Kleinbergs\",\"Kleinberga\",\"Kleinbergam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "VKleinbergs"
+ },
+ {
+  "id": 6,
+  "name": "Jānis Dombrava",
+  "party": "Nacionālā apvienība",
+  "role": "Iekšlietu ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dombrava\", \"Dombravas\", \"Dombravam\", \"Dombravu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "janisdombrava"
+ },
+ {
+  "id": 7,
+  "name": "Edvīns Šnore",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts, Iekšlietu ministrijas parlamentārais sekretārs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Šņore\", \"Šņores\", \"Šņorem\", \"Edvīns Šnore\", \"Šnore\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EdvinsSnore"
+ },
+ {
+  "id": 9,
+  "name": "Kristaps Krištopans",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Krištopans\", \"Krištopana\", \"Krištopānam\"]",
+  "negative_patterns": "[\"Dainis Krištopāns\", \"Melsungen\", \"handbolists\"]",
+  "x_handle": "Chapis"
+ },
+ {
+  "id": 10,
+  "name": "Andris Kulbergs",
+  "party": "Apvienotais saraksts",
+  "role": "Ministru prezidents",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Kulbergs\", \"Kulberga\", \"Kulbergam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AndrisKulbergs"
+ },
+ {
+  "id": 12,
+  "name": "Andris Šuvajevs",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts, Progresīvo frakcijas vadītājs, Ministru prezidenta amata kandidāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Šuvajevs\", \"Šuvajeva\", \"Šuvajevam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "suvajevs"
+ },
+ {
+  "id": 13,
+  "name": "Jānis Hermanis",
+  "party": "MMN",
+  "role": "Finanšu eksperts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Hermanis\", \"Jāņa Hermaņa\", \"Jānim Hermanim\"]",
+  "negative_patterns": "[\"Hermanis Dovgijs\"]",
+  "x_handle": "J_Hermanis"
+ },
+ {
+  "id": 14,
+  "name": "Edmunds Jurēvics",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts, JV frakcijas vadītājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jurēvics\", \"Jurēvica\", \"Jurēvicam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EdmundsJurevics"
+ },
+ {
+  "id": 15,
+  "name": "Baiba Braže",
+  "party": "Jaunā Vienotība",
+  "role": "Ārlietu ministre",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Baiba Braže\", \"Braže\", \"Bražes\", \"Bražei\", \"Braži\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Braze_Baiba"
+ },
+ {
+  "id": 16,
+  "name": "Andris Sprūds",
+  "party": "Progresīvie",
+  "role": "Aizsardzības ministrs (atkāpies)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Sprūds\", \"Sprūda\", \"Sprūdam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "andrisspruds"
+ },
+ {
+  "id": 17,
+  "name": "Daiga Mieriņa",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas priekšsēdētāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mieriņa\", \"Mieriņas\", \"Mieriņai\"]",
+  "negative_patterns": "[]",
+  "x_handle": "DaigaMierina"
+ },
+ {
+  "id": 18,
+  "name": "Raivis Dzintars",
+  "party": "Nacionālā apvienība",
+  "role": "NA priekšsēdētājs, Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raivis Dzintars\", \"Dzintars\", \"Dzintara\", \"Dzintaram\"]",
+  "negative_patterns": "[\"Dzintaru koncertzāl\"]",
+  "x_handle": "RaivisDzintars"
+ },
+ {
+  "id": 19,
+  "name": "Arvils Ašeradens",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts, JV premjera amata kandidāts, bijušais finanšu ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ašeradens\", \"Ašeradena\", \"Ašeradenam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "aseradens"
+ },
+ {
+  "id": 21,
+  "name": "Roberts Zīle",
+  "party": "Nacionālā apvienība",
+  "role": "EP viceprezidents",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Roberts Zīle\", \"Zīle\", \"Zīles\", \"Zīlem\"]",
+  "negative_patterns": "[\"Krīzes vadības centra vadītāj\", \"krīzes vadības centra vadītāj\"]",
+  "x_handle": "robertszile"
+ },
+ {
+  "id": 22,
+  "name": "Mārtiņš Staķis",
+  "party": "Progresīvie",
+  "role": "EP deputāts, bijušais Rīgas mērs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Staķis\", \"Staķa\", \"Staķim\"]",
+  "negative_patterns": "[]",
+  "x_handle": "MStakis"
+ },
+ {
+  "id": 23,
+  "name": "Ivars Ijabs",
+  "party": "Latvijas attīstībai",
+  "role": "EP deputāts, Renew Europe VP",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ijabs\", \"Ijaba\", \"Ijabam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "ijabs"
+ },
+ {
+  "id": 24,
+  "name": "Rihards Kols",
+  "party": "Nacionālā apvienība",
+  "role": "EP deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Kols\", \"Kola\", \"Kolam\"]",
+  "negative_patterns": "[\"Barbara Martina\", \"Kenets Martins\", \"Kols Tomass\", \"Martinu ģimene\", \"Tomass Alens\", \"Tomass Allens\", \"Kolumbija\", \"Kolumbus\", \"Džons Kol\", \"Džona Kol\", \"Džonam Kol\", \"Džonu Kol\"]",
+  "x_handle": "RihardsKols"
+ },
+ {
+  "id": 25,
+  "name": "Viktors Valainis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Ekonomikas ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Valainis\", \"Valaiņa\", \"Valainim\"]",
+  "negative_patterns": "[\"Andris Valainis\"]",
+  "x_handle": "ViktorsValainis"
+ },
+ {
+  "id": 26,
+  "name": "Atis Švinka",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Švinka\", \"Švinkas\", \"Švinkam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "atis_svinka"
+ },
+ {
+  "id": 27,
+  "name": "Jānis Bordāns",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Bordāns\", \"Bordāna\", \"Bordānam\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 28,
+  "name": "Reinis Pozņaks",
+  "party": "Apvienotais saraksts",
+  "role": "EP deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Pozņaks\", \"Pozņaka\", \"Pozņakam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "poznaks"
+ },
+ {
+  "id": 29,
+  "name": "Alvis Hermanis",
+  "party": "MMN",
+  "role": "Valdes priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Alvis Hermanis\", \"Alvja Hermaņa\", \"Alvim Hermanim\", \"Alvi Hermani\"]",
+  "negative_patterns": "[\"Hermanis Dovgijs\"]",
+  "x_handle": "AlvisHermanis1"
+ },
+ {
+  "id": 30,
+  "name": "Jāzeps Baško",
+  "party": "MMN",
+  "role": "Valdes loceklis, ģenerālsekretārs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jāzeps Baško\", \"Jāzepa Baško\", \"Jāzepam Baško\", \"Baško\"]",
+  "negative_patterns": "[\"Baškortostān\", \"Baškorstān\", \"Baskortostan\", \"Baskorstan\"]",
+  "x_handle": "JazepsBasko"
+ },
+ {
+  "id": 31,
+  "name": "Ēriks Pucens",
+  "party": "MMN",
+  "role": "Valdes loceklis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ēriks Pucens\", \"Ērika Pucena\", \"Ērikam Pucenam\", \"Pucens\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EPucens"
+ },
+ {
+  "id": 33,
+  "name": "Ārands Ruģēns",
+  "party": "MMN",
+  "role": null,
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ārands Ruģēns\", \"Āranda Ruģēna\", \"Ārandam Ruģēnam\", \"Ārandu Ruģēnu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "RugensArands"
+ },
+ {
+  "id": 39,
+  "name": "Gints Aizupietis",
+  "party": "MMN",
+  "role": null,
+  "relationship_type": "tracked",
+  "name_forms": "[\"Gints Aizupietis\", \"Ginta Aizupieša\", \"Gintam Aizupietim\", \"Gintu Aizupieti\"]",
+  "negative_patterns": "[]",
+  "x_handle": "a_gints"
+ },
+ {
+  "id": 41,
+  "name": "Edvarts Krusts",
+  "party": "MMN",
+  "role": "Biedrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edvarts Krusts\", \"Edvarta Krusta\", \"Edvartam Krustam\", \"Edvartu Krustu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Krusts3"
+ },
+ {
+  "id": 45,
+  "name": "Mārtiņš Krusts",
+  "party": "MMN",
+  "role": "Biedrs",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Mārtiņš Krusts\", \"Mārtiņa Krusta\", \"Mārtiņam Krustam\", \"Mārtiņu Krustu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "krusts"
+ },
+ {
+  "id": 49,
+  "name": "Ainars Mielavs",
+  "party": "MMN",
+  "role": "Biedrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ainars Mielavs\", \"Ainara Mielava\", \"Ainaram Mielavam\", \"Ainaru Mielavu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "mielavs60"
+ },
+ {
+  "id": 50,
+  "name": "Edvards Ratnieks",
+  "party": "Nacionālā apvienība",
+  "role": "Rīgas vicemērs, NA mēra kandidāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edvards Ratnieks\", \"Edvarda Ratnieka\", \"Edvardam Ratniekam\", \"Edvardu Ratnieku\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EdvardsRatnieks"
+ },
+ {
+  "id": 51,
+  "name": "Ansis Pūpols",
+  "party": "Nacionālā apvienība",
+  "role": "Rīgas domes deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ansis Pūpols\", \"Anša Pūpola\", \"Ansim Pūpolam\", \"Ansi Pūpolu\", \"Pupols\", \"Pūpols\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AnsisPupols"
+ },
+ {
+  "id": 52,
+  "name": "Edgars Tavars",
+  "party": "Apvienotais saraksts",
+  "role": "Viedās administrācijas un reģionālās attīstības ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edgars Tāvars\", \"Tāvars\", \"Tāvara\", \"Tāvaram\", \"Tāvaru\", \"Edgars Tavars\", \"Tavars\", \"Tavara\", \"Tavaram\", \"Tavaru\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 53,
+  "name": "Maija Armaņeva",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Maija Armaņeva\", \"Armaņeva\", \"Armaņevu\", \"Armaņevai\", \"Armaņevas\"]",
+  "negative_patterns": "[]",
+  "x_handle": "maija_armaneva"
+ },
+ {
+  "id": 54,
+  "name": "Selma Teodora Levrence",
+  "party": "Progresīvie",
+  "role": "Bijusī 14. Saeimas deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Selma Teodora Levrence\", \"Selma Levrence\", \"Levrence Selma Teodora\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 55,
+  "name": "Augusts Brigmanis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Augusts Brigmanis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 56,
+  "name": "Ričards Šlesers",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ri\\u010dards \\u0160lesers\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 57,
+  "name": "Lato Lapsa",
+  "party": null,
+  "role": "Žurnālists",
+  "relationship_type": "journalist",
+  "name_forms": "[\"Lato Lapsa\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Lato_Lapsa"
+ },
+ {
+  "id": 58,
+  "name": "Jānis Sārts",
+  "party": null,
+  "role": "NATO StratCom direktors",
+  "relationship_type": "neutral",
+  "name_forms": "[\"J\\u0101nis S\\u0101rts\", \"Janis Sarts\"]",
+  "negative_patterns": "[]",
+  "x_handle": "janis_sarts"
+ },
+ {
+  "id": 59,
+  "name": "Kas Notiek Latvijā",
+  "party": null,
+  "role": "LTV1 raidījums",
+  "relationship_type": "organization",
+  "name_forms": "[\"Kas Notiek Latvij\\u0101\", \"KNL\"]",
+  "negative_patterns": "[]",
+  "x_handle": "KNL_LTV1"
+ },
+ {
+  "id": 60,
+  "name": "Ēriks Stendzenieks",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Rīgas domes deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"\\u0112riks Stendzenieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": "E_Stendzenieks"
+ },
+ {
+  "id": 61,
+  "name": "Jurģis Liepnieks",
+  "party": null,
+  "role": "Politiskais stratēģis",
+  "relationship_type": "neutral",
+  "name_forms": "[\"Jur\\u0123is Liepnieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": "JurgisLiepnieks"
+ },
+ {
+  "id": 62,
+  "name": "Edgars Svirskis",
+  "party": null,
+  "role": "Politiskais komentētājs",
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "ESvirskis"
+ },
+ {
+  "id": 63,
+  "name": "Filips Rajevskis",
+  "party": null,
+  "role": "Politiskais analītiķis",
+  "relationship_type": "neutral",
+  "name_forms": "[\"Filips Rajevskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Rajevskis"
+ },
+ {
+  "id": 64,
+  "name": "Guntars Vītols",
+  "party": "Apvienotais saraksts",
+  "role": "Finanšu ministra padomnieks, Saeimas deputāta kandidāts (AS, Rīga)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Guntars V\\u012btols\"]",
+  "negative_patterns": "[\"Jāzeps Vītols\", \"Jāzepa Vītol\", \"Edgars Vītols\", \"Edgara Vītol\", \"Virsdiriģentu svētk\", \"Vītolu iel\", \"Vitolu iel\"]",
+  "x_handle": "guntarsv"
+ },
+ {
+  "id": 65,
+  "name": "Elīna Treija",
+  "party": "Nacionālā apvienība",
+  "role": "Rīgas domes deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"El\\u012bna Treija\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Elina_Treija"
+ },
+ {
+  "id": 66,
+  "name": "Anda Čakša",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāte, bijusī Izglītības un zinātnes ministre",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Anda Čakša\", \"Anda Caksa\", \"Čakša\", \"Caksa\", \"Caksas\", \"Caksai\", \"Caksu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "andacaksa"
+ },
+ {
+  "id": 67,
+  "name": "Kaspars Briškens",
+  "party": "Progresīvie",
+  "role": "Tautsaimniecības komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Kaspars Briškens\", \"Kaspars Briskens\", \"Briškens\", \"Briskens\", \"Briskena\", \"Briskenam\", \"Briskenu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Briskens"
+ },
+ {
+  "id": 68,
+  "name": "Andrejs Judins",
+  "party": "Jaunā Vienotība",
+  "role": "Juridiskās komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "AndrejsJudins"
+ },
+ {
+  "id": 69,
+  "name": "Edvards Smiltēns",
+  "party": "Apvienotais saraksts",
+  "role": "Tieslietu ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edvards Smiltēns\", \"Edvards Smiltens\", \"Smiltēns\", \"Smiltens\", \"Smiltena\", \"Smiltenam\", \"Smiltenu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "EdvardsSmiltens"
+ },
+ {
+  "id": 70,
+  "name": "Uldis Augulis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Zemkopības ministrs, labklājības ministra pienākumu izpildītājs",
+  "relationship_type": "tracked",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "uldisaugulis"
+ },
+ {
+  "id": 71,
+  "name": "Nauris Puntulis",
+  "party": "Nacionālā apvienība",
+  "role": "Kultūras ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "NaurisPuntulis"
+ },
+ {
+  "id": 72,
+  "name": "Ilze Indriksone",
+  "party": "Nacionālā apvienība",
+  "role": "Izglītības un zinātnes ministre",
+  "relationship_type": "tracked",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "IIndriksone"
+ },
+ {
+  "id": 73,
+  "name": "Ināra Mūrniece",
+  "party": "Nacionālā apvienība",
+  "role": "Ārlietu komisijas priekšsēdētāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ināra Mūrniece\", \"Inara Murniece\", \"Mūrniece\", \"Murniece\", \"Murnieces\", \"Murniecei\", \"Murnieci\"]",
+  "negative_patterns": "[]",
+  "x_handle": "IMurniece"
+ },
+ {
+  "id": 74,
+  "name": "Oļegs Burovs",
+  "party": "Gods kalpot Rīgai",
+  "role": "Valsts pārvaldes komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Oļegs Burovs\", \"Olegs Burovs\", \"Burovs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "burovs_olegs"
+ },
+ {
+  "id": 75,
+  "name": "Juris Viļums",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts, AS frakcijas vadītājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Juris Viļums\", \"Juris Vilums\", \"Viļums\", \"Vilums\", \"Viluma\", \"Vilumam\", \"Vilumu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "jureits"
+ },
+ {
+  "id": 76,
+  "name": "Edmunds Cepurītis",
+  "party": "Progresīvie",
+  "role": "Eiropas lietu komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edmunds Cepurītis\", \"Cepurītis\", \"Cepurītis, Edmunds\"]",
+  "negative_patterns": "[\"Māris Cepurītis\", \"Māra Cepurīša\", \"Mārim Cepurītim\", \"Austrumeiropas politikas pētījumu centr\", \"Austrumeiropas pētījumu centr\"]",
+  "x_handle": null
+ },
+ {
+  "id": 77,
+  "name": "Skaidrīte Ābrama",
+  "party": null,
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Skaidrīte Ābrama\", \"Ābrama\", \"Ābrama, Skaidrīte\"]",
+  "negative_patterns": "[\"Ābrama lom\", \"Ābramu Druvienā\"]",
+  "x_handle": null
+ },
+ {
+  "id": 78,
+  "name": "Ingrīda Circene",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ingrīda Circene\", \"Circene\", \"Circene, Ingrīda\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 79,
+  "name": "Česlavs Batņa",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts, Izglītības, kultūras un zinātnes komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Česlavs Batņa\", \"Batņa\", \"Batņa, Česlavs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 80,
+  "name": "Raimonds Bergmanis",
+  "party": "Apvienotais saraksts",
+  "role": "Aizsardzības komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raimonds Bergmanis\", \"Bergmanis\", \"Bergmanis, Raimonds\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 81,
+  "name": "Mārtiņš Daģis",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Daģis\", \"Daģis\", \"Daģis, Mārtiņš\"]",
+  "negative_patterns": "[\"Jelgavas valstspilsētas pašvaldības\", \"Jelgavas valstspilsētas domes priekšsēdētāj\", \"mērs Mārtiņš Daģis\", \"mēru Mārtiņu Daģi\", \"mēra Mārtiņa Daģa\"]",
+  "x_handle": null
+ },
+ {
+  "id": 82,
+  "name": "Artūrs Butāns",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Artūrs Butāns\", \"Butāns\", \"Butāns, Artūrs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "ArtursButans"
+ },
+ {
+  "id": 83,
+  "name": "Gundars Daudze",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Gundars Daudze\", \"Daudze\", \"Daudze, Gundars\"]",
+  "negative_patterns": "[\"Daudzev\", \"Daudzeses pagast\", \"Daudzeses ģerbon\"]",
+  "x_handle": null
+ },
+ {
+  "id": 84,
+  "name": "Svetlana Čulkova",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Svetlana Čulkova\", \"Čulkova\", \"Čulkova, Svetlana\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 85,
+  "name": "Dāvis Mārtiņš Daugavietis",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dāvis Mārtiņš Daugavietis\", \"Daugavietis\", \"Daugavietis, Dāvis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "DDaugavietis45"
+ },
+ {
+  "id": 86,
+  "name": "Jānis Dinevičs",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Dinevičs\", \"Dinevičs\", \"Dinevičs, Jānis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 87,
+  "name": "Jekaterina Drelinga",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jekaterina Drelinga\", \"Drelinga\", \"Drelinga, Jekaterina\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 88,
+  "name": "Mārtiņš Felss",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Felss\", \"Felss\", \"Felss, Mārtiņš\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 89,
+  "name": "Jānis Grasbergs",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Grasbergs\", \"Grasbergs\", \"Grasbergs, Jānis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 90,
+  "name": "Liene Gātere",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Liene Gātere\", \"Gātere\", \"Gātere, Liene\", \"Liene Gatere\", \"Gatere\"]",
+  "negative_patterns": "[]",
+  "x_handle": "liene_gatere"
+ },
+ {
+  "id": 91,
+  "name": "Alīna Gendele",
+  "party": "Jaunā Vienotība",
+  "role": "Sporta apakškomisijas vadītāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Alīna Gendele\", \"Gendele\", \"Gendele, Alīna\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 92,
+  "name": "Iļja Ivanovs",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Iļja Ivanovs\", \"Ivanovs\", \"Ivanovs, Iļja\", \"Ilja Ivanovs\"]",
+  "negative_patterns": "[\"Dmitrijs Ivanovs\", \"Dmitrijam Ivanovam\", \"Dmitrija Ivanova\", \"ANIMARK\", \"Melderi (Jaunolain\"]",
+  "x_handle": null
+ },
+ {
+  "id": 93,
+  "name": "Ligita Gintere",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ligita Gintere\", \"Gintere\", \"Gintere, Ligita\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 94,
+  "name": "Mārcis Jencītis",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārcis Jencītis\", \"Jencītis\", \"Jencītis, Mārcis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 95,
+  "name": "Juris Jakovins",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Juris Jakovins\", \"Jakovins\", \"Jakovins, Juris\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 96,
+  "name": "Aleksandrs Kiršteins",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aleksandrs Kiršteins\", \"Kiršteins\", \"Kiršteins, Aleksandrs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 97,
+  "name": "Jefimijs Klementjevs",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jefimijs Klementjevs\", \"Klementjevs\", \"Klementjevs, Jefimijs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 98,
+  "name": "Jurģis Klotiņš",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jurģis Klotiņš\", \"Klotiņš\", \"Klotiņš, Jurģis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 99,
+  "name": "Zanda Kalniņa-Lukaševica",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas priekšsēdētājas biedre",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Zanda Kalniņa-Lukaševica\", \"Kalniņa-Lukaševica\", \"Kalniņa-Lukaševica, Zanda\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 100,
+  "name": "Jeļena Kļaviņa",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jeļena Kļaviņa\", \"Kļaviņa\", \"Kļaviņa, Jeļena\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 101,
+  "name": "Inese Kalniņa",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Inese Kalniņa\", \"Kalniņa\", \"Kalniņa, Inese\"]",
+  "negative_patterns": "[\"Tiesu administrācija\", \"Latvijas Nacionālais arhīvs\"]",
+  "x_handle": null
+ },
+ {
+  "id": 102,
+  "name": "Dmitrijs Kovaļenko",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dmitrijs Kovaļenko\", \"Kovaļenko\", \"Kovaļenko, Dmitrijs\"]",
+  "negative_patterns": "[\"Andrii Kovalenko\", \"Andrija Kovaļenko\", \"Andrijs Kovaļenko\", \"Centre for Countering Disinformation\", \"Pretdezinformācijas centra\", \"Dezinformācijas centra\", \"V.Kovaļenko individuālais uzņēmums\", \"V. Kovaļenko individuālais uzņēmums\"]",
+  "x_handle": null
+ },
+ {
+  "id": 103,
+  "name": "Irma Kalniņa",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Irma Kalniņa\", \"Kalniņa\", \"Kalniņa, Irma\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 104,
+  "name": "Līga Kļaviņa",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Līga Kļaviņa\", \"Kļaviņa\", \"Kļaviņa, Līga\"]",
+  "negative_patterns": "[\"Finanšu ministrija\", \"Altum\"]",
+  "x_handle": null
+ },
+ {
+  "id": 105,
+  "name": "Māris Kučinskis",
+  "party": "Apvienotais saraksts",
+  "role": "Finanšu ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Māris Kučinskis\", \"Kučinskis\", \"Kučinskis, Māris\"]",
+  "negative_patterns": "[]",
+  "x_handle": "MarisKucinskis"
+ },
+ {
+  "id": 106,
+  "name": "Līga Kozlovska",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Līga Kozlovska\", \"Kozlovska\", \"Kozlovska, Līga\"]",
+  "negative_patterns": "[\"Rihards Kozlovskis\", \"Riharda Kozlovska\", \"Rihardam Kozlovskim\", \"Rihardu Kozlovski\"]",
+  "x_handle": null
+ },
+ {
+  "id": 107,
+  "name": "Linda Liepiņa",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāte, LPV frakcijas vadītāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Linda Liepiņa\", \"Liepiņa\", \"Liepiņa, Linda\"]",
+  "negative_patterns": "[\"Korupcijas novēršanas un apkarošanas birojs\", \"izsludināta par mirušu\", \"\\\"Liepiņa\\\"\", \"\\\"Liepiņas\\\"\", \"Aldis Liepiņš\", \"A. Liepiņa\"]",
+  "x_handle": null
+ },
+ {
+  "id": 108,
+  "name": "Agnese Krasta",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Agnese Krasta\", \"Krasta\", \"Krasta, Agnese\"]",
+  "negative_patterns": "[\"Krastu mač\", \"labā krasta\", \"kreisā krasta\", \"Daugavas krast\", \"Krasta iela\"]",
+  "x_handle": null
+ },
+ {
+  "id": 109,
+  "name": "Ingmārs Līdaka",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ingmārs Līdaka\", \"Līdaka\", \"Līdaka, Ingmārs\"]",
+  "negative_patterns": "[\"Gunta Līdaka\", \"Guntas Līdakas\", \"G. Līdaka\", \"G.Līdaka\", \"Gunta Līdakas\"]",
+  "x_handle": null
+ },
+ {
+  "id": 110,
+  "name": "Gunārs Kūtris",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Pilsonības un migrācijas komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Gunārs Kūtris\", \"Kūtris\", \"Kūtris, Gunārs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 111,
+  "name": "Nataļja Marčenko-Jodko",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Nataļja Marčenko-Jodko\", \"Marčenko-Jodko\", \"Marčenko-Jodko, Nataļja\", \"Natalja Marčenko-Jodko\", \"Natalja\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 112,
+  "name": "Atis Labucis",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Atis Labucis\", \"Labucis\", \"Labucis, Atis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 113,
+  "name": "Linda Matisone",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Linda Matisone\", \"Matisone\", \"Matisone, Linda\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 114,
+  "name": "Ainars Latkovskis",
+  "party": "Jaunā Vienotība",
+  "role": "Nacionālās drošības komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ainars Latkovskis\", \"Latkovskis\", \"Latkovskis, Ainars\"]",
+  "negative_patterns": "[\"Gustava Latkovska\", \"Gustavam Latkovskim\", \"Gustavs Latkovskis\", \"Gustavu Latkovski\"]",
+  "x_handle": "a_latkovskis"
+ },
+ {
+  "id": 115,
+  "name": "Uģis Mitrevics",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Uģis Mitrevics\", \"Mitrevics\", \"Mitrevics, Uģis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 116,
+  "name": "Gatis Liepiņš",
+  "party": "Jaunā Vienotība",
+  "role": "Publisko izdevumu komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Gatis Liepiņš\", \"Liepiņš\", \"Liepiņš, Gatis\"]",
+  "negative_patterns": "[\"Valsts policija\", \"Ieslodzījuma vietu pārvalde\"]",
+  "x_handle": null
+ },
+ {
+  "id": 117,
+  "name": "Ramona Petraviča",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ramona Petraviča\", \"Petraviča\", \"Petraviča, Ramona\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 118,
+  "name": "Antoņina Ņenaševa",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Antoņina Ņenaševa\", \"Ņenaševa\", \"Ņenaševa, Antoņina\"]",
+  "negative_patterns": "[]",
+  "x_handle": "A_Nenaseva"
+ },
+ {
+  "id": 119,
+  "name": "Viktorija Pleškāne",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Viktorija Pleškāne\", \"Pleškāne\", \"Pleškāne, Viktorija\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 120,
+  "name": "Jānis Patmalnieks",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Patmalnieks\", \"Patmalnieks\", \"Patmalnieks, Jānis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "patmalnieksj"
+ },
+ {
+  "id": 121,
+  "name": "Igors Rajevs",
+  "party": "Bezpartejisks",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Igors Rajevs\", \"Rajevs\", \"Rajevs, Igors\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 122,
+  "name": "Edgars Putra",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts, Finanšu ministrijas parlamentārais sekretārs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edgars Putra\",\"Putra\",\"Putra, Edgars\",\"Putram\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 123,
+  "name": "Anna Rancāne",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Anna Rancāne\", \"Rancāne\", \"Rancāne, Anna\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 124,
+  "name": "Amils Saļimovs",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Amils Saļimovs\", \"Saļimovs\", \"Saļimovs, Amils\"]",
+  "negative_patterns": "[\"azerbaidžāņu jaunatnes centra\"]",
+  "x_handle": null
+ },
+ {
+  "id": 125,
+  "name": "Līga Rasnača",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Līga Rasnača\", \"Rasnača\", \"Rasnača, Līga\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 126,
+  "name": "Harijs Rokpelnis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "ZZS frakcijas vadītājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Harijs Rokpelnis\", \"Rokpelnis\", \"Rokpelnis, Harijs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 127,
+  "name": "Vilis Sruoģis",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Vilis Sruoģis\", \"Sruoģis\", \"Sruoģis, Vilis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 128,
+  "name": "Uģis Rotbergs",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Uģis Rotbergs\", \"Rotbergs\", \"Rotbergs, Uģis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 129,
+  "name": "Ilze Stobova",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ilze Stobova\", \"Stobova\", \"Stobova, Ilze\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 130,
+  "name": "Jana Simanovska",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jana Simanovska\", \"Simanovska\", \"Simanovska, Jana\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 131,
+  "name": "Andrejs Svilāns",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Svilāns\", \"Svilāns\", \"Svilāns, Andrejs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 132,
+  "name": "Jānis Skrastiņš",
+  "party": "Jaunā Vienotība",
+  "role": "Aizsardzības komisijas sekretārs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Skrastiņš\", \"Skrastiņš\", \"Skrastiņš, Jānis\"]",
+  "negative_patterns": "[\"Tieslietu ministrija\", \"Zvērināts notārs\", \"ZNB\", \"Artūrs Skrastiņš\", \"Artūra Skrastiņa\", \"Artūram Skrastiņam\", \"Artūru Skrastiņu\"]",
+  "x_handle": null
+ },
+ {
+  "id": 133,
+  "name": "Zane Skujiņa-Rubene",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Zane Skujiņa-Rubene\", \"Skujiņa-Rubene\", \"Skujiņa-Rubene, Zane\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 135,
+  "name": "Ilze Vergina",
+  "party": "Bezpartejisks",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ilze Vergina\", \"Vergina\", \"Vergina, Ilze\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 136,
+  "name": "Edmunds Teirumnieks",
+  "party": "Nacionālā apvienība",
+  "role": "Juridiskās komisijas priekšsēdētāja biedrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edmunds Teirumnieks\", \"Teirumnieks\", \"Teirumnieks, Edmunds\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 137,
+  "name": "Jānis Vucāns",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Vucāns\", \"Vucāns\", \"Vucāns, Jānis\"]",
+  "negative_patterns": "[\"Valsts policija\"]",
+  "x_handle": null
+ },
+ {
+  "id": 138,
+  "name": "Jānis Zariņš",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Zariņš\", \"Zariņš\", \"Zariņš, Jānis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 139,
+  "name": "Jānis Vitenbergs",
+  "party": "Nacionālā apvienība",
+  "role": "Klimata un enerģētikas ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Vitenbergs\", \"Vitenbergs\", \"Vitenbergs, Jānis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "JanisVitenbergs"
+ },
+ {
+  "id": 140,
+  "name": "Viesturs Zariņš",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Viesturs Zariņš\", \"Zariņš\", \"Zariņš, Viesturs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 141,
+  "name": "Aiva Vīksna",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāte, Budžeta un finanšu (nodokļu) komisijas priekšsēdētāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aiva Vīksna\", \"Vīksna\", \"Vīksna, Aiva\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 142,
+  "name": "Didzis Zemmers",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Didzis Zemmers\", \"Zemmers\", \"Zemmers, Didzis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 143,
+  "name": "Agita Zariņa-Stūre",
+  "party": "Jaunā Vienotība",
+  "role": "Izglītības komisijas priekšsēdētāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Agita Zariņa-Stūre\", \"Zariņa-Stūre\", \"Zariņa-Stūre, Agita\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 144,
+  "name": "Inga Bērziņa",
+  "party": "Jaunā Vienotība",
+  "role": "Sociālo un darba lietu komisijas priekšsēdētāja",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Inga Bērziņa\", \"Bērziņa\", \"Bērziņa, Inga\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 145,
+  "name": "Andrejs Ceļapīters",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Ceļapīters\", \"Ceļapīters\", \"Ceļapīters, Andrejs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 146,
+  "name": "Andris Bērziņš",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts, Sociālo un darba lietu komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andris Bērziņš\", \"Bērziņš\", \"Bērziņš, Andris\"]",
+  "negative_patterns": "[\"Latvijas Ceļu būvētāji\", \"Latvijas ceļu būvētājs\", \"biedrība Latvijas Ceļu būvētājs\", \"biedrības \\\"Latvijas Ceļu būvētājs\\\"\", \"bijušais Valsts prezidents\", \"bijušais prezidents\", \"eks-prezidents\", \"Talsu novada domes priekšsēdētājs\", \"Talsu novada pašvaldības vadītājs\", \"Latvijas Ceļu būvētāj\", \"Latvijas ceļu būvētāj\", \"aktieris Andris Bērziņš\", \"Aktieris Andris Bērziņš\", \"aktiera Andra Bērziņa\", \"Aktiera Andra Bērziņa\", \"aktierim Andrim Bērziņam\", \"Aktierim Andrim Bērziņam\", \"aktieri Andri Bērziņu\", \"Aktieri Andri Bērziņu\", \"Kaspars Bērziņ\", \"Kaspara Bērziņ\", \"Kasparam Bērziņ\", \"Kasparu Bērziņ\", \"sekretāra vietnieks Bērziņ\", \"sekretāra vietnieka Bērziņ\", \"sekretāra vietniekam Bērziņ\", \"sekretāra vietnieku Bērziņ\", \"Talsu novada pašvaldības domes priekšsēdētājs A. Bērziņš\"]",
+  "x_handle": null
+ },
+ {
+  "id": 147,
+  "name": "Valdis Maslovskis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Zemkopības ministra ārštata padomnieks austrumu pierobežas jautājumos (14. Saeimas deputāts uz laiku līdz 2026-06-25)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Valdis Maslovskis\", \"Maslovskis\", \"Maslovskis, Valdis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 148,
+  "name": "Anita Brakovska",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Anita Brakovska\", \"Brakovska\", \"Brakovska, Anita\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 149,
+  "name": "Igors Judins",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Igors Judins\", \"Judins\", \"Judins, Igors\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 150,
+  "name": "Didzis Šmits",
+  "party": null,
+  "role": "Saeimas deputāts (ārpus frakcijām)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Didzis Šmits\", \"Šmits\", \"Šmits, Didzis\"]",
+  "negative_patterns": "[\"Filips Šmits\", \"Filipa Šmita\", \"Filipam Šmitam\", \"fotogrāf\"]",
+  "x_handle": "DidzisSmits"
+ },
+ {
+  "id": 151,
+  "name": "Leila Rasima",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Leila Rasima\", \"Rasima\", \"Rasima, Leila\"]",
+  "negative_patterns": "[]",
+  "x_handle": "leilarasima"
+ },
+ {
+  "id": 152,
+  "name": "Lauris Lizbovskis",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Lauris Lizbovskis\", \"Lizbovskis\", \"Lizbovskis, Lauris\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 153,
+  "name": "Edmunds Zivtiņš",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edmunds Zivtiņš\", \"Zivtiņš\", \"Zivtiņš, Edmunds\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 154,
+  "name": "Armands Krauze",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts, ZZS valdes priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Armands Krauze\",\"Krauze\",\"Krauzem\"]",
+  "negative_patterns": "[\"Ivars Krauze\", \"Ivara Krauzes\", \"Ivaram Krauzem\", \"Ivaru Krauzi\"]",
+  "x_handle": "ArmandsKrauze"
+ },
+ {
+  "id": 155,
+  "name": "Dace Melbārde",
+  "party": "Jaunā Vienotība",
+  "role": "Ārlietu ministrijas parlamentārā sekretāre",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dace Melb\\u0101rde\", \"Melb\\u0101rde\", \"Melbarde\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 156,
+  "name": "Rihards Kozlovskis",
+  "party": "Jaunā Vienotība",
+  "role": "Satiksmes ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Rihards Kozlovskis\", \"Kozlovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 157,
+  "name": "Kaspars Melnis",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts, Publisko izdevumu un revīzijas komisijas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Kaspars Melnis\", \"Melnis\"]",
+  "negative_patterns": "[\"Raivis Melnis\", \"Raiv Melni\", \"Raivim Melnim\", \"pulkved\", \"Meļņa kandidat\"]",
+  "x_handle": "Kaspars_Melnis_"
+ },
+ {
+  "id": 158,
+  "name": "Agnese Lāce",
+  "party": "Progresīvie",
+  "role": "Kultūras ministre (demisionējusi)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Agnese L\\u0101ce\", \"L\\u0101ce\"]",
+  "negative_patterns": "[\"Neatliekamās medicīniskās palīdzības\", \"Lācis, lauva un zars\", \"Viktors Lācis\", \"Viktora Lāča\", \"Viktoram Lācim\", \"Viktoru Lāci\"]",
+  "x_handle": null
+ },
+ {
+  "id": 159,
+  "name": "Reinis Uzulnieks",
+  "party": "Bezpartejisks",
+  "role": "Bijušais labklājības ministrs (atbrīvots 2026-09-13)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Reinis Uzulnieks\", \"Uzulnieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 160,
+  "name": "Inese Lībiņa-Egnere",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāte, Cilvēktiesību un sabiedrisko lietu komisijas priekšsēdētāja, bijusī tieslietu ministre",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Inese L\\u012bbi\\u0146a-Egnere\", \"L\\u012bbi\\u0146a-Egnere\", \"L\\u012bbi\\u0146a\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 161,
+  "name": "Hosams Abu Meri",
+  "party": "Jaunā Vienotība",
+  "role": "Veselības ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Hosams Abu Meri\", \"Abu Meri\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 162,
+  "name": "Raimonds Čudars",
+  "party": "Jaunā Vienotība",
+  "role": "Viedās administrācijas un reģionālās attīstības ministrs (demisionējis)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raimonds \\u010cudars\", \"\\u010cudars\"]",
+  "negative_patterns": "[\"Matīss Čudars\", \"Matīsa Čudara\", \"Matīsam Čudaram\", \"Matīsu Čudaru\"]",
+  "x_handle": null
+ },
+ {
+  "id": 163,
+  "name": "Māris Mežals",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "EP deputāta palīgs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"M\\u0101ris Me\\u017eals\", \"Me\\u017eals\", \"Me\\u017eals, M\\u0101ris\"]",
+  "negative_patterns": "[]",
+  "x_handle": "maris_mezals"
+ },
+ {
+  "id": 164,
+  "name": "Andrejs Elksniņš",
+  "party": "SARAUJ, LATGALE!",
+  "role": "Daugavpils mērs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Elksni\\u0146\\u0161\", \"Elksni\\u0146\\u0161\", \"Elksni\\u0146\\u0161, Andrejs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AndrejsElksnins"
+ },
+ {
+  "id": 165,
+  "name": "Vilnis Ķirsis",
+  "party": "Jaunā Vienotība",
+  "role": "Rīgas domes priekšsēdētāja vietnieks",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Vilnis \\u0136irsis\", \"\\u0136irsis\", \"\\u0136irsis, Vilnis\"]",
+  "negative_patterns": "[\"Jānis Ķirsis\", \"J. Ķirsis\", \"SIA Auss Media\", \"Raimonda Paula dziesmu svētk\", \"Maestro vārd\"]",
+  "x_handle": "VilnisKirsis"
+ },
+ {
+  "id": 166,
+  "name": "Māris Sprindžuks",
+  "party": "Apvienotais saraksts",
+  "role": "Rīgas vicemērs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"M\\u0101ris Sprind\\u017euks\", \"Sprind\\u017euks\", \"Sprind\\u017euks, M\\u0101ris\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Sprindzuks"
+ },
+ {
+  "id": 167,
+  "name": "Sandra Kalniete",
+  "party": "Jaunā Vienotība",
+  "role": "EP deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Sandra Kalniete\", \"Kalniete\", \"Kalniete, Sandra\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Kalniete"
+ },
+ {
+  "id": 168,
+  "name": "Raivis Kronbergs",
+  "party": null,
+  "role": "Bijušais Valsts kancelejas direktors",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raivis Kronbergs\", \"Kronbergs\", \"Kronberga\", \"Kronbergam\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 169,
+  "name": "Didzis Kļuciņš",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[\"Didzis Kļuciņš\", \"Didzis Klucins\", \"Kļuciņš\", \"Klucins\", \"Klucina\", \"Klucinam\", \"Klucinu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "KlucisD"
+ },
+ {
+  "id": 170,
+  "name": "LTV Ziņas",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"LTV Ziņas\", \"LTV ziņas\", \"LTV ziņās\", \"LTV ziņu raidījumā\"]",
+  "negative_patterns": "[\"plašsaziņas\", \"360 Ziņas\", \"360 ziņas\"]",
+  "x_handle": "ltvzinas"
+ },
+ {
+  "id": 171,
+  "name": "@Heinrih5",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "Heinrih5"
+ },
+ {
+  "id": 172,
+  "name": "@Tuksumsz",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "Tuksumsz"
+ },
+ {
+  "id": 173,
+  "name": "Mārtiņš Štāls",
+  "party": "JKP",
+  "role": "Jelgavas vicemērs, JKP valdes priekšsēdētāja vietnieks",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Štāls\", \"Martins Stals\", \"Štāls\", \"Stals\", \"Stala\", \"Stalam\", \"Stalu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "martinsstals"
+ },
+ {
+  "id": 174,
+  "name": "Toms Lūsis",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "LusisToms"
+ },
+ {
+  "id": 175,
+  "name": "@Kurmitis_",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "Kurmitis_"
+ },
+ {
+  "id": 176,
+  "name": "Gatis Madžiņš",
+  "party": null,
+  "role": "Žurnālists (Diena / db.lv)",
+  "relationship_type": "journalist",
+  "name_forms": "[\"Gatis Madžiņš\", \"Gatis Madzins\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Madzins"
+ },
+ {
+  "id": 177,
+  "name": "@PStrautins",
+  "party": null,
+  "role": null,
+  "relationship_type": "inactive",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "PStrautins"
+ },
+ {
+  "id": 178,
+  "name": "Marta Kotello",
+  "party": "Progresīvie",
+  "role": "Rīgas domes deputāte | Ārtelpas un mobilitātes komitejas vadītāja | Arhitekte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Marta Kotello\", \"Kotello\", \"Kotello, Marta\"]",
+  "negative_patterns": "[]",
+  "x_handle": "MartaKotello"
+ },
+ {
+  "id": 180,
+  "name": "Jānis Tutins",
+  "party": "Kopā Latvijai",
+  "role": "Rēzeknes domes priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Tutins\", \"Janis Tutins\", \"Tutins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 181,
+  "name": "Aleksandrs Bartaševičs",
+  "party": "Kopā Latvijai",
+  "role": "Rēzeknes domes deputāts, bijušais mērs; LPV saraksta līderis (Latgale)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aleksandrs Bartaševičs\", \"Aleksandrs Bartasevics\", \"Bartaševičs\", \"Bartasevics\", \"Bartasevica\", \"Bartasevicam\", \"Bartasevicu\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 182,
+  "name": "Otto Ozols",
+  "party": null,
+  "role": "Žurnālists, rakstnieks",
+  "relationship_type": "journalist",
+  "name_forms": "[]",
+  "negative_patterns": "[\"Ozols un Instrumenti\", \"ansis\", \"Gustavo, ansis\", \"Rīgas 825\", \"virsnieka dienesta pakāpe\"]",
+  "x_handle": "OttoOzols"
+ },
+ {
+  "id": 183,
+  "name": "Raivis Zeltīts",
+  "party": "Austošā Saule Latvijai",
+  "role": "Valdes priekšsēdētājs, zemessargs, vēstures skolotājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raivis Zeltīts\", \"Raivis Zeltits\", \"Zeltīts\", \"Zeltits\", \"Zeltita\", \"Zeltitam\", \"Zeltitu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "RaivisZeltits"
+ },
+ {
+  "id": 184,
+  "name": "Dace Lindberga",
+  "party": "Austošā Saule Latvijai",
+  "role": "Valdes locekle",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dace Lindberga\", \"Lindberga\", \"Lindbergas\", \"Lindbergai\", \"Lindbergu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "lindberga22"
+ },
+ {
+  "id": 185,
+  "name": "Andris Velps",
+  "party": "Austošā Saule Latvijai",
+  "role": "Valdes loceklis",
+  "relationship_type": "tracked",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "AndrisVelps"
+ },
+ {
+  "id": 186,
+  "name": "Jānis Zalāns",
+  "party": "Austošā Saule Latvijai",
+  "role": "Valdes loceklis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Zalāns\", \"Janis Zalans\", \"Zalāns\", \"Zalans\", \"Zalana\", \"Zalanam\", \"Zalanu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Janis_Zalans"
+ },
+ {
+  "id": 187,
+  "name": "Matīss Žuravļevs",
+  "party": "Bezpartejisks",
+  "role": "Bijušais «Austošā Saule Latvijai» valdes loceklis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Matīss Žuravļevs\", \"Matiss Zuravlevs\", \"Žuravļevs\", \"Zuravlevs\", \"Zuravleva\", \"Zuravlevam\", \"Zuravlevu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "zuravlevs"
+ },
+ {
+  "id": 188,
+  "name": "Inese Vaidere",
+  "party": "Jaunā Vienotība",
+  "role": "Eiropas Parlamenta deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Vaidere\", \"Vaideres\", \"Vaiderei\"]",
+  "negative_patterns": "[]",
+  "x_handle": "IneseVaidere"
+ },
+ {
+  "id": 189,
+  "name": "Juris Pūce",
+  "party": "Latvijas attīstībai",
+  "role": "Partijas valdes priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Pūce\", \"Pūces\", \"Pūcem\", \"Puce\", \"Puces\", \"Pucem\"]",
+  "negative_patterns": "[\"J. Zilvers\", \"Zilvers, J.\", \"Zilvers (vecākais)\", \"Inčukalna detālplānojum\"]",
+  "x_handle": "pucej"
+ },
+ {
+  "id": 190,
+  "name": "Rihards Freidenfelds",
+  "party": "Austošā Saule Latvijai",
+  "role": "Ētikas komisija",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Freidenfelds\", \"Freidenfelda\", \"Freidenfeldam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "r_freidenfelds"
+ },
+ {
+  "id": 192,
+  "name": "Kārlis Seržants",
+  "party": "Apvienotais saraksts",
+  "role": "Žurnālists un politiķis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Seržants\", \"Seržanta\", \"Seržantam\", \"Serzants\", \"Serzanta\", \"Serzantam\"]",
+  "negative_patterns": "[]",
+  "x_handle": "karlis_serzants"
+ },
+ {
+  "id": 193,
+  "name": "Latvijas Darba devēju konfederācija",
+  "party": null,
+  "role": "Darba devēju interešu organizācija",
+  "relationship_type": "organization",
+  "name_forms": "[\"LDDK\", \"Latvijas Darba Devēju Konfederācija\", \"Darba devēju konfederācija\", \"Darba Devēju Konfederācija\", \"Latvijas Darba devēju konfederācija\"]",
+  "negative_patterns": "[]",
+  "x_handle": "darbadeveji"
+ },
+ {
+  "id": 194,
+  "name": "Neatkarīgā Rīta Avīze",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"Neatkarīgā Rīta Avīze\", \"Neatkariga Rita Avize\"]",
+  "negative_patterns": "[]",
+  "x_handle": "nralv"
+ },
+ {
+  "id": 195,
+  "name": "LETA",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"LETA\", \"LETAs\", \"LETai\"]",
+  "negative_patterns": "[]",
+  "x_handle": "letanewslv"
+ },
+ {
+  "id": 196,
+  "name": "TV3 Ziņas",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"TV3 Ziņas\", \"TV3 Zinas\"]",
+  "negative_patterns": "[]",
+  "x_handle": "TV3zinas"
+ },
+ {
+  "id": 197,
+  "name": "LTV Panorāma",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"LTV Panorāma\", \"LTV \\\"Panorāma\\\"\", \"Panorāma\\\" LTV\", \"LTV raidījuma Panorāma\", \"LTV raidījumā Panorāma\"]",
+  "negative_patterns": "[]",
+  "x_handle": "ltvpanorama"
+ },
+ {
+  "id": 198,
+  "name": "LTV De Facto",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "ltvdefacto"
+ },
+ {
+  "id": 199,
+  "name": "IR žurnāls",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"IR žurnāls\", \"žurnāla \\\"IR\\\"\", \"žurnālā \\\"IR\\\"\", \"IR.lv\", \"IR žurnālā\"]",
+  "negative_patterns": "[]",
+  "x_handle": "irLV"
+ },
+ {
+  "id": 200,
+  "name": "Krustpunktā",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[]",
+  "negative_patterns": "[]",
+  "x_handle": "Krustpunkta"
+ },
+ {
+  "id": 201,
+  "name": "Saeimas ziņas",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"Saeimas ziņas\", \"Saeimas Ziņas\", \"Saeimas ziņās\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Jekaba11"
+ },
+ {
+  "id": 202,
+  "name": "Marats Kasems",
+  "party": null,
+  "role": "žurnālists",
+  "relationship_type": "journalist",
+  "name_forms": "[\"Marats Kasems\", \"Marata Kasema\", \"Maratam Kasemam\", \"Maratu Kasemu\"]",
+  "negative_patterns": "[]",
+  "x_handle": "maratqasem"
+ },
+ {
+  "id": 203,
+  "name": "Aivis Ceriņš",
+  "party": "Apvienotais saraksts",
+  "role": "Biedrības 'Latvijas restarts' biedrs (no 2026-05-16); bijušais TV24 'Preses klubs' vadītājs (12 gadi, līdz 2026-05-01); būvinženieris",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aivis Ceriņš\", \"Ceriņš\", \"Aivis Cerins\", \"Cerins\"]",
+  "negative_patterns": "[\"Ceriņu iel\", \"Ceriņu prospekt\", \"Ceriņu bulvār\", \"Ceriņu šķērs\", \"Lelde Ceriņ\", \"Ceriņu un Mazās\", \"Ceriņu zied\", \"Ceriņu krūm\", \"ceriņu sfing\", \"Ceriņu sfing\"]",
+  "x_handle": "CerinsAivis"
+ },
+ {
+  "id": 204,
+  "name": "Latvijas armija (NBS)",
+  "party": null,
+  "role": null,
+  "relationship_type": "organization",
+  "name_forms": "[\"Latvijas armija\", \"Latvijas armiju\", \"Latvijas armijas\", \"Latvijas armijai\", \"NBS\", \"Nacionālie bruņotie spēki\", \"Nacionālo bruņoto spēku\", \"Nacionālajiem bruņotajiem spēkiem\", \"Nacionālos bruņotos spēkus\", \"Nacionālajos bruņotajos spēkos\"]",
+  "negative_patterns": "[\"štāba virsnieks Jānis Slaidiņ\"]",
+  "x_handle": "Latvijas_armija"
+ },
+ {
+  "id": 205,
+  "name": "Andrejs Vilks",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Vilks\", \"Vilka\", \"Vilkam\", \"Andrejs Vilks\"]",
+  "negative_patterns": "[\"Dzelzs Vilk\"]",
+  "x_handle": null
+ },
+ {
+  "id": 206,
+  "name": "Mairita Lūse",
+  "party": "Progresīvie",
+  "role": "15. Saeimā ievēlēta — PRO, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Lūse\", \"Luse\", \"Lūses\", \"Luses\", \"Lūsei\", \"Lusei\", \"Mairita Lūse\", \"Mairita Luse\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 207,
+  "name": "Viktors Pučka",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Pučka\", \"Pucka\", \"Pučkas\", \"Puckas\", \"Pučkam\", \"Puckam\", \"Viktors Pučka\", \"Viktors Pucka\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 208,
+  "name": "Ģirts Valdis Kristovskis",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Kristovskis\", \"Kristovska\", \"Kristovskim\", \"Ģirts Valdis Kristovskis\", \"Girts Valdis Kristovskis\", \"Ģirts Kristovskis\", \"Girts Kristovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 209,
+  "name": "Ģirts Štekerhofs",
+  "party": "Zaļo un Zemnieku savienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Štekerhofs\", \"Stekerhofs\", \"Štekerhofa\", \"Stekerhofa\", \"Štekerhofam\", \"Stekerhofam\", \"Ģirts Štekerhofs\", \"Girts Stekerhofs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 210,
+  "name": "Edgars Zelderis",
+  "party": "Progresīvie",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Zelderis\", \"Zeldera\", \"Zelderim\", \"Edgars Zelderis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 211,
+  "name": "Aleksejs Rosļikovs",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Rosļikovs\", \"Roslikovs\", \"Rosļikova\", \"Roslikova\", \"Rosļikovam\", \"Roslikovam\", \"Aleksejs Rosļikovs\", \"Aleksejs Roslikovs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 212,
+  "name": "Ervins Labanovskis",
+  "party": "Progresīvie",
+  "role": "Smiltenes novada domes priekšsēdētājs",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Labanovskis\", \"Labanovska\", \"Labanovskim\", \"Ervins Labanovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 213,
+  "name": "Jānis Reirs",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Reirs\", \"Reira\", \"Reiram\", \"Jānis Reirs\", \"Janis Reirs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 214,
+  "name": "Arturs Krišjānis Kariņš",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Kariņš\", \"Karins\", \"Kariņa\", \"Kariņam\", \"Arturs Kariņš\", \"Arturs Karins\", \"Arturs Krišjānis Kariņš\", \"Arturs Krisjanis Karins\", \"Krišjānis Kariņš\", \"Krisjanis Karins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 215,
+  "name": "Viktorija Baire",
+  "party": "Jaunā Vienotība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Baire\", \"Baires\", \"Bairei\", \"Viktorija Baire\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 216,
+  "name": "Glorija Grevcova",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Grevcova\", \"Grevcovas\", \"Grevcovai\", \"Glorija Grevcova\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 217,
+  "name": "Jekaterina Dorošķeviča",
+  "party": "Stabilitātei!",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Dorošķeviča\", \"Doroskevica\", \"Dorošķevičas\", \"Doroskevicas\", \"Dorošķevičai\", \"Doroskevicai\", \"Jekaterina Dorošķeviča\", \"Jekaterina Doroskevica\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 218,
+  "name": "Ģirts Lapiņš",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Lapiņš\", \"Lapinš\", \"Lapiņa\", \"Lapinš\", \"Ģirts Lapiņš\", \"Girts Lapinš\", \"Girts Lapins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 219,
+  "name": "Atis Deksnis",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Deksnis\", \"Deksņa\", \"Deksnim\", \"Atis Deksnis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 220,
+  "name": "Arnolds Jātnieks",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Jātnieks\", \"Jatnieks\", \"Jātnieka\", \"Jatnieka\", \"Jātniekam\", \"Jatniekam\", \"Arnolds Jātnieks\", \"Arnolds Jatnieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 221,
+  "name": "Ieva Brante",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Brante\", \"Brantes\", \"Brantei\", \"Ieva Brante\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 222,
+  "name": "Vilis Krištopans",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Krištopans\", \"Krištopana\", \"Krištopanam\", \"Vilis Krištopans\", \"Kristopans\", \"Vilis Kristopans\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 223,
+  "name": "Normunds Dzintars",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "inactive",
+  "name_forms": "[\"Dzintars\", \"Dzintara\", \"Dzintaram\", \"Normunds Dzintars\", \"Dzintars Normunds\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 224,
+  "name": "Raivis Melnis",
+  "party": "Bezpartejisks",
+  "role": "Aizsardzības ministrs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raivis Melnis\", \"Raivja Meļņa\", \"Raivja Melna\", \"Raivim Melnim\", \"Raivi Melni\", \"R. Melnis\", \"R. Meļņa\", \"R. Melnim\"]",
+  "negative_patterns": "[\"Kaspars Melnis\", \"Kaspars\", \"Kaspars_Melnis_\", \"klimat\", \"enerģētik\"]",
+  "x_handle": null
+ },
+ {
+  "id": 225,
+  "name": "Latvijas valsts meži (LVM)",
+  "party": null,
+  "role": "Valsts mežu apsaimniekotājs (kapitālsabiedrība)",
+  "relationship_type": "organization",
+  "name_forms": "[\"LVM\", \"Latvijas valsts meži\", \"Latvijas Valsts Meži\", \"AS \\\"Latvijas valsts meži\\\"\", \"AS Latvijas valsts meži\", \"Latvijas valsts mezi\"]",
+  "negative_patterns": "[\"valsts meža dienest\", \"Valsts meža dienest\", \"meža dienest\"]",
+  "x_handle": "valstsmezi"
+ },
+ {
+  "id": 226,
+  "name": "Raivis Kalējs",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raivis Kalējs\", \"Raivis Kalejs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 227,
+  "name": "Dāvis Melnalksnis",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dāvis Melnalksnis\", \"Davis Melnalksnis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 228,
+  "name": "Jānis Eglīts",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Eglīts\", \"Janis Eglits\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 229,
+  "name": "Valdis Dombrovskis",
+  "party": "Jaunā Vienotība",
+  "role": "Eiropas komisārs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dombrovskis\", \"Dombrovska\", \"Dombrovskim\", \"Dombrovski\", \"Valdis Dombrovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "VDombrovskis"
+ },
+ {
+  "id": 230,
+  "name": "Inga Priede",
+  "party": "Apvienotais saraksts",
+  "role": "Saeimas deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Inga Priede\", \"Priede\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 231,
+  "name": "Krišjānis Kļaviņš",
+  "party": null,
+  "role": "Žurnālists",
+  "relationship_type": "journalist",
+  "name_forms": "[\"Krišjānis Kļaviņš\", \"Krisjanis Klavins\"]",
+  "negative_patterns": "[\"Kļaviņa Līga\", \"Līga Kļaviņa\", \"Jeļena Kļaviņa\"]",
+  "x_handle": "kr_klavins"
+ },
+ {
+  "id": 232,
+  "name": "Jānis Urbanovičs",
+  "party": "Saskaņas Centrs",
+  "role": "Saskaņas Centra saraksta līderis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Urbanovičs\", \"Urbanovičs\", \"Urbanoviča\", \"Janis Urbanovics\", \"Urbanovics\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 233,
+  "name": "Jānis Citskovskis",
+  "party": "JKP",
+  "role": "JKP premjera amata kandidāts, Rīgas saraksta līderis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Citskovskis\", \"Citskovskis\", \"Citskovska\", \"Citskovski\", \"Janis Citskovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 234,
+  "name": "Arigo Toro",
+  "party": "Gobzema saraksts",
+  "role": "Gobzema saraksta līderis (Rīga); bijušais 13. Saeimas deputāts, līdz vārda maiņai Aldis Gobzems",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Arigo Toro\", \"Toro\", \"Aldis Gobzems\", \"Gobzems\", \"Gobzema\", \"Gobzemu\", \"Gobzemam\"]",
+  "negative_patterns": "[\"Toronto\", \"Torontas\", \"Gobzema sarakst\"]",
+  "x_handle": null
+ },
+ {
+  "id": 235,
+  "name": "Roberts Ķipurs",
+  "party": "Nacionālā apvienība",
+  "role": "Saeimas deputāts (14. Saeima)",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Roberts Ķipurs\", \"Ķipurs Roberts\", \"Roberts Kipurs\", \"Kipurs Roberts\", \"R.Ķipurs\", \"R. Ķipurs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 236,
+  "name": "Jūlija Stepaņenko",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "SV-AJ saraksta līdere (Rīga); Rīgas domes deputāte",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jūlija Stepaņenko\", \"Stepaņenko\", \"Julija Stepanenko\", \"Stepanenko\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 237,
+  "name": "Austris Stankevics",
+  "party": "Nacionālā apvienība",
+  "role": "NA jauniešu organizācijas valdes loceklis, Saeimas deputāta kandidāts",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Austris Stankevics\"]",
+  "negative_patterns": "[\"arhibīskap\", \"arhibiskap\", \"Zbigņev\", \"Zbignev\"]",
+  "x_handle": "StankevicsA"
+ },
+ {
+  "id": 238,
+  "name": "Latvija latviešiem",
+  "party": null,
+  "role": "Kustība sociālajos tīklos; kontus vada NA jauniešu organizācijas valdes locekļi",
+  "relationship_type": "organization",
+  "name_forms": "[\"Latvija latviešiem\", \"Latvija latviesiem\", \"Latvija Latviešiem\"]",
+  "negative_patterns": "[]",
+  "x_handle": "LLatviesiem"
+ },
+ {
+  "id": 239,
+  "name": "Maija Krastiņa",
+  "party": null,
+  "role": "Vides aktīviste (Zero Waste Latvija)",
+  "relationship_type": "neutral",
+  "name_forms": "[\"Maija Krastiņa\", \"Krastiņa\", \"Maija Krastina\", \"Krastina\", \"Krastinu\", \"Krastinas\", \"Krastinai\"]",
+  "negative_patterns": "[\"Edmunds Krastiņš\", \"Edmunda Krastiņa\", \"Edmundu Krastiņu\", \"Agris Krastiņš\", \"Agra Krastiņa\", \"Uldis Krastiņš\", \"Ulda Krastiņa\", \"Uldi Krastiņu\", \"Māris Krastiņš\", \"Māra Krastiņa\", \"Māri Krastiņu\", \"Juris Krastiņš\", \"Jura Krastiņa\", \"Jānis Krastiņš\", \"Jāņa Krastiņa\", \"Jānim Krastiņam\", \"Laura Krastiņa\", \"Lauras Krastiņas\", \"Lauru Krastiņu\", \"Ivanda Krastiņa\", \"Ivandas Krastiņas\", \"Ivandu Krastiņu\", \"Uģis Krastiņš\", \"Uģa Krastiņa\", \"Uģim Krastiņam\", \"Uģi Krastiņu\"]",
+  "x_handle": "instant_mk"
+ },
+ {
+  "id": 240,
+  "name": "Edgars Bergholcs",
+  "party": "Apvienotais saraksts",
+  "role": "Rīgas domes Pilsētas attīstības komitejas priekšsēdētājs",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edgars Bergholcs\", \"Bergholcs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 241,
+  "name": "Valsts kontrole",
+  "party": null,
+  "role": "Neatkarīga koleģiāla augstākā revīzijas iestāde",
+  "relationship_type": "organization",
+  "name_forms": "[\"Valsts kontrole\", \"Valsts kontroli\", \"Valsts kontrolē\", \"Valsts Kontrole\"]",
+  "negative_patterns": "[]",
+  "x_handle": "VKontrole"
+ },
+ {
+  "id": 242,
+  "name": "Anastasija Tetarenko-Supe",
+  "party": null,
+  "role": "Latvijas Žurnālistu asociācijas valdes priekšsēdētāja",
+  "relationship_type": "journalist",
+  "name_forms": "[\"Anastasija Tetarenko-Supe\", \"Tetarenko-Supe\", \"Tetarenko-Supes\", \"Tetarenko-Supei\", \"Tetarenko-Supi\", \"Tetarenko\"]",
+  "negative_patterns": "[]",
+  "x_handle": "te_anastasija"
+ },
+ {
+  "id": 243,
+  "name": "Latvijas Banka",
+  "party": null,
+  "role": "Latvijas centrālā banka",
+  "relationship_type": "organization",
+  "name_forms": "[\"Latvijas Banka\", \"Latvijas Bankā\", \"Latvijas Banku\"]",
+  "negative_patterns": "[]",
+  "x_handle": "LatvijasBanka"
+ },
+ {
+  "id": 244,
+  "name": "Katrīna Iļjinska",
+  "party": null,
+  "role": null,
+  "relationship_type": "journalist",
+  "name_forms": "[\"Katrīna Iļjinska\", \"Katrina Iljinska\"]",
+  "negative_patterns": "[]",
+  "x_handle": "katrinailjinska"
+ },
+ {
+  "id": 245,
+  "name": "Jānis Slaidiņš",
+  "party": null,
+  "role": "NBS majors, Zemessardzes štāba virsnieks; militārais analītiķis",
+  "relationship_type": "neutral",
+  "name_forms": "[\"Jānis Slaidiņš\", \"Janis Slaidins\", \"Slaidiņš\", \"Slaidins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 246,
+  "name": "Guntis Pujāts",
+  "party": null,
+  "role": "Valsts robežsardzes priekšnieks, ģenerālis",
+  "relationship_type": "neutral",
+  "name_forms": "[\"Guntis Pujāts\", \"Guntis Pujats\", \"Pujāts\", \"Pujats\", \"Pujata\", \"Pujatam\", \"Pujatu\"]",
+  "negative_patterns": "[\"kardināl\"]",
+  "x_handle": null
+ },
+ {
+  "id": 247,
+  "name": "Agris Freifalts",
+  "party": "Gobzema saraksts",
+  "role": "Partijas «Gobzema saraksts» valdes loceklis; Vidzemes saraksta līderis",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Agris Freifalts\", \"Freifalts\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 248,
+  "name": "Jānis Jenzis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Jenzis\", \"Jenzis\", \"Janis Jenzis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 249,
+  "name": "Līga Meņģelsone",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Līga Meņģelsone\", \"Meņģelsone\", \"Liga Mengelsone\", \"Mengelsone\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 250,
+  "name": "Karīna Miķelsone",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Karīna Miķelsone\", \"Miķelsone\", \"Karina Mikelsone\", \"Mikelsone\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 251,
+  "name": "Mārtiņš Brencis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Brencis\", \"Brencis\", \"Martins Brencis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "MBrencis"
+ },
+ {
+  "id": 252,
+  "name": "Liene Apine",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Liene Apine\", \"Apine\"]",
+  "negative_patterns": "[]",
+  "x_handle": "LieneA"
+ },
+ {
+  "id": 253,
+  "name": "Edgars Štelmahers",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edgars Štelmahers\", \"Štelmahers\", \"Edgars Stelmahers\", \"Stelmahers\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 254,
+  "name": "Jānis Urtāns",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Urtāns\", \"Urtāns\", \"Janis Urtans\", \"Urtans\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 255,
+  "name": "Viesturs Vitovskis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Viesturs Vitovskis\", \"Vitovskis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 256,
+  "name": "Māris Ozoliņš",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Māris Ozoliņš\", \"Ozoliņš\", \"Maris Ozolins\", \"Ozolins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 257,
+  "name": "Jānis Stērninieks",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Stērninieks\", \"Stērninieks\", \"Janis Sterninieks\", \"Sterninieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 258,
+  "name": "Agnese Kupača",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Agnese Kupača\", \"Kupača\", \"Agnese Kupaca\", \"Kupaca\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 259,
+  "name": "Dagnis Straubergs",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dagnis Straubergs\", \"Straubergs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "D_Straubergs"
+ },
+ {
+  "id": 260,
+  "name": "Pēteris Dimants",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Pēteris Dimants\", \"Dimants\", \"Peteris Dimants\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 261,
+  "name": "Renārs Putniņš",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Renārs Putniņš\", \"Putniņš\", \"Renars Putnins\", \"Putnins\"]",
+  "negative_patterns": "[]",
+  "x_handle": "RPutnins"
+ },
+ {
+  "id": 262,
+  "name": "Anete Biķe",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Anete Biķe\", \"Biķe\", \"Anete Bike\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AneteBike"
+ },
+ {
+  "id": 263,
+  "name": "Valdis Kārkliņš",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Valdis Kārkliņš\", \"Kārkliņš\", \"Valdis Karklins\", \"Karklins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 264,
+  "name": "Andis Caunītis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andis Caunītis\", \"Caunītis\", \"Andis Caunitis\", \"Caunitis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 265,
+  "name": "Mārtiņš Prīsis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Prīsis\", \"Prīsis\", \"Martins Prisis\", \"Prisis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 266,
+  "name": "Valdis Kotāns",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Valdis Kotāns\", \"Kotāns\", \"Valdis Kotans\", \"Kotans\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 267,
+  "name": "Raimonds Vējonis",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Raimonds Vējonis\", \"Vējonis\", \"Raimonds Vejonis\", \"Vejonis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Vejonis"
+ },
+ {
+  "id": 268,
+  "name": "Jānis Džeriņš",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Kurzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jānis Džeriņš\", \"Džeriņš\", \"Janis Dzerins\", \"Dzerins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 269,
+  "name": "Nellija Kleinberga",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Kurzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Nellija Kleinberga\", \"Kleinberga\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 270,
+  "name": "Andris Skride",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andris Skride\", \"Skride\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AndrisSkride"
+ },
+ {
+  "id": 271,
+  "name": "Ilmārs Luksts",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ilmārs Luksts\", \"Luksts\", \"Ilmars Luksts\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 272,
+  "name": "Juris Lazdiņš",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēts — AS, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Juris Lazdiņš\", \"Lazdiņš\", \"Juris Lazdins\", \"Lazdins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 273,
+  "name": "Baiba Atmane",
+  "party": "Apvienotais saraksts",
+  "role": "15. Saeimā ievēlēta — AS, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Baiba Atmane\", \"Atmane\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 274,
+  "name": "Regīna Ločmele",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēta — LPV, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Regīna Ločmele\", \"Ločmele\", \"Regina Locmele\", \"Locmele\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 275,
+  "name": "Andrejs Klementjevs",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēts — LPV, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Klementjevs\", \"Klementjevs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Klementjevs"
+ },
+ {
+  "id": 276,
+  "name": "Roberts Žemaitis",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēts — LPV, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Roberts Žemaitis\", \"Žemaitis\", \"Roberts Zemaitis\", \"Zemaitis\"]",
+  "negative_patterns": "[]",
+  "x_handle": "robertszemaitis"
+ },
+ {
+  "id": 277,
+  "name": "Jevgēnija Šafraneka",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēta — LPV, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jevgēnija Šafraneka\", \"Šafraneka\", \"Jevgenija Safraneka\", \"Safraneka\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 278,
+  "name": "Dana Šlesere",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēta — LPV, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Dana Šlesere\", \"Šlesere\", \"Dana Slesere\", \"Slesere\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 279,
+  "name": "Eduards Zivtiņš",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēts — LPV, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Eduards Zivtiņš\", \"Zivtiņš\", \"Eduards Zivtins\", \"Zivtins\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 280,
+  "name": "Olga Petkeviča",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēta — LPV, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Olga Petkeviča\", \"Petkeviča\", \"Olga Petkevica\", \"Petkevica\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 281,
+  "name": "Aleksejs Mackevičs",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēts — LPV, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aleksejs Mackevičs\", \"Mackevičs\", \"Aleksejs Mackevics\", \"Mackevics\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 282,
+  "name": "Jekaterina Ivanova",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēta — LPV, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jekaterina Ivanova\", \"Ivanova\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 283,
+  "name": "Aivars Kraps",
+  "party": "Latvija Pirmajā Vietā",
+  "role": "15. Saeimā ievēlēts — LPV, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aivars Kraps\", \"Kraps\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 284,
+  "name": "Rūdolfs Brēmanis",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Rūdolfs Brēmanis\", \"Brēmanis\", \"Rudolfs Bremanis\", \"Bremanis\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 285,
+  "name": "Ļubova Švecova",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēta — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ļubova Švecova\", \"Švecova\", \"Lubova Svecova\", \"Svecova\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 286,
+  "name": "Jūlija Sohina",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēta — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Jūlija Sohina\", \"Sohina\", \"Julija Sohina\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 287,
+  "name": "Natālija Ābola",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēta — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Natālija Ābola\", \"Ābola\", \"Natalija Abola\", \"Abola\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 288,
+  "name": "Inna Djeri",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēta — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Inna Djeri\", \"Djeri\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 289,
+  "name": "Artūrs Klēbahs",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Artūrs Klēbahs\", \"Klēbahs\", \"Arturs Klebahs\", \"Klebahs\"]",
+  "negative_patterns": "[]",
+  "x_handle": "AKlebahs"
+ },
+ {
+  "id": 290,
+  "name": "Karina Sprūde",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēta — SV/AJ, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Karina Sprūde\", \"Sprūde\", \"Karina Sprude\", \"Sprude\"]",
+  "negative_patterns": "[]",
+  "x_handle": "KarinaSprude"
+ },
+ {
+  "id": 291,
+  "name": "Aleksejs Ignatjevs",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Vidzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Aleksejs Ignatjevs\", \"Ignatjevs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 292,
+  "name": "Vjačeslavs Stepaņenko",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Vjačeslavs Stepaņenko\", \"Stepaņenko\", \"Vjaceslavs Stepanenko\", \"Stepanenko\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 293,
+  "name": "Andrejs Jakovļevs",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Jakovļevs\", \"Jakovļevs\", \"Andrejs Jakovlevs\", \"Jakovlevs\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 294,
+  "name": "Edgars Dārznieks",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Kurzeme",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Edgars Dārznieks\", \"Dārznieks\", \"Edgars Darznieks\", \"Darznieks\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 295,
+  "name": "Andrejs Pagors",
+  "party": "Suverēnā vara/Jaunlatvieši",
+  "role": "15. Saeimā ievēlēts — SV/AJ, Zemgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Andrejs Pagors\", \"Pagors\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 296,
+  "name": "Ivars Āboliņš",
+  "party": "Nacionālā apvienība",
+  "role": "15. Saeimā ievēlēts — NA, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Ivars Āboliņš\", \"Āboliņš\", \"Ivars Abolins\", \"Abolins\"]",
+  "negative_patterns": "[]",
+  "x_handle": "Ivars_Abolins"
+ },
+ {
+  "id": 297,
+  "name": "Rolands Keišs",
+  "party": "Nacionālā apvienība",
+  "role": "15. Saeimā ievēlēts — NA, Latgale",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Rolands Keišs\", \"Keišs\", \"Rolands Keiss\", \"Keiss\"]",
+  "negative_patterns": "[]",
+  "x_handle": null
+ },
+ {
+  "id": 298,
+  "name": "Mārtiņš Hiršs",
+  "party": "Progresīvie",
+  "role": "15. Saeimā ievēlēts — PRO, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Mārtiņš Hiršs\", \"Hiršs\", \"Martins Hirss\", \"Hirss\"]",
+  "negative_patterns": "[]",
+  "x_handle": "MHirss"
+ },
+ {
+  "id": 299,
+  "name": "Krista Burāne",
+  "party": "Progresīvie",
+  "role": "15. Saeimā ievēlēta — PRO, Rīga",
+  "relationship_type": "tracked",
+  "name_forms": "[\"Krista Burāne\", \"Burāne\", \"Krista Burane\", \"Burane\"]",
+  "negative_patterns": "[]",
+  "x_handle": "KristaBurane"
+ }
+]

@@ -1,0 +1,92 @@
+# EP deputātu bio — dzimšanas gads + izglītība no oficiālās deputāta lapas
+# europarl.europa.eu (latviešu valodas versija). EP deputāti 2026. g. Saeimas
+# vēlēšanās nekandidēja, tāpēc CVK ziņu nav (backlog/vietne-ui.md, 2026-10-07).
+# Ievadīts ar roku 2026-10-08. Ierakstīts TIKAI tas, ko lapa norāda:
+# - dzimšanas gads — no «Dzimšanas gads» lauka (lapā pilns datums; glabā gadu);
+# - izglītība — no CV sadaļas «Izglītība (kvalifikācijas un diplomi)» lapas
+#   redakcijā; gadi kā lapā (periods). Ja CV lapā «nav pieejams», izglītības
+#   nav (Ijabs, Kalniete, Pozņaks, Zīle — 2026-10-08).
+# - Vaiderei CV norāda grādus bez iestādes; zinātniskais nosaukums
+#   «profesore» apzināti nav ņemts (tas nav izglītība).
+# Renders (src/render/bio.py) rāda TIKAI status: ok un aizpilda tikai laukus,
+# kuru CVK ierakstā nav. Māris Mežals (EP deputāta palīgs) NAV EP deputāts.
+- politician_id: 23
+  name: Ivars Ijabs
+  ep_id: 197624
+  source_url: https://www.europarl.europa.eu/meps/lv/197624/IVARS_IJABS/home
+  fetched_at: '2026-10-08'
+  birth_year: 1972
+  education: []
+  status: ok
+- politician_id: 167
+  name: Sandra Kalniete
+  ep_id: 96934
+  source_url: https://www.europarl.europa.eu/meps/lv/96934/SANDRA_KALNIETE/home
+  fetched_at: '2026-10-08'
+  birth_year: 1952
+  education: []
+  status: ok
+- politician_id: 24
+  name: Rihards Kols
+  ep_id: 220871
+  source_url: https://www.europarl.europa.eu/meps/lv/220871/RIHARDS_KOLS/cv
+  fetched_at: '2026-10-08'
+  birth_year: 1984
+  education:
+  - institution: Vestminsteras Universitāte
+    year: 2009–2010
+    degree: maģistra grāds diplomātijas zinātnēs
+  - institution: Biznesa augstskola “Turība”
+    year: 2003–2008
+    degree: profesionālais bakalaura grāds tiesību zinātnēs
+  status: ok
+- politician_id: 28
+  name: Reinis Pozņaks
+  ep_id: 256907
+  source_url: https://www.europarl.europa.eu/meps/lv/256907/REINIS_POZNAKS/home
+  fetched_at: '2026-10-08'
+  birth_year: 1977
+  education: []
+  status: ok
+- politician_id: 22
+  name: Mārtiņš Staķis
+  ep_id: 256916
+  source_url: https://www.europarl.europa.eu/meps/lv/256916/MARTINS_STAKIS/cv
+  fetched_at: '2026-10-08'
+  birth_year: 1979
+  education:
+  - institution: Helsinku Ekonomikas augstskola
+    year: 2007–2008
+    degree: vadības zinību programma
+  - institution: Helsinku Ekonomikas augstskola
+    year: 2004–2005
+    degree: vadības zinību programma
+  - institution: Latvijas Universitātes Ekonomikas un vadības fakultāte
+    year: 1999–2004
+    degree: bakalaura grāds
+  - institution: Tukuma Raiņa ģimnāzija
+    year: 1984–1997
+    degree: pamata un vidējā izglītība
+  status: ok
+- politician_id: 188
+  name: Inese Vaidere
+  ep_id: 28617
+  source_url: https://www.europarl.europa.eu/meps/lv/28617/INESE_VAIDERE/cv
+  fetched_at: '2026-10-08'
+  birth_year: 1952
+  education:
+  - institution: null
+    year: null
+    degree: doktora grāds ekonomikā
+  - institution: null
+    year: null
+    degree: diplomēta ekonomiste – matemātiķe
+  status: ok
+- politician_id: 21
+  name: Roberts Zīle
+  ep_id: 28615
+  source_url: https://www.europarl.europa.eu/meps/lv/28615/ROBERTS_ZILE/home
+  fetched_at: '2026-10-08'
+  birth_year: 1958
+  education: []
+  status: ok
