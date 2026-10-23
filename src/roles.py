@@ -1,0 +1,188 @@
+"""Who may hold ``role='subject'`` on a ``document_politicians`` row.
+
+One concept, one owner (same shape as ``src.coalition`` and ``src.scope``):
+the matcher decides **who is in the text**, this module decides **who counts
+as the speaker**. Every junction writer routes through
+``enforce_subject_guards()``; nothing re-types the predicate inline.
+
+Why the split matters. ``matcher.match_politicians()`` hands its highest-count
+candidate ``role='subject'`` purely from string presence, and that role is what
+the extraction queue walks (``analyze.get_pending_politicians``). Two measured
+classes were therefore filling the queue with documents that can never yield a
+position, and — because ``documents.reviewed_at`` is per-DOCUMENT — closing
+them for the people who really did speak there:
+
+* **Relay media slots (operatora verdikts 36, 2026-09-07).** «aģentūrai LETA
+  pastāstīja …» in a closing credit line made LETA (pid=195) the subject of
+  **934 unreviewed web documents** measured 2026-09-06 — 14 % of the whole
+  6 493-document web backlog, on a slot with 0 position claims ever. The slot
+  set is ``scope.relay_media_pids()``; see that module for why the AND with
+  ``feed_type='relay'`` is load-bearing (NBS/LVM/LDDK/VK/LB are organizations
+  too, and they DO produce claims).
+
+* **Office-voice retweets (operatora verdikts 38, 2026-09-07).** A bare
+  ``RT @Brivibas36: …`` on the prime minister's own timeline is the Cabinet's
+  communications account writing about him in the third person; twikit stores
+  it under HIS status URL, so both ``social._store_tweets`` and
+  ``matcher.link_politicians_to_documents`` read the author handle as his and
+  award ``subject``. 2026-08-26 produced four such documents in one sweep
+  (95102, 95110, 95111, 95112), all correctly extracted empty. This is the
+  mechanical form of the Biroja balss convention in
+  ``.claude/references/claim-extractor/sloti.md`` § Biroja balss.
+
+**One promotion (operatora lēmums 2026-10-21).** A Saeima transcript names
+each speaker on a line of their own, «E. Jurēvics (JV).». Such a speaker
+(``matcher.transcript_speaker_pids``: transcript + faction/office label, the
+(initial, surname) key owned by exactly one active politician) gets
+``subject`` on a ``platform='vestnesis'`` document — the matcher would hand
+``subject`` only to the highest-count name, and the speech of everyone else
+was never extracted. This overturns «loma netiek mainīta» from CHANGELOG
+2026-10-17 (4). Promotion runs BEFORE the demotions below, so a relay slot
+still never ends up ``subject``.
+
+**Deliberately NOT covered — read before widening.** Apart from that one
+promotion the guard is a demotion: a document whose only ``subject`` was a
+relay slot ends up with ``mentioned`` rows only and leaves the queue, which is
+the point. Nothing here touches historical rows (a pid already linked keeps
+its row — callers pass ``keep_linked_role``/``already``), and nothing here
+removes a document — the relay's text is still linked, still rendered, still
+searchable.
+
+``OFFICE_VOICE_HANDLES`` is an explicit constant, not a query, because
+@Brivibas36 is not a tracked entity and must not become one: registering it in
+``social_accounts`` would add ``brivibas36`` to a politician's H-match handle
+set (``matcher._load_politician_forms``) and hand pid=10 a ``subject`` on the
+13 documents that account actually authored — the opposite of the verdict. Add
+another office account (a ministry's communications handle) only with the same
+test coverage; a JOURNALIST's or a party's handle does not belong here.
+"""
+
+from __future__ import annotations
+
+import re
+
+from src.scope import relay_media_pids
+
+# Institutional office accounts whose bare retweets are never the retweeter
+# speaking. Lowercase, no leading '@'.
+OFFICE_VOICE_HANDLES = frozenset({"brivibas36"})
+
+# twikit stores a bare retweet verbatim as "RT @handle: <original text>".
+# Anchored at the start on purpose: a quote-tweet or a comment ABOVE the
+# quoted text is the politician speaking and must keep its role.
+_RETWEET_PREFIX = re.compile(r"^\s*RT @([A-Za-z0-9_]{1,15})\s*:")
+
+
+def is_bare_retweet(content: str | None) -> bool:
+    """True for twikit's verbatim retweet shape ``RT @handle: <text>``."""
+    return bool(content and _RETWEET_PREFIX.match(content))
+
+
+def office_voice_retweet_handle(content: str | None) -> str | None:
+    """Return the office handle a bare retweet relays, else ``None``."""
+    if not content:
+        return None
+    m = _RETWEET_PREFIX.match(content)
+    if not m:
+        return None
+    handle = m.group(1).lower()
+    return handle if handle in OFFICE_VOICE_HANDLES else None
+
+
+def enforce_subject_guards(
+    db,
+    politician_links: list[tuple[int, str]] | None,
+    content: str | None = None,
+    *,
+    platform: str | None = None,
+) -> list[tuple[int, str]] | None:
+    """Promote a transcript speaker, demote every ``subject`` a non-speaker would receive.
+
+    Args:
+        db: OPEN connection, owned by the caller (nothing is closed here).
+        politician_links: ``[(politician_id, role), …]`` as the caller built
+            them. ``None``/empty passes straight through.
+        content: the document text, needed for the office-voice retweet rule
+            and the transcript speaker lines.
+        platform: ``documents.platform``; only ``'vestnesis'`` promotes.
+
+    Returns the links with ``mentioned`` rewritten to ``subject`` for a
+    verified Saeima transcript speaker (vestnesis only, 2026-10-21), then
+    ``subject`` rewritten to ``mentioned`` wherever the
+    politician is a relay media slot, or the whole document is a bare retweet
+    of an office voice. Order is preserved and duplicates collapsed — a pid
+    holding BOTH roles would otherwise leave two identical rows after the
+    rewrite (the junction PK is (document_id, politician_id, role), so
+    INSERT OR IGNORE would not catch it).
+    """
+    if not politician_links:
+        return politician_links
+    speakers: set[int] = set()
+    if platform == "vestnesis" and content and any(
+        role == "mentioned" for _, role in politician_links
+    ):
+        from src.matcher import transcript_speaker_pids  # lazy: matcher imports this module
+
+        speakers = transcript_speaker_pids(content)
+    office_voice = office_voice_retweet_handle(content) is not None
+    blocked = relay_media_pids(db) if speakers or any(
+        role == "subject" for _, role in politician_links
+    ) else frozenset()
+    out: list[tuple[int, str]] = []
+    seen: set[tuple[int, str]] = set()
+    for pid, role in politician_links:
+        if role == "mentioned" and pid in speakers:
+            role = "subject"
+        if role == "subject" and (office_voice or pid in blocked):
+            role = "mentioned"
+        if (pid, role) in seen:
+            continue
+        seen.add((pid, role))
+        out.append((pid, role))
+    return out
+
+
+def drop_cvk_organization_links(
+    db,
+    politician_links: list[tuple[int, str]] | None,
+    source_url: str | None,
+) -> list[tuple[int, str]] | None:
+    """Drop organization links from a CVK data-portal document.
+
+    A CVK candidate-list page carries the party's programme, and a programme
+    names institutions as TOPICS («Celsim Nacionālo bruņoto spēku (NBS)
+    spējas»): the institution is never the speaker there. Measured 2026-10-14:
+    pid=204 «Latvijas armija (NBS)» held ``subject`` on 5 of the SV2026
+    programme pages (all 5 read: topic mentions) and ``mentioned`` on 3 more,
+    0 claims on any (verdikti 2026-10-14 C7). Four other organizations are
+    linked to the same pages too (not read row by row).
+
+    Narrow by design: only ``relationship_type='organization'`` and only on a
+    CVK domain (``src.ingest_rules.is_cvk_domain`` — the Ziņas feed's
+    criterion). A lane gate on organizations everywhere would cut NBS's live
+    first-party channel (48 positions; verdict 37 rejected 2026-09-07). People
+    named on the same pages keep their links.
+    """
+    from urllib.parse import urlparse
+
+    from src.ingest_rules import is_cvk_domain
+
+    if not politician_links or not source_url:
+        return politician_links
+    try:
+        host = urlparse(source_url).netloc
+    except (TypeError, ValueError):
+        return politician_links
+    if not is_cvk_domain(host):
+        return politician_links
+    pids = sorted({pid for pid, _ in politician_links})
+    placeholders = ",".join("?" * len(pids))
+    orgs = {
+        r[0]
+        for r in db.execute(
+            f"SELECT id FROM tracked_politicians WHERE id IN ({placeholders}) "
+            "AND relationship_type = 'organization'",
+            pids,
+        ).fetchall()
+    }
+    return [(pid, role) for pid, role in politician_links if pid not in orgs]

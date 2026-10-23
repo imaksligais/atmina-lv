@@ -1,0 +1,284 @@
+"""Tests for Pozīcijas V2 data helpers in src/render/positions.py."""
+
+import sqlite3
+from datetime import datetime, timedelta
+
+import pytest
+
+from src.coalition import party_color_map
+from src.db import PRODUCTION_DB_PATH, now_lv_dt
+from src.render._common import PROJECT_ROOT, _confidence_tier
+from src.render.positions import PZV1_TOPIC_COLORS, _fetch_claims, _fetch_pozicijas_metrics
+from src.topic_map import TOPIC_GROUPS
+
+
+def _build_test_db() -> sqlite3.Connection:
+    """In-memory SQLite with minimal schema for Pozīcijas V2 tests.
+
+    Creates tracked_politicians + claims + documents tables mirroring the
+    production schema subset these helpers read from. Does NOT need vector
+    tables.
+
+    ``documents`` (ar ``source_domain``) un ``claims.document_id`` pievienoti
+    2026-09-07: avota etiķete tagad nāk no ``documents.source_domain``, ne no
+    URL hosta (verdikts 41), tāpēc ``_fetch_claims()`` LEFT JOINo dokumentus.
+    """
+    db = sqlite3.connect(":memory:")
+    db.row_factory = sqlite3.Row
+    db.executescript("""
+        CREATE TABLE tracked_politicians (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            party TEXT,
+            relationship_type TEXT DEFAULT 'tracked'
+        );
+        CREATE TABLE documents (
+            id INTEGER PRIMARY KEY,
+            source_url TEXT,
+            source_domain TEXT,
+            platform TEXT,
+            scraped_at TEXT
+        );
+        CREATE TABLE claims (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            opponent_id INTEGER,
+            document_id INTEGER,
+            topic TEXT,
+            stance TEXT,
+            source_url TEXT,
+            stated_at TEXT,
+            created_at TEXT,
+            confidence REAL,
+            salience REAL,
+            claim_type TEXT DEFAULT 'position'
+        );
+        CREATE TABLE parties (name TEXT, short_name TEXT, color TEXT);
+    """)
+    db.execute("INSERT INTO tracked_politicians (id, name, party) VALUES (1, 'Test Polit', 'Jaunā Vienotība')")
+    db.execute("INSERT INTO parties VALUES ('Jaunā Vienotība', 'JV', '#3b82f6')")
+    return db
+
+
+class TestConfidenceTier:
+    def test_augsta_boundary(self):
+        assert _confidence_tier(0.9) == "augsta"
+        assert _confidence_tier(1.0) == "augsta"
+
+    def test_laba_range(self):
+        assert _confidence_tier(0.89) == "laba"
+        assert _confidence_tier(0.75) == "laba"
+
+    def test_merena_range(self):
+        assert _confidence_tier(0.74) == "merena"
+        assert _confidence_tier(0.0) == "merena"
+
+    def test_none_is_merena(self):
+        assert _confidence_tier(None) == "merena"
+
+
+class TestTopicColors:
+    def test_covers_all_canonical_groups(self):
+        canonical = set(TOPIC_GROUPS.keys())
+        palette = set(PZV1_TOPIC_COLORS.keys())
+        missing = canonical - palette
+        assert not missing, f"missing colors for: {sorted(missing)}"
+
+    def test_all_colors_are_hex(self):
+        for group, color in PZV1_TOPIC_COLORS.items():
+            assert color.startswith("#"), f"{group} color not hex: {color}"
+            assert len(color) == 7, f"{group} color wrong length: {color}"
+
+    def test_no_color_matches_party_palette(self):
+        # Partiju palete = ``parties.color`` (kopš 2026-10-11 vienīgais avots);
+        # lasa produkcijas DB tikai lasīšanai, bez tās — skip (CI).
+        prod = PROJECT_ROOT / PRODUCTION_DB_PATH
+        if not prod.exists():
+            pytest.skip("production DB absent")
+        conn = sqlite3.connect(f"file:{prod.as_posix()}?mode=ro", uri=True)
+        conn.row_factory = sqlite3.Row
+        try:
+            party_colors = set(party_color_map(conn).values())
+        finally:
+            conn.close()
+        assert len(party_colors) >= 9, f"pārāk maz partiju krāsu: {party_colors}"
+        for group, color in PZV1_TOPIC_COLORS.items():
+            assert color not in party_colors, \
+                f"{group} color {color} clashes with a party color"
+
+
+class TestFetchPozicijasMetrics:
+    def test_empty_db(self):
+        db = _build_test_db()
+        m = _fetch_pozicijas_metrics(_fetch_claims(db))
+        assert m == {"total": 0, "last_week": 0, "confidence_good_pct": 0}
+
+    def test_counts_and_percentage(self):
+        db = _build_test_db()
+        # 4 rows: 2 augsta (both last week), 1 laba (old), 1 merena (last week)
+        now = now_lv_dt()
+        recent = now.strftime("%Y-%m-%d %H:%M:%S")
+        old = (now - timedelta(days=30)).strftime("%Y-%m-%d %H:%M:%S")
+        rows = [
+            (1, "T", "s1", "u1", recent, recent, 0.95, 0.5, "position"),
+            (1, "T", "s2", "u2", recent, recent, 0.92, 0.5, "position"),
+            (1, "T", "s3", "u3", old,    old,    0.80, 0.5, "position"),
+            (1, "T", "s4", "u4", recent, recent, 0.50, 0.5, "position"),
+        ]
+        # Galvene skaita to pašu, ko tabula (2026-10-20: «Kopā 9 852» pret
+        # «Rāda 9801»): neaktīva politiķa un mediju konta pozīcijas tabulā
+        # nav, tāpēc tās nedrīkst būt arī metrikās.
+        db.execute("INSERT INTO tracked_politicians (id, name, party, relationship_type) VALUES (2, 'Bijušais', NULL, 'inactive')")
+        db.execute("INSERT INTO tracked_politicians (id, name, party, relationship_type) VALUES (3, 'Kas Notiek Latvijā', NULL, 'neutral')")
+        rows += [
+            (2, "T", "s5", "u5", recent, recent, 0.95, 0.5, "position"),
+            (3, "T", "s6", "u6", recent, recent, 0.95, 0.5, "position"),
+        ]
+        db.executemany(
+            "INSERT INTO claims (opponent_id, topic, stance, source_url, stated_at, created_at, confidence, salience, claim_type) VALUES (?,?,?,?,?,?,?,?,?)",
+            rows,
+        )
+        m = _fetch_pozicijas_metrics(_fetch_claims(db))
+        assert m["total"] == 4
+        assert m["last_week"] == 3
+        # 3 of 4 are ≥ 0.75 → 75%
+        assert m["confidence_good_pct"] == 75
+
+    def test_excludes_non_position_claim_types(self):
+        db = _build_test_db()
+        now = now_lv_dt().strftime("%Y-%m-%d %H:%M:%S")
+        db.execute(
+            "INSERT INTO claims (opponent_id, topic, stance, source_url, stated_at, created_at, confidence, claim_type) VALUES (1,'T','s','u',?,?,0.9,'saeima_vote')",
+            (now, now),
+        )
+        m = _fetch_pozicijas_metrics(_fetch_claims(db))
+        assert m["total"] == 0
+
+
+class TestFetchClaimsEnrichment:
+    def test_enrichment_fields_present(self):
+        db = _build_test_db()
+        now = now_lv_dt().strftime("%Y-%m-%d %H:%M:%S")
+        db.execute(
+            "INSERT INTO claims (opponent_id, topic, stance, source_url, stated_at, created_at, confidence, claim_type) VALUES (1,'Aizsardzība','s','https://lsm.lv/raksts/a/b',?,?,0.95,'position')",
+            (now, now),
+        )
+        rows = _fetch_claims(db)
+        assert len(rows) == 1
+        r = rows[0]
+        assert r["party_color"] == "#3b82f6"      # JV no parties.color
+        assert r["party_short"] == "JV"
+        assert r["confidence_tier"] == "augsta"
+        assert r["source_domain"] == "lsm.lv"
+        assert r["date_iso"] == now[:10]
+
+    def test_missing_party_fallback(self):
+        db = _build_test_db()
+        db.execute("INSERT INTO tracked_politicians (id, name, party, relationship_type) VALUES (2, 'Lato Lapsa', NULL, 'neutral')")
+        now = now_lv_dt().strftime("%Y-%m-%d %H:%M:%S")
+        db.execute(
+            "INSERT INTO claims (opponent_id, topic, stance, source_url, stated_at, created_at, confidence, claim_type) VALUES (2,'T','s','',?,?,0.5,'position')",
+            (now, now),
+        )
+        rows = _fetch_claims(db)
+        r = [x for x in rows if x["politician_name"] == "Lato Lapsa"][0]
+        assert r["party_color"] == "#8b8fa3"
+        assert r["party_short"] == "—"
+        assert r["confidence_tier"] == "merena"
+        assert r["source_domain"] == ""
+
+    def test_source_domain_strips_www_prefix(self):
+        db = _build_test_db()
+        now = now_lv_dt().strftime("%Y-%m-%d %H:%M:%S")
+        db.execute(
+            "INSERT INTO claims (opponent_id, topic, stance, source_url, stated_at, created_at, confidence, claim_type) VALUES (1,'T','s','https://www.delfi.lv/raksts/a',?,?,0.9,'position')",
+            (now, now),
+        )
+        rows = _fetch_claims(db)
+        assert rows[0]["source_domain"] == "delfi.lv"
+
+
+def test_pozicijas_phone_layout_in_browser(tmp_path):
+    """Pozīciju lapa telefonā (390 px, good-css 3. kārta 2026-10-20).
+
+    Kļūmes, ko ķer: lapa platāka par ekrānu; kārtošanas pogas <44 px
+    pieskāriena mērķis; galvenes «Kopā» skaitlis nesakrīt ar tabulas
+    «no N» (galvene skaitīja arī neaktīvo un mediju kontu pozīcijas);
+    lapošana angliski «← prev / next →».
+    Brauc īstu lapu pārlūkā caur lokālu HTTP serveri (pzv1.js ielādē
+    pozicijas-data.json ar fetch, ko file:// bloķē).
+    """
+    sync_api = pytest.importorskip("playwright.sync_api")
+    import functools
+    import shutil
+    import threading
+    from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+
+    from src.db import get_db, init_db
+    from src.render.positions import render_positions
+    from src.saeima.schema import init_saeima_tables
+    from tests.test_profile_topic_deeplink import _env
+
+    db_path = str(tmp_path / "t.db")
+    init_db(db_path)
+    init_saeima_tables(db_path)
+    db = get_db(db_path)
+    db.execute("INSERT INTO tracked_politicians (id,name,party,relationship_type) "
+               "VALUES (1,'Anna Kalniņa','Jaunā Vienotība','tracked')")
+    db.execute("INSERT INTO tracked_politicians (id,name,party,relationship_type) "
+               "VALUES (2,'Bijušais Deputāts',NULL,'inactive')")
+    db.execute("INSERT INTO tracked_politicians (id,name,party,relationship_type) "
+               "VALUES (3,'Kas Notiek Latvijā',NULL,'neutral')")
+    # 55 redzamas pozīcijas (>50 → divas lapas) + pa vienai neredzamai.
+    owners = [1] * 55 + [2, 3]
+    for i, pid in enumerate(owners, start=1):
+        stated = (now_lv_dt() - timedelta(days=i)).strftime("%Y-%m-%d %H:%M:%S")
+        url = f"https://www.delfi.lv/raksts/{i}"
+        db.execute(
+            "INSERT INTO documents (id,content,content_hash,platform,source_domain,"
+            "source_url,scraped_at,published_at) VALUES (?,?,?,'web','delfi.lv',?,?,?)",
+            (i, f"Teksts {i}", f"h{i}", url, stated, stated),
+        )
+        db.execute(
+            "INSERT INTO claims (opponent_id,document_id,topic,stance,confidence,"
+            "source_url,stated_at,claim_type) VALUES (?,?,'Aizsardzība',?,0.9,?,?,'position')",
+            (pid, i, f"Pozīcija numur {i} par aizsardzības budžetu.", url, stated),
+        )
+    db.commit()
+
+    out = tmp_path / "site"
+    out.mkdir()
+    render_positions(_env(), db, out)
+    shutil.copytree("assets", out / "assets", dirs_exist_ok=True)
+
+    class Quiet(SimpleHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Quiet, directory=str(out)))
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    try:
+        with sync_api.sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as exc:  # pragma: no cover
+                pytest.skip(f"Chromium nav pieejams: {exc}")
+            page = browser.new_page(viewport={"width": 390, "height": 844})
+            page.goto(f"http://127.0.0.1:{server.server_address[1]}/pozicijas.html")
+            page.wait_for_selector(".pzv1-row")
+
+            assert page.evaluate("document.documentElement.scrollWidth") <= 390
+            heights = page.evaluate(
+                "[...document.querySelectorAll('.pzv1-sortbtn')].map(b => b.getBoundingClientRect().height)")
+            assert heights and min(heights) >= 44, heights
+
+            def digits(sel):
+                return "".join(ch for ch in page.inner_text(sel) if ch.isdigit())
+            header_total = page.inner_text(".pagehead-metric:first-child .pagehead-metric-value")
+            assert "".join(ch for ch in header_total if ch.isdigit()) == digits("#pzv1-total") == "55"
+
+            pager = page.text_content("#pzv1-pagination")
+            assert "Iepriekšējā" in pager and "Nākamā" in pager, pager
+            assert "prev" not in pager and "next" not in pager, pager
+            browser.close()
+    finally:
+        server.shutdown()

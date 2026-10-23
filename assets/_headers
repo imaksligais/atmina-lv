@@ -1,0 +1,23 @@
+# atmina.lv — Cloudflare Workers Static Assets galvenes.
+# Vienīgais galveņu avots (kopš 2026-10-19); sargā tests/test_headers_file.py.
+# script-src bez 'unsafe-inline' — apzināts drošības lēmums (CLAUDE.md).
+
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://gateway.umami.is https://cloud.umami.is; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+
+# JSON dati — īss kešs, lai dienas rutīnas atjauninājumi iet cauri
+/*.json
+  Cache-Control: public, max-age=300
+/data/*
+  Cache-Control: public, max-age=300
+
+# Statiskie aseti — ?v= versionēti
+/assets/*
+  Cache-Control: public, max-age=86400
+
+/images/*
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,254 @@
+document_key,topic,confidence,model
+10/Lp14,Valsts pārvalde,0.9,claude-opus-5-5
+1005/Lp14,Sociālā politika,0.9,claude-opus-5-5
+1006/Lp14,Budžets un finanses,0.9,claude-opus-5-5
+1017/Lp14,Digitālā politika,0.8,claude-opus-5-5
+1019/Lp14,Tieslietas,0.9,claude-opus-5-5
+102/P14,Ukraina un Krievija,0.75,claude-opus-5-5
+1020/Lp14,Ekonomika un uzņēmējdarbība,0.9,claude-opus-5-5
+1023/Lp14,Vide,0.7,claude-opus-5-5
+1027/Lp14,Ārpolitika,0.9,claude-opus-5-5
+1030/Lp14,Tieslietas,0.88,claude-opus-5-5
+1038/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+1054/Lm14,Tieslietas,0.97,claude-opus-5-5
+1056/Lp14,Tieslietas,0.8,claude-opus-5-5
+1059/Lp14,Vide,0.9,claude-opus-5-5
+106/Lp14,Mežsaimniecība,0.85,claude-opus-5-5
+1064/Lp14,Ekonomika un uzņēmējdarbība,0.85,claude-opus-5-5
+1073/Lp14,Droni,0.55,claude-opus-5-5
+1083/Lp14,Budžets un finanses,0.8,claude-opus-5-5
+1084/Lp14,Transports,0.95,claude-opus-5-5
+1088/Lp14,Budžets un finanses,0.92,claude-opus-5-5
+1091/Lp14,Budžets un finanses,0.85,claude-opus-5-5
+1094/Lp14,Korupcija un KNAB,0.95,claude-opus-5-5
+11/P14,Degviela un enerģētika,0.9,claude-opus-5-5
+1105/Lp14,Valsts kapitālsabiedrības,0.95,claude-opus-5-5
+1106/Lm14,Veselības aprūpe,0.9,claude-opus-5-5
+1107/Lp14,Mežsaimniecība,0.75,claude-opus-5-5
+1108/Lp14,Budžets un finanses,0.95,claude-opus-5-5
+1117/Lp14,Aizsardzība un drošība,0.5,claude-opus-5-5
+1123/Lp14,Vide,0.7,claude-opus-5-5
+1130/Lp14,Budžets un finanses,0.97,claude-opus-5-5
+1134/Lp14,Valodu politika,0.5,claude-opus-5-5
+114/P14,Veselības aprūpe,0.85,claude-opus-5-5
+1156/Lp14,Tieslietas,0.85,claude-opus-5-5
+1166/Lp14,Korupcija un KNAB,0.9,claude-opus-5-5
+1177/Lp14,Veselības aprūpe,0.75,claude-opus-5-5
+1190/Lp14,Vide,0.95,claude-opus-5-5
+1199/Lp14,Digitālā politika,0.55,claude-opus-5-5
+1207/Lp14,Degviela un enerģētika,0.9,claude-opus-5-5
+121/P14,Digitālā politika,0.4,claude-opus-5-5
+1210/Lp14,Degviela un enerģētika,0.9,claude-opus-5-5
+1227/Lp14,Mežsaimniecība,0.75,claude-opus-5-5
+1228/Lp14,Sports,0.98,claude-opus-5-5
+1229/Lp14,Vide,0.9,claude-opus-5-5
+1248/Lp14,Ukraina un Krievija,0.95,claude-opus-5-5
+125/P14,Droni,0.95,claude-opus-5-5
+1273/Lp14,Vide,0.9,claude-opus-5-5
+1275/Lp14,Vide,0.9,claude-opus-5-5
+1277/Lp14,Vide,0.95,claude-opus-5-5
+1286/Lp14,Transports,0.85,claude-opus-5-5
+1291/Lp14,Mežsaimniecība,0.92,claude-opus-5-5
+131/P14,Korupcija un KNAB,0.75,claude-opus-5-5
+1310/Lp14,Izglītība,0.92,claude-opus-5-5
+1323/Lp14,Vide,0.85,claude-opus-5-5
+134/P14,Valsts kapitālsabiedrības,0.95,claude-opus-5-5
+1349/Lp14,Degviela un enerģētika,0.55,claude-opus-5-5
+135/P14,Vide,0.5,claude-opus-5-5
+1364/Lp14,Ekonomika un uzņēmējdarbība,0.95,claude-opus-5-5
+1369/Lp14,Pensijas,0.9,claude-opus-5-5
+137/P14,Imigrācija,0.9,claude-opus-5-5
+138/P14,Korupcija un KNAB,0.93,claude-opus-5-5
+1381/Lp14,Budžets un finanses,0.95,claude-opus-5-5
+1385/Lp14,Budžets un finanses,0.9,claude-opus-5-5
+140/P14,Aizsardzība un drošība,0.75,claude-opus-5-5
+1420/Lp14,Aizsardzība un drošība,0.55,claude-opus-5-5
+1430/Lp14,Vide,0.7,claude-opus-5-5
+1444/Lp14,Budžets un finanses,0.9,claude-opus-5-5
+1451/Lp14,Budžets un finanses,0.92,claude-opus-5-5
+1459/Lp14,Tieslietas,0.6,claude-opus-5-5
+1466/Lp14,Veselības aprūpe,0.95,claude-opus-5-5
+1470/Lp14,Sociālā politika,0.8,claude-opus-5-5
+1477/Lp14,Digitālā politika,0.55,claude-opus-5-5
+148/Lp14,Vide,0.85,claude-opus-5-5
+1488/Lp14,Ukraina un Krievija,0.95,claude-opus-5-5
+1511/Lp14,Korupcija un KNAB,0.9,claude-opus-5-5
+152/Lp14,Budžets un finanses,0.97,claude-opus-5-5
+1539/Lp14,Valsts pārvalde,0.7,claude-opus-5-5
+1544/Lp14,Ukraina un Krievija,0.92,claude-opus-5-5
+1549/Lp14,Pašvaldības,0.75,claude-opus-5-5
+1559/Lp14,Mežsaimniecība,0.8,claude-opus-5-5
+1565/Lp14,Digitālā politika,0.85,claude-opus-5-5
+1575/Lp14,Ekonomika un uzņēmējdarbība,0.9,claude-opus-5-5
+1579/Lp14,Mežsaimniecība,0.7,claude-opus-5-5
+1581/Lp14,Transports,0.85,claude-opus-5-5
+1586/Lp14,Sociālā politika,0.6,claude-opus-5-5
+17/Lp14,Budžets un finanses,0.9,claude-opus-5-5
+174/Lp14,Tieslietas,0.9,claude-opus-5-5
+19/P14,Aizsardzība un drošība,0.75,claude-opus-5-5
+193/Lp14,Degviela un enerģētika,0.95,claude-opus-5-5
+194/Lm14,Tieslietas,0.5,claude-opus-5-5
+197/Lp14,Degviela un enerģētika,0.95,claude-opus-5-5
+2/P14,Izglītība,0.9,claude-opus-5-5
+20/Lp14,Korupcija un KNAB,0.7,claude-opus-5-5
+201/Lm14,Valodu politika,0.95,claude-opus-5-5
+202/Lp14,Valodu politika,0.95,claude-opus-5-5
+209/Lp14,Pašvaldības,0.95,claude-opus-5-5
+213/Lp14,Digitālā politika,0.7,claude-opus-5-5
+215/Lp14,Imigrācija,0.95,claude-opus-5-5
+216/Lp14,Lauksaimniecība,0.6,claude-opus-5-5
+219/Lm14,Imigrācija,0.55,claude-opus-5-5
+224/Lp14,Digitālā politika,0.65,claude-opus-5-5
+230/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+232/Lp14,Valsts pārvalde,0.3,claude-opus-5-5
+237/Lp14,Ukraina un Krievija,0.9,claude-opus-5-5
+25/Lm14,Sociālā politika,0.85,claude-opus-5-5
+250/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+255/Lp14,Aizsardzība un drošība,0.9,claude-opus-5-5
+26/P14,Ārpolitika,0.55,claude-opus-5-5
+269/Lp14,Budžets un finanses,0.85,claude-opus-5-5
+283/Lm14,Saeimas darbs,0.95,claude-opus-5-5
+284/Lp14,Korupcija un KNAB,0.95,claude-opus-5-5
+289/Lp14,Mežsaimniecība,0.9,claude-opus-5-5
+298/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+299/Lp14,Mežsaimniecība,0.95,claude-opus-5-5
+301/Lp14,Vide,0.6,claude-opus-5-5
+302/Lp14,Vide,0.8,claude-opus-5-5
+303/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+306/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+31/Lm14,Tieslietas,0.95,claude-opus-5-5
+31/Lp14,Vide,0.95,claude-opus-5-5
+320/Lm14,Saeimas darbs,0.98,claude-opus-5-5
+324/Lp14,Valsts pārvalde,0.85,claude-opus-5-5
+337/Lm14,Vide,0.6,claude-opus-5-5
+338/Lm14,Aizsardzība un drošība,0.95,claude-opus-5-5
+340/Lp14,Veselības aprūpe,0.85,claude-opus-5-5
+341/Lm14,Saeimas darbs,0.98,claude-opus-5-5
+355/Lp14,Degviela un enerģētika,0.95,claude-opus-5-5
+356/Lp14,Ukraina un Krievija,0.95,claude-opus-5-5
+37/P14,airBaltic,0.9,claude-opus-5-5
+371/Lm14,Valsts pārvalde,0.85,claude-opus-5-5
+388/Lm14,Lauksaimniecība,0.85,claude-opus-5-5
+393/Lp14,Sports,0.9,claude-opus-5-5
+403/Lp14,Vide,0.95,claude-opus-5-5
+408/Lp14,Sociālā politika,0.9,claude-opus-5-5
+415/Lp14,Korupcija un KNAB,0.75,claude-opus-5-5
+416/Lm14,Aizsardzība un drošība,0.95,claude-opus-5-5
+423/Lp14,Valsts pārvalde,0.7,claude-opus-5-5
+439/Lm14,Tieslietas,0.97,claude-opus-5-5
+44/Lp14,Ekonomika un uzņēmējdarbība,0.85,claude-opus-5-5
+440/Lm14,Tieslietas,0.95,claude-opus-5-5
+445/Lp14,Ukraina un Krievija,0.85,claude-opus-5-5
+45/P14,Izglītība,0.6,claude-opus-5-5
+458/Lp14,Kultūra,0.85,claude-opus-5-5
+493/Lp14,Ukraina un Krievija,0.9,claude-opus-5-5
+501/Lm14,airBaltic,0.95,claude-opus-5-5
+508/Lp14,Digitālā politika,0.5,claude-opus-5-5
+509/Lm14,Vide,0.85,claude-opus-5-5
+515/Lp14,Ekonomika un uzņēmējdarbība,0.5,claude-opus-5-5
+52/P14,airBaltic,0.95,claude-opus-5-5
+523/Lm14,Tieslietas,0.95,claude-opus-5-5
+524/Lp14,Ukraina un Krievija,0.75,claude-opus-5-5
+529/Lp14,Transports,0.9,claude-opus-5-5
+544/Lp14,Tieslietas,0.95,claude-opus-5-5
+561/Lp14,Imigrācija,0.9,claude-opus-5-5
+565/Lp14,Tieslietas,0.7,claude-opus-5-5
+569/Lm14,Valodu politika,0.7,claude-opus-5-5
+571/Lm14,Valodu politika,0.7,claude-opus-5-5
+571/Lp14,Valodu politika,0.9,claude-opus-5-5
+572/Lp14,Pašvaldības,0.95,claude-opus-5-5
+578/Lm14,Valodu politika,0.9,claude-opus-5-5
+58/P14,Pašvaldības,0.8,claude-opus-5-5
+591/Lp14,Korupcija un KNAB,0.9,claude-opus-5-5
+597/Lp14,Transports,0.9,claude-opus-5-5
+598/Lm14,Tieslietas,0.95,claude-opus-5-5
+598/Lp14,Aizsardzība un drošība,0.45,claude-opus-5-5
+601/Lm14,Imigrācija,0.9,claude-opus-5-5
+604/Lm14,Tieslietas,0.95,claude-opus-5-5
+61/Lp14,Transports,0.75,claude-opus-5-5
+635/Lp14,Valsts kapitālsabiedrības,0.9,claude-opus-5-5
+653/Lm14,Budžets un finanses,0.9,claude-opus-5-5
+658/Lm14,Saeimas darbs,0.98,claude-opus-5-5
+661/Lp14,Vide,0.9,claude-opus-5-5
+671/Lp14,Aizsardzība un drošība,0.45,claude-opus-5-5
+673/Lm14,Saeimas darbs,0.85,claude-opus-5-5
+688/Lm14,Saeimas darbs,0.95,claude-opus-5-5
+688/Lp14,Digitālā politika,0.85,claude-opus-5-5
+69/Lp14,Digitālā politika,0.55,claude-opus-5-5
+698/Lp14,Valsts kapitālsabiedrības,0.85,claude-opus-5-5
+70/Lm14,Saeimas darbs,0.95,claude-opus-5-5
+701/Lp14,Degviela un enerģētika,0.85,claude-opus-5-5
+707/Lp14,Valsts kapitālsabiedrības,0.92,claude-opus-5-5
+715/Lm14,Valodu politika,0.85,claude-opus-5-5
+718/Lp14,Klimats,0.97,claude-opus-5-5
+723/Lp14,Lauksaimniecība,0.85,claude-opus-5-5
+729/Lp14,Transports,0.6,claude-opus-5-5
+732/Lp14,Pašvaldības,0.85,claude-opus-5-5
+735/Lp14,Budžets un finanses,0.9,claude-opus-5-5
+74/Lp14,Valodu politika,0.5,claude-opus-5-5
+744/Lp14,Tieslietas,0.45,claude-opus-5-5
+745/Lm14,Vēlēšanas,0.75,claude-opus-5-5
+751/Lp14,Budžets un finanses,0.95,claude-opus-5-5
+76/P14,airBaltic,0.97,claude-opus-5-5
+769/Lp14,Izglītība,0.95,claude-opus-5-5
+780/Lp14,Vide,0.65,claude-opus-5-5
+79/Lm14,Saeimas darbs,0.95,claude-opus-5-5
+796/Lm14,Budžets un finanses,0.9,claude-opus-5-5
+798/Lp14,Digitālā politika,0.85,claude-opus-5-5
+80/Lm14,Saeimas darbs,0.97,claude-opus-5-5
+805/Lp14,Ārpolitika,0.65,claude-opus-5-5
+81/P14,airBaltic,0.95,claude-opus-5-5
+812/Lp14,Vide,0.55,claude-opus-5-5
+82/Lp14,Izglītība,0.9,claude-opus-5-5
+82/P14,Rail Baltica,0.97,claude-opus-5-5
+826/Lp14,Sociālā politika,0.9,claude-opus-5-5
+836/Lp14,Sociālā politika,0.9,claude-opus-5-5
+85/P14,Vēlēšanas,0.9,claude-opus-5-5
+863/Lp14,Valodu politika,0.9,claude-opus-5-5
+87/Lp14,Tieslietas,0.8,claude-opus-5-5
+871/Lp14,Pašvaldības,0.85,claude-opus-5-5
+874/Lp14,Veselības aprūpe,0.75,claude-opus-5-5
+876/Lp14,Aizsardzība un drošība,0.6,claude-opus-5-5
+878/Lp14,Ukraina un Krievija,0.95,claude-opus-5-5
+892/Lm14,Aizsardzība un drošība,0.95,claude-opus-5-5
+893/Lm14,Koalīcija un partijas,0.95,claude-opus-5-5
+898/Lp14,Aizsardzība un drošība,0.85,claude-opus-5-5
+904/Lp14,Valsts kapitālsabiedrības,0.7,claude-opus-5-5
+910/Lp14,Klimats,0.85,claude-opus-5-5
+911/Lm14,Budžets un finanses,0.9,claude-opus-5-5
+927/Lp14,Budžets un finanses,0.65,claude-opus-5-5
+941/Lp14,Korupcija un KNAB,0.9,claude-opus-5-5
+949/Lm14,Tieslietas,0.97,claude-opus-5-5
+95/P14,Vide,0.4,claude-opus-5-5
+953/Lm14,airBaltic,0.98,claude-opus-5-5
+96/Lp14,Valsts pārvalde,0.35,claude-opus-5-5
+968/Lm14,Tieslietas,0.95,claude-opus-5-5
+970/Lp14,Lauksaimniecība,0.93,claude-opus-5-5
+972/Lm14,Sociālā politika,0.55,claude-opus-5-5
+973/Lm14,Pensijas,0.95,claude-opus-5-5
+975/Lp14,Valsts pārvalde,0.8,claude-opus-5-5
+981/Lp14,Tieslietas,0.9,claude-opus-5-5
+983/Lm14,Saeimas darbs,0.98,claude-opus-5-5
+985/Lp14,Tieslietas,0.9,claude-opus-5-5
+989/Lp14,Digitālā politika,0.6,claude-opus-5-5
+997/Lp14,Ekonomika un uzņēmējdarbība,0.9,claude-opus-5-5
+motif:04acf3e33477,Saeimas darbs,0.95,claude-opus-5-5
+motif:10c23379621b,Budžets un finanses,0.9,claude-opus-5-5
+motif:14380cb8a7f2,Saeimas darbs,0.95,claude-opus-5-5
+motif:208ca3ca9c34,Aizsardzība un drošība,0.9,claude-opus-5-5
+motif:231b1192c721,Saeimas darbs,0.9,claude-opus-5-5
+motif:233045ca9717,Saeimas darbs,0.95,claude-opus-5-5
+motif:23cd5c2201e9,Saeimas darbs,0.97,claude-opus-5-5
+motif:2696451cf39e,Saeimas darbs,0.95,claude-opus-5-5
+motif:2a04de0ddc1b,Saeimas darbs,0.97,claude-opus-5-5
+motif:32f18125fba3,Saeimas darbs,0.95,claude-opus-5-5
+motif:362c4dd76def,Saeimas darbs,0.9,claude-opus-5-5
+motif:5879d9aa7610,Saeimas darbs,0.97,claude-opus-5-5
+motif:58eece48e5bf,Aizsardzība un drošība,0.85,claude-opus-5-5
+motif:5ad40b66b691,Budžets un finanses,0.1,claude-opus-5-5
+motif:64fb74421a75,Tieslietas,0.75,claude-opus-5-5
+motif:7790f03ee176,Saeimas darbs,0.1,claude-opus-5-5
+motif:7d460bd440c3,Saeimas darbs,0.97,claude-opus-5-5
+motif:c40f8488b047,Saeimas darbs,0.97,claude-opus-5-5
+motif:d9f0fbfb5b1a,Saeimas darbs,0.97,claude-opus-5-5
+motif:eef6357750e7,Saeimas darbs,0.95,claude-opus-5-5

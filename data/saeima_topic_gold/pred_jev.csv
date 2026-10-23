@@ -1,0 +1,254 @@
+document_key,topic,confidence,model
+10/Lp14,Valsts pārvalde,1.0000,jev-1.13.0
+1005/Lp14,Sociālā politika,0.9600,jev-1.13.0
+1006/Lp14,Budžets un finanses,0.8400,jev-1.13.0
+1017/Lp14,Digitālā politika,0.9900,jev-1.13.0
+1019/Lp14,Tieslietas,1.0000,jev-1.13.0
+102/P14,Ukraina un Krievija,0.9500,jev-1.13.0
+1020/Lp14,Ekonomika un uzņēmējdarbība,0.9300,jev-1.13.0
+1023/Lp14,Vide,0.9800,jev-1.13.0
+1027/Lp14,Ārpolitika,0.9600,jev-1.13.0
+1030/Lp14,Tieslietas,0.9700,jev-1.13.0
+1038/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+1054/Lm14,Tieslietas,0.9200,jev-1.13.0
+1056/Lp14,Tieslietas,0.7500,jev-1.13.0
+1059/Lp14,Vide,0.8600,jev-1.13.0
+106/Lp14,Mežsaimniecība,0.8800,jev-1.13.0
+1064/Lp14,Ekonomika un uzņēmējdarbība,1.0000,jev-1.13.0
+1073/Lp14,Digitālā politika,0.8900,jev-1.13.0
+1083/Lp14,Budžets un finanses,0.9800,jev-1.13.0
+1084/Lp14,Transports,0.9900,jev-1.13.0
+1088/Lp14,Budžets un finanses,0.9100,jev-1.13.0
+1091/Lp14,Budžets un finanses,0.7500,jev-1.13.0
+1094/Lp14,Korupcija un KNAB,1.0000,jev-1.13.0
+11/P14,Degviela un enerģētika,0.9100,jev-1.13.0
+1105/Lp14,Valsts kapitālsabiedrības,1.0000,jev-1.13.0
+1106/Lm14,Veselības aprūpe,0.9900,jev-1.13.0
+1107/Lp14,Mežsaimniecība,0.9300,jev-1.13.0
+1108/Lp14,Budžets un finanses,0.4500,jev-1.13.0
+1117/Lp14,Aizsardzība un drošība,0.6800,jev-1.13.0
+1123/Lp14,Lauksaimniecība,0.3800,jev-1.13.0
+1130/Lp14,Budžets un finanses,0.9900,jev-1.13.0
+1134/Lp14,Valodu politika,0.3400,jev-1.13.0
+114/P14,Veselības aprūpe,0.9800,jev-1.13.0
+1156/Lp14,Tieslietas,0.5500,jev-1.13.0
+1166/Lp14,Korupcija un KNAB,1.0000,jev-1.13.0
+1177/Lp14,Veselības aprūpe,0.9600,jev-1.13.0
+1190/Lp14,Transports,0.3700,jev-1.13.0
+1199/Lp14,Sabiedriskie mediji,0.3700,jev-1.13.0
+1207/Lp14,Budžets un finanses,0.9800,jev-1.13.0
+121/P14,Valsts pārvalde,0.9600,jev-1.13.0
+1210/Lp14,Budžets un finanses,0.7300,jev-1.13.0
+1227/Lp14,Mežsaimniecība,0.9800,jev-1.13.0
+1228/Lp14,Sports,1.0000,jev-1.13.0
+1229/Lp14,Vide,0.9900,jev-1.13.0
+1248/Lp14,Lauksaimniecība,0.8000,jev-1.13.0
+125/P14,Droni,0.8700,jev-1.13.0
+1273/Lp14,Vide,0.9600,jev-1.13.0
+1275/Lp14,Vide,0.9800,jev-1.13.0
+1277/Lp14,Vide,1.0000,jev-1.13.0
+1286/Lp14,Transports,0.9900,jev-1.13.0
+1291/Lp14,Mežsaimniecība,1.0000,jev-1.13.0
+131/P14,Korupcija un KNAB,0.9700,jev-1.13.0
+1310/Lp14,Izglītība,1.0000,jev-1.13.0
+1323/Lp14,Vide,0.9300,jev-1.13.0
+134/P14,Valsts kapitālsabiedrības,0.9500,jev-1.13.0
+1349/Lp14,Vide,0.6300,jev-1.13.0
+135/P14,Vide,0.3400,jev-1.13.0
+1364/Lp14,Ekonomika un uzņēmējdarbība,0.9200,jev-1.13.0
+1369/Lp14,Pensijas,0.9700,jev-1.13.0
+137/P14,Imigrācija,0.9300,jev-1.13.0
+138/P14,Korupcija un KNAB,0.7200,jev-1.13.0
+1381/Lp14,Ekonomika un uzņēmējdarbība,0.6900,jev-1.13.0
+1385/Lp14,Ekonomika un uzņēmējdarbība,0.8900,jev-1.13.0
+140/P14,Aizsardzība un drošība,0.8400,jev-1.13.0
+1420/Lp14,Vide,0.9000,jev-1.13.0
+1430/Lp14,Vide,0.7000,jev-1.13.0
+1444/Lp14,Budžets un finanses,0.9700,jev-1.13.0
+1451/Lp14,Budžets un finanses,0.9600,jev-1.13.0
+1459/Lp14,Sociālā politika,0.5000,jev-1.13.0
+1466/Lp14,Veselības aprūpe,1.0000,jev-1.13.0
+1470/Lp14,Sociālā politika,0.8400,jev-1.13.0
+1477/Lp14,Digitālā politika,0.9800,jev-1.13.0
+148/Lp14,Vide,0.9900,jev-1.13.0
+1488/Lp14,Ukraina un Krievija,0.5900,jev-1.13.0
+1511/Lp14,Korupcija un KNAB,0.9700,jev-1.13.0
+152/Lp14,Budžets un finanses,1.0000,jev-1.13.0
+1539/Lp14,Valsts pārvalde,0.8600,jev-1.13.0
+1544/Lp14,Ukraina un Krievija,0.4300,jev-1.13.0
+1549/Lp14,Pašvaldības,0.6600,jev-1.13.0
+1559/Lp14,Mežsaimniecība,0.8200,jev-1.13.0
+1565/Lp14,Digitālā politika,0.9400,jev-1.13.0
+1575/Lp14,Ekonomika un uzņēmējdarbība,1.0000,jev-1.13.0
+1579/Lp14,Mežsaimniecība,0.9400,jev-1.13.0
+1581/Lp14,Transports,0.9500,jev-1.13.0
+1586/Lp14,Sociālā politika,0.9300,jev-1.13.0
+17/Lp14,Budžets un finanses,0.7600,jev-1.13.0
+174/Lp14,Tieslietas,0.9700,jev-1.13.0
+19/P14,Aizsardzība un drošība,0.9500,jev-1.13.0
+193/Lp14,Degviela un enerģētika,0.8100,jev-1.13.0
+194/Lm14,Sociālā politika,0.7400,jev-1.13.0
+197/Lp14,Degviela un enerģētika,0.9500,jev-1.13.0
+2/P14,Izglītība,0.9400,jev-1.13.0
+20/Lp14,Korupcija un KNAB,0.6600,jev-1.13.0
+201/Lm14,Valodu politika,0.8100,jev-1.13.0
+202/Lp14,Valodu politika,0.9100,jev-1.13.0
+209/Lp14,Pašvaldības,0.9700,jev-1.13.0
+213/Lp14,Ekonomika un uzņēmējdarbība,0.4000,jev-1.13.0
+215/Lp14,Imigrācija,1.0000,jev-1.13.0
+216/Lp14,Ekonomika un uzņēmējdarbība,0.9700,jev-1.13.0
+219/Lm14,Valodu politika,0.9800,jev-1.13.0
+224/Lp14,Digitālā politika,0.7700,jev-1.13.0
+230/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+232/Lp14,Valsts pārvalde,0.9200,jev-1.13.0
+237/Lp14,Ukraina un Krievija,0.9500,jev-1.13.0
+25/Lm14,Sociālā politika,0.9000,jev-1.13.0
+250/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+255/Lp14,Aizsardzība un drošība,0.5000,jev-1.13.0
+26/P14,Ārpolitika,0.8800,jev-1.13.0
+269/Lp14,Budžets un finanses,0.5200,jev-1.13.0
+283/Lm14,Saeimas darbs,0.9600,jev-1.13.0
+284/Lp14,Korupcija un KNAB,0.9400,jev-1.13.0
+289/Lp14,Mežsaimniecība,0.9600,jev-1.13.0
+298/Lm14,Saeimas darbs,0.9500,jev-1.13.0
+299/Lp14,Mežsaimniecība,1.0000,jev-1.13.0
+301/Lp14,Vide,0.9700,jev-1.13.0
+302/Lp14,Vide,1.0000,jev-1.13.0
+303/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+306/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+31/Lm14,Tieslietas,0.9800,jev-1.13.0
+31/Lp14,Vide,1.0000,jev-1.13.0
+320/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+324/Lp14,Valsts pārvalde,0.8400,jev-1.13.0
+337/Lm14,Vide,0.2600,jev-1.13.0
+338/Lm14,Aizsardzība un drošība,0.9900,jev-1.13.0
+340/Lp14,Veselības aprūpe,0.3200,jev-1.13.0
+341/Lm14,Saeimas darbs,0.9000,jev-1.13.0
+355/Lp14,Degviela un enerģētika,0.8100,jev-1.13.0
+356/Lp14,Sports,0.9300,jev-1.13.0
+37/P14,airBaltic,0.7400,jev-1.13.0
+371/Lm14,Valsts pārvalde,0.9500,jev-1.13.0
+388/Lm14,Lauksaimniecība,0.6200,jev-1.13.0
+393/Lp14,Sports,1.0000,jev-1.13.0
+403/Lp14,Vide,0.9700,jev-1.13.0
+408/Lp14,Sociālā politika,0.9900,jev-1.13.0
+415/Lp14,Korupcija un KNAB,1.0000,jev-1.13.0
+416/Lm14,Aizsardzība un drošība,1.0000,jev-1.13.0
+423/Lp14,Valsts pārvalde,0.9000,jev-1.13.0
+439/Lm14,Tieslietas,0.9900,jev-1.13.0
+44/Lp14,Ekonomika un uzņēmējdarbība,1.0000,jev-1.13.0
+440/Lm14,Tieslietas,0.9000,jev-1.13.0
+445/Lp14,Ukraina un Krievija,0.9100,jev-1.13.0
+45/P14,Kultūra,0.7000,jev-1.13.0
+458/Lp14,Kultūra,0.9500,jev-1.13.0
+493/Lp14,Lauksaimniecība,0.8100,jev-1.13.0
+501/Lm14,airBaltic,0.9000,jev-1.13.0
+508/Lp14,Digitālā politika,0.9300,jev-1.13.0
+509/Lm14,Vide,1.0000,jev-1.13.0
+515/Lp14,Ekonomika un uzņēmējdarbība,0.8500,jev-1.13.0
+52/P14,airBaltic,1.0000,jev-1.13.0
+523/Lm14,Tieslietas,0.9900,jev-1.13.0
+524/Lp14,Lauksaimniecība,1.0000,jev-1.13.0
+529/Lp14,Pašvaldības,0.5400,jev-1.13.0
+544/Lp14,Tieslietas,0.9500,jev-1.13.0
+561/Lp14,Imigrācija,1.0000,jev-1.13.0
+565/Lp14,Tieslietas,0.8600,jev-1.13.0
+569/Lm14,Valodu politika,0.7700,jev-1.13.0
+571/Lm14,Valodu politika,0.7500,jev-1.13.0
+571/Lp14,Valodu politika,0.5000,jev-1.13.0
+572/Lp14,Pašvaldības,0.9200,jev-1.13.0
+578/Lm14,Pašvaldības,0.9100,jev-1.13.0
+58/P14,Pašvaldības,0.5700,jev-1.13.0
+591/Lp14,Korupcija un KNAB,0.9800,jev-1.13.0
+597/Lp14,Transports,0.5600,jev-1.13.0
+598/Lm14,Tieslietas,1.0000,jev-1.13.0
+598/Lp14,Tieslietas,0.8800,jev-1.13.0
+601/Lm14,Imigrācija,0.7400,jev-1.13.0
+604/Lm14,Tieslietas,0.9800,jev-1.13.0
+61/Lp14,Transports,1.0000,jev-1.13.0
+635/Lp14,Valsts kapitālsabiedrības,0.9600,jev-1.13.0
+653/Lm14,Budžets un finanses,0.7700,jev-1.13.0
+658/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+661/Lp14,Vide,0.8900,jev-1.13.0
+671/Lp14,Aizsardzība un drošība,0.3900,jev-1.13.0
+673/Lm14,Saeimas darbs,0.7300,jev-1.13.0
+688/Lm14,Saeimas darbs,0.9500,jev-1.13.0
+688/Lp14,Digitālā politika,0.9200,jev-1.13.0
+69/Lp14,Digitālā politika,0.8500,jev-1.13.0
+698/Lp14,Valsts kapitālsabiedrības,1.0000,jev-1.13.0
+70/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+701/Lp14,Degviela un enerģētika,0.9900,jev-1.13.0
+707/Lp14,Valsts kapitālsabiedrības,1.0000,jev-1.13.0
+715/Lm14,Valodu politika,0.8700,jev-1.13.0
+718/Lp14,Klimats,0.9800,jev-1.13.0
+723/Lp14,Lauksaimniecība,0.9900,jev-1.13.0
+729/Lp14,Transports,0.8500,jev-1.13.0
+732/Lp14,Pašvaldības,0.9900,jev-1.13.0
+735/Lp14,Budžets un finanses,0.9800,jev-1.13.0
+74/Lp14,Tieslietas,0.4700,jev-1.13.0
+744/Lp14,Tieslietas,0.6500,jev-1.13.0
+745/Lm14,Vēlēšanas,0.7900,jev-1.13.0
+751/Lp14,Budžets un finanses,0.7500,jev-1.13.0
+76/P14,airBaltic,0.9300,jev-1.13.0
+769/Lp14,airBaltic,0.7600,jev-1.13.0
+780/Lp14,Vide,0.9900,jev-1.13.0
+79/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+796/Lm14,Budžets un finanses,0.9700,jev-1.13.0
+798/Lp14,Digitālā politika,1.0000,jev-1.13.0
+80/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+805/Lp14,Ārpolitika,0.9600,jev-1.13.0
+81/P14,airBaltic,1.0000,jev-1.13.0
+812/Lp14,Vide,0.8500,jev-1.13.0
+82/Lp14,Izglītība,0.9800,jev-1.13.0
+82/P14,Rail Baltica,0.9900,jev-1.13.0
+826/Lp14,Sociālā politika,0.6300,jev-1.13.0
+836/Lp14,Sociālā politika,0.5300,jev-1.13.0
+85/P14,Vēlēšanas,0.9400,jev-1.13.0
+863/Lp14,Tieslietas,0.6600,jev-1.13.0
+87/Lp14,Tieslietas,0.7100,jev-1.13.0
+871/Lp14,Pašvaldības,0.7200,jev-1.13.0
+874/Lp14,Veselības aprūpe,1.0000,jev-1.13.0
+876/Lp14,Aizsardzība un drošība,1.0000,jev-1.13.0
+878/Lp14,Lauksaimniecība,0.8500,jev-1.13.0
+892/Lm14,Aizsardzība un drošība,1.0000,jev-1.13.0
+893/Lm14,Koalīcija un partijas,0.9800,jev-1.13.0
+898/Lp14,Aizsardzība un drošība,0.5100,jev-1.13.0
+904/Lp14,Valsts kapitālsabiedrības,0.8000,jev-1.13.0
+910/Lp14,Klimats,0.8900,jev-1.13.0
+911/Lm14,Budžets un finanses,0.6600,jev-1.13.0
+927/Lp14,Ekonomika un uzņēmējdarbība,0.9300,jev-1.13.0
+941/Lp14,Korupcija un KNAB,0.9400,jev-1.13.0
+949/Lm14,Vide,0.4500,jev-1.13.0
+95/P14,Vide,0.5200,jev-1.13.0
+953/Lm14,airBaltic,0.9300,jev-1.13.0
+96/Lp14,Tieslietas,0.4300,jev-1.13.0
+968/Lm14,Tieslietas,0.9100,jev-1.13.0
+970/Lp14,Lauksaimniecība,1.0000,jev-1.13.0
+972/Lm14,Sociālā politika,0.7300,jev-1.13.0
+973/Lm14,Pensijas,1.0000,jev-1.13.0
+975/Lp14,Saeimas darbs,0.7200,jev-1.13.0
+981/Lp14,Tieslietas,0.9900,jev-1.13.0
+983/Lm14,Saeimas darbs,1.0000,jev-1.13.0
+985/Lp14,Tieslietas,0.9900,jev-1.13.0
+989/Lp14,Digitālā politika,0.9600,jev-1.13.0
+997/Lp14,Ekonomika un uzņēmējdarbība,1.0000,jev-1.13.0
+motif:04acf3e33477,Saeimas darbs,0.9900,jev-1.13.0
+motif:10c23379621b,Budžets un finanses,0.6800,jev-1.13.0
+motif:14380cb8a7f2,Saeimas darbs,1.0000,jev-1.13.0
+motif:208ca3ca9c34,Saeimas darbs,0.4700,jev-1.13.0
+motif:231b1192c721,Saeimas darbs,0.9600,jev-1.13.0
+motif:233045ca9717,Saeimas darbs,1.0000,jev-1.13.0
+motif:23cd5c2201e9,Saeimas darbs,1.0000,jev-1.13.0
+motif:2696451cf39e,Saeimas darbs,1.0000,jev-1.13.0
+motif:2a04de0ddc1b,Saeimas darbs,1.0000,jev-1.13.0
+motif:32f18125fba3,Saeimas darbs,1.0000,jev-1.13.0
+motif:362c4dd76def,Saeimas darbs,1.0000,jev-1.13.0
+motif:5879d9aa7610,Saeimas darbs,1.0000,jev-1.13.0
+motif:58eece48e5bf,Aizsardzība un drošība,1.0000,jev-1.13.0
+motif:5ad40b66b691,Saeimas darbs,0.9800,jev-1.13.0
+motif:64fb74421a75,Tieslietas,0.4600,jev-1.13.0
+motif:7790f03ee176,Saeimas darbs,0.9900,jev-1.13.0
+motif:7d460bd440c3,Saeimas darbs,1.0000,jev-1.13.0
+motif:c40f8488b047,Saeimas darbs,1.0000,jev-1.13.0
+motif:d9f0fbfb5b1a,Saeimas darbs,1.0000,jev-1.13.0
+motif:eef6357750e7,Saeimas darbs,1.0000,jev-1.13.0

@@ -1,0 +1,70 @@
+# BACKLOG tēmas fails
+
+_Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uzturēšanas kontrakts un ienākšanas noteikumi: [`../BACKLOG.md`](../BACKLOG.md) preambula. „§ Ne-darīt" un „§ Atliktais pēc 2026-09-06 verdiktiem" (agrāk „§ Operatora verdikti") paliek galvenajā failā._
+
+## Publiskā vietne — renderēšana un veiktspēja
+
+### [OPERATOR] Nākamie «Atradumi» — Toca deklarācijas un tiesas lieta par policijas izpostītu dārzu (sadaļa kopš 2026-10-17)
+
+Sadaļa ieviesta 2026-10-17 (`kind: atradums`, `src/render/analyses.py`, `tests/test_atradumi.py`; pirmais — `visvanati-pilsoniba-2026`, CHANGELOG 2026-10-17 (1)). *Trigeris:* X izplatās īsi izmeklējumi, kuriem vietnē nav lapas: tiesas lieta par policijas izpostītu dārzu (09-09). Toca deklarācijām lapa jau ir — `analizes/vad-izmeklesana-2026` (09-19, papildināta 10-20, nav `kind: atradums`); vai vajag atsevišķu atradumu? *Rīcība:* nākamās lapas pēc plāna `docs/superpowers/plans/2026-10-16-atradumi-sadala.md` (Task 6); privātpersonām tikai oficiāli reģistri un tikai tas, kas tieši skar publisku lēmumu. Katrai lapai — atsevišķa operatora atļauja. *Īpašnieks:* operators.
+
+### [OPERATOR] OG kartītes «Vārdi pret darbiem» balsojuma puse — «Balsoja «Par»: Par …» formulējums pirms deploy (2026-10-19)
+
+Kopš 2026-10-18 (`b93bf8d7`) kartītes balsojuma pusē stāv politiķa balss, motīvs un kopskaits, piem. «Balsoja «Par»: Par likumprojekta atzīšanu par steidzamu. Arhitektūras likums … (47:8:18)» (`src/render/contradictions.py::_og_vote_text`). Motīvi bieži sākas ar «Par …», tāpēc «Balsoja «Par»: Par …» lasās divdomīgi. *Trigeris:* pirms nākamā deploy, kas pārģenerē OG kartītes. *Rīcība:* operators izvēlas atdalītāju vai formu (piem. «Balsoja «Par» — …»); maiņa tikai `_og_vote_text` + `tests/test_og_card_vote_side.py`. *Īpašnieks:* operators.
+
+### [DEFERRED] Wiki pārskati grafā izolēti — pārskatiem nav strukturēta dalībnieku saraksta (2026-10-18)
+
+`context_notes.opponent_id` ir NULL visiem 219 pārskatiem, tāpēc wiki grafā tie stāv izolēti (Saites redizaina plāna B3, `cfbe7f9e`). Ceļš caur citēto URL ↔ `claims.source_url` NAV dalībnieku saraksts — raksts nes arī pārskatā neapspriestu politiķu pozīcijas; to neieviest. *Trigeris:* pārskatu glabāšanā parādās strukturēts dalībnieku saraksts (piem. no skeleta). *Rīcība:* tad wiki saites no šī saraksta. *Īpašnieks:* operators.
+
+## Profili / UI
+
+### [OPEN] Sava vizuālā identitāte — unikāls fonts (2026-10-08, zema prioritāte)
+- **Signāls:** lasītāja komentārs Reddit: lapa izskatās pēc «noklusējuma Claude izvades», tāpēc dati šķiet mazāk ticami. Fakts: Styrene netiek lietots (sistēmas sans + serifs + JetBrains Mono; serifs kopš 2026-10-11 ir pašmitināts Source Serif 4, Georgia tikai rezerve — CHANGELOG 2026-10-11), bet serifa virsraksti + mono etiķetes + krēmīgi toņi + sepijas attēli veido atpazīstamu AI-ģenerētu stilu.
+- **Rīcība (operators 2026-10-08: «vēlāk darīsim ar savu unikālo fontu»):** savs burtveidolu pāris (LV diakritika!), krāsa, logotips. Paralēli — redzamāka «Kā mēs strādājam» un labojumu žurnāls; `about`/`kontakti` roku veidotā varoņa galvene → kopā ar šo (nav `pagehead`). Tumšās tēmas toņi: `--bg` viens avots (`chrome-v1.js`, `theme-init.js` literālis piesprausts testā). *Īpašnieks:* operators.
+
+### [OPEN] Tēmu ikonas — Lucide SVG sprite, tēmas krāsā, tikai lielajās virsmās (2026-10-21)
+- **Kāpēc:** 33 tēmas krāsā vien vairs nav atšķiramas; punkts sākumlapas kartītē ir tikai dekors. Lucide (ISC) sedz visas 33 (pārbaudīts pret `lucide-static` sarakstu 2026-10-21); Tabler trūkst vairāku.
+- **Kā:** viens `assets/topics.svg` sprite, `<use href>`; `currentColor` = tēmas krāsa, plānāka līnija (1,5–1,75), tonēts kvadrātiņš ar to pašu `color-mix` recepti kā tēmu birkām. `TOPIC_COLORS` → `{color, icon}` (viens avots). Virsmas: sākumlapas režģis, tēmu lapas, profila tēmu saraksts; NE mazajās birkās un meklēšanā. Grūtais kopums: Vide (recycle) / Klimats (cloud-sun) / Mežsaimniecība (trees) / Lauksaimniecība (wheat) / Pilsētvide (building). good-css skill; pārbaudīt abās tēmās.
+- *Atkarība:* ja nāk 34. tēma «Saeimas darbs» (balsojumu tēmu darbs), tai arī ikona. *Īpašnieks:* operators (prioritāte).
+
+### [OPEN] UI review — atlikums pēc 1.–3. fāzes (2026-07-04 dizaina audits)
+Pabeigtais darbs — trīs fāzes, sākumlapas pārveide un visi commit heši — pārcelts uz [CHANGELOG arhīvu § 2026-07-04 UI dizaina audits](../wiki/CHANGELOG-arhivs.md) 2026-08-03. Šeit paliek TIKAI atlikums.
+
+- **[NESKAIDRS 2026-10-09] Gala revīzijas minoru paliekas:** pretrunu fakta datums = `new_date` nevis `detected_at`. Sākumlapas pretrunu kartītē rūts «Pašlaik» rāda `new_date` = izteikuma datumu — izskatās apzināti; operatoram jānosauc, kas tieši ir defekts, citādi izsvītrot. (Līderu joslas saite → «Visi profili →» un `initials` no `rankings.py` — izpildīts 2026-09-23, CHANGELOG 2026-09-23 (4).)
+- **`#8b8fa3` atlikums CSS/veidnēs** (Python kodā → `FALLBACK_COLOR` 2026-10-11): `assets/style.css` `.focus-quote-card` `var(--pc, #8b8fa3)` (nomaiņa mainītu gaišo tēmu), `templates/politician.html.j2` `party_color` rezerves vērtība; vietas atrod `git grep -n 8b8fa3 -- assets templates` (rindu numuri dreifē).
+- **Dizaina parāda paliekas:** font-size/line-height TOKENIZĀCIJA (apzināti atlikta — simtiem deklarāciju, mazs redzamais ieguvums); vēsturiskie breakpointi 480/560/640/700 (dokumentēti pie :root, migrē tikai pieskaroties komponentei); statistika-detail "N ieraksti" lv_plural (curated re-freeze vārti).
+- **A11y paliekas (no 2. fāzes):** nav `aria-label="Galvenā izvēlne"` prasa `_CHROME_SPECS` regex paplašināšanu `<nav class="nav"[^>]*>` (`_orchestrator.py:176-177`, backward-compatible — vajag operatora svētību frozen-regex maiņai); statistika canvas sparklines teksta alternatīva (curated); zinas/pretrunas feed-item virsraksti; skip-link + typeahead nav uz curated lapām (nav sgv1.js → plain GET fallback, apzināti pieņemts).
+### [OPEN] Profilu UI parāds — sintēzes ports, Bloks 3, UX tier 3
+
+Trīs ieraksti, apvienoti 2026-08-05, skar vienu virsmu — **pārbaudi, kas jau izdarīts, pirms sākt.** 2. līmeņa plāns: `docs/plans/2026-07-26-profila-ux-tier2.md`; ātrviežu pakete DONE (CHANGELOG § 2026-07-26). Plāna 2. punkts (tēmu čipu deep-link) IZPILDĪTS 2026-09-05 (`60665b11`, `tests/test_profile_topic_deeplink.py`); 1. un 3. punkts (citāts Pozīciju cilnē, `Atturas` skaidrojums) IZPILDĪTI 2026-10-09 (`tests/test_profile_positions_quote.py`); atvērts — pretrunu flags. Agrākais pilnais teksts: [`docs/audits/2026-10-01-backlog-narativi.md`](../docs/audits/2026-10-01-backlog-narativi.md).
+
+- **Wiki sintēzes bloku ports uz publisko UI:** `wiki_sync()` raksta synthesis bloku (top tēmas / 30 d / spriedzes / pretrunas) starp `<!-- SYNC-AUTO -->` markeriem (plāns `docs/superpowers/plans/archive/2026-04-20-wiki-synthesis-block.md`) — tos pašus datus parādīt **publiskajās politiķu profila lapās**.
+- **Bloks 3** (slāņi 1+2+3 MERGED 2026-05-14): Saeimā cilnes redizains (prasa „svarīga balsojuma" definīciju); Saites story-driven sub-summaries; Publikācijas filtri žurnālistiem (prasa documents metadata paplašinājumu); data freshness + citation poga (dalīšanās pogas — 2026-10-23); URL hash deeplink no ārpuses; VAD delta bloks Pārskatā (atsevišķs spec). Review saturs: `git show c03ce566^:wiki/profile-page-review.md`.
+- **Pārskats cilne tieva** lielākajai daļai profilu (Bloks B prasa `confirmed=1 AND salience≥0.5`). Izdarīts: aktivitātes grafiks (`monthly`), «Balso kopā ar savu frakciju» (CHANGELOG 2026-10-09 (8)). Atvērts: Par/Pret/Atturas mini-bar — operatora lēmums (ieteikums nedarīt: rāda koalīciju/opozīciju, ne cilvēku); žurnālistiem/analītiķiem Pārskata nav (`politicians.py` izslēdz) — dominējošās komentāru tēmas + visvairāk komentētie politiķi.
+- **Personas lapa:** partiju rail grupēts pēc koalīcijas statusa — **ATLIKTS 2026-10-09 (operators)** līdz 15. Saeimas koalīcijas pārslēgšanai (`backlog/saeima.md` § 15. Saeima): `parties.coalition_status` ir 14. Saeimas stāvoklī, lapa pēc noklusējuma rāda 15. Saeimā ievēlētos → SV (13 ievēlēti) zem «Bez Saeimas frakcijas», ZZS (0) zem «Koalīcijā». Ieviešana bija ~12 rindas `render_personas()` (grupas coalition → opposition → other ar `get_coalition_map`, vārdi kā «Koalīcija» railā) + `.pnv1-rail-subtitle`; netika komitēta; meklētājs neatrod tēmas („kurš runā par airBaltic?").
+- **X apakšcilne pēc dzēstām pozīcijām:** 52 pozīcijas, dzēstas 2026-10-06 triāžā, — to tvīti joprojām redzami cilnē «X ieraksti» un `x.html`. Operatora lēmums: dzēst dokumentus vai atstāt (CLAUDE.md § Working Conventions — claim dzēšana dokumentu neizņem).
+- **Saeimā cilne:** frakcijas-diverģences highlight (alignment SQL eksistē); grupēšana pa sēdēm.
+- **Timeline cilne:** mēnešu grupu virsraksti + tipa filtru čipi (pozīcijas/balsojumi/pretrunas). (Ārējās recenzijas «laika ass profilā», verdikts 45 — ATLIKTA.)
+- **«Turpini rakt» kastes** (pretrunas lapa; tas pats komponents profilos un tēmās) — vēl bēšas pildītas kastes; pieskaņot `ui-conventions.md` § Kartītes un saraksti (operators 2026-10-23 «nākamais solis»).
+- **Dalīšanās kartiņas** (verdikts 45 — ATLIKTS; plāns `docs/superpowers/plans/archive/2026-04-21-shareable-pretrunu-kartinas.md`).
+- **Saites mini-grafs:** vote alignment top/bottom 3 → pilna tabula. 2026-10-18: absolūtie sliekšņi `links.py` (citas partijas <25 %, savas <50 %) nedod nevienu saiti (9 034 pāri, 0) — vajag top/bottom N. **Mediju/iestāžu profiliem** trūkst „kāpēc mēs to izsekojam" explainer + cross-link uz `mediji.html`.
+
+### [DEFERRED] Tēmu direktorija un tēmas lapa — 2. kārta (meklēšana, kārtošana, jautājumu salīdzinājums)
+
+Pirmā kārta izpildīta 2026-09-06 (`2b48c541`; `docs/arhivs/handoffs/HANDOFF-2026-09-06-temas-airbaltic.md`). **Verdikts 46: ATLIKTS līdz lasītāju signālam** — vēlēšanu sezonā datu integritāte atmaksājas vairāk nekā UI. Paliek produkta virziens:
+
+- **Direktorija (`temas.html`):** meklēšana pēc tēmas/sinonīma (`pzv1.js` jau lasa `q` parametru), kārtošana alfabētiski / pēc jaunākās aktivitātes / pēc apjoma, pēdējās pozīcijas datums kartītē. Saistīts ar § Profilu UI parāds «meklētājs neatrod tēmas».
+- **Tēmas lapa:** tvērums un periods → konkrētie jautājumi → analīzes → filtrējamas pozīcijas → balsojumi / programmu solījumi atsevišķi → saistītās tēmas. `RELATED_TOPICS` sedz 2 no 33 tēmām — paplašināt, kad tēma tiek lasīta.
+- **Lielākais iespējamais papildinājums:** konkrēta jautājuma salīdzinājums pa personām/partijām ar nosacījumiem, datumu, avotu un «nav fiksētas pozīcijas» šūnu. `program_promise` nejaukt ar pozīcijām; balsojumus — ar mediju izteikumiem. Bez auto-sintēzes, bez konsekvences reitinga (§ Ne-darīt).
+
+*Trigeris:* lasītāju signāls. *Īpašnieks:* operators.
+
+### [OPEN] Statiskās analīžu lapas dreifē — `vad-2026` klase pārējām `content/analizes/*.md` (2026-09-20)
+
+`vad-2026` skaitļi četrus mēnešus (05-05 → 09-20) stāvēja ar tādvārža rindu un galveni 2262/144 pret DB 2254/159, un neviens vārts to neredzēja, kamēr operators nepajautāja. Tagad tai ir ģenerators (`scripts/vad_analysis_numbers.py`) + vārti (`audit_vad_profile_match.py`) + recepte (`wiki/operations/vad-declarations.md` § Analīzes lapas atsvaidzināšana). **Pārējām statiskajām lapām nav ne ģeneratora, ne vārtu, ne `Atjaunots` datuma:** `deklaracijas-2026` (KNAB partiju finansējums, 2026-04-08), `amatpersonas-un-biedribas` (08-12), `nvo-dotacijas-2025` (07-28), `nvo-valsts-maksajumi` (08-09), `partiju-tests` (09-10). Rīcība: katrai — (a) kas ir datu avots un vai tas kopš publicēšanas mainījies; (b) ja skaitļi atvasināti no DB — ģenerators + vārti pēc `vad-2026` parauga; ja no ārēja XLSX — `Atjaunots` datums un avota versija tekstā. Lēmums, kuras lapas ir dzīvas un kuras — datēts momentuzņēmums: operatora.
+
+### [OPEN] good-css 5. kārtas atlikums — mazi mērķi un operatora jautājumi (2026-10-21)
+
+Kārta: `docs/plans/archive/2026-10-21-good-css-5-karta.md`, kopsavilkums `docs/audits/2026-10-21-good-css-5/kopsavilkums.md`. Paliek: (a) <44 px telefonā — X `xv1-select` izvēlnes, pārskata tabulu saites un `summary` (29 px), sākumlapas meklētājs (32 px) un balsojuma saite (37 px), `.pzv1-search-input`; `.badge-red` tumšajā 4,21:1; 320 px partiju lapas 327 px platas. Skaitļi bez tūkstošu atstarpes (mediji «22517», «1886 raksti»; balsojumi «Rāda 200 no 7829» pret galvenes «7 829»); likuma lapā ~70 px tukšums starp galveni un «Mērķis» (mērīts 2026-10-21 pēc pilna rendera). (b) Operatora jautājumi (kopsavilkums § D): `<title>`/og_title datumi `16.10.2026` (222 lapas, sociālie priekšskatījumi); lasīšanas platums garajiem rakstiem; multi-select → `popover`, mobilais filtrs → `<details>`, X filtrs telefonā; statistikā LV skaitļu formāts; nedēļas pārskata galvene kā dienas; fontu skala. D2 (ziņu/X lapošana) NEceļ — § Ne-darīt. *Trigeris:* nākamā UI kārta vai operatora atbilde. *Īpašnieks:* (a) koda darbs, (b) operators.
+
+**2026-10-21 (4):** pretrunu OG attēliem (`/assets/og/pretruna-{id}.png`) nav `?v=` — pēc teksta maiņas X/FB rāda kešoto veco kartīti; «Atradumiem» `?v=` jau ir.

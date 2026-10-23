@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+{% set active_page = "" %}
+{% set assets_prefix = "../" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}{{ law.title }}{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  {% call pagehead("Likums", law.title) %}
+      {% if law.likumi_lv_url %}
+      {{ metric("Avots", "likumi.lv ↗", href=law.likumi_lv_url | safe_url) }}
+      {% endif %}
+      {{ metric("Likumprojekti", law.bills_count) }}
+  {%- endcall %}
+</section>
+
+<div class="law-content post-content">
+  {{ law.body_html | safe }}
+</div>
+{% endblock %}

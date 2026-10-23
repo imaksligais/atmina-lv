@@ -1,0 +1,91 @@
+{
+ "vecais": {
+  "stances": 24,
+  "grades": {
+   "D_OK": 24
+  },
+  "ab_share": 0.0,
+  "recall": "24/32",
+  "recall_n": 24,
+  "withdraw_false": "0/6",
+  "withdraw_false_n": 0,
+  "support_pass": null,
+  "support_rate": null,
+  "lv_fail": [],
+  "by_type": {
+   "sibling": {
+    "D_OK": 3
+   },
+   "question": {
+    "D_OK": 3
+   },
+   "hedge": {
+    "D_OK": 6
+   },
+   "tense": {
+    "D_OK": 3
+   },
+   "cause": {
+    "D_OK": 3
+   },
+   "scope": {
+    "D_OK": 2
+   },
+   "WITHDRAW": {
+    "D_OK": 1
+   },
+   "D_OK": {
+    "D_OK": 3
+   }
+  },
+  "empty_docs": 15
+ },
+ "jaunais": {
+  "stances": 30,
+  "grades": {
+   "D_OK": 30
+  },
+  "ab_share": 0.0,
+  "recall": "28/32",
+  "recall_n": 28,
+  "withdraw_false": "0/6",
+  "withdraw_false_n": 0,
+  "support_pass": "30/30",
+  "support_rate": 1.0,
+  "lv_fail": [],
+  "by_type": {
+   "sibling": {
+    "D_OK": 5
+   },
+   "question": {
+    "D_OK": 4
+   },
+   "hedge": {
+    "D_OK": 6
+   },
+   "tense": {
+    "D_OK": 4
+   },
+   "cause": {
+    "D_OK": 3
+   },
+   "scope": {
+    "D_OK": 2
+   },
+   "WITHDRAW": {
+    "D_OK": 1
+   },
+   "D_OK": {
+    "D_OK": 5
+   }
+  },
+  "empty_docs": 11
+ },
+ "criteria": {
+  "1 A+B ≤ vecais − 5 pp": false,
+  "2 recall ≥ vecais − 1": true,
+  "3 WITHDRAW viltus ≤ vecais": true,
+  "4 support ≥ 95 %": true,
+  "5 0 garumzīmju kļūdu": true
+ }
+}

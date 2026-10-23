@@ -1,0 +1,8 @@
+{# Sadaļas «Likumi» josla: divas atsevišķas lapas, nevis paslēptas cilnes —
+   katra ielādē tikai savu saturu. Saites, ne role=tab. #}
+{% macro likumi_tabs(active, laws_count, bills_count) %}
+<nav class="likumi-tabs" aria-label="Likumu sadaļa">
+  <a href="likumi.html"{% if active == "likumi" %} aria-current="page"{% endif %}>Pamatlikumi ({{ laws_count }})</a>
+  <a href="likumprojekti.html"{% if active == "likumprojekti" %} aria-current="page"{% endif %}>Likumprojekti ({{ bills_count }})</a>
+</nav>
+{% endmacro %}

@@ -1,0 +1,18 @@
+{% extends "_og_base.html.j2" %}
+{#- Vietnes noklusējuma OG kartīte (assets/og-atmina.png). Čaula: _og_base.html.j2. #}
+{% block css %}
+    .hero { margin-top: 20px; }
+    .logo { font-size: 120px; font-weight: 700; letter-spacing: -3px; line-height: 1; margin-top: 26px; }
+    .logo span { opacity: .55; }
+    .lead { font-size: 34px; font-style: italic; margin-top: 18px; color: var(--sub); max-width: 900px; line-height: 1.25; }
+{% endblock %}
+{% block body %}
+    <div class="hero"><span class="stamp" style="font-size:26px">Politiskā atmiņa</span></div>
+    <div class="logo">atmina<span>.lv</span></div>
+    <div class="lead">Ko Latvijas politiķi teica, kad to teica — un kā viņi balsoja.</div>
+    <div class="stats" style="margin-top:40px">
+      {%- for s in card.stats %}
+      <div class="stat"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>
+      {%- endfor %}
+    </div>
+{% endblock %}

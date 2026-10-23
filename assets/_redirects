@@ -1,0 +1,11 @@
+# atmina.lv — Cloudflare Workers Static Assets pārrakstīšanas kārtulas.
+# html_handling=none neatvasina /  →  /index.html, tāpēc kailā adrese bez šīs
+# rindas ir 404 (atrasts pirmajā workers.dev deploy 2026-09-16). Statuss 200 =
+# REWRITE: adrese paliek /, saturs ir index.html, canonical nemainās.
+# Nekad nerakstīt šeit rindu, kuras AVOTS beidzas ar .html — publiskie URL
+# nes .html un atbild 200 bez redirect (tests/test_redirects_file.py).
+/ /index.html 200
+# RFC 9116 adrese ir /.well-known/security.txt; /security.txt ir iesakņojies
+# paradums, tāpēc to aizved uz kanonisko ceļu ar 301 (nevis rewrite — lai
+# paliek viena adrese, ko norāda arī paša faila lauks Canonical).
+/security.txt /.well-known/security.txt 301

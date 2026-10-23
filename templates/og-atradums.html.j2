@@ -1,0 +1,62 @@
+{% extends "_og_base.html.j2" %}
+{#- Atraduma OG kartīte (assets/og/atradumi/<slug>.png). Čaula: _og_base.html.j2.
+    Virsraksts-jautājums: burts pēc garuma (og_name_size). Ar frontmatter `og:`
+    zem tā laika līnija (2 zīmogi + starplaiks, kā og-card.html.j2) un līdz 2
+    skaitļiem; bez tā — tikai virsraksts līdz 4 rindām. #}
+{% block css %}
+    .hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-block-start: 14px; }
+    .hero .stamp { font-size: 24px; }
+    .dt { font-size: 26px; font-style: italic; color: var(--muted); white-space: nowrap; }
+    .q { flex: 1; display: flex; align-items: center; min-height: 0; padding-block: 24px 28px; }
+    .tt {
+      font-weight: 700; letter-spacing: -1.5px; line-height: 1.08; max-inline-size: 1060px;
+      text-wrap: balance; overflow-wrap: break-word;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+    }
+    .t76 { font-size: 76px; } .t64 { font-size: 64px; } .t56 { font-size: 56px; } .t50 { font-size: 50px; }
+    .t54 { font-size: 54px; } .t46 { font-size: 46px; }
+    .rich { display: contents; }
+    .rich .hero { margin-block-start: 0; }
+    .rich .tt { margin-block-start: 26px; letter-spacing: -1.2px; line-height: 1.06; -webkit-line-clamp: 2; }
+    .line { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; margin-block-start: 30px; }
+    .end { display: grid; gap: 10px; justify-items: start; }
+    .end:last-child { justify-items: end; }
+    .d {
+      font-size: 27px; font-weight: 700; white-space: nowrap; color: var(--red);
+      border: 3px solid var(--red); padding: 2px 14px 4px; border-radius: 6px; transform: rotate(-2deg);
+    }
+    .d2 { transform: rotate(1.5deg); }
+    .who { font-size: 21px; font-style: italic; color: var(--muted); white-space: nowrap; }
+    .mid { display: flex; align-items: center; gap: 14px; }
+    .rule { flex: 1; height: 3px; display: block; background: repeating-linear-gradient(90deg, var(--ink) 0 14px, transparent 14px 22px); }
+    .gap { font-size: 21px; font-weight: 600; font-style: italic; white-space: nowrap; }
+    .rich .stats { margin-block: auto; padding-block: 18px; gap: 64px; }
+    .rich .stat b { font-size: 50px; font-variant-numeric: tabular-nums; }
+{% endblock %}
+{% block body %}
+  {%- if card.stamps %}
+  <div class="rich">
+  {%- endif %}
+    <div class="hero">
+      <span class="stamp">{{ card.kind }}</span>
+      <span class="dt">{{ card.date }}</span>
+    </div>
+  {%- if card.stamps %}
+    <div class="tt t{{ card.title_size }}">{{ card.title }}</div>
+    <div class="line">
+      <div class="end"><div class="d">{{ card.stamps[0].label }}</div><span class="who">{{ card.stamps[0].note }}</span></div>
+      <div class="mid"><i class="rule"></i>{% if card.gap %}<span class="gap">{{ card.gap }}</span><i class="rule"></i>{% endif %}</div>
+      <div class="end"><div class="d d2">{{ card.stamps[1].label }}</div><span class="who">{{ card.stamps[1].note }}</span></div>
+    </div>
+    {%- if card.stats %}
+    <div class="stats">
+      {%- for s in card.stats %}
+      <div class="stat"><b>{{ s.value }}</b><span>{{ s.note }}</span></div>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+  {%- else %}
+    <div class="q"><div class="tt t{{ card.title_size }}">{{ card.title }}</div></div>
+  {%- endif %}
+{% endblock %}

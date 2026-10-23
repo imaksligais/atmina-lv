@@ -1,0 +1,31 @@
+{# Inline SVG bar chart — no JS, no external lib.
+
+Args:
+  data:   list[{label: str, value: int}] in left→right order
+  width:  total SVG width in px (default 280)
+  height: total SVG height in px (default 80)
+
+Caller is responsible for ordering data — this macro renders verbatim.
+#}
+{% set width = width | default(280) %}
+{% set height = height | default(80) %}
+{% set bar_gap = 2 %}
+{% set max_value = data | map(attribute='value') | max | default(1) %}
+{% set max_value = max_value if max_value > 0 else 1 %}
+{% set bar_width = ((width - (data | length - 1) * bar_gap) / (data | length)) if data | length else 0 %}
+
+<svg width="{{ width }}" height="{{ height }}"
+     viewBox="0 0 {{ width }} {{ height }}"
+     xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="strategy run trend">
+  {% for d in data %}
+    {% set bar_h = (d.value / max_value * (height - 10)) | round %}
+    {% set x = loop.index0 * (bar_width + bar_gap) %}
+    {% set y = height - bar_h %}
+    <rect x="{{ x }}" y="{{ y }}" width="{{ bar_width }}" height="{{ bar_h }}"
+          fill="currentColor" opacity="0.85">
+      <title>{{ d.label }}: {{ d.value }}</title>
+    </rect>
+  {% endfor %}
+</svg>

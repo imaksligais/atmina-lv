@@ -1,0 +1,22 @@
+{# Single toast — slide-in from top-right, auto-dismissed by ops.js for
+   non-error levels. Rendered standalone via /api/* responses OR injected
+   client-side from HX-Trigger payloads.
+
+Args:
+  level:   'success' | 'warning' | 'danger' | 'info'  (default 'info')
+  message: short single-line text; long messages are expandable in JS.
+#}
+{% set level = level | default('info') %}
+<div role="status"
+     class="toast status-{{ level }} rounded shadow-lg px-4 py-2 text-sm
+            border border-current border-opacity-20 pointer-events-auto
+            min-w-[16rem] max-w-md flex items-start gap-3">
+  <span aria-hidden="true">
+    {% if level == 'success' %}✓{% elif level == 'warning' %}⚠{% elif level == 'danger' %}✗{% else %}ⓘ{% endif %}
+  </span>
+  <span class="flex-1">{{ message }}</span>
+  <button type="button"
+          class="ml-2 text-xs opacity-60 hover:opacity-100"
+          aria-label="Aizvērt"
+          onclick="this.closest('.toast').remove()">✕</button>
+</div>

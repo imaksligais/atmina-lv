@@ -1,0 +1,47 @@
+{% extends "_og_base.html.j2" %}
+{#- Profila OG kartīte (assets/og/politiki/<slug>.png). Čaula: _og_base.html.j2. #}
+{% block css %}
+    .top { display: flex; gap: 44px; align-items: center; margin-top: 6px; }
+    .top .ph { width: 220px; height: 220px; }
+    .avatar-fallback { font-size: 84px; }
+    .who { flex: 1; min-width: 0; }
+    .nm { font-weight: 700; letter-spacing: -1.5px; line-height: 1.02; }
+    .n72 { font-size: 72px; } .n60 { font-size: 60px; } .n50 { font-size: 50px; } .n42 { font-size: 42px; }
+    .rl {
+      font-size: 28px; color: var(--muted); margin-top: 14px; line-height: 1.25;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    /* Tēmas vienā rindā: tēma, kas neietilpst, pārlec uz 2. rindu un tiek nogriezta. */
+    .tp {
+      font-size: 24px; font-style: italic; margin-top: 22px; color: var(--sub);
+      display: flex; flex-wrap: wrap; height: 1.3em; line-height: 1.3em; overflow: hidden;
+    }
+    .tp span { white-space: pre; }
+    .stat .since { font-size: 40px; font-style: normal; color: var(--red); }
+{% endblock %}
+{% block body %}
+    <div class="top">
+      {% if card.photo %}
+      <img class="ph" src="{{ card.photo }}" alt="">
+      {% else %}
+      <div class="ph avatar-fallback">{{ card.initials }}</div>
+      {% endif %}
+      <div class="who">
+        <div class="nm n{{ card.name_size }}">{{ card.name }}</div>
+        {% if card.role_line %}<div class="rl">{{ card.role_line }}</div>{% endif %}
+        {% if card.topics %}<div class="tp">
+          {%- for t in card.topics %}<span>{% if loop.first %}Visbiežāk: {% else %} · {% endif %}{{ t }}</span>{% endfor -%}
+        </div>{% endif %}
+      </div>
+    </div>
+    {% if card.stats or card.since %}
+    <div class="stats" style="margin-top:46px">
+      {%- for s in card.stats %}
+      <div class="stat"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>
+      {%- endfor %}
+      {%- if card.since %}
+      <div class="stat"><b><span class="stamp since">kopš {{ card.since }}</span></b><span>pirmā pozīcija</span></div>
+      {%- endif %}
+    </div>
+    {% endif %}
+{% endblock %}

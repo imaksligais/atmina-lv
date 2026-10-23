@@ -1,0 +1,7 @@
+# Shell skriptiem obligāti LF — CRLF lauž bash (WSL/Git Bash: "$'\r': command not found").
+# 2026-08-21: check.sh bija saglabāts ar CRLF un check.sh vairs nepalaidās; deploy.sh jau bija LF.
+*.sh text eol=lf
+# Iesaldētais kļūdu komplekts: MANIFEST.json sha256 ir pa baitiem — bez CRLF pārveides (2026-10-14).
+docs/audits/kludu-komplekts-v2/** -text
+# Zelta kopas CSV: input_text satur rindu pārnesumus un input_hash ir pa baitiem — bez CRLF pārveides (2026-10-22).
+data/saeima_topic_gold/*.csv -text

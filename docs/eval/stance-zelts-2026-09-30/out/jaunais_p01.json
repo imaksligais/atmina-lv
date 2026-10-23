@@ -1,0 +1,136 @@
+[
+  {
+    "doc_id": 40473,
+    "pid": 176,
+    "decision": "empty",
+    "empty_reason": "Žurnālista slots (journalist, relay): atklāšanas kanāls, ne pozīciju avots; tvīts nodod anonīma avota ziņas par valdības veidošanu, nevis paša viedokli.",
+    "claims": []
+  },
+  {
+    "doc_id": 16621,
+    "pid": 61,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 16621,
+        "topic": "airBaltic",
+        "stance": "Piekrīt Siliņai un norāda, ka Rīgas satiksmē katru gadu tiek ieguldīti vairāk nekā 100 miljoni braukšanas atvieglojumiem, bet par airBaltic, ko uzskata par valsts interesēm vismaz tikpat svarīgu, ja ne daudz svarīgāku, «lielie gudrinieki», kā viņš tos dēvē, arī Kulbergs, skaidro, kāpēc nevar.",
+        "support": [
+          "Man te jāpiekrīt @EvikaSilina",
+          "mēs katru gadu aci nemirkšķinot iegrūžam pāri pa 100mio Rīgas satiksmē",
+          "Air Baltic, kas valsts interesēm vismaz tikpat svarīgs, ja ne daudz svarīgāks, te pēkšņi visi lielie gudrinieki skaidrot, kapēc nevar"
+        ],
+        "quote": "Man te jāpiekrīt @EvikaSilina - mēs katru gadu aci nemirkšķinot iegrūžam pāri pa 100mio Rīgas satiksmē, lai pensionāri var braukt par velti un studenti, skolotāji, policisti utt utt ar atlaidēm (atbalstu) bet Air Baltic, kas valsts interesēm vismaz tikpat svarīgs, ja ne daudz svarīgāks, te pēkšņi visi lielie gudrinieki skaidrot, kapēc nevar.",
+        "confidence": 0.75,
+        "reasoning": "Liepnieka paša tvīts (neutral slots, first_party). Salīdzina Rīgas satiksmes ikgadējo finansējumu ar airBaltic un kritizē tos, arī Kulbergu, kas skaidro, kāpēc airBaltic gadījumā «nevar»; ko tieši nevar, tekstā nav nosaukts, tāpēc stance to nepaplašina. Siliņas nostāja tekstā nav aprakstīta, tāpēc stance to nepārstāsta. Apzīmējums «lielie gudrinieki» ietīts atrunā.",
+        "salience": 0.7,
+        "stated_at": "2026-04-15"
+      }
+    ]
+  },
+  {
+    "doc_id": 15709,
+    "pid": 15,
+    "decision": "empty",
+    "empty_reason": "Tīrs relejs: ziņas fakts (Francijas Rafale nolaidušās Lielvārdē NATO gaisa telpas patrulēšanas misijā) ar karodziņiem un tēmturi, bez paša vērtējuma.",
+    "claims": []
+  },
+  {
+    "doc_id": 28623,
+    "pid": 21,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28623,
+        "topic": "Budžets un finanses",
+        "stance": "Pauž piesardzīgu optimismu kā ēnu ziņotājs par pieņemto EP pozīciju nākamā ES daudzgades budžeta veidošanā un kā panākto pozitīvo min, ka Austrumu robežas rīcības plāns būtu tieši jāintegrē MFF, kohēzijas finansējuma noteikumiem jābūt elastīgiem un militārā mobilitāte ir ģeopolitiski būtiska.",
+        "support": [
+          "Kā ēnu ziņotājam piesardzīgs optimisms par pieņemto EP pozīciju nākamā ES daudzgades budžeta veidošanā.",
+          "Panākts pozitīvais - Austrumu robežas rīcības plānu būtu tieši jāintegrē MFF",
+          "kohēzijas finansējuma noteikumiem jābūt fleksibliem; militārā mobilitāte - ģeopolitiski būtiska."
+        ],
+        "quote": "Kā ēnu ziņotājam piesardzīgs optimisms par pieņemto EP pozīciju nākamā ES daudzgades budžeta veidošanā.",
+        "confidence": 0.8,
+        "reasoning": "Zīles paša tvīts; vērtē EP pozīciju par ES daudzgades budžetu (MFF). Vilcinājums «piesardzīgs optimisms» un modalitāte «būtu jāintegrē» saglabāti. Tēma pēc kanoniskā aizstājuma «ES budžets» → Budžets un finanses.",
+        "salience": 0.8,
+        "stated_at": "2026-04-30"
+      }
+    ]
+  },
+  {
+    "doc_id": 7390,
+    "pid": 72,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 7390,
+        "topic": "Budžets un finanses",
+        "stance": "Uzskata, ka nevar atļauties budžetu, kuru neviens līdz galam nesaprot, ka, kamēr nav caurspīdības, nav arī uzticības, un ka Latvijai vajag budžetu, kurā katrs eiro ir pamatots.",
+        "support": [
+          "Mēs nevaram atļauties budžetu, kuru neviens līdz galam nesaprot.",
+          "Kamēr nav caurspīdības, nav arī uzticības.",
+          "Latvijai vajag budžetu, kur katrs eiro ir pamatots."
+        ],
+        "quote": "Mēs nevaram atļauties budžetu, kuru neviens līdz galam nesaprot.",
+        "confidence": 0.8,
+        "reasoning": "Indriksones pašas tvīts; skaidra nostāja par budžeta caurspīdību. Jautājumu saraksts ir retorisks ierāmējums, stance balstās tikai uz apgalvojuma teikumiem; konkrēts budžets vai tā daļa nav nosaukta, tāpēc stance to nepiedēvē.",
+        "salience": 0.7,
+        "stated_at": "2026-03-23"
+      }
+    ]
+  },
+  {
+    "doc_id": 14847,
+    "pid": 64,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 14847,
+        "topic": "Budžets un finanses",
+        "stance": "Uzskata, ka valsti nevar sakārtot «godīgi», lai kļūtu turīgi, ka «godīgi» nav ekonomiska kategorija un ka var darīt to, ko vajag, lai valsts kļūtu turīga; tāda politika nebūs populāri atbalstīta, bet visi kļūs turīgāki.",
+        "support": [
+          "Nē, nevar nekādi  Godīgi nav ekonomiska kategorija.",
+          "Var darīt to, ko vajag, lai valsts kļūtu turīga.",
+          "Un tā nebūs populāri (aka populistiska) atbalstīta politika.\n\nBet visi kļūs turīgāki."
+        ],
+        "quote": "Godīgi nav ekonomiska kategorija.",
+        "confidence": 0.75,
+        "reasoning": "Vītola paša tvīts; retorisko jautājumu viņš pats atbild noliedzoši, tāpēc nostāja ir skaidra. Konkrēts pasākums nav nosaukts, stance paliek vispārīgs. Tēma: ekonomikas politika → Budžets un finanses (kanoniskais aizstājums «Ekonomika»).",
+        "salience": 0.5,
+        "stated_at": "2026-04-12"
+      }
+    ]
+  },
+  {
+    "doc_id": 24062,
+    "pid": 10,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 24062,
+        "topic": "Korupcija un KNAB",
+        "stance": "Apgalvo, ka «veicināšanas pakalpojums» esot iepirkts bez konkursa no viena cilvēka SIA Energise.",
+        "support": [
+          "protams, ka “veicināšanas pakalpojums” ir iepirkts bez konkursa no viena cilvēka SIA Energise"
+        ],
+        "quote": null,
+        "confidence": 0.5,
+        "reasoning": "NEEDS_REVIEW: reakcija bez redzama konteksta (turpinājums «Aizmirsu pateikt» iepriekšējam ierakstam), ļoti īss teksts, ironija («protams»); nav redzams, kurš iepircis un kam pakalpojums domāts, tāpēc arī tēma nav droša (izvēlēta Korupcija un KNAB kā iepirkuma pārkāpuma kritika). Kulberga paša tvīts; apgalvojums par nosauktu uzņēmumu ietīts atrunā «esot». Citāts null, jo teksts ir sarkastisks.",
+        "salience": 0.4,
+        "stated_at": "2026-04-22"
+      }
+    ]
+  },
+  {
+    "doc_id": 14770,
+    "pid": 25,
+    "decision": "empty",
+    "empty_reason": "Vērtējumi un skaidrojumi par solidaritātes maksājumu rakstā pieder Ekonomikas ministrijai (ministrijas paziņojums), ne Valainim; viņa paša vienīgais atstāstītais izteikums ir procedurāls (likumprojekts nodots otrajā saskaņošanas aplī, NVO iebildumi līdz 10. aprīlim) bez vērtējuma. Pārējie runātāji — LDTA izpilddirektore Ligere.",
+    "claims": []
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "q0": {
+      "type": "choice",
+      "choice": "Tieslietas",
+      "confidence": 1.0,
+      "probabilities": {
+        "Saeimas darbs": 0.0,
+        "Valsts pārvalde": 0.0,
+        "Budžets un finanses": 0.0,
+        "Ekonomika un uzņēmējdarbība": 0.0,
+        "Tieslietas": 1.0,
+        "Korupcija un KNAB": 0.0,
+        "Sociālā politika": 0.0,
+        "Pensijas": 0.0,
+        "Veselības aprūpe": 0.0,
+        "Imigrācija": 0.0,
+        "Vēlēšanas": 0.0,
+        "Koalīcija un partijas": 0.0,
+        "Pašvaldības": 0.0,
+        "Pilsētvide": 0.0,
+        "Transports": 0.0,
+        "Rail Baltica": 0.0,
+        "airBaltic": 0.0,
+        "Valsts kapitālsabiedrības": 0.0,
+        "Degviela un enerģētika": 0.0,
+        "Klimats": 0.0,
+        "Vide": 0.0,
+        "Mežsaimniecība": 0.0,
+        "Lauksaimniecība": 0.0,
+        "Aizsardzība un drošība": 0.0,
+        "Droni": 0.0,
+        "Ukraina un Krievija": 0.0,
+        "ES politika": 0.0,
+        "Ārpolitika": 0.0,
+        "Valodu politika": 0.0,
+        "Sabiedriskie mediji": 0.0,
+        "NVO un pilsoniskā sabiedrība": 0.0,
+        "Izglītība": 0.0,
+        "Kultūra": 0.0,
+        "Sports": 0.0,
+        "Digitālā politika": 0.0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 3292,
+    "output_tokens": 428
+  }
+}

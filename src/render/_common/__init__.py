@@ -1,0 +1,165 @@
+"""Shared rendering helpers — leaf package for src/render/.
+
+Phase F3a (refactor-plan-2026-04-29 § Fāze 3) carve-out from src/generate.py.
+Hosts constants, security filters, slug/format helpers, and cross-page
+domain enrichment that any sub-page renderer in src/render/ may import.
+
+**Architectural rule (F4 lesson):** _common imports nothing from
+src.render.* — it is the leaf. Sub-page modules (e.g. contradictions.py)
+import from _common but never from each other. If two sub-pages share a
+helper, promote it here.
+
+Canonical import path is ``from src.render._common import _slugify``
+(``TOPIC_COLORS``, …). The historical ``src/generate.py`` re-export
+shim was retired 2026-09-05 (strukturas plāna 5.10).
+
+**2026-09-05 (strukturas plāna 5.8):** bijušais 1322-rindu ``_common.py``
+kļuva par pakotni ``_common/`` ar septiņiem lapu-apakšmoduļiem
+(``constants``, ``filters``, ``slugs``, ``dates``, ``text``, ``enrich``,
+``assets``). Neviens importa ceļš nemainījās — šis ``__init__`` re-eksportē
+visus bijušā moduļa paša definētos vārdus, tāpēc esošie
+``from src.render._common import …`` izsaukumi paliek neskarti.
+
+**Daļējās inicializācijas līgums (``src/render/__init__.py:22-30``):**
+apakšmoduļi tiek importēti atkarību secībā (constants → filters/slugs/dates/
+text → enrich → assets), un neviens no tiem neimportē māsu-moduli
+``src.render.<page>``. Tāpēc, kad ``_orchestrator`` puslādētā stāvoklī
+meklē kādu ``_common`` simbolu, tas jau ir definēts.
+"""
+
+from __future__ import annotations
+
+# ── Apzināti re-eksporti no moduļiem ārpus pakotnes ─────────────────
+# ``ProfileKind``/``derive_profile_kind`` — F4 lapu-noteikums;
+# ``LV_TRANS``/``slugify`` — ``src/lv_text.py`` vienīgā definīcija;
+# ``lookup_party_short_name`` / ``party_color_map`` — ``parties`` tabula ir
+# patiesības avots (T6; partiju krāsas kopš 2026-10-11). (Stdlib/trešo pušu
+# importi, kas te dzīvoja tikai vēsturiskās vārdtelpas dēļ, izņemti
+# 2026-10-11: neviens tos neimportēja caur ``_common``.)
+# Re-export from src.profile_kind so sub-page renderers (politicians.py
+# under F4 leaf rule) import everything domain-related through _common.
+from src.coalition import lookup_party_short_name, party_color_map  # noqa: F401  re-eksports
+from src.profile_kind import (  # noqa: F401
+    ProfileKind,
+    current_term_vote_counts,
+    derive_profile_kind,
+)
+# Leaf modulis ārpus `src.render.*` — neapdraud `src/render/__init__.py:22-30`
+# daļējās inicializācijas līgumu (aizliegti ir TIKAI māsu-moduļu importi).
+from src.lv_text import LV_TRANS, slugify  # noqa: F401  re-eksports
+
+# ── Apakšmoduļi atkarību secībā ─────────────────────────────────────
+# 1) constants — nekādu pakotnes iekšējo atkarību.
+from src.render._common.constants import (  # noqa: F401  re-eksportēts
+    ASSETS_DIR,
+    BASE_URL,
+    CATEGORY_LV,
+    CLAIM_TYPE_LABEL,
+    CONTENT_DIR,
+    DEFAULT_DB_PATH,
+    DEFAULT_OUTPUT_DIR,
+    ELECTION_DATE,
+    FALLBACK_COLOR,
+    PROJECT_ROOT,
+    PUBLIC_PROFILE_WHERE,
+    SEVERITY_LV,
+    TEMPLATES_DIR,
+    TENSION_BADGE,
+    TENSIONS_CAP,
+    TENSION_LINK_CLASS,
+    TENSION_TYPE_LV,
+    TOPIC_COLORS,
+    WIKI_DIR,
+    _LV_TRANS,
+    _PARTY_LOWERCASE_WORDS,
+    _SEVERITY_GLYPHS,
+    _logger,
+    norm_source_domain_sql,
+)
+
+# 2) filters / slugs / dates / text — atkarīgi tikai no constants (vai neko).
+from src.render._common.filters import (  # noqa: F401  re-eksportēts
+    escape_year_list_markers,
+    _BILL_REF_RE,
+    _CELL_MIN_CHARS,
+    _CLAIM_ID_RE,
+    _SAFE_HTML_ATTRS,
+    _SAFE_HTML_TAGS,
+    _SEG_MIN_CHARS,
+    _autolink_bills_filter,
+    _clean_context_note,
+    _label_table_cells,
+    _load_wiki_profile,
+    _lv_money,
+    _lv_number,
+    _lv_plural,
+    _new_span,
+    _salience_label,
+    _parse_frontmatter,
+    _safe_json_filter,
+    _safe_url_filter,
+    _sanitize_html,
+    _segment_prose_cell,
+    _split_top_level_semicolons,
+    _wrap_tables,
+)
+from src.render._common.slugs import (  # noqa: F401  re-eksportēts
+    _bill_slug,
+    _outlet_feed_map,
+    _party_page_slug,
+    _party_short_name,
+    _persona_category,
+    _slugify,
+    _split_org_category,
+    _topic_page_href,
+)
+from src.render._common.dates import (  # noqa: F401  re-eksportēts
+    _confidence_tier,
+    _date_sort_key,
+    _delta_days,
+    _domain_from_url,
+    _domain_label,
+    _format_tweet_time,
+    _initials_from_name,
+    _normalize_date,
+    _titlecase_party_name,
+    lv_date,
+    lv_date_locative,
+    lv_date_short,
+    lv_dates_in_text,
+    lv_gap_label,
+    trailing_days_cutoff,
+)
+from src.render._common.text import (  # noqa: F401  re-eksportēts
+    _BRACKET_RE,
+    _CLAUSE_PUNCT,
+    _SENTENCE_SPLIT_RE,
+    _clause_truncate,
+    _latvian_quotes,
+    _normalize_ws,
+    _split_summary,
+    hero_excerpt,
+)
+
+# 3) enrich — DB klasteris; patērē constants + slugs + dates + text.
+from src.render._common.enrich import (  # noqa: F401  re-eksportēts
+    _activity_display_date,
+    _enrich_contradiction,
+    _get_last_activity,
+    _source_to_internal_link,
+    FACTION_ALIGNMENT_MIN_OTHERS,
+    FACTION_ALIGNMENT_MIN_VOTES,
+    faction_alignment_data,
+    vote_alignment_data,
+)
+
+# 4) assets — patērē constants (ASSETS_DIR, BASE_URL, _logger).
+from src.render._common.assets import (  # noqa: F401  re-eksportēts
+    _download_annotation_plugin,
+    _download_chart_js,
+    _download_d3,
+    _emit_json,
+    _photo_data_uri,
+    _render_page,
+    _resolve_assets_version,
+)

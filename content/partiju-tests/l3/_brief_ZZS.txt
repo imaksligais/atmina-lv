@@ -1,0 +1,14 @@
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma sola stiprināt NBS un Zemessardzi; VAD tieši nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): VAD nemin.
+q04 | Imigrācija | Darbaspēka ievešana no trešajām valstīm jāierobežo. | par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu
+  piezīme: CVK: programma sola nepieļaut nelegālu imigrāciju un dot priekšroku kvalificētam darbaspēkam; par ierobežošanu darbinieku trūkuma apstākļos neizsakās. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'nepieļaut nelegālu imigrāciju; priekšroka augsti kvalificētam darbaspēkam'.
+q05 | Valodu politika | Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē. | par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības
+  piezīme: CVK: programma valodu politiku nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): mazākumtautību valodas nemin.
+q07 | Pašvaldības | Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām. | par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā
+  piezīme: CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'lielāka pašvaldību rīcības brīvība', 'pašvaldību finanšu ilgtspēja'; nodokļu daļu nenosauc.
+q10 | Pensijas | Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt. | par = brīvprātīgs, izņemt, pārcelt uz 1. līmeni; pret = saglabāt obligātu
+  piezīme: CVK: programma pensiju 2. līmeni nemin. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'stabila pensiju sistēma'; 2. līmeni nemin.
+q11 | Klimats | Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā. | par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē
+  piezīme: CVK: programma sola 'saprātīgu zaļās vienošanās ieviešanu' — termiņu ne noraida, ne apstiprina. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'saprātīga zaļā vienošanās ieviešana' — hedžings.
+q12 | Sociālā politika | Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai. | par = ģimene/laulība = vīrietis + sieviete likumos vai starptautiskos dokumentos (Satversme, Stambulas konvencija); pret = laulību vienlīdzība, visu ģimeņu aizsardzība
+  piezīme: CVK: programma sola stiprināt Satversmē noteiktos ģimenes pamatus; jaunu definīciju neprasa. Pilnā programma (zzs.lv, ~16 tūkst. zīmju): 'Satversmē noteikto ģimenes un sabiedrības pamatu stiprināšana' — definīciju nedod.

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="atmina.lv">
+  <!-- Adaptive favicon: gaišām cilnēm brand krāsas, tumšām — gaišāks gredzens -->
+  <style>
+    .r { stroke: #37474F; }
+    .d { fill: #B71C1C; }
+    @media (prefers-color-scheme: dark) {
+      .r { stroke: #90A4AE; }
+      .d { fill: #EF5350; }
+    }
+  </style>
+  <circle class="r" cx="27" cy="27" r="17" fill="none" stroke-width="5.5"/>
+  <line class="r" x1="40.5" y1="40.5" x2="52" y2="52" stroke-width="5.5" stroke-linecap="round"/>
+  <circle class="d" cx="27" cy="27" r="6"/>
+</svg>

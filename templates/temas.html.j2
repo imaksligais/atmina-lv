@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+{% set active_page = "temas" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}Tēmas{% endblock %}
+{% block description %}atmina.lv tēmu direktorija — Latvijas politiķu pozīcijas un pretrunas pa {{ topics|length }} tēmu grupām.{% endblock %}
+
+{% block og_title %}Tēmas — atmina.lv{% endblock %}
+{% block og_description %}Pārlūko Latvijas politiķu pozīcijas un pretrunas pa tēmu grupām.{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  {% call pagehead("Tēmu direktorija", "Tēmas") %}
+      {{ metric("Tēmas", topics|length) }}
+  {%- endcall %}
+
+  <div class="temas-grid">
+    {% for t in topics %}
+    <a class="tema-card" href="temas/{{ t.slug }}.html">
+      <span class="tema-card-dot" style="background: {{ t.color }}" aria-hidden="true"></span>
+      <span class="tema-card-name">{{ t.name }}</span>
+      <span class="tema-card-counts">
+        <span class="tema-card-count">{{ t.position_count }} {{ t.position_count|lv_plural("pozīcija", "pozīcijas") }}</span>
+        {% if t.contradiction_count %}<span class="tema-card-count">{{ t.contradiction_count }} {{ t.contradiction_count|lv_plural("pretruna", "pretrunas") }}</span>{% endif %}
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends "base.html.j2" %}
+{% set active_page = "pozicijas" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}Pozīcijas{% endblock %}
+
+{# Skaitlis ar tūkstošu atstarpi («9 801») — tas pats formāts kā pzv1.js fmtInt(). #}
+{% macro n(x) %}{{ "{:,}".format(x).replace(",", " ") }}{% endmacro %}
+
+{% block content %}
+<section class="pzv1-section">
+
+{% set pzv1_lead %}
+      <p class="pagehead-lead">Politiķu un komentētāju paustās nostājas. Katra pozīcija ir īss teiktā kopsavilkums ar saiti uz avotu. Ticamība rāda, cik nepārprotami pozīcija izriet no avota teksta, nevis to, vai apgalvojums ir patiess.</p>{% endset %}
+  {% call pagehead("Pozīciju reģistrs", "Pozīcijas", header_class="pagehead--pozicijas", lead=pzv1_lead) %}
+      {{ metric("Kopā", n(metrics.total)) }}
+      {{ metric("Pēdējā nedēļā", n(metrics.last_week)) }}
+      {{ metric("Ticamība ≥ laba", metrics.confidence_good_pct ~ "%") }}
+  {%- endcall %}
+
+  <div class="pzv1-mobile-filterbar">
+    <button class="chip pzv1-mobile-toggle" type="button" aria-expanded="false">
+      Filtri <span class="chip-n pzv1-mobile-count">0</span>
+    </button>
+    <div class="pzv1-mobile-chips" hidden></div>
+  </div>
+
+  <div class="pzv1-grid" data-mobile-filter-open="false">
+
+    <aside class="pzv1-aside">
+      <div class="pzv1-rail-group">
+        <div class="pzv1-rail-title">Tēma</div>
+        <div class="pzv1-rail-rows" id="pzv1-rail-topics">
+          <button type="button" class="pzv1-rail-row is-active" aria-pressed="true" data-axis="topic" data-value="visas">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Visas tēmas</span>
+            <span class="pzv1-rail-count">{{ n(claims|length) }}</span>
+          </button>
+          {% for name, count, color in topics[:10] %}
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="topic" data-value="{{ name }}" data-color="{{ color }}">
+            <span class="pzv1-rail-dot" style="background:{{ color }}"></span>
+            <span class="pzv1-rail-label">{{ name }}</span>
+            <span class="pzv1-rail-count">{{ n(count) }}</span>
+          </button>
+          {% endfor %}
+          {% if topics|length > 10 %}
+          <button type="button" class="pzv1-rail-more" id="pzv1-topic-more">+ rādīt visas {{ topics|length }} →</button>
+          <div class="pzv1-rail-hidden" hidden>
+            {% for name, count, color in topics[10:] %}
+            <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="topic" data-value="{{ name }}" data-color="{{ color }}">
+              <span class="pzv1-rail-dot" style="background:{{ color }}"></span>
+              <span class="pzv1-rail-label">{{ name }}</span>
+              <span class="pzv1-rail-count">{{ n(count) }}</span>
+            </button>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="pzv1-rail-group">
+        <div class="pzv1-rail-title">Partija</div>
+        <div class="pzv1-rail-rows" id="pzv1-rail-parties">
+          <button type="button" class="pzv1-rail-row is-active" aria-pressed="true" data-axis="party" data-value="Visas">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Visas partijas</span>
+            <span class="pzv1-rail-count">{{ n(claims|length) }}</span>
+          </button>
+          {% for name, short, color, count in parties_with_counts %}
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="party" data-value="{{ name }}" data-color="{{ color }}">
+            <span class="pzv1-rail-dot" style="background:{{ color }}"></span>
+            <span class="pzv1-rail-label">{{ name }}</span>
+            <span class="pzv1-rail-count">{{ n(count) }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <details class="pzv1-rail-group pzv1-rail-details" id="pzv1-rail-persons">
+        <summary class="pzv1-rail-title">Persona</summary>
+        <div class="pzv1-rail-search">
+          <label class="field field--compact">
+            <span class="sr-only">Meklēt personu</span>
+            <input type="text" class="field-input pzv1-rail-search-input" placeholder="Meklēt personu…">
+          </label>
+        </div>
+        <div class="pzv1-rail-rows pzv1-rail-rows-scroll">
+          {% for name, slug, count in politicians_with_counts %}
+          <button type="button" class="pzv1-rail-row pzv1-rail-person" aria-pressed="false" data-axis="person" data-value="{{ name }}">
+            <span class="pzv1-rail-checkbox" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">{{ name }}</span>
+            <span class="pzv1-rail-count">{{ n(count) }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </details>
+
+      <div class="pzv1-rail-group">
+        <div class="pzv1-rail-title">Periods</div>
+        <div class="pzv1-rail-rows">
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="period" data-value="nedela">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Pēdējā nedēļa</span>
+            <span class="pzv1-rail-count" data-count-for="period:nedela">0</span>
+          </button>
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="period" data-value="menesis">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Šomēnes</span>
+            <span class="pzv1-rail-count" data-count-for="period:menesis">0</span>
+          </button>
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="period" data-value="gads">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Šogad</span>
+            <span class="pzv1-rail-count" data-count-for="period:gads">0</span>
+          </button>
+          <button type="button" class="pzv1-rail-row is-active" aria-pressed="true" data-axis="period" data-value="visi">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Visi</span>
+            <span class="pzv1-rail-count">{{ n(claims|length) }}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="pzv1-rail-group">
+        <div class="pzv1-rail-title">Ticamība</div>
+        <div class="pzv1-rail-rows">
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="confidence" data-value="augsta">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Augsta (≥0.9)</span>
+            <span class="pzv1-rail-count" data-count-for="confidence:augsta">0</span>
+          </button>
+          <button type="button" class="pzv1-rail-row" aria-pressed="false" data-axis="confidence" data-value="laba">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Laba (≥0.75)</span>
+            <span class="pzv1-rail-count" data-count-for="confidence:laba">0</span>
+          </button>
+          <button type="button" class="pzv1-rail-row is-active" aria-pressed="true" data-axis="confidence" data-value="visas">
+            <span class="pzv1-rail-dot" aria-hidden="true"></span>
+            <span class="pzv1-rail-label">Visas</span>
+            <span class="pzv1-rail-count">{{ n(claims|length) }}</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="pzv1-main">
+      <div class="pzv1-searchbar">
+        <div class="field pzv1-search-field">
+          <input type="text" class="field-input pzv1-search-input" id="pzv1-search" placeholder="Meklēt politiķi, tēmu, atslēgvārdu…" aria-label="Meklēt politiķi, tēmu vai atslēgvārdu">
+        </div>
+        <button type="button" class="chip pzv1-clear-chip" id="pzv1-clear" hidden>Notīrīt</button>
+      </div>
+
+      <div class="pzv1-sortbar">
+        <span class="pzv1-showing" role="status" aria-live="polite" aria-atomic="true">Rāda <span id="pzv1-shown">0</span> no <span id="pzv1-total">{{ n(claims|length) }}</span></span>
+        <span class="pzv1-sortbar-spacer"></span>
+        <span class="pzv1-sortbar-label">Kārtot:</span>
+        <button type="button" class="pzv1-sortbtn is-active" aria-pressed="true" data-sort="date">datums ↓</button>
+        <button type="button" class="pzv1-sortbtn" aria-pressed="false" data-sort="confidence">ticamība</button>
+        <button type="button" class="pzv1-sortbtn" aria-pressed="false" data-sort="topic">tēma</button>
+      </div>
+
+      <div class="pzv1-thead">
+        <div>Persona</div>
+        <div>Tēma</div>
+        <div>Pozīcija</div>
+        <div class="pzv1-thead-right">Datums</div>
+        <div class="pzv1-thead-right">Ticamība / avots</div>
+      </div>
+
+      <div class="pzv1-rows" id="pzv1-rows"></div>
+
+      <div class="pzv1-pagination" id="pzv1-pagination"></div>
+    </main>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{# Pozicijas data is in /pozicijas-data.json (split out 2026-04-25 to drop
+   HTML weight 616KB→78KB; faster server compression + browser-cacheable
+   data). pzv1.js fetches it at startup. #}
+<script src="assets/pzv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

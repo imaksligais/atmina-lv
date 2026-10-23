@@ -1,0 +1,61 @@
+document_key,gold_topic,labeller,note
+1005/Lp14,Budžets un finanses,gpt-6-astra,Budžets un finanses pret Sociālā politika: regulē biržā kotētu sabiedrību pārvaldes sastāvu finanšu tirgū; rubrikā nav atsevišķas dzimumu līdztiesības tēmas.
+1006/Lp14,Budžets un finanses,gpt-6-astra,
+1023/Lp14,Vide,gpt-6-astra,
+1030/Lp14,Tieslietas,gpt-6-astra,
+1038/Lm14,Saeimas darbs,gpt-6-astra,
+1054/Lm14,Tieslietas,gpt-6-astra,
+106/Lp14,Digitālā politika,gpt-6-astra,"Digitālā politika pret Mežsaimniecība: grozījumu saturs ir digitāla dokumentu aprite valsts reģistrā, nevis meža apsaimniekošana."
+1073/Lp14,Digitālā politika,gpt-6-astra,"Digitālā politika pret Aizsardzība un drošība: regulē elektroniskos sakarus un radioiekārtu lietošanu, arī drošības iestāžu pilnvaras šajā jomā."
+1083/Lp14,Budžets un finanses,gpt-6-astra,Budžets un finanses pret Digitālā politika: galvenā izmaiņa ir uzraudzības funkcijas nodošana VID; vietņu bloķēšana ir šīs funkcijas līdzeklis.
+1088/Lp14,Budžets un finanses,gpt-6-astra,
+1091/Lp14,Valsts pārvalde,gpt-6-astra,Valsts pārvalde pret Budžets un finanses: aprakstā galvenā izmaiņa ir uzraudzības funkciju institucionāla apvienošana.
+11/P14,Degviela un enerģētika,gpt-6-astra,
+1177/Lp14,Veselības aprūpe,gpt-6-astra,"Veselības aprūpe pret Sociālā politika: tieši regulē pacientu veselības datu izsniegšanu, lai atbalstītu bērnu vajadzību izvērtēšanu."
+1210/Lp14,Degviela un enerģētika,gpt-6-astra,Degviela un enerģētika pret Budžets un finanses: PVN samazinājums paredzēts tikai apkurei; nozares nodokli pieskaitu nozarei.
+131/P14,Korupcija un KNAB,gpt-6-astra,Korupcija un KNAB pret Koalīcija un partijas: pieprasījuma centrā ir amatpersonu interešu konflikts un apmaksātu dāvinājumu pieļaujamība.
+1310/Lp14,Izglītība,gpt-6-astra,
+1323/Lp14,Vide,gpt-6-astra,"Vide pret Lauksaimniecība: aizlieguma saturs ir dzīvnieku labturība un aizsardzība, nevis olu ražošanas organizācija."
+1349/Lp14,Degviela un enerģētika,gpt-6-astra,Degviela un enerģētika pret Vide: aprakstīto normu mērķis ir saglabāt atvieglotu vēja un citu energoapgādes būvju būvniecības regulējumu.
+138/P14,Korupcija un KNAB,gpt-6-astra,Korupcija un KNAB pret Koalīcija un partijas: pārbauda iespējamu interešu konfliktu un publisko resursu izmantošanu partijas aģitācijai.
+1470/Lp14,Sociālā politika,gpt-6-astra,
+1559/Lp14,Mežsaimniecība,gpt-6-astra,"Mežsaimniecība pret Vide: regulē stihijā bojātas koksnes novākšanu un realizāciju, arī aizsargājamās teritorijās."
+1575/Lp14,Budžets un finanses,gpt-6-astra,Budžets un finanses pret ES politika: maina uzņēmumu pārskatu sniegšanas pienākumu; ES direktīva ir regulējuma avots.
+174/Lp14,Tieslietas,gpt-6-astra,
+2/P14,Izglītība,gpt-6-astra,
+201/Lm14,Valodu politika,gpt-6-astra,
+215/Lp14,Ukraina un Krievija,gpt-6-astra,Ukraina un Krievija pret Imigrācija: īpašais uzturēšanās tiesību režīms attiecas tieši uz Krievijas pilsoņiem.
+216/Lp14,Tieslietas,gpt-6-astra,"Tieslietas pret Budžets un finanses: redzams negodīgas komercprakses aizlieguma tiesiskais regulējums, nevis nodokļu vai finanšu sektora saturs; detalizēts grozījumu saturs nav dots."
+219/Lm14,Valodu politika,gpt-6-astra,
+237/Lp14,Ukraina un Krievija,gpt-6-astra,
+26/P14,Ārpolitika,gpt-6-astra,
+283/Lm14,Saeimas darbs,gpt-6-astra,
+306/Lm14,Saeimas darbs,gpt-6-astra,
+320/Lm14,Saeimas darbs,gpt-6-astra,
+388/Lm14,Lauksaimniecība,gpt-6-astra,Lauksaimniecība pret Budžets un finanses: iesniegums attiecas uz PVN tieši lauksaimniecības produktiem; nozares nodokli pieskaitu nozarei.
+416/Lm14,Aizsardzība un drošība,gpt-6-astra,
+439/Lm14,Tieslietas,gpt-6-astra,
+445/Lp14,Ukraina un Krievija,gpt-6-astra,
+565/Lp14,Tieslietas,gpt-6-astra,"Tieslietas pret Pašvaldības: regulē civiltiesiskas zemes lietošanas maksas un dalītā īpašuma attiecības, nevis zemes privatizāciju."
+653/Lm14,Budžets un finanses,gpt-6-astra,
+735/Lp14,Budžets un finanses,gpt-6-astra,
+780/Lp14,Vide,gpt-6-astra,Vide pret Valsts pārvalde: izpētes atļaujas un konkursa izņēmums attiecas uz jūras teritorijas pārvaldību.
+82/Lp14,Izglītība,gpt-6-astra,
+82/P14,Rail Baltica,gpt-6-astra,
+826/Lp14,Sociālā politika,gpt-6-astra,Sociālā politika pret Valsts pārvalde: Satversmes grozījumam ir konkrēts dzimumu atzīšanas sociālās politikas saturs.
+85/P14,Vēlēšanas,gpt-6-astra,
+87/Lp14,Digitālā politika,gpt-6-astra,"Digitālā politika pret Tieslietas: regulē valsts elektroniskās platformas uzraudzības padomi, nevis tiesvedības materiālos vai procesuālos noteikumus."
+910/Lp14,Klimats,gpt-6-astra,"Klimats pret Vide: grozījumu centrā ir emisiju kvotu tirdzniecības sistēma, kaut likuma nosaukumā minēts piesārņojums."
+973/Lm14,Pensijas,gpt-6-astra,
+975/Lp14,Valsts pārvalde,gpt-6-astra,
+motif:04acf3e33477,Saeimas darbs,gpt-6-astra,
+motif:14380cb8a7f2,Saeimas darbs,gpt-6-astra,
+motif:208ca3ca9c34,Aizsardzība un drošība,gpt-6-astra,"Aizsardzība un drošība pret Ukraina un Krievija: ierobežo Latvijas valsts institūciju darbinieku braucienus nacionālās drošības dēļ, nevis Krievijas vai Baltkrievijas pilsoņu tiesības."
+motif:23cd5c2201e9,Saeimas darbs,gpt-6-astra,
+motif:32f18125fba3,Saeimas darbs,gpt-6-astra,
+motif:362c4dd76def,Saeimas darbs,gpt-6-astra,
+motif:64fb74421a75,Tieslietas,gpt-6-astra,
+motif:7790f03ee176,Saeimas darbs,gpt-6-astra,NESKAIDRS: 9. noteikums — likumprojekts nav redzams; Saeimas darbs pret Valsts pārvalde: pēc lietotāja norādījuma dots minējums tikai pēc redzamās priekšlikumu iesniegšanas procedūras; nozares tēmu noteikt nevar.
+motif:7d460bd440c3,Saeimas darbs,gpt-6-astra,
+motif:d9f0fbfb5b1a,Saeimas darbs,gpt-6-astra,
+motif:eef6357750e7,Saeimas darbs,gpt-6-astra,

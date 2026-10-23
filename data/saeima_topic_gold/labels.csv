@@ -1,0 +1,254 @@
+document_key,gold_topic,labeller,note
+10/Lp14,Valsts pārvalde,claude-opus-5-5,
+1005/Lp14,Sociālā politika,claude-opus-5-5,"Sociālā politika pret Budžets un finanses: saturs ir dzimumu līdztiesība valdēs, ne finanšu tirgus uzraudzība"
+1006/Lp14,Budžets un finanses,claude-opus-5-5,
+1017/Lp14,Digitālā politika,claude-opus-5-5,
+1019/Lp14,Tieslietas,claude-opus-5-5,
+102/P14,Ukraina un Krievija,claude-opus-5-5,"Ukraina un Krievija pret Transports: saturs ir ierobežojumi pret agresorvalstīm, nevis transporta politika"
+1020/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"Budžets un finanses pret Klimats/ES politika: uzņēmumu ilgtspējas ziņošana ir finanšu un grāmatvedības regulējums (FM), nevis emisiju politika | v2026-10-22.1: Budžets un finanses → Ekonomika un uzņēmējdarbība, 35. tēma: uzņēmumu ilgtspējas ziņošanas slogs"
+1023/Lp14,Vide,claude-opus-5-5,
+1027/Lp14,Ārpolitika,claude-opus-5-5,
+1030/Lp14,Tieslietas,claude-opus-5-5,
+1038/Lm14,Saeimas darbs,claude-opus-5-5,
+1054/Lm14,Tieslietas,claude-opus-5-5,
+1056/Lp14,Tieslietas,claude-opus-5-5,Tieslietas pret Veselības aprūpe: kontrolējamo vielu saraksti krimināltiesību likumā
+1059/Lp14,Vide,claude-opus-5-5,
+106/Lp14,Mežsaimniecība,claude-opus-5-5,"Mežsaimniecība pret Digitālā politika: digitalizē Valsts meža dienesta procesus, nozare ir mežs"
+1064/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"Budžets un finanses pret Valodu politika: likumprojekta pamatsaturs ir patērētāju kreditēšana (finanšu sektors), valodas prasība ir tikai viens priekšlikums | v2026-10-22.1: Budžets un finanses → Ekonomika un uzņēmējdarbība, 35. tēma: patērētāju kreditēšana attiecībās ar tirgotāju (adjudication.md C)"
+1073/Lp14,Droni,claude-opus-5-5,"Digitālā politika pret Aizsardzība un drošība: elektronisko sakaru likums un VAS «Elektroniskie sakari» forma; drošības iestāžu pilnvaras ir tikai daļa | v2026-10-22.1: Digitālā politika → Droni, T16 un 12. noteikums: anotācijas mērķis ir pretdronu signāla slāpēšana"
+1083/Lp14,Budžets un finanses,claude-opus-5-5,"Budžets un finanses pret Digitālā politika: budžeta paketes funkciju nodošana VID par azartspēļu vietņu bloķēšanu, ne sakaru regulējums"
+1084/Lp14,Transports,claude-opus-5-5,
+1088/Lp14,Budžets un finanses,claude-opus-5-5,
+1091/Lp14,Budžets un finanses,claude-opus-5-5,Budžets un finanses pret Valsts pārvalde: loteriju uzraudzība ir Finanšu ministrijas un IAUI joma
+1094/Lp14,Korupcija un KNAB,claude-opus-5-5,
+11/P14,Degviela un enerģētika,claude-opus-5-5,
+1105/Lp14,Valsts kapitālsabiedrības,claude-opus-5-5,
+1106/Lm14,Veselības aprūpe,claude-opus-5-5,
+1107/Lp14,Mežsaimniecība,claude-opus-5-5,
+1108/Lp14,Budžets un finanses,claude-opus-5-5,"Budžets un finanses pret Valodu politika: saturs ir VID pilnvaras azartspēļu un izložu sodos, valoda tikai likuma nosaukumā"
+1117/Lp14,Aizsardzība un drošība,claude-opus-5-5,"Aizsardzība un drošība pret Budžets un finanses: grozījumi pārceļ Nodokļu un muitas policiju iekšlietu ministra pārraudzībā un stiprina saikni ar tiesībaizsardzības iestādēm (policija), nevis regulē nodokļus"
+1123/Lp14,Vide,claude-opus-5-5,"Vide pret Lauksaimniecība: Dzīvnieku aizsardzības likums (dzīvnieku tiesības), lai gan grozījumi skar PVD funkcijas"
+1130/Lp14,Budžets un finanses,claude-opus-5-5,
+1134/Lp14,Valodu politika,claude-opus-5-5,"Valodu politika pret Aizsardzība un drošība: sodi arī par sabiedriskās kārtības pārkāpumiem, bet galvenais saturs ir valsts valodas pārkāpumu sodi; trešais kopsavilkums (11.1 pants) šķiet no cita projekta"
+114/P14,Veselības aprūpe,claude-opus-5-5,
+1156/Lp14,Tieslietas,claude-opus-5-5,
+1166/Lp14,Korupcija un KNAB,claude-opus-5-5,
+1177/Lp14,Veselības aprūpe,claude-opus-5-5,"Veselības aprūpe pret Sociālā politika: groza Pacientu tiesību likumu un veselības datu apstrādi, bērnu attīstības atbalsts ir mērķis"
+1190/Lp14,Vide,claude-opus-5-5,
+1199/Lp14,Digitālā politika,claude-opus-5-5,"Digitālā politika pret Kultūra: preses likums par komercmedijiem, rubrika komercmedijus liek Digitālā politika"
+1207/Lp14,Degviela un enerģētika,claude-opus-5-5,"Budžets un finanses pret Degviela un enerģētika: PVN ir vispārīgais nodoklis, kaut likme attiecas uz kurināmo un siltumu | v2026-10-22.1: Budžets un finanses → Degviela un enerģētika, 8. noteikums: samazināta PVN likme koksnes kurināmajam un siltumenerģijai"
+121/P14,Izglītība,claude-opus-5-5,"Valsts pārvalde pret Digitālā politika: pieprasījuma kodols ir publisko iepirkumu caurspīdīgums un izmaksas | v2026-10-22.1: Valsts pārvalde → Izglītība, 13. noteikums: T16 — IZM IT iepirkumi, nozares iestāde"
+1210/Lp14,Degviela un enerģētika,claude-opus-5-5,"Budžets un finanses pret Degviela un enerģētika: PVN ir vispārīgais nodoklis (8. noteikums), lai gan samazinātā likme attiecas uz apkuri | v2026-10-22.1: Budžets un finanses → Degviela un enerģētika, 8. noteikums: samazināta PVN likme apkurei iet nozarei"
+1227/Lp14,Mežsaimniecība,claude-opus-5-5,
+1228/Lp14,Sports,claude-opus-5-5,
+1229/Lp14,Vide,claude-opus-5-5,
+1248/Lp14,Ukraina un Krievija,claude-opus-5-5,Ukraina un Krievija pret Lauksaimniecība: saturs ir Krievijas un Baltkrievijas produktu importa aizliegums (sankcija)
+125/P14,Droni,claude-opus-5-5,
+1273/Lp14,Vide,claude-opus-5-5,
+1275/Lp14,Vide,claude-opus-5-5,
+1277/Lp14,Vide,claude-opus-5-5,
+1286/Lp14,Transports,claude-opus-5-5,
+1291/Lp14,Mežsaimniecība,claude-opus-5-5,
+131/P14,Korupcija un KNAB,claude-opus-5-5,"Korupcija un KNAB pret Koalīcija un partijas: galvenais ir interešu konflikts un dāvinājumu ierobežojumi, partiju finansēšana ir blakusjautājums"
+1310/Lp14,Izglītība,claude-opus-5-5,
+1323/Lp14,Vide,claude-opus-5-5,"Vide pret Lauksaimniecība: dzīvnieku labturības aizliegums (sprosti dējējvistām) Dzīvnieku aizsardzības likumā, nevis ražošanas atbalsts"
+134/P14,Valsts kapitālsabiedrības,claude-opus-5-5,
+1349/Lp14,Degviela un enerģētika,claude-opus-5-5,Degviela un enerģētika pret Vide: IVN likumā pārceltās normas regulē vēja un citu energoapgādes būvju būvniecību
+135/P14,Vide,claude-opus-5-5,"Vide pret Mežsaimniecība: pieprasījums ir par ES nozīmes biotopu aizsardzību un dabas atjaunošanas regulu, ne mežsaimniecību kā nozari"
+1364/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"Transports pret Ārpolitika: pasta pakalpojumi ir Satiksmes ministrijas nozare (7. noteikums), lai gan rubrikā pasts nav minēts | v2026-10-22.1: Transports → Ekonomika un uzņēmējdarbība, 35. tēma: pasta pakalpojumi"
+1369/Lp14,Pensijas,claude-opus-5-5,
+137/P14,Imigrācija,claude-opus-5-5,
+138/P14,Korupcija un KNAB,claude-opus-5-5,"Korupcija un KNAB pret Vēlēšanas: kodols ir administratīvo resursu izmantošana un interešu konflikts, ne vēlēšanu norise"
+1381/Lp14,Budžets un finanses,claude-opus-5-5,"Budžets un finanses pret Sociālā politika: patērētāju kreditēšanas licencēšana un uzraudzība pāriet Latvijas Bankai, finanšu sektora uzraudzība"
+1385/Lp14,Budžets un finanses,claude-opus-5-5,Budžets un finanses pret Tieslietas: saturs ir finanšu pakalpojumu uzraudzības nodošana Latvijas Bankai
+140/P14,Aizsardzība un drošība,claude-opus-5-5,Aizsardzība un drošība pret Degviela un enerģētika: jautājums ir civilās aizsardzības un krīzes vadības gatavība
+1420/Lp14,Aizsardzība un drošība,claude-opus-5-5,"Aizsardzība un drošība pret Vide: grozījumi ierobežo niršanu ap zemūdens infrastruktūru un uzliek paziņot Krasta apsardzei — ūdeņu kontrole un drošība, nevis dabas aizsardzība"
+1430/Lp14,Vide,claude-opus-5-5,"Vide pret Mežsaimniecība: Sugu un biotopu aizsardzības likums, aizsargājamo meža biotopu moratorijs"
+1444/Lp14,Budžets un finanses,claude-opus-5-5,
+1451/Lp14,Budžets un finanses,claude-opus-5-5,
+1459/Lp14,Tieslietas,claude-opus-5-5,"Tieslietas pret Sociālā politika: civilstāvokļa aktu reģistrācija ir tieslietu joma, kaut skar adopciju un bērnus"
+1466/Lp14,Veselības aprūpe,claude-opus-5-5,
+1470/Lp14,Sociālā politika,claude-opus-5-5,
+1477/Lp14,Tieslietas,claude-opus-5-5,Tieslietas pret Digitālā politika: e-pierādījumu rīkojumi kriminālprocesā; sakaru likums ir tikai nesējs
+148/Lp14,Vide,claude-opus-5-5,
+1488/Lp14,Ukraina un Krievija,claude-opus-5-5,"RUBRIKA?: rubrika 878/Lp14 liek Lauksaimniecība pēc likuma nosaukuma, bet saturs ir Krievijas un Baltkrievijas preču importa aizliegums, lai sarautu ekonomiskās saites ar agresorvalstīm (sankcija)"
+1511/Lp14,Korupcija un KNAB,claude-opus-5-5,
+152/Lp14,Budžets un finanses,claude-opus-5-5,
+1539/Lp14,Valsts pārvalde,claude-opus-5-5,
+1544/Lp14,Ukraina un Krievija,claude-opus-5-5,Ukraina un Krievija pret Lauksaimniecība: Krievijas un Baltkrievijas preču tranzīta aizliegums ir sankciju veida ierobežojums
+1549/Lp14,Pašvaldības,claude-opus-5-5,"Pašvaldības pret Kultūra: pēc satura — arhitektūras kvalitāte, arhitekta profesija un pilsētplānošanas konkursi ir būvniecības un plānošanas joma; «Kultūra» arhitektūru nemin"
+1559/Lp14,Mežsaimniecība,claude-opus-5-5,"Mežsaimniecība pret Vide: vētras bojāto koku novākšana, arī aizsargājamās teritorijās"
+1565/Lp14,Digitālā politika,claude-opus-5-5,
+1575/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"Budžets un finanses pret ES politika/Klimats: uzņēmumu pārskatu (ilgtspējas ziņojumu) prasības; atsevišķas uzņēmējdarbības tēmas nav | v2026-10-22.1: Budžets un finanses → Ekonomika un uzņēmējdarbība, 35. tēma: uzņēmumu ilgtspējas ziņošanas slogs"
+1579/Lp14,Mežsaimniecība,claude-opus-5-5,"Mežsaimniecība pret Degviela un enerģētika: Meža likuma grozījumi par koku ciršanu meža īpašniekam, mērķis ir elektrotīkla aizsardzība"
+1581/Lp14,Transports,claude-opus-5-5,
+1586/Lp14,Sociālā politika,claude-opus-5-5,"Sociālā politika pret Sports: saturs ir pilsonības piešķiršana, sportists ir tikai pamatojums"
+17/Lp14,Budžets un finanses,claude-opus-5-5,"Budžets un finanses pret Digitālā politika: VID informācijas sistēmas, rubrika VID liek Budžets un finanses"
+174/Lp14,Tieslietas,claude-opus-5-5,Tieslietas pret Pašvaldības: zemesgrāmatas ir tiesu sistēmas daļa
+19/P14,Aizsardzība un drošība,claude-opus-5-5,
+193/Lp14,Degviela un enerģētika,claude-opus-5-5,
+194/Lm14,Tieslietas,claude-opus-5-5,"Tieslietas pret Sociālā politika: vardarbības novēršana un izmeklēšana, Stambulas konvencijas loks"
+197/Lp14,Degviela un enerģētika,claude-opus-5-5,
+2/P14,Izglītība,claude-opus-5-5,
+20/Lp14,Korupcija un KNAB,claude-opus-5-5,Korupcija un KNAB pret Aizsardzība un drošība: saturs ir amatpersonu deklarāciju regulējums
+201/Lm14,Valodu politika,claude-opus-5-5,
+202/Lp14,Valodu politika,claude-opus-5-5,
+209/Lp14,Pašvaldības,claude-opus-5-5,"Pašvaldības pret Valsts pārvalde: dzīvojamo māju pārvaldīšana nav atsevišķas mājokļu tēmas, tuvākā ir būvniecība un pašvaldību joma"
+213/Lp14,Digitālā politika,claude-opus-5-5,"RUBRIKA?: nav sabiedrības veselības tēmas; tabakas un alkohola reklāmas aizliegumi elektroniskajos plašsaziņas līdzekļos (komercmediji) → Digitālā politika, alternatīva «Veselības aprūpe»"
+215/Lp14,Imigrācija,claude-opus-5-5,Imigrācija pret Ukraina un Krievija: Krievijas pilsoņu pastāvīgās uzturēšanās atļauju derīguma pagarināšana ir uzturēšanās atļauju regulējums
+216/Lp14,Lauksaimniecība,claude-opus-5-5,"IZŠĶIRTS (v2026-10-22.1, pirmavots: adjudication.md): avots nesatur saturu; negodīgas tirdzniecības prakses likums regulē pārtikas piegādes ķēdi (Zemkopības ministrija)"
+219/Lm14,Imigrācija,claude-opus-5-5,"Valodu politika pret Ukraina un Krievija: tekstā tikai valsts valodas pārbaudes vecuma slieksnis, Krievijas pilsoņi nav minēti | v2026-10-22.1: Valodu politika → Imigrācija, 10.a noteikums: valodas pārbaude kā uzturēšanās atļaujas nosacījums"
+224/Lp14,Digitālā politika,claude-opus-5-5,"Digitālā politika pret Sociālā politika: Elektronisko sakaru likuma grozījums par numuru piešķiršanu, lai gan tālrunis ir vardarbībā cietušajām"
+230/Lm14,Saeimas darbs,claude-opus-5-5,
+232/Lp14,Valsts pārvalde,claude-opus-5-5,"IZŠĶIRTS (v2026-10-22.1, pirmavots: adjudication.md): ne teksts, ne titania lapa nerāda grozījumu saturu; Satversmes grozījumi bez zināmas nozares → Valsts pārvalde"
+237/Lp14,Ukraina un Krievija,claude-opus-5-5,Ukraina un Krievija pret Aizsardzība un drošība: 9. maija pasākumu aizliegums ir vēsturiskās atmiņas un Krievijas agresijas jautājums
+25/Lm14,Sociālā politika,claude-opus-5-5,
+250/Lm14,Saeimas darbs,claude-opus-5-5,Saeimas darbs pret Vēlēšanas: deputāta pilnvaru apstiprināšana ir parlamenta iekšējā kārtība
+255/Lp14,Aizsardzība un drošība,claude-opus-5-5,"Ukraina un Krievija pret Tieslietas: administratīvais sods paaugstināts piemiņas vietu (karavīru, genocīda upuru) aizsardzībai — vēsturiskā atmiņa | v2026-10-22.1: Ukraina un Krievija → Aizsardzība un drošība, 12. noteikums: anotācija — sabiedriskās kārtības traucēšana izklaides vietās; piemiņas vietas tikai priekšlikumā Nr. 2"
+26/P14,Tieslietas,claude-opus-5-5,"NESKAIDRS: ne teksts, ne avota lapa nepasaka izteikumu saturu; ārlietu ministra uzstāšanās Eiropas Padomes PA | v2026-10-22.1: Ārpolitika → Tieslietas, T16 CITA: visi jautājumi par Stambulas konvencijas pretiniekiem"
+269/Lp14,Budžets un finanses,claude-opus-5-5,
+283/Lm14,Saeimas darbs,claude-opus-5-5,
+284/Lp14,Korupcija un KNAB,claude-opus-5-5,
+289/Lp14,Mežsaimniecība,claude-opus-5-5,
+298/Lm14,Saeimas darbs,claude-opus-5-5,
+299/Lp14,Mežsaimniecība,claude-opus-5-5,
+301/Lp14,Vide,claude-opus-5-5,"Vide pret Aizsardzība un drošība: groza Sugu un biotopu aizsardzības likumu (mikroliegumi), lai gan iemesls ir militārie poligoni"
+302/Lp14,Vide,claude-opus-5-5,Vide pret Aizsardzība un drošība: ļauj veidot aizsargājamas dabas teritorijas militāro poligonu teritorijā ar AM piekrišanu (pēc likumi.lv meklēšanas kopsavilkuma)
+303/Lm14,Saeimas darbs,claude-opus-5-5,
+306/Lm14,Saeimas darbs,claude-opus-5-5,
+31/Lm14,Tieslietas,claude-opus-5-5,
+31/Lp14,Vide,claude-opus-5-5,
+320/Lm14,Saeimas darbs,claude-opus-5-5,
+324/Lp14,Valsts pārvalde,claude-opus-5-5,
+337/Lm14,Vide,claude-opus-5-5,"Vide pret Tieslietas: iesnieguma būtība ir dzīvnieku tiesības, kaut prasa kriminālsodu"
+338/Lm14,Aizsardzība un drošība,claude-opus-5-5,
+340/Lp14,Veselības aprūpe,claude-opus-5-5,
+341/Lm14,Saeimas darbs,claude-opus-5-5,
+355/Lp14,Degviela un enerģētika,claude-opus-5-5,
+356/Lp14,Ukraina un Krievija,claude-opus-5-5,"Ukraina un Krievija pret Sports: aizliegums sacensties ar Krievijas un Baltkrievijas izlasēm ir ierobežojums agresorvalstīm, nevis sporta politika"
+37/P14,airBaltic,claude-opus-5-5,
+371/Lm14,Valsts pārvalde,claude-opus-5-5,
+388/Lm14,Lauksaimniecība,claude-opus-5-5,"Budžets un finanses pret Lauksaimniecība: iesniegums par PVN likmi — vispārīgais nodoklis (8. noteikums), lai gan produkti ir lauksaimniecības | v2026-10-22.1: Budžets un finanses → Lauksaimniecība, 8. noteikums: PVN likme Latvijai raksturīgajiem lauksaimniecības produktiem"
+393/Lp14,Sports,claude-opus-5-5,
+403/Lp14,Vide,claude-opus-5-5,
+408/Lp14,Sociālā politika,claude-opus-5-5,
+415/Lp14,Korupcija un KNAB,claude-opus-5-5,Korupcija un KNAB pret Sociālā politika: partnera jēdziens ieviests interešu konflikta regulējumā
+416/Lm14,Aizsardzība un drošība,claude-opus-5-5,
+423/Lp14,Valsts pārvalde,claude-opus-5-5,
+439/Lm14,Tieslietas,claude-opus-5-5,
+44/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"RUBRIKA?: rubrikā nav tautsaimniecības/patērētāju tēmas; preču tirgus uzraudzība pēc ES regulas → ES politika (vienotais tirgus, tirdzniecība) | v2026-10-22.1: ES politika → Ekonomika un uzņēmējdarbība, 35. tēma un 13. noteikums: preču atbilstība un tirgus uzraudzība"
+440/Lm14,Tieslietas,claude-opus-5-5,
+445/Lp14,Ukraina un Krievija,claude-opus-5-5,
+45/P14,Izglītība,claude-opus-5-5,"Izglītība pret Kultūra: jautājums ir vidusskolas padotība; mākslas izglītība, nevis kultūras iestāde"
+458/Lp14,Kultūra,claude-opus-5-5,Kultūra pret Ukraina un Krievija: likums par Stūra mājas kā muzeja un piemiņas vietas saglabāšanu — kultūras mantojums
+493/Lp14,Ukraina un Krievija,claude-opus-5-5,Ukraina un Krievija pret Lauksaimniecība: Krievijas un Baltkrievijas lauksaimniecības produktu piegādes aizliegums ir sankciju veida ierobežojums
+501/Lm14,airBaltic,claude-opus-5-5,
+508/Lp14,Digitālā politika,claude-opus-5-5,
+509/Lm14,Vide,claude-opus-5-5,
+515/Lp14,Tieslietas,claude-opus-5-5,"Tieslietas pret Digitālā politika: patentu (intelektuālā īpašuma) tiesības, Tieslietu ministrijas joma"
+52/P14,airBaltic,claude-opus-5-5,
+523/Lm14,Tieslietas,claude-opus-5-5,
+524/Lp14,Ukraina un Krievija,claude-opus-5-5,"v2026-10-22.1: Lauksaimniecība → Ukraina un Krievija, T16 CITA, 10.c noteikums: Krievijas un Baltkrievijas lauksaimniecības preču importa aizliegums"
+529/Lp14,Transports,claude-opus-5-5,Transports pret Pašvaldības: zemes atsavināšana valsts autoceļa A2 pārbūvei
+544/Lp14,Tieslietas,claude-opus-5-5,Tieslietas pret Budžets un finanses: maksātnespējas process ir tieslietu joma
+561/Lp14,Imigrācija,claude-opus-5-5,"Ukraina un Krievija pret Imigrācija: grozījums attiecas tikai uz Krievijas pilsoņiem ar pastāvīgās uzturēšanās atļauju (kā 839/Lp14) | v2026-10-22.1: Ukraina un Krievija → Imigrācija, 10.a noteikums: Krievijas pilsoņu pastāvīgās uzturēšanās atļauju režīms"
+565/Lp14,Tieslietas,claude-opus-5-5,"Tieslietas pret Pašvaldības: Civillikuma spēkā stāšanās likuma grozījumi par dalīto īpašumu — civiltiesības, nevis zemes privatizācija vai plānošana"
+569/Lm14,Valodu politika,claude-opus-5-5,"Valodu politika pret Saeimas darbs: valsts valodas prasmes pārbaude, nevis sēdes kārtība"
+571/Lm14,Valodu politika,claude-opus-5-5,"Valodu politika pret Saeimas darbs: saturs ir valsts valodas prasmes kontrole, ne sēžu kārtība"
+571/Lp14,Valodu politika,claude-opus-5-5,"Izglītība pret Valodu politika: ārvalstu akadēmiskais personāls bez valodas apliecinājuma, mērķis ir augstskolu specializācija | v2026-10-22.1: Izglītība → Valodu politika, 14. noteikums: T16 — viss operatīvais saturs ir valsts valodas prasība"
+572/Lp14,Pašvaldības,claude-opus-5-5,
+578/Lm14,Valodu politika,claude-opus-5-5,
+58/P14,Pašvaldības,claude-opus-5-5,"Pašvaldības pret Budžets un finanses: valsts un pašvaldību zemes nomas maksa — zemes pārvaldība, tuvākā ir «Pašvaldības»"
+591/Lp14,Korupcija un KNAB,claude-opus-5-5,
+597/Lp14,Transports,claude-opus-5-5,
+598/Lm14,Tieslietas,claude-opus-5-5,
+598/Lp14,Tieslietas,claude-opus-5-5,"Tieslietas pret Valodu politika: šis likumprojekts ievieš atbildību par seksuālu uzmākšanos, ne valodas pārkāpumiem"
+601/Lm14,Imigrācija,claude-opus-5-5,Imigrācija pret Sociālā politika: demogrāfija saistīta ar trešo valstu valstspiederīgo ieceļošanas ierobežošanu
+604/Lm14,Tieslietas,claude-opus-5-5,
+61/Lp14,Transports,claude-opus-5-5,
+635/Lp14,Valsts kapitālsabiedrības,claude-opus-5-5,
+653/Lm14,Budžets un finanses,claude-opus-5-5,
+658/Lm14,Saeimas darbs,claude-opus-5-5,
+661/Lp14,Vide,claude-opus-5-5,
+671/Lp14,Aizsardzība un drošība,claude-opus-5-5,"Aizsardzība un drošība pret NVO un pilsoniskā sabiedrība: kapelāni policijā, robežsardzē un glābšanas dienestā — iekšlietu iestāžu darbs"
+673/Lm14,Saeimas darbs,claude-opus-5-5,
+688/Lm14,Saeimas darbs,claude-opus-5-5,
+688/Lp14,Digitālā politika,claude-opus-5-5,
+69/Lp14,Aizsardzība un drošība,claude-opus-5-5,Aizsardzība un drošība pret Digitālā politika: obligāta e-adrese 18-27 gadus veciem vīriešiem kalpo valsts aizsardzības dienesta iesaukšanai
+698/Lp14,Valsts kapitālsabiedrības,claude-opus-5-5,
+70/Lm14,Saeimas darbs,claude-opus-5-5,
+701/Lp14,Degviela un enerģētika,claude-opus-5-5,
+707/Lp14,Valsts kapitālsabiedrības,claude-opus-5-5,
+715/Lm14,Valodu politika,claude-opus-5-5,Valodu politika pret Ukraina un Krievija: mācību un saziņas valoda skolās
+718/Lp14,Klimats,claude-opus-5-5,
+723/Lp14,Lauksaimniecība,claude-opus-5-5,
+729/Lp14,Transports,claude-opus-5-5,Transports pret Klimats: aviācijas likuma grozījumi par ilgtspējīgas aviācijas degvielas uzraudzību — aviācijas regulējums
+732/Lp14,Pašvaldības,claude-opus-5-5,
+735/Lp14,Budžets un finanses,claude-opus-5-5,
+74/Lp14,Aizsardzība un drošība,claude-opus-5-5,"NESKAIDRS: kopsavilkumā nav satura; pēc meklēšanas 2023. gada pieņemtais vienskaitļa grozījums ar šo nosaukumu groza 11. pantu (sīkais huligānisms), tātad sabiedriskā kārtība, nevis valoda; Tieslietas pret Aizsardzība un drošība | v2026-10-22.1: Tieslietas → Aizsardzība un drošība, sabiedriskā kārtība → «Aizsardzība un drošība» (grozījums par sīko huligānismu)"
+744/Lp14,Aizsardzība un drošība,claude-opus-5-5,"NESKAIDRS: tekstā un avotā nav grozījuma satura; Iekšlietu ministrijas budžeta paketes grozījums, pieņemts kā iekšlietu joma"
+745/Lm14,Vēlēšanas,claude-opus-5-5,"Vēlēšanas pret Saeimas darbs: CVK locekļa atsaukšana, amatpersona ārpus Saeimas (5. noteikums)"
+751/Lp14,Budžets un finanses,claude-opus-5-5,"Budžets un finanses pret Valsts kapitālsabiedrības: azartspēļu un izložu regulējums ar mērķi palielināt budžeta dividendes, nevis Latvijas Loto pārvaldība"
+76/P14,airBaltic,claude-opus-5-5,
+769/Lp14,Izglītība,claude-opus-5-5,
+780/Lp14,Degviela un enerģētika,claude-opus-5-5,Degviela un enerģētika pret Vide: izpēte bez konkursa paredzēta ELWIND jūras vēja parka projektam (pēc TAP 24-TA-2059 meklēšanas kopsavilkuma)
+79/Lm14,Saeimas darbs,claude-opus-5-5,
+796/Lm14,Budžets un finanses,claude-opus-5-5,
+798/Lp14,Digitālā politika,claude-opus-5-5,
+80/Lm14,Saeimas darbs,claude-opus-5-5,
+805/Lp14,Ārpolitika,claude-opus-5-5,Ārpolitika pret Izglītība: kosmosa līgums bez skaidras nozares (7. noteikums)
+81/P14,airBaltic,claude-opus-5-5,
+812/Lp14,Vide,claude-opus-5-5,"Vide pret Degviela un enerģētika: jūras teritorijas atļaujas kopumā, enerģijas iekārtas tikai viena daļa"
+82/Lp14,Izglītība,claude-opus-5-5,
+82/P14,Rail Baltica,claude-opus-5-5,
+826/Lp14,Sociālā politika,claude-opus-5-5,"RUBRIKA?: Satversmes grozījums ar nozares saturu (dzimumu atzīšana, ģimenes vērtības), tāpēc Sociālā politika, nevis Valsts pārvalde"
+836/Lp14,Sociālā politika,claude-opus-5-5,Sociālā politika pret Valsts pārvalde: Satversmes grozījums par divu dzimumu atzīšanu ir ģimenes politikas saturs
+85/P14,Vēlēšanas,claude-opus-5-5,
+863/Lp14,Valodu politika,claude-opus-5-5,NESKAIDRS: kopsavilkumā tikai likuma nosaukums; sekots rubrikas piemēram 863/Lp14
+87/Lp14,Tieslietas,claude-opus-5-5,"Digitālā politika pret Tieslietas: E-lietas platforma ir valsts IT sistēma, lai gan to vada Tieslietu ministrija | v2026-10-22.1: Digitālā politika → Tieslietas, 13. noteikums: E-lietas platforma ir tieslietu nozares IT"
+871/Lp14,Pašvaldības,claude-opus-5-5,"Valsts pārvalde pret Valsts kapitālsabiedrības: publiskas personas mantas atsavināšanas kārtība kopumā, kapitālsabiedrības tikai kā viena no iestādēm | v2026-10-22.1: Valsts pārvalde → Pašvaldības, T16: publiskas personas nekustamā īpašuma atsavināšana → «Pašvaldības»"
+874/Lp14,Veselības aprūpe,claude-opus-5-5,
+876/Lp14,Aizsardzība un drošība,claude-opus-5-5,NESKAIDRS: likuma saturu neizdevās atrast (titania rāda tikai balsojumus); virsraksts un Nacionālās drošības komisija norāda uz iekšējo drošību; ja likums vērsts pret agresorvalstīm saistītiem pasākumiem → «Ukraina un Krievija»
+878/Lp14,Ukraina un Krievija,claude-opus-5-5,"RUBRIKA?: rubrika šo dokumentu liek Lauksaimniecība pēc likuma nosaukuma, bet saturs ir Krievijas un Baltkrievijas produktu ievešanas aizliegums (sankcija pret agresorvalstīm)"
+892/Lm14,Aizsardzība un drošība,claude-opus-5-5,
+893/Lm14,Koalīcija un partijas,claude-opus-5-5,
+898/Lp14,Aizsardzība un drošība,claude-opus-5-5,
+904/Lp14,Valsts kapitālsabiedrības,claude-opus-5-5,"Valsts kapitālsabiedrības pret Budžets un finanses: groza kapitālsabiedrību pārvaldības likumu, cenas stabilizācija ir finanšu tirgus norma"
+910/Lp14,Klimats,claude-opus-5-5,
+911/Lm14,Budžets un finanses,claude-opus-5-5,
+927/Lp14,Budžets un finanses,claude-opus-5-5,
+941/Lp14,Korupcija un KNAB,claude-opus-5-5,
+949/Lm14,Tieslietas,claude-opus-5-5,
+95/P14,Izglītība,claude-opus-5-5,"NESKAIDRS: Nacionālais botāniskais dārzs ir zinātnes institūcija, tāpēc Izglītība, nevis Vide vai Kultūra"
+953/Lm14,airBaltic,claude-opus-5-5,
+96/Lp14,Valsts pārvalde,claude-opus-5-5,Valsts pārvalde pret Digitālā politika: obligāts personu apliecinošs dokuments ir valsts pārvaldes un iedzīvotāju reģistrācijas jautājums
+968/Lm14,Tieslietas,claude-opus-5-5,
+970/Lp14,Lauksaimniecība,claude-opus-5-5,
+972/Lm14,Sociālā politika,claude-opus-5-5,NESKAIDRS: darba tiesību (virsstundu un svētku dienu piemaksas) tēmas rubrikā nav; tuvākā ir «Sociālā politika»
+973/Lm14,Pensijas,claude-opus-5-5,
+975/Lp14,Valsts pārvalde,claude-opus-5-5,Valsts pārvalde pret Saeimas darbs: rubrika kārtības rulli liek Valsts pārvaldē (atvērtā robeža)
+981/Lp14,Tieslietas,claude-opus-5-5,
+983/Lm14,Saeimas darbs,claude-opus-5-5,
+985/Lp14,Tieslietas,claude-opus-5-5,
+989/Lp14,Digitālā politika,claude-opus-5-5,"Digitālā politika pret Ukraina un Krievija: e-parakstu un e-dokumentu regulējums, Ukraina tikai kā pakalpojumu sniedzēju valsts"
+997/Lp14,Ekonomika un uzņēmējdarbība,claude-opus-5-5,"NESKAIDRS: patērētāju ārpustiesas strīdu risināšana; patērētāju tiesību tēmas nav, tuvākā ir Tieslietas | v2026-10-22.1: Tieslietas → Ekonomika un uzņēmējdarbība, 35. tēma: patērētāju strīdu ārpustiesas risināšana"
+motif:04acf3e33477,Saeimas darbs,claude-opus-5-5,
+motif:10c23379621b,Budžets un finanses,claude-opus-5-5,
+motif:14380cb8a7f2,Saeimas darbs,claude-opus-5-5,
+motif:208ca3ca9c34,Aizsardzība un drošība,claude-opus-5-5,"Aizsardzība un drošība pret Ukraina un Krievija: priekšlikums ir nacionālās drošības pasākums (izbraukšanas aizliegums amatpersonām), nevis Krievijas pilsoņu ierobežojums"
+motif:231b1192c721,Saeimas darbs,claude-opus-5-5,
+motif:233045ca9717,Saeimas darbs,claude-opus-5-5,
+motif:23cd5c2201e9,Saeimas darbs,claude-opus-5-5,
+motif:2696451cf39e,Saeimas darbs,claude-opus-5-5,
+motif:2a04de0ddc1b,Saeimas darbs,claude-opus-5-5,
+motif:32f18125fba3,Saeimas darbs,claude-opus-5-5,
+motif:362c4dd76def,Saeimas darbs,claude-opus-5-5,
+motif:5879d9aa7610,Saeimas darbs,claude-opus-5-5,
+motif:58eece48e5bf,Aizsardzība un drošība,claude-opus-5-5,
+motif:5ad40b66b691,Aizsardzība un drošība,claude-opus-5-5,"NESKAIDRS: balsojumā (15.12.2022 16:29) likumprojekts nav nosaukts, titania un meklēšana to neatrada; tēma ir minējums | v2026-10-22.1: Valsts pārvalde → Aizsardzība un drošība, 1. un 9. noteikums: stenogramma rāda termiņu Valsts aizsardzības dienesta likumam (67/Lp14)"
+motif:64fb74421a75,Tieslietas,claude-opus-5-5,
+motif:7790f03ee176,Saeimas darbs,claude-opus-5-5,"IZŠĶIRTS (v2026-10-22.1, pirmavots: adjudication.md): balsojuma lapā likums nav norādīts; secināts no sēdes darba kārtības: balsojums 20.09.2023. 10:20 ārkārtas sēdē, kurā ir tikai Saeimas amatpersonu vēlēšanas (Saeimas priekšsēdētāja ievēlēšana 257/Lm14 10:14) — termiņš kandidātu priekšlikumiem, likumprojekta nav"
+motif:7d460bd440c3,Saeimas darbs,claude-opus-5-5,
+motif:c40f8488b047,Saeimas darbs,claude-opus-5-5,
+motif:d9f0fbfb5b1a,Saeimas darbs,claude-opus-5-5,
+motif:eef6357750e7,Saeimas darbs,claude-opus-5-5,

@@ -1,0 +1,203 @@
+// chrome-v1.js — vietnes chrome mijiedarbība (tēmas pārslēgs, skaņu slēdzis,
+// burger izvēlne, "Vairāk" atklājējs, kopēšanas pogas, kartīšu navigācija).
+// Izcelts no base.html.j2 stingrās CSP dēļ (script-src bez 'unsafe-inline').
+//
+// cuelume dinamiskā importa URL atvasinām no paša skripta atrašanās vietas:
+// document.currentScript ir null aizkavētos (deferred) callback'os, tāpēc to
+// noķeram sinhroni moduļa augšpusē. chrome-v1.js dzīvo assets/, cuelume —
+// assets/cuelume/, tāpēc relatīvā atrisināšana pret skripta URL dod pareizo ceļu.
+var chromeSrc = document.currentScript && document.currentScript.src;
+
+(function () {
+  var themeBtn = document.getElementById('nav-theme');
+  if (themeBtn) {
+    var syncThemeBtn = function (light) {
+      themeBtn.setAttribute('aria-checked', String(light));
+      // theme-color = tēmas --bg (style.css viens avots); izsauc PĒC data-theme
+      // maiņas. Literāļi — tikai rezerve, ja mainīgais nav nolasāms.
+      var meta = document.getElementById('meta-theme-color');
+      var bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+      if (meta) meta.setAttribute('content', bg || (light ? '#f7f3e8' : '#0d1014'));
+      var cs = document.getElementById('meta-color-scheme');
+      if (cs) cs.setAttribute('content', light ? 'light' : 'dark');
+    };
+    syncThemeBtn(document.documentElement.getAttribute('data-theme') === 'light');
+    themeBtn.addEventListener('click', function () {
+      var light = document.documentElement.getAttribute('data-theme') !== 'light';
+      if (light) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      var theme = light ? 'light' : 'dark';
+      try { localStorage.setItem('atmina:theme', theme); } catch (e) {}
+      syncThemeBtn(light);
+      document.dispatchEvent(new CustomEvent('atmina:themechange', { detail: { theme: theme } }));
+    });
+  }
+  // --nav-block-size (style.css :root, 57px) = lipīgās nav augstums, ko lieto
+  // lipīgie elementi zem tās. Ar izvēlnes pogu (≤960 px) vai lielāku fontu
+  // nav ir augstāka — tad ieraksta izmērīto. Bez JS paliek 57px rezerve.
+  var navEl = document.querySelector('.nav');
+  if (navEl && window.ResizeObserver) {
+    // Uzreiz, ne tikai pirmajā RO izsaukumā: `load` apdarinātāji (prv1.js
+    // dziļā saite) ritina pirms pirmā kadra un citādi lietotu 57px rezervi.
+    document.documentElement.style.setProperty('--nav-block-size',
+      Math.round(navEl.getBoundingClientRect().height) + 'px');
+    new ResizeObserver(function (entries) {
+      var h = entries[0].borderBoxSize ? entries[0].borderBoxSize[0].blockSize
+        : navEl.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--nav-block-size', Math.round(h) + 'px');
+    }).observe(navEl);
+  }
+  // Skaņu efekti — opt-in (default OFF, glabāts localStorage 'atmina:sound').
+  // cuelume tiek ielādēts TIKAI ar lēno dynamic import, kad skaņa ieslēgta —
+  // nulle izmaksu, kamēr lietotājs to nav apzināti aktivizējis.
+  var sndBtn = document.getElementById('nav-sound');
+  if (sndBtn) {
+    var sndOn = false;
+    try { sndOn = localStorage.getItem('atmina:sound') === 'on'; } catch (e) {}
+    var cue = null;
+    var loadCue = function () {
+      return import(new URL('cuelume/index.js', chromeSrc).href).then(function (m) {
+        cue = m; m.setEnabled(true); return m;
+      });
+    };
+    var syncSndBtn = function () { sndBtn.setAttribute('aria-checked', String(sndOn)); };
+    syncSndBtn();
+    if (sndOn) loadCue();
+    sndBtn.addEventListener('click', function () {
+      sndOn = !sndOn;
+      try { localStorage.setItem('atmina:sound', sndOn ? 'on' : 'off'); } catch (e) {}
+      syncSndBtn();
+      if (sndOn) { loadCue().then(function (m) { m.play('ready'); }); }
+      else if (cue) { cue.setEnabled(false); }
+    });
+    document.addEventListener('atmina:themechange', function () { if (sndOn && cue) cue.play('toggle'); });
+    document.addEventListener('atmina:copied', function () { if (sndOn && cue) cue.play('success'); });
+    // Tabu pārslēgšana + izvēlnes atvēršana -> īss 'tick';
+    // nav joslas un iekšējā satura navigācija -> 'page'.
+    // Ārējie avotu linki, enkuri un kopēšanas poga paliek klusi.
+    document.addEventListener('click', function (e) {
+      if (!sndOn || !cue) return;
+      if (e.target.closest('[role="tab"], .profile-stat, .xv1-tab, .nav-burger')) { cue.play('tick'); return; }
+      var a = e.target.closest('main a[href], #nav-menu a[href]');
+      if (!a || a.classList.contains('share-btn-copy')) return;
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || /^https?:/i.test(href)) return;
+      cue.play('page');
+    });
+  }
+  var nav = document.querySelector('.nav');
+  var burger = document.getElementById('nav-burger');
+  var menu = document.getElementById('nav-menu');
+  if (!nav || !menu) return;
+  function setOpen(open) {
+    nav.classList.toggle('nav-open', open);
+    if (burger) {
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Aizvērt izvēlni' : 'Atvērt izvēlni');
+    }
+  }
+  if (burger) burger.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('nav-open'));
+  });
+  // Close the mobile overlay when a real link is tapped.
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  // "Vairāk" disclosure — click toggles on touch/desktop; CSS handles hover.
+  var more = menu.querySelector('.nav-more-btn');
+  if (more) {
+    more.addEventListener('click', function (e) {
+      e.stopPropagation();
+      // stopPropagation bloķē document-līmeņa skaņas handleri — spēlējam
+      // tieši šeit (sndOn/cue ir IIFE funkcijas scope caur var hoisting).
+      if (sndOn && cue) cue.play('tick');
+      var open = more.getAttribute('aria-expanded') === 'true';
+      more.setAttribute('aria-expanded', String(!open));
+      more.parentNode.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', function (e) {
+      if (!more.parentNode.contains(e.target)) {
+        more.setAttribute('aria-expanded', 'false');
+        more.parentNode.classList.remove('is-open');
+      }
+    });
+  }
+})();
+
+// [data-copy-state] pogas (profila «Dalīties»/«Kopēt saiti») dod PAŠREIZĒJO
+// skatu, ne kailo kanonisko adresi: uz kanoniskās adreses pārnes tekošo query
+// (?tema=) un hash (#cilne). Ja location/URL nav pieejams — paliek kanoniskā.
+function shareUrlOf(btn, url) {
+  if (btn.hasAttribute('data-copy-state')) {
+    try {
+      var here = new URL(window.location.href);
+      if (url) {
+        var canon = new URL(url);
+        canon.search = here.search;
+        canon.hash = here.hash;
+        url = canon.href;
+      } else {
+        url = here.href;
+      }
+    } catch (err) { /* fallback: kanoniskā adrese */ }
+  }
+  return url;
+}
+
+// «Dalīties» telefonā (skārienekrāns + navigator.share) atver sistēmas
+// dalīšanās izvēlni; datorā un bez atbalsta paliek saite uz X.
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('.share-btn-x[data-share-url]');
+  if (!a || !navigator.share || !window.matchMedia('(pointer: coarse)').matches) return;
+  e.preventDefault();
+  var href = a.href;
+  navigator.share({ text: a.getAttribute('data-share-text') || '', url: shareUrlOf(a, a.getAttribute('data-share-url')) })
+    .catch(function (err) {
+      if (err && err.name !== 'AbortError') window.open(href, '_blank', 'noopener');
+    });
+});
+
+// Copy-to-clipboard share buttons ([data-copy-url]) — profiles, topics, etc.
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.share-btn-copy');
+  if (!btn) return;
+  e.preventDefault();
+  var url = shareUrlOf(btn, btn.getAttribute('data-copy-url') || '');
+  if (!url) url = window.location.href;
+  var done = function () {
+    var prev = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', prev);
+    btn.textContent = 'Nokopēts!';
+    btn.classList.add('is-copied');
+    try { document.dispatchEvent(new CustomEvent('atmina:copied')); } catch (err) {}
+    setTimeout(function () { btn.textContent = prev; btn.classList.remove('is-copied'); }, 1600);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done, done);
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (err) { /* no-op */ }
+    document.body.removeChild(ta); done();
+  }
+});
+
+// Ārējās saites atveras jaunā tabā, lai lasītājs nepamet atmina.lv (operatora
+// lēmums 2026-07-24). Delegācija klikšķa brīdī sedz arī JS-renderēto saturu
+// (bmv1 kartītes, feed vienumi) bez per-template target= atribūtiem. Relatīvie
+// ceļi, enkuri un mailto: paliek kā ir; eksplicīts target netiek pārrakstīts.
+// rel=noopener — lai jaunā taba nedabū window.opener piekļuvi.
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href]');
+  if (!a || a.target) return;
+  var href = a.getAttribute('href');
+  if (!href || !/^https?:/i.test(href)) return;
+  if (a.host === location.host) return;
+  a.target = '_blank';
+  var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+  if (rel.indexOf('noopener') === -1) rel.push('noopener');
+  a.setAttribute('rel', rel.join(' '));
+});

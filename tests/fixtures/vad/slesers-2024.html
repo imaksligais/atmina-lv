@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="lv" class="js"><head><title>
+	
+	Valsts amatpersonas deklarācija
+
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><meta name="format-detection" content="telephone=no"><meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<style type="text/css" media="all">
+		@import "../Content/jquery-ui.min.css";
+	</style>
+	<style type="text/css" media="all">
+		@import "../Content/pdb.css?v=5.14.0";
+	</style>
+    <style type="text/css" media="all">
+		@import "../Content/rewrite.css?v=5.14.0";
+	</style>
+    <style type="text/css" media="all">
+		@import "../Content/iframe.css?v=5.14.0";
+	</style>
+
+    <style type="text/css" media="all">
+		@import "../Content/Template/style.css?v=5.14.0";
+	</style>
+
+	<script type="text/javascript" src="../Scripts/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="../Scripts/pdb_common.js?v=5.14.0"></script>
+	<script type="text/javascript" src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery-ui-1.12.1.custom.min.js"></script>
+    
+
+<script type="text/javascript">
+    /*!
+* jQuery Cookie Plugin v1.4.1
+* https://github.com/carhartl/jquery-cookie
+*
+* Copyright 2013 Klaus Hartl
+* Released under the MIT license
+*/
+    (function (factory) {
+        if (typeof define === 'function' && define.amd) {
+            // AMD
+            define(['jquery'], factory);
+        } else if (typeof exports === 'object') {
+            // CommonJS
+            factory(require('jquery'));
+        } else {
+            // Browser globals
+            factory(jQuery);
+        }
+    }(function ($) {
+
+        var pluses = /\+/g;
+
+        function encode(s) {
+            return config.raw ? s : encodeURIComponent(s);
+        }
+
+        function decode(s) {
+            return config.raw ? s : decodeURIComponent(s);
+        }
+
+        function stringifyCookieValue(value) {
+            return encode(config.json ? JSON.stringify(value) : String(value));
+        }
+
+        function parseCookieValue(s) {
+            if (s.indexOf('"') === 0) {
+                // This is a quoted cookie as according to RFC2068, unescape...
+                s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+            }
+
+            try {
+                // Replace server-side written pluses with spaces.
+                // If we can't decode the cookie, ignore it, it's unusable.
+                // If we can't parse the cookie, ignore it, it's unusable.
+                s = decodeURIComponent(s.replace(pluses, ' '));
+                return config.json ? JSON.parse(s) : s;
+            } catch (e) { }
+        }
+
+        function read(s, converter) {
+            var value = config.raw ? s : parseCookieValue(s);
+            return $.isFunction(converter) ? converter(value) : value;
+        }
+
+        var config = $.cookie = function (key, value, options) {
+
+            // Write
+
+            if (value !== undefined && !$.isFunction(value)) {
+                options = $.extend({}, config.defaults, options);
+
+                if (typeof options.expires === 'number') {
+                    var days = options.expires, t = options.expires = new Date();
+                    t.setTime(+t + days * 864e+5);
+                }
+
+                return (document.cookie = [
+                    encode(key), '=', stringifyCookieValue(value),
+                    options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                    options.path ? '; path=' + options.path : '',
+                    options.domain ? '; domain=' + options.domain : '',
+                    options.secure ? '; secure' : ''
+                ].join(''));
+            }
+
+            // Read
+
+            var result = key ? undefined : {};
+
+            // To prevent the for loop in the first place assign an empty array
+            // in case there are no cookies at all. Also prevents odd result when
+            // calling $.cookie().
+            var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+            for (var i = 0, l = cookies.length; i < l; i++) {
+                var parts = cookies[i].split('=');
+                var name = decode(parts.shift());
+                var cookie = parts.join('=');
+
+                if (key && key === name) {
+                    // If second argument (value) is a function it's a converter...
+                    result = read(cookie, value);
+                    break;
+                }
+
+                // Prevent storing a cookie that we couldn't decode.
+                if (!key && (cookie = read(cookie)) !== undefined) {
+                    result[name] = cookie;
+                }
+            }
+
+            return result;
+        };
+
+        config.defaults = { path: '/' };
+
+        $.removeCookie = function (key, options) {
+            if ($.cookie(key) === undefined) {
+                return false;
+            }
+
+            // Must not alter options, thus extending a fresh object...
+            $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+            return !$.cookie(key);
+        };
+
+    }));;
+
+    (function ($) {
+        $(document).ready(function () {
+            var size = 0;
+            var starting_size;
+            try {
+                starting_size = $.cookie('textsize');
+            } catch (e) {
+                //
+            }
+
+            if (starting_size) {
+                size = Number(starting_size);
+                if (isNaN(size)) size = 0;
+                setSize(starting_size);
+            }
+
+            var starting_contrast = '';
+            try {
+                starting_contrast = $.cookie('contrast');
+            } catch (e) { }
+
+            // console.log('starting_contrast',starting_contrast);
+
+            if (starting_contrast == 'none') starting_contrast = '';
+            if (starting_contrast) setContrast(starting_contrast);
+
+            try {
+                var starting_textmode = $.cookie('textmode');
+            } catch (e) { }
+            if (starting_textmode) toggleImages(starting_textmode);
+            var cookie_opts = { expires: 7, path: '/' };
+
+
+            function doSize(delta) {
+                size += delta;
+                if (size > 3) size = 3;
+                if (size < -1) size = -1;
+                setSize(size);
+            }
+
+            function setSize(size) {
+                var thesizeBody = 12 + (size * 3);
+                var thesizeVid = 14 + (size * 3);
+
+                $('.vid-template').css('font-size', thesizeVid + 'px');
+                $('body').css('font-size', thesizeBody + 'px');
+                // console.log('sizeup',thesize);
+                $.cookie('textsize', size, cookie_opts);
+                $('li.acc-sizes').removeClass('active');
+                console.log('.acc-li-s' + (1 * size + 1));
+                $('.acc-li-s' + (1 * size + 1)).addClass('active');
+
+                $('body').toggleClass('font-larger', size > 0);
+            }
+
+
+            $('.acc-s1').click(function () {
+                setSize(0);
+            })
+            $('.acc-s2').click(function () {
+                setSize(1);
+            })
+            $('.acc-s3').click(function () {
+                setSize(2);
+            })
+
+
+            $('.sizeup').click(function () {
+                doSize(+1);
+            })
+            $('.sizedown').click(function () {
+                doSize(-1);
+            })
+
+            function toggleImages(init) {
+                if (!init) val = $('body').hasClass('txtonly');
+                else val = (init == 'on' ? false : true);
+
+                if (!val) {
+                    $('.acc-li-txt').addClass('active');
+                    $('body').addClass('txtonly');
+                    $.cookie('textmode', 'on', cookie_opts);
+                }
+                else {
+                    $('.acc-li-txt').removeClass('active');
+                    $('body').removeClass('txtonly');
+                    $.cookie('textmode', 'off', cookie_opts);
+                }
+
+            }
+
+            function setContrast(cl) {
+                console.log('setcontrast', cl);
+                $('body').removeClass('bw');
+                $('body').removeClass('yb');
+                $('body').removeClass('by');
+                $('body').addClass(cl);
+                $('.acc-contrast li').removeClass('active');
+                var cl_list = cl ? cl : 'wb';
+                $('.acc-li-' + cl_list).addClass('active');
+
+                try {
+                    $.cookie('contrast', (cl == '' ? 'none' : cl), cookie_opts);
+                } catch (e) { }
+            }
+
+            $('.acc-txt').click(function () {
+                toggleImages();
+            });
+
+            $('.acc-bw').click(function () {
+                setContrast('bw');
+            });
+            $('.acc-yb').click(function () {
+                setContrast('yb');
+            });
+            $('.acc-by').click(function () {
+                setContrast('by');
+            });
+
+            $('.acc-wb').click(function () {
+                setContrast('');
+            });
+        });
+    })(jQuery);
+</script>
+
+	<script type="text/javascript">
+		var selectedMenuItems = "#VADMenuLink";
+	</script>
+	<script type="text/javascript" src="../Scripts/pdb_vad.js?v=5.14.0"></script>
+</head>
+<body class="vid-header page-vad popup_onload-processed">
+	<script type="text/javascript">
+	    var captchaPublicKey = "6LdcMNoSAAAAAIszepRIUiYnO0kPsKR0Kbr7AlIT";
+	    var PDB = {
+	        SITE_ROOT: "../"
+        };
+	</script>
+
+	<!--Header-->
+    <!--20.05.2022 msl #PDB-RZ-362 Pievienotas izmaiņas priekš iFrame-->
+<header class="vid-template">
+    <div class="container showAsSubpage">
+        <!--20.05.2022 msl #PDB-RZ-362-->        
+        
+        <div class="row">
+            <div class="col-md-4 text-left gerbonis">
+                <!--30.05.2022 msl #PDB-RZ-362-->
+                
+                <div class="logotxt">Valsts ieņēmumu dienests</div>
+            </div>
+        </div>
+    </div>
+    <!--20.05.2022 msl #PDB-RZ-362-->
+    
+</header>
+
+
+	
+	
+	<!-- 20.05.2022 msl #PDB-RZ-362 -->
+	<div id="container" class="main-wrapper clearfix showAsSubpage">
+		<!--Menu -->
+        
+		<!--Content -->
+		<div id="content">
+			<h1 class="content-title">
+				
+	Valsts amatpersonas deklarācija
+
+			</h1>
+			
+	
+	<div id="data">
+		
+<ul id="navigation_top" class="clearfix">
+	<li class="left"><a href="#" class="link_back_important" onclick="document.location.href ='../VAD/Person'; return false;" title="Citas šīs valsts amatpersonas iesniegtās deklarācijas">Atgriezties uz valsts
+		amatpersonas deklarāciju sarakstu</a> </li>
+</ul>
+
+<table class="descTable">
+	<tbody>
+		<tr>
+			<td>
+				Deklarācijas veids:
+			</td>
+			<td>
+				Kārtējā gada deklarācija - par 2024. gadu
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Vārds, uzvārds:
+			</td>
+			<td>
+				AINĀRS&nbsp;ŠLESERS
+			</td>
+		</tr>
+		<tr>
+            <td>
+                 Darbavieta vai valsts amatpersonu saraksta iesniedzējas institūcija: 
+            </td>
+			<td>
+				Latvijas Republikas Saeima
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Valsts amatpersonas amats:
+			</td>
+			<td>
+				Saeimas deputāts
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Iesniegta VID:
+			</td>
+			<td>
+				27.03.2025
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Publicēta:
+			</td>
+			<td>
+				17.04.2025
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	2. Citi amati, kurus deklarācijas iesniedzējs ieņem papildus valsts amatpersonas
+	amatam (t.sk. amati biedrībās, nodibinājumos, politiskajās, reliģiskajās organizācijās
+	un arodbiedrībās), un citi darbi, kurus deklarācijas iesniedzējs strādā, kā arī
+	informācija par uzņēmuma līgumiem vai pilnvarojumiem, kuros noteiktās saistības
+	tas pilda</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Amata nosaukums, darbi, informācija par uzņēmuma līgumiem un pilnvarojumiem
+			</th>
+			<th>
+				Juridiskai personai - nosaukums; fiziskai personai - vārds un uzvārds
+			</th>
+			<th>
+				Juridiskai personai - reģistrācijas numurs Komercreģistrā un juridiskā adrese
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				Likvidators
+			</td>
+			<td>
+				Partiju apvienība "Par Labu Latviju"
+			</td>
+			<td>
+				40008161907 Latvija, Rīga, Zigfrīda Annas Meierovica bulvāris 1
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Valdes loceklis
+			</td>
+			<td>
+				LATVIJA PIRMAJĀ VIETĀ
+			</td>
+			<td>
+				40008310156 Latvija, Rīga, Mazā Smilšu iela 15
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Izpildinstitūcija, tiesības pārstāvēt atsevišķi
+			</td>
+			<td>
+				Biedrība "LATVIJA PIRMĀ"
+			</td>
+			<td>
+				40008308560 Latvija, Rīga, Andrejostas iela 29
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Izpildinstitūcija, tiesības pārstāvēt atsevišķi
+			</td>
+			<td>
+				biedrība "Jūrmalas Dzintars"
+			</td>
+			<td>
+				40008249267 Latvija, Rīga, Elizabetes iela 3
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	3. Deklarācijas iesniedzēja īpašumā (kopīpašumā), valdījumā vai lietošanā esošie
+	nekustamie īpašumi (arī tie, kurus tas nomā no citām personām un kuri atrodas tā
+	valdījumā sakarā ar nodibināto aizbildnību vai aizgādnību)</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Nekustamā īpašuma veids
+			</th>
+			<th>
+				Nekustamā īpašuma atrašanās vieta (valsts, pilsēta/apdzīvota vieta)
+			</th>
+			<th>
+				Atzīme par to, vai ir īpašumā (kopīpašumā), valdījumā vai lietošanā
+			</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				Zeme
+			</td>
+			<td>
+				Latvija, Annenieku pag.
+			</td>
+			<td>
+				īpašumā
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td>
+				Zeme
+			</td>
+			<td>
+				Latvija, Aglonas pag.
+			</td>
+			<td>
+				kopīpašumā
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td>
+				Zeme un ēkas
+			</td>
+			<td>
+				Latvija, Jūrmala
+			</td>
+			<td>
+				lietošanā
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td>
+				Dzīvoklis
+			</td>
+			<td>
+				Latvija, Rīga
+			</td>
+			<td>
+				lietošanā
+			</td>
+			
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	4. Komercsabiedrības, kuru dalībnieks, akcionārs vai biedrs ir deklarācijas iesniedzējs.
+	Deklarācijas iesniedzējam piederošās kapitāla daļas un akcijas (privatizācijas un
+	kompensācijas sertifikātiem norāda tikai skaitu)</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Komercsabiedrības nosaukums
+			</th>
+			<th>
+				Komercsabiedrības reģistrācijas numurs komercreģistrā un juridiskā adrese
+			</th>
+			<th>
+				Kapitāla veids
+			</th>
+			<th>
+				Kapitāla daļu, akciju skaits
+			</th>
+			<th>
+				Kapitāla daļu, akciju kopējā vērtība
+			</th>
+			<th>
+				Valūta
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				Sabiedrība ar ierobežotu atbildību "AVADEL"
+			</td>
+			<td>
+				40003555683 Latvija, Rīga, Andrejostas iela 29
+			</td>
+			<td>
+				Kapitāla daļas
+			</td>
+			<td>
+				1000
+			</td>
+			<td class="money">
+				10000.00
+			</td>
+			<td>
+				EUR
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	Deklarācijas iesniedzējam piederošie finanšu instrumenti – parāda vērtspapīri (piemēram,
+	obligācijas), vērtspapīri, ar kuriem nostiprinātas tiesības iegādāties vai atsavināt
+	pārvedamus vērtspapīrus vai kuri paredz norēķinus naudā, ieguldījumu fondu ieguldījumu
+	apliecības un citi pārvedami vērtspapīri, kas apliecina līdzdalību ieguldījumu fondos
+	vai tiem pielīdzināmos kopējo ieguldījumu uzņēmumos, naudas tirgus instrumenti</h2>
+
+<h2>
+	5. Deklarācijas iesniedzējam piederošie reģistrējamie transportlīdzekļi, kā arī
+	tā valdījumā vai lietošanā esošie transportlīdzekļi un transportlīdzekļi, kurus
+	tas ir iegādājies uz līzinga līguma pamata</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Transportlīdzekļa veids
+			</th>
+			<th>
+				Marka
+			</th>
+			<th>
+				Izlaides gads
+			</th>
+			<th>
+				Reģistrācijas gads
+			</th>
+			
+			<th>
+				Atzīme par to, vai ir īpašumā, valdījumā vai lietošanā
+			</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				Automašīna
+			</td>
+			<td>
+				MERCEDES BENZ AMG GLS 63
+			</td>
+			<td>
+				2016
+			</td>
+			<td>
+				2016
+			</td>
+			
+			<td>
+				lietošanā
+			</td>
+			
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	6. Deklarācijas iesniedzēja skaidrās un bezskaidrās naudas uzkrājumi, ja to summa
+	pārsniedz 20 Ministru kabineta noteiktās minimālās mēnešalgas (attiecīgās valūtas
+	vienībās)</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Skaidrās naudas uzkrājuma summa ar cipariem
+			</th>
+			<th>
+				Valūta
+			</th>
+			<th>
+				Skaidrās naudas uzkrājuma summa ar vārdiem
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td class="money">
+				90000.00
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				deviņdesmit tūkstoši eiro 00 centi
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Bezkaidrās naudas uzkrājuma summa
+			</th>
+			<th>
+				Valūta
+			</th>
+			<th>
+				Bezskaidrās naudas uzkrājumu turētāja vai norēķinu kartes izdevēja nosaukums
+			</th>
+			<th>
+				Juridiskai personai - reģistrācijas numurs Komercreģistrā un juridiskā adrese
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td class="money">
+				111940.83
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				"Swedbank" AS
+			</td>
+			<td>
+				40003074764 Latvija, Rīga, Balasta dambis 15
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="money">
+				11643.37
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				Akciju sabiedrība "Rietumu Banka"
+			</td>
+			<td>
+				40003074497 Latvija, Rīga, Vesetas iela 7
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="money">
+				45945.45
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				Akciju sabiedrība "Citadele banka"
+			</td>
+			<td>
+				40103303559 Latvija, Rīga, Republikas laukums 2A
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	7. Visi deklarācijas iesniedzēja pārskata periodā gūtie ienākumi, piemēram, darba
+	alga, piemaksas pie darba algas, prēmijas, honorāri, ienākumi no saimnieciskās un
+	komercdarbības, apdrošināšanas izmaksas, kompensācijas, ienākumi no kustamās un
+	nekustamās mantas realizācijas un nomas (īres), laimesti un dividendes, mantojumi,
+	dāvinājumi, saņemtie pabalsti un citi ienākumi</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Ienākumu gūšanas vieta (avots) – juridiskās personas nosaukums, reģistrācijas numurs
+				komercreģistrā un juridiskā adrese; fiziskās personas vārds un uzvārds
+			</th>
+			<th>
+				Ienākumu veids
+			</th>
+			<th>
+				Summa
+			</th>
+			<th>
+				Valūta
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				Latvijas Republikas Saeima, 90000028300, Latvija, Rīga, Jēkaba iela 11
+			</td>
+			<td>
+				Alga
+			</td>
+			<td class="money">
+				76351.23
+			</td>
+			<td>
+				EUR
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Inese Šlesere, ,
+			</td>
+			<td>
+				Dāvinājums
+			</td>
+			<td class="money">
+				788.21
+			</td>
+			<td>
+				EUR
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				SWEDBANK P&amp;C INSURANCE AS, ,
+			</td>
+			<td>
+				Apdrošināšanas atlīdzība
+			</td>
+			<td class="money">
+				2500.00
+			</td>
+			<td>
+				EUR
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				ERGO LIFE INSURANCE SE, ,
+			</td>
+			<td>
+				Apdrošināšanas atlīdzība
+			</td>
+			<td class="money">
+				46.62
+			</td>
+			<td>
+				EUR
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	8. Deklarācijas iesniedzēja pārskata periodā veiktie darījumi, ja to summa pārsniedz
+	20 Ministru kabineta noteiktās minimālās mēnešalgas</h2>
+
+<h2>
+	9. Deklarācijas iesniedzēja parādsaistības, kuru apmērs pārsniedz 20 Ministru kabineta
+	noteiktās minimālās mēnešalgas</h2>
+
+<h2>
+	10. Deklarācijas iesniedzēja izsniegtie aizdevumi, kuru summa pārsniedz 20 Ministru
+	kabineta noteiktās minimālās mēnešalgas</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Summa ar cipariem
+			</th>
+			<th>
+				Valūta
+			</th>
+			<th>
+				Summa ar vārdiem
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td class="money">
+				31500.00
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				trīsdesmit viens tūkstotis pieci simti eiro 00 centi
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="money">
+				61000.00
+			</td>
+			<td>
+				EUR
+			</td>
+			<td>
+				sešdesmit viens tūkstotis eiro 00 centi
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<h2>
+	11. Informācija par gūto labumu Noziedzīgi iegūtu līdzekļu legalizācijas un terorisma
+	finansēšanas novēršanas likuma izpratnē no citai personai piederošas vai pārvaldīšanā
+	nodotas lietas vai tās daļas</h2>
+
+<h2>
+	Informācija par gūto labumu Noziedzīgi iegūtu līdzekļu legalizācijas un terorisma
+	finansēšanas novēršanas likuma izpratnē no citai personai piederošām vai citas personas
+	pārvaldīšanā esošām kapitāla daļām, akcijām un citiem likuma "Par interešu konflikta
+	novēršanu valsts amatpersonu darbībā" 24.panta pirmās daļas 5.<sup>1</sup>punktā
+	minētajiem finanšu instrumentiem</h2>
+
+<h2>
+	Ja ir noslēgts līgums (piemēram, trasta līgums), norāda līguma noslēgšanas datumu,
+	līguma priekšmetu, priekšmeta vērtību un valūtu</h2>
+
+<h2>
+	12. Deklarācijas iesniedzējs, norādot ar vārdiem "ir" vai "nav", sniedz informāciju,
+	vai tam ir vai nav uzkrāti līdzekļi privātajos pensiju fondos vai dzīvības apdrošināšanā
+	(ar līdzekļu uzkrāšanu)</h2>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Privātie pensiju fondi
+			</th>
+			<th>
+				Dzīvības apdrošināšana (ar līdzekļu uzkrāšanu)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				nav
+			</td>
+			<td>
+				nav
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>
+	13. Cita informācija, kuru vēlas norādīt un, kuras mērķis ir paskaidrot ar deklarētajām
+	ziņām saistītas intereses vai citus apstākļus, kuri var izraisīt mantisko vai citu
+	personisko ieinteresētību kādas deklarācijas iesniedzēja amata pienākumos ietilpstošas
+	darbības veikšanā</h2>
+
+<h2>
+	14. Deklarācijas iesniedzēja laulātais, vecāki un pilngadīgie brāļi, māsas un bērni</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Vārds, uzvārds
+			</th>
+			<th>
+				Radniecība
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr>
+			<td>
+				EDVARDS ŠLESERS
+			</td>
+			<td>
+				Dēls
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				GERHARDS DANIELS ŠLESERS
+			</td>
+			<td>
+				Dēls
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				INESE ŠLESERE
+			</td>
+			<td>
+				Laulātais
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				LOLITA LEŠČINSKA
+			</td>
+			<td>
+				Māsa
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				MONIKA LEŠČINSKA
+			</td>
+			<td>
+				Māte
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				RIČARDS ŠLESERS
+			</td>
+			<td>
+				Dēls
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<ul id="navigation">
+	<li class="left"><a href="#" class="link_back_important" onclick="document.location.href ='../VAD/Person'; return false;" title="Citas šīs valsts amatpersonas iesniegtās deklarācijas">Atgriezties uz valsts
+		amatpersonas deklarāciju sarakstu</a> </li>
+	<li class="right"><a href="javascript:printWindow('../VAD/VADDataPrint');" class="link_print" onmouseover="window.status='Izdruka'; return true;" onmouseout="window.status=''; return true;">
+		Izdrukai</a> </li>
+</ul>
+<br>
+<br>
+
+<p>
+	Informācija atjaunota:
+	02.05.2026 04:20:16</p>
+
+<script type="text/javascript">
+	$("#frmQuery").remove();
+</script>
+</div>
+	
+
+            <div class="pdb-info">
+			    
+			    
+			    
+	<div class="info">
+    
+</div>
+            </div>
+		</div>
+	</div>
+
+   	<!--Footer -->
+    <!--20.05.2022 msl #PDB-RZ-362 Pievienotas izmaiņas priekš iFrame-->
+
+    <script type="text/javascript" src="../Content/Template/scripts.js"></script>
+	<script type="text/javascript" src="../Content/Template/libraries/popper-1.16.0.min.js"></script>
+	<script type="text/javascript" src="../Content/Template/libraries/bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

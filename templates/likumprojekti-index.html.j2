@@ -1,0 +1,86 @@
+{% extends "base.html.j2" %}
+{% set active_page = "likumi" %}
+{% block title %}Likumprojekti — Politiskā atmiņa{% endblock %}
+{% block description %}Saeimas likumprojekti, lēmumu projekti un pieprasījumi: stadija, iesniedzēji un balsojumi.{% endblock %}
+{% from "_bill_card.html.j2" import bill_card %}
+{% from "_likumi_tabs.html.j2" import likumi_tabs %}
+{% from "_macros.html.j2" import multi_select, ms_option %}
+{% block content %}
+<section class="lpv1">
+{{ likumi_tabs("likumprojekti", laws_count, bills|length) }}
+<div class="page-header">
+  <h1>Likumprojekti</h1>
+  <p class="muted">Likumprojekti, lēmumu projekti un pieprasījumi Saeimā. Katram ir sava lapa ar gaitu un balsojumiem.</p>
+</div>
+
+{% if lp_total %}
+<div class="lpv1-stages">
+  <h2 id="lpv1-stages-h">Kur likumprojekti ir tagad</h2>
+  <div class="lpv1-stagebar" aria-hidden="true">
+    {% for key, label, n in buckets if n %}<span class="lpv1-seg lpv1-seg-{{ key }}" style="flex-grow: {{ n }}"></span>{% endfor %}
+  </div>
+  <div class="lpv1-stage-btns" role="group" aria-labelledby="lpv1-stages-h">
+    {% for key, label, n in buckets if n %}
+    <button type="button" class="chip link-filter-btn" aria-pressed="false" data-bucket="{{ key }}"><span class="lpv1-dot lpv1-seg-{{ key }}" aria-hidden="true"></span>{{ label }} <b class="chip-n">{{ n }}</b></button>
+    {% endfor %}
+  </div>
+  <p class="muted lpv1-note">{{ lp_total }} {{ lp_total|lv_plural("likumprojekts", "likumprojekti") }}{% if data_since %}, dati kopš {{ data_since|lv_date }}{% endif %}. Steidzamus likumprojektus un starptautiskus līgumus Saeima pieņem divos lasījumos.</p>
+</div>
+{% endif %}
+
+{% if top_laws %}
+<details class="lpv1-laws">
+  <summary id="lpv1-laws-h">Biežāk grozītie likumi</summary>
+  <div class="lpv1-law-btns chip-row" role="group" aria-labelledby="lpv1-laws-h">
+    {% for name, k in top_laws %}
+    <button type="button" class="chip link-filter-btn" aria-pressed="false" data-law="{{ name }}">{{ name }} <b class="chip-n">{{ k }}</b></button>
+    {% endfor %}
+  </div>
+</details>
+{% endif %}
+
+<div class="filter-bar">
+  <label for="bill-search" class="sr-only">Meklēt pēc nosaukuma vai dokumenta numura</label>
+  <div class="field"><input type="search" id="bill-search" placeholder="Meklēt nosaukumu vai numuru…" class="bill-search-input field-input" autocomplete="off"></div>
+
+  {% call multi_select("bill-topic-select", "Visas tēmas", "Meklēt tēmas", compact=true) %}
+      {% for topic in bill_topics %}
+      {{ ms_option(topic) }}
+      {% endfor %}
+  {%- endcall %}
+
+  <div class="bill-status-filter chip-row">
+    <button class="chip link-filter-btn active" aria-pressed="true" data-status="">Visi</button>
+    <button class="chip link-filter-btn" aria-pressed="false" data-status="procesā">Procesā</button>
+    <button class="chip link-filter-btn" aria-pressed="false" data-status="pieņemts">Pieņemts</button>
+    <button class="chip link-filter-btn" aria-pressed="false" data-status="noraidīts">Noraidīts</button>
+    <button class="chip link-filter-btn" aria-pressed="false" data-status="atsaukts">Atsaukts</button>
+  </div>
+
+  <div class="bill-type-filter chip-row">
+    {% for code, label in bill_types %}
+    <button class="chip link-filter-btn active" aria-pressed="true" data-bill-type="{{ code }}">{{ label }}</button>
+    {% endfor %}
+  </div>
+</div>
+
+<p id="bills-count" class="muted" role="status" aria-live="polite">Rāda {{ bills|length }} no {{ bills|length }}</p>
+
+<div class="bill-card-grid" id="bills-grid">
+  {% for b in bills %}{{ bill_card(b) }}{% endfor %}
+</div>
+<div id="bills-empty-state" class="votes-empty-state" style="display:none;">
+  <span class="empty-icon">&#9638;</span>
+  <p>Nav likumprojektu, kas atbilst filtriem</p>
+</div>
+<p style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:0.9rem;">
+  <a href="balsojumi.html" class="muted-link">Saeimas balsojumi →</a>
+</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="assets/lpv1.js?v={{ assets_version }}"></script>
+{% endblock %}

@@ -1,0 +1,1952 @@
+- table [ref=e3]:
+  - rowgroup [ref=e4]:
+    - row [ref=e5]:
+      - cell [ref=e6]:
+        - img [ref=e7]
+      - cell [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - link [ref=e11] [cursor=pointer]:
+              - /url: https://www.saeima.lv
+              - img [ref=e12]
+            - img [ref=e13]
+          - generic [ref=e14]: LATVIJAS REPUBLIKAS
+          - generic [ref=e15]: 14.SAEIMA
+          - table [ref=e17]:
+            - rowgroup [ref=e18]:
+              - row "LIKUMPROJEKTI LĒMUMU PROJEKTI PIEPRASĪJUMI JAUTĀJUMI DARBA KĀRTĪBAS" [ref=e19]:
+                - cell [ref=e20]
+                - cell "LIKUMPROJEKTI" [ref=e21]:
+                  - link "LIKUMPROJEKTI" [ref=e22] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webAll?OpenView
+                - cell "LĒMUMU PROJEKTI" [ref=e23]:
+                  - link "LĒMUMU PROJEKTI" [ref=e24] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/webAll?OpenView
+                - cell "PIEPRASĪJUMI" [ref=e25]:
+                  - link "PIEPRASĪJUMI" [ref=e26] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEB_requests?OpenView
+                - cell "JAUTĀJUMI" [ref=e27]:
+                  - link "JAUTĀJUMI" [ref=e28] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs_lmp.nsf/WEB_questions?OpenView
+                - cell "DARBA KĀRTĪBAS" [ref=e29]:
+                  - link "DARBA KĀRTĪBAS" [ref=e30] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs2_dk.nsf
+                - cell [ref=e31]:
+                  - img [ref=e32]
+                - cell [ref=e33]
+          - generic [ref=e34]:
+            - generic [ref=e35] [cursor=pointer]:
+              - img [ref=e36]
+              - text: Rādīt saistītos dokumentus
+              - img [ref=e37]
+              - text: Atslēgt lapas automātisko pārlādi
+            - generic [ref=e38] [cursor=pointer]:
+              - text: "Teksta izmērs:"
+              - generic [ref=e39]: A | A
+            - generic [ref=e41] [cursor=pointer]:
+              - text: Drukāt
+              - img "Drukāt" [ref=e42]
+        - table [ref=e43]:
+          - rowgroup [ref=e44]:
+            - row [ref=e45]:
+              - cell [ref=e46]:
+                - img [ref=e47]
+            - row [ref=e48]:
+              - 'cell "Darba kārtības Aktuālās: Saeimas 16.04.2026. kārtējā sēde Saeimas 04.05.2026. svinīgā sēde Visas Saeimas sēžu darba kārtības Detalizēta meklēšana meklēt pēc nosaukuma (arī nepilna) Sēdes datums no līdz (formātā - dd.mm.gggg) Meklēt Dokumenti Aktuālo Saeimas sēžu dokumenti Statistika Sēdes statistika Likumdošanas statistika Arhīvs 13.Saeimas sēžu darba kārtības 12.Saeimas sēžu darba kārtības 11.Saeimas sēžu darba kārtības 10.Saeimas sēžu darba kārtības 9.Saeimas sēžu darba kārtības 8.Saeimas sēžu darba kārtības" [ref=e49]':
+                - generic [ref=e50]: Darba kārtības
+                - generic [ref=e55]:
+                  - text: "Aktuālās:"
+                  - link "Saeimas 16.04.2026. kārtējā sēde" [ref=e57] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&actual=1
+                  - link "Saeimas 04.05.2026. svinīgā sēde" [ref=e59] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&nr=1fd28820-d8a6-4c2d-b0cb-9ad191a667b0
+                  - link "Visas Saeimas sēžu darba kārtības" [ref=e62] [cursor=pointer]:
+                    - /url: ./DK?ReadForm&calendar=1
+                - generic [ref=e66]:
+                  - generic [ref=e67]:
+                    - img [ref=e68]
+                    - text: Detalizēta meklēšana
+                  - generic [ref=e70]:
+                    - textbox [ref=e71]
+                    - generic [ref=e72]: meklēt pēc nosaukuma (arī nepilna)
+                  - generic [ref=e73]:
+                    - generic [ref=e74]: Sēdes datums
+                    - generic [ref=e75]:
+                      - text: "no"
+                      - textbox [ref=e76]
+                      - text: līdz
+                      - textbox [ref=e77]
+                    - generic [ref=e78]: (formātā - dd.mm.gggg)
+                  - button "Meklēt" [ref=e80]
+                - generic [ref=e81]:
+                  - generic [ref=e82]: Dokumenti
+                  - link "Aktuālo Saeimas sēžu dokumenti" [ref=e90] [cursor=pointer]:
+                    - /url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/activeDocuments.xsp
+                - generic [ref=e91]:
+                  - generic [ref=e92]: Statistika
+                  - generic [ref=e97]:
+                    - link "Sēdes statistika" [ref=e100] [cursor=pointer]:
+                      - /url: ./Statistics?ReadForm&key=1&stat=1&rt=L
+                    - link "Likumdošanas statistika" [ref=e103] [cursor=pointer]:
+                      - /url: ./Statistics?ReadForm&key=1&stat=1&rt=S
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Arhīvs
+                  - generic [ref=e110]:
+                    - link "13.Saeimas sēžu darba kārtības" [ref=e113] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS13/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "12.Saeimas sēžu darba kārtības" [ref=e116] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS12/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "11.Saeimas sēžu darba kārtības" [ref=e119] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS11/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "10.Saeimas sēžu darba kārtības" [ref=e122] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS10/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "9.Saeimas sēžu darba kārtības" [ref=e125] [cursor=pointer]:
+                      - /url: https://titania.saeima.lv/LIVS/SaeimaLIVS2_DK.nsf/DK?ReadForm&calendar=1
+                    - link "8.Saeimas sēžu darba kārtības" [ref=e128] [cursor=pointer]:
+                      - /url: https://saeima.lv/lv/par-saeimu/arhivs/8-saeima/8-saeimas-sezu-darba-kartibas/
+              - cell [ref=e129]:
+                - img [ref=e130]
+              - cell [ref=e131]:
+                - generic [ref=e132]:
+                  - generic [ref=e134]:
+                    - text: Saeimas sēžu darba kārtības
+                    - generic [ref=e135]: Kalendārais skats
+                  - generic [ref=e138]:
+                    - table [ref=e139]:
+                      - rowgroup [ref=e140]:
+                        - row [ref=e141]:
+                          - cell [ref=e142]:
+                            - generic [ref=e143]: 2026. gads.
+                            - table [ref=e144]:
+                              - rowgroup [ref=e145]:
+                                - row "Mēnesis Saeimas sēdes datums un sēdes tips" [ref=e146]:
+                                  - cell "Mēnesis" [ref=e147]
+                                  - cell "Saeimas sēdes datums un sēdes tips" [ref=e148]
+                                - row "Janvāris 15 15 / 22 22(J) 22 29 29(J)" [ref=e149]:
+                                  - cell "Janvāris" [ref=e150]
+                                  - cell "15" [ref=e151]:
+                                    - link "15" [ref=e152] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=41998443-c68f-4be3-96ae-bf001ff7db15
+                                  - cell "15 / 22" [ref=e153]:
+                                    - link "15 / 22" [ref=e154] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=41998443-c68f-4be3-96ae-bf001ff7db15
+                                  - cell "22(J)" [ref=e155]:
+                                    - link "22(J)" [ref=e156] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bfa55df9-fb0a-4e39-b5a4-277ccbe42264
+                                  - cell "22" [ref=e157]:
+                                    - link "22" [ref=e158] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=817772e5-8a08-48f7-a2aa-01978f29fd6d
+                                  - cell "29" [ref=e159]:
+                                    - link "29" [ref=e160] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=926e7a66-c80c-477d-b3a0-b80b546e6d44
+                                  - cell "29(J)" [ref=e161]:
+                                    - link "29(J)" [ref=e162] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=271d3afc-9dc0-4beb-b9b8-1bafd9d69cb0
+                                  - cell [ref=e163]
+                                  - cell [ref=e164]
+                                  - cell [ref=e165]
+                                  - cell [ref=e166]
+                                  - cell [ref=e167]
+                                  - cell [ref=e168]
+                                  - cell [ref=e169]
+                                  - cell [ref=e170]
+                                  - cell [ref=e171]
+                                  - cell [ref=e172]
+                                  - cell [ref=e173]
+                                  - cell [ref=e174]
+                                  - cell [ref=e175]
+                                  - cell [ref=e176]
+                                  - cell [ref=e177]
+                                  - cell [ref=e178]
+                                  - cell [ref=e179]
+                                  - cell [ref=e180]
+                                  - cell [ref=e181]
+                                  - cell [ref=e182]
+                                  - cell [ref=e183]
+                                  - cell [ref=e184]
+                                - row "Februāris 5 5(J) 29 / 5 29 / 5 / 12 12 12(J) 19 19(J) 24(A) 26 26(J)" [ref=e185]:
+                                  - cell "Februāris" [ref=e186]
+                                  - cell "5" [ref=e187]:
+                                    - link "5" [ref=e188] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=55c9b88f-11f9-4acb-aeb1-4fff31146daa
+                                  - cell "5(J)" [ref=e189]:
+                                    - link "5(J)" [ref=e190] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b6dc6477-320d-4502-b7e2-25f35c301799
+                                  - cell "29 / 5" [ref=e191]:
+                                    - link "29 / 5" [ref=e192] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=926e7a66-c80c-477d-b3a0-b80b546e6d44
+                                  - cell "29 / 5 / 12" [ref=e193]:
+                                    - link "29 / 5 / 12" [ref=e194] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=926e7a66-c80c-477d-b3a0-b80b546e6d44
+                                  - cell "12" [ref=e195]:
+                                    - link "12" [ref=e196] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5f4117d3-87e7-4ce1-bf6c-c427562f26d0
+                                  - cell "12(J)" [ref=e197]:
+                                    - link "12(J)" [ref=e198] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=0ff51237-1bbe-40ce-a255-8136e9626e46
+                                  - cell "19" [ref=e199]:
+                                    - link "19" [ref=e200] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=75bd3894-b412-47a8-a998-c2948e930aa6
+                                  - cell "19(J)" [ref=e201]:
+                                    - link "19(J)" [ref=e202] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ccf64f6a-9239-4f7f-8052-3ef9b559681c
+                                  - cell "24(A)" [ref=e203]:
+                                    - link "24(A)" [ref=e204] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b7b66798-db71-4c7e-a3df-3fc5788c0ce4
+                                  - cell "26" [ref=e205]:
+                                    - link "26" [ref=e206] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=afc791cf-0eaf-45fa-a47b-08a383a3d336
+                                  - cell "26(J)" [ref=e207]:
+                                    - link "26(J)" [ref=e208] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=777fe2dd-6c02-4c45-a053-efbe4a54717b
+                                  - cell [ref=e209]
+                                  - cell [ref=e210]
+                                  - cell [ref=e211]
+                                  - cell [ref=e212]
+                                  - cell [ref=e213]
+                                  - cell [ref=e214]
+                                  - cell [ref=e215]
+                                  - cell [ref=e216]
+                                  - cell [ref=e217]
+                                  - cell [ref=e218]
+                                  - cell [ref=e219]
+                                  - cell [ref=e220]
+                                  - cell [ref=e221]
+                                  - cell [ref=e222]
+                                  - cell [ref=e223]
+                                  - cell [ref=e224]
+                                  - cell [ref=e225]
+                                - row "Marts 5 5(J) 12 12(J) 12 / 19 19(J) 19 26 26(J)" [ref=e226]:
+                                  - cell "Marts" [ref=e227]
+                                  - cell "5" [ref=e228]:
+                                    - link "5" [ref=e229] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a1969e70-fab1-4fb7-bad7-62c43e9c0b46
+                                  - cell "5(J)" [ref=e230]:
+                                    - link "5(J)" [ref=e231] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8b7bf2a0-4975-454d-bd0c-41d0c5c9454c
+                                  - cell "12" [ref=e232]:
+                                    - link "12" [ref=e233] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=82d14513-7ef0-4d01-9675-ecec45dab15f
+                                  - cell "12(J)" [ref=e234]:
+                                    - link "12(J)" [ref=e235] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=70c32a63-8587-4151-849d-23a41b32efb7
+                                  - cell "12 / 19" [ref=e236]:
+                                    - link "12 / 19" [ref=e237] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=82d14513-7ef0-4d01-9675-ecec45dab15f
+                                  - cell "19(J)" [ref=e238]:
+                                    - link "19(J)" [ref=e239] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=19fcecb6-3091-46fc-afec-38cb7913da98
+                                  - cell "19" [ref=e240]:
+                                    - link "19" [ref=e241] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=15bc53b4-cf0b-4445-9502-3d881ace6a5c
+                                  - cell "26" [ref=e242]:
+                                    - link "26" [ref=e243] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ec8f6811-7666-41d9-88ec-edb0893d5d43
+                                  - cell "26(J)" [ref=e244]:
+                                    - link "26(J)" [ref=e245] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=601920c0-fcd3-4a95-8e43-33663d6ab5f4
+                                  - cell [ref=e246]
+                                  - cell [ref=e247]
+                                  - cell [ref=e248]
+                                  - cell [ref=e249]
+                                  - cell [ref=e250]
+                                  - cell [ref=e251]
+                                  - cell [ref=e252]
+                                  - cell [ref=e253]
+                                  - cell [ref=e254]
+                                  - cell [ref=e255]
+                                  - cell [ref=e256]
+                                  - cell [ref=e257]
+                                  - cell [ref=e258]
+                                  - cell [ref=e259]
+                                  - cell [ref=e260]
+                                  - cell [ref=e261]
+                                  - cell [ref=e262]
+                                  - cell [ref=e263]
+                                  - cell [ref=e264]
+                                - row "Aprīlis 1(J) 1 16" [ref=e265]:
+                                  - cell "Aprīlis" [ref=e266]
+                                  - cell "1(J)" [ref=e267]:
+                                    - link "1(J)" [ref=e268] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=15664f55-e3f3-4ee2-8b50-f16ed04034b0
+                                  - cell "1" [ref=e269]:
+                                    - link "1" [ref=e270] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=86a08bc2-92e5-4726-94e5-4f32b02dc12c
+                                  - cell "16" [ref=e271]:
+                                    - link "16" [ref=e272] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&active=1
+                                  - cell [ref=e273]
+                                  - cell [ref=e274]
+                                  - cell [ref=e275]
+                                  - cell [ref=e276]
+                                  - cell [ref=e277]
+                                  - cell [ref=e278]
+                                  - cell [ref=e279]
+                                  - cell [ref=e280]
+                                  - cell [ref=e281]
+                                  - cell [ref=e282]
+                                  - cell [ref=e283]
+                                  - cell [ref=e284]
+                                  - cell [ref=e285]
+                                  - cell [ref=e286]
+                                  - cell [ref=e287]
+                                  - cell [ref=e288]
+                                  - cell [ref=e289]
+                                  - cell [ref=e290]
+                                  - cell [ref=e291]
+                                  - cell [ref=e292]
+                                  - cell [ref=e293]
+                                  - cell [ref=e294]
+                                  - cell [ref=e295]
+                                  - cell [ref=e296]
+                                  - cell [ref=e297]
+                                - row "Maijs 4(S)" [ref=e298]:
+                                  - cell "Maijs" [ref=e299]
+                                  - cell "4(S)" [ref=e300]:
+                                    - link "4(S)" [ref=e301] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1fd28820-d8a6-4c2d-b0cb-9ad191a667b0
+                                  - cell [ref=e302]
+                                  - cell [ref=e303]
+                                  - cell [ref=e304]
+                                  - cell [ref=e305]
+                                  - cell [ref=e306]
+                                  - cell [ref=e307]
+                                  - cell [ref=e308]
+                                  - cell [ref=e309]
+                                  - cell [ref=e310]
+                                  - cell [ref=e311]
+                                  - cell [ref=e312]
+                                  - cell [ref=e313]
+                                  - cell [ref=e314]
+                                  - cell [ref=e315]
+                                  - cell [ref=e316]
+                                  - cell [ref=e317]
+                                  - cell [ref=e318]
+                                  - cell [ref=e319]
+                                  - cell [ref=e320]
+                                  - cell [ref=e321]
+                                  - cell [ref=e322]
+                                  - cell [ref=e323]
+                                  - cell [ref=e324]
+                                  - cell [ref=e325]
+                                  - cell [ref=e326]
+                                  - cell [ref=e327]
+                                  - cell [ref=e328]
+                            - generic [ref=e329]: 2025. gads.
+                            - table [ref=e330]:
+                              - rowgroup [ref=e331]:
+                                - row "Mēnesis Saeimas sēdes datums un sēdes tips" [ref=e332]:
+                                  - cell "Mēnesis" [ref=e333]
+                                  - cell "Saeimas sēdes datums un sēdes tips" [ref=e334]
+                                - row "Janvāris 9 16 23 30 30(J)" [ref=e335]:
+                                  - cell "Janvāris" [ref=e336]
+                                  - cell "9" [ref=e337]:
+                                    - link "9" [ref=e338] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d70031a5-0116-45c7-b647-47b32e9322ad
+                                  - cell "16" [ref=e339]:
+                                    - link "16" [ref=e340] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=99aaa2f6-c8a9-45a7-a0f3-5c0db3fdb624
+                                  - cell "23" [ref=e341]:
+                                    - link "23" [ref=e342] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4b30f05f-ee0a-4600-b7ab-ac580403b648
+                                  - cell "30" [ref=e343]:
+                                    - link "30" [ref=e344] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=81662979-86f6-4d98-a1d4-34f4c90dca66
+                                  - cell "30(J)" [ref=e345]:
+                                    - link "30(J)" [ref=e346] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5279900d-47b8-4b40-b6fd-2c31583507ca
+                                  - cell [ref=e347]
+                                  - cell [ref=e348]
+                                  - cell [ref=e349]
+                                  - cell [ref=e350]
+                                  - cell [ref=e351]
+                                  - cell [ref=e352]
+                                  - cell [ref=e353]
+                                  - cell [ref=e354]
+                                  - cell [ref=e355]
+                                  - cell [ref=e356]
+                                  - cell [ref=e357]
+                                  - cell [ref=e358]
+                                  - cell [ref=e359]
+                                  - cell [ref=e360]
+                                  - cell [ref=e361]
+                                  - cell [ref=e362]
+                                  - cell [ref=e363]
+                                  - cell [ref=e364]
+                                  - cell [ref=e365]
+                                  - cell [ref=e366]
+                                  - cell [ref=e367]
+                                  - cell [ref=e368]
+                                  - cell [ref=e369]
+                                - row "Februāris 6(A) 30 / 6 6 6(J) 13 20 20(J) 24(A) 27 27(J)" [ref=e370]:
+                                  - cell "Februāris" [ref=e371]
+                                  - cell "6(A)" [ref=e372]:
+                                    - link "6(A)" [ref=e373] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f1d074e6-60b4-4727-b2fa-f7a5e8b3be09
+                                  - cell "30 / 6" [ref=e374]:
+                                    - link "30 / 6" [ref=e375] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=81662979-86f6-4d98-a1d4-34f4c90dca66
+                                  - cell "6" [ref=e376]:
+                                    - link "6" [ref=e377] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=833f6b97-19c2-4c51-8cf4-2ea14119f43d
+                                  - cell "6(J)" [ref=e378]:
+                                    - link "6(J)" [ref=e379] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c688ca77-5482-4a27-a5a9-e2c9e7d994e6
+                                  - cell "13" [ref=e380]:
+                                    - link "13" [ref=e381] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=940cca44-6c85-4b3e-8775-ee246ff8fbfc
+                                  - cell "20" [ref=e382]:
+                                    - link "20" [ref=e383] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=cdb1aea9-cdd8-497e-b79e-6ae5de44544f
+                                  - cell "20(J)" [ref=e384]:
+                                    - link "20(J)" [ref=e385] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ff44e70d-21c5-4627-a2f6-02be44de0a4c
+                                  - cell "24(A)" [ref=e386]:
+                                    - link "24(A)" [ref=e387] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4a8fbac9-3764-4056-b9f1-bd79a698d85a
+                                  - cell "27" [ref=e388]:
+                                    - link "27" [ref=e389] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=85d62271-f147-4fef-98a5-ea1c30456ddd
+                                  - cell "27(J)" [ref=e390]:
+                                    - link "27(J)" [ref=e391] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4707e727-918c-4ebc-9a4c-2bfbff8ba618
+                                  - cell [ref=e392]
+                                  - cell [ref=e393]
+                                  - cell [ref=e394]
+                                  - cell [ref=e395]
+                                  - cell [ref=e396]
+                                  - cell [ref=e397]
+                                  - cell [ref=e398]
+                                  - cell [ref=e399]
+                                  - cell [ref=e400]
+                                  - cell [ref=e401]
+                                  - cell [ref=e402]
+                                  - cell [ref=e403]
+                                  - cell [ref=e404]
+                                  - cell [ref=e405]
+                                  - cell [ref=e406]
+                                  - cell [ref=e407]
+                                  - cell [ref=e408]
+                                  - cell [ref=e409]
+                                - row "Marts 6(J) 6 13 20 20(J) 27 27(J)" [ref=e410]:
+                                  - cell "Marts" [ref=e411]
+                                  - cell "6(J)" [ref=e412]:
+                                    - link "6(J)" [ref=e413] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f062c9f1-6bc6-4aff-ad66-1ea4ea2a05f5
+                                  - cell "6" [ref=e414]:
+                                    - link "6" [ref=e415] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=835989c4-2939-4484-a1f3-2acb9ec73ecf
+                                  - cell "13" [ref=e416]:
+                                    - link "13" [ref=e417] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=54d176c3-be49-438b-9cfb-8593bda6bafe
+                                  - cell "20" [ref=e418]:
+                                    - link "20" [ref=e419] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7e86e69b-b3f4-448e-8532-3ce4b39a8923
+                                  - cell "20(J)" [ref=e420]:
+                                    - link "20(J)" [ref=e421] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fdbad9b0-666c-4356-b18d-5c5368971641
+                                  - cell "27" [ref=e422]:
+                                    - link "27" [ref=e423] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f8b7e492-f2fc-4f70-b5cf-83d01f05be92
+                                  - cell "27(J)" [ref=e424]:
+                                    - link "27(J)" [ref=e425] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=66b57cfb-3605-458e-af94-7a5ce2e14f33
+                                  - cell [ref=e426]
+                                  - cell [ref=e427]
+                                  - cell [ref=e428]
+                                  - cell [ref=e429]
+                                  - cell [ref=e430]
+                                  - cell [ref=e431]
+                                  - cell [ref=e432]
+                                  - cell [ref=e433]
+                                  - cell [ref=e434]
+                                  - cell [ref=e435]
+                                  - cell [ref=e436]
+                                  - cell [ref=e437]
+                                  - cell [ref=e438]
+                                  - cell [ref=e439]
+                                  - cell [ref=e440]
+                                  - cell [ref=e441]
+                                  - cell [ref=e442]
+                                  - cell [ref=e443]
+                                  - cell [ref=e444]
+                                  - cell [ref=e445]
+                                  - cell [ref=e446]
+                                - row "Aprīlis 3 3(J) 10 16 16(J) 30" [ref=e447]:
+                                  - cell "Aprīlis" [ref=e448]
+                                  - cell "3" [ref=e449]:
+                                    - link "3" [ref=e450] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e3259161-602d-4410-a6b3-4d2152ddf032
+                                  - cell "3(J)" [ref=e451]:
+                                    - link "3(J)" [ref=e452] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2041a97a-cb0a-4260-8ff1-a9529deda0fe
+                                  - cell "10" [ref=e453]:
+                                    - link "10" [ref=e454] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=508de0a9-1304-4548-bd08-0a6e94566939
+                                  - cell "16" [ref=e455]:
+                                    - link "16" [ref=e456] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1645ba11-3583-4043-b084-c81baa597f3d
+                                  - cell "16(J)" [ref=e457]:
+                                    - link "16(J)" [ref=e458] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=33b85d9a-0a14-401c-bb02-20fd7ffe06e0
+                                  - cell "30" [ref=e459]:
+                                    - link "30" [ref=e460] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b38c434b-6d22-440e-aceb-c3827437c6e8
+                                  - cell [ref=e461]
+                                  - cell [ref=e462]
+                                  - cell [ref=e463]
+                                  - cell [ref=e464]
+                                  - cell [ref=e465]
+                                  - cell [ref=e466]
+                                  - cell [ref=e467]
+                                  - cell [ref=e468]
+                                  - cell [ref=e469]
+                                  - cell [ref=e470]
+                                  - cell [ref=e471]
+                                  - cell [ref=e472]
+                                  - cell [ref=e473]
+                                  - cell [ref=e474]
+                                  - cell [ref=e475]
+                                  - cell [ref=e476]
+                                  - cell [ref=e477]
+                                  - cell [ref=e478]
+                                  - cell [ref=e479]
+                                  - cell [ref=e480]
+                                  - cell [ref=e481]
+                                  - cell [ref=e482]
+                                - row "Maijs 4(S) 8(A) 8 15 15(J) 22 22(J) 29 29(J)" [ref=e483]:
+                                  - cell "Maijs" [ref=e484]
+                                  - cell "4(S)" [ref=e485]:
+                                    - link "4(S)" [ref=e486] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ed14c5b1-9ce7-40ed-b3d9-da69b6798ab6
+                                  - cell "8(A)" [ref=e487]:
+                                    - link "8(A)" [ref=e488] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c6fba6ae-61cf-4725-91c3-182f4bf341cb
+                                  - cell "8" [ref=e489]:
+                                    - link "8" [ref=e490] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=234ce720-e2ce-48ef-b090-6186d788203f
+                                  - cell "15" [ref=e491]:
+                                    - link "15" [ref=e492] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d269c887-9ddc-4b48-9eff-d693783a076b
+                                  - cell "15(J)" [ref=e493]:
+                                    - link "15(J)" [ref=e494] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e0d2163e-2fa2-4e67-95a0-fcf7a24b7422
+                                  - cell "22" [ref=e495]:
+                                    - link "22" [ref=e496] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=aba86285-694c-4956-ac3c-11e8ea72ea95
+                                  - cell "22(J)" [ref=e497]:
+                                    - link "22(J)" [ref=e498] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=67dbdecf-67a4-464a-a38c-b94d0e323e89
+                                  - cell "29" [ref=e499]:
+                                    - link "29" [ref=e500] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ac31a5dc-cae0-43e6-948d-603506bfe3b6
+                                  - cell "29(J)" [ref=e501]:
+                                    - link "29(J)" [ref=e502] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ad32ebb0-4bbd-4028-bbb4-4d1f83066a65
+                                  - cell [ref=e503]
+                                  - cell [ref=e504]
+                                  - cell [ref=e505]
+                                  - cell [ref=e506]
+                                  - cell [ref=e507]
+                                  - cell [ref=e508]
+                                  - cell [ref=e509]
+                                  - cell [ref=e510]
+                                  - cell [ref=e511]
+                                  - cell [ref=e512]
+                                  - cell [ref=e513]
+                                  - cell [ref=e514]
+                                  - cell [ref=e515]
+                                  - cell [ref=e516]
+                                  - cell [ref=e517]
+                                  - cell [ref=e518]
+                                  - cell [ref=e519]
+                                  - cell [ref=e520]
+                                  - cell [ref=e521]
+                                - row "Jūnijs 5 5(J) 12 19" [ref=e522]:
+                                  - cell "Jūnijs" [ref=e523]
+                                  - cell "5" [ref=e524]:
+                                    - link "5" [ref=e525] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2238bc1e-a6a6-4dd3-91ef-c92097e231fe
+                                  - cell "5(J)" [ref=e526]:
+                                    - link "5(J)" [ref=e527] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bb0eb971-b4dc-4f87-a4ce-278f371126dd
+                                  - cell "12" [ref=e528]:
+                                    - link "12" [ref=e529] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=567e8b7f-35a2-4dd6-8ef7-50817d7b960e
+                                  - cell "19" [ref=e530]:
+                                    - link "19" [ref=e531] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=16848e9d-4f92-453d-9823-3c87816cc2d0
+                                  - cell [ref=e532]
+                                  - cell [ref=e533]
+                                  - cell [ref=e534]
+                                  - cell [ref=e535]
+                                  - cell [ref=e536]
+                                  - cell [ref=e537]
+                                  - cell [ref=e538]
+                                  - cell [ref=e539]
+                                  - cell [ref=e540]
+                                  - cell [ref=e541]
+                                  - cell [ref=e542]
+                                  - cell [ref=e543]
+                                  - cell [ref=e544]
+                                  - cell [ref=e545]
+                                  - cell [ref=e546]
+                                  - cell [ref=e547]
+                                  - cell [ref=e548]
+                                  - cell [ref=e549]
+                                  - cell [ref=e550]
+                                  - cell [ref=e551]
+                                  - cell [ref=e552]
+                                  - cell [ref=e553]
+                                  - cell [ref=e554]
+                                  - cell [ref=e555]
+                                - row "Septembris 4 11 11(J) 16(A) 18 18(J) 25 25(J)" [ref=e556]:
+                                  - cell "Septembris" [ref=e557]
+                                  - cell "4" [ref=e558]:
+                                    - link "4" [ref=e559] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=62b83cc1-7714-425b-b566-4201ee51fd01
+                                  - cell "11" [ref=e560]:
+                                    - link "11" [ref=e561] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a83cc222-ba96-4ae1-a6ee-fb1777183bc2
+                                  - cell "11(J)" [ref=e562]:
+                                    - link "11(J)" [ref=e563] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6c4be313-8fa0-4595-86be-479f3e7d7616
+                                  - cell "16(A)" [ref=e564]:
+                                    - link "16(A)" [ref=e565] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1720e69d-23c1-46ca-ae8c-5ef6454135d6
+                                  - cell "18" [ref=e566]:
+                                    - link "18" [ref=e567] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=61a6f8e4-74a7-42c3-be0b-835adaff06bc
+                                  - cell "18(J)" [ref=e568]:
+                                    - link "18(J)" [ref=e569] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=9ce4668e-6f27-41b0-bee3-e93e6cf0355a
+                                  - cell "25" [ref=e570]:
+                                    - link "25" [ref=e571] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=209675cd-ad54-4645-afa7-f0a2f01e670e
+                                  - cell "25(J)" [ref=e572]:
+                                    - link "25(J)" [ref=e573] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7c7ae978-74e3-446b-b537-726c9b0e6bef
+                                  - cell [ref=e574]
+                                  - cell [ref=e575]
+                                  - cell [ref=e576]
+                                  - cell [ref=e577]
+                                  - cell [ref=e578]
+                                  - cell [ref=e579]
+                                  - cell [ref=e580]
+                                  - cell [ref=e581]
+                                  - cell [ref=e582]
+                                  - cell [ref=e583]
+                                  - cell [ref=e584]
+                                  - cell [ref=e585]
+                                  - cell [ref=e586]
+                                  - cell [ref=e587]
+                                  - cell [ref=e588]
+                                  - cell [ref=e589]
+                                  - cell [ref=e590]
+                                  - cell [ref=e591]
+                                  - cell [ref=e592]
+                                  - cell [ref=e593]
+                                - row "Oktobris 2 2(A) 2(J) 2(A) 9 9(J) 16(A) 16 16(J) 23 23 / 30 30(J)" [ref=e594]:
+                                  - cell "Oktobris" [ref=e595]
+                                  - cell "2" [ref=e596]:
+                                    - link "2" [ref=e597] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3c1b2f00-274d-4b99-a2f6-7f4608fc391c
+                                  - cell "2(A)" [ref=e598]:
+                                    - link "2(A)" [ref=e599] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f34a8335-e909-4469-8e57-af5759025c33
+                                  - cell "2(J)" [ref=e600]:
+                                    - link "2(J)" [ref=e601] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=979d4b16-32b8-44ef-b531-0b124235d145
+                                  - cell "2(A)" [ref=e602]:
+                                    - link "2(A)" [ref=e603] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3d018d17-4db3-4446-8363-cae46dbf0355
+                                  - cell "9" [ref=e604]:
+                                    - link "9" [ref=e605] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b32ad5f5-d092-44b3-af3e-fbdf491ec804
+                                  - cell "9(J)" [ref=e606]:
+                                    - link "9(J)" [ref=e607] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=336a0797-1f2b-41c9-95c0-52967364dcf0
+                                  - cell "16(A)" [ref=e608]:
+                                    - link "16(A)" [ref=e609] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7f9054f6-f30c-42da-b11e-fea6c9e45332
+                                  - cell "16" [ref=e610]:
+                                    - link "16" [ref=e611] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=21ddb988-474a-4272-9c49-d1067720157e
+                                  - cell "16(J)" [ref=e612]:
+                                    - link "16(J)" [ref=e613] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=68ccd287-711e-462f-8bf6-a91c2837d573
+                                  - cell "23" [ref=e614]:
+                                    - link "23" [ref=e615] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1a471648-3fd4-4f36-824c-da1f31f3baa5
+                                  - cell "23 / 30" [ref=e616]:
+                                    - link "23 / 30" [ref=e617] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1a471648-3fd4-4f36-824c-da1f31f3baa5
+                                  - cell "30(J)" [ref=e618]:
+                                    - link "30(J)" [ref=e619] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=388b2044-fefb-4541-834d-a7c6d15d4a64
+                                  - cell [ref=e620]
+                                  - cell [ref=e621]
+                                  - cell [ref=e622]
+                                  - cell [ref=e623]
+                                  - cell [ref=e624]
+                                  - cell [ref=e625]
+                                  - cell [ref=e626]
+                                  - cell [ref=e627]
+                                  - cell [ref=e628]
+                                  - cell [ref=e629]
+                                  - cell [ref=e630]
+                                  - cell [ref=e631]
+                                  - cell [ref=e632]
+                                  - cell [ref=e633]
+                                  - cell [ref=e634]
+                                  - cell [ref=e635]
+                                - row "Novembris 5(A) 5(A) 5 / 6(A) 6(A) 6(J) 6 23 / 30 / 13 13 13 13(J) 18(S) 20 20(J) 27 27(J)" [ref=e636]:
+                                  - cell "Novembris" [ref=e637]
+                                  - cell "5(A)" [ref=e638]:
+                                    - link "5(A)" [ref=e639] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=952dbabd-1315-4836-aeab-00d66ea77887
+                                  - cell "5(A)" [ref=e640]:
+                                    - link "5(A)" [ref=e641] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=879827cc-e8ab-42fb-a8ee-4a7b1aedfee8
+                                  - cell "5 / 6(A)" [ref=e642]:
+                                    - link "5 / 6(A)" [ref=e643] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=879827cc-e8ab-42fb-a8ee-4a7b1aedfee8
+                                  - cell "6(A)" [ref=e644]:
+                                    - link "6(A)" [ref=e645] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6975c78e-115c-48d7-a531-9ec136be68db
+                                  - cell "6(J)" [ref=e646]:
+                                    - link "6(J)" [ref=e647] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b26f2030-950d-409c-9c62-49baec0ab1d6
+                                  - cell "6" [ref=e648]:
+                                    - link "6" [ref=e649] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2ebe52fe-c462-4c77-ab15-740543824abd
+                                  - cell "23 / 30 / 13" [ref=e650]:
+                                    - link "23 / 30 / 13" [ref=e651] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1a471648-3fd4-4f36-824c-da1f31f3baa5
+                                  - cell "13" [ref=e652]:
+                                    - link "13" [ref=e653] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3da11ab6-6489-4f77-9bed-bf84b9afddc8
+                                  - cell "13" [ref=e654]:
+                                    - link "13" [ref=e655] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=50026386-621d-4da8-a3aa-3e1e779cd219
+                                  - cell "13(J)" [ref=e656]:
+                                    - link "13(J)" [ref=e657] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=567b3762-162d-4b48-94c3-de272a46208d
+                                  - cell "18(S)" [ref=e658]:
+                                    - link "18(S)" [ref=e659] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=514b3e42-effe-436d-b702-e5567589db41
+                                  - cell "20" [ref=e660]:
+                                    - link "20" [ref=e661] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=020b053e-500b-4a7d-b157-6e19c9f870d0
+                                  - cell "20(J)" [ref=e662]:
+                                    - link "20(J)" [ref=e663] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a05eb500-3e1f-42b9-9ab3-06453965c8ae
+                                  - cell "27" [ref=e664]:
+                                    - link "27" [ref=e665] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=157c38d5-5ac5-47bd-b54f-b31da148c66d
+                                  - cell "27(J)" [ref=e666]:
+                                    - link "27(J)" [ref=e667] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=9b81c330-25ac-479d-b3de-6fb8de38694a
+                                  - cell [ref=e668]
+                                  - cell [ref=e669]
+                                  - cell [ref=e670]
+                                  - cell [ref=e671]
+                                  - cell [ref=e672]
+                                  - cell [ref=e673]
+                                  - cell [ref=e674]
+                                  - cell [ref=e675]
+                                  - cell [ref=e676]
+                                  - cell [ref=e677]
+                                  - cell [ref=e678]
+                                  - cell [ref=e679]
+                                  - cell [ref=e680]
+                                - row "Decembris 3(A) 3 / 4(A) 11 11 11(J) 18 18(A) 18(J)" [ref=e681]:
+                                  - cell "Decembris" [ref=e682]
+                                  - cell "3(A)" [ref=e683]:
+                                    - link "3(A)" [ref=e684] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2056e280-3e81-4725-8c67-93307fb1ec5c
+                                  - cell "3 / 4(A)" [ref=e685]:
+                                    - link "3 / 4(A)" [ref=e686] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2056e280-3e81-4725-8c67-93307fb1ec5c
+                                  - cell "11" [ref=e687]:
+                                    - link "11" [ref=e688] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=71923581-d292-49e7-b0c3-4b06ccaf2a45
+                                  - cell "11" [ref=e689]:
+                                    - link "11" [ref=e690] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7d29ba89-a328-4e5c-a247-cd5129cdf768
+                                  - cell "11(J)" [ref=e691]:
+                                    - link "11(J)" [ref=e692] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7b8d2a0e-d7eb-4652-95d4-012f7175b681
+                                  - cell "18" [ref=e693]:
+                                    - link "18" [ref=e694] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f5158777-5e8b-48e5-beeb-1c6acbd994db
+                                  - cell "18(A)" [ref=e695]:
+                                    - link "18(A)" [ref=e696] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ce631861-afca-496b-b4de-26205ff7d85c
+                                  - cell "18(J)" [ref=e697]:
+                                    - link "18(J)" [ref=e698] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=77c58b44-9f0e-448e-b006-6df3a3630245
+                                  - cell [ref=e699]
+                                  - cell [ref=e700]
+                                  - cell [ref=e701]
+                                  - cell [ref=e702]
+                                  - cell [ref=e703]
+                                  - cell [ref=e704]
+                                  - cell [ref=e705]
+                                  - cell [ref=e706]
+                                  - cell [ref=e707]
+                                  - cell [ref=e708]
+                                  - cell [ref=e709]
+                                  - cell [ref=e710]
+                                  - cell [ref=e711]
+                                  - cell [ref=e712]
+                                  - cell [ref=e713]
+                                  - cell [ref=e714]
+                                  - cell [ref=e715]
+                                  - cell [ref=e716]
+                                  - cell [ref=e717]
+                                  - cell [ref=e718]
+                            - generic [ref=e719]: 2024. gads.
+                            - table [ref=e720]:
+                              - rowgroup [ref=e721]:
+                                - row "Mēnesis Saeimas sēdes datums un sēdes tips" [ref=e722]:
+                                  - cell "Mēnesis" [ref=e723]
+                                  - cell "Saeimas sēdes datums un sēdes tips" [ref=e724]
+                                - row "Janvāris 11 18 25" [ref=e725]:
+                                  - cell "Janvāris" [ref=e726]
+                                  - cell "11" [ref=e727]:
+                                    - link "11" [ref=e728] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=47aa6204-79e0-4c87-a91f-ce85a34c60e1
+                                  - cell "18" [ref=e729]:
+                                    - link "18" [ref=e730] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e60c2860-9f91-4d22-869f-cf44937d5097
+                                  - cell "25" [ref=e731]:
+                                    - link "25" [ref=e732] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=31c882a9-39e3-4d35-9dad-c323430a5274
+                                  - cell [ref=e733]
+                                  - cell [ref=e734]
+                                  - cell [ref=e735]
+                                  - cell [ref=e736]
+                                  - cell [ref=e737]
+                                  - cell [ref=e738]
+                                  - cell [ref=e739]
+                                  - cell [ref=e740]
+                                  - cell [ref=e741]
+                                  - cell [ref=e742]
+                                  - cell [ref=e743]
+                                  - cell [ref=e744]
+                                  - cell [ref=e745]
+                                  - cell [ref=e746]
+                                  - cell [ref=e747]
+                                  - cell [ref=e748]
+                                  - cell [ref=e749]
+                                  - cell [ref=e750]
+                                  - cell [ref=e751]
+                                  - cell [ref=e752]
+                                  - cell [ref=e753]
+                                  - cell [ref=e754]
+                                  - cell [ref=e755]
+                                  - cell [ref=e756]
+                                  - cell [ref=e757]
+                                - row "Februāris 25 / 1 1 8 8(J) 15 15(J) 22(A) 22 22(J) 29 29(J)" [ref=e758]:
+                                  - cell "Februāris" [ref=e759]
+                                  - cell "25 / 1" [ref=e760]:
+                                    - link "25 / 1" [ref=e761] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=31c882a9-39e3-4d35-9dad-c323430a5274
+                                  - cell "1" [ref=e762]:
+                                    - link "1" [ref=e763] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4e8b474b-d072-44f5-9032-079dc46032f7
+                                  - cell "8" [ref=e764]:
+                                    - link "8" [ref=e765] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=dd5a7336-a89e-46f4-a489-e5f1cdde0256
+                                  - cell "8(J)" [ref=e766]:
+                                    - link "8(J)" [ref=e767] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=70a0cb91-2b4c-45cc-a41c-a67e358ab8e4
+                                  - cell "15" [ref=e768]:
+                                    - link "15" [ref=e769] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=cc0709cd-3814-4a17-bb03-c6e600811123
+                                  - cell "15(J)" [ref=e770]:
+                                    - link "15(J)" [ref=e771] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ea70ea3a-e7a0-456b-a198-4e2d63817c84
+                                  - cell "22(A)" [ref=e772]:
+                                    - link "22(A)" [ref=e773] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=44190722-fa78-4e9d-92aa-811109679644
+                                  - cell "22" [ref=e774]:
+                                    - link "22" [ref=e775] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=25744d0d-e83c-4a16-815e-df0b3dd886c1
+                                  - cell "22(J)" [ref=e776]:
+                                    - link "22(J)" [ref=e777] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=cec1526d-0b20-4684-8a51-7ea2e742d5ea
+                                  - cell "29" [ref=e778]:
+                                    - link "29" [ref=e779] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=645a010c-cf93-4f3a-95b6-d079e4f9a0c7
+                                  - cell "29(J)" [ref=e780]:
+                                    - link "29(J)" [ref=e781] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c961500d-3491-48a3-9950-6c4289fe1137
+                                  - cell [ref=e782]
+                                  - cell [ref=e783]
+                                  - cell [ref=e784]
+                                  - cell [ref=e785]
+                                  - cell [ref=e786]
+                                  - cell [ref=e787]
+                                  - cell [ref=e788]
+                                  - cell [ref=e789]
+                                  - cell [ref=e790]
+                                  - cell [ref=e791]
+                                  - cell [ref=e792]
+                                  - cell [ref=e793]
+                                  - cell [ref=e794]
+                                  - cell [ref=e795]
+                                  - cell [ref=e796]
+                                  - cell [ref=e797]
+                                  - cell [ref=e798]
+                                - row "Marts 7 14 21 27 27(J)" [ref=e799]:
+                                  - cell "Marts" [ref=e800]
+                                  - cell "7" [ref=e801]:
+                                    - link "7" [ref=e802] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=9bfd1d64-919a-42a1-9f02-c4bc4b0fa700
+                                  - cell "14" [ref=e803]:
+                                    - link "14" [ref=e804] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5068dd43-5b7f-432d-803d-da2d0ccfe82f
+                                  - cell "21" [ref=e805]:
+                                    - link "21" [ref=e806] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5e63f34d-8392-4b7c-8408-53d6b539ac51
+                                  - cell "27" [ref=e807]:
+                                    - link "27" [ref=e808] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8ae93871-30d4-4961-83e9-5441f3dcb1c4
+                                  - cell "27(J)" [ref=e809]:
+                                    - link "27(J)" [ref=e810] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8506ded2-b603-4bcb-938e-344e971117fd
+                                  - cell [ref=e811]
+                                  - cell [ref=e812]
+                                  - cell [ref=e813]
+                                  - cell [ref=e814]
+                                  - cell [ref=e815]
+                                  - cell [ref=e816]
+                                  - cell [ref=e817]
+                                  - cell [ref=e818]
+                                  - cell [ref=e819]
+                                  - cell [ref=e820]
+                                  - cell [ref=e821]
+                                  - cell [ref=e822]
+                                  - cell [ref=e823]
+                                  - cell [ref=e824]
+                                  - cell [ref=e825]
+                                  - cell [ref=e826]
+                                  - cell [ref=e827]
+                                  - cell [ref=e828]
+                                  - cell [ref=e829]
+                                  - cell [ref=e830]
+                                  - cell [ref=e831]
+                                  - cell [ref=e832]
+                                  - cell [ref=e833]
+                                - row "Aprīlis 11 18 18(J) 19(A) 25 25(J)" [ref=e834]:
+                                  - cell "Aprīlis" [ref=e835]
+                                  - cell "11" [ref=e836]:
+                                    - link "11" [ref=e837] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=11677778-a4f9-417f-8e29-658bbc042778
+                                  - cell "18" [ref=e838]:
+                                    - link "18" [ref=e839] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6fe0d73a-3315-4214-b0c5-ed16a5c630a3
+                                  - cell "18(J)" [ref=e840]:
+                                    - link "18(J)" [ref=e841] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7df9b54d-7636-41c7-b476-cf7e14fa59cb
+                                  - cell "19(A)" [ref=e842]:
+                                    - link "19(A)" [ref=e843] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=eaaaf22e-6ac3-400a-8795-7c1d2ad0e4cb
+                                  - cell "25" [ref=e844]:
+                                    - link "25" [ref=e845] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d2cff3c0-c43e-4ef9-b706-b169bef045f0
+                                  - cell "25(J)" [ref=e846]:
+                                    - link "25(J)" [ref=e847] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8aec627e-f43a-4608-90ec-9778d8168b8d
+                                  - cell [ref=e848]
+                                  - cell [ref=e849]
+                                  - cell [ref=e850]
+                                  - cell [ref=e851]
+                                  - cell [ref=e852]
+                                  - cell [ref=e853]
+                                  - cell [ref=e854]
+                                  - cell [ref=e855]
+                                  - cell [ref=e856]
+                                  - cell [ref=e857]
+                                  - cell [ref=e858]
+                                  - cell [ref=e859]
+                                  - cell [ref=e860]
+                                  - cell [ref=e861]
+                                  - cell [ref=e862]
+                                  - cell [ref=e863]
+                                  - cell [ref=e864]
+                                  - cell [ref=e865]
+                                  - cell [ref=e866]
+                                  - cell [ref=e867]
+                                  - cell [ref=e868]
+                                  - cell [ref=e869]
+                                - row "Maijs 2 2(J) 4(S) 9 9(J) 16 16(J) 16 / 23 23(J) 23 30 30(J)" [ref=e870]:
+                                  - cell "Maijs" [ref=e871]
+                                  - cell "2" [ref=e872]:
+                                    - link "2" [ref=e873] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=911fa192-d4c0-402a-ae0d-927f9f93ec74
+                                  - cell "2(J)" [ref=e874]:
+                                    - link "2(J)" [ref=e875] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3e38db2f-0fb0-42f0-8378-39d81d434df6
+                                  - cell "4(S)" [ref=e876]:
+                                    - link "4(S)" [ref=e877] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c1d98683-f591-4e49-8124-f1f2c141a382
+                                  - cell "9" [ref=e878]:
+                                    - link "9" [ref=e879] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=65d43116-3cfa-4687-9684-94bb953ce061
+                                  - cell "9(J)" [ref=e880]:
+                                    - link "9(J)" [ref=e881] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e9a54cc2-38c4-4e82-8c29-9a376fa175bc
+                                  - cell "16" [ref=e882]:
+                                    - link "16" [ref=e883] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=20377aad-9248-4dcc-a7c1-976ba497133d
+                                  - cell "16(J)" [ref=e884]:
+                                    - link "16(J)" [ref=e885] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5e2ae0c9-155e-45f4-804a-62ee04e55e64
+                                  - cell "16 / 23" [ref=e886]:
+                                    - link "16 / 23" [ref=e887] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=20377aad-9248-4dcc-a7c1-976ba497133d
+                                  - cell "23(J)" [ref=e888]:
+                                    - link "23(J)" [ref=e889] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4491630a-98cb-49ba-8d1c-b55a026ce708
+                                  - cell "23" [ref=e890]:
+                                    - link "23" [ref=e891] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6db0ba70-dc6d-49db-882a-e1577eb0ee3d
+                                  - cell "30" [ref=e892]:
+                                    - link "30" [ref=e893] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2fc0a8a8-4ef9-4596-a2b3-2f35d122f301
+                                  - cell "30(J)" [ref=e894]:
+                                    - link "30(J)" [ref=e895] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=200b2562-421d-451a-a209-14f03c8d8cb0
+                                  - cell [ref=e896]
+                                  - cell [ref=e897]
+                                  - cell [ref=e898]
+                                  - cell [ref=e899]
+                                  - cell [ref=e900]
+                                  - cell [ref=e901]
+                                  - cell [ref=e902]
+                                  - cell [ref=e903]
+                                  - cell [ref=e904]
+                                  - cell [ref=e905]
+                                  - cell [ref=e906]
+                                  - cell [ref=e907]
+                                  - cell [ref=e908]
+                                  - cell [ref=e909]
+                                  - cell [ref=e910]
+                                  - cell [ref=e911]
+                                - row "Jūnijs 6 6(J) 13(A) 13(J) 13 20(A) 20 20(J)" [ref=e912]:
+                                  - cell "Jūnijs" [ref=e913]
+                                  - cell "6" [ref=e914]:
+                                    - link "6" [ref=e915] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bc43826e-2198-4d52-8015-a9c98e6265f1
+                                  - cell "6(J)" [ref=e916]:
+                                    - link "6(J)" [ref=e917] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bddb8a48-cdd2-4788-8462-660c547e24ed
+                                  - cell "13(A)" [ref=e918]:
+                                    - link "13(A)" [ref=e919] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3de4c2d2-e5c8-4d48-a96f-c71b44b75c92
+                                  - cell "13(J)" [ref=e920]:
+                                    - link "13(J)" [ref=e921] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=60f33c3e-4ddf-467b-a202-05b6743bf9dd
+                                  - cell "13" [ref=e922]:
+                                    - link "13" [ref=e923] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2b48be22-b505-4a16-8884-a3d30d103bbf
+                                  - cell "20(A)" [ref=e924]:
+                                    - link "20(A)" [ref=e925] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2ec9fe26-07eb-489a-8b11-c03da33389e2
+                                  - cell "20" [ref=e926]:
+                                    - link "20" [ref=e927] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5703845c-cd15-4994-8075-a9baba8acc47
+                                  - cell "20(J)" [ref=e928]:
+                                    - link "20(J)" [ref=e929] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2f751142-e370-4e81-8238-32e0f4400023
+                                  - cell [ref=e930]
+                                  - cell [ref=e931]
+                                  - cell [ref=e932]
+                                  - cell [ref=e933]
+                                  - cell [ref=e934]
+                                  - cell [ref=e935]
+                                  - cell [ref=e936]
+                                  - cell [ref=e937]
+                                  - cell [ref=e938]
+                                  - cell [ref=e939]
+                                  - cell [ref=e940]
+                                  - cell [ref=e941]
+                                  - cell [ref=e942]
+                                  - cell [ref=e943]
+                                  - cell [ref=e944]
+                                  - cell [ref=e945]
+                                  - cell [ref=e946]
+                                  - cell [ref=e947]
+                                  - cell [ref=e948]
+                                  - cell [ref=e949]
+                                - row "Jūlijs 25(As)" [ref=e950]:
+                                  - cell "Jūlijs" [ref=e951]
+                                  - cell "25(As)" [ref=e952]:
+                                    - link "25(As)" [ref=e953] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=eecf8dea-6b91-4798-bb8a-282173f670d8
+                                  - cell [ref=e954]
+                                  - cell [ref=e955]
+                                  - cell [ref=e956]
+                                  - cell [ref=e957]
+                                  - cell [ref=e958]
+                                  - cell [ref=e959]
+                                  - cell [ref=e960]
+                                  - cell [ref=e961]
+                                  - cell [ref=e962]
+                                  - cell [ref=e963]
+                                  - cell [ref=e964]
+                                  - cell [ref=e965]
+                                  - cell [ref=e966]
+                                  - cell [ref=e967]
+                                  - cell [ref=e968]
+                                  - cell [ref=e969]
+                                  - cell [ref=e970]
+                                  - cell [ref=e971]
+                                  - cell [ref=e972]
+                                  - cell [ref=e973]
+                                  - cell [ref=e974]
+                                  - cell [ref=e975]
+                                  - cell [ref=e976]
+                                  - cell [ref=e977]
+                                  - cell [ref=e978]
+                                  - cell [ref=e979]
+                                  - cell [ref=e980]
+                                - row "Septembris 5 12 12(J) 19 19(J) 26 26(J)" [ref=e981]:
+                                  - cell "Septembris" [ref=e982]
+                                  - cell "5" [ref=e983]:
+                                    - link "5" [ref=e984] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=28cefb64-a05b-4c95-a726-e4b98e702e17
+                                  - cell "12" [ref=e985]:
+                                    - link "12" [ref=e986] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3af68658-bc43-46b2-86ac-82e17f648aac
+                                  - cell "12(J)" [ref=e987]:
+                                    - link "12(J)" [ref=e988] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=83ad533b-6a85-48ed-9eca-a170b8549825
+                                  - cell "19" [ref=e989]:
+                                    - link "19" [ref=e990] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bddf127f-2cd6-4b2d-be6b-64d5c20c9025
+                                  - cell "19(J)" [ref=e991]:
+                                    - link "19(J)" [ref=e992] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=806cc1cd-a09f-4d28-a8b5-4511a1be3dc6
+                                  - cell "26" [ref=e993]:
+                                    - link "26" [ref=e994] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=873f79e3-a7c9-4440-912c-40fd037fd149
+                                  - cell "26(J)" [ref=e995]:
+                                    - link "26(J)" [ref=e996] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=90b870f1-beda-4deb-a173-573603cb4a28
+                                  - cell [ref=e997]
+                                  - cell [ref=e998]
+                                  - cell [ref=e999]
+                                  - cell [ref=e1000]
+                                  - cell [ref=e1001]
+                                  - cell [ref=e1002]
+                                  - cell [ref=e1003]
+                                  - cell [ref=e1004]
+                                  - cell [ref=e1005]
+                                  - cell [ref=e1006]
+                                  - cell [ref=e1007]
+                                  - cell [ref=e1008]
+                                  - cell [ref=e1009]
+                                  - cell [ref=e1010]
+                                  - cell [ref=e1011]
+                                  - cell [ref=e1012]
+                                  - cell [ref=e1013]
+                                  - cell [ref=e1014]
+                                  - cell [ref=e1015]
+                                  - cell [ref=e1016]
+                                  - cell [ref=e1017]
+                                - row "Oktobris 3 3(J) 10 10(J) 17(A) 17(J) 17 24 24(J) 30(A) 31 31(J)" [ref=e1018]:
+                                  - cell "Oktobris" [ref=e1019]
+                                  - cell "3" [ref=e1020]:
+                                    - link "3" [ref=e1021] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5e07ca74-db79-4809-8df9-00121bd6a554
+                                  - cell "3(J)" [ref=e1022]:
+                                    - link "3(J)" [ref=e1023] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6f81853a-db2c-4fc4-817b-8e4be4819f86
+                                  - cell "10" [ref=e1024]:
+                                    - link "10" [ref=e1025] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=888dfe1d-aa80-4073-bc1d-4c79a7b9f65c
+                                  - cell "10(J)" [ref=e1026]:
+                                    - link "10(J)" [ref=e1027] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=0630bfb3-96fc-4bfd-abe2-7283eea61799
+                                  - cell "17(A)" [ref=e1028]:
+                                    - link "17(A)" [ref=e1029] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a9ac02b0-a8d8-4dea-a683-e9931bb3bb5f
+                                  - cell "17(J)" [ref=e1030]:
+                                    - link "17(J)" [ref=e1031] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=146ff810-ec5f-4313-84b4-623a17d939b9
+                                  - cell "17" [ref=e1032]:
+                                    - link "17" [ref=e1033] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3a6b0c1e-7b01-4015-a0a7-88a43c5c7945
+                                  - cell "24" [ref=e1034]:
+                                    - link "24" [ref=e1035] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fe011d3b-611c-4ad3-84fc-3a967107094f
+                                  - cell "24(J)" [ref=e1036]:
+                                    - link "24(J)" [ref=e1037] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b4f67144-3d0b-408f-8ef0-72b6f4ee74c2
+                                  - cell "30(A)" [ref=e1038]:
+                                    - link "30(A)" [ref=e1039] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5d7a6c8b-0fe0-4b0f-aea5-10f48f84f581
+                                  - cell "31" [ref=e1040]:
+                                    - link "31" [ref=e1041] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e82d7be9-47e0-4e36-8f9a-b208000a8de1
+                                  - cell "31(J)" [ref=e1042]:
+                                    - link "31(J)" [ref=e1043] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b12d97fa-8041-4729-ab75-31eab18affe1
+                                  - cell [ref=e1044]
+                                  - cell [ref=e1045]
+                                  - cell [ref=e1046]
+                                  - cell [ref=e1047]
+                                  - cell [ref=e1048]
+                                  - cell [ref=e1049]
+                                  - cell [ref=e1050]
+                                  - cell [ref=e1051]
+                                  - cell [ref=e1052]
+                                  - cell [ref=e1053]
+                                  - cell [ref=e1054]
+                                  - cell [ref=e1055]
+                                  - cell [ref=e1056]
+                                  - cell [ref=e1057]
+                                  - cell [ref=e1058]
+                                  - cell [ref=e1059]
+                                - row "Novembris 7 7(J) 14 18(S) 21 28 28(J)" [ref=e1060]:
+                                  - cell "Novembris" [ref=e1061]
+                                  - cell "7" [ref=e1062]:
+                                    - link "7" [ref=e1063] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8e8b1e16-edec-430c-af67-34b629ebbf80
+                                  - cell "7(J)" [ref=e1064]:
+                                    - link "7(J)" [ref=e1065] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e6474c81-9afa-4330-8303-92792ac3aaba
+                                  - cell "14" [ref=e1066]:
+                                    - link "14" [ref=e1067] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=14ac2347-1a6b-487e-9e41-29d2d124ffe2
+                                  - cell "18(S)" [ref=e1068]:
+                                    - link "18(S)" [ref=e1069] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=04eb0a3a-36fa-4270-94ea-21428f5f4f3b
+                                  - cell "21" [ref=e1070]:
+                                    - link "21" [ref=e1071] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=123c299a-b1f8-4208-8487-65d0c657f360
+                                  - cell "28" [ref=e1072]:
+                                    - link "28" [ref=e1073] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d0752fa6-aa43-4eaf-8fd8-ce4b3c52e646
+                                  - cell "28(J)" [ref=e1074]:
+                                    - link "28(J)" [ref=e1075] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=34815ca7-9464-44b8-a201-d2a29823d069
+                                  - cell [ref=e1076]
+                                  - cell [ref=e1077]
+                                  - cell [ref=e1078]
+                                  - cell [ref=e1079]
+                                  - cell [ref=e1080]
+                                  - cell [ref=e1081]
+                                  - cell [ref=e1082]
+                                  - cell [ref=e1083]
+                                  - cell [ref=e1084]
+                                  - cell [ref=e1085]
+                                  - cell [ref=e1086]
+                                  - cell [ref=e1087]
+                                  - cell [ref=e1088]
+                                  - cell [ref=e1089]
+                                  - cell [ref=e1090]
+                                  - cell [ref=e1091]
+                                  - cell [ref=e1092]
+                                  - cell [ref=e1093]
+                                  - cell [ref=e1094]
+                                  - cell [ref=e1095]
+                                  - cell [ref=e1096]
+                                - row "Decembris 4(A) 5 5(A) 4 / 5(A) 5(J) 4 / 5 / 6(A) 5 / 12 12 12(J) 18(A) 19 19(J)" [ref=e1097]:
+                                  - cell "Decembris" [ref=e1098]
+                                  - cell "4(A)" [ref=e1099]:
+                                    - link "4(A)" [ref=e1100] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8cf192c4-3f7d-4032-aeaa-aa608b0d97c5
+                                  - cell "5" [ref=e1101]:
+                                    - link "5" [ref=e1102] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bad05f19-4f7b-47e5-bb7e-2c4501e726e2
+                                  - cell "5(A)" [ref=e1103]:
+                                    - link "5(A)" [ref=e1104] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a943db1a-80ef-4df2-84c0-e7624c427686
+                                  - cell "4 / 5(A)" [ref=e1105]:
+                                    - link "4 / 5(A)" [ref=e1106] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8cf192c4-3f7d-4032-aeaa-aa608b0d97c5
+                                  - cell "5(J)" [ref=e1107]:
+                                    - link "5(J)" [ref=e1108] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c0312afa-8f2a-4ddd-9f8c-188ed08cdbd6
+                                  - cell "4 / 5 / 6(A)" [ref=e1109]:
+                                    - link "4 / 5 / 6(A)" [ref=e1110] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8cf192c4-3f7d-4032-aeaa-aa608b0d97c5
+                                  - cell "5 / 12" [ref=e1111]:
+                                    - link "5 / 12" [ref=e1112] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=bad05f19-4f7b-47e5-bb7e-2c4501e726e2
+                                  - cell "12" [ref=e1113]:
+                                    - link "12" [ref=e1114] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d9be8ca1-3042-4cc8-9939-d37b1d276b7a
+                                  - cell "12(J)" [ref=e1115]:
+                                    - link "12(J)" [ref=e1116] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2b698eed-7dc1-44ef-a443-aa80c09c0089
+                                  - cell "18(A)" [ref=e1117]:
+                                    - link "18(A)" [ref=e1118] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=cd728ef7-9cd0-4af7-9cce-58b83b18d740
+                                  - cell "19" [ref=e1119]:
+                                    - link "19" [ref=e1120] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b4d7ea81-df5e-49e8-8d22-d55cb87ab719
+                                  - cell "19(J)" [ref=e1121]:
+                                    - link "19(J)" [ref=e1122] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e073ea03-f387-4b2d-a5d5-6cdf8231ae88
+                                  - cell [ref=e1123]
+                                  - cell [ref=e1124]
+                                  - cell [ref=e1125]
+                                  - cell [ref=e1126]
+                                  - cell [ref=e1127]
+                                  - cell [ref=e1128]
+                                  - cell [ref=e1129]
+                                  - cell [ref=e1130]
+                                  - cell [ref=e1131]
+                                  - cell [ref=e1132]
+                                  - cell [ref=e1133]
+                                  - cell [ref=e1134]
+                                  - cell [ref=e1135]
+                                  - cell [ref=e1136]
+                                  - cell [ref=e1137]
+                                  - cell [ref=e1138]
+                            - generic [ref=e1139]: 2023. gads.
+                            - table [ref=e1140]:
+                              - rowgroup [ref=e1141]:
+                                - row "Mēnesis Saeimas sēdes datums un sēdes tips" [ref=e1142]:
+                                  - cell "Mēnesis" [ref=e1143]
+                                  - cell "Saeimas sēdes datums un sēdes tips" [ref=e1144]
+                                - row "Janvāris 12 19 19(J) 26 26(J) 31(A) 26 / 31" [ref=e1145]:
+                                  - cell "Janvāris" [ref=e1146]
+                                  - cell "12" [ref=e1147]:
+                                    - link "12" [ref=e1148] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a308b418-47c8-4e63-bab2-68b3e667eef2
+                                  - cell "19" [ref=e1149]:
+                                    - link "19" [ref=e1150] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=233d0004-0e97-4ecb-864c-bae7b8411cd1
+                                  - cell "19(J)" [ref=e1151]:
+                                    - link "19(J)" [ref=e1152] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=9f881ec7-470f-413b-9408-74bf5c93e5df
+                                  - cell "26" [ref=e1153]:
+                                    - link "26" [ref=e1154] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d9825859-a624-46bb-b1bd-207e7bbffbf9
+                                  - cell "26(J)" [ref=e1155]:
+                                    - link "26(J)" [ref=e1156] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=aa555890-eaf0-4c73-b1ee-d40eba3a8b33
+                                  - cell "31(A)" [ref=e1157]:
+                                    - link "31(A)" [ref=e1158] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e1aad353-4cde-48db-9f9c-2ec991e3c55d
+                                  - cell "26 / 31" [ref=e1159]:
+                                    - link "26 / 31" [ref=e1160] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d9825859-a624-46bb-b1bd-207e7bbffbf9
+                                  - cell [ref=e1161]
+                                  - cell [ref=e1162]
+                                  - cell [ref=e1163]
+                                  - cell [ref=e1164]
+                                  - cell [ref=e1165]
+                                  - cell [ref=e1166]
+                                  - cell [ref=e1167]
+                                  - cell [ref=e1168]
+                                  - cell [ref=e1169]
+                                  - cell [ref=e1170]
+                                  - cell [ref=e1171]
+                                  - cell [ref=e1172]
+                                  - cell [ref=e1173]
+                                  - cell [ref=e1174]
+                                  - cell [ref=e1175]
+                                  - cell [ref=e1176]
+                                  - cell [ref=e1177]
+                                  - cell [ref=e1178]
+                                  - cell [ref=e1179]
+                                  - cell [ref=e1180]
+                                  - cell [ref=e1181]
+                                - row "Februāris 2 2(J) 9 9(J) 13(A) 16 16(J) 17(A) 23(A) 23 23(J) 24(A)" [ref=e1182]:
+                                  - cell "Februāris" [ref=e1183]
+                                  - cell "2" [ref=e1184]:
+                                    - link "2" [ref=e1185] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c37f214d-f976-4540-95be-f008d702bc6f
+                                  - cell "2(J)" [ref=e1186]:
+                                    - link "2(J)" [ref=e1187] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=abc26f0f-6d88-4cee-94a4-91e08322b7f0
+                                  - cell "9" [ref=e1188]:
+                                    - link "9" [ref=e1189] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=42dc51d4-a799-48d3-b33f-a2b8ecb1f56a
+                                  - cell "9(J)" [ref=e1190]:
+                                    - link "9(J)" [ref=e1191] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2b3ab9f6-ebe4-48ca-b9b1-0fd61aa33b08
+                                  - cell "13(A)" [ref=e1192]:
+                                    - link "13(A)" [ref=e1193] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=987dd77d-2a56-4e8f-bd67-2f6d35435427
+                                  - cell "16" [ref=e1194]:
+                                    - link "16" [ref=e1195] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f011b7e2-705a-45d1-aadd-3015d98fac03
+                                  - cell "16(J)" [ref=e1196]:
+                                    - link "16(J)" [ref=e1197] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3a9006f8-f907-4890-bcc4-a37fec453b82
+                                  - cell "17(A)" [ref=e1198]:
+                                    - link "17(A)" [ref=e1199] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ca262519-6aea-4730-9084-13677c95e763
+                                  - cell "23(A)" [ref=e1200]:
+                                    - link "23(A)" [ref=e1201] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=894432e9-4b07-4758-9991-05e47aa8f142
+                                  - cell "23" [ref=e1202]:
+                                    - link "23" [ref=e1203] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f7911da0-3890-4420-8933-3b24fc8815ae
+                                  - cell "23(J)" [ref=e1204]:
+                                    - link "23(J)" [ref=e1205] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=48f496ea-2cb3-4eae-ab82-aa92fe295e80
+                                  - cell "24(A)" [ref=e1206]:
+                                    - link "24(A)" [ref=e1207] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ad294670-cde7-4d11-925c-d5556ac013ae
+                                  - cell [ref=e1208]
+                                  - cell [ref=e1209]
+                                  - cell [ref=e1210]
+                                  - cell [ref=e1211]
+                                  - cell [ref=e1212]
+                                  - cell [ref=e1213]
+                                  - cell [ref=e1214]
+                                  - cell [ref=e1215]
+                                  - cell [ref=e1216]
+                                  - cell [ref=e1217]
+                                  - cell [ref=e1218]
+                                  - cell [ref=e1219]
+                                  - cell [ref=e1220]
+                                  - cell [ref=e1221]
+                                  - cell [ref=e1222]
+                                  - cell [ref=e1223]
+                                - row "Marts 2 2(J) 8(A) 8 / 9(A) 9 9(J) 15(A) 16(J) 9 / 16 16 9 / 16(J) 23 23(J) 30 30(J)" [ref=e1224]:
+                                  - cell "Marts" [ref=e1225]
+                                  - cell "2" [ref=e1226]:
+                                    - link "2" [ref=e1227] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a6179587-0ed6-4930-8832-671326277dc8
+                                  - cell "2(J)" [ref=e1228]:
+                                    - link "2(J)" [ref=e1229] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=90414738-19aa-4f8b-83cd-f8d1e13d33d2
+                                  - cell "8(A)" [ref=e1230]:
+                                    - link "8(A)" [ref=e1231] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8b0926cf-f548-4497-bb31-5ad9f356a1b7
+                                  - cell "8 / 9(A)" [ref=e1232]:
+                                    - link "8 / 9(A)" [ref=e1233] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8b0926cf-f548-4497-bb31-5ad9f356a1b7
+                                  - cell "9" [ref=e1234]:
+                                    - link "9" [ref=e1235] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=409ca17e-bf79-46d4-bf66-d920b0b2cb8f
+                                  - cell "9(J)" [ref=e1236]:
+                                    - link "9(J)" [ref=e1237] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=12a15e26-c489-45b2-ab91-3c16eb23e606
+                                  - cell "15(A)" [ref=e1238]:
+                                    - link "15(A)" [ref=e1239] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=aeb4a882-3604-4307-b2fa-9ef7d3d579f2
+                                  - cell "16(J)" [ref=e1240]:
+                                    - link "16(J)" [ref=e1241] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3a15d2b5-ae4d-4d3c-a5b2-5b1443b3ab84
+                                  - cell "9 / 16" [ref=e1242]:
+                                    - link "9 / 16" [ref=e1243] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=409ca17e-bf79-46d4-bf66-d920b0b2cb8f
+                                  - cell "16" [ref=e1244]:
+                                    - link "16" [ref=e1245] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4ef6cb1a-cbcd-4644-8bd6-e66ac1e89574
+                                  - cell "9 / 16(J)" [ref=e1246]:
+                                    - link "9 / 16(J)" [ref=e1247] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=12a15e26-c489-45b2-ab91-3c16eb23e606
+                                  - cell "23" [ref=e1248]:
+                                    - link "23" [ref=e1249] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a4bf1639-02a2-40f2-80b1-1138ec314487
+                                  - cell "23(J)" [ref=e1250]:
+                                    - link "23(J)" [ref=e1251] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6fe6089d-def4-4109-aa75-3db4e5109767
+                                  - cell "30" [ref=e1252]:
+                                    - link "30" [ref=e1253] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a7094133-d95a-4406-97de-52412fe6bbf6
+                                  - cell "30(J)" [ref=e1254]:
+                                    - link "30(J)" [ref=e1255] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1e6a3303-d69b-48a2-accd-66689e954e74
+                                  - cell [ref=e1256]
+                                  - cell [ref=e1257]
+                                  - cell [ref=e1258]
+                                  - cell [ref=e1259]
+                                  - cell [ref=e1260]
+                                  - cell [ref=e1261]
+                                  - cell [ref=e1262]
+                                  - cell [ref=e1263]
+                                  - cell [ref=e1264]
+                                  - cell [ref=e1265]
+                                  - cell [ref=e1266]
+                                  - cell [ref=e1267]
+                                  - cell [ref=e1268]
+                                - row "Aprīlis 5 5(J) 20 26(A) 20 / 27 27(A) 27(J) 27" [ref=e1269]:
+                                  - cell "Aprīlis" [ref=e1270]
+                                  - cell "5" [ref=e1271]:
+                                    - link "5" [ref=e1272] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ee15074c-02d3-4b37-a23b-d194923e08f4
+                                  - cell "5(J)" [ref=e1273]:
+                                    - link "5(J)" [ref=e1274] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c03c8e1f-383a-4d03-beae-edaafaf46427
+                                  - cell "20" [ref=e1275]:
+                                    - link "20" [ref=e1276] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=72ca5261-64ac-495c-b580-0390830291be
+                                  - cell "26(A)" [ref=e1277]:
+                                    - link "26(A)" [ref=e1278] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3ef2d552-aff6-46d6-83ea-e9496b352173
+                                  - cell "20 / 27" [ref=e1279]:
+                                    - link "20 / 27" [ref=e1280] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=72ca5261-64ac-495c-b580-0390830291be
+                                  - cell "27(A)" [ref=e1281]:
+                                    - link "27(A)" [ref=e1282] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b017131f-1a9e-445e-b7be-ad03666cbb49
+                                  - cell "27(J)" [ref=e1283]:
+                                    - link "27(J)" [ref=e1284] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5eb7653e-e2d3-4d63-8b2d-8ea767719e39
+                                  - cell "27" [ref=e1285]:
+                                    - link "27" [ref=e1286] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d2e4b2c4-219e-41d1-826d-c6aa53588a90
+                                  - cell [ref=e1287]
+                                  - cell [ref=e1288]
+                                  - cell [ref=e1289]
+                                  - cell [ref=e1290]
+                                  - cell [ref=e1291]
+                                  - cell [ref=e1292]
+                                  - cell [ref=e1293]
+                                  - cell [ref=e1294]
+                                  - cell [ref=e1295]
+                                  - cell [ref=e1296]
+                                  - cell [ref=e1297]
+                                  - cell [ref=e1298]
+                                  - cell [ref=e1299]
+                                  - cell [ref=e1300]
+                                  - cell [ref=e1301]
+                                  - cell [ref=e1302]
+                                  - cell [ref=e1303]
+                                  - cell [ref=e1304]
+                                  - cell [ref=e1305]
+                                  - cell [ref=e1306]
+                                - row "Maijs 4(S) 20 / 27 / 11 11 11(J) 20 / 27 / 11 / 18 18 11 / 18 18(J) 20 / 27 / 11 / 18 / 25 25(J) 25 28(A) 31(A)" [ref=e1307]:
+                                  - cell "Maijs" [ref=e1308]
+                                  - cell "4(S)" [ref=e1309]:
+                                    - link "4(S)" [ref=e1310] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7e27ac2b-cce6-4bdb-a30a-f710040e6e85
+                                  - cell "20 / 27 / 11" [ref=e1311]:
+                                    - link "20 / 27 / 11" [ref=e1312] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=72ca5261-64ac-495c-b580-0390830291be
+                                  - cell "11" [ref=e1313]:
+                                    - link "11" [ref=e1314] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b09be5d8-5f7d-4f37-a220-38f19e937427
+                                  - cell "11(J)" [ref=e1315]:
+                                    - link "11(J)" [ref=e1316] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=286cf493-2d29-440b-af28-b3a17655d833
+                                  - cell "20 / 27 / 11 / 18" [ref=e1317]:
+                                    - link "20 / 27 / 11 / 18" [ref=e1318] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=72ca5261-64ac-495c-b580-0390830291be
+                                  - cell "18" [ref=e1319]:
+                                    - link "18" [ref=e1320] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8bb83e2c-f5ac-4213-8884-890b9c931a7a
+                                  - cell "11 / 18" [ref=e1321]:
+                                    - link "11 / 18" [ref=e1322] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b09be5d8-5f7d-4f37-a220-38f19e937427
+                                  - cell "18(J)" [ref=e1323]:
+                                    - link "18(J)" [ref=e1324] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=78fda7fc-d74f-4dda-b9dd-ee45b9e0befd
+                                  - cell "20 / 27 / 11 / 18 / 25" [ref=e1325]:
+                                    - link "20 / 27 / 11 / 18 / 25" [ref=e1326] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=72ca5261-64ac-495c-b580-0390830291be
+                                  - cell "25(J)" [ref=e1327]:
+                                    - link "25(J)" [ref=e1328] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7cff2609-2109-44d9-bbff-d7d980864e41
+                                  - cell "25" [ref=e1329]:
+                                    - link "25" [ref=e1330] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b52e61f6-166c-4a97-a9f0-cf82d45e0555
+                                  - cell "28(A)" [ref=e1331]:
+                                    - link "28(A)" [ref=e1332] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d974cbcb-d8d1-4399-8f9e-90142f76a4f3
+                                  - cell "31(A)" [ref=e1333]:
+                                    - link "31(A)" [ref=e1334] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d7022144-02f8-4c21-90a9-1015009b66d5
+                                  - cell [ref=e1335]
+                                  - cell [ref=e1336]
+                                  - cell [ref=e1337]
+                                  - cell [ref=e1338]
+                                  - cell [ref=e1339]
+                                  - cell [ref=e1340]
+                                  - cell [ref=e1341]
+                                  - cell [ref=e1342]
+                                  - cell [ref=e1343]
+                                  - cell [ref=e1344]
+                                  - cell [ref=e1345]
+                                  - cell [ref=e1346]
+                                  - cell [ref=e1347]
+                                  - cell [ref=e1348]
+                                  - cell [ref=e1349]
+                                - row "Jūnijs 1(A) 1 1(J) 8 8(J) 15 15(J) 15(A) 22(J) 22" [ref=e1350]:
+                                  - cell "Jūnijs" [ref=e1351]
+                                  - cell "1(A)" [ref=e1352]:
+                                    - link "1(A)" [ref=e1353] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=cbf89c0e-5833-4071-ae08-8b90b5ddf91e
+                                  - cell "1" [ref=e1354]:
+                                    - link "1" [ref=e1355] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a2d94bf8-d9e3-4d4e-9b56-5a51e0e6efc2
+                                  - cell "1(J)" [ref=e1356]:
+                                    - link "1(J)" [ref=e1357] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5f6a0258-edcc-4ad3-8b60-0afe1df7fe04
+                                  - cell "8" [ref=e1358]:
+                                    - link "8" [ref=e1359] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=127b770b-92da-475f-bdf4-9283067cd78b
+                                  - cell "8(J)" [ref=e1360]:
+                                    - link "8(J)" [ref=e1361] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ae811d1b-682e-4bfa-92a7-b47226b87f35
+                                  - cell "15" [ref=e1362]:
+                                    - link "15" [ref=e1363] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fd77faeb-d21b-49ed-9e79-38323db566c1
+                                  - cell "15(J)" [ref=e1364]:
+                                    - link "15(J)" [ref=e1365] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=96041a00-2c94-4e7e-9b87-e5d5a4a89825
+                                  - cell "15(A)" [ref=e1366]:
+                                    - link "15(A)" [ref=e1367] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4d35519a-c3ce-4483-8c5c-543ce1f154b9
+                                  - cell "22(J)" [ref=e1368]:
+                                    - link "22(J)" [ref=e1369] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=1919f6b1-d109-4867-bb87-0359c5577803
+                                  - cell "22" [ref=e1370]:
+                                    - link "22" [ref=e1371] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ebd2ca77-33dc-4e45-91fe-0d51a7246ad6
+                                  - cell [ref=e1372]
+                                  - cell [ref=e1373]
+                                  - cell [ref=e1374]
+                                  - cell [ref=e1375]
+                                  - cell [ref=e1376]
+                                  - cell [ref=e1377]
+                                  - cell [ref=e1378]
+                                  - cell [ref=e1379]
+                                  - cell [ref=e1380]
+                                  - cell [ref=e1381]
+                                  - cell [ref=e1382]
+                                  - cell [ref=e1383]
+                                  - cell [ref=e1384]
+                                  - cell [ref=e1385]
+                                  - cell [ref=e1386]
+                                  - cell [ref=e1387]
+                                  - cell [ref=e1388]
+                                  - cell [ref=e1389]
+                                - row "Jūlijs 8(As)" [ref=e1390]:
+                                  - cell "Jūlijs" [ref=e1391]
+                                  - cell "8(As)" [ref=e1392]:
+                                    - link "8(As)" [ref=e1393] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ec047a46-c4cc-4bc4-8f57-ba110d0371ee
+                                  - cell [ref=e1394]
+                                  - cell [ref=e1395]
+                                  - cell [ref=e1396]
+                                  - cell [ref=e1397]
+                                  - cell [ref=e1398]
+                                  - cell [ref=e1399]
+                                  - cell [ref=e1400]
+                                  - cell [ref=e1401]
+                                  - cell [ref=e1402]
+                                  - cell [ref=e1403]
+                                  - cell [ref=e1404]
+                                  - cell [ref=e1405]
+                                  - cell [ref=e1406]
+                                  - cell [ref=e1407]
+                                  - cell [ref=e1408]
+                                  - cell [ref=e1409]
+                                  - cell [ref=e1410]
+                                  - cell [ref=e1411]
+                                  - cell [ref=e1412]
+                                  - cell [ref=e1413]
+                                  - cell [ref=e1414]
+                                  - cell [ref=e1415]
+                                  - cell [ref=e1416]
+                                  - cell [ref=e1417]
+                                  - cell [ref=e1418]
+                                  - cell [ref=e1419]
+                                  - cell [ref=e1420]
+                                - row "Septembris 7 14 15(A) 20(A) 21 26(A) 28" [ref=e1421]:
+                                  - cell "Septembris" [ref=e1422]
+                                  - cell "7" [ref=e1423]:
+                                    - link "7" [ref=e1424] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=214f7c30-ff3d-4a41-9c88-240777987b87
+                                  - cell "14" [ref=e1425]:
+                                    - link "14" [ref=e1426] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c69a11c0-4106-4e8f-917b-d1ed41e7a970
+                                  - cell "15(A)" [ref=e1427]:
+                                    - link "15(A)" [ref=e1428] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=49a66200-49c3-4426-888b-20d34a55bbec
+                                  - cell "20(A)" [ref=e1429]:
+                                    - link "20(A)" [ref=e1430] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=5c462784-60c8-410d-8e7d-0aebd8693ac6
+                                  - cell "21" [ref=e1431]:
+                                    - link "21" [ref=e1432] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d4fabded-756a-40cf-813f-5d9fd99ff7a8
+                                  - cell "26(A)" [ref=e1433]:
+                                    - link "26(A)" [ref=e1434] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fc0ca935-4b37-47d0-bbc4-ac8a5ff588f5
+                                  - cell "28" [ref=e1435]:
+                                    - link "28" [ref=e1436] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=928217fe-0991-4266-9a72-8a77e25c7ea7
+                                  - cell [ref=e1437]
+                                  - cell [ref=e1438]
+                                  - cell [ref=e1439]
+                                  - cell [ref=e1440]
+                                  - cell [ref=e1441]
+                                  - cell [ref=e1442]
+                                  - cell [ref=e1443]
+                                  - cell [ref=e1444]
+                                  - cell [ref=e1445]
+                                  - cell [ref=e1446]
+                                  - cell [ref=e1447]
+                                  - cell [ref=e1448]
+                                  - cell [ref=e1449]
+                                  - cell [ref=e1450]
+                                  - cell [ref=e1451]
+                                  - cell [ref=e1452]
+                                  - cell [ref=e1453]
+                                  - cell [ref=e1454]
+                                  - cell [ref=e1455]
+                                  - cell [ref=e1456]
+                                  - cell [ref=e1457]
+                                - row "Oktobris 5 12 12(J) 19 19(J) 26(J) 26" [ref=e1458]:
+                                  - cell "Oktobris" [ref=e1459]
+                                  - cell "5" [ref=e1460]:
+                                    - link "5" [ref=e1461] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e0ca28da-7d7b-43f7-b022-0c4947a7f09d
+                                  - cell "12" [ref=e1462]:
+                                    - link "12" [ref=e1463] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=0d6870ba-31fd-4ff2-bf11-787b4470f517
+                                  - cell "12(J)" [ref=e1464]:
+                                    - link "12(J)" [ref=e1465] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fc7e87dd-2193-4df3-97d1-d6498bbc45ec
+                                  - cell "19" [ref=e1466]:
+                                    - link "19" [ref=e1467] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=54db5c9d-cb3f-4b53-96c2-fbb68ee36341
+                                  - cell "19(J)" [ref=e1468]:
+                                    - link "19(J)" [ref=e1469] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ed24debf-a9aa-40e2-93d6-becafc18d4a4
+                                  - cell "26(J)" [ref=e1470]:
+                                    - link "26(J)" [ref=e1471] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=92a41e56-230f-4825-9dfc-a48ec75050f9
+                                  - cell "26" [ref=e1472]:
+                                    - link "26" [ref=e1473] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=8a639998-f762-4d7d-90d2-0353d9ca9739
+                                  - cell [ref=e1474]
+                                  - cell [ref=e1475]
+                                  - cell [ref=e1476]
+                                  - cell [ref=e1477]
+                                  - cell [ref=e1478]
+                                  - cell [ref=e1479]
+                                  - cell [ref=e1480]
+                                  - cell [ref=e1481]
+                                  - cell [ref=e1482]
+                                  - cell [ref=e1483]
+                                  - cell [ref=e1484]
+                                  - cell [ref=e1485]
+                                  - cell [ref=e1486]
+                                  - cell [ref=e1487]
+                                  - cell [ref=e1488]
+                                  - cell [ref=e1489]
+                                  - cell [ref=e1490]
+                                  - cell [ref=e1491]
+                                  - cell [ref=e1492]
+                                  - cell [ref=e1493]
+                                  - cell [ref=e1494]
+                                - row "Novembris 2(J) 2 9 9(J) 15(A) 15(J) 16(A) 18(S) 23 23(J) 30 30(J)" [ref=e1495]:
+                                  - cell "Novembris" [ref=e1496]
+                                  - cell "2(J)" [ref=e1497]:
+                                    - link "2(J)" [ref=e1498] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d67bf93c-6568-48b5-9d86-b42c764028d1
+                                  - cell "2" [ref=e1499]:
+                                    - link "2" [ref=e1500] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f8ea11a3-850d-4642-a34f-5004dab6b37d
+                                  - cell "9" [ref=e1501]:
+                                    - link "9" [ref=e1502] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6bffbc34-af36-4948-b0ed-f1ae562edcad
+                                  - cell "9(J)" [ref=e1503]:
+                                    - link "9(J)" [ref=e1504] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2b9dd1d1-459f-4439-a7c3-6b5f853c2e80
+                                  - cell "15(A)" [ref=e1505]:
+                                    - link "15(A)" [ref=e1506] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=60e3f466-81a0-4e78-b64a-56f74f9b2b08
+                                  - cell "15(J)" [ref=e1507]:
+                                    - link "15(J)" [ref=e1508] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=77d89122-e8ab-41e0-a978-cb5357391174
+                                  - cell "16(A)" [ref=e1509]:
+                                    - link "16(A)" [ref=e1510] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2e7d6c4c-1ca4-493a-8439-0ef2517bb9d5
+                                  - cell "18(S)" [ref=e1511]:
+                                    - link "18(S)" [ref=e1512] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ac72099c-609f-4081-96af-bc95f59cf1c3
+                                  - cell "23" [ref=e1513]:
+                                    - link "23" [ref=e1514] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=84bf0467-9e37-490e-836e-09f473389a8b
+                                  - cell "23(J)" [ref=e1515]:
+                                    - link "23(J)" [ref=e1516] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6103710d-342d-4af9-a4bb-2fa6c2d504f2
+                                  - cell "30" [ref=e1517]:
+                                    - link "30" [ref=e1518] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ba3fd5e4-5a42-42c4-a88a-4a7ab4e628e3
+                                  - cell "30(J)" [ref=e1519]:
+                                    - link "30(J)" [ref=e1520] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=30b585e9-4ea8-4c56-aa56-16e6e5ae22f7
+                                  - cell [ref=e1521]
+                                  - cell [ref=e1522]
+                                  - cell [ref=e1523]
+                                  - cell [ref=e1524]
+                                  - cell [ref=e1525]
+                                  - cell [ref=e1526]
+                                  - cell [ref=e1527]
+                                  - cell [ref=e1528]
+                                  - cell [ref=e1529]
+                                  - cell [ref=e1530]
+                                  - cell [ref=e1531]
+                                  - cell [ref=e1532]
+                                  - cell [ref=e1533]
+                                  - cell [ref=e1534]
+                                  - cell [ref=e1535]
+                                  - cell [ref=e1536]
+                                - row "Decembris 6 6(J) 30 / 6 7(A) 7 / 8(A) 7 / 8 / 9(A) 14 14(J) 21 21(J)" [ref=e1537]:
+                                  - cell "Decembris" [ref=e1538]
+                                  - cell "6" [ref=e1539]:
+                                    - link "6" [ref=e1540] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=105c83b3-d385-454e-ac9f-b1c4a0c1b3b7
+                                  - cell "6(J)" [ref=e1541]:
+                                    - link "6(J)" [ref=e1542] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3e57f8a1-eea7-430e-b2fb-63ffe33bedcc
+                                  - cell "30 / 6" [ref=e1543]:
+                                    - link "30 / 6" [ref=e1544] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ba3fd5e4-5a42-42c4-a88a-4a7ab4e628e3
+                                  - cell "7(A)" [ref=e1545]:
+                                    - link "7(A)" [ref=e1546] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d282f971-19fc-46b2-9e29-dfe7d60274c8
+                                  - cell "7 / 8(A)" [ref=e1547]:
+                                    - link "7 / 8(A)" [ref=e1548] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d282f971-19fc-46b2-9e29-dfe7d60274c8
+                                  - cell "7 / 8 / 9(A)" [ref=e1549]:
+                                    - link "7 / 8 / 9(A)" [ref=e1550] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d282f971-19fc-46b2-9e29-dfe7d60274c8
+                                  - cell "14" [ref=e1551]:
+                                    - link "14" [ref=e1552] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=c98d60c9-8d04-40e8-beed-f995111f6627
+                                  - cell "14(J)" [ref=e1553]:
+                                    - link "14(J)" [ref=e1554] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=3d34a3f7-53de-4c7c-abaa-839e771f6766
+                                  - cell "21" [ref=e1555]:
+                                    - link "21" [ref=e1556] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=56972ef2-6a86-4e01-9243-f221a5a8575c
+                                  - cell "21(J)" [ref=e1557]:
+                                    - link "21(J)" [ref=e1558] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=f2ed2f37-684f-46c9-a1d6-85355ce3c11d
+                                  - cell [ref=e1559]
+                                  - cell [ref=e1560]
+                                  - cell [ref=e1561]
+                                  - cell [ref=e1562]
+                                  - cell [ref=e1563]
+                                  - cell [ref=e1564]
+                                  - cell [ref=e1565]
+                                  - cell [ref=e1566]
+                                  - cell [ref=e1567]
+                                  - cell [ref=e1568]
+                                  - cell [ref=e1569]
+                                  - cell [ref=e1570]
+                                  - cell [ref=e1571]
+                                  - cell [ref=e1572]
+                                  - cell [ref=e1573]
+                                  - cell [ref=e1574]
+                                  - cell [ref=e1575]
+                                  - cell [ref=e1576]
+                            - generic [ref=e1577]: 2022. gads.
+                            - table [ref=e1578]:
+                              - rowgroup [ref=e1579]:
+                                - row "Mēnesis Saeimas sēdes datums un sēdes tips" [ref=e1580]:
+                                  - cell "Mēnesis" [ref=e1581]
+                                  - cell "Saeimas sēdes datums un sēdes tips" [ref=e1582]
+                                - row "Novembris 1 7(S) 17(A) 18(S) 23(A) 24(A) 24(A)" [ref=e1583]:
+                                  - cell "Novembris" [ref=e1584]
+                                  - cell "1" [ref=e1585]:
+                                    - link "1" [ref=e1586] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=a5c1ff19-7f83-45d9-9489-c71a20d99f2c
+                                  - cell "7(S)" [ref=e1587]:
+                                    - link "7(S)" [ref=e1588] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b90a9070-c72d-487c-b2b5-46a70874a6b3
+                                  - cell "17(A)" [ref=e1589]:
+                                    - link "17(A)" [ref=e1590] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=b1ff0f7f-2d1e-403f-a7b2-8711d7945476
+                                  - cell "18(S)" [ref=e1591]:
+                                    - link "18(S)" [ref=e1592] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=d8d8a2bc-5a2a-4d7a-957a-5d4b9a42980a
+                                  - cell "23(A)" [ref=e1593]:
+                                    - link "23(A)" [ref=e1594] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2eb35a31-56d4-4c24-8008-a4f495d181ab
+                                  - cell "24(A)" [ref=e1595]:
+                                    - link "24(A)" [ref=e1596] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=6b1c1b63-4232-4a8b-86dc-f1e819384155
+                                  - cell "24(A)" [ref=e1597]:
+                                    - link "24(A)" [ref=e1598] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e22d0733-501e-4bbd-b6ac-2ab907e9c16b
+                                  - cell [ref=e1599]
+                                  - cell [ref=e1600]
+                                  - cell [ref=e1601]
+                                  - cell [ref=e1602]
+                                  - cell [ref=e1603]
+                                  - cell [ref=e1604]
+                                  - cell [ref=e1605]
+                                  - cell [ref=e1606]
+                                  - cell [ref=e1607]
+                                  - cell [ref=e1608]
+                                  - cell [ref=e1609]
+                                  - cell [ref=e1610]
+                                  - cell [ref=e1611]
+                                  - cell [ref=e1612]
+                                  - cell [ref=e1613]
+                                  - cell [ref=e1614]
+                                  - cell [ref=e1615]
+                                  - cell [ref=e1616]
+                                  - cell [ref=e1617]
+                                  - cell [ref=e1618]
+                                  - cell [ref=e1619]
+                                - row "Decembris 24 / 1(A) 1 8 14(A) 15 22" [ref=e1620]:
+                                  - cell "Decembris" [ref=e1621]
+                                  - cell "24 / 1(A)" [ref=e1622]:
+                                    - link "24 / 1(A)" [ref=e1623] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=e22d0733-501e-4bbd-b6ac-2ab907e9c16b
+                                  - cell "1" [ref=e1624]:
+                                    - link "1" [ref=e1625] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=7b8140a9-7e8d-43d5-9acb-b59c9fec0da2
+                                  - cell "8" [ref=e1626]:
+                                    - link "8" [ref=e1627] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=2b6e15d0-bfbd-4c10-a215-337081257ae6
+                                  - cell "14(A)" [ref=e1628]:
+                                    - link "14(A)" [ref=e1629] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=ce801915-e590-43f4-9b0b-c7baeae213d1
+                                  - cell "15" [ref=e1630]:
+                                    - link "15" [ref=e1631] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=fe1bfaa9-e603-4b08-bc00-477be158c114
+                                  - cell "22" [ref=e1632]:
+                                    - link "22" [ref=e1633] [cursor=pointer]:
+                                      - /url: ./DK?ReadForm&nr=4220ca7d-537f-4974-969a-7f45287d08c6
+                                  - cell [ref=e1634]
+                                  - cell [ref=e1635]
+                                  - cell [ref=e1636]
+                                  - cell [ref=e1637]
+                                  - cell [ref=e1638]
+                                  - cell [ref=e1639]
+                                  - cell [ref=e1640]
+                                  - cell [ref=e1641]
+                                  - cell [ref=e1642]
+                                  - cell [ref=e1643]
+                                  - cell [ref=e1644]
+                                  - cell [ref=e1645]
+                                  - cell [ref=e1646]
+                                  - cell [ref=e1647]
+                                  - cell [ref=e1648]
+                                  - cell [ref=e1649]
+                                  - cell [ref=e1650]
+                                  - cell [ref=e1651]
+                                  - cell [ref=e1652]
+                                  - cell [ref=e1653]
+                                  - cell [ref=e1654]
+                                  - cell [ref=e1655]
+                    - generic [ref=e1656]:
+                      - generic [ref=e1657]: "Sēdes tipa skaidrojums:"
+                      - text: A - ārkārtas sēde, S - svinīgā sēde, Sl - slēgtā sēde, J - atbilžu sniegšana uz deputātu jautājumiem, As - ārkārtas sesijas sēde
+      - cell [ref=e1658]:
+        - img [ref=e1659]
+    - row [ref=e1660]:
+      - cell [ref=e1661]:
+        - img [ref=e1662]
