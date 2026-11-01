@@ -1,0 +1,69 @@
+{% extends "base.html.j2" %}
+{% set active_page = "spriedzes" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric, multi_select, ms_option %}
+
+{% block title %}Spriedzes{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+{% set spv_lead %}
+      <p class="pagehead-lead">Kurš kuram uzbrūk, kurš kuru atbalsta un kur nostājas saduras: politiķu publiskie izteikumi par citiem politiķiem.</p>{% endset %}
+  {% call pagehead("Politisko spriedžu reģistrs", "Spriedzes", lead=spv_lead) %}
+      {{ metric("Kopā", tensions|length) }}
+  {%- endcall %}
+
+  <div class="filter-bar">
+    {% call multi_select("type-select", "Visi tipi", "Meklēt tipus") %}
+        {% for tt in tension_types %}
+        {{ ms_option(tt, type_labels.get(tt, tt)) }}
+        {% endfor %}
+    {%- endcall %}
+
+    {% call multi_select("party-select", "Visas partijas", "Meklēt partijas") %}
+        {% for party in parties %}
+        {{ ms_option(party) }}
+        {% endfor %}
+    {%- endcall %}
+
+    {% call multi_select("person-select", "Visas personas", "Meklēt personas") %}
+        {% for person in persons %}
+        {{ ms_option(person) }}
+        {% endfor %}
+    {%- endcall %}
+  </div>
+
+  {# Sākuma teksts bez JS (visi redzami) — tas pats formāts kā sgv1.js atminaShowCount. #}
+  {%- set n_all = "{:,}".format(tensions|length)|replace(",", " ") %}
+  <p class="muted" id="tensions-count" role="status" aria-live="polite">Rāda {{ n_all }} no {{ n_all }} spriedzēm.</p>
+  <div class="grid-2" id="tensions-grid">
+    {% for t in tensions %}
+    <article class="card spv-card" data-type="{{ t.tension_type }}" data-source-party="{{ t.source_party or '' }}" data-target-party="{{ t.target_party or '' }}" data-source-person="{{ t.source_name }}" data-target-person="{{ t.target_name }}">
+      <div class="spv-head">
+        <p class="spv-pair">
+          <span class="spv-person"><a href="politiki/{{ t.source_slug }}.html" class="spv-name">{{ t.source_name }}</a>{% if t.source_party_chip %} <span class="pp-party-chip"{% if t.source_party_chip.color %} style="--party-color: {{ t.source_party_chip.color }}"{% endif %} title="{{ t.source_party_chip.name }}">{{ t.source_party_chip.short }}</span>{% endif %}</span>
+          <span class="spv-person"><span class="spv-arrow" aria-hidden="true">→</span><a href="politiki/{{ t.target_slug }}.html" class="spv-name">{{ t.target_name }}</a>{% if t.target_party_chip %} <span class="pp-party-chip"{% if t.target_party_chip.color %} style="--party-color: {{ t.target_party_chip.color }}"{% endif %} title="{{ t.target_party_chip.name }}">{{ t.target_party_chip.short }}</span>{% endif %}</span>
+        </p>
+        <span class="badge {{ t.badge }}">{{ t.type_label }}</span>
+      </div>
+      <p class="spv-desc">{{ t.description }}</p>
+      <div class="spv-foot">
+        {% if t.topic %}<span class="spv-topic">{{ t.topic }}</span>{% endif %}
+        <span class="spv-meta">
+          {%- if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">{{ t.source_domain or 'Avots' }} ↗</a> · {% endif -%}
+          {%- if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener">Atbilde ↗</a> · {% endif -%}
+          <time datetime="{{ t.date }}">{{ t.date|lv_date }}</time>
+        </span>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="empty-state" id="tensions-empty" hidden>Nekas neatbilst izvēlētajiem filtriem.</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/spv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

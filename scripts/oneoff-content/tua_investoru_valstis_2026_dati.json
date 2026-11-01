@@ -1,0 +1,203 @@
+{
+ "kopa": {
+  "investori": 410,
+  "uznemumi": 50,
+  "arvalstu_pase": 165,
+  "jauna_parauga_kods": 236,
+  "veca_parauga_kods": 9
+ },
+ "pases_valstis": [
+  [
+   "Turcija",
+   33,
+   "12 uzņēmumos"
+  ],
+  [
+   "Ķīna",
+   21,
+   "16 no tām vienā grupā (2023)"
+  ],
+  [
+   "Indija",
+   18,
+   "13 uzņēmumos"
+  ],
+  [
+   "Vjetnama",
+   11,
+   "3 nesaistītas struktūras"
+  ],
+  [
+   "Pakistāna",
+   9,
+   ""
+  ],
+  [
+   "Ēģipte",
+   8,
+   ""
+  ],
+  [
+   "Nigērija",
+   7,
+   ""
+  ],
+  [
+   "ASV",
+   7,
+   ""
+  ],
+  [
+   "Sīrija",
+   6,
+   ""
+  ],
+  [
+   "Uzbekistāna",
+   5,
+   ""
+  ],
+  [
+   "Azerbaidžāna",
+   5,
+   ""
+  ],
+  [
+   "Jordānija",
+   5,
+   ""
+  ],
+  [
+   "Citas (18 valstis)",
+   30,
+   "pa 1–4"
+  ]
+ ],
+ "laiks_pusgadi": [
+  {
+   "periods": "2020 I",
+   "SIA": 6,
+   "AS": 0
+  },
+  {
+   "periods": "2022 I",
+   "SIA": 4,
+   "AS": 0
+  },
+  {
+   "periods": "2022 II",
+   "SIA": 3,
+   "AS": 0
+  },
+  {
+   "periods": "2023 I",
+   "SIA": 2,
+   "AS": 0
+  },
+  {
+   "periods": "2023 II",
+   "SIA": 25,
+   "AS": 0
+  },
+  {
+   "periods": "2024 II",
+   "SIA": 23,
+   "AS": 17
+  },
+  {
+   "periods": "2025 I",
+   "SIA": 17,
+   "AS": 0
+  },
+  {
+   "periods": "2025 II",
+   "SIA": 35,
+   "AS": 11
+  },
+  {
+   "periods": "2026 I",
+   "SIA": 101,
+   "AS": 8
+  },
+  {
+   "periods": "2026 II",
+   "SIA": 126,
+   "AS": 32
+  }
+ ],
+ "laiks_piezime": "AS datumi var būt reģistra iesniegšanas datumi, ne pirkuma datumi",
+ "likuma_atzimes": [
+  [
+   "2022-04-09",
+   "KF/BY pilsoņiem jaunas TUA par ieguldījumu vairs neizsniedz"
+  ],
+  [
+   "2026-06-11",
+   "Saeima pieņem jauno Imigrācijas likumu"
+  ],
+  [
+   "2026-08-20",
+   "Likums pieņemts atkārtoti"
+  ],
+  [
+   "2026-09-15",
+   "Jaunais likums stājas spēkā"
+  ]
+ ],
+ "divi_modeli": {
+  "investoru_partija": {
+   "apraksts": "Organizators patur balsis; investori iegādājas bezbalsu daļas",
+   "uznemumi": 34,
+   "investori": 316
+  },
+  "ipasnieku_gimenes": {
+   "apraksts": "Investori paši ir valdē vai patiesie labuma guvēji",
+   "uznemumi": 6,
+   "investori": 25,
+   "piemeri_bez_vardiem": [
+    "ģimenes uzņēmumi, kuros vecāki un bērni ir līdzīpašnieki",
+    "uzņēmumi, kuru valdē investori ir jau gadiem",
+    "vienā gadījumā visi investori ir no ES valsts, kam uzturēšanās atļauja nav vajadzīga"
+   ]
+  },
+  "piezime": "Kategorijas pārklājas daļēji; 16 uzņēmumos investoriem ir balsis"
+ },
+ "grupas": {
+  "grupas": 11,
+  "uznemumi": 30,
+  "investori": 243,
+  "sava_valsts": [
+   [
+    "«Cantab» grupa",
+    "Ķīna",
+    16,
+    17
+   ],
+   [
+    "«Rotus» grupa",
+    "Turcija",
+    14,
+    19
+   ]
+  ]
+ },
+ "iem_salidzinajums": {
+  "avots": "IeM ziņojuma projekts TAP 26-TA-1544 (valdībā nav izskatīts)",
+  "50k_cels_2025": {
+   "kopa": 110,
+   "Turcija": 40,
+   "Indija": 23
+  },
+  "musu_2025_2026_ar_pasi": {
+   "kopa": 121,
+   "Turcija": 30,
+   "Indija": 16
+  }
+ },
+ "bridinajumi": [
+  "Pases valsts ≠ uzturēšanās atļauja ≠ vienīgā pilsonība",
+  "Jaunā parauga kods ≠ ārzemnieks",
+  "50 uzņēmumi = visi ar šo paraugu UR atvērtajos datos 17.10.2026"
+ ],
+ "avots": "UR izraksti (info.ur.gov.lv), UR atvērtie dati 17.10.2026; atmina.lv analīze"
+}

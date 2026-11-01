@@ -1,0 +1,182 @@
+{
+  "_doc": "Curated characterization fixtures for src.matcher (extracted from src.ingest in Phase 1 of refactor-plan-2026-04-29.md). Each entry pins observed match_politicians() / extract_twitter_author_handle() output captured from master commit b0f9871 against data/atmina.db (politician IDs stable per tracked_politicians table). 2026-07-27: baseline deliberately extended for the B2+D2+H matcher package (docs/plans/2026-07-27-matcher-koliziju-plans.md) — cases named d2-*/b2-*/h-* pin the POST-change contract; matcher_politicians.json snapshot refreshed to the 219-row roster (+x_handle).",
+  "_invariants": "Each case targets a specific code path. Adding a new tracked politician with a previously unseen name MAY change expected_matches; adding one with conflicting first-name MAY change a foreign-firstname guard outcome. Update fixture deliberately when behavior changes.",
+
+  "match_politicians_cases": [
+    {
+      "name": "explicit-fullname",
+      "comment": "Plain full name → unique-form candidate, single subject role.",
+      "text": "Edgars Rinkēvičs šodien tikās ar premjeru.",
+      "expected_matches": [[1, "subject"]]
+    },
+    {
+      "name": "two-politicians-stable",
+      "comment": "Two distinct politicians, both unique-form. First (highest count, alphabetic tie) wins subject; rest mentioned.",
+      "text": "Edgars Rinkēvičs un Evika Siliņa apsprieda budžetu nākamajai sēdei.",
+      "expected_matches": [[1, "subject"], [2, "mentioned"]]
+    },
+    {
+      "name": "inflection-genitive-silinya",
+      "comment": "Latvian genitive ('Siliņas') resolves through _latvian_surname_inflections form generation.",
+      "text": "Siliņas viedoklis bija skaidrs — pretī šim risinājumam.",
+      "expected_matches": [[2, "subject"]]
+    },
+    {
+      "name": "surname-collision-bare",
+      "comment": "Bare 'Hermanis' without first-name disambiguator. Both Jānis (13) and Alvis (29) tracked. Truly ambiguous — first-name proximity filter (added 2026-05-13) drops both rather than guess. Old behavior returned both via inflection-not-shared accident; new behavior favors recall loss over false attribution.",
+      "text": "Hermanis paziņoja, ka atbalsta likumprojektu.",
+      "expected_matches": []
+    },
+    {
+      "name": "surname-collision-resolved-janis",
+      "comment": "Full name 'Jānis Hermanis' present → unique form match for pid=13. Alvis (29) dropped: shared-surname match without 'Alvis' or 'Alvja/Alvim/Alvi' preceding any Hermanis occurrence in text.",
+      "text": "Saeimas priekšsēdētāja vietnieks Jānis Hermanis vakar paziņoja par savu lēmumu.",
+      "expected_matches": [[13, "subject"]]
+    },
+    {
+      "name": "surname-collision-resolved-alvis",
+      "comment": "'Alvis Hermanis' present → unique form match for pid=29. Jānis (13) dropped for same reason as the mirror case: no Jānis/Jāņa/Jānim/Jāni preceding any Hermanis form.",
+      "text": "Režisors Alvis Hermanis komentēja teātri.",
+      "expected_matches": [[29, "subject"]]
+    },
+    {
+      "name": "negative-pattern-berzins-cebuvetaji",
+      "comment": "Andris Bērziņš (146) has negative_pattern 'biedrība Latvijas Ceļu būvētājs' — used to disambiguate from former president of same name. Pattern fires, match rejected.",
+      "text": "biedrība Latvijas Ceļu būvētājs uzaicināja Andri Bērziņu uz tikšanos.",
+      "expected_matches": []
+    },
+    {
+      "name": "negative-pattern-berzins-eks",
+      "comment": "Negative pattern 'eks-prezidents' fires — refers to former president, not the tracked ZZS deputy.",
+      "text": "eks-prezidents Andris Bērziņš pieminēja runā.",
+      "expected_matches": []
+    },
+    {
+      "name": "foreign-firstname-kalnins",
+      "comment": "'Krists Kalniņš' — Krists is NOT Rūdolfs (the tracked Kalniņš's first name). foreign-firstname guard rejects.",
+      "text": "Krists Kalniņš teica, ka komiteja vēl nav lēmusi.",
+      "expected_matches": []
+    },
+    {
+      "name": "foreign-firstname-kols",
+      "comment": "'Tomass Alens' is Rihards Kols's negative_pattern (referring to a different person). Match rejected.",
+      "text": "Tomass Alens un Rihards Kols apsprieda situāciju.",
+      "expected_matches": []
+    },
+    {
+      "name": "common-word-guard-krasta",
+      "comment": "'Krasta iela' is street name, not politician 'Krasta' (if any). _surname_has_person_context returns False → no match.",
+      "text": "Krasta iela tiek pārbūvēta nākamgad.",
+      "expected_matches": []
+    },
+    {
+      "name": "empty-match",
+      "comment": "Article without any politician reference returns empty list.",
+      "text": "Šodien Rīgā līs lietus, sola sinoptiķi. Rīt gaidāmas pārmaiņas atmosfēras spiedienā.",
+      "expected_matches": []
+    },
+    {
+      "name": "d2-prefix-kolumbiesi",
+      "comment": "D2 boundary: auto-inflected 'Kolu' (acc. of Kols, pid=24) is a prefix of 'Kolumbieši' — a word-boundary check must kill the substring bomb. Kols's negative_patterns cover 'Kolumbija'/'Kolumbus' but not this word, so only the code guard stops it (pre-B2D2H the matcher linked pid=24).",
+      "text": "Kolumbieši svin uzvaru riteņbraukšanas sacensībās.",
+      "expected_matches": []
+    },
+    {
+      "name": "d2-prefix-lacis-komponists",
+      "comment": "D2 boundary: 'Lāci' (acc. of Lāce, pid=158) is a prefix of masc. 'Lācis' (the composer). Preceded by a lowercase verb, the foreign-first-name veto never fires — only the boundary check stops the Lāce↔Lācis gender-pair class (5 FP docs in the 2026-07 corpus).",
+      "text": "Mūziklam mūziku sarakstījis Lācis, iestudējums gaidāms decembrī.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-namesake-smits-alberts",
+      "comment": "B2 fn_all: declined namesake ('Alberts Šmits ... Šmita') matches TWO forms, so the old count==1 veto gate never fired. The extended veto scans all matched forms when none contains the first name: 'Alberts' is foreign, no correct signal → reject (pid=150 Didzis Šmits linked pre-B2D2H).",
+      "text": "Hokejists Alberts Šmits pagarināja līgumu ar klubu. Šmita pārstāvis apstiprināja darījumu.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-namesake-valainis-oskars",
+      "comment": "-is phantom accusative: 'Valainis' contains generated acc. 'Valaini' as a prefix, inflating count to 2 and bypassing the count==1 veto. D2 boundary kills the nested occurrence, restoring count=1; veto then sees foreign 'Oskars' → reject (pid=25 linked pre-B2D2H).",
+      "text": "Uzņēmējs Oskars Valainis atklāja jaunu ražotni Jelgavā.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-namesake-kucinskis-matiss",
+      "comment": "Same -is phantom + genitive: 'Kučinskis'⊃'Kučinski' plus real 'Kučinska' → count=3 pre-B2D2H. After boundary the genitive occurrence follows a sentence end (skipped) and the nominative is preceded by foreign 'Matīss' → reject (pid=105).",
+      "text": "Komponists Matīss Kučinskis raksta jaunu simfoniju. Kučinska skaņdarbs izskanēs festivālā.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-namesake-citskovskis-ugis",
+      "comment": "Namesake with explicit declension forms in name_forms (Citskovska/Citskovski): count inflation via nested prefix + multiple forms. Boundary + extended veto reject on foreign 'Uģis' (pid=233).",
+      "text": "Robežsardzes priekšnieks Uģis Citskovskis ziņoja par situāciju uz robežas. Citskovska vietnieks piebilda detaļas.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-particle-del-toro",
+      "comment": "Name-particle step: 'del' before 'Toro' is lowercase, so the plain veto sees no foreign name. With the particle rule the word BEFORE the particle ('Isaks') is classified → foreign → reject (pid=234 Arigo Toro linked pre-B2D2H).",
+      "text": "Riteņbraucējs Isaks del Toro uzvarēja Itālijas tūres posmā.",
+      "expected_matches": []
+    },
+    {
+      "name": "b2-allcaps-isuma-kulbergs",
+      "comment": "B2 refinement — ALL-CAPS token is never a first-name signal. Pre-B2D2H 'ĪSUMĀ' counted as a foreign first name and the doc was falsely REJECTED; Title-case requirement recovers the match (pid=10 Kulbergs).",
+      "text": "ĪSUMĀ Kulbergs pieprasīja auditu koncernā.",
+      "expected_matches": [[10, "subject"]]
+    },
+    {
+      "name": "b2-sentence-start-vienlaikus-kulbergs",
+      "comment": "B2 refinement — 'Vienlaikus' is in the closed-class sentence-adverb STOP set, so its sentence-start capital is not a first-name signal. Pre-B2D2H this falsely rejected the match. (A blanket positional forgiveness was rejected: it reopens the 'Linda Abu Meri' foreign-name-at-sentence-start class.)",
+      "text": "Valdība piešķīra papildu naudu ceļiem. Vienlaikus Kulbergs sacīja, ka ar to nepietiek.",
+      "expected_matches": [[10, "subject"]]
+    },
+    {
+      "name": "b2-multitoken-firstname-karins",
+      "comment": "GUARD (same result pre/post): multi-token first name — 'Krišjānis' must exempt the veto for 'Arturs Krišjānis Kariņš' (pid=214). The veto exempt set is built from ALL leading name tokens, not only parts[0]; a naive fn_all extension without this loses the match.",
+      "text": "Ministru prezidents Krišjānis Kariņš paziņoja par valdības prioritātēm.",
+      "expected_matches": [[214, "subject"]]
+    },
+    {
+      "name": "b2-firstname-decl-ata-svinka",
+      "comment": "GUARD (same result pre/post): real genitive 'Ata' (Atis) is NOT produced by _latvian_surname_inflections (which yields palatalized 'Aša'); the veto exempt set is deliberately over-generated with both stems. Without it, B2 would read 'Ata' as foreign and lose the match (pid=26).",
+      "text": "Ata Švinkas lēmums par dzelzceļa projektu izraisīja debates.",
+      "expected_matches": [[26, "subject"]]
+    },
+    {
+      "name": "b2-pronoun-stop-brazes",
+      "comment": "GUARD (same result pre/post): sentence-initial pronoun 'Tie' before 'Bražes' must not read as a foreign first name (pronoun STOP set + sentence-initial downgrade); pid=15 Baiba Braže.",
+      "text": "Tie Bražes apzīmējumi izraisīja plašu diskusiju.",
+      "expected_matches": [[15, "subject"]]
+    },
+    {
+      "name": "h-handle-only-ascii-svinka",
+      "comment": "H: tweet text carries ONLY the registered @handle (ASCII, no diacritic name form present). Pre-B2D2H this doc was invisible to the matcher; registered-handle matching (x_handle ∪ social_accounts) recovers it (pid=26, x_handle atis_svinka).",
+      "text": "Piekrītu @atis_svinka viedoklim par dzelzceļa projektu.",
+      "expected_matches": [[26, "subject"]]
+    },
+    {
+      "name": "h-handle-rt-kols",
+      "comment": "GUARD (same result pre/post, different path): pre-B2D2H 'Kols' substring-matched INSIDE '@RihardsKols'; the boundary check kills that accident, and registered-handle matching must recover the same link deliberately (pid=24).",
+      "text": "RT @RihardsKols: Latvijai jāstiprina austrumu robeža.",
+      "expected_matches": [[24, "subject"]]
+    },
+    {
+      "name": "gold-guard-kolu-bounded",
+      "comment": "GUARD (same result pre/post): word-bounded accusative 'Kolu' preceded by a lowercase verb is a legitimate mention and must survive both the boundary check and the extended veto (pid=24).",
+      "text": "Deputāti atbalstīja Kolu ārlietu komisijas vadītāja amatā.",
+      "expected_matches": [[24, "subject"]]
+    },
+    {
+      "name": "d2-multiword-form-not-boundary-checked",
+      "comment": "GUARD (same result pre/post): boundary applies ONLY to single-word forms. Multi-word 'Abu Meri' nested in dative 'Abu Merim' must still match (pid=161) — boundary-checking phrase forms was measured to lose gold pairs (D vs D2 in the 2026-07-27 eval).",
+      "text": "Veselības ministram Hosamam Abu Merim jautāja par reformu progresu.",
+      "expected_matches": [[161, "subject"]]
+    }
+  ],
+
+  "extract_twitter_author_handle_cases": [
+    {"url": "https://x.com/EvikaSilina/status/12345", "expected": "evikasilina"},
+    {"url": "https://twitter.com/edgarsrinkevics", "expected": "edgarsrinkevics"},
+    {"url": "https://www.delfi.lv/article", "expected": null},
+    {"url": null, "expected": null}
+  ]
+}

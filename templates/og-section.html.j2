@@ -1,0 +1,20 @@
+{% extends "_og_base.html.j2" %}
+{#- Partijas / tēmas OG kartīte (assets/og/{partijas,temas}/<slug>.png). Čaula: _og_base.html.j2. #}
+{% block css %}
+    .hero { margin-top: 14px; }
+    .nm { font-weight: 700; letter-spacing: -2px; line-height: 1.02; margin-top: 28px; }
+    .n96 { font-size: 96px; } .n76 { font-size: 76px; } .n60 { font-size: 60px; } .n50 { font-size: 50px; }
+    .lead { font-size: 32px; font-style: italic; margin-top: 20px; color: var(--sub); max-width: 950px; line-height: 1.3; margin-bottom: 24px; }
+{% endblock %}
+{% block body %}
+    <div class="hero"><span class="stamp" style="font-size:24px">{{ card.kind }}</span></div>
+    <div class="nm n{{ card.name_size }}">{{ card.name }}</div>
+    <div class="lead">{{ card.lead }}</div>
+    {% if card.stats %}
+    <div class="stats" style="margin-top:auto;margin-bottom:28px">
+      {%- for s in card.stats %}
+      <div class="stat"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>
+      {%- endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

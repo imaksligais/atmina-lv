@@ -1,0 +1,31 @@
+# Operatora lēmumi par CVK SV2026 review rindām (scripts/fetch_cvk_candidates.py).
+# Lēmums ir piesaistīts konkrētam cvk_id; ja CVK to pārnumurē, rinda atgriežas
+# review ar iemeslu verdict_stale. Pārbaude 2026-09-25: saraksts, dzimšanas gads,
+# darbavieta pret profila lomu / VID / Saeimas balsojumiem / ziņu korpusu.
+# Darbavietu nesakritības (16): visas = tā pati persona, darbs mainīts pēc
+# pēdējās VID deklarācijas vai atšķirīga iestādes rakstība.
+- {politician_id: 13, cvk_id: 90240, status: ok, note: "MMN saraksts; LDDK finanšu eksperts = profila loma"}
+- {politician_id: 29, cvk_id: 90990, status: ok, note: "MMN; JRT mākslinieciskais vadītājs = VID 2007–2008"}
+- {politician_id: 30, cvk_id: 87450, status: ok, note: "MMN ģenerālsekretārs = profila loma"}
+- {politician_id: 69, cvk_id: 87690, status: ok, note: "AS; tieslietu ministrs = profila loma"}
+- {politician_id: 74, cvk_id: 83160, status: ok, note: "GKR priekšsēdētājs kandidē ZZS sarakstā (LSM 2026-08-28); partija GKR paliek"}
+- {politician_id: 87, cvk_id: 80070, status: ok, note: "pēc ST frakcijas pamešanas pievienojās LPV (2026-06-30); party labots, rollback_party_role_cvk_review_2026-09-25.sql"}
+- {politician_id: 90, cvk_id: 86140, status: ok, note: "PRO; Saeimas deputāte = balsojumi līdz 2026-09-24"}
+- {politician_id: 96, cvk_id: 92240, status: ok, note: "pie frakcijām nepiederošs deputāts, kandidē MMN sarakstā; biedrība nav pierādīta — party nemainīts"}
+- {politician_id: 100, cvk_id: 79800, status: ok, note: "pievienojās LPV (2026-06-30, LSM 2026-08-29 «(LPV)»); party labots"}
+- {politician_id: 116, cvk_id: 78390, status: ok, note: "JV; ministra ārštata padomnieks pēc mandāta (balsojumi līdz 2026-06-04)"}
+- {politician_id: 125, cvk_id: 89650, status: ok, note: "PRO; LU asociētā profesore (CVK rakstība «Univesrsitāte»)"}
+- {politician_id: 135, cvk_id: 88370, status: ok, note: "JV pametusi, kandidē AS sarakstā (2026-07-03); bezpartejiska — party nemainīts"}
+- {politician_id: 138, cvk_id: 78810, status: ok, note: "JV padomnieks pēc mandāta (balsojumi līdz 2026-05-28)"}
+- {politician_id: 140, cvk_id: 78820, status: ok, note: "Vienotības Valkas nodaļa; VID 2009 deputāts"}
+- {politician_id: 147, cvk_id: 83250, status: ok, note: "ZZS; ZM ārštata padomnieks = profila loma"}
+- {politician_id: 159, cvk_id: 83840, status: ok, note: "CVK: LZS valdes loceklis → party ZZS (kā Ceļapīters); party labots"}
+- {politician_id: 163, cvk_id: 79900, status: ok, note: "LPV; EP deputāta palīgs, NE EP deputāts (LPV EP deputāts ir V. Krištopans) → role labots"}
+- {politician_id: 181, cvk_id: 80050, status: ok, note: "KL priekšsēdētājs kandidē LPV sarakstā (2026-08-26); partija KL paliek"}
+- {politician_id: 186, cvk_id: 81830, status: ok, note: "ASL valdes locekļa vietnieks = profila loma; VID amati (cietums, radiosakari) nepārbaudīti — iespējams vārdabrālis VID pusē"}
+- {politician_id: 226, cvk_id: 88080, status: ok, note: "AS; Saeimas deputāts = balsojumi līdz 2026-09-24"}
+- {politician_id: 227, cvk_id: 79220, status: ok, note: "AS; Saeimas deputāts = balsojumi līdz 2026-09-24"}
+- {politician_id: 231, cvk_id: 85450, status: ok, note: "nodarbošanās «Žurnālists», NA sarakstā; žurnālists-kandidāts — feed_type ir operatora lēmums (CLAUDE.md #11)"}
+- {politician_id: 232, cvk_id: 79910, status: ok, note: "1959. g., «Saskaņa» valdes priekšsēdētājs = profils; 79510 (1997. g., Latgale) ir cits cilvēks"}
+- {politician_id: 233, cvk_id: 79450, status: ok, note: "JKP; PMLP projekta vadītājs pēc Valsts kancelejas (VID 2024)"}
+- {politician_id: 234, cvk_id: 89580, status: ok, note: "Gobzema saraksts; vārda maiņa no Aldis Gobzems"}

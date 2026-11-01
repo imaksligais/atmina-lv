@@ -1,0 +1,10 @@
+q01 | Ukraina un Krievija | Latvijai jāturpina atbalstīt Ukrainu, kamēr karš nav beidzies. | par = atbalsts Ukrainai; pret = neitralitāte, neiesaistīties, nefinansēt
+  piezīme: CVK: programma sola atbalstīt Ukrainas iestāšanos ES; par atbalstu kara laikā neizsakās. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): sola 'atbalstīsim Ukrainas iestāšanos ES'; atbalstu kara laikā nemin.
+q02 | Aizsardzība un drošība | Aizsardzībai jāatvēl vismaz 5 % no IKP. | par = 5 % vai vairāk; pret = samazināt vai pārdalīt aizsardzības budžetu
+  piezīme: CVK: programma sola apvienot ministrijas un iepirkumus no ASV; budžeta apjomu nenosauc. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc.
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma VAD nemin. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): VAD nemin.
+q04 | Imigrācija | Darbaspēka ievešana no trešajām valstīm jāierobežo. | par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu
+  piezīme: CVK: programma sola cīņu ar nelegālo migrāciju; par legālo darbaspēka imigrāciju neizsakās. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): 'bezprecedenta cīņu ar nelegālo migrāciju'; legālā darbaspēka ievešanu nemin.
+q05 | Valodu politika | Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē. | par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības
+  piezīme: CVK: programma sola saliedēt tautu neatkarīgi no dzimtās valodas un angļu valodu biznesam; par mazākumtautību valodām skolās neizsakās. Pilnā programma (latvijapirmajavieta.lv, ~12 tūkst. zīmju): mazākumtautību valodas nemin.

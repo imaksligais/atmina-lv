@@ -1,0 +1,34 @@
+{
+  "env": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "if": "Bash(git push*)",
+            "timeout": 10,
+            "statusMessage": "force-push guard",
+            "command": "PY=\"${CLAUDE_PROJECT_DIR:-.}/.venv/Scripts/python.exe\"; [ -x \"$PY\" ] || PY=\"${CLAUDE_PROJECT_DIR:-.}/.venv/bin/python\"; [ -x \"$PY\" ] || PY=\"$(command -v python3 2>/dev/null || command -v python 2>/dev/null || true)\"; [ -n \"$PY\" ] && exec \"$PY\" \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/guard_force_push.py\" || exit 0"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "timeout": 15,
+            "command": "PY=\"${CLAUDE_PROJECT_DIR:-.}/.venv/Scripts/python.exe\"; [ -x \"$PY\" ] || exit 0; [ -f \"${CLAUDE_PROJECT_DIR:-.}/.env.mail\" ] || exit 0; \"$PY\" \"${CLAUDE_PROJECT_DIR:-.}/scripts/mail_tool.py\" remind 2>/dev/null || exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

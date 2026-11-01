@@ -1,0 +1,14 @@
+q02 | Aizsardzība un drošība | Aizsardzībai jāatvēl vismaz 5 % no IKP. | par = 5 % vai vairāk; pret = samazināt vai pārdalīt aizsardzības budžetu
+  piezīme: CVK: programma sola iekšējās drošības algas; par aizsardzības budžetu neizsakās. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): aizsardzības budžeta apjomu pret IKP nenosauc.
+q03 | Aizsardzība un drošība | Obligātais valsts aizsardzības dienests jāsaglabā. | par = saglabāt vai paplašināt VAD; pret = atcelt obligāto iesaukšanu
+  piezīme: CVK: programma sola militāro prasmju apguvi sabiedrībā; VAD nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): VAD/iesaukšanu nemin.
+q05 | Valodu politika | Mazākumtautību valodām, arī krievu valodai, jādod plašākas iespējas skolās un sabiedriskajā dzīvē. | par = izglītība mazākumtautību valodās, plašāka krievu valodas lietošana; pret = tikai valsts valodā, stiprināt latviešu valodas prasības
+  piezīme: CVK: programma valodu politiku nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): mazākumtautību valodas nemin.
+q07 | Pašvaldības | Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām. | par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā
+  piezīme: CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): pašvaldību nodokļu daļu nemin.
+q08 | Valsts pārvalde | Ministriju skaits jāsamazina, tās apvienojot. | par = apvienot vai likvidēt ministrijas; pret = nav
+  piezīme: CVK: programma ministriju skaitu nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): ministriju apvienošanu nemin.
+q11 | Klimats | Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā. | par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē
+  piezīme: CVK: programma klimatneitralitāti nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): klimatneitralitāti nemin.
+q12 | Sociālā politika | Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai. | par = ģimene/laulība = vīrietis + sieviete likumos vai starptautiskos dokumentos (Satversme, Stambulas konvencija); pret = laulību vienlīdzība, visu ģimeņu aizsardzība
+  piezīme: CVK: programma sola atteikties no sociālajiem eksperimentiem; ģimenes definīciju tieši nemin. Pilnā programma (gobzemasaraksts.lv, ~13 tūkst. zīmju): izvirza 'tradicionālo ģimeni' kā centru; vīrietis+sieviete definīciju nedod.

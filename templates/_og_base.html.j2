@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>OG card</title>
+  {#- Kopējā sepijas OG kartītes čaula (pretruna, ievads, profils, sadaļa).
+      Fontus (@font-face 'SS4') ievieto src/render/_common/og_render.py pirms
+      </head> — hash tiek rēķināts bez tiem. Nav lapa: tikai Playwright PNG. #}
+  <style>
+    :root { --ink: #2a1c10; --muted: #6b5236; --sub: #4a3520; --red: #8e2b1c; --paper: #e6d6b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+    .card {
+      width: 1200px; height: 630px; padding: 48px 60px 34px;
+      display: flex; flex-direction: column;
+      font-family: 'SS4', Georgia, serif; color: var(--ink);
+      background: var(--paper) radial-gradient(900px 500px at 15% 0%, #efe3c9 0%, #e6d6b8 55%, #d9c4a0 100%);
+    }
+    .ph {
+      border-radius: 50%; object-fit: cover; flex-shrink: 0;
+      filter: sepia(.85) grayscale(.2) contrast(1.05); box-shadow: 0 0 0 3px var(--ink);
+    }
+    .avatar-fallback {
+      display: flex; align-items: center; justify-content: center;
+      background: #d9c4a0; color: var(--ink); font-weight: 650;
+    }
+    .stamp {
+      display: inline-block; color: var(--red); border: 3px solid var(--red); border-radius: 6px;
+      padding: 2px 14px 4px; transform: rotate(-2deg); font-weight: 700; white-space: nowrap;
+    }
+    .stats { display: flex; gap: 56px; }
+    .stat b { display: block; font-size: 54px; font-weight: 700; letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+    .stat span { font-size: 21px; color: var(--muted); font-style: italic; }
+    footer {
+      display: flex; align-items: baseline; gap: 18px; font-size: 19px;
+      border-top: 2px solid var(--ink); padding-top: 14px; margin-top: auto;
+    }
+    .brand { font-size: 26px; font-weight: 700; letter-spacing: -.3px; }
+    .brand i { font-style: normal; opacity: .6; }
+    .tag { flex: 1; font-style: italic; color: var(--muted); }
+    .url { color: var(--muted); }
+    {% block css %}{% endblock %}
+  </style>
+</head>
+<body>
+  <div class="card">
+    {% block body %}{% endblock %}
+    <footer>
+      {%- if card.brand is not defined or card.brand %}
+      <span class="brand">atmina<i>.lv</i></span>
+      {%- endif %}
+      <span class="tag">{{ card.tag | default("Politiķu teiktais — ar datumu un avotu", true) }}</span>
+      <span class="url">{{ card.url }}</span>
+    </footer>
+  </div>
+</body>
+</html>

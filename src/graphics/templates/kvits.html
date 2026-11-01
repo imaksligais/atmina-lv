@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- Paraugs «kvīts» — atmina.lv vizuālis par PAŠU projektu (atbalsts, izmaksas, mēneša Patreon pārskats); operatora apstiprināts 2026-10-22.
+     Atšķirība no izpete-shema.html: viena tumša virsma + papīra kvīts, zaļš akcents (--keep). Sarkanais paliek politiskajiem tekstiem.
+     Skaitļi kā LV: «7,88 €»; rindas summējas līdz kopsummai; zem kopsummas — ko tā vēl neietver. Privātpersonu vārdus nelieto.
+     Renderē: .venv/Scripts/python.exe scripts/render_shema.py <in.html> <out.png> (1600×900). Kopē uz docs/tweet_bank/{datums}-*.html; šo failu nemaini. -->
+<html lang="lv"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family:'Source Serif 4'; src:url('../../../output/atmina/assets/fonts/source-serif-4-normal-latin-ext.woff2') format('woff2'); font-weight:200 900; }
+  @font-face { font-family:'Source Serif 4'; src:url('../../../output/atmina/assets/fonts/source-serif-4-normal-latin.woff2') format('woff2'); font-weight:200 900; }
+  @font-face { font-family:'Source Serif 4'; font-style:italic; src:url('../../../output/atmina/assets/fonts/source-serif-4-italic-latin-ext.woff2') format('woff2'); font-weight:200 900; }
+  @font-face { font-family:'Source Serif 4'; font-style:italic; src:url('../../../output/atmina/assets/fonts/source-serif-4-italic-latin.woff2') format('woff2'); font-weight:200 900; }
+  @font-face { font-family:'JetBrains Mono'; src:url('../../../output/atmina/assets/fonts/jetbrains-mono-500-latin-ext.woff2') format('woff2'); font-weight:500; }
+  @font-face { font-family:'JetBrains Mono'; src:url('../../../output/atmina/assets/fonts/jetbrains-mono-500-latin.woff2') format('woff2'); font-weight:500; }
+
+  *, *::before, *::after { box-sizing:border-box; min-width:0; margin:0; }
+  :root {
+    --paper: oklch(96.4% 0.015 90);
+    --ink: oklch(22.4% 0.014 82);
+    --night: oklch(27% 0.055 265);
+    --muted: oklch(50.9% 0.035 88);
+    --rule: oklch(78% 0.03 89);
+    --keep: oklch(56.8% 0.102 172);
+    --on-night: oklch(96% 0.015 90);
+    --on-night-muted: color-mix(in oklch, var(--on-night) 62%, var(--night));
+    --serif: 'Source Serif 4', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    font-synthesis: none; -webkit-font-smoothing: antialiased; text-wrap: pretty;
+  }
+  body { inline-size:1600px; block-size:900px; overflow:clip; color:var(--on-night); font-family:var(--serif);
+         background:
+           radial-gradient(60% 80% at 78% 50%, color-mix(in oklch, var(--keep) 16%, var(--night)), transparent 70%),
+           var(--night);
+         display:grid; grid-template-columns:1fr 600px; gap:80px; padding:72px 100px 72px 96px; align-items:center; }
+
+  .say { display:flex; flex-direction:column; gap:28px; block-size:100%; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:24px; }
+  .brand svg { flex:none; inline-size:30px; block-size:30px; }
+  h1 { margin-block-start:auto; font-weight:700; font-size:84px; line-height:1.02; letter-spacing:-0.015em; text-wrap:balance; }
+  h1 em { display:block; font-weight:500; color:color-mix(in oklch, var(--keep), white 30%); }
+  .say p { font-size:24px; line-height:1.45; color:var(--on-night-muted); max-inline-size:30ch; }
+  .link { margin-block-start:auto; font-family:var(--mono); font-weight:500; font-size:20px; letter-spacing:0.06em; color:var(--on-night); }
+
+  /* Kvīts: papīra josla ar robotām malām */
+  .receipt { --tooth:14px;
+    background:var(--paper); color:var(--ink); font-family:var(--mono); font-weight:500; font-size:22px;
+    padding:52px 48px 60px; rotate:1.2deg;
+    mask:
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / calc(var(--tooth) * 2) var(--tooth) repeat-x,
+      linear-gradient(#000 0 0) center / 100% calc(100% - var(--tooth) * 2) no-repeat,
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / calc(var(--tooth) * 2) var(--tooth) repeat-x;
+    filter: drop-shadow(0 24px 40px oklch(0% none none / 0.35));
+    font-variant-numeric: tabular-nums; }
+  .receipt header { text-align:center; display:grid; gap:6px; padding-block-end:22px; }
+  .receipt header b { font-family:var(--serif); font-size:30px; font-weight:700; }
+  .receipt header span { font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  .cut { border-block-start:2px dashed var(--rule); margin-block:14px; }
+  .row { display:flex; align-items:baseline; gap:12px; padding-block:9px; }
+  .row::after { content:""; order:1; flex:1; border-block-end:2px dotted var(--rule); translate:0 -6px; }
+  .row .v { order:2; }
+  .row.minus { color:var(--muted); }
+  .row.add .v { color:var(--keep); }
+  .row.total { font-size:30px; padding-block-start:14px; }
+  .row.total .v { color:var(--keep); font-size:40px; }
+  .note { margin-block-start:22px; text-align:center; font-size:15px; line-height:1.5; color:var(--muted); }
+</style></head>
+<body>
+  <section class="say">
+    <div class="brand"><svg viewBox="0 0 64 64"><circle cx="27" cy="27" r="17" fill="none" stroke="#f7f3e8" stroke-width="5.5"/><line x1="40.5" y1="40.5" x2="52" y2="52" stroke="#f7f3e8" stroke-width="5.5" stroke-linecap="round"/><circle cx="27" cy="27" r="6" fill="#EF5350"/></svg>atmina.lv</div>
+    <h1>Mums ir pirmais atbalstītājs. <em>Paldies.</em></h1>
+    <p>Mēs pierakstām, ko saka un kā balso politiķi. Savus skaitļus rādām tikpat atklāti.</p>
+    <div class="link">patreon.com/atmina</div>
+  </section>
+
+  <article class="receipt">
+    <header><b>atmina.lv</b><span>Atbalsta kvīts · 2026. gada oktobris</span></header>
+    <div class="cut"></div>
+    <div class="row"><span>Plāns «Atbalstītājs»</span><span class="v">3,00 €</span></div>
+    <div class="row add"><span>Brīvprātīgi klāt</span><span class="v">+7,00 €</span></div>
+    <div class="cut"></div>
+    <div class="row"><span>Iemaksāts</span><span class="v">10,00 €</span></div>
+    <div class="row minus"><span>Patreon komisija</span><span class="v">−1,00 €</span></div>
+    <div class="row minus"><span>Maksājumu apstrāde</span><span class="v">−1,12 €</span></div>
+    <div class="cut"></div>
+    <div class="row total"><span>Pēc Patreon maksām</span><span class="v">7,88 €</span></div>
+    <p class="note">Pirms izmaksas maksas un nodokļiem.<br>Viss saturs paliek bez maksas visiem.</p>
+  </article>
+</body></html>

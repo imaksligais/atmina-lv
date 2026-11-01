@@ -1,0 +1,31 @@
+{% extends "base.html.j2" %}
+{% set active_page = "analizes" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}Dienas analīze{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  {% call pagehead("Pārskatu arhīvs", "Dienas analīze") %}
+      {{ metric("Pārskati", posts|length) }}
+  {%- endcall %}
+
+  {% for post in posts %}
+  <a href="blog/{{ post.slug }}.html" class="blog-entry" style="display:block; text-decoration:none; color:inherit;">
+    <div class="meta">
+      <span class="date">{{ post.date|lv_date }}</span>
+      <span class="badge badge-blue">{{ post.type_label }}</span>
+    </div>
+    <h2>{{ post.title|lv_dates_in_text }}</h2>
+    <div class="preview">{{ post.preview }}</div>
+  </a>
+  {% endfor %}
+
+  {% if not posts %}
+  <div class="card" style="text-align:center; padding:3rem;">
+    <p style="color:var(--text-muted);">Dienas analīzes drīzumā tiks publicētas.</p>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

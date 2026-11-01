@@ -1,0 +1,130 @@
+{% extends "base.html.j2" %}
+{% set active_page = "pretrunas" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric, prv2_card, multi_select, ms_option, share_buttons %}
+
+{% block title %}Pretrunas{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+{% set prv2_lead %}
+      <p class="pagehead-lead">Katra pretruna pirms publicēšanas iziet pretargumentu pārbaudi, un to apstiprina cilvēks. Iespējami arī citi skaidrojumi: pozīcija laika gaitā attīstījusies, runāts citai auditorijai vai doma formulēta citādi. Avoti ir pie katra ieraksta — izvērtējiet paši.</p>{% endset %}
+  {% call pagehead("Politiķu pretrunu reģistrs", "Pretrunas", lead=prv2_lead) %}
+      {{ metric("Kopā", metrics.total) }}
+      {{ metric("Pēdējā nedēļā", metrics.last_week) }}
+      {{ metric("Tiešas", metrics.direct) }}
+  {%- endcall %}
+
+  <section class="prv2-section" id="register-section" aria-label="Pretrunu reģistrs">
+    <div class="prv2-toolbar">
+      <div class="prv2-toolbar-row">
+        <div class="prv2-sev-chips chip-row" id="severity-chips" role="group" aria-label="Filtrēt pēc veida">
+          <button type="button" class="chip prv2-chip sev-all active" data-sev="all" aria-pressed="true">
+            <span class="chip-dot" aria-hidden="true"></span>Visas <span class="prv2-chip-n chip-n">{{ contradictions | length }}</span>
+          </button>
+          <button type="button" class="chip prv2-chip sev-direct_contradiction" data-sev="direct_contradiction" aria-pressed="false">
+            <span class="chip-dot" aria-hidden="true"></span>Tiešas pretrunas <span class="prv2-chip-n chip-n">{{ sev_counts.direct_contradiction }}</span>
+          </button>
+          <button type="button" class="chip prv2-chip sev-reversal" data-sev="reversal" aria-pressed="false">
+            <span class="chip-dot" aria-hidden="true"></span>Nostājas maiņas <span class="prv2-chip-n chip-n">{{ sev_counts.reversal }}</span>
+          </button>
+          <button type="button" class="chip prv2-chip sev-minor_shift" data-sev="minor_shift" aria-pressed="false">
+            <span class="chip-dot" aria-hidden="true"></span>Nelielas novirzes <span class="prv2-chip-n chip-n">{{ sev_counts.minor_shift }}</span>
+          </button>
+        </div>
+
+        {% call multi_select("party-select", "Visas partijas", "Meklēt partijas", compact=true) %}
+            {% for party in parties %}
+            {{ ms_option(party) }}
+            {% endfor %}
+        {%- endcall %}
+
+        {% call multi_select("person-select", "Visas personas", "Meklēt personas", compact=true) %}
+            {% for person in persons %}
+            {{ ms_option(person) }}
+            {% endfor %}
+        {%- endcall %}
+      </div>
+
+      <div class="prv2-toolbar-row prv2-toolbar-view">
+        <span class="prv2-view-label" id="group-label">Grupēt</span>
+        <div class="prv2-seg seg-ctl" id="group-filter" role="group" aria-labelledby="group-label">
+          <button type="button" class="seg-ctl-btn prv2-seg-btn active" aria-pressed="true" data-group="chrono">Hronoloģiski</button>
+          <button type="button" class="seg-ctl-btn prv2-seg-btn" aria-pressed="false" data-group="person">Pa personām</button>
+          <button type="button" class="seg-ctl-btn prv2-seg-btn" aria-pressed="false" data-group="topic">Pa tēmām</button>
+        </div>
+        <span class="prv2-view-label" id="sort-label">Kārtot</span>
+        <div class="prv2-seg seg-ctl" id="sort-filter" role="group" aria-labelledby="sort-label">
+          <button type="button" class="seg-ctl-btn prv2-seg-btn active" aria-pressed="true" data-sort="new">Jaunākās</button>
+          <button type="button" class="seg-ctl-btn prv2-seg-btn" aria-pressed="false" data-sort="salience">Nozīmīgākās</button>
+        </div>
+        <span class="prv2-toolbar-spacer"></span>
+        <span class="prv2-count" id="register-count" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div id="register">
+      {% for c in contradictions %}
+      <article class="prv2-row sev-{{ c.severity }}" id="pretruna-{{ c.id }}"
+               data-severity="{{ c.severity }}" data-party="{{ c.party }}"
+               data-person="{{ c.politician_name }}" data-topic="{{ c.topic or '' }}"
+               data-detected="{{ c.detected_at[:10] }}"
+               data-salience="{{ '%.4f' % (c.salience or 0.0) }}">
+        <button class="prv2-row-head" aria-expanded="false" aria-controls="prvb-{{ c.id }}">
+          {%- if c.has_photo %}
+          <img class="prv2-row-avatar" src="{{ assets_prefix }}assets/photos/{{ c.slug }}.jpg" alt="" style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="prv2-row-avatar prv2-row-avatar-init" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <span class="prv2-row-main">
+            <span class="prv2-row-top">
+              <span class="prv2-row-name">{{ c.politician_name }}{% if c.party_short %} <span class="prv2-row-party">· {{ c.party_short }}</span>{% endif %}</span>
+              <span class="prv2-row-tags">
+                <span class="prv2-row-sev"><span class="prv2-chip-dot" aria-hidden="true"></span>{{ c.severity_lv }}</span>
+                {% if c.topic %}<span class="prv2-row-topic">{{ c.topic }}</span>{% endif %}
+                {% if c.is_new %}<span class="prv2-row-new">JAUNS</span>{% endif %}
+              </span>
+            </span>
+            <span class="prv2-row-summary">{{ excerpts[c.id] or ((c.old_stance or '—') ~ ' → ' ~ (c.new_stance or '—')) }}</span>
+          </span>
+          <span class="prv2-row-meta">
+            <span class="prv2-row-dates">{{ c.old_date|lv_date }} → {{ c.new_date|lv_date }}</span>
+            <span class="prv2-row-chev" aria-hidden="true">▾</span>
+          </span>
+        </button>
+        <div class="prv2-row-body" id="prvb-{{ c.id }}">
+          <div class="prv2-row-body-inner">
+            {% call prv2_card(c) -%}
+      {%- set share_text = c.politician_name ~ " — " ~ c.severity_lv ~ (" par " ~ c.topic if c.topic else "") -%}
+      {%- set share_url = BASE_URL ~ "/pretrunas/" ~ c.id ~ ".html" -%}
+      <footer class="prv2-foot">
+        <div class="prv2-foot-meta">
+          <a href="#pretruna-{{ c.id }}" class="prv2-foot-id">ID {{ '%03d' % c.id }}</a>
+          · Konstatēts {{ c.detected_at|lv_date }}
+          {% if c.salience %} · Nozīmīgums: {{ c.salience|salience_label }}{% endif %}
+        </div>
+        <div class="share-row prv2-foot-share">
+          {{ share_buttons(share_url, share_text) }}
+        </div>
+      </footer>
+            {%- endcall %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div id="register-empty" class="prv2-empty" hidden>
+      Nekas netika atrasts ar izvēlētajiem filtriem.
+      <button type="button" class="chip filter-btn" id="register-empty-clear">Notīrīt filtrus</button>
+    </div>
+  </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/prv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

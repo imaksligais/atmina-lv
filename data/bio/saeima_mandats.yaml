@@ -1,0 +1,146 @@
+# Kāpēc deputāta balsojumi 14. Saeimā beidzas. Katrs ieraksts pārbaudīts pret
+# avotu (titania.saeima.lv, 2026-10-09; operatora pārskats). `since` = Saeimas puses
+# datums (mandāts nolikts / pilnvaras beidzās). Nepārbaudītiem ieraksta NAV.
+entries:
+  - pid: 1
+    name: Edgars Rinkēvičs
+    kind: cits_amats
+    since: "2023-06-22"
+    office: Valsts prezidents
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=2&lang=LV&count=1000"
+  - pid: 24
+    name: Rihards Kols
+    kind: cits_amats
+    since: "2024-07-15"
+    office: Eiropas Parlamenta deputāts
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=2&lang=LV&count=1000"
+  - pid: 3
+    name: Ainārs Šlesers
+    kind: cits_amats
+    since: "2025-06-10"
+    office: Rīgas domes deputāts
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=2&lang=LV&count=1000"
+  - pid: 166
+    name: Māris Sprindžuks
+    kind: cits_amats
+    since: "2025-06-10"
+    office: Rīgas domes deputāts
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=2&lang=LV&count=1000"
+  - pid: 206
+    name: Mairita Lūse
+    kind: cits_amats
+    since: "2025-06-10"
+    office: Rīgas domes deputāte
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=2&lang=LV&count=1000"
+  - pid: 25
+    name: Viktors Valainis
+    kind: ministrs
+    since: "2023-09-20"
+    office: ekonomikas ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=1&lang=LV&count=1000"
+  - pid: 156
+    name: Rihards Kozlovskis
+    kind: ministrs
+    since: "2023-09-20"
+    office: satiksmes ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=1&lang=LV&count=1000"
+  - pid: 161
+    name: Hosams Abu Meri
+    kind: ministrs
+    since: "2023-09-20"
+    office: veselības ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/deputiesByMandate?OpenView&restricttocategory=1&lang=LV&count=1000"
+  - pid: 6
+    name: Jānis Dombrava
+    kind: ministrs
+    since: "2026-06-04"
+    office: iekšlietu ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/C309C9E0EEF76BB1C22588E0002AE2B5?OpenDocument&lang=LV"
+  - pid: 10
+    name: Andris Kulbergs
+    kind: ministrs
+    since: "2026-06-04"
+    office: Ministru prezidents
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/51CF0E6C1B20AF2EC22588E0002AE4CD?OpenDocument&lang=LV"
+  - pid: 69
+    name: Edvards Smiltēns
+    kind: ministrs
+    since: "2026-06-04"
+    office: tieslietu ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/A8A9E87F3907B606C22588E0002AE509?OpenDocument&lang=LV"
+  - pid: 70
+    name: Uldis Augulis
+    kind: ministrs
+    since: "2026-06-04"
+    office: zemkopības ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/5E127A6E7EFCB489C22588E0002AE0F7?OpenDocument&lang=LV"
+  - pid: 105
+    name: Māris Kučinskis
+    kind: ministrs
+    since: "2026-06-04"
+    office: finanšu ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/CAEAD592CBE63FDAC22588E0002AE492?OpenDocument&lang=LV"
+  - pid: 139
+    name: Jānis Vitenbergs
+    kind: ministrs
+    since: "2026-06-04"
+    office: klimata un enerģētikas ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/D520FA69CC6F216AC22588E0002AE2E6?OpenDocument&lang=LV"
+  - pid: 52
+    name: Edgars Tavars
+    kind: ministrs
+    since: "2026-06-11"
+    office: viedās administrācijas un reģionālās attīstības ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/29DC1F43D02712A2C22588E0002AE53C?OpenDocument&lang=LV"
+  - pid: 72
+    name: Ilze Indriksone
+    kind: ministrs
+    since: "2026-06-11"
+    office: izglītības un zinātnes ministre
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/11CBD8C6D7C07380C22588E0002AE233?OpenDocument&lang=LV"
+  - pid: 71
+    name: Nauris Puntulis
+    kind: ministrs
+    since: "2026-06-18"
+    office: kultūras ministrs
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/59C2AD64FE4CECDFC22588E0002AE26C?OpenDocument&lang=LV"
+  - pid: 54
+    name: Selma Teodora Levrence
+    kind: pilnvaras_beidzas
+    since: "2026-05-13"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/DDACA030FD413471C22588E0002AE420?OpenDocument&lang=LV"
+  - pid: 142
+    name: Didzis Zemmers
+    kind: pilnvaras_beidzas
+    since: "2026-05-20"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/7A2D78E3B22A6B1BC22588E0002AE182?OpenDocument&lang=LV"
+  - pid: 78
+    name: Ingrīda Circene
+    kind: pilnvaras_beidzas
+    since: "2026-06-04"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/60440B76C204D1CFC22588E0002AE03F?OpenDocument&lang=LV"
+  - pid: 125
+    name: Līga Rasnača
+    kind: pilnvaras_beidzas
+    since: "2026-06-04"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/EE235769F65639B9C22588E0002AE479?OpenDocument&lang=LV"
+  - pid: 138
+    name: Jānis Zariņš
+    kind: pilnvaras_beidzas
+    since: "2026-06-04"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/44A44B613FC42A79C22588E0002AE0BD?OpenDocument&lang=LV"
+  - pid: 116
+    name: Gatis Liepiņš
+    kind: pilnvaras_beidzas
+    since: "2026-06-11"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/58887F105A9C071DC22588E0002AE080?OpenDocument&lang=LV"
+  - pid: 140
+    name: Viesturs Zariņš
+    kind: pilnvaras_beidzas
+    since: "2026-06-11"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/9F2E57DDCA8B3285C22588E0002AE0C2?OpenDocument&lang=LV"
+  - pid: 147
+    name: Valdis Maslovskis
+    kind: pilnvaras_beidzas
+    since: "2026-06-11"
+    source_url: "https://titania.saeima.lv/Personal/Deputati/Saeima14_DepWeb_Public.nsf/0/026CBA2D884CB491C22588E0002AE119?OpenDocument&lang=LV"

@@ -1,0 +1,22 @@
+[
+ {"sid": "s013", "grade": "D_OK", "why": "Faithfully renders the reply: requirements are specific, and the rhetorical question about which legal client group equals 'declassed elements'.", "matches_reference": "yes"},
+ {"sid": "s005", "grade": "D_OK", "why": "Captures the irony, the question about identifying with NATO and the 'clown, not minister' jab as written.", "matches_reference": "yes"},
+ {"sid": "s040", "grade": "D_OK", "why": "Every element (not 'fair', not an economic category, do what is needed, unpopular, all get richer) is in the text.", "matches_reference": "yes"},
+ {"sid": "s039", "grade": "D_OK", "why": "Faithful paraphrase of the post's argument; the causal 'jo' reflects the text's implicit reasoning.", "matches_reference": "yes"},
+ {"sid": "s026", "grade": "D_OK", "why": "Accurately reports his critique of LSM's inconsistent assessment and his hedged reading of it as dislike of ZZS; long but faithful.", "matches_reference": "yes"},
+ {"sid": "s027", "grade": "D_OK", "why": "Concise, faithful summary of his critique that LSM's assessment sounds like dislike of ZZS rather than objective evaluation.", "matches_reference": "yes"},
+ {"sid": "s037", "grade": "D_OK", "why": "Hotline claim, its three aims and the 'servility, not defending interests or sovereignty' characterisation are all in the post.", "matches_reference": "yes"},
+ {"sid": "s038", "grade": "D_OK", "why": "Same content as the post in compact form; 'atceltu sankcijas' is a fair rendering of 'lift oligarch sanctions'.", "matches_reference": "yes"},
+ {"sid": "s035", "grade": "D_OK", "why": "Agreement with Siliņa, airBaltic at least as important as Rīgas satiksme's 100m+ subsidies, and the jab at 'big wise guys' incl. Kulbergs are all stated.", "matches_reference": "yes"},
+ {"sid": "s036", "grade": "D_OK", "why": "Faithful to the tweet's comparison and criticism, including Kulbergs; slightly clunky but correct Latvian.", "matches_reference": "yes"},
+ {"sid": "s053", "grade": "D_OK", "why": "Defence on pedestrian safety grounds, services informed beforehand and the planned meeting on the filter principle are all in her comment/tweet as quoted in the article.", "matches_reference": "partial"},
+ {"sid": "s054", "grade": "D_OK", "why": "Calls the filter effective, services informed, welcomes VUGD drill, meeting on principle usable elsewhere; all attributable to her in the article.", "matches_reference": "partial"},
+ {"sid": "s044", "grade": "D_OK", "why": "Accurately reflects the tweet's complaint about the non-working site, limited places and Rīga council failing 'even at this'.", "matches_reference": "yes"},
+ {"sid": "s043", "grade": "D_OK", "why": "Faithful summary of the tweet's criticism of Rīga council over summer camp registration.", "matches_reference": "yes"},
+ {"sid": "s031", "grade": "D_OK", "why": "All components (seek solutions, windfall/solidarity levy as a tool, study Poland rather than invent new, short-term support within EU state-aid rules) are his reported views.", "matches_reference": "yes"},
+ {"sid": "s032", "grade": "D_OK", "why": "Shorter but faithful subset of his reported views; omits the EU state-aid caveat without distorting.", "matches_reference": "yes"},
+ {"sid": "s017", "grade": "D_OK", "why": "Near-verbatim rendering of her tweet in correct Latvian.", "matches_reference": "yes"},
+ {"sid": "s016", "grade": "D_OK", "why": "Faithful to the tweet; the added 'ko viņa raksturo kā' attribution hedge is acceptable.", "matches_reference": "yes"},
+ {"sid": "s049", "grade": "D_OK", "why": "His own documented act (accepting the resignation, announcing a competition) plus his stated view of increased pressure and unfounded claims.", "matches_reference": "partial"},
+ {"sid": "s048", "grade": "D_OK", "why": "Accurately reports the accepted resignation and his claim of pressure via unfounded allegations aimed at undermining the sector's progress and trust.", "matches_reference": "partial"}
+]

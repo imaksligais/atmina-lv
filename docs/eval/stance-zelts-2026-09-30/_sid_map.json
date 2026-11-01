@@ -1,0 +1,272 @@
+{
+ "s001": {
+  "variant": "vecais",
+  "doc_id": 26996,
+  "k": 0
+ },
+ "s002": {
+  "variant": "jaunais",
+  "doc_id": 26996,
+  "k": 0
+ },
+ "s003": {
+  "variant": "vecais",
+  "doc_id": 28022,
+  "k": 0
+ },
+ "s004": {
+  "variant": "jaunais",
+  "doc_id": 28022,
+  "k": 0
+ },
+ "s005": {
+  "variant": "jaunais",
+  "doc_id": 6387,
+  "k": 0
+ },
+ "s006": {
+  "variant": "jaunais",
+  "doc_id": 24062,
+  "k": 0
+ },
+ "s007": {
+  "variant": "vecais",
+  "doc_id": 28120,
+  "k": 0
+ },
+ "s008": {
+  "variant": "jaunais",
+  "doc_id": 28120,
+  "k": 0
+ },
+ "s009": {
+  "variant": "vecais",
+  "doc_id": 28123,
+  "k": 0
+ },
+ "s010": {
+  "variant": "jaunais",
+  "doc_id": 28123,
+  "k": 0
+ },
+ "s011": {
+  "variant": "vecais",
+  "doc_id": 13003,
+  "k": 0
+ },
+ "s012": {
+  "variant": "jaunais",
+  "doc_id": 13003,
+  "k": 0
+ },
+ "s013": {
+  "variant": "jaunais",
+  "doc_id": 71133,
+  "k": 0
+ },
+ "s014": {
+  "variant": "vecais",
+  "doc_id": 27071,
+  "k": 0
+ },
+ "s015": {
+  "variant": "jaunais",
+  "doc_id": 27071,
+  "k": 0
+ },
+ "s016": {
+  "variant": "vecais",
+  "doc_id": 28048,
+  "k": 0
+ },
+ "s017": {
+  "variant": "jaunais",
+  "doc_id": 28048,
+  "k": 0
+ },
+ "s018": {
+  "variant": "vecais",
+  "doc_id": 28623,
+  "k": 0
+ },
+ "s019": {
+  "variant": "jaunais",
+  "doc_id": 28623,
+  "k": 0
+ },
+ "s020": {
+  "variant": "vecais",
+  "doc_id": 7390,
+  "k": 0
+ },
+ "s021": {
+  "variant": "jaunais",
+  "doc_id": 7390,
+  "k": 0
+ },
+ "s022": {
+  "variant": "vecais",
+  "doc_id": 6616,
+  "k": 0
+ },
+ "s023": {
+  "variant": "vecais",
+  "doc_id": 6616,
+  "k": 1
+ },
+ "s024": {
+  "variant": "jaunais",
+  "doc_id": 6616,
+  "k": 0
+ },
+ "s025": {
+  "variant": "jaunais",
+  "doc_id": 6616,
+  "k": 1
+ },
+ "s026": {
+  "variant": "vecais",
+  "doc_id": 26555,
+  "k": 0
+ },
+ "s027": {
+  "variant": "jaunais",
+  "doc_id": 26555,
+  "k": 0
+ },
+ "s028": {
+  "variant": "vecais",
+  "doc_id": 3159,
+  "k": 0
+ },
+ "s029": {
+  "variant": "jaunais",
+  "doc_id": 3159,
+  "k": 0
+ },
+ "s030": {
+  "variant": "jaunais",
+  "doc_id": 3159,
+  "k": 1
+ },
+ "s031": {
+  "variant": "vecais",
+  "doc_id": 26490,
+  "k": 0
+ },
+ "s032": {
+  "variant": "jaunais",
+  "doc_id": 26490,
+  "k": 0
+ },
+ "s033": {
+  "variant": "vecais",
+  "doc_id": 26370,
+  "k": 0
+ },
+ "s034": {
+  "variant": "jaunais",
+  "doc_id": 26370,
+  "k": 0
+ },
+ "s035": {
+  "variant": "vecais",
+  "doc_id": 16621,
+  "k": 0
+ },
+ "s036": {
+  "variant": "jaunais",
+  "doc_id": 16621,
+  "k": 0
+ },
+ "s037": {
+  "variant": "vecais",
+  "doc_id": 13288,
+  "k": 0
+ },
+ "s038": {
+  "variant": "jaunais",
+  "doc_id": 13288,
+  "k": 0
+ },
+ "s039": {
+  "variant": "vecais",
+  "doc_id": 14847,
+  "k": 0
+ },
+ "s040": {
+  "variant": "jaunais",
+  "doc_id": 14847,
+  "k": 0
+ },
+ "s041": {
+  "variant": "vecais",
+  "doc_id": 24366,
+  "k": 0
+ },
+ "s042": {
+  "variant": "jaunais",
+  "doc_id": 24366,
+  "k": 0
+ },
+ "s043": {
+  "variant": "vecais",
+  "doc_id": 20568,
+  "k": 0
+ },
+ "s044": {
+  "variant": "jaunais",
+  "doc_id": 20568,
+  "k": 0
+ },
+ "s045": {
+  "variant": "vecais",
+  "doc_id": 5423,
+  "k": 0
+ },
+ "s046": {
+  "variant": "jaunais",
+  "doc_id": 5423,
+  "k": 0
+ },
+ "s047": {
+  "variant": "jaunais",
+  "doc_id": 15393,
+  "k": 0
+ },
+ "s048": {
+  "variant": "vecais",
+  "doc_id": 23753,
+  "k": 0
+ },
+ "s049": {
+  "variant": "jaunais",
+  "doc_id": 23753,
+  "k": 0
+ },
+ "s050": {
+  "variant": "vecais",
+  "doc_id": 4731,
+  "k": 0
+ },
+ "s051": {
+  "variant": "jaunais",
+  "doc_id": 4731,
+  "k": 0
+ },
+ "s052": {
+  "variant": "jaunais",
+  "doc_id": 4731,
+  "k": 1
+ },
+ "s053": {
+  "variant": "vecais",
+  "doc_id": 28226,
+  "k": 0
+ },
+ "s054": {
+  "variant": "jaunais",
+  "doc_id": 28226,
+  "k": 0
+ }
+}

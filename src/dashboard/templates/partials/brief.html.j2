@@ -1,0 +1,160 @@
+{# Brief panel — 4 states.
+
+Args:
+  brief: dict | None — when None and state='auto', empty state renders
+  lede:  str — first-paragraph preview (already stripped of comments + bold)
+  cited_claim_ids: list[int]
+  image: dict | None
+  wiki_path: str
+  atmina_url: str
+  state: 'auto' | 'loading' | 'error'  (default 'auto')
+#}
+{% set state = state | default('auto') %}
+{% set _approval_label = {0: 'pending', 1: 'approved', 2: 'rejected'} %}
+
+<section id="brief-panel"
+         class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6">
+
+  <header class="flex items-baseline justify-between">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Šodienas pārskats
+    </h2>
+    {% if state == 'auto' and brief %}
+    <span class="text-xs data-mono text-slate-500 dark:text-slate-400">
+      #{{ brief.id }} · {{ brief.char_count }} zīmes
+    </span>
+    {% endif %}
+  </header>
+
+  {% if state == 'loading' %}
+    <div class="mt-4 space-y-3 animate-pulse" aria-busy="true">
+      <div class="h-32 bg-slate-200 dark:bg-slate-800 rounded"></div>
+      <div class="h-4 bg-slate-200 dark:bg-slate-800 rounded w-3/4"></div>
+      <div class="h-4 bg-slate-200 dark:bg-slate-800 rounded w-5/6"></div>
+    </div>
+  {% elif state == 'error' %}
+    <div class="mt-4 status-warning rounded p-4 text-sm flex items-center justify-between gap-4">
+      <span>Brief paneli neizdevās ielādēt.</span>
+      <button type="button"
+              class="data-mono text-xs underline hover:no-underline"
+              hx-get="/?panel=brief"
+              hx-target="#brief-panel"
+              hx-swap="outerHTML">
+        Atkārtot mēģinājumu
+      </button>
+    </div>
+  {% elif brief %}
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-1">
+        {% if image and image.image_path %}
+          <img src="https://atmina.lv/{{ image.image_path }}"
+               alt="brief hero"
+               class="rounded border border-slate-200 dark:border-slate-800 w-full aspect-video object-cover" />
+          <div class="mt-1 text-xs flex items-center gap-2 flex-wrap">
+            <span class="data-mono text-slate-500 dark:text-slate-400">
+              #{{ image.id }}
+            </span>
+            {% if image.approved == 1 %}
+              <span class="status-success rounded px-1.5 py-0.5">✅ apstiprināts</span>
+            {% elif image.approved == 2 %}
+              <span class="status-danger rounded px-1.5 py-0.5">❌ noraidīts</span>
+              {% if image.error_message %}
+                <span class="text-xs text-slate-500" title="{{ image.error_message }}">
+                  ({{ image.error_message[:40] }}{% if image.error_message | length > 40 %}…{% endif %})
+                </span>
+              {% endif %}
+            {% else %}
+              <span class="status-warning rounded px-1.5 py-0.5">⚠ gaida</span>
+            {% endif %}
+          </div>
+
+          {% if image.approved == 0 %}
+          <div class="mt-2 flex items-center gap-2"
+               x-data="{ rejectOpen: false, reason: '' }">
+            <button type="button"
+                    hx-post="/api/image/{{ image.id }}/approve"
+                    hx-target="#brief-panel"
+                    hx-swap="outerHTML"
+                    data-shortcut="A"
+                    class="status-success rounded px-3 py-1 text-xs font-medium hover:opacity-90">
+              ✓ Apstiprināt
+            </button>
+            <button type="button"
+                    @click="rejectOpen = true"
+                    class="rounded border border-slate-300 dark:border-slate-700 px-3 py-1 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-800">
+              ✗ Noraidīt…
+            </button>
+            <div x-show="rejectOpen"
+                 x-cloak
+                 class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+                 @click.self="rejectOpen = false"
+                 @keydown.escape.window="rejectOpen = false">
+              <form hx-post="/api/image/{{ image.id }}/reject"
+                    hx-target="#brief-panel"
+                    hx-swap="outerHTML"
+                    @htmx:after-request="rejectOpen = false"
+                    class="bg-white dark:bg-slate-900 rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+                <h3 class="font-semibold mb-2">Noraidīt image #{{ image.id }}</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">
+                  Iemesls saglabājas brief_images.error_message — pielietos
+                  @graphics-designer prompt tuning.
+                </p>
+                <textarea name="reason"
+                          x-model="reason"
+                          required
+                          rows="3"
+                          class="w-full rounded border border-slate-300 dark:border-slate-700 bg-transparent p-2 text-sm"
+                          placeholder="piem., 'pārāk tumšs', 'teksts izkropļots'"></textarea>
+                <div class="mt-3 flex justify-end gap-2 text-sm">
+                  <button type="button"
+                          @click="rejectOpen = false"
+                          class="rounded px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    Atcelt
+                  </button>
+                  <button type="submit"
+                          :disabled="!reason.trim()"
+                          class="status-danger rounded px-3 py-1 font-medium disabled:opacity-50">
+                    Noraidīt
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          {% endif %}
+        {% else %}
+          <div class="rounded border border-dashed border-slate-300 dark:border-slate-700 aspect-video flex items-center justify-center text-xs text-slate-400">
+            attēla nav
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="md:col-span-2 space-y-3">
+        {% if brief.title %}
+          <h3 class="text-xl font-semibold leading-tight">{{ brief.title }}</h3>
+        {% endif %}
+
+        {% if lede %}
+          <p class="brief-prose text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            {{ lede }}
+          </p>
+        {% endif %}
+
+        {% if cited_claim_ids %}
+          <p class="text-xs data-mono text-slate-500 dark:text-slate-400">
+            citētie claims: {% for cid in cited_claim_ids[:8] %}#{{ cid }}{% if not loop.last %}, {% endif %}{% endfor %}{% if cited_claim_ids | length > 8 %} … (+{{ cited_claim_ids | length - 8 }}){% endif %}
+          </p>
+        {% endif %}
+
+        <div class="flex gap-3 text-sm pt-2">
+          <a href="{{ wiki_path }}"
+             class="text-sarkans hover:underline">📄 wiki</a>
+          <a href="{{ atmina_url }}"
+             target="_blank" rel="noopener"
+             class="text-sarkans hover:underline">🔗 atmina.lv</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    {% include "empty/no_brief.html.j2" %}
+  {% endif %}
+</section>

@@ -1,0 +1,26 @@
+# Izdomāti dati testiem — nav saistīti ar reāliem cilvēkiem vai uzņēmumiem.
+slug: saites-tests
+title: "Testa tāfele"
+data_date: "2026-01-01"
+draft: true
+articles:
+  testa-raksts: "Testa raksts"
+zones:
+  - {id: z1, name: "Testa iela 1", kind: registered, note: "Reģistrētā adrese.", box: [20, 20, 400, 300]}
+entities:
+  - {id: anna, type: person, name: "Anna Testa", color: lin, pos: [600, 100], summary: "Testa persona."}
+  - {id: sia-a, type: company, name: "SIA «Alfa»", label: "SIA · 2010", zone: z1, pos: [60, 60], summary: "Testa uzņēmums.",
+     facts: [{text: "Apgrozījums 0 €.", source: {label: "UR", url: "https://example.org/ur"}, article: "testa-raksts#a"}]}
+  - {id: sia-b, type: company, name: "SIA «Beta»", zone: z1, pos: [260, 60], summary: "Otrs testa uzņēmums."}
+  - {id: grupa, type: aggregate, name: "3 akcionāri", pos: [600, 300], summary: "Vārdus nepublicējam."}
+links:
+  - {id: l1, from: anna, to: sia-a, verb: "valdes priekšsēdētāja", period: "kopš 2014", tier: 1, kind: amats,
+     source: {label: "UR", url: "https://example.org/ur"}, article: "testa-raksts#a"}
+  - {id: l2, from: anna, to: sia-b, verb: "«Managing Director»", period: "2026", tier: 2, kind: amats,
+     source: {label: "uzņēmuma lapa", url: "https://example.org/b"}, article: "testa-raksts#b", caveat: "pēc uzņēmuma lapas"}
+  - {id: l3, from: grupa, to: sia-a, verb: "akcijas bez balsstiesībām", period: "nav zināms", tier: 1, kind: ipasums,
+     source: {label: "UR", url: "https://example.org/ur"}, article: "testa-raksts#a"}
+  - {id: l4, from: anna, to: grupa, verb: "minēta ziņā", period: "2026", tier: 3, kind: cits,
+     source: {label: "ziņa", url: "https://example.org/z"}, article: "testa-raksts#c", caveat: "nav pierādīts"}
+guides:
+  - {article: testa-raksts, label: "Testa raksts", links: [l1, l3]}

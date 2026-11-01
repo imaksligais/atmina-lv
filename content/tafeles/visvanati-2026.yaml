@@ -1,0 +1,1473 @@
+# Melnraksts. Avoti un datumi pārņemti tikai no četriem norādītajiem rakstiem.
+slug: saites-visvanati-2026
+title: 'Kas ar ko saistīts: pilsonības, institūts un uzņēmumi'
+data_date: '2026-10-25'
+draft: false
+articles:
+  visvanati-pilsoniba-2026: Divas Saeimas pilsonības vienai ģimenei
+  lza-ieteikums-ekonomikas-instituts-2026: Kas sagatavoja ziņas LZA ieteikumam?
+  s-baltic-uzturesanas-atlaujas-2026: Uzturēšanās atļauja par 50 000 €
+  kanans-visvanats-nopelni-2023: 'Par ko pilsonība? Septiņi apgalvojumi Saeimai'
+zones:
+- id: gales3
+  name: Rīga · Gāles iela 3
+  kind: registered
+  note: Reģistrētās adreses; Rupus filiālei — 2022.–2024. gadā. Kopīga adrese nenozīmē sadarbību.
+  box:
+  - 10
+  - 100
+  - 390
+  - 330
+- id: aptiekas7
+  name: Rīga · Aptiekas iela 7
+  kind: registered
+  note: Reģistrētā adrese; Dr Ashleys filiālei — 2022.–2024. gadā.
+  box:
+  - 410
+  - 100
+  - 180
+  - 240
+- id: akad1
+  name: Rīga · Akadēmijas laukums 1
+  kind: institution
+  note: Ēkā reģistrētas vairāk nekā 80 vienības. Portāls šo adresi norāda savā lapā. Forums ir atsevišķs pasākums.
+  box:
+  - 600
+  - 100
+  - 390
+  - 330
+- id: saeima
+  name: Saeima · pilsonības
+  kind: institution
+  note: Divjas pilsonības likums atcelts.
+  box:
+  - 1000
+  - 100
+  - 190
+  - 330
+- id: salaspils
+  name: Salaspils · divas adreses
+  kind: registered
+  note: «Dāvidi» un Miera iela 34 ir dažādas adreses. Ēku īpašniekus zemesgrāmatā nepārbaudījām.
+  box:
+  - 10
+  - 445
+  - 390
+  - 365
+- id: zoar
+  name: Kaimanu salas · Honkonga
+  kind: foreign
+  note: Atsevišķi uzņēmumi. Darījumā paredzētās saites nav pabeigts darījums.
+  box:
+  - 410
+  - 445
+  - 580
+  - 365
+- id: citi
+  name: Citi uzņēmumi un akcionāri
+  kind: other
+  note: Nav kopīga adrese.
+  box:
+  - 1000
+  - 445
+  - 190
+  - 365
+entities:
+- id: linde
+  type: person
+  name: Ņina Linde
+  pos:
+  - 10
+  - 16
+  summary: LZA Ekonomikas institūta valdes priekšsēdētāja.
+  not_claimed: Saite nav pārkāpums. Faila metadati nepierāda, ka viņa uzrakstīja Kalviņa vēstuli.
+  color: lin
+- id: hoppstaedter
+  type: person
+  name: Gerald Hoppstaedter
+  pos:
+  - 210
+  - 16
+  summary: Uzņēmējs; SIA «S-BALTIC» valdes priekšsēdētājs.
+  not_claimed: Saite nav pārkāpums. Uzņēmuma reģistrētā adrese nepierāda, kam pieder ēka.
+  color: hop
+- id: kanans
+  type: person
+  name: Kanans Višvanats
+  pos:
+  - 410
+  - 16
+  summary: Uzņēmējs, Latvijas pilsonis kopš 2023. gada.
+  not_claimed: Saite nav pārkāpums. Saites nepierāda, ka pilsonība pirkta.
+  color: vis
+  facts:
+  - text: LZA publicētā 2022. gada CV patentu sadaļā ir 14 dažādi numuri; saraksta un sešu pieteikumu statusu pārbaude — rakstā.
+    source:
+      label: LZA CV, 1.–2. lpp.
+      url: https://www.lza.lv/images/LZA_CV_godadoktori/Resume_of_Promoter_Dr_Kannan_Vishwanatth_2022.pdf
+    article: kanans-visvanats-nopelni-2023#patenti-cv
+- id: divja
+  type: person
+  name: Divja Kanana Višvanata
+  pos:
+  - 610
+  - 16
+  summary: Pilsonības likums pieņemts 2026. gada 15. oktobrī un atcelts 22. oktobrī.
+  not_claimed: Saite nav pārkāpums. Reģistrēts amats Latvijas uzņēmumos šeit nav konstatēts; darbu laboratorijā
+    apraksta anotācija.
+  color: vis
+- id: kalvins
+  type: person
+  name: Ivars Kalviņš
+  pos:
+  - 810
+  - 16
+  summary: LZA prezidents; parakstīja pilsonības ieteikumu.
+  not_claimed: Saite nav pārkāpums. Dalību Zoar konsultatīvajā padomē apgalvo tikai uzņēmuma lapa. VID pārbaude nav pārkāpuma
+    konstatējums.
+  color: neu
+- id: rivza
+  type: person
+  name: Baiba Rivža
+  pos:
+  - 1010
+  - 16
+  summary: LZA ģenerālsekretāre; parakstīja atbalsta vēstuli.
+  not_claimed: Saite nav pārkāpums. Nav pierādīts, ka institūta amats ietekmēja vēstuli vai ka viņa ir Zoar padomē.
+  color: neu
+- id: s-baltic
+  type: company
+  name: SIA «S-BALTIC»
+  pos:
+  - 20
+  - 170
+  summary: Portāls sevi saista ar šo uzņēmumu.
+  not_claimed: Saite nav pārkāpums. Darbinieku trūkums nepierāda, ka darbības nav. Nav pierādīts, ka portāla klienti
+    iegulda GTECH vai LIGHTS. Projekta vietnes partneru norāde nepierāda, ka tagadējie LIGHTS akcionāri izmantoja
+    S-Baltic vai portālu.
+  zone: gales3
+  label: SIA · 2013
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Gāles iela 3 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  - text: 'Apgrozījums 2020.–2025. gadā: 0 €; darbinieku 2023.–2025. gadā: 0.'
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+  - text: Pēc S-Baltic lapas, juridisko darbu veic ārēju speciālistu tīkls.
+    source:
+      label: S-Baltic komandas lapa
+      url: https://sbaltic.com/counsel/
+    article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+  unknown: Kurš uzņēmums saņem samaksu par portāla pakalpojumiem, publiskie dati nerāda.
+- id: s-baltic-lv
+  type: company
+  name: SIA «S-BALTIC LV»
+  pos:
+  - 210
+  - 170
+  summary: Nav portāla noteikumos norādītā juridiskā persona.
+  not_claimed: Saite nav pārkāpums.
+  zone: gales3
+  label: Atsevišķa SIA
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Gāles iela 3 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+- id: gtech
+  type: company
+  name: AS «GTECH»
+  pos:
+  - 20
+  - 255
+  summary: Akcijas ar balsstiesībām un bez balsstiesībām.
+  not_claimed: Saite nav pārkāpums. Uzņēmumam ir darbinieki un nodokļu maksājumi. Neapgalvojam, ka ieguldījumi ir
+    fiktīvi vai akcionāri ir portāla klienti.
+  zone: gales3
+  label: Akciju sabiedrība
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Gāles iela 3 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  - text: 'Apgrozījums 2021.–2025. gadā katru gadu: 0 €. Gada pārskatos 2023.–2025. gadā: 5 darbinieki.'
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  unknown: Vai akcionāri par šo ieguldījumu saņēma uzturēšanās atļauju, nav zināms.
+- id: eco-trading
+  type: company
+  name: SIA «ECO TRADING»
+  pos:
+  - 210
+  - 255
+  summary: Reorganizācija ar S-BALTIC — 2018. gadā.
+  not_claimed: Saite nav pārkāpums.
+  zone: gales3
+  label: SIA · 2016
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Gāles iela 3 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+- id: loja-estate
+  type: company
+  name: SIA «Loja Estate»
+  pos:
+  - 20
+  - 340
+  summary: Gāles iela 3; īpašuma daļu šeit nenorādām.
+  not_claimed: Saite nav pārkāpums.
+  zone: gales3
+  label: Reģistrētā adrese
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Gāles iela 3 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+- id: rupus-lv
+  type: branch
+  name: Rupus Global filiāle
+  pos:
+  - 210
+  - 340
+  summary: Honkongas uzņēmuma Latvijas filiāle.
+  not_claimed: Saite nav pārkāpums.
+  zone: gales3
+  label: Slēgta · 12.2024
+  facts:
+  - text: 'Filiāles adrese 2022.–2024. gadā: Rīga, Gāles iela 3.'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+- id: dr-vishys-lv
+  type: company
+  name: SIA «Dr.Vishys»
+  pos:
+  - 420
+  - 180
+  summary: Nav Honkongas Dr Vishys SIA Limited.
+  not_claimed: Saite nav pārkāpums. Nulles apgrozījums pats par sevi nav pārkāpums; tāds var būt arī jaunam vai
+    pētniecības uzņēmumam.
+  zone: aptiekas7
+  label: Latvijas SIA · 2019
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Aptiekas iela 7 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  - text: Neto apgrozījums 2020.–2025. gadā katru gadu bija 0 €.
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+  - text: 'Īstermiņa saistības 2025. gada beigās: 1 163 164 €.'
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+  - text: 'Pamatlīdzekļi: 51 832 € (2023. gada beigās) un 687 488 € (2025. gada beigās).'
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+  unknown: Kas ir kreditori, publiskie dati nerāda.
+- id: dr-ashleys-lv
+  type: branch
+  name: Dr Ashleys filiāle
+  pos:
+  - 420
+  - 255
+  summary: Honkongas uzņēmuma Latvijas filiāle.
+  not_claimed: Saite nav pārkāpums.
+  zone: aptiekas7
+  label: Slēgta · 12.2024
+  facts:
+  - text: 'Filiāles adrese 2022.–2024. gadā: Rīga, Aptiekas iela 7.'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+- id: lza-ei
+  type: company
+  name: LZA Ekonomikas institūts
+  pos:
+  - 610
+  - 190
+  summary: Atsevišķs uzņēmums, nevis pati Akadēmija.
+  not_claimed: Saite nav pārkāpums.
+  zone: akad1
+  label: SIA · 1997
+  facts:
+  - text: 'Reģistrētā adrese: Rīga, Akadēmijas laukums 1 (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: s-baltic-uzturesanas-atlaujas-2026#akademijas-laukums-1-un-instituts
+- id: lza
+  type: institution
+  name: Latvijas Zinātņu akadēmija
+  pos:
+  - 800
+  - 190
+  summary: Institūta dalībniece.
+  not_claimed: Saite nav pārkāpums.
+  zone: akad1
+  label: LZA
+- id: portals
+  type: group
+  name: euresidencies.com
+  pos:
+  - 610
+  - 300
+  summary: Norāda arī Gāles ielu 3.
+  not_claimed: Saite nav pārkāpums.
+  zone: akad1
+  label: Portālā norādīta adrese
+  facts:
+  - text: Pēc portāla kontaktu lapas, kas skatīta 2026. gada 24. oktobrī, galvenās adreses ir Gāles iela 3 un Akadēmijas laukums 1. Tā nav
+      UR reģistrācija.
+    source:
+      label: Portāla kontaktu lapa
+      url: https://euresidencies.com/contact/
+    article: s-baltic-uzturesanas-atlaujas-2026#akademijas-laukums-1-un-instituts
+- id: forums
+  type: group
+  name: Ekonomikas forums
+  pos:
+  - 800
+  - 300
+  summary: Dalība forumā nav reģistrēts amats.
+  not_claimed: Saite nav pārkāpums.
+  label: Institūta rīkots forums
+- id: saeima
+  type: institution
+  name: Saeima
+  pos:
+  - 1010
+  - 170
+  summary: Lēma par abām pilsonībām.
+  not_claimed: Saite nav pārkāpums.
+  zone: saeima
+  label: Likumdevējs
+- id: likums-2023
+  type: law
+  name: Kanana pilsonības likums
+  pos:
+  - 1010
+  - 255
+  summary: Atzina Kananu par Latvijas pilsoni.
+  not_claimed: Saite nav pārkāpums.
+  zone: saeima
+  label: 14.09.2023
+  facts:
+  - text: Saeima 2023. gada 14. septembrī ar likumu atzina Kananu Višvanatu par Latvijas pilsoni.
+    source:
+      label: Saeimas balsojums
+      url: https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/0D5B9A29EA09C0E6C2258A2B000AFD55?OpenDocument
+    article: visvanati-pilsoniba-2026#divi-likumi-viena-gimene
+- id: likums-2026
+  type: law
+  name: Divjas pilsonības lieta
+  pos:
+  - 1010
+  - 340
+  summary: Ieteikuma un atbalsta vēstules.
+  not_claimed: Saite nav pārkāpums.
+  zone: saeima
+  label: Likums atcelts 22.10.2026
+  facts:
+  - text: Saeima 2026. gada 15. oktobrī atzina Divju Kananu Višvanatu par Latvijas pilsoni; 22. oktobrī likumu atcēla.
+    source:
+      label: Saeima · 1592/Lp14
+      url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1592/Lp14
+    article: visvanati-pilsoniba-2026#pec-publikacijas-komisija-policija-un-politiki
+- id: lights
+  type: company
+  name: AS «LIGHTS»
+  pos:
+  - 20
+  - 530
+  summary: Akcijas ar balsstiesībām un bez balsstiesībām.
+  not_claimed: Saite nav pārkāpums. Uzņēmumam ir darbinieki un nodokļu maksājumi. Neapgalvojam, ka ieguldījumi ir
+    fiktīvi vai akcionāri ir portāla klienti. Projekta vietnes piedāvājums nav izsniegta atļauja un nerāda, kā tagadējie
+    akcionāri ieguva akcijas.
+  zone: salaspils
+  label: «Dāvidi»
+  facts:
+  - text: 'Reģistrētā adrese: «Dāvidi», Salaspils pagasts (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  - text: 'Apgrozījums 2023.–2025. gadā katru gadu: 0 €. Gada pārskatos 2023.–2025. gadā: 5 darbinieki.'
+    source:
+      label: UR gada pārskati
+      url: https://data.gov.lv/dati/lv/dataset/gada-parskatu-finansu-dati
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  unknown: Vai akcionāri par šo ieguldījumu saņēma uzturēšanās atļauju, nav zināms.
+- id: lights-medical
+  type: company
+  name: AS «LIGHTS Medical»
+  pos:
+  - 210
+  - 530
+  summary: Atsevišķa akciju sabiedrība.
+  not_claimed: Saite nav pārkāpums.
+  zone: salaspils
+  label: «Dāvidi»
+  facts:
+  - text: 'Reģistrētā adrese: «Dāvidi», Salaspils pagasts (dati uz 2026. gada 24. oktobri).'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: miera34
+  type: company
+  name: SIA «MIERA RESIDENCE 34»
+  pos:
+  - 20
+  - 625
+  summary: Ēkas īpašnieku nepārbaudījām.
+  not_claimed: Saite nav pārkāpums.
+  zone: salaspils
+  label: Miera iela 34
+  facts:
+  - text: 'Reģistrētā adrese: Miera iela 34, Salaspils (dati uz 2026. gada 24. oktobri). Ēkas īpašnieku nepārbaudījām.'
+    source:
+      label: UR reģistrs
+      url: https://data.gov.lv/dati/lv/dataset/uz
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: invest-in-latvia
+  type: company
+  name: SIA «Invest in Latvia!»
+  pos:
+  - 1010
+  - 505
+  summary: Pieder 25 % LIGHTS Medical akciju.
+  not_claimed: Saite nav pārkāpums.
+  zone: citi
+  label: LIGHTS Medical akcionārs
+- id: china-times
+  type: company
+  name: SIA «China Times EU»
+  pos:
+  - 1010
+  - 595
+  summary: Ņina Linde un Kanans Višvanats.
+  not_claimed: Saite nav pārkāpums.
+  zone: citi
+  label: Divi dalībnieki
+- id: zoar-ltd
+  type: company
+  name: Zoar Limited
+  pos:
+  - 420
+  - 515
+  summary: Agrāk Dr Ashleys Limited.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: Kaimanu salas
+- id: zoar-labs
+  type: company
+  name: Zoar Labs Limited
+  pos:
+  - 610
+  - 515
+  summary: Struktūra pēc SEC ziņojuma.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: Zoar Labs grupa
+- id: zoar-hk
+  type: company
+  name: Zoar HK Limited
+  pos:
+  - 800
+  - 515
+  summary: Agrāk Dr Ashleys Limited; cits uzņēmums.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: Honkonga
+- id: dr-vishys-hk
+  type: company
+  name: Dr Vishys SIA Limited
+  pos:
+  - 420
+  - 615
+  summary: Agrāk Rupus Global; plānota likvidācija.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: Honkonga
+- id: impact
+  type: company
+  name: Impact BioMedical
+  pos:
+  - 610
+  - 615
+  summary: Plānotā apvienošanās ar Zoar.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: ASV biržas uzņēmums
+- id: apvienotais
+  type: group
+  name: Sabiedrība pēc darījuma
+  pos:
+  - 610
+  - 715
+  summary: Akciju sadalījums tikai pēc darījuma.
+  not_claimed: Saite nav pārkāpums.
+  zone: zoar
+  label: Plānots, nav pabeigts
+- id: akcionari21
+  type: aggregate
+  name: 21 akcionārs pa 50 000 €
+  pos:
+  - 1010
+  - 695
+  summary: 10 GTECH + 11 LIGHTS. Divi ir Hoppstaedter un Kanans Višvanats; pārējo 19 vārdus nepublicējam.
+  not_claimed: Saite nav pārkāpums.
+  zone: citi
+- id: privatpersona
+  type: aggregate
+  name: Privātpersona · 5 %
+  pos:
+  - 210
+  - 660
+  summary: LIGHTS Medical akcionārs; vārdu nepublicējam.
+  not_claimed: Saite nav pārkāpums.
+- id: ls-vietne
+  type: group
+  name: LIGHTS projekta vietne
+  pos:
+  - 420
+  - 355
+  summary: Rehabilitācijas, spa un senioru mājokļu centra «LIGHTS Medical» vietne aslightsmedical.com. Pēc tās ziņām projekts top
+    Spuņciemā, Mārupes novadā.
+  not_claimed: Saite nav pārkāpums. Piedāvājums nav izsniegta uzturēšanās atļauja — atļauju izsniedz valsts. Vietne
+    nerāda, kā akcijas ieguva tagadējie LIGHTS akcionāri un vai kāds no viņiem saņēma atļauju.
+  label: Projekta vietne
+  facts:
+  - text: 'Piedāvā akciju bez balsstiesībām un atļaujas kārtošanu par kopumā 85 000 €: 50 000 € — ieguldījums akcijā,
+      10 000 € — valsts nodeva, 25 000 € — pieteikuma, konsultāciju un citas maksas.'
+    source:
+      label: Vietnes lapa «Invest»
+      url: https://aslightsmedical.com/invest/
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  - text: Komandā minēti Ņina Linde un Gerald Hoppstaedter. Lapas skatījām 2026. gada 25. oktobrī.
+    source:
+      label: Vietnes sākumlapa
+      url: https://aslightsmedical.com/
+    article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  unknown: Vietne lieto nosaukumus «AS Lights» un «AS Lights Medical», bet reģistrācijas numuru nenorāda. Kura no
+    abām UR reģistrētajām sabiedrībām ir piedāvājuma puse, nezinām.
+- id: peridot
+  type: company
+  name: Peridot Capital Solutions
+  pos:
+  - 800
+  - 615
+  summary: Pilnais nosaukums — Peridot Capital Solutions Hong Kong Limited. Zoar HK kreditors.
+  not_claimed: Saite nav pārkāpums. Parāds ir atzīts līgumā; tas nepierāda, ka grupas ieņēmumi vai peļņa būtu
+    nepatiesi.
+  zone: zoar
+  label: Honkonga · kreditors
+  facts:
+  - text: Kreditors bija iesniedzis Zoar HK likvidācijas pieteikumu. Pēc vienošanās par atmaksu tiesa to 2026. gada
+      8. jūnijā noraidīja.
+    source:
+      label: SEC · F-4/A · 21.10.2026
+      url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+    article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  unknown: Kā beidzās saistītā piedziņas prasība, nezinām; ziņojuma brīdī tā vēl nebija pabeigta.
+# Līmeņa likums: 1 = dokuments, kas ir noteicošais par to, ko apraksta (UR, Saeima, emitenta SEC ziņojums par paša emitenta pārvaldi).
+# 2 = kāds raksta par citu organizāciju vai par sevi bez reģistra apstiprinājuma (lapa, vēstule, anotācija, SEC ziņojums par institūta padomi).
+# Avota norāde «pēc X» stāv tikai caveat laukā, ne verb.
+links:
+- id: s01
+  from: saeima
+  to: kanans
+  verb: ar likumu atzina par Latvijas pilsoni
+  period: 2023. gada 14. septembrī
+  tier: 1
+  kind: pilsoniba
+  source:
+    label: Saeimas balsojums
+    url: https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/0D5B9A29EA09C0E6C2258A2B000AFD55?OpenDocument
+  article: visvanati-pilsoniba-2026#divi-likumi-viena-gimene
+- id: s02
+  from: saeima
+  to: divja
+  verb: ar likumu atzina par Latvijas pilsoni
+  period: 2026. gada 15. oktobrī
+  tier: 1
+  kind: pilsoniba
+  source:
+    label: Saeimas balsojums
+    url: https://titania.saeima.lv/LIVS14/SaeimaLIVS2_DK.nsf/0/8753D4C5C8D1BCD0C2258E92000AFDAE?OpenDocument
+  article: visvanati-pilsoniba-2026#divi-likumi-viena-gimene
+  caveat: Likums atcelts 2026. gada 22. oktobrī.
+- id: s03
+  from: saeima
+  to: likums-2026
+  verb: pieņēma likumu par pilsonības likuma atcelšanu
+  period: 2026. gada 22. oktobrī
+  tier: 1
+  kind: pilsoniba
+  source:
+    label: Saeima · 1592/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1592/Lp14
+  article: visvanati-pilsoniba-2026#pec-publikacijas-komisija-policija-un-politiki
+- id: s04
+  from: divja
+  to: kanans
+  verb: iesniegumā nosauca par savu vīru
+  period: 2026. gada iesniegums
+  tier: 1
+  kind: cits
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: visvanati-pilsoniba-2026#divi-likumi-viena-gimene
+  quote: …mana vīra Dr. Kanana Višvanata farmācijas un cilvēku veselības aizsardzības uzņēmumos.
+- id: s05
+  from: kalvins
+  to: likums-2026
+  verb: parakstīja ieteikumu pilsonības piešķiršanai
+  period: 2026. gada 16. jūnijā
+  tier: 1
+  kind: pilsoniba
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#junija-vestule-personigs-viedoklis-vai-lza-dokuments
+  caveat: Uz LZA veidlapas; Kalviņš to vēlāk skaidroja kā personīgu viedokli.
+- id: s06
+  from: rivza
+  to: likums-2026
+  verb: parakstīja atbalsta vēstuli pilsonības piešķiršanai
+  period: Vēstule bez datuma
+  tier: 1
+  kind: pilsoniba
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+- id: s07
+  from: kalvins
+  to: lza
+  verb: parakstīja ieteikumu kā LZA prezidents
+  period: 2026. gada 16. jūnijā
+  tier: 1
+  kind: amats
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#junija-vestule-personigs-viedoklis-vai-lza-dokuments
+- id: s08
+  from: rivza
+  to: lza
+  verb: atbalsta vēstulē norādīta kā ģenerālsekretāre
+  period: Saeimai iesniegtā vēstule bez datuma
+  tier: 1
+  kind: amats
+  source:
+    label: Saeimai iesniegtā atbalsta vēstule
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+- id: s09
+  from: lza
+  to: lza-ei
+  verb: ir 45 % daļu īpašniece
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+- id: s10
+  from: linde
+  to: lza-ei
+  verb: ir 35,8 % daļu īpašniece
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+- id: s11
+  from: linde
+  to: lza-ei
+  verb: vada valdi
+  period: Kopš 2014. gada 24. septembra
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+- id: s12
+  from: rivza
+  to: lza-ei
+  verb: deklarē padomes priekšsēdētājas amatu
+  period: 2015.–2025. gada deklarācijas
+  tier: 1
+  kind: amats
+  source:
+    label: VID deklarācijas
+    url: https://www6.vid.gov.lv/VAD
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+  caveat: Šeit neapstiprinām amata turpinājumu 2026. gadā.
+- id: s13
+  from: kanans
+  to: lza-ei
+  verb: ir padomes loceklis
+  period: 2026. gada ziņojums; iecelšanas datums nav zināms
+  tier: 2
+  kind: amats
+  source:
+    label: SEC · F-4/A
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+  caveat: Pēc Zoar ziņojuma SEC; 30. oktobrī to LTV apstiprināja arī pats institūts (LSM). Viņa uzņēmuma Dr Ashleys komandas lapā 2023.–2024. gadā viņš nosaukts arī par institūta «Director & senior researcher»; institūta komandas lapā viņa nav.
+  quote: a member of the council of the Institute of Economics, Latvian Academy of Science
+- id: s14
+  from: hoppstaedter
+  to: lza-ei
+  verb: ir norādīts kā valdes priekšsēdētājas padomnieks
+  period: Komandas lapas kopija — 2026. gada 24. oktobrī
+  tier: 2
+  kind: amats
+  source:
+    label: Institūta komandas lapa · arhīvs
+    url: https://web.archive.org/web/20261024093156/https://eilza.lv/team
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+  caveat: Pēc institūta komandas lapas.
+- id: s15
+  from: lza-ei
+  to: kalvins
+  verb: sniedza ziņas pilsonības ieteikumam
+  period: Kalviņa vēstule — 2026. gada 23. oktobrī
+  tier: 2
+  kind: pilsoniba
+  source:
+    label: Kalviņa vēstule · LSM
+    url: https://www.lsm.lv/raksts/zinas/latvija/23.10.2026-zinatnu-akademijas-prezidents-kalvins-apsver-iespeju-atstat-amatu.a668885/
+  article: lza-ieteikums-ekonomikas-instituts-2026#kalvins-ieteikums-balstijas-uz-instituta-zinam
+  caveat: Pēc Kalviņa teiktā.
+- id: s16
+  from: divja
+  to: forums
+  verb: regulāri atbalsta forumu
+  period: Vēstule bez datuma
+  tier: 2
+  kind: cits
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+  caveat: Pēc Rivžas atbalsta vēstules.
+  quote: Dr. Divja Višvanata regulāri atbalsta Starptautisko Humānistiskās ekonomikas forumu, kas tiek organizēts
+    Latvijas Zinātņu akadēmijā
+- id: s17
+  from: lza-ei
+  to: forums
+  verb: rīko ekonomikas forumu
+  period: 2022. gada foruma materiāli
+  tier: 2
+  kind: cits
+  source:
+    label: Foruma tēžu krājums · 2022
+    url: https://lza.lv/images/LZA_EI/Abstract%20book_2022_EN.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Pēc rīkotāja foruma materiāliem; rīkotājs ir SIA, nevis pati LZA.
+- id: s18
+  from: hoppstaedter
+  to: forums
+  verb: vadīja paneļdiskusiju
+  period: 2022. gads
+  tier: 2
+  kind: cits
+  source:
+    label: Foruma tēžu krājums · 2022
+    url: https://lza.lv/images/LZA_EI/Abstract%20book_2022_EN.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Pēc foruma programmas tēžu krājumā, 6.–7. lpp. (PDF 8.–9. lpp.).
+- id: s19
+  from: kanans
+  to: forums
+  verb: piedalījās paneļdiskusijā
+  period: 2022. gads
+  tier: 2
+  kind: cits
+  source:
+    label: Foruma tēžu krājums · 2022
+    url: https://lza.lv/images/LZA_EI/Abstract%20book_2022_EN.pdf
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Pēc foruma programmas tēžu krājumā, 6.–7. lpp. (PDF 8.–9. lpp.).
+- id: s20
+  from: linde
+  to: china-times
+  verb: ir 94,9 % daļu īpašniece
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: visvanati-pilsoniba-2026#sia-china-times-eu
+- id: s21
+  from: linde
+  to: china-times
+  verb: darbojas valdē
+  period: Kopš 2013. gada
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: visvanati-pilsoniba-2026#sia-china-times-eu
+- id: s22
+  from: kanans
+  to: china-times
+  verb: ir 5,1 % daļu īpašnieks
+  period: Kopš 2025. gada 29. jūlija
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: visvanati-pilsoniba-2026#sia-china-times-eu
+- id: s23
+  from: kanans
+  to: dr-vishys-lv
+  verb: ir vienīgais dalībnieks
+  period: Kopš 2024. gada oktobra
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+- id: s24
+  from: kanans
+  to: dr-vishys-lv
+  verb: ir valdes loceklis
+  period: Kopš 2019. gada 11. novembra
+  tier: 1
+  kind: amats
+  source:
+    label: UR izraksts
+    url: https://info.ur.gov.lv/#/legal-entity/40203231736
+  article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+- id: s25
+  from: divja
+  to: dr-vishys-lv
+  verb: vada mākslīgā intelekta laboratoriju
+  period: Kopš 2024. gada
+  tier: 2
+  kind: amats
+  source:
+    label: Saeima · 1587/Lp14
+    url: https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf
+  article: visvanati-pilsoniba-2026#sia-drvishys-apgrozijums-0--sesus-gadus
+  caveat: Pēc likumprojekta anotācijas; reģistrēts amats nav konstatēts.
+- id: s26
+  from: hoppstaedter
+  to: s-baltic
+  verb: ir uzņēmuma dalībnieks ar 2849 no 2852 daļām
+  period: UR saraksta ieraksts — 2017. gada 27. novembrī; izraksts — 2026. gada 24. oktobrī
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR izraksts
+    url: https://info.ur.gov.lv/#/legal-entity/40103627136
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+- id: s27
+  from: hoppstaedter
+  to: s-baltic
+  verb: vada valdi
+  period: Kopš 2013. gada 21. janvāra
+  tier: 1
+  kind: amats
+  source:
+    label: UR izraksts
+    url: https://info.ur.gov.lv/#/legal-entity/40103627136
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+- id: s28
+  from: hoppstaedter
+  to: s-baltic-lv
+  verb: valdes priekšsēdētājs
+  period: Kopš 2018. gada 4. decembra; izraksts — 2026. gada 25. oktobrī
+  tier: 1
+  kind: amats
+  source:
+    label: UR izraksts
+    url: https://info.ur.gov.lv/#/legal-entity/40203105037
+  article: s-baltic-uzturesanas-atlaujas-2026#ko-piedava-portals
+- id: s29
+  from: linde
+  to: s-baltic
+  verb: ir nosaukta par vadītāju
+  period: S-Baltic lapā 2026. gada 15. augustā (Common Crawl) un 24. oktobrī
+  tier: 2
+  kind: amats
+  source:
+    label: S-Baltic komandas lapa, mūsu kopija 24.10.
+    url: https://atmina.lv/assets/sources/s-baltic-2026/sbaltic-counsel-2026-10-24.png
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+  caveat: Pēc S-Baltic lapas; UR izrakstā amata un prokūras nav. 26. oktobrī lapā Lindes vairs nav.
+  quote: Managing Director
+- id: s30
+  from: s-baltic
+  to: portals
+  verb: ir norādīta kā portāla uzturētāja
+  period: Noteikumi skatīti 2026. gada 24. oktobrī
+  tier: 2
+  kind: cits
+  source:
+    label: Portāla noteikumi
+    url: https://euresidencies.com/terms/
+  article: s-baltic-uzturesanas-atlaujas-2026#ko-piedava-portals
+  caveat: Pēc portāla noteikumiem un tajos norādītā reģistrācijas numura.
+- id: s31
+  from: linde
+  to: eco-trading
+  verb: vada valdi
+  period: Kopš 2019. gada
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+- id: s32
+  from: linde
+  to: eco-trading
+  verb: ir reģistrēta kā patiesā labuma guvēja
+  period: Kopš 2019. gada
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR patiesie labuma guvēji
+    url: https://data.gov.lv/dati/lv/dataset/patiesie-labuma-guveji
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+  caveat: Tas nav apgalvojums par tieši piederošu daļu apjomu.
+- id: s33
+  from: s-baltic
+  to: eco-trading
+  verb: nodalīšanas ceļā nodeva daļu mantas, tiesību un saistību
+  period: 2018. gada 28. maijā
+  tier: 1
+  kind: cits
+  source:
+    label: Latvijas Vēstnesis, 2018, Nr. 28
+    url: https://www.vestnesis.lv/op/2018/28.KM4
+  article: s-baltic-uzturesanas-atlaujas-2026#portals-saka-registri-rada
+  caveat: Kādi aktīvi vai saistības nodoti, publiskie dati nerāda.
+- id: s34
+  from: hoppstaedter
+  to: gtech
+  verb: ir 70 000 akciju īpašnieks ar visām balsstiesībām
+  period: UR akcionāru ieraksts — 2024. gada 20. novembrī; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s35
+  from: hoppstaedter
+  to: gtech
+  verb: vada valdi
+  period: Dati uz 2026. gada 24. oktobri; sākums nav zināms
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s36
+  from: kanans
+  to: gtech
+  verb: tur akcijas par 50 000 € bez balsstiesībām
+  period: Iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: visvanati-pilsoniba-2026#as-gtech-un-as-lights-21-iemaksa-pa-50-000-
+- id: s37
+  from: linde
+  to: lights
+  verb: ir 35 000 akciju īpašniece ar visām balsstiesībām
+  period: UR akcionāru ieraksts — 2025. gada 13. novembrī; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s38
+  from: linde
+  to: lights
+  verb: vada valdi
+  period: Dati uz 2026. gada 24. oktobri; sākums nav zināms
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s39
+  from: hoppstaedter
+  to: lights
+  verb: tur akcijas par 50 000 € bez balsstiesībām
+  period: Iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: visvanati-pilsoniba-2026#as-gtech-un-as-lights-21-iemaksa-pa-50-000-
+- id: s40
+  from: akcionari21
+  to: gtech
+  verb: desmit no tiem tur akcijas bez balsstiesībām
+  period: UR akcionāru ieraksts — 2024. gada 20. novembrī
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Viens no desmit ir Kanans; ne visiem 21 pieder GTECH akcijas.
+- id: s41
+  from: akcionari21
+  to: lights
+  verb: vienpadsmit no tiem tur akcijas bez balsstiesībām
+  period: UR akcionāru ieraksts — 2025. gada 13. novembrī
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Viens no vienpadsmit ir Hoppstaedter; ne visiem 21 pieder LIGHTS akcijas.
+- id: s42
+  from: hoppstaedter
+  to: miera34
+  verb: ir vienīgais dalībnieks
+  period: Kopš 2025. gada 20. novembra
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR dalībnieki
+    url: https://data.gov.lv/dati/lv/dataset/members
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Tas nepierāda īpašumtiesības uz ēku.
+- id: s43
+  from: linde
+  to: miera34
+  verb: vada valdi
+  period: Kopš 2025. gada 20. novembra
+  tier: 1
+  kind: amats
+  source:
+    label: UR amatpersonas
+    url: https://data.gov.lv/dati/lv/dataset/officers
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s44
+  from: linde
+  to: lights-medical
+  verb: ir 50 % akciju īpašniece
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s45
+  from: lights
+  to: lights-medical
+  verb: ir 20 % akciju īpašniece
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s46
+  from: invest-in-latvia
+  to: lights-medical
+  verb: ir 25 % akciju īpašniece
+  period: UR datos norādīts 2025. gada 22. janvāris; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+- id: s47
+  from: privatpersona
+  to: lights-medical
+  verb: tur 5 % akciju
+  period: Dati uz 2026. gada 24. oktobri; iegādes datums nav zināms
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR akcionāri
+    url: https://data.gov.lv/dati/lv/dataset/stockholders
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Vārdu nepublicējam.
+- id: s48
+  from: linde
+  to: zoar-hk
+  verb: pievienojās konsultatīvajai padomei
+  period: 2022. gada 9. maija relīze; arhīva kopijas — 2023.–2024. gadā
+  tier: 2
+  kind: amats
+  source:
+    label: Dr Ashleys preses relīze
+    url: https://markets.financialcontent.com/prnews.pressrelease/article/marketersmedia-2022-5-9-dr-ashleys-limited-infuses-academic-researchers-on-board-inducts-top-strategists-into-advisory-board
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Vēsturiska saite pēc Honkongas Dr Ashleys relīzes, nevis apstiprināts pašreizējs amats Kaimanu Zoar.
+- id: s49
+  from: hoppstaedter
+  to: zoar-hk
+  verb: pievienojās konsultatīvajai padomei
+  period: 2022. gada 9. maija relīze; arhīva kopijas — 2023.–2024. gadā
+  tier: 2
+  kind: amats
+  source:
+    label: Dr Ashleys preses relīze
+    url: https://markets.financialcontent.com/prnews.pressrelease/article/marketersmedia-2022-5-9-dr-ashleys-limited-infuses-academic-researchers-on-board-inducts-top-strategists-into-advisory-board
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Vēsturiska saite; relīzē vārds rakstīts citādi. Rakstā uzskatām, ka domāts Hoppstaedter.
+- id: s50
+  from: kalvins
+  to: zoar-ltd
+  verb: uzņēmuma lapā nosaukts par konsultatīvās padomes locekli
+  period: lapa datēta 2026. gada 7. septembrī, arhīvā — 9. oktobrī
+  tier: 2
+  kind: amats
+  source:
+    label: Zoar lapa · Common Crawl kopija
+    url: https://atmina.lv/assets/sources/lza-zoar-2026/zoar-prof-dr-ivars-kalvinsh-cc-2026-10-09.png
+  article: lza-ieteikums-ekonomikas-instituts-2026#vid-parbaude-un-zoar-padome
+  caveat: Pēc Zoar lapas («Member of the Council of Advisors»); lapa dzēsta, kopija — Common Crawl. To apgalvo uzņēmums; LETA ziņo par to pašu.
+- id: s51
+  from: rivza
+  to: zoar-ltd
+  verb: nosaukta konsultatīvās padomes sarakstā
+  period: sadaļa publicēta 2026. gada 30. jūlijā, arhīvā — 15. augustā
+  tier: 2
+  kind: amats
+  source:
+    label: Zoar lapa · Common Crawl kopija
+    url: https://atmina.lv/assets/sources/lza-zoar-2026/zoar-advisory-board-cc-2026-08-15.png
+  article: lza-ieteikums-ekonomikas-instituts-2026#vid-parbaude-un-zoar-padome
+  caveat: Pēc Zoar lapas (Advisory Board saraksts, 15.08.2026); lapa dzēsta, kopija — Common Crawl. To apgalvo uzņēmums; Rivža noliedz, ka ieņēmusi amatu uzņēmumā vai bijusi ar to līgumattiecībās, un saka, ka par uzņēmumu nav zinājusi.
+- id: s52
+  from: kanans
+  to: zoar-ltd
+  verb: ir direktors un kontrolējošais akcionārs
+  period: 2026. gada ziņojums
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm
+  article: visvanati-pilsoniba-2026#kanans-visvanats-ko-rada-indijas-regulatora-un-tiesas-dokumenti
+  caveat: Paša emitenta ziņojums SEC.
+- id: s53
+  from: kanans
+  to: zoar-ltd
+  verb: ir norādīts kā valdes priekšsēdētājs un izpilddirektors
+  period: Mājaslapa skatīta 2026. gada oktobrī
+  tier: 2
+  kind: amats
+  source:
+    label: Zoar mājaslapa
+    url: https://zoarlimited.com/dr-kanans-visvanats-frsc/
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Pēc Zoar mājaslapas.
+- id: s54
+  from: kanans
+  to: apvienotais
+  verb: pēc darījuma būtu aptuveni 93,32 % akciju īpašnieks
+  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Tikai pēc darījuma noslēgšanas, nevis pašreizējs akciju sadalījums.
+- id: s55
+  from: zoar-ltd
+  to: impact
+  verb: pēc plānotā darījuma kļūtu par mātesuzņēmumu
+  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Darījums nav pabeigts.
+- id: s56
+  from: zoar-ltd
+  to: zoar-labs
+  verb: pēc plānotā darījuma kļūtu par mātesuzņēmumu
+  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Darījums nav pabeigts.
+- id: s57
+  from: zoar-labs
+  to: zoar-hk
+  verb: grupā ietilpst Zoar HK Limited
+  period: 2026. gada ziņojums
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Pēc emitenta struktūras apraksta; tiešu īpašuma procentu nenorādām.
+- id: s58
+  from: zoar-labs
+  to: dr-vishys-hk
+  verb: grupā ietilpst Dr Vishys SIA Limited
+  period: 2026. gada ziņojums
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Pēc emitenta struktūras apraksta; uzņēmumu paredzēts likvidēt.
+- id: s59
+  from: zoar-hk
+  to: dr-ashleys-lv
+  verb: bija reģistrēta Latvijas filiāle
+  period: No 2022. gada 28. jūlija līdz 2024. gada decembrim
+  tier: 1
+  kind: zoar
+  source:
+    label: UR reģistrs
+    url: https://data.gov.lv/dati/lv/dataset/uz
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Vēsturiski ar nosaukumu Dr Ashleys Limited; filiāle slēgta.
+- id: s60
+  from: dr-vishys-hk
+  to: rupus-lv
+  verb: bija reģistrēta Latvijas filiāle
+  period: No 2022. gada 28. jūlija līdz 2024. gada decembrim
+  tier: 1
+  kind: zoar
+  source:
+    label: UR reģistrs
+    url: https://data.gov.lv/dati/lv/dataset/uz
+  article: lza-ieteikums-ekonomikas-instituts-2026#saites-kops-2022-gada
+  caveat: Vēsturiski ar nosaukumu Rupus Global Limited; filiāle slēgta.
+- id: s61
+  from: hoppstaedter
+  to: s-baltic-lv
+  verb: ir visu 2800 daļu īpašnieks (100 %)
+  period: Kopš 2018. gada 23. novembra; izraksts — 2026. gada 25. oktobrī
+  tier: 1
+  kind: ipasums
+  source:
+    label: UR izraksts
+    url: https://info.ur.gov.lv/#/legal-entity/40203105037
+  article: s-baltic-uzturesanas-atlaujas-2026#ko-piedava-portals
+- id: s62
+  from: ls-vietne
+  to: s-baltic
+  verb: nosauc par partneri juridiskajos un uzturēšanās atļauju jautājumos
+  period: Lapa skatīta 2026. gada 25. oktobrī
+  tier: 2
+  kind: cits
+  source:
+    label: Vietnes lapa «Residency»
+    url: https://aslightsmedical.com/residency/
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Pēc projekta vietnes; saite ved uz sbaltic.com, reģistrācijas numuru nenorāda.
+  quote: S-Baltic, our legal and residency partner in Latvia.
+- id: s63
+  from: ls-vietne
+  to: portals
+  verb: partneru joslā nosauc EU Residencies; saite ved uz portālu
+  period: Lapa skatīta 2026. gada 25. oktobrī
+  tier: 2
+  kind: cits
+  source:
+    label: Vietnes sākumlapa
+    url: https://aslightsmedical.com/
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Pēc projekta vietnes; sadarbības līgumu neredzējām.
+- id: s64
+  from: ls-vietne
+  to: lza-ei
+  verb: partneru joslā nosauc «Eliza»; saite ved uz eilza.lv
+  period: Lapa skatīta 2026. gada 25. oktobrī
+  tier: 2
+  kind: cits
+  source:
+    label: Vietnes sākumlapa
+    url: https://aslightsmedical.com/
+  article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
+  caveat: Pēc projekta vietnes; eilza.lv ir institūta lapa. Tas nepierāda oficiālu sadarbības līgumu.
+- id: s65
+  from: lza
+  to: kanans
+  verb: piešķīra goda doktora grādu ekonomikā
+  period: Senāts apstiprināja 2022. gada 20. septembrī
+  tier: 1
+  kind: cits
+  source:
+    label: LZA paziņojums
+    url: https://www.lza.lv/aktualitates/jaunumi/1202-lza-goda-doktora-grads-pieskirts-dr-kananam-visvanatam
+  article: kanans-visvanats-nopelni-2023#apgalvojums-7
+  caveat: Senāts apstiprināja Lauksaimniecības un meža zinātņu nodaļas 4. jūlija lēmumu.
+- id: s66
+  from: rivza
+  to: lza
+  verb: vadīja Lauksaimniecības un meža zinātņu nodaļu, kas nolēma piešķirt Kananam Višvanatam goda doktora grādu
+  period: Nodaļas lēmums — 2022. gada 4. jūlijā
+  tier: 1
+  kind: amats
+  source:
+    label: LZA gadagrāmata 2022 · 147. lpp.
+    url: https://www.lza.lv/images/darbibas-parskati/LZA_GG-2022.pdf
+  article: kanans-visvanats-nopelni-2023#apgalvojums-7
+  caveat: Nodaļas sēdes protokolu neredzējām, tāpēc nezinām, kas grādu izvirzīja un kā nodaļa balsoja. Neapgalvojam,
+    ka grāds piešķirts nepienācīgi.
+- id: s67
+  from: peridot
+  to: zoar-hk
+  verb: ir kreditors ar prasījumu ap 8,09 miljoniem dolāru
+  period: Parāds uz 2026. gada 24. martu; atmaksas līgums — 5. jūnijā
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Paša emitenta ziņojums SEC; atmaksas līgumā Zoar HK prasījumu atzīst.
+- id: s68
+  from: kanans
+  to: zoar-hk
+  verb: atmaksas līgumā paredzēts kā personīgais galvotājs
+  period: Atmaksas līgums — 2026. gada 5. jūnijā
+  tier: 1
+  kind: zoar
+  source:
+    label: SEC · F-4/A · 21.10.2026
+    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+  article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
+  caveat: Paša emitenta ziņojums SEC; neapgalvojam, ka galvojums ir izmantots.
+
+guides:
+- article: visvanati-pilsoniba-2026
+  label: Pilsonības
+  links:
+  - s01
+  - s02
+  - s03
+  - s04
+  - s20
+  - s21
+  - s22
+  - s23
+  - s24
+  - s25
+  - s36
+  - s39
+  - s52
+  - s53
+  - s54
+  - s55
+  - s56
+  - s57
+  - s58
+  - s67
+  - s68
+- article: lza-ieteikums-ekonomikas-instituts-2026
+  label: Institūts un ieteikums
+  links:
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s11
+  - s12
+  - s13
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s19
+  - s48
+  - s49
+  - s50
+  - s51
+  - s59
+  - s60
+- article: s-baltic-uzturesanas-atlaujas-2026
+  label: S-Baltic un 50 000 €
+  links:
+  - s26
+  - s27
+  - s28
+  - s61
+  - s29
+  - s30
+  - s31
+  - s32
+  - s33
+  - s34
+  - s35
+  - s37
+  - s38
+  - s40
+  - s41
+  - s42
+  - s43
+  - s44
+  - s45
+  - s46
+  - s47
+  - s62
+  - s63
+  - s64
+- article: kanans-visvanats-nopelni-2023
+  label: Goda doktora grāds
+  links:
+  - s65
+  - s66

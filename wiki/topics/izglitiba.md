@@ -1,0 +1,14 @@
+---
+topic: Izglītība
+positions: 287
+votes: 27968
+politicians: 75
+contradictions: 1
+last_activity: '2026-10-30 00:00:00'
+top_politicians:
+- '[[persons/ilze-indriksone|Ilze Indriksone]]'
+- '[[persons/ceslavs-batna|Česlavs Batņa]]'
+- '[[persons/latvijas-darba-deveju-konfederacija|Latvijas Darba devēju konfederācija]]'
+- '[[persons/andris-kulbergs|Andris Kulbergs]]'
+- '[[persons/vilnis-kirsis|Vilnis Ķirsis]]'
+---

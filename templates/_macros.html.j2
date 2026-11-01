@@ -1,0 +1,203 @@
+{#- Kopīgi veidņu gabali. Importē ar
+      {% from "_macros.html.j2" import pagehead, metric %}
+    (citi makro — prv2_card u. c. — aprakstīti pie savas definīcijas zemāk.)
+
+    pagehead — lapas galvene (kicker + h1 + labā puse). Labās puses saturs
+    nāk no `{% call %}` ķermeņa: parasti `metric()` rindas, kuras makro ietin
+    `.pagehead-metrics`; ar metrics=false ķermenis iet tieši (piem. tēmas
+    lapas dalīšanās poga). Lieto 2 atstarpju atkāpē zem <section> un aizver ar
+    `{%- endcall %}`, lai izvade sakrīt baitu līdz baitam ar roku rakstīto.
+      kicker       — virsrinda virs h1 (var būt {% set %} bloks ar marķējumu)
+      title        — h1 teksts
+      header_class — papildu klase <header> elementam
+      lead         — marķējums zem h1 (sākas ar jaunu rindu + 6 atstarpēm)
+    metric — viens rādītājs .pagehead-metrics iekšā (6 atstarpju atkāpē).
+      label_title — title atribūts etiķetei; href — vērtība kā ārēja saite. -#}
+
+{% macro pagehead(kicker, title, header_class="", lead=none, metrics=true) -%}
+<header class="pagehead-header{% if header_class %} {{ header_class }}{% endif %}">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">{{ kicker }}</div>
+      <h1 class="pagehead-h1">{{ title }}</h1>
+{%- if lead %}{{ lead }}{% endif %}
+    </div>
+{%- if metrics %}
+    <div class="pagehead-metrics">
+{{- caller() }}
+    </div>
+{%- else %}{{ caller() }}{% endif %}
+  </header>
+{%- endmacro %}
+
+{% macro metric(label, value, label_title=none, href=none) -%}
+<div class="pagehead-metric">
+        <span class="pagehead-metric-label"{% if label_title %} title="{{ label_title }}"{% endif %}>{{ label }}</span>
+        {% if href %}<a href="{{ href }}" target="_blank" rel="noopener" class="pagehead-metric-value">{{ value }}</a>{% else %}<span class="pagehead-metric-value">{{ value }}</span>{% endif %}
+      </div>
+{%- endmacro %}
+
+{#- prv2_card — pilnā pretrunas kartīte (Pretrunu saraksts, pretrunas lapa,
+    profila cilne, sākumlapa). Atsauktā lapa NAV šī kartīte. Katrs parametrs ir
+    viena reāla atšķirība starp lapām; noklusējums = Pretrunu saraksts.
+      prefix        — {{ assets_prefix }} (foto, profila saite, likumprojektu saites)
+      card_id       — id="pretruna-N" uz kartes (tikai pretrunas lapā; sarakstā
+                      enkuru nes ārējā rinda, tāpēc te nav dublikāta)
+      name_link     — vārds kā saite uz profilu (profilā — teksts)
+      register      — reģistra kartīte (saraksts, pretrunas lapa): filtru data-*
+                      atribūti un «amats · partija»; profilā un sākumlapā —
+                      bez data-*, tikai partija
+      img_attrs     — papildu <img> atribūti (loading/decoding/width/height)
+      summary_class — kopsavilkuma <p> klase
+    Kājene nāk no `{% call %}` ķermeņa (BASE_URL un dalīšanās saite paliek
+    lapas tvērumā); bez call bloka kartei kājenes nav. -#}
+{% macro prv2_card(c, prefix="", card_id=false, name_link=true, register=true, img_attrs="", summary_class="") -%}
+<article class="prv2-card sev-{{ c.severity }}"{% if card_id %} id="pretruna-{{ c.id }}"{% endif %}
+{%- if register %}
+             data-severity="{{ c.severity }}" data-party="{{ c.party }}"
+             data-person="{{ c.politician_name }}"
+{%- endif %}>
+
+      <div class="prv2-partybar"></div>
+
+      <header class="prv2-head">
+        <div class="prv2-persona">
+          {%- if c.has_photo %}
+          <img class="prv2-avatar prv2-avatar-photo" src="{{ prefix }}assets/photos/{{ c.slug }}.jpg" alt="{{ c.politician_name }}"{{ img_attrs|safe }} style="--pc: {{ c.party_color }}">
+          {%- else %}
+          <span class="prv2-avatar" style="--pc: {{ c.party_color }}">{{ c.initials }}</span>
+          {%- endif %}
+          <div class="prv2-persona-text">
+            {% if name_link %}<a class="prv2-name" href="{{ prefix }}politiki/{{ c.slug }}.html">{{ c.politician_name }}</a>{% else %}<div class="prv2-name">{{ c.politician_name }}</div>{% endif %}
+            <div class="prv2-role">
+              {%- if register and c.role %}{{ c.role }} · {% endif -%}
+              {{ c.party_short -}}
+            </div>
+          </div>
+        </div>
+        <div class="prv2-meta-mid">
+          <span class="prv2-sevbadge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}</span>
+          {% if c.topic %}<span class="prv2-topic">{{ c.topic }}</span>{% endif %}
+        </div>
+        {% if c.delta_days is not none %}
+        <div class="prv2-meta-right">
+          <div class="prv2-datacell">
+            <span class="prv2-datacell-l">ΔT</span>
+            <span class="prv2-datacell-v">{{ c.delta_days }}d</span>
+          </div>
+        </div>
+        {% endif %}
+      </header>
+
+      {% if c.summary %}
+      <section class="prv2-summary">
+        <div class="prv2-kicker">Kopsavilkums</div>
+        <p{% if summary_class %} class="{{ summary_class }}"{% endif %}>{{ c.summary | autolink_bills(bill_slugs, prefix) | safe }}</p>
+      </section>
+      {% endif %}
+
+      {% if c.context_note %}
+      <aside class="prv2-context">
+        <span class="prv2-context-kicker">Konteksts</span>
+        {{ c.context_note }}
+      </aside>
+      {% endif %}
+
+      <div class="prv2-split">
+        <div class="prv2-pane prv2-pane-old">
+          <div class="prv2-kicker">{{ c.old_label or 'Iepriekš' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.old_date }}">{{ c.old_date|lv_date }}</time>
+            {% if c.old_source %}
+            · <a href="{{ c.old_source }}" target="_blank" rel="noopener">{{ c.old_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.old_stance }}</div>
+          {% if c.old_quote %}
+          <blockquote class="prv2-quote">{{ c.old_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+        </div>
+
+        <div class="prv2-gutter">
+          <span class="prv2-gutter-disc" aria-hidden="true">{{ c.severity_glyph }}</span>
+        </div>
+
+        <div class="prv2-pane prv2-pane-new">
+          <div class="prv2-kicker prv2-kicker-sev">{{ c.new_label or 'Pašlaik' }}</div>
+          <div class="prv2-pane-meta">
+            <time datetime="{{ c.new_date }}">{{ c.new_date|lv_date }}</time>
+            {% if c.new_source %}
+            · <a href="{{ c.new_source }}" target="_blank" rel="noopener">{{ c.new_source_domain }} ↗</a>
+            {% endif %}
+          </div>
+          <div class="prv2-stance">{{ c.new_stance }}</div>
+          {% if c.new_quote %}
+          <blockquote class="prv2-quote">{{ c.new_quote }}</blockquote>
+          {% else %}
+          <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
+          {% endif %}
+          {% if c.vote_summary %}
+          <div class="prv2-vote">
+            <span class="prv2-vote-kicker">Likumprojekts</span>
+            {{ c.vote_summary }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+{%- if caller is defined %}{{ caller() }}{% endif %}
+    </article>
+{%- endmacro %}
+
+{#- multi_select — filtru nolaižamā saraksta čaula (.multi-select saime;
+    uzvedība assets/msv1.js + ARIA/tastatūra assets/ms-a11y.js). Opcijas nāk no
+    `{% call %}` ķermeņa — parasti ms_option() cilpa; tur paliek arī lapas
+    specifika (Balsojumu frakciju virsraksti, data-group, data-month).
+      id           — saknes id, OBLIGĀTI «…-select» (citādi renderēšana krīt);
+                     trigera id = «…-trigger»
+                     (to lasa lapu skripti un ms-a11y aria-controls)
+      all_label    — trigera teksts bez izvēles (msv1 allLabel to atjauno)
+      search_label — meklēšanas lauka aria-label
+      placeholder  — meklēšanas lauka vietturis
+      compact      — čipa augstumā (.multi-select--compact), kad saraksts stāv
+                     vienā rindā ar čipiem; citādi — meklēšanas lauka augstumā
+    X lapas .xv1-select saime ir cits marķējums un te nav. -#}
+{% macro multi_select(id, all_label, search_label, placeholder="Meklēt...", compact=false) -%}
+{#- Id bez «-select» galotnes → renderēšana krīt ar UndefinedError (nosaukums
+    zemāk ir kļūdas teksts), nevis klusi izdod nepareizu trigera id. -#}
+{%- if not id.endswith("-select") %}{{ multi_select_id_must_end_with_select[id] }}{% endif -%}
+{%- set trigger_id = id[:-("-select"|length)] ~ "-trigger" -%}
+<div class="multi-select{% if compact %} multi-select--compact{% endif %}" id="{{ id }}">
+      <div class="multi-select-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" id="{{ trigger_id }}">
+        <span>{{ all_label }}</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="multi-select-dropdown" role="listbox" aria-multiselectable="true">
+        <input type="text" class="multi-select-search" aria-label="{{ search_label }}" placeholder="{{ placeholder }}">
+{{- caller() }}
+        <div class="multi-select-clear" role="button" tabindex="-1">Notīrīt izvēli</div>
+      </div>
+    </div>
+{%- endmacro %}
+
+{#- ms_option — viena multi_select opcija. label noklusējumā = value;
+    data — papildu data-* atribūti secībā (piem. {"group": frakcija}). -#}
+{% macro ms_option(value, label=none, data={}) -%}
+<div class="multi-select-option" role="option" aria-selected="false" tabindex="-1" data-value="{{ value }}"
+{%- for k, v in data.items() %} data-{{ k }}="{{ v }}"{% endfor %}>
+          <span class="checkbox"></span>
+          <span>{{ value if label is none else label }}</span>
+        </div>
+{%- endmacro %}
+
+{#- share_buttons — «Dalīties» + «Kopēt saiti» (assets/chrome-v1.js): telefonā
+    «Dalīties» atver sistēmas dalīšanās izvēlni (navigator.share), citur — X.
+    Ikonas — CSS maskas, lai pogas teksts paliek tikai vārds.
+    Ietvars (.share-row; profilā .pp-share, pretrunās .prv2-foot-share) paliek lapā.
+      url      — pilna lapas adrese
+      text     — tvīta / dalīšanās teksts
+      stateful — data-copy-state="1" (profils: kopē pašreizējo skatu — ?tema= un #cilni) -#}
+{% macro share_buttons(url, text, stateful=false) -%}
+<a class="share-btn share-btn-x" href="https://x.com/intent/tweet?text={{ text|urlencode }}&url={{ url|urlencode }}" target="_blank" rel="noopener" title="Dalīties" data-share-url="{{ url }}" data-share-text="{{ text }}"{% if stateful %} data-copy-state="1"{% endif %}>Dalīties</a>
+        <button type="button" class="share-btn share-btn-copy" data-copy-url="{{ url }}"{% if stateful %} data-copy-state="1"{% endif %} aria-live="polite">Kopēt saiti</button>
+{%- endmacro %}
