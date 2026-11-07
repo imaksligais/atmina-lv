@@ -1,0 +1,408 @@
+# 15. Saeimas vēlēšanās (2026-10-03) ievēlētie deputāti — 100 vārdi.
+# PROVIZORISKS CVK datu aprēķins: 1059/1059 iecirkņi, 2026-10-04.
+# Aizstāt ar oficiālo CVK ievēlēto sarakstu, kad CVK to publicē.
+# Ģenerēts no data/cvk_snapshots/SV2026/ievēlētie_aprēķins_20261004_final.json
+# (gitignored); saglabāti tikai publiskie lauki. list_short = parties.short_name.
+# Lasa src/render/personas.py (personas.html «15. Saeima» filtrs; sakrīt pēc precīza `name`).
+
+elected:
+- name: Edgars Dārznieks
+  list_nr: 1
+  list_short: SV-AJ
+  region: Kurzeme
+- name: Vjačeslavs Stepaņenko
+  list_nr: 1
+  list_short: SV-AJ
+  region: Latgale
+- name: Andrejs Jakovļevs
+  list_nr: 1
+  list_short: SV-AJ
+  region: Latgale
+- name: Leontijs Morozs
+  list_nr: 1
+  list_short: SV-AJ
+  region: Latgale
+- name: Jūlija Stepaņenko
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Rūdolfs Brēmanis
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Ļubova Švecova
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Inna Djeri
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Artūrs Klēbahs
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Jūlija Sohina
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Natālija Ābola
+  list_nr: 1
+  list_short: SV-AJ
+  region: Rīga
+- name: Karina Sprūde
+  list_nr: 1
+  list_short: SV-AJ
+  region: Vidzeme
+- name: Gita Plaude
+  list_nr: 1
+  list_short: SV-AJ
+  region: Vidzeme
+- name: Aleksejs Ignatjevs
+  list_nr: 1
+  list_short: SV-AJ
+  region: Vidzeme
+- name: Andrejs Pagors
+  list_nr: 1
+  list_short: SV-AJ
+  region: Zemgale
+- name: Artūrs Butāns
+  list_nr: 5
+  list_short: NA
+  region: Kurzeme
+- name: Rolands Keišs
+  list_nr: 5
+  list_short: NA
+  region: Latgale
+- name: Ilze Indriksone
+  list_nr: 5
+  list_short: NA
+  region: Rīga
+- name: Nauris Puntulis
+  list_nr: 5
+  list_short: NA
+  region: Rīga
+- name: Ivars Āboliņš
+  list_nr: 5
+  list_short: NA
+  region: Rīga
+- name: Jānis Dombrava
+  list_nr: 5
+  list_short: NA
+  region: Vidzeme
+- name: Ināra Mūrniece
+  list_nr: 5
+  list_short: NA
+  region: Vidzeme
+- name: Uģis Mitrevics
+  list_nr: 5
+  list_short: NA
+  region: Vidzeme
+- name: Jānis Vitenbergs
+  list_nr: 5
+  list_short: NA
+  region: Zemgale
+- name: Edvīns Šnore
+  list_nr: 5
+  list_short: NA
+  region: Zemgale
+- name: Māris Kučinskis
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Linda Matisone
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Edgars Putra
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Raivis Kalējs
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Jānis Džeriņš
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Nellija Kleinberga
+  list_nr: 7
+  list_short: AS
+  region: Kurzeme
+- name: Juris Viļums
+  list_nr: 7
+  list_short: AS
+  region: Latgale
+- name: Raimonds Vējonis
+  list_nr: 7
+  list_short: AS
+  region: Latgale
+- name: Valdis Kotāns
+  list_nr: 7
+  list_short: AS
+  region: Latgale
+- name: Andris Kulbergs
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Karīna Miķelsone
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Jānis Jenzis
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Līga Meņģelsone
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Guntars Vītols
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Edgars Štelmahers
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Jānis Stērninieks
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Mārtiņš Brencis
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Agnese Kupača
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Liene Apine
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Viesturs Vitovskis
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Māris Ozoliņš
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Jānis Urtāns
+  list_nr: 7
+  list_short: AS
+  region: Rīga
+- name: Edvards Smiltēns
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Raimonds Bergmanis
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Aiva Vīksna
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Česlavs Batņa
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Andrejs Svilāns
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Dāvis Melnalksnis
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Dagnis Straubergs
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Valdis Kārkliņš
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Andis Caunītis
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Renārs Putniņš
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Anete Biķe
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Mārtiņš Prīsis
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Pēteris Dimants
+  list_nr: 7
+  list_short: AS
+  region: Vidzeme
+- name: Edgars Tavars
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Inga Priede
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Andris Skride
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Juris Lazdiņš
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Ilmārs Luksts
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Baiba Atmane
+  list_nr: 7
+  list_short: AS
+  region: Zemgale
+- name: Ramona Petraviča
+  list_nr: 8
+  list_short: LPV
+  region: Kurzeme
+- name: Aleksandrs Bartaševičs
+  list_nr: 8
+  list_short: LPV
+  region: Latgale
+- name: Viktorija Pleškāne
+  list_nr: 8
+  list_short: LPV
+  region: Latgale
+- name: Olga Petkeviča
+  list_nr: 8
+  list_short: LPV
+  region: Latgale
+- name: Aleksejs Mackevičs
+  list_nr: 8
+  list_short: LPV
+  region: Latgale
+- name: Jekaterina Ivanova
+  list_nr: 8
+  list_short: LPV
+  region: Latgale
+- name: Ainārs Šlesers
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Andrejs Klementjevs
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Regīna Ločmele
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Maija Armaņeva
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Roberts Žemaitis
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Jevgēnija Šafraneka
+  list_nr: 8
+  list_short: LPV
+  region: Rīga
+- name: Linda Liepiņa
+  list_nr: 8
+  list_short: LPV
+  region: Vidzeme
+- name: Dana Šlesere
+  list_nr: 8
+  list_short: LPV
+  region: Vidzeme
+- name: Eduards Zivtiņš
+  list_nr: 8
+  list_short: LPV
+  region: Vidzeme
+- name: Edmunds Zivtiņš
+  list_nr: 8
+  list_short: LPV
+  region: Zemgale
+- name: Aivars Kraps
+  list_nr: 8
+  list_short: LPV
+  region: Zemgale
+- name: Inga Bērziņa
+  list_nr: 9
+  list_short: JV
+  region: Kurzeme
+- name: Baiba Braže
+  list_nr: 9
+  list_short: JV
+  region: Rīga
+- name: Inese Lībiņa-Egnere
+  list_nr: 9
+  list_short: JV
+  region: Rīga
+- name: Andrejs Judins
+  list_nr: 9
+  list_short: JV
+  region: Rīga
+- name: Evika Siliņa
+  list_nr: 9
+  list_short: JV
+  region: Vidzeme
+- name: Ainars Latkovskis
+  list_nr: 9
+  list_short: JV
+  region: Vidzeme
+- name: Edmunds Jurēvics
+  list_nr: 9
+  list_short: JV
+  region: Zemgale
+- name: Agnese Lāce
+  list_nr: 14
+  list_short: PRO
+  region: Kurzeme
+- name: Andris Šuvajevs
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Antoņina Ņenaševa
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Mairita Lūse
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Selma Teodora Levrence
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Krista Burāne
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Mārtiņš Hiršs
+  list_nr: 14
+  list_short: PRO
+  region: Rīga
+- name: Andris Sprūds
+  list_nr: 14
+  list_short: PRO
+  region: Vidzeme
+- name: Jana Simanovska
+  list_nr: 14
+  list_short: PRO
+  region: Vidzeme
+- name: Atis Švinka
+  list_nr: 14
+  list_short: PRO
+  region: Zemgale

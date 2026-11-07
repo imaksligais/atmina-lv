@@ -1,0 +1,170 @@
+{
+ "c001": {
+  "doc_id": 7390,
+  "kind": "eval_ok"
+ },
+ "c002": {
+  "doc_id": 28623,
+  "kind": "known_bad"
+ },
+ "c003": {
+  "doc_id": 7390,
+  "kind": "known_bad"
+ },
+ "c004": {
+  "doc_id": 7504,
+  "kind": "known_bad"
+ },
+ "c005": {
+  "doc_id": 20568,
+  "kind": "known_bad"
+ },
+ "c006": {
+  "doc_id": 26555,
+  "kind": "known_bad"
+ },
+ "c007": {
+  "doc_id": 13281,
+  "kind": "known_bad"
+ },
+ "c008": {
+  "doc_id": 26370,
+  "kind": "known_bad"
+ },
+ "c009": {
+  "doc_id": 15446,
+  "kind": "known_bad"
+ },
+ "c010": {
+  "doc_id": 3159,
+  "kind": "known_bad"
+ },
+ "c011": {
+  "doc_id": 28226,
+  "kind": "eval_ok"
+ },
+ "c012": {
+  "doc_id": 5479,
+  "kind": "known_bad"
+ },
+ "c013": {
+  "doc_id": 6387,
+  "kind": "known_bad"
+ },
+ "c014": {
+  "doc_id": 13288,
+  "kind": "known_bad"
+ },
+ "c015": {
+  "doc_id": 28123,
+  "kind": "known_bad"
+ },
+ "c016": {
+  "doc_id": 28022,
+  "kind": "known_bad"
+ },
+ "c017": {
+  "doc_id": 6616,
+  "kind": "known_bad"
+ },
+ "c018": {
+  "doc_id": 26555,
+  "kind": "eval_ok"
+ },
+ "c019": {
+  "doc_id": 26490,
+  "kind": "known_bad"
+ },
+ "c020": {
+  "doc_id": 15709,
+  "kind": "known_bad"
+ },
+ "c021": {
+  "doc_id": 6616,
+  "kind": "eval_ok"
+ },
+ "c022": {
+  "doc_id": 24062,
+  "kind": "eval_ok"
+ },
+ "c023": {
+  "doc_id": 5423,
+  "kind": "known_bad"
+ },
+ "c024": {
+  "doc_id": 24062,
+  "kind": "known_bad"
+ },
+ "c025": {
+  "doc_id": 27071,
+  "kind": "known_bad"
+ },
+ "c026": {
+  "doc_id": 14770,
+  "kind": "known_bad"
+ },
+ "c027": {
+  "doc_id": 15125,
+  "kind": "known_bad"
+ },
+ "c028": {
+  "doc_id": 28048,
+  "kind": "known_bad"
+ },
+ "c029": {
+  "doc_id": 26490,
+  "kind": "eval_ok"
+ },
+ "c030": {
+  "doc_id": 14847,
+  "kind": "known_bad"
+ },
+ "c031": {
+  "doc_id": 4262,
+  "kind": "known_bad"
+ },
+ "c032": {
+  "doc_id": 26996,
+  "kind": "known_bad"
+ },
+ "c033": {
+  "doc_id": 13003,
+  "kind": "known_bad"
+ },
+ "c034": {
+  "doc_id": 24366,
+  "kind": "known_bad"
+ },
+ "c035": {
+  "doc_id": 28120,
+  "kind": "known_bad"
+ },
+ "c036": {
+  "doc_id": 71133,
+  "kind": "eval_ok"
+ },
+ "c037": {
+  "doc_id": 71133,
+  "kind": "known_bad"
+ },
+ "c038": {
+  "doc_id": 16621,
+  "kind": "known_bad"
+ },
+ "c039": {
+  "doc_id": 28226,
+  "kind": "eval_ok"
+ },
+ "c040": {
+  "doc_id": 85504,
+  "kind": "known_bad"
+ },
+ "c041": {
+  "doc_id": 5423,
+  "kind": "eval_ok"
+ },
+ "c042": {
+  "doc_id": 20568,
+  "kind": "eval_ok"
+ }
+}

@@ -1,0 +1,101 @@
+{% extends "base.html.j2" %}
+{% set assets_prefix = "../" %}
+{% block title %}{{ board.title }}{% endblock %}
+{% block description %}{% set n = board.articles|length %}{% if n == 1 %}Viena raksta{% else %}{{ n }} rakstu{% endif %} saites ar avotiem, datumiem un atrunām. Saite nav pārkāpums.{% endblock %}
+{% block og_title %}{{ board.title }}{% endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
+{% block og_image %}{{ og_image_url or super() }}{% endblock %}
+{% block content %}
+<div class="tf" data-tf-grid="{{ grid[0] }} {{ grid[1] }}">
+  <header class="tf-head">
+    <p class="tf-kicker">Izpētes tāfele · dati uz {{ board.data_date }}</p>
+    <h1>{{ board.title }}</h1>
+    <p class="tf-lede">Izvēlies cilvēku, uzņēmumu vai diegu — redzēsi, kas par to rakstīts un kur tas pārbaudāms.</p>
+    <ul class="tf-key" aria-label="Apzīmējumi">
+      {% for t, label in tier_labels.items() %}<li class="tf-key-{{ t }}"><svg viewBox="0 0 44 8" aria-hidden="true"><line x1="1" y1="4" x2="44" y2="4"/></svg>{{ label }}{% if t == 3 %} — nav pierādīts{% endif %}</li>{% endfor %}
+    </ul>
+    <p class="tf-notguilt">Saite nav pārkāpums.</p>
+    <noscript><p class="tf-nojs">Bez JavaScript visas ziņas pieejamas sadaļā <a href="#tf-book-h">«Visas saites»</a>.</p></noscript>
+  </header>
+
+  <nav class="tf-guides" aria-label="Ceļveži pa rakstiem">
+    {% for g in board.guides %}<button type="button" class="tf-guide" data-guide-links="{{ g.links|join(' ') }}" data-article="{{ g.article }}">{{ g.label|tf_numbers }}</button>{% endfor %}
+    <button type="button" class="tf-showall" aria-pressed="false">Rādīt visus diegus</button>
+  </nav>
+  <div class="tf-filters" hidden>
+    <fieldset><legend>Pierādījums</legend>{% for t, label in tier_labels.items() %}<label><input type="checkbox" data-filter-tier="{{ t }}" checked> {{ label }}</label>{% endfor %}</fieldset>
+    <fieldset><legend>Saites veids</legend>{% for k in used_kinds %}<label><input type="checkbox" data-filter-kind="{{ k }}" checked> {{ kind_labels[k] }}</label>{% endfor %}</fieldset>
+    <label>Cilvēks <select data-filter-person><option value="">visi</option>{% for p in persons %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}</select></label>
+  </div>
+  <p class="tf-count" aria-live="polite"></p>
+
+  <div class="tf-viewswitch" role="group" aria-label="Skats">
+    <button type="button" data-view="board" aria-pressed="true">Tāfele</button>
+    <button type="button" data-view="list" aria-pressed="false">Saraksts</button>
+  </div>
+
+  <div class="tf-closeup" tabindex="-1" aria-live="polite" hidden></div>
+  <div class="tf-overview" hidden>
+    <button type="button" data-overview="open">Rādīt visu tāfeli</button>
+    <button type="button" data-overview="fit" hidden>Ietilpināt</button>
+    <button type="button" data-overview="close" hidden>Aizvērt kopskatu</button>
+  </div>
+
+  <div class="tf-stage">
+    <div class="tf-scroll" tabindex="0" role="region" aria-label="Tāfele; šaurā ekrānā ritināma horizontāli">
+    <div class="tf-board" id="tf-board">
+      <svg class="tf-threads" aria-hidden="true"></svg>
+      {% for z in board.zones %}<button type="button" class="tf-zone tf-zk-{{ z.kind }}" data-zone="{{ z.id }}" style="--x:{{ z.box[0] }};--y:{{ z.box[1] }};--w:{{ z.box[2] }};--h:{{ z.box[3] }}"><span>{{ z.name|tf_numbers }}</span><span class="tf-zone-note">{{ z.note|tf_numbers }}</span></button>{% endfor %}
+      {% for e in board.entities %}
+        {% if e.type == "person" %}
+        <button type="button" class="tf-pin tf-c-{{ e.color }}" data-entity="{{ e.id }}" data-type="person"{% if e.zone %} data-zone="{{ e.zone }}"{% endif %} style="--x:{{ e.pos[0] }};--y:{{ e.pos[1] }}">{{ e.name|tf_numbers }}</button>
+        {% else %}
+        <button type="button" class="tf-card tf-t-{{ e.type }}" data-entity="{{ e.id }}" data-type="{{ e.type }}"{% if e.zone %} data-zone="{{ e.zone }}"{% endif %} style="--x:{{ e.pos[0] }};--y:{{ e.pos[1] }}">
+          {% if e.label %}<span class="tf-card-label">{{ e.label|tf_numbers }}</span>{% endif %}
+          <span class="tf-card-name">{{ e.name|tf_numbers }}</span>
+          <span class="tf-card-sum">{{ e.summary|tf_numbers }}</span>
+        </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+    </div>
+    <aside class="tf-panel" id="tf-panel" aria-live="polite" tabindex="-1">
+      <p class="tf-panel-hint">Izvēlies cilvēku, kartīti vai diegu.</p>
+      <p class="tf-notguilt">Saite nav pārkāpums.</p>
+    </aside>
+  </div>
+
+  <section class="tf-book" aria-labelledby="tf-book-h">
+    <h2 id="tf-book-h">Visas saites</h2>
+    <nav class="tf-index" aria-label="Kartīšu rādītājs">{% for e in board.entities %}<a href="#{{ e.id }}">{{ e.name|tf_numbers }}</a>{% endfor %}</nav>
+    <section class="tf-zones" aria-label="Zonu atrunas">{% for z in board.zones %}<p data-zone-note="{{ z.id }}"><b>{{ z.name|tf_numbers }}.</b> {{ z.note|tf_numbers }}</p>{% endfor %}</section>
+    {% for e in board.entities %}
+    <section class="tf-entity" id="{{ e.id }}" data-entity-detail="{{ e.id }}">
+      <h3>{{ e.name|tf_numbers }}</h3>
+      <p>{{ e.summary|tf_numbers }}</p>
+      {% if e.facts %}<ul class="tf-facts">{% for f in e.facts %}<li>{{ f.text|tf_numbers }} <span class="tf-meta"><a class="tf-src" href="{{ f.source.url }}" rel="noopener">{{ f.source.label|tf_numbers }}</a> <a class="tf-art" href="{{ f.article.partition('#')[0] }}.html#{{ f.article.partition('#')[2] }}">Rakstā</a></span></li>{% endfor %}</ul>{% endif %}
+      {% if e.unknown %}<p class="tf-unknown"><b>Nav zināms.</b> {{ e.unknown|tf_numbers }}</p>{% endif %}
+      <p class="tf-notclaimed"><b>Ko mēs neapgalvojam.</b> {{ e.not_claimed or 'Saite nav pārkāpums.' }}</p>
+      <ul class="tf-related">{% for l in links_by_entity[e.id] %}<li><a href="#saite-{{ l.id }}">{{ l.verb|tf_numbers }} — {{ board.entity(l.to_id if l.from_id == e.id else l.from_id).name|tf_numbers }}</a></li>{% endfor %}</ul>
+    </section>
+    {% endfor %}
+    <ol class="tf-ledger">
+      {% for l in board.links %}
+      {% set a = board.entity(l.from_id) %}{% set b = board.entity(l.to_id) %}
+      <li class="tf-link tf-tier-{{ l.tier }}" id="saite-{{ l.id }}" data-link="{{ l.id }}" data-from="{{ l.from_id }}" data-to="{{ l.to_id }}" data-tier="{{ l.tier }}" data-kind="{{ l.kind }}">
+        <span class="tf-when">{{ l.period|tf_numbers }}</span>
+        <p class="tf-what"><a href="#{{ a.id }}">{{ a.name|tf_numbers }}</a> — <button type="button" class="tf-link-sel" data-select-link="{{ l.id }}">{{ l.verb|tf_numbers }}</button> — <a href="#{{ b.id }}">{{ b.name|tf_numbers }}</a>{% if l.caveat %} <em class="tf-caveat">({{ l.caveat|tf_numbers }})</em>{% endif %}</p>
+        <p class="tf-ev"><span class="tf-tierlabel">{{ tier_labels[l.tier] }}{% if l.tier == 3 %} — nav pierādīts{% endif %}</span> <a class="tf-src" href="{{ l.source.url }}" rel="noopener">{{ l.source.label|tf_numbers }}</a> <a class="tf-art" href="{{ l.article.partition('#')[0] }}.html#{{ l.article.partition('#')[2] }}">{{ board.articles[l.article.partition('#')[0]] }}</a></p>
+        {% if l.quote %}<details><summary>Citāts</summary><blockquote>{{ l.quote }}</blockquote></details>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% if notes_html %}
+<section class="tf-notes section brief-content post-content" aria-label="Par tāfeli">
+  {{ notes_html|safe }}
+</section>
+{% endif %}
+{% endblock %}
+{% block scripts %}<script src="{{ assets_prefix }}assets/tfv1.js?v={{ assets_version }}" defer></script>{% endblock %}

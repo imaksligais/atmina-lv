@@ -1,0 +1,152 @@
+[
+  {
+    "doc_id": 23753,
+    "pid": 16,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 23753,
+        "topic": "Aizsardzība un drošība",
+        "stance": "Paziņo, ka ir pieņēmis Aizsardzības ministrijas valsts sekretāra Aivara Puriņa atlūgumu un amatam tiks izsludināts konkurss; uzskata, ka pret aizsardzības nozari ir pastiprināts spiediens, publiskajā telpā tiražējot apgalvojumus un pārmetumus, ko viņš raksturo kā nepamatotus.",
+        "support": [
+          "Esmu pieņēmis @AizsardzibasMin valsts sekretāra Aivara Puriņa atlūgumu; uz amata vietu tiks izsludināts konkurss.",
+          "Šobrīd novērojam pastiprinātu spiedienu uz aizsardzības nozari",
+          "publiskajā telpā tiek tiražēti nepamatoti apgalvojumi un pārmetumi, mēģinot apšaubīt nozares progresu vai mazināt uzticību."
+        ],
+        "quote": "Šobrīd novērojam pastiprinātu spiedienu uz aizsardzības nozari – publiskajā telpā tiek tiražēti nepamatoti apgalvojumi un pārmetumi, mēģinot apšaubīt nozares progresu vai mazināt uzticību.",
+        "confidence": 0.85,
+        "reasoning": "Ministra paša tvīts: dokumentēta rīcība (atlūguma pieņemšana, konkurss) un paša vērtējums par spiedienu uz nozari. Abas daļas vienā tēmā, tāpēc apvienotas vienā pozīcijā. Cēloņsakarību starp spiedienu un atlūgumu stance neapgalvo.",
+        "salience": 0.8,
+        "stated_at": "2026-04-22"
+      }
+    ]
+  },
+  {
+    "doc_id": 7504,
+    "pid": 70,
+    "decision": "empty",
+    "empty_reason": "Anonss par dalību Latvijas Bankas diskusijā; uzskaitītie jautājumi ir diskusijas darba kārtība, nevis paša viedoklis.",
+    "claims": []
+  },
+  {
+    "doc_id": 26370,
+    "pid": 10,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 26370,
+        "topic": "Pilsētvide",
+        "stance": "Kritizē modālo filtru, ko raksturo kā bloķētu ceļu, un uzskata, ka ik 100 cilvēku sūdzību un iegribu dēļ cietīs 15 000 apkaimes iedzīvotāji; par PRO saka, ka tai «galvenais kaut ko salauzt».",
+        "support": [
+          "bloķēts ceļš tagad ir \"modālais filtrs\"",
+          "Protams, PRO galvenais kaut ko salauzt",
+          "Tagad dēļ katru 100 cilvēku sūdzības un iegribām cietīs 15 000  apkaimes iedzīvotāji"
+        ],
+        "quote": "Tagad dēļ katru 100 cilvēku sūdzības un iegribām cietīs 15 000  apkaimes iedzīvotāji",
+        "confidence": 0.6,
+        "reasoning": "NEEDS_REVIEW: sarkastisks tonis un reakcija bez redzama konteksta (konkrētā vieta nav nosaukta). Paša tvīts; kritikas virziens pret modālo filtru ir skaidrs, nākotnes forma «cietīs» saglabāta.",
+        "salience": 0.5,
+        "stated_at": "2026-04-25"
+      }
+    ]
+  },
+  {
+    "doc_id": 28022,
+    "pid": 178,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28022,
+        "topic": "Pilsētvide",
+        "stance": "Uzsver, ka Rīgai jābūt drošai, norāda, ka dienesti pirms satiksmes izmaiņām Vārnu ielā tika informēti, atzinīgi vērtē VUGD mācības un pauž, ka sapulcē ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "support": [
+          "Pirms satiksmes organizācijas izmaiņu ieviešanas dienesti tika informēti par pārmaiņām Vārnu ielā.",
+          "Apsveicami, ka šodien VUGD veic mācības.",
+          "Rīt sapulcē kopā ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā."
+        ],
+        "quote": "Rīt sapulcē kopā ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā.",
+        "confidence": 0.75,
+        "reasoning": "Komitejas vadītājas pašas tvīts: aizstāv Vārnu ielas izmaiņu procesu un pauž nodomu vienoties par modālā filtra principu. Modalitāte «varēs nonākt», «būtu lietojams» saglabāta — nav apgalvots, ka filtrs tiks ieviests citviet.",
+        "salience": 0.5,
+        "stated_at": "2026-04-29"
+      }
+    ]
+  },
+  {
+    "doc_id": 13281,
+    "pid": 15,
+    "decision": "empty",
+    "empty_reason": "Prieka izteikums un pateicība Francijas diplomātiem par ķīlnieku atbrīvošanu no Irānas — apsveikuma formula bez jauna konkrēta instrumenta vai paša politikas nostājas.",
+    "claims": []
+  },
+  {
+    "doc_id": 4731,
+    "pid": 30,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 4731,
+        "topic": "Valsts pārvalde",
+        "stance": "Uzskata, ka birokrātiju nevar apkarot ar birokrātisku recepti un ka valsts samazināšana, savstarpējas uzticēšanās vairošana un individuālas atbildības likšana pāri procesa reglamentēšanai ir vienīgās zāles pret birokrātijas pārmērībām.",
+        "support": [
+          "Nevar uzrakstīt birokrātisku recepti birokrātijas apkarošanai.",
+          "Valsts samazināšana, savstarpējas uzticēšanās vairošana (tai skaitā ar sabiedrības neformālo institūciju stiprināšanu) un individuālas atbildības likšana pāri procesa reglamentēšanai ir vienīgās zāles pret birokrātijas pārmērībām."
+        ],
+        "quote": "Valsts samazināšana, savstarpējas uzticēšanās vairošana (tai skaitā ar sabiedrības neformālo institūciju stiprināšanu) un individuālas atbildības likšana pāri procesa reglamentēšanai ir vienīgās zāles pret birokrātijas pārmērībām.",
+        "confidence": 0.85,
+        "reasoning": "Paša tvīts; tieša, nepārprotama nostāja par birokrātijas mazināšanas metodēm. Kvalifikators «vienīgās» saglabāts.",
+        "salience": 0.6,
+        "stated_at": "2026-03-18"
+      },
+      {
+        "document_id": 4731,
+        "topic": "Koalīcija un partijas",
+        "stance": "Kritizē, ka pēdējos gados politiku saprot kā saimniecības daļu vadītāju sanāksmi, kurā sabiedrības izaicinājumus uzlūko kā tehniskus uzdevumus, un apgalvo, ka MMN atgriezīs Latvijā politiku.",
+        "support": [
+          "Kā jau teicu raidījuma beigās, @partijaMMN atgriezīs Latvijā politiku.",
+          "Pēdējos gados ar politiku saprot tādu kā vairāku saimniecības daļas vadītāju sanāksmi",
+          "kur visus sabiedrības organizācijas izaicinājumus uzlūko kā racionāli atrisināmus, tehniskus uzdevumus"
+        ],
+        "quote": "Kā jau teicu raidījuma beigās, @partijaMMN atgriezīs Latvijā politiku.",
+        "confidence": 0.75,
+        "reasoning": "Paša tvīts; atsevišķs pamatojums (politiskās kultūras kritika un partijas pozicionējums), tāpēc cita tēma nekā birokrātijas pozīcijai. Aicinājums pievienoties partijai nav partijas maiņas signāls.",
+        "salience": 0.4,
+        "stated_at": "2026-03-18"
+      }
+    ]
+  },
+  {
+    "doc_id": 5479,
+    "pid": 49,
+    "decision": "empty",
+    "empty_reason": "Alvja Hermaņa vārdu relejs ar emocijzīmi 💯 bez paša vērtējoša vārda; nav skaidrs, kur beidzas Hermaņa teksts un sākas paša.",
+    "claims": []
+  },
+  {
+    "doc_id": 20568,
+    "pid": 25,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 20568,
+        "topic": "Pašvaldības",
+        "stance": "Kritizē Rīgas domi, kas, viņaprāt, nespēj tikt galā pat ar bērnu pieteikšanu vasaras nometnēm, ko vecāki mēģina darīt katru gadu: lapa nestrādā, vietu skaits ierobežots un liela daļa vecāku paliek bez iespējas bērnam piedāvāt drošu vasaru.",
+        "support": [
+          "Šodien kā katru gadu vecāki Rīgā mēģina savus bērnus pieteikt vasaras nometnēm.",
+          "Lapa nestrādā, vietu skaits ierobežots, liela daļa paliek bez iespējas savam bērnam piedāvāt drošu vasaru.",
+          "Pat ar šo @RigasDome nespēj tikt galā."
+        ],
+        "quote": "Pat ar šo @RigasDome nespēj tikt galā.",
+        "confidence": 0.8,
+        "reasoning": "Ministra paša tvīts; tieša kritika pašvaldības spējai organizēt nometņu pieteikšanu. Tēma pēc pamatojuma — pašvaldības kompetence.",
+        "salience": 0.5,
+        "stated_at": "2026-04-16"
+      }
+    ]
+  }
+]

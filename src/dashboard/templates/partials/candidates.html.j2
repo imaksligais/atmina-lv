@@ -1,0 +1,91 @@
+{# Pretrunu kandidātu panelis — izvērtētie un NORAIDĪTIE kandidāti.
+
+Args:
+  candidates: dict from get_candidates_context() — keys: candidates, total,
+              hunts_scanned, hunts_with_candidates, claims_checked, malformed,
+              never_ran, days.
+
+Šīs rindas ir NEPIERĀDĪTI apgalvojumi par nosauktiem cilvēkiem — aģents tos
+izvērtēja un noraidīja. Panelis dzīvo tikai localhost dashboard-ā; publiskajā
+renderī šai atslēgai lasītāja nav (tests/test_dashboard_candidates.py).
+#}
+<section id="candidates-panel"
+         class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6">
+
+  <header class="flex items-baseline justify-between gap-3">
+    <h2 class="text-base font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      Pretrunu kandidāti
+    </h2>
+    <span class="text-xs text-slate-500 dark:text-slate-400">
+      pēdējās {{ candidates.days }} d · nepublicēti
+    </span>
+  </header>
+
+  {# Saucēji vispirms: tukšs saraksts nozīmē divas pilnīgi dažādas lietas. #}
+  <dl class="mt-4 grid grid-cols-3 gap-3 text-sm">
+    <div>
+      <dt class="text-xs text-slate-500 dark:text-slate-400">Kandidāti</dt>
+      <dd class="data-mono text-2xl font-semibold">{{ candidates.total }}</dd>
+    </div>
+    <div>
+      <dt class="text-xs text-slate-500 dark:text-slate-400">Medību palaidieni</dt>
+      <dd class="data-mono text-2xl font-semibold">{{ candidates.hunts_scanned }}</dd>
+    </div>
+    <div>
+      <dt class="text-xs text-slate-500 dark:text-slate-400">Claims caurskatīti</dt>
+      <dd class="data-mono text-2xl font-semibold">{{ candidates.claims_checked }}</dd>
+    </div>
+  </dl>
+
+  {% if candidates.never_ran %}
+    <div class="mt-4 rounded-lg border border-dashed border-amber-400 dark:border-amber-600 p-6 text-center">
+      <div class="text-3xl mb-2" aria-hidden="true">⚠</div>
+      <p class="text-sm font-medium">Nevienas medības šajā logā.</p>
+      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+        Tas nav «nebija kandidātu» — tas ir «neviens nav skatījies».
+      </p>
+    </div>
+  {% elif candidates.total == 0 %}
+    <div class="mt-4 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
+      <div class="text-3xl mb-2" aria-hidden="true">🔍</div>
+      <p class="text-sm font-medium">Medības gāja, kandidātu nav.</p>
+      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+        Godīga nulle — {{ candidates.hunts_scanned }} palaidien{{ 's' if candidates.hunts_scanned == 1 else 'i' }}.
+      </p>
+    </div>
+  {% else %}
+    <ul class="mt-4 space-y-3">
+      {% for c in candidates.candidates %}
+        <li class="rounded-lg border border-slate-200 dark:border-slate-800 p-3">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <span class="text-sm font-semibold">{{ c.politician }}</span>
+            <span class="data-mono text-xs text-slate-500 dark:text-slate-400">{{ c.date }}</span>
+          </div>
+          <div class="mt-1 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <span>{{ c.topic }}</span>
+            <span aria-hidden="true">·</span>
+            <span>{{ c.kind_lv }}</span>
+            <span aria-hidden="true">·</span>
+            <span>{{ c.severity_guess }}</span>
+            {% if c.fp_class and c.fp_class != '—' %}
+              <span aria-hidden="true">·</span>
+              <span class="data-mono">{{ c.fp_class }}</span>
+            {% endif %}
+          </div>
+          <p class="mt-2 text-sm">{{ c.why }}</p>
+          <p class="mt-2 data-mono text-xs text-slate-500 dark:text-slate-400">
+            {% if c.claim_old %}#{{ c.claim_old }} → {% endif %}#{{ c.claim_new }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if candidates.malformed %}
+    <p class="mt-3 text-xs text-amber-600 dark:text-amber-500">
+      {{ candidates.malformed }} ieraksts{{ '' if candidates.malformed == 1 else 'i' }} nolasāms nebija —
+      aģenta payload forma aizdreifējusi. Skaitītājs ir šeit tāpēc, ka kluss zudums
+      izskatītos pēc tīras dienas.
+    </p>
+  {% endif %}
+</section>

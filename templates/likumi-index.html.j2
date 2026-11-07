@@ -1,0 +1,58 @@
+{% extends "base.html.j2" %}
+{% set active_page = "likumi" %}
+{% block title %}Pamatlikumi — Politiskā atmiņa{% endblock %}
+{% block description %}{{ metrics.total }} Latvijas pamatlikumi un to nesenie grozījumu likumprojekti.{% endblock %}
+{% from "_likumi_tabs.html.j2" import likumi_tabs %}
+{% from "_macros.html.j2" import multi_select, ms_option %}
+{% block content %}
+<section class="lkv1">
+{{ likumi_tabs("likumi", metrics.total, bills_count) }}
+<div class="page-header">
+  <h1>Pamatlikumi</h1>
+  <p class="lkv1-intro">Latvijas pamatlikumi, kurus Saeima groza ar likumprojektiem. Katram likumam ir sava lapa ar tā grozījumu likumprojektiem.</p>
+</div>
+
+<div class="filter-bar likumi-filters">
+  <label for="law-search" class="sr-only">Meklēt likuma nosaukumā</label>
+  <div class="field"><input type="search" id="law-search" placeholder="Meklēt likuma nosaukumā…"
+         class="bill-search-input field-input" autocomplete="off"></div>
+  {% call multi_select("law-topic-select", "Visas tēmas", "Meklēt tēmas", compact=true) %}
+      {% for t in law_topics %}
+      {{ ms_option(t) }}
+      {% endfor %}
+  {%- endcall %}
+  <div class="likumi-has-bills chip-row" role="group" aria-label="Likumprojekti">
+    <button type="button" class="chip link-filter-btn active" aria-pressed="true" data-has="">Visi <b class="chip-n">{{ metrics.total }}</b></button>
+    <button type="button" class="chip link-filter-btn" aria-pressed="false" data-has="yes">Ar likumprojektiem <b class="chip-n">{{ metrics.with_bills }}</b></button>
+    <button type="button" class="chip link-filter-btn" aria-pressed="false" data-has="no">Bez likumprojektiem <b class="chip-n">{{ metrics.total - metrics.with_bills }}</b></button>
+  </div>
+</div>
+
+<p id="laws-count" class="lkv1-count" role="status" aria-live="polite">Rāda {{ metrics.total }} no {{ metrics.total }}</p>
+
+<div class="bill-card-grid" id="laws-grid">
+  {% for law in laws %}
+  <a class="bill-card" href="likumi/{{ law.slug }}.html"
+     data-topic="{{ law.topic }}" data-title="{{ law.title|lower }}" data-has="{{ 'yes' if law.bill_count > 0 else 'no' }}">
+    {% if law.topic %}<div class="bill-card-header"><span class="badge badge-muted">{{ law.topic }}</span></div>{% endif %}
+    <div class="bill-card-body"><h3>{{ law.title }}</h3></div>
+    <div class="bill-card-footer">
+      {% if law.bill_count > 0 %}
+        <span class="badge badge-yellow">{{ law.bill_count }} {{ law.bill_count|lv_plural("likumprojekts", "likumprojekti") }}</span>
+        {% if law.last_activity %}<span>pēdējās izmaiņas {{ law.last_activity[:10]|lv_date }}</span>{% endif %}
+      {% else %}
+        <span>nav aktīvu likumprojektu</span>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<p id="laws-empty" class="lkv1-empty" hidden>Nav likumu, kas atbilst filtriem.</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="assets/lkv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

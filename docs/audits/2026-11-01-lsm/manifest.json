@@ -1,0 +1,404 @@
+[
+ {
+  "nr": 1,
+  "url": "https://api.info.lsm.lv/storage/finance-reports/5798dd1c206eeb956b9975ca05bc2d5b.pdf",
+  "fetched_utc": "2026-11-01T15:01:56+00:00",
+  "status": 200,
+  "final": "https://api.info.lsm.lv/storage/finance-reports/5798dd1c206eeb956b9975ca05bc2d5b.pdf",
+  "content_type": "application/pdf",
+  "bytes": 3743355,
+  "sha256": "da4078488a165f8a3df1324907ac4e507120efb5491f7eed1e9ce849459f52aa",
+  "file": "001_api.info.lsm.lv.pdf",
+  "spn": {
+   "http": 302,
+   "ts": "20261101153542",
+   "at": "2026-11-01T15:35:47+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101153542/https://api.info.lsm.lv/storage/finance-reports/5798dd1c206eeb956b9975ca05bc2d5b.pdf",
+   "cdx_same_day": [
+    [
+     "20261101153542",
+     "200",
+     "application/pdf"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 200
+  }
+ },
+ {
+  "nr": 2,
+  "url": "https://data.gov.lv/dati/lv/dataset/nodoklu-maksataju-taksacijas-ceturksni-samaksato-vid-administreto-nodoklu-kopsummas",
+  "fetched_utc": "2026-11-01T15:01:56+00:00",
+  "status": 200,
+  "final": "https://data.gov.lv/dati/lv/dataset/nodoklu-maksataju-taksacijas-ceturksni-samaksato-vid-administreto-nodoklu-kopsummas",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 31715,
+  "sha256": "291144b9ac8349a35bf3feca9a59c0da896464c27940355691117c63eff85ead",
+  "file": "002_data.gov.lv.html",
+  "spn": {
+   "http": 302,
+   "ts": "20261101153712",
+   "at": "2026-11-01T15:37:33+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101153712/https://data.gov.lv/dati/lv/dataset/nodoklu-maksataju-taksacijas-ceturksni-samaksato-vid-administreto-nodoklu-kopsummas",
+   "cdx_same_day": [
+    [
+     "20261101153712",
+     "200",
+     "text/html"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 3,
+  "url": "https://diena.lv/raksts/latvija/zinas-71/politiki-piedava-likuma-noteikt-latvijas-radio-un-ltv-zinu-dienestu-savstarpeju-neatkaribu",
+  "fetched_utc": "2026-11-01T15:01:57+00:00",
+  "status": 200,
+  "final": "https://diena.lv/raksts/latvija/zinas-71/politiki-piedava-likuma-noteikt-latvijas-radio-un-ltv-zinu-dienestu-savstarpeju-neatkaribu",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 204001,
+  "sha256": "8dee852cd87f48e01db47bef5138e528d1fa51db6dd316bf59b2c2f8a567ae6e",
+  "file": "003_diena.lv.html",
+  "spn": {
+   "http": 302,
+   "ts": "20261101153855",
+   "at": "2026-11-01T15:39:06+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101153855/https://diena.lv/raksts/latvija/zinas-71/politiki-piedava-likuma-noteikt-latvijas-radio-un-ltv-zinu-dienestu-savstarpeju-neatkaribu",
+   "cdx_same_day": [
+    [
+     "20261101153850",
+     "200",
+     "text/html"
+    ]
+   ],
+   "exact": false,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 4,
+  "url": "https://info.lsm.lv/parvaldiba/parskati/valdes-atalgojums",
+  "fetched_utc": "2026-11-01T15:01:57+00:00",
+  "status": 200,
+  "final": "https://info.lsm.lv/parvaldiba/parskati/valdes-atalgojums",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 112911,
+  "sha256": "c1ea9eb09c359b902cd006df0f090729ee87dbcfc9aea534e1f575238089ec83",
+  "file": "004_info.lsm.lv.html",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154023",
+   "at": "2026-11-01T15:40:46+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154023/https://info.lsm.lv/parvaldiba/parskati/valdes-atalgojums",
+   "cdx_same_day": [
+    [
+     "20261101154023",
+     "200",
+     "text/html"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 200
+  }
+ },
+ {
+  "nr": 5,
+  "url": "https://ltv.lsm.lv/storage/documents/files/ae2b8c8f5929934a53532261604172f2.pdf",
+  "fetched_utc": "2026-11-01T15:01:58+00:00",
+  "status": 200,
+  "final": "https://ltv.lsm.lv/storage/documents/files/ae2b8c8f5929934a53532261604172f2.pdf",
+  "content_type": "application/pdf",
+  "bytes": 139912,
+  "sha256": "17326e216525a31200f669bf8950f3fbfeeec31022e21a4b5163dc00c73f848b",
+  "file": "005_ltv.lsm.lv.pdf",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154155",
+   "at": "2026-11-01T15:42:01+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154155/https://ltv.lsm.lv/storage/documents/files/ae2b8c8f5929934a53532261604172f2.pdf",
+   "cdx_same_day": [
+    [
+     "20261101154155",
+     "200",
+     "application/pdf"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 6,
+  "url": "https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1434/Lp14",
+  "fetched_utc": "2026-11-01T15:01:59+00:00",
+  "status": 200,
+  "final": "https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/webSasaiste?OpenView&restricttocategory=1434/Lp14",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 5897,
+  "sha256": "e8c0c30086ebf3b5178a2b3b5097fb3922329655413a1019ce0474b63035ae0b",
+  "file": "006_titania.saeima.lv.html"
+ },
+ {
+  "nr": 7,
+  "url": "https://www.lsm.lv/raksts/zinas/latvija/22.10.2026-parlaments-iejaucas-lsm-struktura-un-aizliedz-apvienot-zinu-dienestus.a668639/",
+  "fetched_utc": "2026-11-01T15:01:59+00:00",
+  "status": 200,
+  "final": "https://www.lsm.lv/raksts/zinas/latvija/22.10.2026-parlaments-iejaucas-lsm-struktura-un-aizliedz-apvienot-zinu-dienestus.a668639/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 266386,
+  "sha256": "52f6110d1749988a11421dca7cf306e0662c282c93b96a963d8caa1ed4d9c460",
+  "file": "007_lsm.lv.html",
+  "spn": {
+   "http": 520,
+   "ts": null,
+   "at": "2026-11-01T15:44:56+00:00"
+  }
+ },
+ {
+  "nr": 8,
+  "url": "https://www.seplp.lv/lv/jaunums/apvienotais-sabiedriskais-medijs-darbu-saks-ar-jaudigu-sabiedriska-pasutijuma-planu-un-budzetu",
+  "fetched_utc": "2026-11-01T15:02:00+00:00",
+  "status": 200,
+  "final": "https://www.seplp.lv/lv/jaunums/apvienotais-sabiedriskais-medijs-darbu-saks-ar-jaudigu-sabiedriska-pasutijuma-planu-un-budzetu",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 154331,
+  "sha256": "ffcb80837bd3e1bbe6e1dfb002bda98c67460a7f9e422aab8f5a35683ab9ca84",
+  "file": "008_seplp.lv.html",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154621",
+   "at": "2026-11-01T15:46:53+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154621/https://www.seplp.lv/lv/jaunums/apvienotais-sabiedriskais-medijs-darbu-saks-ar-jaudigu-sabiedriska-pasutijuma-planu-un-budzetu",
+   "cdx_same_day": [
+    [
+     "20261101154621",
+     "200",
+     "text/html"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 9,
+  "url": "https://www.seplp.lv/lv/jaunums/seplp-neapmierina-lsm-sniegums-vetras-laika-saskata-trukumus",
+  "fetched_utc": "2026-11-01T15:02:01+00:00",
+  "status": 200,
+  "final": "https://www.seplp.lv/lv/jaunums/seplp-neapmierina-lsm-sniegums-vetras-laika-saskata-trukumus",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 172948,
+  "sha256": "b4bdab7eb9f09d61238443f5d4f39869c39c4068ddf1b17a8415081ace06aa96",
+  "file": "009_seplp.lv.html",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154717",
+   "at": "2026-11-01T15:47:38+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154717/https://www.seplp.lv/lv/jaunums/seplp-neapmierina-lsm-sniegums-vetras-laika-saskata-trukumus",
+   "cdx_same_day": [
+    [
+     "20261101154717",
+     "200",
+     "text/html"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 10,
+  "url": "https://www.seplp.lv/lv/media/3698/download?attachment=",
+  "fetched_utc": "2026-11-01T15:02:02+00:00",
+  "status": 200,
+  "final": "https://www.seplp.lv/lv/media/3698/download?attachment=",
+  "content_type": "application/pdf",
+  "bytes": 836913,
+  "sha256": "88ccfa9150d288972ff37a454efcc03180655566fdfdf31b4b398a08d03c3eb9",
+  "file": "010_seplp.lv.pdf",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154800",
+   "at": "2026-11-01T15:48:05+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154800/https://www.seplp.lv/lv/media/3698/download?attachment=",
+   "cdx_same_day": [
+    [
+     "20261101154800",
+     "200",
+     "application/pdf"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 11,
+  "url": "https://www.seplp.lv/lv/media/3787/download",
+  "fetched_utc": "2026-11-01T15:02:03+00:00",
+  "status": 200,
+  "final": "https://www.seplp.lv/lv/media/3787/download",
+  "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "bytes": 1880861,
+  "sha256": "5dd6503b502068d3ad8000aabe063fb6bb99a0e8e38f594ba840ba15a89ef3b1",
+  "file": "011_seplp.lv.docx",
+  "spn": {
+   "http": 302,
+   "ts": "20261101154916",
+   "at": "2026-11-01T15:49:32+00:00"
+  },
+  "wayback": {
+   "url": "https://web.archive.org/web/20261101154916/https://www.seplp.lv/lv/media/3787/download",
+   "cdx_same_day": [
+    [
+     "20261101154916",
+     "200",
+     "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ]
+   ],
+   "exact": true,
+   "head_no_redirect": 429
+  }
+ },
+ {
+  "nr": 12,
+  "url": "https://www.vestnesis.lv/ta/id/371967",
+  "fetched_utc": "2026-11-01T15:02:04+00:00",
+  "status": 200,
+  "final": "https://www.vestnesis.lv/op/2026/210.5",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 282107,
+  "sha256": "b36543c50804cccab784f6a59815f6377f37cd54040e892646ba4ff76bef89a9",
+  "file": "012_vestnesis.lv.html"
+ },
+ {
+  "nr": 13,
+  "url": "https://x.com/AnsisPupols/status/2113886901115498928",
+  "fetched_utc": "2026-11-01T15:02:05+00:00",
+  "status": 200,
+  "final": "https://x.com/AnsisPupols/status/2113886901115498928",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 190660,
+  "sha256": "57eb405c546ba4dcbf128df45487370d036fd36f66372393a54f8e24d6ce97bc",
+  "file": "013_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T15:51:56+00:00"
+  }
+ },
+ {
+  "nr": 14,
+  "url": "https://x.com/EdvinsSnore/status/2113544537096274039",
+  "fetched_utc": "2026-11-01T15:02:06+00:00",
+  "status": 200,
+  "final": "https://x.com/EdvinsSnore/status/2113544537096274039",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 159514,
+  "sha256": "e0e06e0f327f57157ea99514fd4bca53de05ac61e5e60ac4f779618c70939958",
+  "file": "014_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T15:55:20+00:00"
+  }
+ },
+ {
+  "nr": 15,
+  "url": "https://x.com/ViktorsValainis/status/2113593272014709050",
+  "fetched_utc": "2026-11-01T15:02:06+00:00",
+  "status": 200,
+  "final": "https://x.com/ViktorsValainis/status/2113593272014709050",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 123498,
+  "sha256": "72dec925a8ba0c7b87a18dfe00d4dc0c92865811b5c12d1392720cbd6e7c4803",
+  "file": "015_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T15:58:45+00:00"
+  }
+ },
+ {
+  "nr": 16,
+  "url": "https://x.com/akirstei/status/2116600844875370540",
+  "fetched_utc": "2026-11-01T15:02:07+00:00",
+  "status": 200,
+  "final": "https://x.com/akirstei/status/2116600844875370540",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 157820,
+  "sha256": "f836e39fdcdd5413176a0512c56b0efe6eaf10b77283e0a32c6d350866273eeb",
+  "file": "016_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T16:02:12+00:00"
+  }
+ },
+ {
+  "nr": 17,
+  "url": "https://x.com/maris_mezals/status/2095057800057557089",
+  "fetched_utc": "2026-11-01T15:02:08+00:00",
+  "status": 200,
+  "final": "https://x.com/maris_mezals/status/2095057800057557089",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 111707,
+  "sha256": "c7a5fc92813c7905ab998d6fede01a5f6d8a8dc899f59ca632c24172163b03ff",
+  "file": "017_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T16:05:52+00:00"
+  }
+ },
+ {
+  "nr": 18,
+  "url": "https://x.com/martinsstals/status/2098959042114634210",
+  "fetched_utc": "2026-11-01T15:02:09+00:00",
+  "status": 200,
+  "final": "https://x.com/martinsstals/status/2098959042114634210",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 120620,
+  "sha256": "a6f5ba302c697e6297692913a5aafc3c001fd2aa513445f68191e12e8feb2432",
+  "file": "018_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T16:09:27+00:00"
+  }
+ },
+ {
+  "nr": 19,
+  "url": "https://x.com/zuravlevs/status/2114009306630852778",
+  "fetched_utc": "2026-11-01T15:02:10+00:00",
+  "status": 200,
+  "final": "https://x.com/zuravlevs/status/2114009306630852778",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 139410,
+  "sha256": "b8d6d49c7a1bf6be02428dbc477c7ec6923b059a0264faa78cd4dc96e707abf9",
+  "file": "019_x.com.html",
+  "spn": {
+   "http": 523,
+   "ts": null,
+   "at": "2026-11-01T16:12:55+00:00"
+  }
+ }
+]

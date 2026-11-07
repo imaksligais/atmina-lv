@@ -1,0 +1,82 @@
+{% extends "base.html.j2" %}
+{% set active_page = "" %}
+{% set assets_prefix = "../" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}{{ bill.title }} ({{ bill.document_nr }}){% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <a href="../likumprojekti.html" class="back-link">&larr; Visi likumprojekti</a>
+  {% call pagehead((bill.convocation ~ ". Saeima · " ~ bill.kind_label) if bill.convocation else "", bill.title) %}
+      {{ metric("Nr.", bill.document_nr) }}
+      {% if bill.topic %}
+      {{ metric("Tēma", bill.topic) }}
+      {% endif %}
+      {{ metric("Statuss", bill.current_status) }}
+  {%- endcall %}
+</section>
+
+{% if bill.summary %}
+<section class="bill-detail-summary">
+  <p>{{ bill.summary }}</p>
+</section>
+{% endif %}
+
+<section class="bill-detail-timeline-section">
+  <h2>Stadijas</h2>
+  {% if bill.stages %}
+  <ol class="bill-detail-timeline">
+    {% for s in bill.stages %}
+    <li class="bill-detail-timeline-item">
+      <span class="timeline-date">{{ s.stage_date | lv_date }}</span>
+      <span class="timeline-meta">
+      <span class="timeline-stage">{{ s.stage_name }}</span>{% if s.stage_kind == 'decision' %} <span class="timeline-kind">Lēmums (bez balsojuma)</span>{% endif %}
+      {% if s.stage_result %}
+      {%- set r = s.stage_result | lower %}
+      <span class="badge {% if r in ('pieņemts', 'likums', 'paziņojums') %}badge-green{% elif r == 'noraidīts' %}badge-red{% else %}badge-muted{% endif %}">{{ s.stage_result }}</span>
+      {% endif %}
+      {% if s.total_par is not none %}
+      <span class="timeline-counts">{{ s.total_par }}/{{ s.total_pret }}/{{ s.total_atturas }}</span>
+      {% endif %}
+      {% if s.vote_id %}
+      <a href="../balsojumi.html#vote-{{ s.vote_id }}" class="timeline-vote-link">balsojums →</a>
+      {% endif %}
+      </span>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty-state">Stadiju nav reģistrētas.</p>
+  {% endif %}
+</section>
+
+<section class="bill-detail-submitters">
+  <h2>Iesniedzēji</h2>
+  {% if bill.institutional_submitter or bill.submitters_individual %}
+  <ul>
+    {% if bill.institutional_submitter %}
+    <li><strong>{{ bill.institutional_submitter }}</strong> <span class="muted">(institucionāls)</span></li>
+    {% endif %}
+    {% for p in bill.submitters_individual %}
+    <li>{% if p.has_page %}<a href="../politiki/{{ p.slug }}.html">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% if p.party %} <span class="muted">({{ p.party }})</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">Iesniedzējs nav reģistrēts.</p>
+  {% endif %}
+</section>
+
+{% if bill.base_law_slug %}
+<section class="bill-detail-base-law">
+  <h2>Saistītais bāzes likums</h2>
+  <p>Šis likumprojekts groza: <a href="../likumi/{{ bill.base_law_slug }}.html">{{ bill.base_law_title or bill.base_law_slug }}</a></p>
+</section>
+{% endif %}
+
+{% if bill.external_document_url %}
+<section class="bill-detail-links">
+  <a href="{{ bill.external_document_url | safe_url }}" target="_blank" rel="noopener">Oriģinālais dokuments titania.saeima.lv ↗</a>
+</section>
+{% endif %}
+{% endblock %}

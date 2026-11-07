@@ -1,0 +1,20 @@
+q01 | Ukraina un Krievija | Latvijai jāturpina atbalstīt Ukrainu, kamēr karš nav beidzies. | par = atbalsts Ukrainai; pret = neitralitāte, neiesaistīties, nefinansēt
+  piezīme: CVK: programma nosoda Krievijas agresiju un atbalsta diplomātiju taisnīgam mieram; par atbalsta turpināšanu kara laikā tieši neizsakās. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q02 | Aizsardzība un drošība | Aizsardzībai jāatvēl vismaz 5 % no IKP. | par = 5 % vai vairāk; pret = samazināt vai pārdalīt aizsardzības budžetu
+  piezīme: CVK: programma sola iekšlietu un VAD atlīdzību; aizsardzības budžeta apjomu nenosauc. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q04 | Imigrācija | Darbaspēka ievešana no trešajām valstīm jāierobežo. | par = ierobežot, kontrolēt, kvotas; pret = atvieglot darbaspēka ievešanu
+  piezīme: CVK: programma imigrāciju nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q06 | Budžets un finanses | Nekustamā īpašuma nodoklis vienīgajam mājoklim jāatceļ. | par = atcelt NĪN vienīgajam mājoklim; pret = saglabāt vai stiprināt NĪN
+  piezīme: CVK: programma sola luksusa un neizmantotā īpašuma nodokli; par NĪN mājoklim neizsakās. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q07 | Pašvaldības | Lielākai nodokļu ieņēmumu daļai jāpaliek pašvaldībām. | par = lielāka pašvaldību daļa no nodokļu ieņēmumiem; pret = centralizēt ieņēmumus valsts budžetā
+  piezīme: CVK: programma pašvaldību nodokļu daļu nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q08 | Valsts pārvalde | Ministriju skaits jāsamazina, tās apvienojot. | par = apvienot vai likvidēt ministrijas; pret = nav
+  piezīme: CVK: programma ministriju skaitu nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q09 | Budžets un finanses | Pievienotās vērtības nodoklis pārtikai jāsamazina. | par = samazināt PVN pārtikai; pret = PVN nemainīt vai celt
+  piezīme: CVK: programma sola samazināt PVN zālēm; PVN pārtikai nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q10 | Pensijas | Pensiju 2. līmenim jābūt brīvprātīgam, ar tiesībām uzkrājumu izņemt. | par = brīvprātīgs, izņemt, pārcelt uz 1. līmeni; pret = saglabāt obligātu
+  piezīme: CVK: programma pensiju 2. līmeni nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q11 | Klimats | Latvijai jāsasniedz klimatneitralitāte ES noteiktajā termiņā. | par = klimatneitralitāte ES termiņā, zaļais kurss; pret = pārskatīt vai atteikties no zaļā kursa, noraidīt termiņu — 'saprātīga ieviešana' bez termiņa noraidījuma = klusē
+  piezīme: CVK: programma klimatneitralitāti nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).
+q12 | Sociālā politika | Ģimenei un laulībai likumos jāpaliek vīrieša un sievietes savienībai. | par = ģimene/laulība = vīrietis + sieviete likumos vai starptautiskos dokumentos (Satversme, Stambulas konvencija); pret = laulību vienlīdzība, visu ģimeņu aizsardzība
+  piezīme: CVK: programma ģimenes definīciju nemin. Pilnā programma: nav publicējusi (meklēts: saskanascentrs.lv, saskana.eu — tikai 14. Saeimas programma).

@@ -1,0 +1,88 @@
+{% extends "base.html.j2" %}
+{% set active_page = "zinas" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric, multi_select, ms_option %}
+
+{% block title %}Ziņas{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  {% call pagehead("Mediju publikācijas un pieminējumi", "Ziņas") %}
+      {{ metric("Kopā", "{:,}".format(metrics.total).replace(",", " ")) }}
+      {{ metric("Pēdējā nedēļā", metrics.last_week) }}
+      {{ metric("Avoti", metrics.sources) }}
+  {%- endcall %}
+
+  <div class="filter-bar">
+    {% call multi_select("source-select", "Visi avoti", "Meklēt avotus") %}
+        {% for src in sources %}
+        {{ ms_option(src) }}
+        {% endfor %}
+    {%- endcall %}
+
+    {% call multi_select("topic-select", "Visas tēmas", "Meklēt tēmas") %}
+        {% for topic in topics %}
+        {{ ms_option(topic) }}
+        {% endfor %}
+    {%- endcall %}
+
+    {% call multi_select("mentioned-person-select", "Visas personas", "Meklēt personu", "Meklēt personu...") %}
+        {% for person in mentioned_persons %}
+        {{ ms_option(person) }}
+        {% endfor %}
+    {%- endcall %}
+
+    {% call multi_select("mentioned-party-select", "Visas partijas", "Meklēt partiju", "Meklēt partiju...") %}
+        {% for party in mentioned_parties %}
+        {{ ms_option(party) }}
+        {% endfor %}
+    {%- endcall %}
+  </div>
+
+  {# Sākuma teksts bez JS (visi redzami) — tas pats formāts kā sgv1.js atminaShowCount. #}
+  {%- set n_all = "{:,}".format(news|length)|replace(",", " ") %}
+  <p class="muted" id="news-count" role="status" aria-live="polite">Rāda {{ n_all }} no {{ n_all }} publikācijām.</p>
+  <div id="news-list">
+    {% for n in news %}
+    <div class="news-card" data-source="{{ n.source_domain }}" data-persons="{{ n.persons_str }}" data-parties="{{ n.parties_str }}" data-topics="{{ n.topics_str }}">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+        <div style="flex:1; min-width:0;">
+          <a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="news-title" style="font-weight:600; font-size:0.95rem; line-height:1.4; display:block; margin-bottom:0.3rem;">{{ n.headline }}<span class="ext-arrow" aria-hidden="true">↗</span></a>
+          <div style="font-size:0.82rem; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center;">
+            <span>{{ n.date|lv_date }}</span>
+            <span style="opacity:0.4;">·</span>
+            <a href="{{ n.source_url | safe_url }}" target="_blank" rel="noopener" class="news-source-link" title="Atvērt avotā">{{ n.source_domain }} ↗</a>
+          </div>
+        </div>
+        <div style="flex-shrink:0; max-width:45%; display:flex; flex-direction:column; align-items:flex-end; gap:0.3rem;">
+          {% for p in n.persons[:5] %}
+          <a href="politiki/{{ p.slug }}.html" class="party-tag" style="font-size:0.78rem;{% if p.is_commentator %} opacity:0.7;{% endif %}"{% if p.is_commentator %} title="Komentētājs"{% endif %}>{{ p.name }}</a>
+          {% endfor %}
+          {% if n.persons|length > 5 %}
+          <span class="party-tag" style="font-size:0.72rem; opacity:0.7;">+{{ n.persons|length - 5 }} vēl</span>
+          {% endif %}
+          {% if n.has_commentator %}
+          <span class="party-tag" style="font-size:0.72rem; opacity:0.7;">Komentētājs</span>
+          {% endif %}
+        </div>
+      </div>
+      {% if n.topics_list %}
+      <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.3rem;">
+        {% for t in n.topics_list %}
+        <span class="topic-tag" style="font-size:0.72rem;">{{ t }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="empty-state" id="news-empty" hidden>Nekas neatbilst izvēlētajiem filtriem.</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="{{ assets_prefix }}assets/znv1.js?v={{ assets_version }}" defer></script>
+{% endblock %}

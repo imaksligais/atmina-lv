@@ -1,0 +1,121 @@
+{% extends "base.html.j2" %}
+{% set active_page = "balsojumi" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric, multi_select, ms_option %}
+
+{% block title %}Balsojumi{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  {% call pagehead("Saeimas balsojumu reģistrs", "Balsojumi", header_class="pagehead--balsojumi") %}
+      {{ metric("Kopā", "{:,}".format(metrics.total).replace(",", " ")) }}
+      {{ metric("Pēdējā nedēļā", metrics.last_week) }}
+      {# `result` vārdnīca nav bināra (Pieņemts / Noraidīts / Nod. kom. /
+         Likums / Paziņojums / tukšs), tāpēc te ir trīs skaitļi, kas saskaitās
+         līdz "Kopā", nevis procents bez saucēja. Neklasificēto neuzminam —
+         sk. src/render/votes.py un tests/test_vote_result_non_binary.py. #}
+      {{ metric("Pieņemti", "{:,}".format(metrics.accepted).replace(",", " ")) }}
+      {{ metric("Noraidīti", "{:,}".format(metrics.rejected).replace(",", " ")) }}
+      {{ metric("Cits iznākums", "{:,}".format(metrics.other_result).replace(",", " "),
+                label_title="Nodots komisijām, izsludināts kā likums, paziņojums vai avots iznākumu nenosauc") }}
+  {%- endcall %}
+
+  <p class="muted" style="margin:0.5rem 0 0; font-size:0.9rem;"><a href="likumprojekti.html" class="muted-link">Likumprojekti →</a></p>
+
+  {# Balsojumu saraksts. Matricas cilne izņemta 2026-10-16 — vairs nav tablist;
+     id paliek, jo uz to balstās style.css (#votes-list-tab …). #}
+  <div id="votes-list-tab">
+    <div class="filter-bar">
+      {# Meklētājs pirmais (2026-10-16): galvenais rīks, filtri zem tā vienā rindā. #}
+      <div class="vote-search-box field">
+        <input type="search" id="vote-search" placeholder="Meklēt pēc vārda, likuma vai numura…" class="bill-search-input field-input" aria-label="Meklēt balsojumos pēc atslēgas vārdiem">
+      </div>
+
+      {% call multi_select("topic-select", "Visas tēmas", "Meklēt tēmas", compact=true) %}
+          {% for topic in vote_topics %}
+          {{ ms_option(topic) }}
+          {% endfor %}
+      {%- endcall %}
+
+      {% call multi_select("deputy-select", "Visi deputāti", "Meklēt deputātus", compact=true) %}
+          {# Frakciju grupu virsraksti: `deputies` ir jau sakārtots pēc
+             (frakcija, vārds) src/render/votes.py, tāpēc pietiek ar maiņas
+             pārbaudi. Meklēšanas filtrs slēpj tikai .multi-select-option, tāpēc
+             tukšos virsrakstus paslēpj assets/blv1.js (hideEmptyGroups). #}
+          {% set ns = namespace(prev_faction=None) %}
+          {% for deputy in deputies %}
+          {% if deputy.faction != ns.prev_faction %}
+          <div class="multi-select-group" role="presentation" data-group="{{ deputy.faction }}">{{ deputy.faction }}</div>
+          {% set ns.prev_faction = deputy.faction %}
+          {% endif %}
+          {{ ms_option(deputy.name, data={"group": deputy.faction}) }}
+          {% endfor %}
+      {%- endcall %}
+
+      {# Sesiju filtrs divos soļos: mēnesis sašaurina sēžu sarakstu (~340 datumi
+         vienā nolaižamajā sarakstā bija lietojamības defekts). Mēnesis PATS
+         filtrē balsojumus arī tad, ja neviena konkrēta sēde nav izvēlēta. #}
+      {% call multi_select("month-select", "Visi mēneši", "Meklēt mēnešus", compact=true) %}
+          {% set lv_months = ['janvāris', 'februāris', 'marts', 'aprīlis', 'maijs', 'jūnijs', 'jūlijs', 'augusts', 'septembris', 'oktobris', 'novembris', 'decembris'] %}
+          {% for month in vote_months %}
+          {{ ms_option(month, month[:4] ~ ". g. " ~ lv_months[month[5:7] | int - 1]) }}
+          {% endfor %}
+      {%- endcall %}
+
+      {% call multi_select("session-select", "Visas sēdes", "Meklēt sēdes", compact=true) %}
+          {% for session in vote_sessions %}
+          {{ ms_option(session, session[8:10] ~ "." ~ session[5:7] ~ "." ~ session[:4], {"month": session[:7]}) }}
+          {% endfor %}
+      {%- endcall %}
+
+      <button type="button" class="chip matrix-toggle vote-split-toggle" id="vote-split-toggle" aria-pressed="false"
+              title="Rāda tikai balsojumus, kuros vismaz viena frakcija (ar 3+ balsīm) balsoja nevienoti — mazāk nekā 80% vienotība.">Tikai dalītie</button>
+    </div>
+
+    {# Apzīmējumi. Krāsas NAV aprakstītas vārdiem — paraugi lieto tās pašas
+       .vote-seat klases, ko kartītes zāles josla, tāpēc tēmas maiņa
+       (gaišā/tumšā) nekad nevar padarīt aprakstu nepatiesu. #}
+    <div class="vote-legend" aria-label="Apzīmējumi">
+      <span class="vote-legend-item"><i class="vote-seat vs-p" aria-hidden="true"></i> par</span>
+      <span class="vote-legend-item"><i class="vote-seat vs-n" aria-hidden="true"></i> pret</span>
+      <span class="vote-legend-item"><i class="vote-seat vs-a" aria-hidden="true"></i> atturas</span>
+      <span class="vote-legend-item"><i class="vote-seat vs-x" aria-hidden="true"></i> nebalsoja</span>
+      <span class="vote-legend-item"><i class="vote-seat vs-e" aria-hidden="true"></i> bez ieraksta</span>
+      <span class="vote-legend-note"><strong>Atturas</strong> nav neitralitāte: priekšlikumu pieņem ar klātesošo balsu vairākumu, un atturēšanās skaitās klātbūtnē — tāpēc tā gāž priekšlikumu tāpat kā balsojums pret.</span>
+      <span class="vote-legend-note"><strong>Bez ieraksta</strong>: Saeimas datos šai vietai nav balss — tas nepierāda, ka deputāts sēdē nepiedalījās.</span>
+    </div>
+
+    {# Single rendering path ("Option 2", 2026-07-17): the vote cards are ALWAYS
+       rendered client-side by assets/bmv1.js::balsojumiArchiveRender from the
+       compact matrix JSON — SSR-identical, but the whole history is searchable
+       and the page ships ~0.3–0.7 MB instead of 6.4 MB. The static shell below
+       is filled by the inline script's renderArchive() on load. #}
+    <div id="votes-archive" data-vote-total="{{ metrics.total }}">
+      <div id="votes-archive-info" role="status" aria-live="polite" style="margin-bottom:1rem; color:var(--text-muted); font-size:0.9rem;"></div>
+      <div id="votes-archive-cards"></div>
+      <div style="text-align:center; margin-top:1rem;">
+        <button id="votes-archive-more" class="link-filter-btn" style="display:none;">Rādīt vairāk</button>
+      </div>
+    </div>
+    {# Viens kopīgs lodziņš «kurš deputāts aiz kvadrātiņa» (assets/blv1.js).
+       ĀRPUS #votes-archive-cards (to pārraksta katrs filtrs) un ārpus joslu
+       role="img"/aria-hidden apakškoka. Saturu ieliek JS ar textContent. #}
+    <div id="seat-pop" class="seat-pop" popover></div>
+    <noscript><p class="muted-link">Balsojumu saraksta attēlošanai nepieciešams JavaScript. Balsojumu dati pieejami arī <a href="https://titania.saeima.lv" rel="noopener">titania.saeima.lv</a>.</p></noscript>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{# Balsojumu saraksta JS. bmv1.js (kartīšu renderētājs) ielādēts SINHRONI (bez
+   defer), lai window.balsojumiArchiveRender / window.balsojumiVoteDate būtu
+   reģistrēti pirms blv1.js lapas init.
+   KRITISKI (CSP secība): blv1.js JĀIELĀDĒ SINHRONI (bez defer) UZREIZ PĒC bmv1.js —
+   lapas init izsauc window.balsojumiArchiveRender nekavējoties, tāpēc izpildes
+   secībai jāpaliek identiskai kā agrākajam inline skriptam. #}
+<script src="assets/ms-a11y.js?v={{ assets_version }}"></script>
+<script src="assets/msv1.js?v={{ assets_version }}"></script>
+<script src="assets/bmv1.js?v={{ assets_version }}"></script>
+<script src="assets/blv1.js?v={{ assets_version }}"></script>
+{% endblock %}

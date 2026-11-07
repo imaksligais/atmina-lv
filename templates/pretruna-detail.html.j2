@@ -1,0 +1,63 @@
+{% extends "base.html.j2" %}
+{% set active_page = "pretrunas" %}
+{% set assets_prefix = "../" %}
+{% from "_macros.html.j2" import prv2_card, share_buttons %}
+
+{% block title %}{{ c.politician_name }} · {{ c.severity_lv }}{% if c.topic %} — {{ c.topic }}{% endif %}{% endblock %}
+{% block description %}{% if c.summary %}{{ c.summary|truncate(160) }}{% else %}{{ c.politician_name }} — {{ c.severity_lv }}{% if c.topic %} par {{ c.topic }}{% endif %}.{% endif %}{% endblock %}
+
+{% block og_title %}{{ c.politician_name }}: {{ c.topic or "pretruna" }}{% endblock %}
+{% block og_description %}{% if c.summary %}{{ c.summary|truncate(200) }}{% else %}{{ c.severity_lv }} · {{ c.old_date|lv_date }} → {{ c.new_date|lv_date }}{% endif %}{% endblock %}
+{% block og_image %}{{ BASE_URL }}/assets/og/pretruna-{{ c.id }}.png{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+  <div class="prv2-detail-back">
+    <a href="../pretrunas.html">← Visas pretrunas</a>
+  </div>
+
+  <div class="prv2-detail-wrap">
+    {%- set share_text = c.politician_name ~ " — " ~ c.severity_lv ~ (" par " ~ c.topic if c.topic else "") -%}
+    {%- set share_url = BASE_URL ~ "/pretrunas/" ~ c.id ~ ".html" -%}
+
+    {% call prv2_card(c, prefix=assets_prefix, card_id=true) %}
+
+      <footer class="prv2-foot">
+        <div class="prv2-foot-meta">
+          <span class="prv2-foot-id">ID {{ '%03d' % c.id }}</span>
+          · Konstatēts {{ c.detected_at|lv_date }}
+          {% if c.salience %} · Nozīmīgums: {{ c.salience|salience_label }} ({{ '%.2f' % c.salience }}){% endif %}
+        </div>
+        <div class="share-row prv2-foot-share">
+          {{ share_buttons(share_url, share_text) }}
+        </div>
+      </footer>
+    {%- endcall %}
+
+    {% if related %}
+    <section class="prv2-detail-related">
+      <h2>Citas šī politiķa pretrunas</h2>
+      <ul class="prv2-related-list" role="list">
+        {% for r in related %}
+        <li>
+          <a class="prv2-related-card sev-{{ r.severity }}" href="{{ r.id }}.html">
+            <span class="prv2-related-sev">{{ r.severity_lv }}{% if r.topic %} · {{ r.topic }}{% endif %}</span>
+            <span class="prv2-related-topic">{{ r.headline or r.topic or '—' }}</span>
+            {% if r.old_date or r.new_date %}
+            <span class="prv2-related-dates">
+              {% if r.old_date %}<time datetime="{{ r.old_date }}">{{ r.old_date|lv_date }}</time>{% endif %}
+              {% if r.old_date and r.new_date %} → {% endif %}
+              {% if r.new_date %}<time datetime="{{ r.new_date }}">{{ r.new_date|lv_date }}</time>{% endif %}
+            </span>
+            {% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+
+  {% include "_keep_digging.html.j2" %}
+</section>
+{% endblock %}

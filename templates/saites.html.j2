@@ -1,0 +1,124 @@
+{% extends "base.html.j2" %}
+{% set active_page = "saites" %}
+{% set assets_prefix = "" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+{% macro pair_row(r) -%}
+<li class="saites-pair-row" data-tone="{{ r.tone }}">
+  <a class="saites-pair" href="politiki/{{ r.a_slug }}.html#{{ r.anchor }}">{{ r.a_name }} <span class="saites-pair-sep" aria-hidden="true">↔</span><span class="sr-only"> un </span> {{ r.b_name }}</a>
+  <span class="saites-pair-count"><span class="saites-pair-n">{{ r.n }}</span> {{ r.n|lv_plural("saikne", "saiknes") }}</span>
+  {%- if r.desc %}
+  <p class="saites-pair-desc">{{ r.desc }}</p>
+  {%- endif %}
+  <span class="saites-pair-meta">
+    {%- for ty in r.types %}<span class="badge {{ ty.badge }}">{{ ty.label }}{% if r.types|length > 1 %} {{ ty.n }}{% endif %}</span>{% endfor %}
+    <time datetime="{{ r.last }}">{{ r.last|lv_date }}</time>
+  </span>
+</li>
+{%- endmacro %}
+
+{% block title %}Saites{% endblock %}
+
+{% block content %}
+<section class="pagehead-section">
+
+  {% call pagehead("Politiķu savstarpējās saiknes", "Saites") %}
+      {{ metric("Saiknes", metrics.total) }}
+      {{ metric("Politiķi", metrics.politicians) }}
+      {{ metric("Uzbrukumi", metrics.attacks) }}
+  {%- endcall %}
+
+  {#- Noklusējuma skats: servera HTML, strādā bez JS. Pilnais D3 tīkls zemāk
+      ielādējas tikai pēc pogas (assets/ssv1.js). #}
+  <div class="saites-overview">
+    <p class="saites-intro">Saikne ir politiķa publisks izteikums par citu politiķi — uzbrukums, spriedze, atbalsts vai nostāju konflikts.
+      {% if recorded %}{{ metrics.total }} {{ metrics.total|lv_plural("saikne", "saiknes") }} starp {{ politicians|length }} {{ politicians|length|lv_plural("politiķi", "politiķiem") }}, {{ metrics.total|lv_plural("reģistrēta", "reģistrētas") }} no {{ recorded[0]|lv_date }} līdz {{ recorded[1]|lv_date }}.{% endif %}
+      Neaktīvie politiķi un komentētāji nav ieskaitīti.</p>
+
+    <div class="saites-search">
+      <label for="saites-search">Atrast politiķi</label>
+      <div class="field"><input id="saites-search" class="field-input" type="search" list="saites-politicians" autocomplete="off" placeholder="Vārds vai uzvārds"></div>
+      <datalist id="saites-politicians">
+        {%- for name, slug in politicians %}
+        <option value="{{ name }}" data-slug="{{ slug }}"></option>
+        {%- endfor %}
+      </datalist>
+    </div>
+
+    {#- Viena atvērta partija vienlaikus (`name`); atvērtā aizņem visu rindu zem
+        savas rindas (CSS grid-column + dense). Pirmie 12 pāri redzami, pārējie
+        aiz «Rādīt vēl N» — saraksts neizplūst pa visu lapu. #}
+    <div class="saites-parties">
+      {%- for p in party_pairs %}
+      <details class="saites-party" name="saites-party">
+        <summary><span class="saites-party-name">{{ p.party or "Bez partijas" }}</span> <span class="saites-party-count">{{ p.count }} {{ p.count|lv_plural("saikne", "saiknes") }}</span></summary>
+        <div class="saites-party-body">
+          <ul class="saites-pairs">
+            {%- for r in p.pairs[:12] %}{{ pair_row(r) }}{% endfor %}
+          </ul>
+          {%- if p.pairs|length > 12 %}
+          <details class="saites-more">
+            <summary>Rādīt vēl {{ p.pairs|length - 12 }} {{ (p.pairs|length - 12)|lv_plural("pāri", "pārus") }}</summary>
+            <ul class="saites-pairs">
+              {%- for r in p.pairs[12:] %}{{ pair_row(r) }}{% endfor %}
+            </ul>
+          </details>
+          {%- endif %}
+        </div>
+      </details>
+      {%- endfor %}
+    </div>
+
+    {#- Tabula (dublēja spriedzes.html) izņemta 2026-10-18 — spriedzes.html ir
+        tas pats saraksts ar tipa/partijas/personas filtriem URL adresē. #}
+    <p class="saites-to-list-wrap"><a class="saites-to-list" href="spriedzes.html">Visu saikņu saraksts ar filtriem →</a></p>
+  </div>
+
+  {#- Pilnais tīkls: nekas no D3 neielādējas, kamēr lasītājs nenospiež pogu
+      (assets/ssv1.js → d3 + sav1.js + data/saites-graph.json). #}
+  <div class="saites-graph-open">
+    <button type="button" id="saites-open-graph" class="saites-open-graph">Rādīt visu tīklu</button>
+    <p id="saites-graph-status" class="saites-graph-status" role="status"></p>
+  </div>
+
+  <div id="saites-graph-block" class="saites-graph-block" hidden>
+    <div id="link-filters" class="link-filters chip-row">
+      {%- for lt in link_types %}
+      <button class="chip link-filter-btn lt-{{ lt.cls }} active" aria-pressed="true" data-link-type="{{ lt.type }}">
+        <span class="filter-dot chip-dot" aria-hidden="true"></span>
+        {{ lt.label }} <span class="filter-count chip-n">{{ lt.count }}</span>
+      </button>
+      {%- endfor %}
+    </div>
+
+    <!-- Split layout: graph + detail panel -->
+    <div class="graph-split">
+      <div class="graph-pane" id="graph-container">
+        <svg id="graph-svg"></svg>
+      </div>
+      <div class="detail-pane" id="detail-pane">
+        <div class="detail-pane-empty" id="detail-empty">
+          <span class="hint-icon">&#8644;</span>
+          <p>Uzklikšķini uz <strong>politiķa</strong> vai <strong>saites līnijas</strong>, lai redzētu detaļas</p>
+        </div>
+        <div id="detail-content" hidden></div>
+      </div>
+    </div>
+
+    {#- Leģenda zem grafa, ne virs tā (agrāk position:absolute pārklāja grafu telefonā). #}
+    <ul id="graph-legend" class="graph-legend">
+      {%- for lt in link_types %}
+      <li class="lt-{{ lt.cls }}"><span class="legend-line"></span>{{ lt.label }}</li>
+      {%- endfor %}
+      <li class="lt-pretrunas"><span class="legend-dot"></span>Pretrunas</li>
+    </ul>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="saites-data">{{ saites_data | tojson | safe_json }}</script>
+<script src="assets/ssv1.js?v={{ assets_version }}"></script>
+{# d3.v7.min.js (pašmitināts kopš 2026-08-15) un sav1.js te vairs nav: ssv1.js
+   tos ielādē secīgi tikai pēc pogas «Rādīt visu tīklu» (2026-10-18). #}
+{% endblock %}

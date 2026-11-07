@@ -1,0 +1,102 @@
+[
+  {
+    "doc_id": 40473,
+    "pid": 176,
+    "decision": "empty",
+    "empty_reason": "Žurnālista relay slots (journalist|relay): valdības veidošanas baumu pārstāsts no anonīma avota, nevis paša Madžiņa nostāja; pēc 2026-08-21 lēmuma relay slots pats pozīcijas neģenerē.",
+    "claims": []
+  },
+  {
+    "doc_id": 16621,
+    "pid": 61,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 16621,
+        "topic": "airBaltic",
+        "stance": "Pauž piekrišanu Evikai Siliņai un uzskata, ka airBaltic valsts interesēm ir vismaz tikpat svarīgs, ja ne daudz svarīgāks, kā «Rīgas satiksme», kurā katru gadu tiek novirzīti vairāk nekā 100 miljoni braukšanas atvieglojumiem; kritizē tos, kurus ironiski dēvē par «lielajiem gudriniekiem», kas skaidro, kāpēc airBaltic tā atbalstīt nevar, tostarp Andri Kulbergu.",
+        "quote": "Man te jāpiekrīt @EvikaSilina - mēs katru gadu aci nemirkšķinot iegrūžam pāri pa 100mio Rīgas satiksmē, lai pensionāri var braukt par velti un studenti, skolotāji, policisti utt utt ar atlaidēm (atbalstu) bet Air Baltic, kas valsts interesēm vismaz tikpat svarīgs, ja ne daudz svarīgāks, te pēkšņi visi lielie gudrinieki skaidrot, kapēc nevar.",
+        "confidence": 0.7,
+        "reasoning": "Paša tvīts pirmajā personā; nostāja par airBaltic atbalstu izteikta salīdzinājumā ar «Rīgas satiksmes» finansējumu. Konkrēti, par ko Siliņai piekrīt, tvītā nav nosaukts, tāpēc stance to nepaplašina ārpus teksta; «lielie gudrinieki» ietīts atrunā kā ironisks apzīmējums.",
+        "salience": 0.6,
+        "stated_at": "2026-04-15"
+      }
+    ]
+  },
+  {
+    "doc_id": 15709,
+    "pid": 15,
+    "decision": "empty",
+    "empty_reason": "Operatīvs paziņojums par Francijas Rafale iznīcinātāju ierašanos Lielvārdē NATO gaisa telpas patrulēšanas misijā ar #WeAreNATO; nav vērtējuma vai jauna instrumenta — nav pozīcijas.",
+    "claims": []
+  },
+  {
+    "doc_id": 28623,
+    "pid": 21,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28623,
+        "topic": "ES politika",
+        "stance": "Kā ēnu ziņotājs pauž piesardzīgu optimismu par Eiropas Parlamenta pieņemto pozīciju nākamā ES daudzgades budžeta veidošanā; par panākto pozitīvo uzskata to, ka Austrumu robežas rīcības plāns būtu tieši jāintegrē daudzgades budžetā, kohēzijas finansējuma noteikumiem jābūt elastīgiem un militārā mobilitāte ir ģeopolitiski būtiska.",
+        "quote": "Kā ēnu ziņotājam piesardzīgs optimisms par pieņemto EP pozīciju nākamā ES daudzgades budžeta veidošanā. Panākts pozitīvais - Austrumu robežas rīcības plānu būtu tieši jāintegrē MFF; kohēzijas finansējuma noteikumiem jābūt fleksibliem; militārā mobilitāte - ģeopolitiski būtiska.",
+        "confidence": 0.85,
+        "reasoning": "Paša tvīts ar skaidru vērtējumu par EP pozīciju ES daudzgades budžetā (MFF) un trīs nosauktiem elementiem; modalitāte («būtu jāintegrē», «jābūt») un «piesardzīgs» saglabāti. Viena konsolidēta pozīcija, jo visi elementi attiecas uz vienu EP pozīciju.",
+        "salience": 0.8,
+        "stated_at": "2026-04-30"
+      }
+    ]
+  },
+  {
+    "doc_id": 7390,
+    "pid": 72,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 7390,
+        "topic": "Budžets un finanses",
+        "stance": "Uzskata, ka Latvija nevar atļauties budžetu, kuru neviens līdz galam nesaprot, un ka Latvijai vajag budžetu, kurā katrs eiro ir pamatots; bez caurspīdības, pēc viņas teiktā, nav arī uzticības.",
+        "quote": "Latvijai vajag budžetu, kur katrs eiro ir pamatots.",
+        "confidence": 0.7,
+        "reasoning": "Paša tvīts ar normatīvu apgalvojumu par valsts budžeta caurspīdību; retoriskie jautājumi («kur tie dod rezultātu?») stance netiek pārvērsti apgalvojumos. Konkrēta instrumenta nav, tāpēc confidence mērena. Publicēts 21:51 UTC ziemas laikā (UTC+2) — LV datums paliek 2026-03-23.",
+        "salience": 0.6,
+        "stated_at": "2026-03-23"
+      }
+    ]
+  },
+  {
+    "doc_id": 14847,
+    "pid": 64,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 14847,
+        "topic": "Budžets un finanses",
+        "stance": "Uzskata, ka valsti nevar sakārtot «godīgi» tā, lai visi kļūtu turīgi, jo «godīgi» nav ekonomiska kategorija; lai valsts kļūtu turīga, jādara tas, kas vajadzīgs, pat ja šāda politika nebūs populāra, un tad visi kļūs turīgāki.",
+        "quote": "Godīgi nav ekonomiska kategorija.",
+        "confidence": 0.55,
+        "reasoning": "NEEDS_REVIEW: vispārīgs ekonomikas politikas princips bez konkrēta instrumenta, izteikts jautājuma-atbildes formā ar hiperbolu («sadalīt valsti valsts mežu baļķos»); nav redzams, uz ko tvīts atbild. Tēma nav tieši nevienā no 33 grupām — izvēlēta Budžets un finanses kā tuvākā (valsts ekonomiskā politika).",
+        "salience": 0.5,
+        "stated_at": "2026-04-12"
+      }
+    ]
+  },
+  {
+    "doc_id": 24062,
+    "pid": 10,
+    "decision": "empty",
+    "empty_reason": "Pavediena turpinājums («Aizmirsu pateikt») bez redzama konteksta; ironisks viena teikuma mājiens par iepirkumu bez konkursa no SIA Energise, bez nosauktas politikas nostājas — stance prasītu faktus no pavediena, kas šajā dokumentā nav.",
+    "claims": []
+  },
+  {
+    "doc_id": 14770,
+    "pid": 25,
+    "decision": "empty",
+    "empty_reason": "Galvenais saturs ir Ekonomikas ministrijas (bez nosaukta runātāja) skaidrojums par solidaritātes maksājuma mehānismu — iestādes/preses dienesta balss, ne Valaiņa paša vārdi (biroja balss konvencija 2026-08-25). Vienīgais Valaiņa atstāsts ir procesuāls (likumprojekts otrajā saskaņošanas aplī, NVO iebildumi līdz 10. aprīlim, skatīs nākamajā valdības sēdē) un nesatur nostāju. ±5 d paša vārdu pārbaude DRY-RUN nav pieejama.",
+    "claims": []
+  }
+]

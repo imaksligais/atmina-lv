@@ -1,0 +1,60 @@
+{% extends "_og_base.html.j2" %}
+{#- Pretrunas OG kartīte (assets/og/pretruna-<id>.png). Čaula: _og_base.html.j2. #}
+{% block css %}
+    .card { padding: 44px 60px 34px; }
+    header { display: flex; align-items: center; gap: 22px; }
+    .ph { width: 104px; height: 104px; }
+    .avatar-fallback { font-size: 40px; }
+    .who { flex: 1; min-width: 0; }
+    .nm { font-size: 46px; font-weight: 650; letter-spacing: -.3px; line-height: 1; }
+    .rl {
+      font-size: 20px; margin-top: 8px; color: var(--muted);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .kind { text-align: right; font-size: 20px; line-height: 1.25; color: var(--muted); flex-shrink: 0; }
+    .kind b { display: block; font-weight: 650; font-size: 22px; color: var(--red); }
+    .topic {
+      font-size: 26px; font-style: italic; margin-top: 24px; color: var(--sub);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .line { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-top: 20px; }
+    .d {
+      font-size: 30px; font-weight: 700; letter-spacing: .2px; white-space: nowrap;
+      color: var(--red); border: 3px solid var(--red); padding: 2px 14px 4px; border-radius: 6px;
+      transform: rotate(-2deg);
+    }
+    .d2 { transform: rotate(1.5deg); }
+    .mid { display: flex; align-items: center; gap: 16px; }
+    .rule { flex: 1; height: 3px; display: block; background: repeating-linear-gradient(90deg, var(--ink) 0 14px, transparent 14px 22px); }
+    .gap { font-size: 22px; font-weight: 600; white-space: nowrap; padding: 4px 16px; font-style: italic; }
+    .qs { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 26px; flex: 1; align-content: center; min-height: 0; }
+    .s37 { font-size: 37px; } .s31 { font-size: 31px; } .s27 { font-size: 27px; }
+    blockquote { line-height: 1.24; font-weight: 450; letter-spacing: -.2px; }
+    .q1 { color: #5a4329; }
+    .q2 { color: #1e130a; }
+{% endblock %}
+{% block body %}
+    <header>
+      {% if card.photo %}
+      <img class="ph" src="{{ card.photo }}" alt="">
+      {% else %}
+      <div class="ph avatar-fallback">{{ card.initials }}</div>
+      {% endif %}
+      <div class="who">
+        <div class="nm">{{ card.name }}</div>
+        <div class="rl">{{ card.role_line }}</div>
+      </div>
+      <div class="kind"><b>{{ card.kind }}</b><span>{{ card.severity }}</span></div>
+    </header>
+    <div class="topic">{{ card.topic }}</div>
+    <div class="line">
+      <div class="d d1">{{ card.d_old }}</div>
+      <div class="mid"><i class="rule"></i><span class="gap">{{ card.gap }}</span><i class="rule"></i></div>
+      <div class="d d2">{{ card.d_new }}</div>
+    </div>
+    <div class="qs s{{ card.q_size }}">
+      {#- Pozīcija (nav citāts) bez pēdiņām — mūsu vārdi nav runātāja vārdi. #}
+      <blockquote class="q1">{% if card.old_is_quote %}«{{ card.q_old }}»{% else %}{{ card.q_old }}{% endif %}</blockquote>
+      <blockquote class="q2">{% if card.new_is_quote %}«{{ card.q_new }}»{% else %}{{ card.q_new }}{% endif %}</blockquote>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{# Pending-action banner — sticky top, dismissable per session via Alpine.
+
+Args:
+  pending: dict from get_pending_actions() — keys: actions, count.
+#}
+{% if pending.actions %}
+<div id="pending-banner"
+     x-data="{ open: !sessionStorage.getItem('ops:banner:dismissed') }"
+     x-show="open"
+     class="sticky top-0 z-40 -mx-6 -mt-6 mb-6 px-6 py-3
+            border-b border-amber-200 dark:border-amber-900
+            bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-100">
+  <div class="flex items-center justify-between gap-4">
+    <ul class="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm">
+      {% for action in pending.actions %}
+      <li class="flex items-center gap-2">
+        <span aria-hidden="true">ⓘ</span>
+        {% if action.action_link %}
+          <a href="{{ action.action_link }}" class="underline hover:no-underline">
+            {{ action.message }}
+          </a>
+        {% else %}
+          {{ action.message }}
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <button type="button"
+            aria-label="Aizvērt"
+            class="text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100"
+            @click="sessionStorage.setItem('ops:banner:dismissed', '1'); open=false">
+      ✕
+    </button>
+  </div>
+</div>
+{% else %}
+{# Render an empty marker so the integration test can still assert
+   `id="pending-banner"` exists in the DOM (Task 1.8 contract). #}
+<div id="pending-banner" class="hidden" aria-hidden="true"></div>
+{% endif %}

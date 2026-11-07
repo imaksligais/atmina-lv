@@ -1,0 +1,106 @@
+[
+ {
+  "doc_id": 27071,
+  "pid": 61,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 27071,
+    "topic": "Aizsardzība un drošība",
+    "stance": "Kritizē, ka zemessargiem, kuri vēlētos apgūt mūsdienu kara pamatprasmes, kara piektajā gadā joprojām jāgaida, un retoriski jautā, kas tas ir, ja ne sabotāža.",
+    "support": [
+     "Zemessargi vēlētos apgūt mūsdienu kara pamatprasmes… bet nu… vēl jāpagaida.",
+     "Kas tas ir, ja ne sabotāža?",
+     "Joprojām gaidam! Kara piektais gads!"
+    ],
+    "quote": "Zemessargi vēlētos apgūt mūsdienu kara pamatprasmes… bet nu… vēl jāpagaida.",
+    "confidence": 0.55,
+    "reasoning": "NEEDS_REVIEW: ironija un retoriska jautājuma forma, ļoti īss teksts (21 vārds), nav nosaukts, kas tieši kavē apmācību. Paša Liepnieka tvīts; kritika par zemessargu apmācības kavēšanos ir viņa, bet «sabotāža» paliek jautājuma formā.",
+    "salience": 0.7,
+    "stated_at": "2026-04-27"
+   }
+  ]
+ },
+ {
+  "doc_id": 28226,
+  "pid": 178,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 28226,
+    "topic": "Pilsētvide",
+    "stance": "Aizstāv Vārnu ielas modālo filtru, ko dēvē par efektīvu: norāda, ka dienesti pirms izmaiņām tika informēti, sauc par apsveicamu, ka VUGD veic mācības, un saka, ka sapulcē ar NMPD, VP un departamentu varēs nonākt pie principa, kas būtu lietojams arī citviet Rīgā.",
+    "support": [
+     "Viņa Vārnu ielas bloķēšanu dēvē par efektīvu “modālo filtru”",
+     "Pirms satiksmes organizācijas izmaiņu ieviešanas dienesti tika informēti par pārmaiņām Vārnu ielā. Apsveicami, ka šodien VUGD veic mācības.",
+     "Rīt sapulcē kopā ar NMPD, VP un Ārtelpas un mobilitātes departamentu varēs nonākt pie modālā filtra principa, kas būtu lietojams arī citviet Rīgā."
+    ],
+    "quote": "Pirms satiksmes organizācijas izmaiņu ieviešanas dienesti tika informēti par pārmaiņām Vārnu ielā. Apsveicami, ka šodien VUGD veic mācības.",
+    "confidence": 0.75,
+    "reasoning": "Runā pati Kotello: rakstā citēts viņas tvīts pie video un žurnālista atstāsts par viņas komentāru. NMPD direktores Cipules un komentētāju vārdi ir citu runātāju balss un nav iekļauti. Tvīts datēts 29. aprīlī, raksts publicēts 30. aprīlī.",
+    "salience": 0.5,
+    "stated_at": "2026-04-29"
+   }
+  ]
+ },
+ {
+  "doc_id": 26555,
+  "pid": 25,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 26555,
+    "topic": "Sabiedriskie mediji",
+    "stance": "Kritizē LSM vērtējumu par priekšlikumu izmantot 2. pensiju līmeni veselības aprūpei: norāda, ka LSM to vispirms sauc par populismu, bet pēc tam atzīst, ka var un pat būtu labi, un uzskata, ka tas drīzāk izklausās pēc nepatikas pret ZZS, nevis objektīva vērtējuma.",
+    "support": [
+     "LSM sākumā pasaka, ka priekšlikums par 2. pensiju līmeņa izmantošanu veselības aprūpei ir populisms, bet pēc tam, ka tomēr var un pat būtu labi",
+     "drīzāk izklausās pēc nepatikas pret ZZS kā idejas virzītājiem, nevis objektīva vērtējuma pēc būtības."
+    ],
+    "quote": "Hmm.. drīzāk izklausās pēc nepatikas pret ZZS kā idejas virzītājiem, nevis objektīva vērtējuma pēc būtības.",
+    "confidence": 0.75,
+    "reasoning": "Paša Valaiņa tvīts; kritika par sabiedriskā medija objektivitāti ir viņa, vilcinājums «drīzāk izklausās» saglabāts. Tēma pēc pamatojuma (LSM neobjektivitāte), nevis pēc instrumenta (2. pensiju līmenis).",
+    "salience": 0.5,
+    "stated_at": "2026-04-27"
+   }
+  ]
+ },
+ {
+  "doc_id": 15446,
+  "pid": 63,
+  "decision": "empty",
+  "empty_reason": "Tīrs relejs: The Economist teksts ar atsauci @TheEconomist bez paša Rajevska vērtējoša vārda vai komentāra.",
+  "claims": []
+ },
+ {
+  "doc_id": 5423,
+  "pid": 15,
+  "decision": "extract",
+  "empty_reason": null,
+  "claims": [
+   {
+    "document_id": 5423,
+    "topic": "Aizsardzība un drošība",
+    "stance": "Noraida Ukrainas amatpersonu apgalvojumu, ka Krievija līdz 2027. gadam plāno okupēt Baltijas valstis, un Polijas televīzijā TVP norāda, ka tā vienkārši nav taisnība.",
+    "support": [
+     "Ukrainas izlūkdienestu avoti vienkārši kļūdās, sakot, ka Krievija līdz 2027. gadam plāno okupēt Baltijas valstis, Baiba Braže sacīja televīzijas kanāla TVP raidījuma vadītājam Āronam Dāmem",
+     "Man nav ne jausmas, kāpēc Ukrainas amatpersonas ko tādu saka. Tā vienkārši nav taisnība,"
+    ],
+    "quote": "Man nav ne jausmas, kāpēc Ukrainas amatpersonas ko tādu saka.",
+    "confidence": 0.75,
+    "reasoning": "Bražes pašas vārdi TVP intervijā, atstāstīti un citēti Delfi marta drošības apkopojumā (E. Lūkasa raksta fragments). Pārējie runātāji rakstā (Mežviets, Siliņa, Aizsardzības ministrija) nav iekļauti. Intervijas datums tekstā nav norādīts, tāpēc stated_at ir publicēšanas diena; apkopojums var atkārtot jau glabātu pirmavotu — dublikātu pārbaude šajā dry-run nav veikta.",
+    "salience": 0.9,
+    "stated_at": "2026-04-03"
+   }
+  ]
+ },
+ {
+  "doc_id": 4262,
+  "pid": 1,
+  "decision": "empty",
+  "empty_reason": "Operatīvs brīdinājums un saite («Iespējams APDRAUDĒJUMS GAISA TELPĀ!») bez paša vērtējuma — relejs, 5 vārdi.",
+  "claims": []
+ }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "doc_id": 24366,
+    "pid": 10,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 24366,
+        "topic": "Ukraina un Krievija",
+        "stance": "Uzskata par problēmu, ka tikai 63 % Latvijas sabiedrības spēj skaidri pateikt, ka Krievija ir vainīga iebrukumā Ukrainā, un norāda, ka Latvija šajā ziņā praktiski ir «vienā maisā» ar Ungāriju, Slovākiju un Bulgāriju; piesauc Krievijas ietekmi uz salīdzinoši lielo Latvijas krievu sabiedrības daļu, norādot uz atšķirību ar Lietuvu, kur krievi veido tikai 6 % sabiedrības.",
+        "quote": "Šī ir problēma, 🇱🇻 praktiski ir vienā maisā ar Ungāriju, Slovākiju, Bulgāriju... mēs Latvija tikai 63% sabiedrības spējam skaidri pateikt, ka 🇷🇺 ir vainīga pie iebrukuma 🇺🇦",
+        "confidence": 0.75,
+        "reasoning": "Paša tvīts, pirmās personas vērtējums («Šī ir problēma») par sabiedrības attieksmi pret Krievijas karu. Otrais teikums par Krievijas ietekmi ir izsaukuma forma bez tieša cēloņsakarības apgalvojuma, tāpēc stance to tikai piesauc, nevis pasniedz kā viņa noteiktu cēloni. Publicēts 2026-04-23 21:07 UTC — LV kalendārā tā jau ir 2026-04-24.",
+        "salience": 0.6,
+        "stated_at": "2026-04-24"
+      }
+    ]
+  },
+  {
+    "doc_id": 28048,
+    "pid": 188,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 28048,
+        "topic": "Ukraina un Krievija",
+        "stance": "Uzskata, ka laikā, kad Krievija jau vairāk nekā četrus gadus karo Ukrainā, būtu pilnīgi nepieņemami ļaut tiem, ko viņa raksturo kā krievu oligarhus, būvēt lielveikalu Rīgā, jo tieši šādi Krievija gadiem ilgi veidojusi savu ietekmi Eiropā.",
+        "quote": "Laikā, kad Krievija jau vairāk nekā četrus gadus karo Ukrainā, būtu pilnīgi nepieņemami ļaut krievu oligarhiem būvēt lielveikalu Rīgā.",
+        "confidence": 0.85,
+        "reasoning": "Paša tvīts ar skaidru normatīvu nostāju pret konkrētu lielveikala būvniecību Rīgā. Tēma pēc avota nosauktā pamatojuma (Krievijas karš un ietekmes veidošana), ne pēc instrumenta (būvniecība). Apzīmējums «krievu oligarhi» ir viņas, tāpēc ietīts atrunā. Salīdzinājums ar Ķīnu Āfrikā ir ilustrācija, stancē nav iekļauts.",
+        "salience": 0.6,
+        "stated_at": "2026-03-10"
+      }
+    ]
+  },
+  {
+    "doc_id": 26490,
+    "pid": 70,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 26490,
+        "topic": "Degviela un enerģētika",
+        "stance": "Uzskata, ka valstij jāmeklē risinājumi strauji augošo degvielas cenu ierobežošanai: virspeļņas jeb solidaritātes maksājums var kalpot kā instruments nepamatota cenu kāpuma ierobežošanai, Latvijai būtu jāanalizē citu valstu, īpaši Polijas, pieredze, nevis jāizdomā jauni mehānismi no nulles, un īstermiņā jādomā par atbalsta mehānismiem iedzīvotājiem, ievērojot ES valsts atbalsta noteikumus.",
+        "quote": null,
+        "confidence": 0.65,
+        "reasoning": "Skaidrs atstāsts: redakcionāls medijs (la.lv), runātājs nosaukts vārdā, izteikumi piesaistīti ar atsauces verbiem («norāda», «uzsver», «viņaprāt», «uzskata») no TV24 raidījuma «Ziņu top», teksts pilns, nostāja izriet tieši no atstāsta. Tiešu citātu nav, tāpēc quote=null. Vairākas vienas tēmas nostājas apvienotas vienā claim, lai tās nesaplūstu uz idempotences atslēgas. Virsraksta «nekavējoties» nav izmantots, jo rakstā tas nav atstāstīts kā viņa vārdi; saglabāti modālie kvalifikatori («var kalpot», «būtu jāanalizē»).",
+        "salience": 0.7,
+        "stated_at": "2026-04-26"
+      }
+    ]
+  },
+  {
+    "doc_id": 3159,
+    "pid": 16,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 3159,
+        "topic": "Droni",
+        "stance": "Uzskata, ka šūnu apraides paziņojumu par dronu Krāslavas novadā vajadzēja nosūtīt; vienlaikus norāda, ka institūcijas ir piesardzīgas iedzīvotāju brīdināšanā, ja nav pilnīgas pārliecības, ka radarā redzamais ir drons, ka absolūti aizzīmogot gaisa telpu pierobežā nav iespējams un ka detekcijas spēja un apziņošana jāpilnveido visu laiku.",
+        "quote": "Šādi incidenti pierobežā tiek piedzīvoti regulāri un absolūti aizzīmogot gaisa telpu nav iespējams,",
+        "confidence": 0.75,
+        "reasoning": "Aizsardzības ministra paša izteikumi LTV «Rīta panorāmā» 27. martā, atstāstīti redakcionālā medijā, daļa ar tiešiem citātiem. Galvenā nostāja (paziņojums bija jānosūta) ir atstāsts; citāts apstiprina daļu par gaisa telpas aizzīmogošanu. Tēma Droni pēc testa «izņem vārdu drons»: stances kodols — paziņojums par konkrēto dronu, radarā redzamā identificēšana un detekcija — bez drona sabrūk; civilās apziņošanas aspekts ir šī dronu incidenta sastāvdaļa, ne plašāka drošības argumenta ilustrācija. Baltijas aizsardzības ministru kopīgais paziņojums tajā pašā rakstā nav ekstraktēts atsevišķi — tas ir trīs ministru kolektīvs teksts, izplatīts caur AM, nevis viņa paša runas akts šajā dokumentā. published_at trūkst; stated_at ņemts no teksta datuma (piektdien, 27. martā).",
+        "salience": 0.8,
+        "stated_at": "2026-03-27"
+      }
+    ]
+  },
+  {
+    "doc_id": 15393,
+    "pid": 24,
+    "decision": "empty",
+    "empty_reason": "Dokuments pats ir apsveikums (vēlēšanu rezultāta apsveikums, «Congratulations… Best of luck») — piemērots apsveikumu noteikums: pozīcija tikai tad, ja nosaukts jauns vai konkrēts instruments (summa, termiņš, piegāde, likumdošanas solis). Tvītā ir vērtējums un cerība par Ungārijas turpmāko iesaisti, bet neviena instrumenta, tāpēc empty.",
+    "claims": []
+  },
+  {
+    "doc_id": 13712,
+    "pid": 118,
+    "decision": "empty",
+    "empty_reason": "Sarkastisks tvīts par LPV deputāta izteikumu debatēs, noslēgts ar retorisku jautājumu bez atbildes; paša konkrētas politikas nostājas (par VAM tālmācībā vai demogrāfiju) tekstā nav — izsmiekls un insinuācija pret oponentu, ne pozīcija.",
+    "claims": []
+  },
+  {
+    "doc_id": 13288,
+    "pid": 24,
+    "decision": "extract",
+    "empty_reason": null,
+    "claims": [
+      {
+        "document_id": 13288,
+        "topic": "ES politika",
+        "stance": "Apgalvo, ka Ungārija uztur, viņa vārdiem, «Kremļa karsto līniju», aktīvi saskaņojot rīcību ar Maskavu, lai bloķētu Ukrainas ceļu uz ES, panāktu oligarhu sankciju atcelšanu un saglabātu Krievijas naftas plūsmu; Orbāna rīcību viņš raksturo kā kalpību, nevis Ungārijas interešu vai suverenitātes aizstāvību.",
+        "quote": "This is not defending Hungarian interests or sovereignty. This is just servility with a flag on it.",
+        "confidence": 0.8,
+        "reasoning": "Paša tvīts ar skaidru vērtējumu par Ungārijas valdības sadarbību ar Maskavu ES lēmumos. Nostāja par nosauktu personu (Orbāns), tāpēc strīdīgie apzīmējumi («Kremļa karstā līnija», «kalpība») ietīti atrunā un pasniegti kā viņa raksturojums. Aizvainojošie epiteti stancē nav pārnesti. Tēma ES politika, jo aprakstītā rīcība attiecas uz Ukrainas ES ceļu un ES sankcijām.",
+        "salience": 0.6,
+        "stated_at": "2026-04-08"
+      }
+    ]
+  },
+  {
+    "doc_id": 15125,
+    "pid": 57,
+    "decision": "empty",
+    "empty_reason": "Žurnālista relay slots (relationship_type='journalist', feed_type='relay') — noklusējums empty; turklāt tvīts ir retorisks jautājums ar insinuāciju bez konkrētas politikas nostājas.",
+    "claims": []
+  }
+]
