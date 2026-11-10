@@ -3,11 +3,11 @@ name: Andris Skride
 party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 14
+positions: 16
 votes: 5
 contradictions: 0
-mentioned_in: 262
-last_active: 2026-10-29
+mentioned_in: 272
+last_active: 2026-11-09
 top_topics:
 - Veselības aprūpe
 - Izglītība
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (36%), [[topics/izglitiba|Izglītība]] (29%), [[topics/sociala-politika|Sociālā politika]] (21%)
-- **30d:** 9 claims
+- **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (44%), [[topics/izglitiba|Izglītība]] (25%), [[topics/sociala-politika|Sociālā politika]] (19%)
+- **30d:** 11 claims
 - **Spriedzes:** [[persons/ivars-kalvins|Ivars Kalviņš]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

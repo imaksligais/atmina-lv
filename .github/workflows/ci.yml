@@ -37,7 +37,7 @@ jobs:
             .github/workflows/ci.yml
 
       - name: Install dependencies
-        # torch/torchaudio MUST come from the PyTorch CPU index first. The
+        # torch MUST come from the PyTorch CPU index first. The
         # default PyPI wheel for linux/x86_64 is the CUDA build: it drags in
         # ~2 GB of compressed nvidia_* wheels (cublas, cudnn, nccl, cufft,
         # cusolver, …) plus triton, which unpack to several GB and blow out
@@ -46,10 +46,12 @@ jobs:
         # CUDA runtime is dead weight. `==2.13.0` is satisfied by `2.13.0+cpu`
         # (PEP 440 ignores the local version segment), so the requirements.txt
         # pins below see torch as already installed and never touch PyPI's.
+        # The video stack (requirements-video.txt, incl. torchaudio) is not
+        # installed: tests/conftest.py skips the video tests that need it.
         run: |
           python -m pip install --upgrade pip
           pip install --index-url https://download.pytorch.org/whl/cpu \
-            torch==2.13.0 torchaudio==2.11.0
+            torch==2.13.0
           pip install -r requirements.txt
 
       - name: Apply twikit local patches
@@ -71,4 +73,4 @@ jobs:
         # - `slow` tests exceed 5s each — skipped to keep CI under timeout
         # The full suite + generate_public_site smoke run locally via `bash scripts/check.sh`
         # (developer's last-mile gate; needs a populated data/atmina.db fixture).
-        run: python -m pytest tests -q -m "not integration and not slow"
+        run: python -m pytest tests -q -m "not integration and not slow" -n 3 --durations=25

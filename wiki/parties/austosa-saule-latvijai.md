@@ -1,7 +1,7 @@
 ---
 party: Austošā Saule Latvijai
 members: 4
-claims: 403
+claims: 423
 program_promises: 23
 contradictions: 0
 votes_par: 0
@@ -16,8 +16,8 @@ top_politicians:
 top_topics:
 - Imigrācija
 - Koalīcija un partijas
-- Vēlēšanas
 - Ukraina un Krievija
+- Vēlēšanas
 - Sociālā politika
 ---
 

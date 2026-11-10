@@ -163,6 +163,7 @@ def _run_brief_captured(tmp_path, monkeypatch, *, note_type: str, topic: str, ar
     # topic carries the SUBJECT day/week; created_at is later, which is exactly
     # the after-midnight case the slug must ignore.
     fake_row = {
+        "content": "",  # no `## Vizuālais brief` block → the stored JSON is used
         "visual_brief_json": vb,
         "created_at": "2026-06-10 01:14:00",
         "note_type": note_type,
@@ -502,3 +503,37 @@ def test_cli_brief_backend_codex_skips_gemini_budget_and_records_codex(tmp_path,
     # ar TOOL RULES, source_id paliktu NULL un migrācija ieliktu dublikātu.
     assert (audit[0]["source_table"], audit[0]["source_id"]) == ("brief_images", bi["id"])
     assert (audit[0]["kind"], audit[0]["model"], audit[0]["cost_usd"]) == ("brief", "codex-gpt-image", 0.0)
+
+
+def test_cli_brief_prompt_follows_corrected_content_not_stale_column(tmp_path, monkeypatch):
+    """`visual_brief_json` is filled only at write time. After a hand correction
+    of the `## Vizuālais brief` block in `content`, the site shows the new
+    headline (since 2026-09-16) — the image prompt must follow the same text,
+    not the stale column (verdikts 2026-11-09 row 7)."""
+    import json
+    import sqlite3
+
+    from src.graphics import cli
+
+    db_path = _codex_db(tmp_path)
+    stale = {"topic": "Valsts pārvalde", "headline": "Vecā tēze", "stat": None,
+             "metaphor_hint": "stale lighthouse"}
+    content = ("# Dienas analīze — 2026-10-10\n\nKoalīcija vienojās par budžetu.\n\n"
+               "## Vizuālais brief\n\n- **Tēma:** budžets\n- **Galvenā tēze:** Labotā tēze\n"
+               "- **Skaitlis:** nav\n- **Metaforas hint:** corrected scales\n")
+    conn = sqlite3.connect(db_path)
+    conn.execute(
+        "INSERT INTO context_notes (id, note_type, topic, content, created_at, visual_brief_json)"
+        " VALUES (78, 'daily_brief', 'dienas analīze 2026-10-10', ?, '2026-10-10 18:00:00', ?)",
+        (content, json.dumps(stale)),
+    )
+    conn.commit()
+    conn.close()
+    _fake_codex(monkeypatch, tmp_path, write_image=True)
+    monkeypatch.chdir(tmp_path)
+
+    cli.main(["brief", "--backend", "codex", "--note-id", "78", "--with-text", "--db", db_path])
+
+    prompt = _db_rows(db_path, "SELECT prompt FROM brief_images WHERE note_id = 78")[0]["prompt"]
+    assert "corrected scales" in prompt and "Labotā tēze" in prompt, prompt[:400]
+    assert "stale lighthouse" not in prompt and "Vecā tēze" not in prompt, prompt[:400]

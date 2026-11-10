@@ -45,11 +45,21 @@ Kopš 2026-11-04 audits skaita arī `saeima_votes.url LIKE '%parentID=%'`: vēl�
 lapa ir tukša. Saite, kas vecāka par 7 dienām, dod izejas kodu 1 (labojums:
 `scripts/fix_parentid_vote_urls.py`). Kods 2 paliek „nepilns palaidiens, atkārto",
 un tas ir svarīgāks par 1.
+
+Kopš 2026-11-10 `--tech` aizstāj rokas paritāti: katram punktam ar
+`hasTechChilds` audits atver `getTechDKP` un pievieno tā balsojumus apvienībai;
+dzīvajai sēdei tas nolasa `var actualXML_DkId`, pārbauda, ka `nr={DkId}` lapa ir
+par prasīto datumu, un auditē `nr={DkId}` ∪ dzīvo lapu ∪ `getTechDKP`. Balsojumi
+tiek skaitīti pēc (datums, laiks), jo viens balsojums var nākt divās URL formās.
+Atbilde bez nevienas rindas punktam ar apakšpunktiem, `nr={DkId}` bez punktiem
+vai cita datuma sēde = kļūda, izejas kods 2. Bez `--tech` dzīvā sēde joprojām
+ir STOP ar kodu 2.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import sqlite3
 import sys
 import time
@@ -61,9 +71,13 @@ REPO_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.p3_backfill_year_urllib import (  # noqa: E402
+    _DRAW_DKP_ARG_RE,
+    _DRAW_DKP_PR_RE,
+    TechDKPError,
     _extract_vote_urls_from_agenda,
     _fetch,
     _parse_vote_page,
+    collect_agenda_votes,
 )
 from src import db as _src_db  # noqa: E402
 from src.saeima import _resolve_vote_url  # noqa: E402
@@ -204,9 +218,10 @@ def _live_session_stop(live: list[dict], year: int) -> str:
         "    (a) `active=1` nav piesaistīts datumam — rīt tas pats URL rāda citu sēdi;\n"
         "    (b) dzīvā lapa nerenderē APAKŠPUNKTU balsojumus (2026-09-10: 16 pret "
         "21 `nr={DkId}` formā).\n"
-        "  Ko darīt: šodienas sēdi pārbaudi pret `DK?ReadForm&nr={actualXML_DkId}` "
-        "darba kārtību (DkId nolasāms dzīvās lapas `var actualXML_DkId`), vai "
-        "pārģenerē manifestu, kad titania sēdei ir piešķīrusi `nr={UUID}`.\n"
+        "  Ko darīt: palaid ar `--tech` — audits pats nolasa dzīvās lapas "
+        "`var actualXML_DkId`, atver `DK?ReadForm&nr={DkId}` un seko `getTechDKP`; "
+        "ja tas neizdodas, kļūda ir nosaukta augstāk. Vai pārģenerē manifestu, kad "
+        "titania sēdei ir piešķīrusi `nr={UUID}`.\n"
         + _regenerate_hint(year)
     )
 
@@ -257,6 +272,58 @@ def _db_index() -> tuple[set[tuple[str, str]], set[str]]:
     return dt, urls
 
 
+def _db_url_moments() -> dict[str, tuple[str, str]]:
+    """{url: (vote_date, vote_time)} — tikai `--tech` ceļam, tikai lasa.
+
+    Vajadzīgs, lai viens balsojums divās URL formās (`/0/{HEX}` no `nr=` lapas un
+    `parentID=` no dzīvās lapas) netiktu skaitīts divreiz: `store_vote()` kopš
+    2026-11-07 to pašu (datums, laiks ar sekundēm) uzskata par vienu balsojumu.
+    """
+    db = sqlite3.connect(f"{Path(DB_PATH).resolve().as_uri()}?mode=ro", uri=True)
+    try:
+        return {r[0]: (r[1], r[2]) for r in db.execute(
+            "SELECT url, vote_date, vote_time FROM saeima_votes") if r[0] and r[1] and r[2]}
+    finally:
+        db.close()
+
+
+_DKID_RE = re.compile(r'actualXML_DkId\s*=\s*"([0-9A-Fa-f]{32})"')
+_DRAW_DKP_DT_ARG = 14  # 34-arg forma: punkta datums «DD.MM.YYYY» (`nr=` lapā)
+
+
+def _dashed(hex32: str) -> str:
+    """`actualXML_DkId` nāk bez domuzīmēm; `nr=` bez tām atdod TUKŠU darba kārtību
+    (mērīts 2026-11-10: 0 `drawDKP_*` izsaukumu), tāpēc GUID jāsaliek atpakaļ."""
+    h = hex32.lower()
+    return f"{h[:8]}-{h[8:12]}-{h[12:16]}-{h[16:20]}-{h[20:]}"
+
+
+def _live_pages(session: dict, base: str) -> list[tuple[str, str]]:
+    """Dzīvās sēdes lapas `--tech` ceļam: [(avots, html)] — `nr={DkId}` un dzīvā.
+
+    Kļūme (`RuntimeError`) = automātiskais ceļš nevar strādāt → sēde paliek
+    nepārbaudīta, izejas kods 2. Datuma pārbaude sargā no (a): `active=1`
+    nākamajā dienā rāda jau citu sēdi.
+    """
+    live_url = session.get("url") or f"{base}/DK?ReadForm&actual=1"
+    live_html = _fetch(live_url)
+    m = _DKID_RE.search(live_html)
+    if not m:
+        raise RuntimeError(f"dzīvajā lapā nav `var actualXML_DkId` ({live_url})")
+    nr_url = f"{base}/DK?ReadForm&nr={_dashed(m.group(1))}"
+    nr_html = _fetch(nr_url)
+    calls = [_DRAW_DKP_ARG_RE.findall(c.group(1)) for c in _DRAW_DKP_PR_RE.finditer(nr_html)]
+    if not calls:
+        raise RuntimeError(f"`nr={{DkId}}` darba kārtībā 0 punktu — formāta robs (T12): {nr_url}")
+    want = {f"{d[8:10]}.{d[5:7]}.{d[:4]}" for d in _session_dates(session)}
+    seen = {a[_DRAW_DKP_DT_ARG] for a in calls if len(a) > _DRAW_DKP_DT_ARG and a[_DRAW_DKP_DT_ARG]}
+    if not want & seen:
+        raise RuntimeError(
+            f"dzīvā lapa rāda citu sēdi: `nr={{DkId}}` punktu datumi "
+            f"{', '.join(sorted(seen)) or '—'}, gaidīts {', '.join(sorted(want))}")
+    return [("nr={DkId}", nr_html), ("dzīvā", live_html)]
+
+
 def _iso(parsed: dict) -> tuple[str | None, str | None]:
     if not parsed.get("date"):
         return None, parsed.get("time")
@@ -267,7 +334,37 @@ def _iso(parsed: dict) -> tuple[str | None, str | None]:
         return None, parsed.get("time")
 
 
-def audit_session(session: dict, db_dt: set, db_urls: set, delay: float) -> dict:
+def _tech_union(pages: list[tuple[str, str]], base: str, out: dict, actual: bool,
+                delay: float) -> list[str]:
+    """`--tech`: katras lapas balsojumi ∪ tās `getTechDKP` apakšpunkti; skaitļi → `out`."""
+    def fetch(url: str) -> str:
+        html = _fetch(url)
+        if delay:
+            time.sleep(delay)
+        return html
+
+    union: list[str] = []
+    have: set[str] = set()
+    page_votes: set[str] = set()
+    tech_votes: set[str] = set()
+    for source, html in pages:
+        r = collect_agenda_votes(html, base, fetch=fetch, actual=actual)
+        out["sources"][source] = len(r["agenda"])
+        page_votes.update(r["agenda"])
+        tech_votes.update(r["tech"])
+        out["tech_points"] += r["tech_points"]
+        out["tech_fetched"] += r["tech_fetched"]
+        for u in r["union"]:
+            if u not in have:
+                have.add(u)
+                union.append(u)
+    out["sources"]["getTechDKP"] = len(tech_votes)
+    out["tech_only"] = len(tech_votes - page_votes)
+    return union
+
+
+def audit_session(session: dict, db_dt: set, db_urls: set, delay: float, *,
+                  tech: bool = False, url_moments: dict | None = None) -> dict:
     date_str = f"{session['year']}-{session['month']:02d}-{session['day']:02d}"
     out = {
         "date": date_str,
@@ -281,23 +378,53 @@ def audit_session(session: dict, db_dt: set, db_urls: set, delay: float) -> dict
         "unreadable": [],
         "error": None,
     }
+    if tech:
+        out.update({"sources": {}, "tech_points": 0, "tech_fetched": 0,
+                    "tech_only": 0, "same_moment": 0})
 
     # Sēdes SAVA sasaukuma bāze: pēc pārslēgšanas uz 15. Saeimu 14. sasaukuma
     # darba kārtības dzīvo LIVS14. Rinda bez atslēgas = 14 (vecie manifesti).
     base = base_url(session.get("convocation", 14))
-    agenda_url = f"{base}/DK?ReadForm&nr={session['uuid']}"
     try:
-        agenda_html = _fetch(agenda_url)
+        if session.get("uuid"):
+            pages = [("nr=", _fetch(f"{base}/DK?ReadForm&nr={session['uuid']}"))]
+        else:  # dzīvā sēde — šeit nonāk tikai ar `--tech`
+            pages = _live_pages(session, base)
     except Exception as e:  # noqa: BLE001
         out["error"] = f"agenda fetch: {e}"
         return out
 
-    vote_urls = _extract_vote_urls_from_agenda(agenda_html, base=base)
+    if tech:
+        try:
+            vote_urls = _tech_union(pages, base, out, actual=not session.get("uuid"),
+                                    delay=delay)
+        except TechDKPError as e:
+            out["error"] = f"getTechDKP: {e}"
+            return out
+        except Exception as e:  # noqa: BLE001
+            out["error"] = f"getTechDKP fetch: {e}"
+            return out
+    else:
+        vote_urls = _extract_vote_urls_from_agenda(pages[0][1], base=base)
     out["agenda_votes"] = len(vote_urls)
+
+    # `--tech`: viens balsojums var nākt divās URL formās — skaita pēc (datums, laiks).
+    seen_moments: set[tuple[str, str]] = set()
+
+    def _dup(moment: tuple[str, str] | None) -> bool:
+        if not tech or not moment:
+            return False
+        if moment in seen_moments:
+            out["same_moment"] += 1
+            return True
+        seen_moments.add(moment)
+        return False
 
     for url in vote_urls:
         full = _resolve_vote_url(url)
         if full in db_urls:
+            if _dup((url_moments or {}).get(full)):
+                continue
             out["present_by_url"] += 1
             continue
         # Unknown URL — could be a re-archived UNID of a vote we already have.
@@ -312,6 +439,8 @@ def audit_session(session: dict, db_dt: set, db_urls: set, delay: float) -> dict
         iso_date, vtime = _iso(parsed)
         if not iso_date or not vtime:
             out["unreadable"].append({"url": full, "err": "no date/time on page"})
+            continue
+        if _dup((iso_date, vtime)):
             continue
         if (iso_date, vtime) in db_dt:
             out["present_by_datetime"] += 1
@@ -350,6 +479,9 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--delay", type=float, default=0.3)
     ap.add_argument("--out", type=str, default=None)
+    ap.add_argument("--tech", action="store_true",
+                    help="seko getTechDKP katram punktam ar apakšpunktiem; dzīvajai "
+                         "sēdei nolasa actualXML_DkId un auditē nr={DkId} formu")
     args = ap.parse_args()
 
     manifest, generated_at = load_manifest(MANIFEST_PATH)
@@ -424,13 +556,17 @@ def main() -> int:
     # 4. VĀRTI — DZĪVĀ sēde (2026-09-16). Šķirtne ir `not s.get("uuid")`, nevis
     # jaunā `live` atslēga: vecos manifestos tās nav, un vārti, kas paļaujas uz
     # jauno lauku, klusi izlaistu tieši veco failu.
+    # Ar `--tech` dzīvā sēde IR auditējama (nr={DkId} ∪ getTechDKP); ja tas
+    # neizdodas, tās rinda iet kļūdas ceļā — tas pats izejas kods 2.
     live = [s for s in sessions if not s.get("uuid")]
-    sessions = [s for s in sessions if s.get("uuid")]
+    if not args.tech:
+        sessions = [s for s in sessions if s.get("uuid")]
 
     if args.limit:
         sessions = sessions[: args.limit]
 
     db_dt, db_urls = _db_index()
+    url_moments = _db_url_moments() if args.tech else None
     print(f"DB: {len(db_dt)} unikāli (datums, laiks); {len(db_urls)} URL")
     print(f"Manifests ģenerēts: {generated_at}")
     print(f"Manifestā {args.year}. gadā: {len(in_year)} sēdes "
@@ -440,11 +576,12 @@ def main() -> int:
               + ", ".join(f"{s['year']}-{s['month']:02d}-{s['day']:02d}" for s in future))
     if live:
         print("DZĪVĀS SĒDES (kalendārā `active=1`/`actual=1`, bez `nr={UUID}`) — "
-              f"NEAUDITĒJAMAS: {len(live)} — "
+              + ("auditē caur nr={DkId} ∪ getTechDKP" if args.tech else "NEAUDITĒJAMAS")
+              + f": {len(live)} — "
               + ", ".join(sorted(_session_date(s) for s in live)))
     print(f"Auditējamas sēdes: {len(sessions)}\n")
     if not sessions:
-        if live:
+        if live and not args.tech:
             print(_live_session_stop(live, args.year), file=sys.stderr)
             return 2
         print("STOP: pēc filtriem nepalika neviena auditējama sēde — sk. augšējās "
@@ -455,7 +592,8 @@ def main() -> int:
 
     results = []
     for s in sessions:
-        r = audit_session(s, db_dt, db_urls, args.delay)
+        r = audit_session(s, db_dt, db_urls, args.delay, tech=args.tech,
+                          url_moments=url_moments)
         results.append(r)
         flag = "  ERR" if r["error"] else ""
         # Turpinājuma sēdei viena darba kārtība sedz vairākas dienas — to
@@ -468,6 +606,15 @@ def main() -> int:
               f'{len(r["missing"]):>7} {len(r["unreadable"]):>3}{flag}{cont_note}')
         if r["error"]:
             print(f'    {r["error"]}')
+        elif args.tech:
+            # Saucējs pa avotiem: cik deva katra lapa, cik getTechDKP, cik no tiem
+            # nebija nevienā lapā, un cik unikālu balsojumu pēc (datums, laiks).
+            src = ", ".join(f"{k} {v}" for k, v in r["sources"].items())
+            print(f'    avoti: {src}; punkti ar apakšpunktiem {r["tech_points"]}, '
+                  f'getTechDKP atbildes {r["tech_fetched"]}, tikai getTechDKP '
+                  f'{r["tech_only"]}; apvienība {r["agenda_votes"]} URL = '
+                  f'{r["agenda_votes"] - r["same_moment"]} balsojumi; DB '
+                  f'{r["present_by_url"] + r["present_by_datetime"]}')
 
     # SEGUMS PIRMS KOPSAVILKUMA (2026-08-09). Bez šīs rindas neizdevies fetch
     # ir aritmētiski neatšķirams no tukšas sēdes: `audit_session` kļūmes ceļā
@@ -522,10 +669,13 @@ def main() -> int:
               f"pilnīgs, un tā JSON ir apcirpts darba uzdevums:", file=sys.stderr)
         for r in errored:
             print(f'  {r["date"]} ({r["session_type"]}): {r["error"]}', file=sys.stderr)
+        live_failed = [s for s in live if any(r["date"] == _session_date(s) for r in errored)]
+        if live_failed:
+            print("\n" + _live_session_stop(live_failed, args.year), file=sys.stderr)
         return 2
     # Dzīvā sēde STOP-o TIKAI BEIGĀS, tāpat kā fetch kļūmes: gada skrējiens
     # apstaigā visu, ko var, un tikai tad atsakās no zaļā.
-    if live:
+    if live and not args.tech:
         print("\n" + _live_session_stop(live, args.year), file=sys.stderr)
         return 2
     if parentid and parentid["stale"]:

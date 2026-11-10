@@ -35,6 +35,7 @@ _CHANGELOGS = {
     "CHANGELOG": _ROOT / "wiki" / "CHANGELOG.md",
     "CHANGELOG-arhivs": _ROOT / "wiki" / "CHANGELOG-arhivs.md",
     "CHANGELOG-arhivs-2026-09": _ROOT / "wiki" / "CHANGELOG-arhivs-2026-09.md",
+    "CHANGELOG-arhivs-2026-10": _ROOT / "wiki" / "CHANGELOG-arhivs-2026-10.md",
 }
 
 # Matches a link target like `CHANGELOG.md#some-anchor`, with or without a path

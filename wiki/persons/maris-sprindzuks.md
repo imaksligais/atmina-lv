@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 15
 votes: 3324
 contradictions: 0
-mentioned_in: 260
+mentioned_in: 263
 last_active: 2026-10-27
 top_topics:
 - Pilsētvide

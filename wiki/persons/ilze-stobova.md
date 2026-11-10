@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 12
 votes: 4859
 contradictions: 0
-mentioned_in: 55
+mentioned_in: 57
 last_active: 2026-10-16
 top_topics:
 - Izglītība
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (33%), [[topics/valsts-parvalde|Valsts pārvalde]] (25%), [[topics/sociala-politika|Sociālā politika]] (17%)
-- **30d:** 2 claims, 0.7× bāzes līnija
+- **30d:** 1 claims, 0.3× bāzes līnija
 <!-- /SYNC-AUTO -->

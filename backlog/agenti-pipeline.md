@@ -4,10 +4,6 @@ _Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uztur
 
 ## Aģenti / pipeline
 
-### [OPEN] Stance precizitāte rutīnā: neatkarīga pārbaude atrod 10–20 % defektu, aģenta pašpārbaude ne
-
-2026-10-15 izlase 40 rutīnas pozīcijas → 8 defekti (4 precizitāte, 4 LV gramatika; `data/rollback_routine_sample40_2026-10-15.sql`); D4 partijā ~21 % (`docs/audits/2026-10-15-d4-atgusana/README.md`). Noteikumi promptā jau bija — teksts vien to nelabo. Izmēģinājums: `@stance-checker` (rubrika `docs/audits/2026-09-30-stance-izlase/RUBRIKA.md`) + `scripts/apply_stance_fixes.py` rutīnā pirms pretrunu soļa; Opus pēc noklusējuma, tas pats fails derīgs citam modelim (operators 10-15). Pastāvīgs solis `dienas-rutina.md` — tikai pēc operatora «jā» pēc izmēģinājuma. Atšķiras no `@quality-reviewer` § A: tas skatās izlasi (LIMIT 20) un pēc pārskata.
-
 ### [OPEN] Aģentu promptu optimizācija pēc claim-extractor v4 — audit-integrity → skripts, quality-reviewer uz RUBRIKA
 
 Mērīts 2026-09-30 (`wc -c`, `grep` pēc datumiem/incidentu atsaucēm). v4 mācība (`docs/eval/claim-extractor-prompt-v4-2026-09-30.md`): garais prompts jau bija precīzs (A+B 0/24); pierādīts ieguvums bija **noteikums kodā** (`support`) + atrastās pozīcijas 24 → 28, ne pats saīsinājums. Tāpēc īsina tikai tur, kur ir izmērīta problēma vai reālas izmaksas, un katram prompta nesējam — eval pirms ieviešanas.
@@ -18,16 +14,16 @@ Mērīts 2026-09-30 (`wc -c`, `grep` pēc datumiem/incidentu atsaucēm). v4 māc
 4. **`@brief-writer` (29 KB, Self-Check 7 KB).** Daļu paškontroles → lint (`scripts/check_output.py` vai jauns); zema steidzamība, jo pārskatu operators pārlasa.
 5. **Neaiztikt bez izmērītas problēmas:** `@saeima-tracker` (36 KB; Step 2 11 KB regex apraksts — kods jau ir `p3_backfill_year_urllib.py::_extract_vote_urls_from_agenda`, bet kļūda maksā dārgi, T8), `@contradiction-hunter` (33 KB, lieto reti). Pārējie ≤14 KB — kārtībā.
 
-6. **Noteikumi, kas gaida operatora «jā» vai «nē»:** (a) ~~`claim-extractor.md:80` «≤12 dokumentu pasē» neizšķir tukšus RT~~ — 2026-10-14 atkārtojās (#22 apstājās pie 11 no 20), tāpēc rindā ielikts `rt` paketes izņēmums (20 doki, bez «3 tukši pēc kārtas» STOP); operators apstiprināja 2026-10-14; (b) redakcionālais noteikums «bijušā PRO deputāta uzvārdu mūsu tekstos nelieto, kamēr apsūdzība nav celta» ievērots kopš 10-05, bet nav ierakstīts nevienā promptā — ratificēt vai atsaukt. (c) Astras 10-14 izlases ieteikumi (virs 5 rindu sliekšņa, nav ieviesti): `quote` beigu pieturzīmes pārbaude `save_analysis` validatorā (noķertu 737776); signāls «Informē/ziņo, ka» + citas institūcijas lēmums (737765 — relejs, dzēsts). Piezīme: `support` DB netiek glabāts, tāpēc izlases to nevar pārbaudīt.
+6. **Noteikumi, kas gaida operatora «jā» vai «nē»:** (a) ~~`claim-extractor.md:80` «≤12 dokumentu pasē» neizšķir tukšus RT~~ — 2026-10-14 atkārtojās (#22 apstājās pie 11 no 20), tāpēc rindā ielikts `rt` paketes izņēmums (20 doki, bez «3 tukši pēc kārtas» STOP); operators apstiprināja 2026-10-14; (b) redakcionālais noteikums «bijušā PRO deputāta uzvārdu mūsu tekstos nelieto, kamēr apsūdzība nav celta» — ratificēts 2026-11-09, ierakstīts `claim-extractor.md` § 5 un `brief-writer.md` pašpārbaudes 19. punktā. (c) Astras 10-14 ieteikumi: citāta beigu pārbaude jau ir (`quote_end_mismatch`, kopš 2026-10-14; `tests/test_quote_end.py`); signāls «Informē/ziņo, ka» noraidīts 2026-11-09 (viena instance). Mērījums 2026-11-10: `quote_end_mismatch` karogo 129 web un 117 twitter citātus, un izlasē 7 no 20 web un 4 no 20 twitter karogiem bija pareizi citāti — precizējums (atribūcija aiz komata; jauns teikums ar lielo burtu) dotu 3 no 20 un 0 no 20; nav ieviests, operatora lēmums. Piezīme: `support` DB netiek glabāts, tāpēc izlases to nevar pārbaudīt.
 
 *Īpašnieks:* operators. **Operatora lēmums 2026-09-30: secība pieņemta** — sākt ar 1. (audit-integrity → skripts); 2. (quality-reviewer) ar eval pirms ieviešanas, palīgu skaitu pasaka pirms palaišanas.
 
-### [OPEN] Stance-fidelity atlikums: matcher neskenē `title`, paywall stop-gate nevar balstīties uz `is_paywall`
+### [DEFERRED] Stance-fidelity atlikums: matcher neskenē `title`; tvnet maksas ievadi nav atšķirami (2026-11-10)
 
-- **(b6) matcher neskenē `title`.** `src/matcher.py:977–1008` skenē tikai `content`. Pārmērīts 2026-09-25: `match_politicians(title)` pret junction, web, `scraped_at>=2026-08-26` → **23 pāri / 22 doki no 3 011** web dokiem ar virsrakstu (07-27: 33 pāri / 5 088) — NElasīti (T18). Instances: doc 4909 (vārds tikai virsrakstā), doki 80022/79087 (ķermenī tikai «Valsts prezidents»). *Rīcība:* 2. fāze ar `mentioned` lomu (`docs/plans/2026-07-27-matcher-koliziju-plans.md` § 4), tajā pašā reizē izlemt `d.title` pievienošanu `get_politician_documents()` SELECT-am.
-- **(c) paywall stop-gate nevar balstīties uz `is_paywall`.** Neviens ingest ceļš kolonnu neraksta (`grep -rn is_paywall src scripts` → raksta tikai `video_ingest`; lasa `backfill_truncated_docs.py`, `audit_quote_fidelity.py`); `SELECT is_paywall, COUNT(*), MIN(scraped_at), MAX(scraped_at) FROM documents GROUP BY 1` → 351 rinda ar `1`, visas 2026-03-25…04-06 (no 103 394). Vārts uz šīs kolonnas nekad nenostrādātu. Paraksta doki («Lai turpinātu lasīt» / «Pilno rakstu lasiet») kopš 09-10 → 0, tātad «0 nemarķētu» ir tukšs rezultāts, ne pierādījums; #704199 (§ Atliktais 63) ir paywall stubs bez paraksta. *Rīcība:* koda vārts uz teksta/garuma pazīmes, analogs truncated-stub vārtiem (prompta noteikums «paywall stubam `confidence` reti > 0,6» jau ir).
+- **(b6) matcher neskenē `title`.** `src/matcher.py` skenē tikai `content`. Pārmērīts 2026-09-25: `match_politicians(title)` pret junction, web, `scraped_at>=2026-08-26` → **23 pāri / 22 doki no 3 011** web dokiem ar virsrakstu — NElasīti (T18). Instances: doc 4909 (vārds tikai virsrakstā), doki 80022/79087. *Rīcība:* 2. fāze ar `mentioned` lomu (`docs/plans/2026-07-27-matcher-koliziju-plans.md` § 4). *Trigeris (operators 2026-11-09):* skaits aug virs ~23 pāriem mēnesī.
+- **(c) paywall vārti ieviesti 2026-11-10** (`src.quality.paywall_marker`, CHANGELOG 2026-11-10 (1)). *Atlikums:* tvnet maksas ievadus pēc teksta atšķirt nevar (266 vecie `is_paywall` karogi bez redzama marķiera, 1 doks ar frāzi) — vajadzētu lapas HTML. *Trigeris:* pozīcija no tvnet maksas ievada, ko noķer `@stance-checker`.
 
-*Īpašnieks:* operators. Rīks paliek atkārtojams: `scripts/audit_quote_fidelity.py` (read-only). Pierādījumi: `docs/audits/2026-09-25-backlog-triaza/triage_agenti-pipeline.md`.
+*Īpašnieks:* operators. Rīks: `scripts/audit_quote_fidelity.py` (read-only).
 
 ### [OPEN] Medību pēdas @contradiction-hunter (07-25 adversārā pārbaude + 08-03 ekstrakcija)
 
@@ -46,23 +42,12 @@ Neviena nav saglabāta kā pretruna (`contradictions` ar #69556, #10375, #615846
 
 *Īpašnieks:* operators — kurš punkts iet `/deep-check`, kurš uz analīzi, kurš tiek izmests.
 
-### [DEFERRED] `visual_brief_json` renderam miris, bet `@graphics-designer` to joprojām lasa — attēls un virsraksts var atšķirties
-
-Kopš 2026-09-16 `src/render/blog.py` virsrakstu ņem no `content` bloka «## Vizuālais brief» (CHANGELOG 2026-09-16 (4)); sešu pārskatu jaunais virsraksts jau ir publicēts (2026-09-25: 6/6 lokāli un 3/3 pārbaudīti live ar jauno `og:title`). Kolonnu joprojām raksta `src/tools.py`, un `@graphics-designer` to lasa attēla promptam (`graphics-designer.md:14,38`), tāpēc pēc `content` labojuma attēls var sekot vecajam tekstam. *Rīcība:* (i) `@graphics-designer` pāriet uz `parse_visual_brief(content)` vai (ii) kolonnu izmest. *Īpašnieks:* operators.
-
-### [OPEN] Vēstneša ingest pienāk PĒC analīzes loga — septembrī 16 no 18 dienām pēc 15:00
-
-Akta uzrādīšanas vārts ieviests 2026-09-07 (`src/routine.py::vestnesis_acts_for()`, CHANGELOG 2026-09-07 (5)). Atvērts paliek tikai ievākuma LAIKS: Vēstnesis ir `scripts/morning_ingest.py` 4. solis (`:76`), tāpēc tas ienāk ar `morning_ingest` palaidienu. `MIN(TIME(scraped_at))` pa dienām, `platform='vestnesis'`: septembrī **16 no 18** dienām pēc 15:00 (izņēmumi 09-03 06:56, 09-23 10:20; augustā 32/34); oktobrī **11 no 13** dienām (2026-10-21; izņēmumi 10-05 08:33, 10-20 01:01).
-
-*Rīcība:* izvēlēties — palaist Vēstneša soli atsevišķi pirms analīzes (ar roku; § Ne-darīt aizliedz ieplānotu ielādi), vai pieņemt «akts pārskatā nākamajā dienā» un ierakstīt `.claude/commands/dienas-rutina.md`. *Īpašnieks:* operators.
-
 ### [OPEN] Krossavota/divvalodu dublikāti — `possible_duplicate` tīkls kopš 2026-09-24; atliek pārmērīt 6. pārbaudes 101 grupu
 
 - **Problēma:** viens izteikums ienāk korpusā vairākas reizes ar atšķirīgu `source_url` (divvalodu tvīts; viens notikums vairākos izdevumos, arī dažādos datumos; paša RT par savu tvītu), tāpēc idempotences trijnieks `(opponent_id, source_url, topic)` to nesedz. 08-25 vienā dienā noķerti 12 dublikāti; 08-12 #689553/#689555 (LETA → diena.lv) uzpūta pārskata sadaļu. Jauna instance: 52682 (lsm.lv) ↔ 52696 (nra.lv) no 09-23 backfill atskaites.
 - **Kas ir:** koda tīkls `src/analyze.py:743–790` `possible_duplicate` (`stated_at` ±5 d + vektors; `beac0d35`, 2026-09-24, `tests/test_possible_duplicate.py`); `logs` nostrādāšanu neglabā, tāpēc dzīvā pierādījuma vēl nav.
 - **Pirmā reālā nostrādāšana 2026-09-30:** Bražes 3 tās pašas dienas tvīti par Krievijas pilsoņa uzturēšanās atļauju — #725120 un #725121 pret #725119 (vektora attālums 0,373/0,374); aģents izvērtēja, ka saturs atšķiras (kompetence / «4 mēneši» / konkrēta prasība), un glabāja visus trīs. Tīkls ziņo, nebloķē — kā paredzēts.
 - **2026-10-10:** Gorkšs #737551 pret #737520 (attālums 0,33) — aģents izvērtēja, ka saturs atšķiras, glabāja abus. Tīkla aklā zona: Bergholca #737561 (doc 130723, angļu valodas atkārtojums 10-09) dublēja #731042 (09-30) — 9 dienas, ārpus ±5 d loga; noķēra tikai pretrunu meklēšana, dzēsts ar `data/rollback_rutina_vakars_2026-10-10.sql`.
-- **Neizlemts pāris (2026-10-05):** Augulis #725139 (doc 120027) ↔ #717891 (doc 113544), abi «PVN samazināšana degvielai» — dublikāts vai divi izteikumi.
 - **Rīcība:** pārmērīt `/audit-integrity` 6. pārbaudes 101 grupu (§ Atliktais 57) ar līdzības filtru.
 - **Īpašnieks:** operators. Pierādījumi: `docs/audits/2026-09-25-backlog-triaza/triage_agenti-pipeline.md`.
 
@@ -73,14 +58,10 @@ Akta uzrādīšanas vārts ieviests 2026-09-07 (`src/routine.py::vestnesis_acts_
 - **Secība:** vispirms labot (b), tad (a) ražas triāža uz 543 dokiem — citādi triāžā skaitās tie paši viltus pozitīvie. Ja raža < ~10 %, verdikts uz § Ne-darīt ar skaitli.
 - **Raža izmērīta 2026-10-15 (D4, joslas ar subjektu, ne aklā zona):** `inversion`+`beside_subject`, web, ≥2 signāli, 90 d — 303 pāri → 155 pozīcijas (51 %). Atlikums (web 1 signāls 196, twitter 60, vestnesis 76) — operators. [`docs/audits/2026-10-15-d4-atgusana/`](../docs/audits/2026-10-15-d4-atgusana/README.md)
 - **(f) IZPILDĪTS 2026-10-18:** `recovery_survey` un `pending_quoted_mentioned` izlaiž (doc, pid) pāri, kam claim ar to pašu `opponent_id` + `source_url` jau ir; skaits `already_claimed` ATGŪŠANA rindā. Dzīvajā DB 90 d: 1/142 atgrieztajiem (doc 96603 pid 189 — stampēts subjekts ar vēlāk pieliktu NULL `mentioned` saiti), izlaisti 3. `find_inversions` (audita pārbaude 15) tos joprojām skaita. **Atlikums:** izlaistie pāri netiek zīmogoti, tāpēc 15. pārbaudes bāzlīnija tos joprojām skaita (piezīme pie tās). *Īpašnieks:* koda darbs.
-- **(d) Atgūšanas apsekojums neatceras izvērtēto:** pāri, ko atgūšanas aģents izlasīja un apzināti neglabāja (dublikāts / cita runa), paliek `print_routine` «ATGŪŠANA N pāri» rindā (2026-09-30: 3 no 6). Vajag izvērtējuma zīmi (piem. `logs` ieraksts pa (doc, pid)), citādi rinda nekad nenonāk līdz 0.
+- **(d) IZPILDĪTS 2026-11-10:** `mark_recovery_evaluated(doc, pid, iemesls)` ieraksta `logs` zīmi; apsekojums tādu pāri izlaiž, kamēr zīme ir jaunāka par doka `scraped_at` (`tests/test_recovery_survey.py`). Dzīvajā DB zīmju vēl nav — pirmā īstā pārbaude nākamajā rutīnā.
 - **(e) Rindā nonāk pāri, kur politiķis tikai `mentioned`** (2026-10-11: doc 131135 Stendzenieks, 131197/131200/131202 Tavars) — `plan_extraction` tvēruma jautājums, nav labots.
 - **Īpašnieks:** operators (izmeklēšana pirms koda). Pašcitēšanas daļa (c) slēgta 2026-10-14 (verdikts C8, `0429f5f0`).
 
-### [OPEN] Pozīcija ar `stated_at` = vakardiena, kas ielādēta pēc vakardienas pārskata, nenonāk nevienā pārskatā
-- **Problēma:** 2026-10-25 trīs 24.10. vakara tvīti (#747484, #747489, #747495) ielādēti 26.10. naktī; 24.10. pārskats jau publicēts, `_BRIEF_DAY_CLAIM_SQL` tos 25.10. skeletā neņem. Profilos tie ir, pārskatos nav. Vaicājums: `SELECT id FROM claims WHERE claim_type='position' AND created_at >= '2026-10-25 05:00' AND created_at < '2026-10-26 05:00' AND stated_at < '2026-10-25'`.
-- **Rīcība:** izlemt — skelets tādus ņem nākamajā dienā ar atzīmi «iepriekšējās dienas izteikums», vai pieņemt robu (Ne-darīt). *Īpašnieks:* operators.
-
 ### [OPEN] Stance šūnas pārskata tabulās arvien garākas — 26/41 pārsniedz 30 vārdus
 - **Problēma:** 2026-10-25 26 no 41 dienas pozīcijas stance ir > 30 vārdi (10-24: 12). Pārskata proza tiek pārbaudīta (§ H), šūnas — nē; tās nāk no `claims.stance`. Vaicājums: `SELECT count(*), sum(length(trim(stance))-length(replace(trim(stance),' ',''))+1 > 30) FROM claims WHERE claim_type='position' AND id BETWEEN 747481 AND 747524 AND stated_at >= '2026-10-25'`.
-- **Rīcība:** `claim-extractor.md` § 4 garuma robeža (piem., ≤ 30 vārdi, otrā doma → atsevišķa pozīcija vai ārā) ar eval pirms ieviešanas. *Īpašnieks:* operators.
+- **Rīcība (operators 2026-11-09):** garuma robeža ekstraktorā — NĒ (§ Ne-darīt, 2026-08-22). Risināt pārskata tabulā: īsāka šūna vai izvēršams teksts (`@brief-writer` vai veidne). *Īpašnieks:* koda darbs nākamajā UI kārtā.

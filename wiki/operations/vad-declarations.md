@@ -100,6 +100,8 @@ Purge konvencija: `data/purge_vad_*.sql` (DELETE pa decl id sarakstam) +
 sweep tos neievelk atpakaļ — ingest rāda tos `skip_denylist=N`. Denylist
 papildināšana TIKAI ar operatora apstiprinājumu (readme laukā denylist failā).
 
+**Iestādes/amata noraidījuma paterns tādvārdim → `tracked_politicians.vad_negative_patterns`, nekad `negative_patterns`** (kopš 2026-11-10). VAD filtrs lasa abas kolonnas (un tikai tad, ja `keywords.vad_disambig` nav tukšs); ziņu matcher lasa tikai `negative_patterns` un tur ar paternu noraida VISU dokumentu (Kulberga «Valsts policija»: 66 no 66 ziņu dokiem).
+
 Diakritikas: VAD search ir jutīgs pret tām — «Baranniks» atdod 0,
 «Baraņņiks» 13. Nulle rezultātu ≠ deklarāciju nav; pārbaudi ar diakritikām.
 

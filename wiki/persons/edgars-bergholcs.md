@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/pilsetvide|Pilsētvide]] (46%), [[topics/pasvaldibas|Pašvaldības]] (19%), [[topics/sports|Sports]] (15%)
-- **30d:** 6 claims, 1.3× bāzes līnija
+- **30d:** 6 claims, 2.0× bāzes līnija
 - **Spriedzes:** [[persons/elina-treija|Elīna Treija]] (1 spriedze)
 <!-- /SYNC-AUTO -->

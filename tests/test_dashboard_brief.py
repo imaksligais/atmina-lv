@@ -258,7 +258,7 @@ def test_approve_endpoint_persists_approval(tmp_path: Path) -> None:
 
     db_path, image_id = _seed_brief_with_image(tmp_path, approved=0)
     app = create_app(db_path=str(db_path))
-    resp = app.test_client().post(f"/api/image/{image_id}/approve")
+    resp = app.test_client().post(f"/api/image/{image_id}/approve", headers={"HX-Request": "true"})
 
     assert resp.status_code == 200
     db = sqlite3.connect(str(db_path))
@@ -274,7 +274,7 @@ def test_approve_returns_refreshed_brief_panel_html(tmp_path: Path) -> None:
 
     db_path, image_id = _seed_brief_with_image(tmp_path, approved=0)
     app = create_app(db_path=str(db_path))
-    resp = app.test_client().post(f"/api/image/{image_id}/approve")
+    resp = app.test_client().post(f"/api/image/{image_id}/approve", headers={"HX-Request": "true"})
 
     html = resp.get_data(as_text=True)
     assert 'id="brief-panel"' in html, "response must be the refreshed brief panel partial"
@@ -289,7 +289,7 @@ def test_approve_refuses_already_approved_image(tmp_path: Path) -> None:
 
     db_path, image_id = _seed_brief_with_image(tmp_path, approved=1)
     app = create_app(db_path=str(db_path))
-    resp = app.test_client().post(f"/api/image/{image_id}/approve")
+    resp = app.test_client().post(f"/api/image/{image_id}/approve", headers={"HX-Request": "true"})
     # 400 because the action is a no-op — surface the redundancy
     assert resp.status_code == 400
 
@@ -298,7 +298,7 @@ def test_approve_404_on_missing_image(tmp_path: Path) -> None:
     from src.dashboard.server import create_app
 
     app = create_app(db_path=str(_make_test_db(tmp_path)))
-    resp = app.test_client().post("/api/image/999/approve")
+    resp = app.test_client().post("/api/image/999/approve", headers={"HX-Request": "true"})
     assert resp.status_code == 404
 
 
@@ -308,11 +308,12 @@ def test_reject_requires_reason_form_field(tmp_path: Path) -> None:
     db_path, image_id = _seed_brief_with_image(tmp_path, approved=0)
     app = create_app(db_path=str(db_path))
 
-    resp_no_reason = app.test_client().post(f"/api/image/{image_id}/reject")
+    resp_no_reason = app.test_client().post(f"/api/image/{image_id}/reject", headers={"HX-Request": "true"})
     assert resp_no_reason.status_code == 400
 
     resp_empty = app.test_client().post(
-        f"/api/image/{image_id}/reject", data={"reason": "   "}
+        f"/api/image/{image_id}/reject", data={"reason": "   "},
+        headers={"HX-Request": "true"},
     )
     assert resp_empty.status_code == 400, "whitespace-only reason is not a real reason"
 
@@ -327,6 +328,7 @@ def test_reject_persists_reason_and_returns_panel(tmp_path: Path) -> None:
     resp = app.test_client().post(
         f"/api/image/{image_id}/reject",
         data={"reason": "Pārāk tumšs"},
+        headers={"HX-Request": "true"},
     )
     assert resp.status_code == 200
     assert 'id="brief-panel"' in resp.get_data(as_text=True)

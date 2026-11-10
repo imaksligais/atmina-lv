@@ -7,7 +7,7 @@ bucket (Pašvaldības, Transports, Sociālā politika, Vide, Tieslietas,
 Valsts pārvalde, Vēlēšanas), check stance text for keywords belonging to
 the new specific bucket. If matched, propose reclassification.
 
-Run with --dry-run to see suggestions; without to apply.
+A bare run previews suggestions; --apply is refused since 2026-11-10 (one-off, done).
 """
 import argparse
 import sqlite3
@@ -79,12 +79,24 @@ def apply_reclassifications(con: sqlite3.Connection, candidates: list[dict]) -> 
     return len(candidates)
 
 
-def main() -> None:
+REFUSAL = (
+    "ATTEIKTS: backfill_topic_classification.py --apply ir pabeigts vienreizējs skripts.\n"
+    "  Atkārtoti tas pārrakstītu vēlāk ar roku labotās claims.topic vērtības, bez\n"
+    "  idempotences sadursmju pārbaudes un bez pārembedošanas (CLAUDE.md eskalācija 8).\n"
+    "  Bez --apply skripts joprojām rāda priekšskatījumu; tēmas maiņai raksti\n"
+    "  atsevišķu migrāciju ar sadursmju vaicājumu un pāra data/rollback_*.sql."
+)
+
+
+def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--db", default="data/atmina.db")
     parser.add_argument("--apply", action="store_true",
-                        help="Apply reclassifications. Default is dry-run preview.")
-    args = parser.parse_args()
+                        help="REFUSED since 2026-11-10. Default is dry-run preview.")
+    args = parser.parse_args(argv)
+    # Refusal added 2026-11-10 (docs/audits/2026-11-07-koda-parskats § 4).
+    if args.apply:
+        raise SystemExit(REFUSAL)
 
     con = sqlite3.connect(args.db)
     con.row_factory = sqlite3.Row

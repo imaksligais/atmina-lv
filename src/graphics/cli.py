@@ -163,6 +163,30 @@ def _run_thread(args) -> None:
     ))
 
 
+def current_visual_brief(row) -> dict | None:
+    """The brief's visual brief as the site shows it: parsed from the CURRENT
+    ``content`` first, the stored ``visual_brief_json`` only when the content
+    has no parsable ``## Vizuālais brief`` block.
+
+    ``visual_brief_json`` is filled once, at write time (src/tools.py); a later
+    hand correction of the block in ``content`` never reaches it. The site has
+    taken its headline from ``content`` since 2026-09-16 (src/render/blog.py),
+    so an image prompt built from the column followed the OLD text (operator
+    decision 2026-11-09, verdikts row 7).
+    """
+    from src.briefs import parse_visual_brief
+
+    parsed = parse_visual_brief(row["content"] or "")
+    if parsed:
+        return parsed
+    if row["visual_brief_json"]:
+        try:
+            return json.loads(row["visual_brief_json"])
+        except (json.JSONDecodeError, TypeError):
+            return None
+    return None
+
+
 def _run_brief(args) -> None:
     from src.db import get_db
     from src.graphics.config import budget_check
@@ -178,13 +202,13 @@ def _run_brief(args) -> None:
 
     db = get_db(args.db)
     row = db.execute(
-        "SELECT visual_brief_json, created_at, note_type, topic FROM context_notes WHERE id=?",
+        "SELECT content, visual_brief_json, created_at, note_type, topic FROM context_notes WHERE id=?",
         (args.note_id,),
     ).fetchone()
-    if not row or not row["visual_brief_json"]:
+    visual_brief = current_visual_brief(row) if row else None
+    if not visual_brief:
         print("RESULT_JSON:" + json.dumps({"status": "no_visual_brief", "note_id": args.note_id}))
         return
-    visual_brief = json.loads(row["visual_brief_json"])
 
     existing = get_approved_image(db, args.note_id)
     if existing:

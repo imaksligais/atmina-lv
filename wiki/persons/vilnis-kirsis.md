@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (27%), [[topics/pasvaldibas|Pašvaldības]] (22%), [[topics/pilsetvide|Pilsētvide]] (22%)
-- **30d:** 9 claims, 1.4× bāzes līnija
+- **30d:** 7 claims, 0.9× bāzes līnija
 <!-- /SYNC-AUTO -->

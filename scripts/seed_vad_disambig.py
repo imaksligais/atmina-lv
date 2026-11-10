@@ -34,7 +34,18 @@ HINTS: list[tuple[int, str, list[str]]] = [
 ]
 
 
+REFUSAL = (
+    "ATTEIKTS: seed_vad_disambig.py ir pabeigts vienreizējs skripts (2026-05-02).\n"
+    "  Palaišana pārrakstītu `keywords.vad_disambig` ar 2026. gada maija vērtībām\n"
+    "  un dzēstu vēlākus operatora lēmumus.\n"
+    "  Jaunus izslēgumus pievieno caur /seed-entity ar operatora apstiprinājumu\n"
+    "  un pāra data/rollback_*.sql."
+)
+
+
 def main() -> int:
+    # Refusal added 2026-11-10 (docs/audits/2026-11-07-koda-parskats § 4).
+    raise SystemExit(REFUSAL)
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     db = get_db()

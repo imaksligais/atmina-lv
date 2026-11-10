@@ -124,6 +124,9 @@ katra kļūme = `exit 1`, deploy nenotiek. Apzināta apiešana: `--no-output-che
    Kopš 2026-11-03 apstiprinājums attiecas uz saturu (SHA-256 avota tekstam,
    audits A1): labojums pēc apstiprināšanas → apstiprini vēlreiz; citādi deploy
    preflight atsaka (`saturs mainījies pēc apstiprināšanas`).
+   **Publicēta «Atraduma» labojumu pirms operatora «jā» pārbauda divi neatkarīgi
+   lasītāji — advisor un otrs modelis (Astra caur Codex)** (operatora lēmums
+   2026-11-04); secība: abi lasītāji → operatora «jā» → `approve_publish.py` → renders → deploy.
 
 Melnraksts gaida atļauju? Citus labojumus var deployēt kā parasti — tā lapa kokā nav.
 Korektūrai renderētā HTML: `python -m src.render --only=blog,dashboard,static --drafts

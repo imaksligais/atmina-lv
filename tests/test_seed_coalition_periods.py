@@ -49,3 +49,47 @@ def test_apply_derives_majority_par_factions_once(tmp_path):
     assert _rows(path) == expected
     assert main(["--db", path, "--apply"]) == 0
     assert _rows(path) == expected, "otrais --apply nedublē"
+
+
+def _null_faction_vote(path, ballots):
+    """Jaunās Saeimas balsojums id 9: faction NULL VISĀM rindām (titania vēl bez frakcijām)."""
+    db = sqlite3.connect(path)
+    db.execute("DELETE FROM saeima_votes WHERE id = 7")   # tikai šis balsojums
+    db.execute("DELETE FROM saeima_individual_votes")
+    db.executemany("INSERT INTO parties (name, short_name) VALUES (?, ?)",
+                   [("Jaunā Vienotība", "JV"), ("Nacionālā apvienība", "NA"), ("Progresīvie", "PRO")])
+    db.execute("INSERT INTO saeima_votes (id, motif, vote_date, vote_time, result) VALUES "
+               "(9, 'Uzticības izteikšana Ministru kabinetam', '2026-11-20', '12:00:00', 'Pieņemts')")
+    for i, (party, vote) in enumerate(ballots, start=1):
+        pid = None
+        if party is not None:
+            pid = db.execute("INSERT INTO tracked_politicians (name, party) VALUES (?, ?)",
+                             (f"Deputāts {i}", party)).lastrowid
+        db.execute("INSERT INTO saeima_individual_votes (vote_id, deputy_name, faction, vote, "
+                   "politician_id) VALUES (9, ?, NULL, ?, ?)", (f"Deputāts {i}", vote, pid))
+    db.commit()
+    db.close()
+
+
+def test_null_faction_vote_derives_coalition_by_party(tmp_path, capsys):
+    # Kļūme: grupējot tikai pēc frakcijas, visu-NULL balsojums dod tukšu koalīciju.
+    path = _db(tmp_path)
+    # partija gan pilnā vārdā, gan short_name; viens deputāts bez saskaņota politiķa
+    _null_faction_vote(path, [("Jaunā Vienotība", "Par")] * 2 + [("NA", "Par"), ("NA", "Pret"),
+                              ("NA", "Par")] + [("Progresīvie", "Pret")] * 2 + [(None, "Par")])
+    assert main(["--db", path]) == 0
+    out = capsys.readouterr().out
+    assert "→ JV, NA  [jauns]" in out, out
+    assert "rindas kopā 8, atrisinātas līdz partijai 7, neatrisinātas 1 (Deputāts 8)" in out, out
+    assert _rows(path) == [], "dry-run neraksta"
+    assert main(["--db", path, "--apply"]) == 0
+    assert _rows(path) == [("2026-11-20", "12:00:00", "JV,NA", 9)]
+
+
+def test_empty_coalition_is_stop(tmp_path, capsys):
+    # Kļūme: pieņemts balsojums bez neviena atrisināma «Par» vairākuma ieraksta tukšu periodu.
+    path = _db(tmp_path)
+    _null_faction_vote(path, [("Progresīvie", "Pret")] * 2 + [(None, "Par")] * 3)
+    assert main(["--db", path, "--apply"]) == 1
+    assert "STOP" in capsys.readouterr().out
+    assert _rows(path) == [], "STOP neko neieraksta"

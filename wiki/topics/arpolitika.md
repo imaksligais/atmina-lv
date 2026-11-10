@@ -1,10 +1,10 @@
 ---
 topic: Ārpolitika
-positions: 354
-votes: 3870
-politicians: 67
+positions: 366
+votes: 4055
+politicians: 68
 contradictions: 1
-last_activity: '2026-11-06 00:00:00'
+last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/baiba-braze|Baiba Braže]]'
 - '[[persons/rihards-kols|Rihards Kols]]'

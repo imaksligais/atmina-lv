@@ -527,6 +527,86 @@ def test_match_accepts_when_no_negative_pattern(tmp_db):
     assert any(pid == 146 for pid, _ in matches), f"expected pid=146 match, got {matches}"
 
 
+def test_vad_only_pattern_rejects_vad_row_but_never_vetoes_news(tmp_db):
+    """Failure named: a pattern seeded for a VAD namesake («Valsts policija»)
+    sat in negative_patterns and vetoed EVERY news document about the
+    politician (66/66 in 60 days, backlog/matcher.md). In
+    vad_negative_patterns it must (a) leave the news matcher linking the doc
+    and (b) still reject the namesake's VAD declaration row."""
+    import json
+    from unittest.mock import MagicMock
+    from src.ingest import match_politicians, _clear_politician_cache
+    from src.vad.declarations import fetch_for_politician
+    from src.vad.fetch import SearchResultRow
+    from src.vad.schema import init_vad_tables
+
+    tmp_db.execute(
+        """INSERT INTO tracked_politicians
+           (id, name, name_forms, keywords, negative_patterns, vad_negative_patterns)
+           VALUES (901, 'Kārlis Paraudziņš', ?, ?, '[]', ?)""",
+        (
+            json.dumps(["Kārlis Paraudziņš", "Paraudziņš"]),
+            json.dumps({"vad_disambig": ["Latvijas Republikas Saeima"]}),
+            json.dumps(["Valsts policija"]),
+        ),
+    )
+    tmp_db.commit()
+    _clear_politician_cache()
+
+    # (a) news matcher — the ingest entry point
+    news = ("Ministru prezidents Kārlis Paraudziņš šodien tikās ar Valsts "
+            "policijas vadību un pārrunāja budžetu.")
+    matches = match_politicians(news)
+    assert any(pid == 901 for pid, _ in matches), f"news doc vetoed: {matches}"
+
+    # (b) VAD filter — the real fetch entry point
+    init_vad_tables(tmp_db.execute("PRAGMA database_list").fetchone()["file"])
+    client = MagicMock()
+    client.search.return_value = [SearchResultRow(
+        vad_uuid="uuid-namesake", is_legacy=False,
+        declaration_type="Kārtējā gada deklarācija - par 2024. gadu",
+        institution="Valsts policija",
+        position_title="Latvijas Republikas Saeimas apsardzes inspektors",
+    )]
+    result = fetch_for_politician(901, tmp_db, client)
+    assert result.new_inserted == 0, "namesake VAD row was stored"
+    assert result.rows_skipped_role == 1
+    client.fetch_detail.assert_not_called()
+
+
+def test_migration_adds_vad_negative_patterns_and_keeps_old_values(tmp_path):
+    """Failure named: an old DB (production) without the column — init_db must
+    add it and leave every existing negative_patterns value untouched."""
+    import json
+    import src.db as db_mod
+
+    path = str(tmp_path / "old.db")
+    db_mod.init_db(path)
+    conn = db_mod.get_db(path)
+    conn.execute("ALTER TABLE tracked_politicians DROP COLUMN vad_negative_patterns")
+    old_neg = json.dumps(["Valsts policija", "Gobzema sarakst"], ensure_ascii=False)
+    conn.execute(
+        "INSERT INTO tracked_politicians (id, name, negative_patterns) VALUES (7, 'Vecs Ieraksts', ?)",
+        (old_neg,),
+    )
+    conn.commit()
+    conn.close()
+
+    db_mod.init_db(path)
+    db_mod.init_db(path)  # idempotent: a second run must not fail
+    conn = db_mod.get_db(path)
+    try:
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(tracked_politicians)")}
+        row = conn.execute(
+            "SELECT negative_patterns, vad_negative_patterns FROM tracked_politicians WHERE id=7"
+        ).fetchone()
+    finally:
+        conn.close()
+    assert "vad_negative_patterns" in cols, "column not added"
+    assert row["negative_patterns"] == old_neg, "negative_patterns changed by migration"
+    assert row["vad_negative_patterns"] is None
+
+
 def test_link_relay_author_downgrades_quoted_politician_to_mentioned(tmp_db):
     """An LTV-authored (relay) tweet mentioning Krusts — Krusts is linked with
     role='mentioned', NOT 'subject'. The relay-handle→subject exemption was

@@ -1,7 +1,7 @@
 ---
 party: Latvija Pirmajā Vietā
 members: 24
-claims: 717
+claims: 746
 program_promises: 23
 contradictions: 4
 votes_par: 51870

@@ -1,10 +1,10 @@
 ---
 topic: Vēlēšanas
-positions: 498
-votes: 26077
+positions: 500
+votes: 26165
 politicians: 114
 contradictions: 4
-last_activity: '2026-11-04 00:00:00'
+last_activity: '2026-11-09 00:00:00'
 top_politicians:
 - '[[persons/alvis-hermanis|Alvis Hermanis]]'
 - '[[persons/jazeps-basko|Jāzeps Baško]]'

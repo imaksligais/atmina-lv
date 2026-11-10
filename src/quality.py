@@ -338,6 +338,32 @@ def quote_end_mismatch(quote: str | None, source: str | None) -> str | None:
     return None
 
 
+# Paywall pārklājuma teksts, ko ekstrakcija saglabā aiz bezmaksas ievada.
+# Mērīts 2026-11-10 uz dzīvās DB (read-only): pirmā frāze ir 456 no 2 119
+# delfi.lv web dokiem un 0 no 1 663 pārējiem; pret veco `is_paywall` karogu
+# (03-25…04-06) 64/64 trāpījumi ir `is_paywall=1`, 0 no 206 brīvajiem.
+# `documents.is_paywall` neraksta neviens ingest ceļš — tāpēc teksts.
+PAYWALL_MARKERS: tuple[str, ...] = (
+    "Pielāgojam Tev piemērotāko abonēšanas piedāvājumu",
+    "Lai turpinātu lasīt, iegādājies abonementu",
+    "Lai turpinātu lasīt, nepieciešams abonements",
+)
+
+
+def paywall_marker(text: str | None) -> str | None:
+    """Pirmā ``PAYWALL_MARKERS`` frāze, kas ir tekstā, citādi ``None``.
+
+    Trāpījums nozīmē: saglabātais teksts ir maksas raksta bezmaksas ievads,
+    nevis pilns raksts (claim-extractor § 4 šaubu pazīme «paywall avots»).
+    """
+    if not text:
+        return None
+    for marker in PAYWALL_MARKERS:
+        if marker in text:
+            return marker
+    return None
+
+
 QuoteVerdict = Literal["verified", "mismatch", "cannot_verify"]
 
 

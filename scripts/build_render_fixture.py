@@ -50,14 +50,21 @@ def q(con, sql, params=()):
     return con.execute(sql, params).fetchall()
 
 
+# Columns written as NULL: the fixture is committed and can reach the public
+# mirror. documents.context_json holds OTHER people's tweet text (reply
+# parents, quoted tweets — plan 2026-11-10-citetais-tvits), never published.
+BLANKED_COLUMNS = {"documents": {"context_json"}}
+
+
 def emit_inserts(con, table, rows):
     """Yield deterministic INSERT statements for `rows` of `table`."""
     if not rows:
         return
     cols = [d[0] for d in con.execute(f"SELECT * FROM {table} LIMIT 0").description]
     collist = ", ".join(cols)
+    blank = BLANKED_COLUMNS.get(table, set())
     for r in rows:
-        vals = ", ".join(_lit(r[c]) for c in cols)
+        vals = ", ".join("NULL" if c in blank else _lit(r[c]) for c in cols)
         yield f"INSERT INTO {table} ({collist}) VALUES ({vals});"
 
 

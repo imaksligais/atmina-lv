@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 66
 votes: 8341
 contradictions: 0
-mentioned_in: 283
+mentioned_in: 298
 last_active: 2026-10-31
 top_topics:
 - Koalīcija un partijas
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (18%), [[topics/airbaltic|airBaltic]] (17%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (14%)
-- **30d:** 6 claims, 0.5× bāzes līnija
+- **30d:** 5 claims, 0.5× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/atis-svinka|Atis Švinka]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

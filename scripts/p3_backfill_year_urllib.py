@@ -109,7 +109,8 @@ _DRAW_DKP_ARG_RE = re.compile(r'"(.*?)"', re.DOTALL)
 #    [28] `voteType` gates whether a vote exists ('0#0#0' on all 32 voted
 #    items, '' on the rest — incl. items carrying a "Nod. kom." label but no
 #    vote), [29] `hasTechChilds` marks sub-item votes (fetched via a separate
-#    getTechDKP agent call — NOT followed by this helper).
+#    getTechDKP agent call — followed only on opt-in, see
+#    `collect_agenda_votes()`).
 #    NB: on the `nr={uuid}` form the same 34-arg call has the 32-hex DKP item
 #    UNID at [5] instead — it fails the GUID check below, so pattern 4 adds
 #    nothing there. That is correct: nr= renders the same votes via
@@ -118,6 +119,7 @@ _DRAW_DKP_ARG_RE = re.compile(r'"(.*?)"', re.DOTALL)
 _DRAW_DKP_VOTE_GUID_ARG = 20  # 21st argument, 0-based (21-arg live form)
 _DRAW_DKP_UNID_ARG = 5        # 34-arg live form: vote GUID
 _DRAW_DKP_VOTETYPE_ARG = 28   # 34-arg live form: non-empty ⇔ vote exists
+_DRAW_DKP_TECH_ARG = 29       # 34-arg form: "1" ⇔ point has getTechDKP sub-items
 # The parentID form is a 36-char dashed GUID — same class as
 # `_VOTING_READFORM_RE`, because pattern 4 builds the SAME URL. A bare 32-hex
 # UNID is NOT accepted here: that id belongs to the `/0/{HEX}?OpenDocument`
@@ -168,8 +170,15 @@ def _fetch(url: str) -> str:
         return r.read().decode("utf-8", errors="replace")
 
 
-def _extract_vote_urls_from_agenda(agenda_html: str, base: str = SAEIMA_BASE) -> list[str]:
+def _extract_vote_urls_from_agenda(agenda_html: str, base: str = SAEIMA_BASE, *,
+                                   follow_tech: bool = False, fetch=None,
+                                   actual: bool = False) -> list[str]:
     """Extract unique vote URLs from all four agenda layouts (union, deduped).
+
+    `follow_tech=True` (opt-in, 2026-11-10) also fetches `getTechDKP` for every
+    point with `hasTechChilds` and adds those votes — see
+    `collect_agenda_votes()`; `fetch` is then required (injectable for tests).
+    The default keeps the old behaviour: only what the page itself renders.
 
     Patterns 1–2 yield HEX32 ids → built as `/0/{HEX}?OpenDocument`; patterns
     3–4 yield a GUID → built as `/Voting?ReadForm&parentID={GUID}` (the `./` in
@@ -188,6 +197,13 @@ def _extract_vote_urls_from_agenda(agenda_html: str, base: str = SAEIMA_BASE) ->
     whose vote position is absent, empty or non-GUID is skipped silently:
     most agenda items simply have no vote.
     """
+    if follow_tech:
+        return collect_agenda_votes(agenda_html, base, fetch=fetch, actual=actual)["union"]
+    return _page_vote_urls(agenda_html, base)
+
+
+def _page_vote_urls(agenda_html: str, base: str) -> list[str]:
+    """Vote URLs rendered on ONE page (agenda or getTechDKP response), no fetch."""
     seen: set[str] = set()
     out: list[str] = []
 
@@ -218,6 +234,102 @@ def _extract_vote_urls_from_agenda(agenda_html: str, base: str = SAEIMA_BASE) ->
             continue
         _add(f"{base}/Voting?ReadForm&parentID={guid}")
     return out
+
+
+class TechDKPError(RuntimeError):
+    """A point flagged `hasTechChilds` whose getTechDKP response parsed to nothing.
+
+    Escalation 5 / T12: titania said «this point has sub-items», and we read
+    none — that is a pattern error, never «missing 0».
+    """
+
+
+# A getTechDKP response for a sub-item can itself flag `hasTechChilds`
+# (`tLevel=2` …). Three levels is beyond anything measured; deeper = STOP.
+TECH_DKP_MAX_LEVEL = 3
+
+
+def _tech_points(page_html: str) -> list[str]:
+    """`unid` [5] of every `drawDKP_*` call with `hasTechChilds` == "1", page order.
+
+    [5] is the 32-hex point UNID on the `nr=` form and the GUID on the live
+    form; getTechDKP accepts both (measured on 2026-09-10, 2026-11-10).
+    Deliberately NOT filtered by `ownNum != "*"` (titania's own link filter):
+    following one point too many costs one request, skipping one costs votes.
+    """
+    seen: set[str] = set()
+    out: list[str] = []
+    for call in _DRAW_DKP_PR_RE.finditer(page_html):
+        args = _DRAW_DKP_ARG_RE.findall(call.group(1))
+        if len(args) <= _DRAW_DKP_TECH_ARG or args[_DRAW_DKP_TECH_ARG].strip() != "1":
+            continue
+        unid = args[_DRAW_DKP_UNID_ARG].strip()
+        if unid and unid not in seen:
+            seen.add(unid)
+            out.append(unid)
+    return out
+
+
+def tech_dkp_url(base: str, unid: str, level: int = 1, actual: bool = False) -> str:
+    """The URL titania's own JS opens for «DKP izskatīšanas gaita»."""
+    return (f"{base}/getTechDKP?OpenAgent&dkp={unid}&tLevel={level}"
+            + ("&actual=1" if actual else ""))
+
+
+def collect_agenda_votes(agenda_html: str, base: str = SAEIMA_BASE, *, fetch,
+                         actual: bool = False) -> dict:
+    """Agenda votes ∪ getTechDKP sub-item votes, with per-source counts.
+
+    Returns {"agenda": [...], "tech": [...], "union": [...], "tech_points": N,
+    "tech_fetched": M}. `tech` holds every vote URL any getTechDKP response
+    rendered (some may repeat agenda URLs — on an archived `nr=` page titania
+    already inlines most sub-items). `fetch(url) -> html` is injected.
+
+    Raises `TechDKPError` when a flagged point's response renders no
+    `drawDKP_*` row and no vote link at all: a response we cannot read is a
+    format change (T12), not an empty point.
+    """
+    if fetch is None:
+        raise ValueError("collect_agenda_votes: fetch is required")
+    agenda = _page_vote_urls(agenda_html, base)
+    tech: list[str] = []
+    tech_seen: set[str] = set()
+    fetched = 0
+    visited: set[str] = set()
+    queue = [(u, 1) for u in _tech_points(agenda_html)]
+    n_points = len(queue)
+    while queue:
+        unid, level = queue.pop(0)
+        if unid in visited:
+            continue
+        visited.add(unid)
+        if level > TECH_DKP_MAX_LEVEL:
+            raise TechDKPError(
+                f"getTechDKP līmenis {level} > {TECH_DKP_MAX_LEVEL} punktam {unid} — "
+                "tik dziļu apakšpunktu koku neesam mērījuši; pārbaudi ar roku")
+        url = tech_dkp_url(base, unid, level, actual)
+        page = fetch(url)
+        fetched += 1
+        rows = len(_DRAW_DKP_PR_RE.findall(page))
+        votes = _page_vote_urls(page, base)
+        if not rows and not votes:
+            raise TechDKPError(
+                f"getTechDKP punktam ar `hasTechChilds`=1 nedeva nevienu rindu un "
+                f"nevienu balsojumu: {url}\n  Tas ir formāta robs (T12), ne tukšs "
+                "punkts — paritāte šai sēdei NAV pilnīga.")
+        for v in votes:
+            if v not in tech_seen:
+                tech_seen.add(v)
+                tech.append(v)
+        queue.extend((u, level + 1) for u in _tech_points(page) if u not in visited)
+    union = list(agenda)
+    have = set(agenda)
+    for v in tech:
+        if v not in have:
+            have.add(v)
+            union.append(v)
+    return {"agenda": agenda, "tech": tech, "union": union,
+            "tech_points": n_points, "tech_fetched": fetched}
 
 
 def _decode_entry(entry: str) -> tuple[str, str | None, str]:

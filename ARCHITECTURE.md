@@ -145,7 +145,7 @@ Unlike most pipelines, atmina's analysis layer is **interactive**, not scripted.
 | Agent | Reads | Writes | When |
 |---|---|---|---|
 | `@claim-extractor` | unreviewed documents | claims, reviewed-doc flags | daily |
-| `@stance-checker` | the routine day's new positions + their source documents | one JSON verdict file (read-only) | trial since 2026-10-15: after extraction, before `@contradiction-hunter` |
+| `@stance-checker` | the routine day's new positions + their source documents | one JSON verdict file (read-only) | routine step 2d since 2026-11-09 (trial from 2026-10-15): after extraction, before `@contradiction-hunter` |
 | `@contradiction-hunter` | claims for one politician | candidate contradictions | daily (`/dienas-rutina`) + on demand |
 | `@devils-advocate` | candidate contradictions | filtered candidates | after `@contradiction-hunter` |
 | `@quality-reviewer` | pending publish set | data-integrity verdicts | before deploy |

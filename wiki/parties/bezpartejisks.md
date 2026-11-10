@@ -1,7 +1,7 @@
 ---
 party: Bezpartejisks
 members: 7
-claims: 607
+claims: 621
 program_promises: 0
 contradictions: 1
 votes_par: 9820

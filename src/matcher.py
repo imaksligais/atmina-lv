@@ -60,6 +60,7 @@ import os
 import re
 import sqlite3
 import sys
+import unicodedata
 from collections import Counter
 
 from src.db import get_db, lv_cutoff, clear_suspect_link_flag, link_document_politicians
@@ -521,6 +522,14 @@ def _latvian_surname_inflections(surname: str) -> list[str]:
     return forms
 
 
+def _fold_diacritics(word: str) -> str:
+    """«Ainārs» → «Ainars»: strip combining marks (NFD). The veto compares
+    first names folded because the stored spelling and the press spelling
+    disagree on garumzīmes in both directions (doc 148016, 2026-11-01)."""
+    return "".join(c for c in unicodedata.normalize("NFD", word)
+                   if not unicodedata.combining(c))
+
+
 def _first_token_decls(tokens: list[str]) -> set[str]:
     """Declensions of every leading name token, deliberately over-generated:
     both palatalized and plain genitives (Valža UN Valda, Aša UN Ata) plus
@@ -547,7 +556,8 @@ def _load_politician_forms(db_path: str | None = None) -> list[tuple[int, list[s
     `negative_patterns` — list of substrings that, when present anywhere in
     the whole document text, cause the candidate to be rejected. Used for
     name-collision cases like pid=146 Andris Bērziņš (ZZS deputy) vs. the
-    former president of the same name.
+    former president of the same name. ``vad_negative_patterns`` (VAD-only,
+    src/vad/declarations.py) is deliberately NOT read here.
 
     ``db_path`` (2026-09-22): an explicit path bypasses the module caches
     ENTIRELY — forms are computed from that DB and no global state is read or
@@ -857,7 +867,9 @@ def match_politicians(
                         before_words = text[max(0, idx - 40):idx].strip().split()
                         if before_words:
                             preceding = before_words[-1].rstrip(",;:.!?")
-                            if preceding in first_name_forms:
+                            if (preceding in first_name_forms
+                                    or _fold_diacritics(preceding) in {
+                                        _fold_diacritics(w) for w in first_name_forms}):
                                 has_person_ctx = True
                                 break
                     if has_person_ctx:
@@ -890,6 +902,7 @@ def match_politicians(
                     if pol_first_name else set()
                 )
             correct_forms = _with_caps(correct_forms)
+            correct_folded = {_fold_diacritics(w) for w in correct_forms}
             own_forms = _with_caps(set(matched_forms))
             # Caps evidence only (every hit is an ALL-CAPS spelling): then a
             # caps token before a hit is the name slot. With any Title-case
@@ -901,8 +914,9 @@ def match_politicians(
             )
 
             def _classify(word: str, caps_only: bool = False,
-                          _correct=correct_forms, _own=own_forms) -> str:
-                if word in _correct:
+                          _correct=correct_forms, _own=own_forms,
+                          _correct_folded=correct_folded) -> str:
+                if word in _correct or _fold_diacritics(word) in _correct_folded:
                     return "correct"
                 if word in _own:
                     # Self-repetition across sentences ("Sprūds. Sprūds
@@ -1013,7 +1027,9 @@ def match_politicians(
                     before_words = text[max(0, idx - 40):idx].strip().split()
                     if before_words:
                         preceding = before_words[-1].rstrip(",;:.!?")
-                        if preceding in first_name_forms:
+                        if (preceding in first_name_forms
+                                or _fold_diacritics(preceding) in {
+                                    _fold_diacritics(w) for w in first_name_forms}):
                             has_proximity = True
                             break
                 if has_proximity:

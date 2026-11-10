@@ -7,7 +7,7 @@ relationship_type: tracked
 positions: 19
 votes: 0
 contradictions: 0
-mentioned_in: 217
+mentioned_in: 220
 last_active: 2026-10-29
 top_topics:
 - Valsts pārvalde
@@ -19,6 +19,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/valsts-parvalde|Valsts pārvalde]] (37%), [[topics/korupcija-un-knab|Korupcija un KNAB]] (32%), [[topics/velesanas|Vēlēšanas]] (11%)
-- **30d:** 2 claims, 0.3× bāzes līnija
+- **30d:** 1 claims, 0.1× bāzes līnija
 - **Spriedzes:** [[persons/kaspars-gorkss|Kaspars Gorkšs]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

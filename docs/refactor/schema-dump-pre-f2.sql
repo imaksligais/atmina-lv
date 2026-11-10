@@ -220,7 +220,10 @@ CREATE TABLE documents (
     archive_path TEXT,
     scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     word_count INTEGER,
-    language TEXT DEFAULT 'lv'
+    language TEXT DEFAULT 'lv',
+    -- Citētais tvīts / atbildes vecāks (JSON saraksts), tikai ekstraktora
+    -- kontekstam — nekad `content` daļa (src/x_scraper.py::_normalize_tweet).
+    context_json TEXT
 , published_at TIMESTAMP, reviewed_at TIMESTAMP, reply_count INTEGER, retweet_count INTEGER, favorite_count INTEGER, title TEXT, summary TEXT, is_paywall BOOLEAN DEFAULT FALSE);
 CREATE TABLE dp_suppression_mode (
             id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -430,6 +433,9 @@ CREATE TABLE tracked_politicians (
     name_forms TEXT DEFAULT '[]',
     keywords TEXT DEFAULT '[]',
     negative_patterns TEXT DEFAULT '[]',
+    -- JSON list; VAD declaration filter only (institution + position haystack).
+    -- The news matcher never reads it. VAD reads this ∪ negative_patterns.
+    vad_negative_patterns TEXT,
     -- LEGACY: per-politician tracking role, not a coalition flag.
     -- Only 'inactive' and the audience values (journalist,
     -- influencer, neutral) drive behavior — 'tracked' is the

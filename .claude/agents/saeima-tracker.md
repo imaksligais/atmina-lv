@@ -228,10 +228,10 @@ are drawn by `drawDKP_UT`, and 2 of the 16 votes on 2026-09-10 were attendance
 registrations), validates it as a 36-char GUID, and builds the pattern-3 URL.
 Locked by `tests/test_saeima_live_agenda_pattern4.py`, whose mutation test makes
 the suite red if pattern 4 is removed. Two things that did NOT change: the
-helper still counts only what the fetched agenda renders, and the parity audit
-now REFUSES a live day outright (`audit_saeima_agenda_parity.py` gate 4, exit 2)
-— a live page does not render sub-item votes, so it undercounts (2026-09-10: 16
-against 21 in the `nr={DkId}` form). **Freshness caveat (verified 2026-06-12):** pattern-3 pages serve
+helper by default counts only what the fetched agenda renders — a live page does
+not render sub-item votes (2026-09-10: 16 against 21 in the `nr={DkId}` form) —
+so run the parity audit with `--tech` (Step 5.bis): it follows `getTechDKP` and
+audits a live day via `nr={DkId}`; without `--tech` a live day is exit 2. **Freshness caveat (verified 2026-06-12):** pattern-3 pages serve
 their embedded vote data only while the session is "actual" — one day later the
 same URL returns empty `voteFullListByNames` (no `&tm=` variant unlocks it).
 ReadForm-era sessions MUST be ingested same-day; a late run discovers the URLs
@@ -508,7 +508,7 @@ pages under new UNIDs, so a URL diff quietly answers "nothing missing"
 
 ```bash
 cd ~/atmina
-.venv/Scripts/python.exe scripts/audit_saeima_agenda_parity.py --year YYYY --dates YYYY-MM-DD
+.venv/Scripts/python.exe scripts/audit_saeima_agenda_parity.py --year YYYY --dates YYYY-MM-DD --tech
 ```
 
 The tool is read-only, prints one row per SITTING (darba kārtībā / DB / TRŪKST),

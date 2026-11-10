@@ -98,6 +98,7 @@ from src.matcher import (  # noqa: E402
     _is_caps_at,
     _with_caps,
     _first_token_decls,
+    _fold_diacritics,
     _latvian_surname_inflections,
     _load_politician_forms,
     _surname_has_person_context,
@@ -195,9 +196,11 @@ def default_cfg() -> dict:
     first names / negative_patterns count, and before a caps hit an
     all-caps preceding token is a name signal. It also carries the two
     handle fixes shipped with it: a handle matches only whole ("@krusts" not
-    in "@krusts3") and a handle-confirmed candidate is never shared-only."""
+    in "@krusts3") and a handle-confirmed candidate is never shared-only.
+    fold=True (since 2026-11-09) compares veto first names diacritic-folded:
+    «Ainārs» in text confirms DB «Ainars» (doc 148016)."""
     return dict(boundary=False, fn_all=False, fn_particle=False,
-                fn_refined=False, handles=False, caps=False,
+                fn_refined=False, handles=False, caps=False, fold=False,
                 domain=0, title=False, strip_negs=frozenset())
 
 
@@ -311,7 +314,8 @@ def match_variant(text: str, cfg: dict, forms_list, shared_set,
                         before_words = _preceding_words(text, idx)
                         if before_words:
                             preceding = before_words[-1].rstrip(",;:.!?")
-                            if preceding in first_name_forms:
+                            if preceding in first_name_forms or (cfg["fold"] and _fold_diacritics(preceding) in {
+                                    _fold_diacritics(w) for w in first_name_forms}):
                                 has_person_ctx = True
                                 break
                     if has_person_ctx:
@@ -359,9 +363,14 @@ def match_variant(text: str, cfg: dict, forms_list, shared_set,
             # sentence-initial forgiveness was dropped — see module docstring.
             stops = _VETO_STOP_WORDS if refined else _STOP_WORDS
 
+            correct_folded = (
+                {_fold_diacritics(w) for w in correct_forms} if cfg["fold"] else set()
+            )
+
             def _classify(word: str, caps_only: bool = False, _correct=correct_forms,
-                          _own=own_forms, refined=refined, _stops=stops) -> str:
-                if word in _correct:
+                          _own=own_forms, refined=refined, _stops=stops,
+                          _folded=correct_folded) -> str:
+                if word in _correct or (_folded and _fold_diacritics(word) in _folded):
                     return "correct"
                 if word in _own:
                     return "self"
@@ -424,7 +433,8 @@ def match_variant(text: str, cfg: dict, forms_list, shared_set,
                     before_words = _preceding_words(text, idx)
                     if before_words:
                         preceding = before_words[-1].rstrip(",;:.!?")
-                        if preceding in first_name_forms:
+                        if preceding in first_name_forms or (cfg["fold"] and _fold_diacritics(preceding) in {
+                                _fold_diacritics(w) for w in first_name_forms}):
                             has_proximity = True
                             break
                 if has_proximity:
@@ -734,7 +744,7 @@ def _evaluate(args) -> int:
     mismatches = []
     cfg_prod = {**default_cfg(), "boundary": "single", "fn_all": True,
                 "fn_particle": True, "fn_refined": True, "handles": True,
-                "caps": True}
+                "caps": True, "fold": True}
     for doc_id in fid_ids:
         d = data["docs"].get(doc_id)
         if not d or not d["content"]:
@@ -763,6 +773,7 @@ def _evaluate(args) -> int:
                   "fn_particle": True, "fn_refined": True}),
         ("B2D2H", {**default_cfg(), "boundary": "single", "fn_all": True,
                    "fn_particle": True, "fn_refined": True, "handles": True}),
+        ("B2D2HC_nofold", {**cfg_prod, "fold": False}),
         ("B2D2HC", cfg_prod),
         ("A1_domain", {**default_cfg(), "domain": 1}),
         ("A2_domain", {**default_cfg(), "domain": 2}),

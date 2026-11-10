@@ -3,11 +3,11 @@ name: Jānis Slaidiņš
 party: ''
 role: NBS majors, Zemessardzes štāba virsnieks; militārais analītiķis
 relationship_type: neutral
-positions: 56
+positions: 59
 votes: 0
 contradictions: 0
-mentioned_in: 127
-last_active: 2026-11-05
+mentioned_in: 131
+last_active: 2026-11-09
 top_topics:
 - Ukraina un Krievija
 - Aizsardzība un drošība
@@ -16,5 +16,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 18 claims, 1.9× bāzes līnija
+- **30d:** 19 claims, 2.0× bāzes līnija
 <!-- /SYNC-AUTO -->

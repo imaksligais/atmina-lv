@@ -14,7 +14,7 @@ og:
     - {label: "15.10.2026", note: "Saeima atzīst par pilsoni Divju; likums atcelts 22.10."}
   gap: "3 gadi"
   stats:
-    - {value: "68 saites", note: "katrai — avots, periods un pierādījuma līmenis"}
+    - {value: "69 saites", note: "katrai — avots, periods un pierādījuma līmenis"}
     - {value: "36 kartītes", note: "cilvēki, uzņēmumi, iestādes un likumi"}
 ---
 
@@ -56,3 +56,5 @@ Labojumu pagaidām nav. Papildinājumi:
 - 2026\. gada 26. oktobrī saite starp Rivžu un Zoar Limited pacelta no 3. uz 2. līmeni: arhīvā Common Crawl atradām Zoar sadaļas «Advisory Board» kopiju (15. augusts), kurā Rivža nosaukta konsultatīvās padomes sarakstā. To apgalvo uzņēmums; Rivža noliedz, ka ieņēmusi amatu uzņēmumā vai bijusi ar to līgumattiecībās, un saka, ka par uzņēmumu nav zinājusi. Kartīšu un saišu skaits nav mainīts.
 
 - 2026\. gada 28. oktobrī saitei starp Kananu Višvanatu un LZA Ekonomikas institūtu pievienota atruna: Dr Ashleys komandas lapā 2023.–2024. gadā viņš nosaukts arī par institūta direktoru un vadošo pētnieku. Kartīšu un saišu skaits nav mainīts.
+
+- 2026\. gada 9. novembrī pievienota saite starp Divju Kananu Višvanatu un LZA Ekonomikas institūtu: pēc LETA 5. novembra publikācijas viņa kopš 2026. gada janvāra ir institūta vadošā viespētniece ar bezatlīdzības sadarbības līgumu (2. līmenis; līgumu neesam redzējuši). Saišu skaits — 69.

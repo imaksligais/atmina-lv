@@ -8,7 +8,7 @@
 
 {% block og_title %}{{ c.politician_name }}: {{ c.topic or "pretruna" }}{% endblock %}
 {% block og_description %}{% if c.summary %}{{ c.summary|truncate(200) }}{% else %}{{ c.severity_lv }} · {{ c.old_date|lv_date }} → {{ c.new_date|lv_date }}{% endif %}{% endblock %}
-{% block og_image %}{{ BASE_URL }}/assets/og/pretruna-{{ c.id }}.png{% endblock %}
+{% block og_image %}{{ BASE_URL }}/assets/og/pretruna-{{ c.id }}.png{% if og_v %}?v={{ og_v }}{% endif %}{% endblock %}
 
 {% block content %}
 <section class="pagehead-section">

@@ -452,10 +452,22 @@ async def _scrape_web_articles(url: str, max_articles: int = 30) -> list[dict] |
 
 async def _scrape_tier2(url: str, _fetcher_mode: str) -> list[dict] | None:
     """Scrape a Tier 2 site: discover article links from homepage, then scrape each.
-    Returns list of {text, url} dicts (same format as RSS items), or None on failure."""
+    Returns list of {text, url} dicts (same format as RSS items), or None on failure.
+
+    crawl4ai is NOT in requirements.txt (removed 2026-11-10: no source uses
+    this path). A missing package raises instead of returning None, so the
+    source logs a readable failure rather than a silent "Scrape returned None".
+    """
     try:
         from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
-
+    except ImportError as e:
+        raise RuntimeError(
+            f"Avots {url} izmanto tier 2 pārlūka ceļu (fetcher_mode != 'web_scraper'), "
+            "bet crawl4ai nav instalēts. Instalē: "
+            ".venv/Scripts/python.exe -m pip install crawl4ai==0.8.6 "
+            "&& crawl4ai-setup — vai iestati avotam fetcher_mode: web_scraper."
+        ) from e
+    try:
         browser_config = BrowserConfig(headless=True, verbose=False)
         run_config = CrawlerRunConfig(page_timeout=15000, verbose=False)
 

@@ -1,10 +1,10 @@
 ---
 topic: Valodu politika
-positions: 171
-votes: 6881
+positions: 172
+votes: 4905
 politicians: 52
 contradictions: 0
-last_activity: '2026-11-04 00:00:00'
+last_activity: '2026-11-05 00:00:00'
 top_politicians:
 - '[[persons/nauris-puntulis|Nauris Puntulis]]'
 - '[[persons/ivars-abolins|Ivars Āboliņš]]'

@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 57
 votes: 0
 contradictions: 0
-mentioned_in: 1537
+mentioned_in: 1563
 last_active: 2026-08-20
 top_topics:
 - Ukraina un Krievija

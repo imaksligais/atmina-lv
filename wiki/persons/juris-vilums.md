@@ -3,20 +3,20 @@ name: Juris Viļums
 party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 42
+positions: 46
 votes: 7207
 contradictions: 0
-mentioned_in: 678
-last_active: 2026-11-02
+mentioned_in: 690
+last_active: 2026-11-09
 top_topics:
 - Koalīcija un partijas
 - Valsts pārvalde
 - Droni
 - Transports
-- Sabiedriskie mediji
+- Pašvaldības
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (12%), [[topics/valsts-parvalde|Valsts pārvalde]] (12%), [[topics/droni|Droni]] (10%)
-- **30d:** 8 claims, 1.3× bāzes līnija
+- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%), [[topics/droni|Droni]] (9%)
+- **30d:** 10 claims, 1.5× bāzes līnija
 <!-- /SYNC-AUTO -->

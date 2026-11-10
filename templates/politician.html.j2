@@ -460,7 +460,7 @@
           <span>{{ p.source_domain or 'x.com' }}</span>
           <span>{{ (p.published_at or p.scraped_at)|lv_date }}</span>
         </div>
-        <div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+        {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
         {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
       </div>
       {% endfor %}
@@ -702,7 +702,7 @@
         <span>{{ p.source_domain or 'x.com' }}</span>
         <span>{{ (p.published_at or p.scraped_at)|lv_date }}</span>
       </div>
-      <div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+      {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
       {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
     </div>
     {% endfor %}

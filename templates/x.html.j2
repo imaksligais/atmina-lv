@@ -137,7 +137,7 @@
               <button type="button" class="xv1-item-party" style="--party-color:{{ x.party_color }}" data-party="{{ x.party }}" title="Filtrēt: {{ x.party }}">{{ _party_short_name(x.party) }}</button>{% endif %}
               {% if x.kind == 'mention' and x.mentioned_by %}
               <span class="xv1-item-mentionedby">↳ no @{{ x.mentioned_by }}</span>
-              {% endif %}
+              {% endif %}{% for c in x.ctx_links %}<a class="xv1-item-mentionedby" href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}
             </div>
             <p class="xv1-item-text">{{ x.content }}</p>
             <div class="xv1-item-foot">

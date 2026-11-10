@@ -100,3 +100,7 @@ Pārvietoti 6 handoffi (10-28…11-01) ar tīru `git mv`. `docs/` paliek tikai j
 - `HANDOFF-2026-11-01-politiku-lodzini.md` — izpildīts (`65715b99`, CHANGELOG 2026-11-01 (5)).
 
 Atsauces nomainītas `wiki/CHANGELOG.md`, `backlog/repo-higiena.md` un `docs/superpowers/plans/2026-11-01-politiku-lodzini.md`; savstarpējās atsauces arhivētajos failos nav aiztiktas.
+
+## 2026-11-09 — `HANDOFF-2026-11-07.md`
+
+Fails nesa trīs dienas (07.–09.11.). Atvērtie punkti pārcelti uz `docs/HANDOFF-2026-11-09.md`; aizvērtie (#123, `vad-2026`, 22 Krištopans, Brēmanis 753073, vārdabrāļu atsaiste, Melnis 730655, Braže 154165) paliek tikai šeit un `git log`.

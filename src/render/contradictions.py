@@ -18,6 +18,7 @@ Outputs:
 
 from __future__ import annotations
 
+import hashlib
 import re
 import sqlite3
 from pathlib import Path
@@ -241,16 +242,22 @@ def _render_og_cards(
     contradictions: list[dict[str, Any]],
     env: Environment,
     out_dir: Path,
+    versions: dict[int, str] | None = None,
 ) -> int:
     """Render 1200x630 OG preview PNGs, one per contradiction, via the shared
     incremental renderer (``_common.og_render``; manifest ``<output>/og-hashes.json``).
-    Returns cards rendered."""
+    Returns cards rendered. ``versions`` (if given) gets ``{id: 8-hex hash}`` of
+    each card's HTML — the detail page's ``og:image ?v=`` (X/FB cache by URL,
+    so a changed card needs a new address; same as «Atradumi»)."""
     tpl = env.get_template("og-card.html.j2")
     jobs = []
     for c in contradictions:
         render_c = dict(c)
         render_c["photo_data_uri"] = _photo_data_uri(c["slug"])
-        jobs.append((out_dir / f"pretruna-{c['id']}.png", tpl.render(card=_og_card_context(render_c))))
+        html = tpl.render(card=_og_card_context(render_c))
+        if versions is not None:
+            versions[c["id"]] = hashlib.sha256(html.encode("utf-8")).hexdigest()[:8]
+        jobs.append((out_dir / f"pretruna-{c['id']}.png", html))
     return og_render.render_og_images(jobs, out_dir.parent.parent)
 
 
@@ -311,7 +318,8 @@ def render_contradictions(
 
     # Render per-contradiction OG preview PNGs (1200x630, Playwright).
     og_cards_dir = atmina_dir / "assets" / "og"
-    og_rendered = _render_og_cards(contradictions, env, og_cards_dir)
+    og_versions: dict[int, str] = {}
+    og_rendered = _render_og_cards(contradictions, env, og_cards_dir, versions=og_versions)
     print(f"  assets/og/: rendered {og_rendered}/{len(contradictions)} pretruna preview PNGs")
 
     # Render per-contradiction detail pages with per-pretruna og:* meta.
@@ -344,6 +352,7 @@ def render_contradictions(
                 "c": c,
                 "related": related,
                 "digging": _keep_digging_for_contradiction(c, by_topic, party_people),
+                "og_v": og_versions.get(c["id"]),
                 "BASE_URL": BASE_URL,
                 "canonical_url": f"{BASE_URL}/pretrunas/{c['id']}.html",
             },

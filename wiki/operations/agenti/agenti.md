@@ -1,6 +1,6 @@
 # Aģenti — Indekss
 
-_Atjaunots: 2026-05-16_
+_Atjaunots: 2026-11-09_
 
 Specializēti Claude Code subagenti atmina platformai. Katrs aģents pilda vienu šauri definētu lomu dienas, nedēļas vai notikumu rutīnās.
 
@@ -13,7 +13,7 @@ Specializēti Claude Code subagenti atmina platformai. Katrs aģents pilda vienu
 | Aģents | Loma | Kad izmanto |
 |---|---|---|
 | [@claim-extractor](claim-extractor.md) | Pozīciju ekstrakcija no dokumentiem | Dienas rutīnas solī pēc dokumentu ielādes |
-| @stance-checker (`.claude/agents/stance-checker.md`) | Neatkarīga dienas pozīciju pārbaude pret avotu (tikai lasa, iesaka labojumus) | Dienas rutīnā pēc ekstrakcijas, pirms pretrunām — izmēģinājums kopš 2026-10-15 |
+| @stance-checker (`.claude/agents/stance-checker.md`) | Neatkarīga dienas pozīciju pārbaude pret avotu (tikai lasa, iesaka labojumus) | Dienas rutīnā pēc ekstrakcijas, pirms pretrunām (`/dienas-rutina` solis 2d; pastāvīgs kopš 2026-11-09) |
 | [@contradiction-hunter](contradiction-hunter.md) | Retorika↔balsojums un pozīciju maiņas detektēšana | Nedēļas rutīnā vai pēc Saeimas sesijas (max 5 politiķi sesijā) |
 | [@devils-advocate](devils-advocate.md) | Adversariālā pretrunu un claim verifikācija | Dienas rutīnā pēc claim extraction (obligāts pirms publikācijas) |
 | [@quality-reviewer](quality-reviewer.md) | Galīgā kvalitātes pārbaude pirms publikācijas | Pirms jebkuras publikācijas (dienas, nedēļas, analīzes) |
@@ -28,7 +28,7 @@ Specializēti Claude Code subagenti atmina platformai. Katrs aģents pilda vienu
 ## Plūsma dienas rutīnā
 
 ```
-ingest → @mentions-monitor → @claim-extractor → [@stance-checker — izmēģinājums] → @contradiction-hunter → @devils-advocate → @brief-writer → @graphics-designer → @quality-reviewer → publish
+ingest → @mentions-monitor → @claim-extractor → @stance-checker → @contradiction-hunter → @devils-advocate → @brief-writer → @graphics-designer → @quality-reviewer → publish
 ```
 
 ## Plūsma nedēļas rutīnā

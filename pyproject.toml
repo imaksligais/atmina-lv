@@ -5,6 +5,12 @@ markers = [
     "slow: long-running tests (>5s) — exclude with `-m 'not slow'` in fast loops",
     "real_og: uses the real Playwright OG-card seam (tests/conftest.py stubs it otherwise)",
 ]
+# Third-party deprecations we cannot fix: twikit's vendored js2py (~645 per
+# run) and pydub's `import audioop`. Scoped to the issuing module.
+filterwarnings = [
+    "ignore:co_lnotab is deprecated:DeprecationWarning:js2py_\\.utils\\.injector",
+    "ignore:'audioop' is deprecated:DeprecationWarning:pydub\\.utils",
+]
 
 [tool.ruff]
 line-length = 100

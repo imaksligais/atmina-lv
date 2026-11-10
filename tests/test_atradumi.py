@@ -381,3 +381,37 @@ def test_atradums_closing_sections_are_set_apart_from_the_story(
         assert text in sec.get_text()
     story = soup.find("h2", string="Stāsts").find_parent("section")
     assert not set(story.get("class", [])) & {"post-plain", "post-caveats", "post-endnote"}
+
+
+def test_static_analysis_shows_its_as_of_date_and_live_one_does_not(
+    tmp_path, monkeypatch, fixture_db, analizes_dir
+):
+    """Verdikts 19: statiska analīze bez datuma izskatās pēc dzīvas (`vad-2026`
+    klase). Frontmatter `as_of` → galvenē «Stāvoklis uz DD.MM.YYYY»; lapa bez
+    tā (dzīvā) šo rindu nerāda."""
+    _write(analizes_dir, "stat", kind=None, body="Teksts.\n", extra_fm="as_of: 2026-04-08")
+    _write(analizes_dir, "dziva", kind=None, body="Teksts.\n")
+    out = _render_site(tmp_path, monkeypatch, fixture_db, only={"analizes"})
+    stat = (out / "analizes" / "stat.html").read_text(encoding="utf-8")
+    dziva = (out / "analizes" / "dziva.html").read_text(encoding="utf-8")
+    assert "Stāvoklis uz 08.04.2026" in stat
+    assert "Stāvoklis uz" not in dziva
+
+
+def test_standalone_curated_pages_show_their_frontmatter_as_of():
+    """Kurētās (standalone) lapas md frontmatter lapā nenonāk — rinda ir rakstīta
+    HTML ar roku. Šis tur abus vienādus: datums kurētajā lapā = `as_of`."""
+    import yaml
+
+    from src.render._common import lv_date
+
+    repo = Path(__file__).resolve().parent.parent
+    checked = 0
+    for md in sorted((repo / "content" / "analizes").glob("*.md")):
+        fm = yaml.safe_load(md.read_text(encoding="utf-8").split("---", 2)[1])
+        if not (fm.get("standalone") and fm.get("as_of")):
+            continue
+        page = repo / "curated" / "atmina" / "analizes" / f"{md.stem}.html"
+        assert f"Stāvoklis uz {lv_date(str(fm['as_of']))}" in page.read_text(encoding="utf-8"), md.stem
+        checked += 1
+    assert checked == 3, f"gaidītas 3 kurētās lapas ar as_of, pārbaudītas {checked}"

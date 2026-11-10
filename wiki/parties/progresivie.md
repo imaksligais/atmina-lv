@@ -1,7 +1,7 @@
 ---
 party: Progresīvie
 members: 18
-claims: 884
+claims: 898
 program_promises: 22
 contradictions: 6
 votes_par: 41173
@@ -18,7 +18,7 @@ top_topics:
 - Koalīcija un partijas
 - Ukraina un Krievija
 - Pilsētvide
-- Droni
+- Transports
 ---
 
 <!-- SYNC-AUTO -->

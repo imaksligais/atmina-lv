@@ -1,14 +1,14 @@
 ---
 topic: Valsts pārvalde
-positions: 689
-votes: 43041
-politicians: 114
+positions: 716
+votes: 24663
+politicians: 120
 contradictions: 4
-last_activity: '2026-11-06 00:00:00'
+last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
-- '[[persons/alvis-hermanis|Alvis Hermanis]]'
 - '[[persons/guntars-vitols|Guntars Vītols]]'
+- '[[persons/alvis-hermanis|Alvis Hermanis]]'
 - '[[persons/jazeps-basko|Jāzeps Baško]]'
 - '[[persons/edgars-rinkevics|Edgars Rinkēvičs]]'
 ---

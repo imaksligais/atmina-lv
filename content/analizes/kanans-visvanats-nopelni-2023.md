@@ -16,7 +16,7 @@ og:
 
 # Par ko pilsonība? Septiņi apgalvojumi Saeimai un ko rāda reģistri
 
-**Avoti:** Saeima, Latvijas Zinātņu akadēmija (LZA), Uzņēmumu reģistrs (UR), VID, Labklājības ministrija, Zāļu valsts aģentūra, SEBI, Bombejas birža, SEC, TVNET, Indijas Patentu birojs, ANO (CSTD) | **Dati uz:** 2026. gada 22. oktobri (UR atvērtie dati — 21. oktobri, LZA dokumentu pārbaude par grāda piešķiršanu — 25. oktobri, Indijas Patentu biroja reģistra statusu attēli — 25. oktobri, ANO CSTD dalībnieku saraksti — 28. oktobri)
+**Avoti:** Saeima, Latvijas Zinātņu akadēmija (LZA), Uzņēmumu reģistrs (UR), VID, Labklājības ministrija, Zāļu valsts aģentūra, SEBI, Bombejas birža, SEC, TVNET, Indijas Patentu birojs, ANO (CSTD) | **Dati uz:** 2026. gada 22. oktobri (UR atvērtie dati — 21. oktobri, LZA dokumentu pārbaude par grāda piešķiršanu — 25. oktobri, Indijas Patentu biroja reģistra statusu attēli — 25. oktobri, ANO CSTD dalībnieku saraksti — 28. oktobri, Zenodo ieraksti un Zoar mājaslapa — 8. un 9. novembri)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -92,6 +92,8 @@ Goda mecenāta nosaukumu piešķir LZA Senāts ar savu lēmumu. LZA gadagrāmat�
 
 Kopīgus projektus vai publikācijas ar Latvijas zinātniekiem neatradām ne LZA vietnē, ne zinātnisko publikāciju krātuvēs, ne medijos.
 
+No 2026. gada 29. oktobra līdz 8. novembrim žurnālu izdevēja konts krātuvē Zenodo ievietoja 66 rakstus ar autoriem «Kannan Vishwanath & Lloyd Zulu», datētus ar 2020.–2026. gadu. Līdzautors norādīts no Zambijas; Latvijas zinātnieku starp autoriem nav ([sk. plašāko rakstu](/analizes/visvanati-pilsoniba-2026.html#kanana-visvanata-raksti)).
+
 </details>
 
 <details class="claim-card cl-none" id="apgalvojums-6" markdown="1">
@@ -116,7 +118,7 @@ Nodaļu tolaik vadīja Baiba Rivža. Par nodaļas priekšsēdētāju viņa nosau
 
 LZA ziņā grāds piešķirts «Kalifornijas Bērklija universitātes goda profesoram». Bērklijā viņš 2022.–2023. gadā bija Gārvuda inovāciju programmas dalībnieks (Garwood Innovation Fellow). Tā ir programma uzņēmumu vadītājiem, ne profesora amats ([TVNET](https://www.tvnet.lv/8569237/faktomats-par-ko-visvanatiem-pieskira-latvijas-pilsonibu), [Gārvuda centrs](https://corporateinnovation.berkeley.edu/executives/garwood-innovation-fellow/)).
 
-**Bērklija.** Gārvuda inovāciju programmas dalībnieks 2022.–2023. gadā viņš nosaukts arī paša uzņēmuma ziņojumā ASV uzraugam ([SEC, Zoar Limited, F-4/A](https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm)). LZA 2023. gada ziņā tikšanās notika, «pateicoties LZA goda doktora, Universitātes profesora Dr. Kanana Višvanata iniciatīvai» ([LZA](https://www.lza.lv/starpt-sakari/aktuali/1581-tiksanas-ar-berklijas-universitates-garvudas-korporativo-inovaciju-centra-izpilddirektoru-prof-solomonu-darvinu)).
+**Bērklija.** Gārvuda inovāciju programmas dalībnieks 2022.–2023. gadā viņš nosaukts arī paša uzņēmuma ziņojumā ASV uzraugam ([SEC, Zoar Limited, F-4/A](https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm)). Rakstos ar 2024.–2026. gada datumu, kas Zenodo ievietoti 2026. gada oktobra beigās un novembrī, viņš joprojām norādīts kā «Garwood Innovation Fellow» ([sk. plašāko rakstu](/analizes/visvanati-pilsoniba-2026.html#kanana-visvanata-raksti)). LZA 2023. gada ziņā tikšanās notika, «pateicoties LZA goda doktora, Universitātes profesora Dr. Kanana Višvanata iniciatīvai» ([LZA](https://www.lza.lv/starpt-sakari/aktuali/1581-tiksanas-ar-berklijas-universitates-garvudas-korporativo-inovaciju-centra-izpilddirektoru-prof-solomonu-darvinu)).
 
 **ANO komisija.** 2025. gada 11. aprīļa preses relīzē rakstīts, ka viņš iecelts par ANO Zinātnes un tehnoloģiju attīstības komisijas (CSTD) «Principal Researcher» — galveno pētnieku. Tajā viņš nosaukts arī par «Senior Research Scholar at the Latvian Academy of Sciences». Relīze publicēta Indijas preses relīžu izplatīšanas servisā Newsvoir, un tās avots norādīts «Dr Ashleys», tas ir, viņa paša uzņēmums ([Newsvoir](https://www.newsvoir.com/release/dr-kanans-visvanats-appointed-as-principal-researcher-for-the-united-nations-commission-on-science-and-technology-for-development-cstd-31669.html); [Wayback, 14.04.2025](https://web.archive.org/web/20250414142749/https://www.newsvoir.com/release/dr-kanans-visvanats-appointed-as-principal-researcher-for-the-united-nations-commission-on-science-and-technology-for-development-cstd-31669.html)). CSTD dalībnieku sarakstos par 2024., 2025. un 2026. gada sesiju nav ne viņa vārda, ne viņa uzņēmumu nosaukumu ([E/CN.16/2024/INF.1](https://undocs.org/E/CN.16/2024/INF.1), [2025](https://undocs.org/E/CN.16/2025/INF.1), [2026](https://undocs.org/E/CN.16/2026/INF.1)). Šajos sarakstos ir valstu delegācijas un citi sesiju dalībnieki, ne ANO līgumpartneri. Tāpēc tie neapliecina, ka šāda amata nav; tie tikai rāda, ka citu avotu par to neatradām.
 
@@ -136,7 +138,7 @@ Anotācijā par izglītību nekas nav teikts. Tā aprakstīta viņa paša un vi�
 
 - **Bakalaurs.** 2011. un 2013. gadā — ķīmijas inženierija. 2022. gada LZA CV un 2026. gadā — naftas inženierija. Bērklijas lapā tajā pašā laikā, 2022.–2023. gadā, atkal ķīmijas inženierija ([Bērklija](https://corporateinnovation.berkeley.edu/executives/garwood-innovation-fellow/)).
 - **Maģistrs.** 2011. gadā MBA ir no «Hamilton College, USA». Kopš 2022. gada tas ir no Asia e University (Malaizija) kopā ar Indian Institute of Research and Management (IIRM). Augstskolu IIRM neatradām.
-- **Doktors.** 2011. gadā minēts tikai goda doktora grāds, ko piešķīrusi «International University, Vienna». Kopš 2012. gada minēts iegūts doktora grāds (PhD). Tā nozare ir nosaukta trīs veidos.
+- **Doktors.** 2011. gadā minēts tikai goda doktora grāds, ko piešķīrusi «International University, Vienna». Kopš 2012. gada minēts iegūts doktora grāds (PhD). Tā nozare ir nosaukta trīs veidos. Zoar mājaslapā 2026. gadā klāt nāk arī «Post-Doctorate in Open Innovation»; augstskola tur nav nosaukta.
 
 TVNET Faktomāts 22. oktobrī jau salīdzināja trīs no šīm versijām ([TVNET](https://www.tvnet.lv/8569237/faktomats-par-ko-visvanatiem-pieskira-latvijas-pilsonibu)). Mēs pievienojam divus faktus.
 
@@ -155,6 +157,7 @@ Disertāciju neatradām. Diplomus publiski nevar pārbaudīt neviens.
 | CV LZA vietnē, 2022 ([CV](https://www.lza.lv/images/LZA_CV_godadoktori/Resume_of_Promoter_Dr_Kannan_Vishwanatth_2022.pdf), 1. lpp.) | naftas inženierija, Maharashtra Institute of Technology, Pune, 1992–1996 | MBA, Asia e University un IIRM, 2008–2009 | PhD starptautiskajā tirdzniecībā, Universidad Azteca European Programs un IIRM, 2009–2012 |
 | Bērklijas programmas dalībnieku lapa, 2022–2023 ([Bērklija](https://corporateinnovation.berkeley.edu/executives/garwood-innovation-fellow/)) | ķīmijas inženierija | maģistrs uzņēmējdarbības vadībā | PhD uzņēmējdarbības vadībā |
 | Zoar Limited ziņojums SEC, 2026 ([F-4/A](https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm), 190. lpp.) | naftas inženierija, Maharashtra Institute of Technology | kopīgs MBA, Asia e University un IIRM | PhD uzņēmējdarbības vadībā, Universidad Azteca European Programs |
+| Zoar Limited mājaslapa, skatīta 2026. gada 8. un 9. novembrī ([zoarlimited.com](https://zoarlimited.com/dr-kanans-visvanats-frsc/), [arhīva kopija 9.11.](https://web.archive.org/web/20261109071554/https://zoarlimited.com/dr-kanans-visvanats-frsc/)) | — | — | «Ph.D. in Business Management and a Post-Doctorate in Open Innovation»; augstskola nav nosaukta |
 
 </div>
 
@@ -164,6 +167,10 @@ Disertāciju neatradām. Diplomus publiski nevar pārbaudīt neviens.
 **Citāti.** Prospektā: «He has been conferred honorary doctorate (Honoris Causa) from the International University, Vienna» (PDF 178. lpp.). Finaventure Capital 2011.–2012. gada pārskatā: «Doctorate of Philosophy in Business Administration (Ph.D)» (3. lpp.), 2012.–2013. gada pārskatā: «Doctorate in Business Management (Ph.D)» (3. lpp.). Dr Datsons Labs 2012.–2013. gada pārskatā: «He holds a doctorate in business management (Ph.D)» (37. lpp.). Tā paša pārskata darbinieku tabulā: «Bachelor's degree in chemical engineering, Masters in Business Administration» (47. lpp.).
 
 SEC ziņojumā: «Mr. Visvanats holds a bachelor's degree in petroleum engineering from Maharashtra Institute of Technology in India, a Joint M.B.A. from Asia e University in Malaysia and Indian Institute of Research and Management in India, and a Ph.D. in business management from Universidad Azteca European Programs» (190. lpp.).
+
+**Grāmata ar viņa vārdu (autora identitāte — ticama, ne pierādīta).** Anchor Academic Publishing 2015. gadā izdeva grāmatu *Risk management from the perspective of Organizational Psychology*, uz kuras vāka autors ir Kannan Vishwanath. Izdevēja katalogā darbs aprakstīts kā 2012. gada doktora disertācija Sauthemptonas Universitātē psiholoģijā, un autora profilā tur rakstīts «Doctor of Philosophy in Organizational Psychology» ([katalogs](https://www.anchor-publishing.com/document/312644), [arhīva kopija 8.11.](https://web.archive.org/web/20261108232108/https://www.anchor-publishing.com/document/312644)).
+
+Izdevēja publiskajā grāmatas priekšskatījumā universitāte nav minēta, un universitātes apstiprinājumu vai noliegumu neatradām. Ka autors ir tas pats Kanans Višvanats, liecina vārds un viņa profili, kuros minētas līdzīga nosaukuma grāmatas; viņa paša apstiprinājumu neatradām. LZA CV, SEC ziņojumā, Bērklijas lapā un Zoar mājaslapā Sauthemptona nav minēta; CV kā doktora grāda iestādi 2009.–2012. gadam nosauc Universidad Azteca European Programs un IIRM. Sīkāk — [plašākajā rakstā](/analizes/visvanati-pilsoniba-2026.html#kanana-visvanata-raksti).
 
 **Augstskolas.** Maharashtra Institute of Technology Punē pastāv. Bakalaura versijās atšķiras galvenokārt specialitāte. Pēc Vikipēdijas datiem International University Vienna Austrijā bija akreditēta tikai no 2001. līdz 2003. gadam ([Vikipēdija](https://en.wikipedia.org/wiki/International_University_Vienna)). Kurš «Hamilton College» domāts, nav skaidrs. Asia e University Malaizijā pastāv. Vai Universidad Azteca European Programs doktora programma ir akreditēta, oficiālos avotos neatradām.
 
@@ -218,6 +225,7 @@ Tas nenozīmē, ka apgalvojumi ir nepatiesi. Tas nozīmē tikai to, ka publiskos
 - Mēs neapgalvojam, ka viņam nav deklarēto grādu. Diplomus publiski nepārbauda neviens, arī mēs ne.
 - Mēs neapgalvojam, ka Kanans Višvanats, LZA vai Saeimas komisija būtu pārkāpuši likumu.
 - Mēs neapgalvojam, ka Baiba Rivža balsoja par Kanana Višvanata goda doktora grādu vai ka grāds piešķirts nepienācīgi. Nodaļas sēdes protokolu neredzējām.
+- Mēs neapgalvojam, ka 2015. gada grāmatas autors noteikti ir Kanans Višvanats vai ka izdevēja kataloga ieraksts kaut ko pierāda par viņa grādu.
 - Mēs neapgalvojam, ka CV patentu saraksts ir nepatiess vai ka seši pieteikumi bija beigušies jau 2022. vai 2023. gadā. Reģistra statusus redzējām tikai sešiem no 14 numuriem.
 
 ## Ko nevar pārbaudīt un kur to redzētu
@@ -244,3 +252,4 @@ Papildinājumi:
 - 2026\. gada 25. oktobrī pievienota atsauce uz LZAgate apkopojumu un Daces Lindbergas X ierakstu.
 - 2026\. gada 25. oktobrī izglītības sadaļai pievienota rindkopa «Patenti CV» par sešu CV minēto patentu pieteikumu statusiem Indijas reģistrā.
 - 2026\. gada 28. oktobrī 7. apgalvojumam pievienota rindkopa «ANO komisija» par 2025. gada preses relīzi un ANO CSTD dalībnieku sarakstiem.
+- 2026\. gada 9. novembrī 5. apgalvojumam pievienoti 66 Zenodo raksti ar līdzautoru no Zambijas, Bērklijas rindkopai — afiliācija rakstos pēc programmas beigām, izglītības sadaļai — Zoar mājaslapas grāda apraksts un 2015. gada grāmata ar viņa vārdu.

@@ -16,11 +16,11 @@ from datetime import date, datetime
 from typing import Any
 
 from src.db import get_db, now_lv_dt, today_lv
+from src.graphics.config import MONTHLY_BUDGET_USD
 
-# Cost-budget ceiling for the calendar month. Today's prompt cost is
-# $0.039/image (gemini-3.1-flash-image-preview); the project's monthly cap is
-# a soft target that the footer surfaces so operator notices runaway spend.
-IMAGE_BUDGET_USD_PER_MONTH = 5.00
+# The footer shows the same monthly cap the generator enforces
+# (src/graphics/config.py); a separate 5 USD literal here drifted from it.
+IMAGE_BUDGET_USD_PER_MONTH = MONTHLY_BUDGET_USD
 
 _MORNING_WINDOW_HOUR = 15
 

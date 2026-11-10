@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 21
 votes: 7733
 contradictions: 0
-mentioned_in: 119
+mentioned_in: 122
 last_active: 2026-10-22
 top_topics:
 - Mežsaimniecība

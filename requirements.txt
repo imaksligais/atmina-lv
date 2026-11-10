@@ -3,7 +3,8 @@ httpx==0.28.1
 trafilatura==2.0.0
 beautifulsoup4==4.14.3
 lxml==5.4.0
-crawl4ai==0.8.6
+# crawl4ai (tier-2 browser path, src/ingest.py::_scrape_tier2) is not installed:
+# no source uses it. The code raises an install hint if one is ever added.
 
 # X/Twitter
 twikit==2.3.3
@@ -37,9 +38,6 @@ pymupdf==1.28.0
 # AI image generation (nanobanana / gemini-3.1-flash-image-preview)
 google-genai==1.73.1
 
-# AI SDK for visual_brief extraction in backfill
-anthropic==0.96.0
-
 # Chart rendering for social_agent stats pillar
 matplotlib==3.10.8
 
@@ -51,22 +49,14 @@ flask>=3.0,<4
 
 # See requirements.lock for full dependency tree with pinned versions
 
-# Video ingest stack (Phase 1, pre-election video extraction)
-# NB: speechbrain must NOT be installed — pyannote 4.x doesn't need it (community-1
-# uses wespeaker embeddings), and both released lines break this venv (1.1.0 = k2
-# lazy-import cascade, 1.0.x = torchaudio 2.11 API mismatch). pyannote guards its
-# absence with try/except ImportError.
-yt-dlp==2025.10.22
-faster-whisper==1.1.1
-pyannote.audio==4.0.7
-pydub==0.25.1
-soundfile==0.14.0
-# NB: these two versions are mirrored in .github/workflows/ci.yml, which
-# pre-installs them from the PyTorch CPU index (the PyPI default is the CUDA
-# build and does not fit on the runner's disk). Bump both places together —
-# if they drift, CI falls back to the CUDA wheels and dies on ENOSPC.
+# Embeddings (sentence-transformers). The video stack (yt-dlp, faster-whisper,
+# pyannote.audio, pydub, soundfile, torchaudio) lives in requirements-video.txt.
+# NB: this version is mirrored in .github/workflows/ci.yml, which pre-installs
+# it from the PyTorch CPU index (the PyPI default is the CUDA build and does
+# not fit on the runner's disk). Bump both places together — if they drift,
+# CI falls back to the CUDA wheels and dies on ENOSPC. torchaudio in
+# requirements-video.txt must match this torch release.
 torch==2.13.0
-torchaudio==2.11.0
 
 # Test/dev — lint + test runner (CI runs `ruff check` then `pytest`) and a
 # deterministic clock for render characterization fixtures. Pinned so CI's

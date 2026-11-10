@@ -3,7 +3,7 @@ URL author does not match the politician's registered Twitter handles.
 
 Usage:
     python scripts/audit_junction_roles.py             # dry-run report (CSV to stdout)
-    python scripts/audit_junction_roles.py --apply     # apply fixes
+    python scripts/audit_junction_roles.py --apply     # REFUSED since 2026-11-10 (one-off, done)
     python scripts/audit_junction_roles.py --limit 100 # first 100 rows only
 """
 
@@ -109,11 +109,23 @@ def apply_fixes(db, mismatches: list[dict[str, Any]]) -> int:
     return count
 
 
-def main():
+REFUSAL = (
+    "ATTEIKTS: audit_junction_roles.py --apply ir pabeigta vienreizēja labošana.\n"
+    "  Atkārtoti tā mainītu simtiem document_politicians lomu bez rollback faila,\n"
+    "  un apspiešanas trigeris izmaiņas padarītu paliekošas, pārrakstot vēlākus\n"
+    "  operatora lēmumus. Bez --apply skripts joprojām dod CSV atskaiti; konkrētu\n"
+    "  rindu labo ar roku un pāra data/rollback_*.sql."
+)
+
+
+def main(argv: list[str] | None = None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--apply", action="store_true", help="apply fixes (default: dry-run)")
+    parser.add_argument("--apply", action="store_true", help="REFUSED since 2026-11-10")
     parser.add_argument("--limit", type=int, default=None, help="limit rows scanned")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
+    # Refusal added 2026-11-10 (docs/audits/2026-11-07-koda-parskats § 4).
+    if args.apply:
+        raise SystemExit(REFUSAL)
 
     db = get_db()
     mismatches, scanned = find_mismatched_rows(db, limit=args.limit)

@@ -2,6 +2,7 @@
 title: "Partiju finansēšana: pilna KNAB analīze"
 description: "30 589 verificēti ziedojumi, 14 partijas, EUR 19M+ — kas finansē Latvijas politiku? Pilna vēsturiskā analīze."
 date: "2026-04-08"
+as_of: "2026-04-08"
 tags: ["KNAB", "ziedojumi", "partiju finanses", "deklarācijas", "cross-reference"]
 image: "deklaracijas-2026.png"
 image_light: "deklaracijas-2026-light.png"
@@ -9,7 +10,7 @@ image_light: "deklaracijas-2026-light.png"
 
 # Latvijas politisko partiju finansēšana — pilna KNAB analīze
 
-**Datu avots:** info.knab.gov.lv | **Periods:** 2002–2026 | **Atjaunots:** 2026-04-08
+**Datu avots:** info.knab.gov.lv | **Periods:** 2002–2026
 
 ---
 

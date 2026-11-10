@@ -151,7 +151,7 @@ def test_deploy_endpoint_writes_no_success_row(deploy_db, monkeypatch):
     )
 
     app = create_app(db_path=deploy_db)
-    resp = app.test_client().post("/api/deploy")
+    resp = app.test_client().post("/api/deploy", headers={"HX-Request": "true"})
     assert resp.status_code == 200
 
     # Veiksmīgu deploy ieraksta pats deploy.sh (ar `approved_slugs`). Otra
@@ -181,7 +181,7 @@ def test_deploy_endpoint_returns_stderr_tail_on_failure(deploy_db, monkeypatch):
     )
 
     app = create_app(db_path=deploy_db)
-    resp = app.test_client().post("/api/deploy")
+    resp = app.test_client().post("/api/deploy", headers={"HX-Request": "true"})
     assert resp.status_code == 200  # endpoint succeeded, deploy failed
     trigger = json.loads(resp.headers["HX-Trigger"])
     assert trigger["showToast"]["level"] == "danger"
@@ -204,7 +204,7 @@ def test_deploy_endpoint_marks_timeout_status(deploy_db, monkeypatch):
     )
 
     app = create_app(db_path=deploy_db)
-    resp = app.test_client().post("/api/deploy")
+    resp = app.test_client().post("/api/deploy", headers={"HX-Request": "true"})
     trigger = json.loads(resp.headers["HX-Trigger"])
     assert "timeout" in trigger["showToast"]["message"].lower() or "300" in trigger["showToast"]["message"]
 

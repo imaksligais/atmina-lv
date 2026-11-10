@@ -17,7 +17,7 @@ og:
 
 # Kas sagatavoja ziņas LZA ieteikumam? Viens uzņēmums, trīs lomas
 
-**Avoti:** Saeima, Latvijas Zinātņu akadēmija (LZA), Uzņēmumu reģistrs (UR), VID, SEC, LSM, NRA, Delfi, Common Crawl, LTV | **Dati uz:** 2026. gada 24. oktobri (ziņas par LZA nodaļas lomu goda doktora grāda piešķiršanā papildinātas 25. oktobrī, par Zoar lapām — 26. oktobrī, par Dr Ashleys komandas lapu — 28. oktobrī, par Zoar skaidrojumu un Salaspils darījumiem — 29. oktobrī, par komisijas sēdes stenogrammu un institūta atbildi LTV — 31. oktobrī)
+**Avoti:** Saeima, Latvijas Zinātņu akadēmija (LZA), Uzņēmumu reģistrs (UR), VID, SEC, LSM, NRA, Delfi, Common Crawl, LTV, TVNET/LETA, «Latvijas Avīze» | **Dati uz:** 2026. gada 24. oktobri (ziņas par LZA nodaļas lomu goda doktora grāda piešķiršanā papildinātas 25. oktobrī, par Zoar lapām — 26. oktobrī, par Dr Ashleys komandas lapu — 28. oktobrī, par Zoar skaidrojumu un Salaspils darījumiem — 29. oktobrī, par komisijas sēdes stenogrammu un institūta atbildi LTV — 31. oktobrī, par institūta un Rivžas skaidrojumiem LETA un Kalviņa lūgumu Senātam — 9. novembrī)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -74,6 +74,8 @@ Vēstulē uzskaitīts, ko institūts viņam ziņoja: publikāciju saraksts, māk
 
 Kalviņš arī raksta, ka par iespējamām problēmām ar publikācijām uzzinājis tikai 21. oktobrī. Viņš uzņemas atbildību un apsver iespēju atstāt LZA prezidenta amatu, bet rīkosies pēc LZA Pilnsapulces lēmuma.
 
+7\. novembrī Kalviņš «Latvijas Avīzei» teica, ka lūdzis LZA Senātu iekļaut 26. novembra pilnsapulces darba kārtībā jautājumu par viņa atsaukšanu no prezidenta amata ([lasi.lv](https://lasi.lv/par-svarigo/latvija/kalvins-ludz-atsaukt-sevi-no-lza-prezidenta-amata.50654), [arhīva kopija](https://web.archive.org/web/20261108234751/https://lasi.lv/par-svarigo/latvija/kalvins-ludz-atsaukt-sevi-no-lza-prezidenta-amata.50654)).
+
 ## Viens uzņēmums, trīs lomas
 
 SIA «Latvijas Zinātņu akadēmijas Ekonomikas institūts» ir atsevišķs uzņēmums, nevis pati Akadēmija. Tas reģistrēts 1997. gadā, un tā adrese ir LZA ēka, Akadēmijas laukums 1. LZA pieder 45 % daļu, Ņinai Lindei — 35,8 % ([UR dalībnieku dati](https://data.gov.lv/dati/lv/dataset/members)).
@@ -85,6 +87,10 @@ SIA «Latvijas Zinātņu akadēmijas Ekonomikas institūts» ir atsevišķs uzņ
 Arī institūta mājaslapā Linde nosaukta par valdes priekšsēdētāju, Rivža — par padomes priekšsēdētāju, un Gerald Hoppstaedter — par valdes priekšsēdētājas padomnieku («Advisor to the Chairperson of the Board») ([eilza.lv](https://web.archive.org/web/20261024093156/https://eilza.lv/team)). Kanana Višvanata šajā lapā nav.
 
 Rivžas atbalsta vēstules galvenē viņa norādīta kā LZA ģenerālsekretāre, bet amats institūta padomē nav minēts ([1587/Lp14](https://titania.saeima.lv/LIVS14/saeimalivs14.nsf/0/554642f45cbe25b7c2258e900045c27d/$FILE/1587_Lp14.pdf), 10.–11. lpp.). Saeimas komisijas sagatavotajā pamatojumā institūts un Linde arī nav minēti. Tur rakstīts tikai, ka atbalstu paudusi «LZA vadība».
+
+**Institūta un Rivžas skaidrojumi LETA (5. novembris).** Ņina Linde LETA teica, ka institūta rīcībā bija abu investīciju projektu apraksti un biznesa plāns un ka abus objektus apmeklēja institūta pārstāvji. Izvērtējums bija vērsts uz projektu iespējamo ekonomisko nozīmi, «nevis investoru finanšu līdzekļu izcelsmes vai maksātspējas neatkarīgu pārbaudi». LETA publikācijā norādīts, ka Divja Višvanata kopš 2026. gada janvāra institūtā ir vadošā viespētniece ar bezatlīdzības sadarbības līgumu; viņas pienākumi galvenokārt ir starptautiskā ekonomikas foruma organizēšana, zinātniskās programmas veidošana un ekspertu piesaiste. Līgumu neesam redzējuši.
+
+Rivža LETA skaidroja, ka viņas rekomendācija bija individuāls vērtējums, balstīts uz personīgo sadarbības pieredzi ar Višvanatu. Viņa teica arī, ka LZA papildus pārbaudījusi Višvanatas sniegtās ziņas; LZA vadības pārstāvji vēlāk precizēja, ka atkārtotu pārbaudi veic pati Rivža, nevis LZA kā institūcija ([TVNET/LETA](https://www.tvnet.lv/8577640/visvanatas-latvijas-pilsonibas-pamatojuma-minetie-investiciju-projekti-ir-solijumu-limeni), [arhīva kopija](https://web.archive.org/web/20261108234209/https://www.tvnet.lv/8577640/visvanatas-latvijas-pilsonibas-pamatojuma-minetie-investiciju-projekti-ir-solijumu-limeni)).
 
 <details class="post-more" markdown="1">
 <summary>Sīkāk un avoti</summary>
@@ -219,7 +225,7 @@ LZA prezidents saka, ka ziņas Divjas Kananas Višvanatas pilsonības ieteikumam
 
 Valdi tur vada Ņina Linde, kurai ar Kananu Višvanatu ir kopīgs uzņēmums. Padomi vada Baiba Rivža, kas rakstīja Saeimai atbalsta vēstuli. Padomē pēc viņa paša ziņām ir arī Kanans Višvanats — pretendentes vīrs.
 
-Saeimai iesniegtajos dokumentos šīs saites nav minētas.
+Saeimai iesniegtajos dokumentos šīs saites nav minētas. Linde LETA teica, ka institūta izvērtējums nebija vērsts uz investoru līdzekļu izcelsmes vai maksātspējas neatkarīgu pārbaudi.
 
 Tas nepierāda, ka kāds rīkojies nelikumīgi. Komisijas priekšsēdētājs Gunārs Kūtris 19. oktobrī teica: «Mēs ļoti paļaujamies arī uz institūcijām, kas rekomendē» ([LSM](https://www.lsm.lv/raksts/zinas/latvija/19.10.2026-saeima-vertes-indijas-pilsonei-visvanatai-pieskirtas-pilsonibas-pamatotibu.a668227/)).
 
@@ -237,7 +243,7 @@ Tas nepierāda, ka kāds rīkojies nelikumīgi. Komisijas priekšsēdētājs Gun
 
 ## Komentāru lūgumi
 
-Komentāru 2026. gada 24. oktobrī lūdzām Ņinai Lindei, Gerald Hoppstaedter, Baibai Rivžai un LZA, atbildes termiņš — 28. oktobris. LSM jautājām, kādā formātā tā saņēma Kalviņa vēstuli; atbilde ir sadaļā «Atklātās vēstules fails». Rakstu publicējām pirms termiņa. Līdz 28. oktobrim atbildes pēc būtības nesaņēmām. 30. oktobrī Ņinas Lindes vārdā, atbildot uz mūsu jautājumiem par S-Baltic, lūgts pagarināt atbildes termiņu līdz nākamajai nedēļai; vēstulē arī rakstīts, ka par nepatiesām vai maldinošām ziņām viņa patur tiesības vērsties tiesā. 31. oktobrī atbildes termiņu visiem mūsu jautājumiem Lindei, arī par šo rakstu, pagarinājām līdz 6. novembrim.
+Komentāru 2026. gada 24. oktobrī lūdzām Ņinai Lindei, Gerald Hoppstaedter, Baibai Rivžai un LZA, atbildes termiņš — 28. oktobris. LSM jautājām, kādā formātā tā saņēma Kalviņa vēstuli; atbilde ir sadaļā «Atklātās vēstules fails». Rakstu publicējām pirms termiņa. Līdz 28. oktobrim atbildes pēc būtības nesaņēmām. 30. oktobrī Ņinas Lindes vārdā, atbildot uz mūsu jautājumiem par S-Baltic, lūgts pagarināt atbildes termiņu līdz nākamajai nedēļai; vēstulē arī rakstīts, ka par nepatiesām vai maldinošām ziņām viņa patur tiesības vērsties tiesā. 31. oktobrī atbildes termiņu visiem mūsu jautājumiem Lindei, arī par šo rakstu, pagarinājām līdz 6. novembrim. Līdz 9. novembra rītam atbildi neesam saņēmuši.
 
 ## Izpētes norādes
 
@@ -257,3 +263,4 @@ Papildinājumi:
 - 2026\. gada 29. oktobrī pievienots Zoar skaidrojums, uz kuru 26. oktobrī atsaucās Rivža; tajā apgalvots, ka vārdi vietnē likti «kā cieņas apliecinājums» un līgumattiecību un atlīdzības nav bijis (LSM/LETA). Sadaļā «Komentāru lūgumi» norādīts, ka līdz termiņam atbildes pēc būtības nesaņēmām.
 - 2026\. gada 31. oktobrī pievienots: institūts LTV apstiprināja, ka Kanans Višvanats ir tā padomes loceklis (iepriekš vienīgais avots bija Zoar ziņojums SEC); Kalviņa un Višvanatas teiktais komisijas 14. oktobra sēdē par ieteikumu un Salaspils ēku; ministres Indriksones iecere izvērtēt arī institūtu.
 - 2026\. gada 31. oktobrī: sadaļā «Komentāru lūgumi» pievienots, ka 30. oktobrī Ņinas Lindes vārdā lūgts pagarināt atbildes termiņu un ka to pagarinājām līdz 6. novembrim.
+- 2026\. gada 9. novembrī pievienoti Lindes un Rivžas skaidrojumi LETA (5. novembris), Kalviņa lūgums LZA Senātam (7. novembris) un ziņa, ka līdz 9. novembra rītam Lindes atbildi neesam saņēmuši.

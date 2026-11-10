@@ -368,3 +368,39 @@ def test_only_own_position_hides_recovery_pair(db, kind, speaker, hidden, invers
     assert res["already_claimed"] == int(hidden)
     if inversion:
         assert bool(pending_quoted_mentioned(db, days=1)) is (not hidden)
+
+
+# --- (d) Pāris izlasīts, apzināti nekas nav glabāts (2026-09-30: 3 no 6 pāriem
+# palika ATGŪŠANA rindā mūžīgi). Zīme = `logs` rinda; pārrakstīts doks atgriežas.
+
+def _mark(db, doc_id, pid, reason="dublikāts"):
+    from src.quoted_speaker import mark_recovery_evaluated
+    path = db.execute("PRAGMA database_list").fetchone()["file"]
+    mark_recovery_evaluated(doc_id, pid, reason, db_path=path)
+
+
+@pytest.mark.parametrize("inversion", [False, True])
+def test_evaluated_pair_without_claim_leaves_recovery_queue(db, inversion):
+    from src.quoted_speaker import format_recovery_line, pending_quoted_mentioned
+    text = SPEAKING_B_ONLY_SUBJECT_SILENT if inversion else SPEAKING_BOTH
+    _doc(db, 150, text, [(A, "subject"), (B, "mentioned")])
+    _mark(db, 150, B)
+    res = _survey(db)
+    assert res["bands"]["inversion"] == [] and res["bands"]["beside_subject"] == []
+    assert res["evaluated_no_claim"] == 1
+    assert pending_quoted_mentioned(db, days=1) == []
+    assert format_recovery_line(res).endswith(
+        ", izlaisti (izvērtēti, nekas nav glabāts): 1")
+
+
+def test_evaluated_pair_returns_after_document_text_is_rewritten(db):
+    """URL-first dedup pārraksta saturu un atjauno `scraped_at` — zīme vairs
+    neattiecas uz šo tekstu, pāris atgriežas rindā."""
+    _doc(db, 151, SPEAKING_BOTH, [(A, "subject"), (B, "mentioned")])
+    _mark(db, 151, B)
+    later = (now_lv_dt() + timedelta(minutes=5)).strftime("%Y-%m-%d %H:%M:%S")
+    db.execute("UPDATE documents SET scraped_at = ? WHERE id = 151", (later,))
+    db.commit()
+    res = _survey(db)
+    assert _pairs(res["bands"]["beside_subject"]) == [(151, B)]
+    assert res["evaluated_no_claim"] == 0

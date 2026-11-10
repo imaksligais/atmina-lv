@@ -414,6 +414,7 @@ footer {{ margin-top: 2rem; font-size: .78rem; color: var(--text-dim); line-heig
     <div class="kicker">Partiju tests · 15. Saeimas vēlēšanas 2026</div>
     <h1>Ko partijas sola, kam iebilst un par ko klusē</h1>
     <p class="lede">{n_q} apgalvojumi un visu {n_s} sarakstu oficiālās programmas. Katra atbilde ir <strong>citāts no programmas teksta</strong>, nevis partijas pašnovērtējums. Ja programma par jautājumu neizsakās, tā arī rakstām — klusēšana ir informācija.</p>
+    <p class="pt-meta">Stāvoklis uz 22.09.2026</p>
   </header>
 
   <div class="pt-explain">

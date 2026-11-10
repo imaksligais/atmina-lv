@@ -2,6 +2,7 @@
 title: Publiskā nauda nevalstiskajam sektoram
 description: "2 189 biedrību un nodibinājumu 2025. gada dotācijas un subsīdijas — 202,3 miljoni eiro: desmit lielākās organizācijas saņem 45% no visas summas. Koncentrācija, jomas, ģeogrāfija un atkarība no publiskās naudas interaktīvā datu analīzē."
 date: 2026-07-28
+as_of: "2026-07-28"
 tags:
   - NVO
   - finansējums

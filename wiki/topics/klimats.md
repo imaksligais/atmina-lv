@@ -1,10 +1,10 @@
 ---
 topic: Klimats
-positions: 36
+positions: 38
 votes: 2970
-politicians: 19
+politicians: 20
 contradictions: 0
-last_activity: '2026-10-28 00:00:00'
+last_activity: '2026-11-09 00:00:00'
 top_politicians:
 - '[[persons/ansis-pupols|Ansis Pūpols]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

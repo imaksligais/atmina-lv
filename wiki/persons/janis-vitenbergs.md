@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 63
 votes: 3681
 contradictions: 0
-mentioned_in: 563
+mentioned_in: 570
 last_active: 2026-11-04
 top_topics:
 - Degviela un enerģētika
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (41%), [[topics/valsts-parvalde|Valsts pārvalde]] (10%), [[topics/veselibas-aprupe|Veselības aprūpe]] (8%)
-- **30d:** 3 claims, 0.3× bāzes līnija
+- **30d:** 3 claims, 0.4× bāzes līnija
 - **Spriedzes:** [[persons/maris-kucinskis|Māris Kučinskis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

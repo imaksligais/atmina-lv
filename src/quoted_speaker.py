@@ -18,7 +18,7 @@ import json
 import re
 from typing import Any
 
-from src.db import lv_cutoff
+from src.db import log_action, lv_cutoff
 from src.lv_text import LV_TRANS, fold_lower
 from src.matcher import _occurrences, is_project_account_retweet, is_project_account_url
 
@@ -241,6 +241,49 @@ def find_inversions(
     return {"checked": len(candidates), "inversions": inversions}
 
 
+# Atgūšanas aģenta zīme «pāris izlasīts, apzināti nekas nav glabāts» (dublikāts,
+# cita runa, satīra). Bez tās šāds pāris paliek ATGŪŠANA rindā mūžīgi, un rinda
+# nekad nenonāk līdz 0 (backlog agenti-pipeline § find_inversions (d)).
+RECOVERY_EVALUATED_ACTION = "recovery_evaluated"
+
+
+def mark_recovery_evaluated(
+    document_id: int, politician_id: int, reason: str, db_path: str | None = None,
+) -> None:
+    """Ieraksta `logs` rindu: (doks, politiķis) pāris izvērtēts, nekas nav glabāts.
+
+    `reason` ir obligāts īss iemesls («dublikāts #123», «cita runa», «satīra»).
+    Zīme der, kamēr dokumenta teksts nemainās: ja URL-first dedup vēlāk
+    pārraksta saturu (`documents.scraped_at` pēc zīmes laika), pāris atgriežas
+    rindā. Abi laiki ir LV (`now_lv()`), tāpēc salīdzināmi tieši.
+    """
+    reason = (reason or "").strip()
+    if not reason:
+        raise ValueError("mark_recovery_evaluated: vajag īsu iemeslu")
+    log_action(
+        RECOVERY_EVALUATED_ACTION,
+        opponent_id=int(politician_id),
+        details={"document_id": int(document_id),
+                 "politician_id": int(politician_id),
+                 "reason": reason},
+        db_path=db_path,
+    )
+
+
+def _evaluated_pairs(db) -> set[tuple[int, int]]:
+    """(doc, pid) pāri ar `recovery_evaluated` zīmi, kas ir JAUNĀKA par
+    dokumenta pašreizējo `scraped_at` (vecāka zīme = teksts kopš tam mainīts)."""
+    rows = db.execute(
+        """SELECT DISTINCT d.id AS document_id, l.opponent_id AS politician_id
+           FROM logs l
+           JOIN documents d ON d.id = json_extract(l.details, '$.document_id')
+           WHERE l.action = ? AND l.status = 'success'
+             AND l.timestamp > d.scraped_at""",
+        (RECOVERY_EVALUATED_ACTION,),
+    ).fetchall()
+    return {(r["document_id"], r["politician_id"]) for r in rows}
+
+
 def pending_quoted_mentioned(
     db, days: int = 1, pid: int | None = None,
     platforms: tuple[str, ...] | None = None,
@@ -264,14 +307,20 @@ def pending_quoted_mentioned(
     kaut junction rinda ir NULL — pirms-08-04
     zīmogs vai vēlāk pielikta `mentioned` saite stampētam subjektam (doc 96603,
     2026-10-18). ``recovery_survey`` tos skaita ``already_claimed``.
+    Tāpat neatgriežas pāris ar :func:`mark_recovery_evaluated` zīmi, kas jaunāka
+    par dokumenta ``scraped_at`` (``recovery_survey`` skaits
+    ``evaluated_no_claim``).
 
     Katrs ieraksts: {document_id, politician_id, platform}.
     """
     result = find_inversions(db, days=days, platforms=platforms)
+    evaluated = _evaluated_pairs(db)
     pairs: list[dict[str, Any]] = []
     for inv in result["inversions"]:
         for spk in inv["speaking_mentioned"]:
             if pid is not None and spk != pid:
+                continue
+            if (inv["document_id"], spk) in evaluated:
                 continue
             row = db.execute(
                 """SELECT 1 FROM document_politicians
@@ -396,7 +445,9 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     izslēgumi), kuriem paša politiķa ``position`` no tā paša `source_url`
     jau ir (``COALESCE(speaker_id, opponent_id) = opponent_id``) — tie netiek
     atgriezti nevienā joslā un neieskaitās ``checked``; skaitlis ir te, lai
-    izlaistais nebūtu kluss.
+    izlaistais nebūtu kluss. ``evaluated_no_claim`` = tāpat izlaistie pāri ar
+    :func:`mark_recovery_evaluated` zīmi, kas jaunāka par doka ``scraped_at``
+    (pārrakstīts doks atgriežas rindā).
 
     ``checked`` = (doks, mentioned) pāri TIKAI dokos, kuros IR aktīvs
     subjekts (∪ inversijas pāri) — arī tie ar 0 signāliem, kas netiek
@@ -468,10 +519,15 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     beside: list[dict[str, Any]] = []
     blind_docs: set[int] = set()
     already_claimed: set[tuple[int, int]] = set()
+    evaluated = _evaluated_pairs(db)
+    evaluated_skipped: set[tuple[int, int]] = set()
     for r in rows:
         key = (r["document_id"], r["politician_id"])
         if r["already_claimed"]:
             already_claimed.add(key)
+            continue
+        if key in evaluated:
+            evaluated_skipped.add(key)
             continue
         if not r["has_subject"]:
             blind_docs.add(r["document_id"])
@@ -495,6 +551,7 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     return {
         "checked": len(checked_keys),
         "already_claimed": len(already_claimed),
+        "evaluated_no_claim": len(evaluated_skipped),
         "bands": {
             "inversion": inversion,
             "beside_subject": beside,
@@ -526,6 +583,9 @@ def format_recovery_line(survey: dict[str, Any]) -> str:
     skipped = survey.get("already_claimed", 0)
     if skipped:
         line += f", izlaisti (claim no šī URL jau ir): {skipped}"
+    evaluated = survey.get("evaluated_no_claim", 0)
+    if evaluated:
+        line += f", izlaisti (izvērtēti, nekas nav glabāts): {evaluated}"
     return line
 
 

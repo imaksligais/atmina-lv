@@ -1,6 +1,6 @@
 # Operācijas — Indekss
 
-_Atjaunots: 2026-10-11_
+_Atjaunots: 2026-11-09_
 
 ## Rutīnas
 
@@ -29,14 +29,14 @@ NB: `/social-thread` (pavediens no gatava pārskata) ≠ [Social agent](social-a
 **Reddit ierakstiem prasmes nav** — melnraksti dzīvo `docs/social/*-reddit.md`, un tiem nav iekodētu guardrail. Divi noteikumi, kas jāpārmanto katram jaunam melnrakstam:
 
 - **Daudzskaitļa pirmā persona** — „sekojam", „pierakstām", „neesam atraduši", nevis vienskaitlis (operatora lēmums 2026-08-04). Līdz tam pieci melnraksti sākās ar „Sekoju… pierakstu", un trīs no tiem tā arī tika publicēti; `2026-08-01` failā reģistrs bija pierakstīts kā „pirmajā personā". Vienskaitlis personalizē projektu, kas ir tieši pretēji anonimitātes noteikumam — atmiņa publicējas anonīmi, tāpēc balsij jābūt projekta, ne cilvēka.
-- **Biežums** — ne biežāk kā reizi ~2 nedēļās un tikai ar konkrētu, pārbaudāmu atradumu, nevis dienas vai nedēļas kopsavilkumu. Šis noteikums līdz šim dzīvoja tikai atsevišķu melnrakstu iekšienē un tāpēc tika pārkāpts: no 2026-08-02 līdz 08-04 izgāja **četri posti trijās dienās** (08-02 divi, 08-03 viens, 08-04 viens). Divas pēdējās reizes iebildums tika izteikts un operatora apzināti pārsvītrots — tas ir operatora lēmums, ne noteikuma atcelšana. **Nākamais logs: ne agrāk kā ~2026-08-18.** Pirms jauna posta pārbaudi publicēto melnrakstu statusa rindas. Statusa rindā (`docs/social/`, `docs/tweet_bank/`) lieto vienu no trim formām: «POSTĒTS — operators, <datums>», «ARHIVĒTS — NETIKA postēts (operatora lēmums <datums>: <iemesls>)» vai «AIZSTĀTS ar `<fails>`».
+- **Biežums** — ne biežāk kā reizi ~2 nedēļās un tikai ar konkrētu, pārbaudāmu atradumu, nevis dienas vai nedēļas kopsavilkumu. Šis noteikums līdz šim dzīvoja tikai atsevišķu melnrakstu iekšienē un tāpēc tika pārkāpts: no 2026-08-02 līdz 08-04 izgāja **četri posti trijās dienās** (08-02 divi, 08-03 viens, 08-04 viens). Divas pēdējās reizes iebildums tika izteikts un operatora apzināti pārsvītrots — tas ir operatora lēmums, ne noteikuma atcelšana. Pirms jauna posta pārbaudi publicēto melnrakstu statusa rindas. Statusa rindā (`docs/social/`, `docs/tweet_bank/`) lieto vienu no trim formām: «POSTĒTS — operators, <datums>», «ARHIVĒTS — NETIKA postēts (operatora lēmums <datums>: <iemesls>)» vai «AIZSTĀTS ar `<fails>`».
 
 ## Repozitoriji
 
 Projektam ir **divi** repo:
 
 - **`imaksligais/atmina`** (privāts) — darba repo ar pilnu vēsturi. Šeit strādā, komitē, deployo.
-- **`imaksligais/atmina-lv`** (publisks) — atvērtā koda spogulis, AGPL-3.0. **Viens squashed commits** bez vēstures, pārbūvēts no privātā `master` HEAD.
+- **`imaksligais/atmina-lv`** (publisks) — atvērtā koda spogulis, AGPL-3.0. Pārbūvēts no privātā `master` HEAD; **kopš 2026-11-11 katrs sync ir jauns commits virs iepriekšējiem** (parasts push, bez force-push), tāpēc izmaiņas redzamas sync pa sync. Privāto commitu vēsture spogulī nav.
 
 Publiskais spogulis **izslēdz** redakcionālos melnrakstus un iekšējos dokumentus (`docs/tweet_bank`, `docs/social`, `docs/funding`, `wiki/dailies`, `wiki/log-ingest`, `data/*.sql` u.c.); renderēšanas izejviela (`wiki/persons|laws|synthesis|topics|parties`, `CLAUDE.md`, `wiki/CHANGELOG.md`) **paliek** — bez tās publiskā CI krīt. Sync = pārbūvē koku no privātā HEAD ar izslēgumiem → amend vienam noreply commitam → `push --force origin main`. Pilnā soli-pa-solim recepte: maintainera piezīme privātajā repo (`docs/funding/repo-sync.md`).
 
@@ -77,6 +77,7 @@ Pilns saraksts ar lomām, plūsmām un noteikumiem: [[operations/agenti/agenti|A
 | [@brief-writer](agenti/brief-writer.md) | Dienas pārskatu ģenerēšana |
 | [@weekly-brief-writer](agenti/weekly-brief-writer.md) | Nedēļas pārskatu ģenerēšana (atsevišķs formāts) |
 | [@claim-extractor](agenti/claim-extractor.md) | Pozīciju ekstrakcija no dokumentiem |
+| @stance-checker (`.claude/agents/stance-checker.md`) | Neatkarīga dienas pozīciju pārbaude pret avotu (rutīnas solis 2d) |
 | [@contradiction-hunter](agenti/contradiction-hunter.md) | Retorika↔balsojums un pozīciju maiņas detektēšana |
 | [@devils-advocate](agenti/devils-advocate.md) | Adversariālā pretrunu verifikācija |
 | [@graphics-designer](agenti/graphics-designer.md) | Featured-image ģenerēšana (cilvēka apstiprinājums) |
@@ -91,9 +92,9 @@ Pilns saraksts ar lomām, plūsmām un noteikumiem: [[operations/agenti/agenti|A
 - **Ingest pa soļiem (tikai atkļūdošanai).** Parasti — `scripts/morning_ingest.py` (izejas kods 0/1, `KOPSAVILKUMS N/5`). Ja soļi jāpalaiž atsevišķi: `ingest_all()` → `fetch_all_twitter()` → `fetch_all_mentions()` (pēc Twitter — ātruma limiti). **Apstāšanās pēc otrā izsaukuma neatstāj pēdas** `logs` tabulā, un diena izskatās pēc «pieminējumu nebija» (2026-07-22, 07-28, 07-31) — izpildi visus trīs un pārbaudi ingest žurnālu.
 - **Operators iedod atsevišķu tvīta URL.** `insert_document(..., platform='twitter')`; ja autors ir sekots politiķis (`social_accounts.handle`) — parastā `save_analysis` plūsma; ja relay vai nesekots — `link_politicians_to_documents(days=7)` piešķir `subject` lomu, tad analīze. Beigās šaurs renders `--only=politiki,dashboard,static`.
 
-## Latvijas Vēstnesis (manuāla plūsma)
+## Latvijas Vēstnesis
 
-Promulgētie tiesību akti (MK noteikumi, rīkojumi, Satversmes tiesas nolēmumi) no oficiālā [vestnesis.lv](https://www.vestnesis.lv) JL laidiena. Manuāls — RSS dod tikai title+link, body lasāms tikai no `/ta/id/<N>` caur trafilatura, tāpēc `ingest_all()` to neaiztiek (sources.yaml tier 3).
+Promulgētie tiesību akti (MK noteikumi, rīkojumi, Satversmes tiesas nolēmumi) no oficiālā [vestnesis.lv](https://www.vestnesis.lv) JL laidiena. RSS dod tikai title+link, body lasāms tikai no `/ta/id/<N>` caur trafilatura, tāpēc `ingest_all()` to neaiztiek (sources.yaml tier 3); skriptu palaiž `scripts/morning_ingest.py` kā vienu no pieciem soļiem, ar roku — tikai atkļūdošanai.
 
 ```bash
 .venv/Scripts/python.exe scripts/ingest_vestnesis.py [--limit N] [--dry-run] [--max-age-days D]
@@ -103,8 +104,6 @@ Idempotent: act_id dedup pirms detail-page fetch + content_hash dedup uz insert.
 
 **Politiķu junction:** patiesais matching notiek caur `match_politicians(body)` — skripts pievieno `documents` rindas ar pilnu junction, tieši kā parastais ingest. Parakstītāju regex (Ministru prezidents, ministri, Valsts prezidents) ekstraktē `I. Uzvārds` formu, bet tā ir tikai indikatīva — junction logika neatkarīga.
 
-
-**Daily routine vieta:** Solis 1 (Ielāde) — palaid pirms `ingest_all()`, vai jebkurā brīdī pēcpusdienā pirms brief.
 
 ## Veci neizskatīti pāri (rutīnas solis 2b, kopš 2026-10-05)
 
@@ -223,7 +222,7 @@ Iespējamie stāvokļi: `FETCHING`, `TRANSCRIBED`, `DIARIZED`, `MAPPED`, `FINALI
 
 ## Retrofetch backlog *(2026-05-26, P3 atjaunots 2026-06-08)*
 
-> _Pēdējoreiz verificēts pret DB: **2026-06-08** — `saeima_votes` 5783 rindas, diapazons **2022-11-01 → 2026-06-04**, 513 470 individuālie balsojumi, 517 634 `saeima_vote` claims._
+> _Skaitļi šajā sadaļā ir 2026-06-08 mērījums (`saeima_votes` 5783 rindas, 2022-11-01 → 2026-06-04) un kopš tā nav atjaunoti; 2026-11-07 tabulā bija 8 528 rindas (`SELECT COUNT(*) FROM saeima_votes`). Pirms citē — pārmēri._
 
 Deep-research auditi atklāj substrāta robus tracked politiķu pirms-tracking publiskajā retorikā. Šie ir kandidāti dediķētam sprintam, kas paplašina rhetoric-vs-vote audita iespējas.
 

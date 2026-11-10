@@ -2095,6 +2095,13 @@ img.prv2-avatar.prv2-avatar-photo {
 }
 .profile-feed-body { font-size: 0.9rem; }
 .profile-feed-body-x { white-space: pre-wrap; }
+/* Atbildes vecāks / citētais tvīts: tikai etiķete ar saiti (2026-11-10). */
+.profile-feed-ctx {
+  margin-block: 0 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
 .profile-feed-link { font-size: 0.8rem; }
 
 /* News card */

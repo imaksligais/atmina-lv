@@ -1,10 +1,10 @@
 ---
 topic: Koalīcija un partijas
-positions: 1042
-votes: 1963
-politicians: 123
+positions: 1073
+votes: 2996
+politicians: 125
 contradictions: 11
-last_activity: '2026-11-06 00:00:00'
+last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/andris-suvajevs|Andris Šuvajevs]]'

@@ -12,7 +12,3 @@ top_topics:
 - Veselības aprūpe
 - Imigrācija
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

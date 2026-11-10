@@ -3,11 +3,11 @@ name: Česlavs Batņa
 party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 28
+positions: 29
 votes: 7120
 contradictions: 0
-mentioned_in: 218
-last_active: 2026-10-28
+mentioned_in: 222
+last_active: 2026-11-07
 top_topics:
 - Izglītība
 - Kultūra
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/izglitiba|Izglītība]] (68%), [[topics/kultura|Kultūra]] (11%), [[topics/sociala-politika|Sociālā politika]] (11%)
-- **30d:** 8 claims, 1.6× bāzes līnija
+- **Top tēmas:** [[topics/izglitiba|Izglītība]] (69%), [[topics/kultura|Kultūra]] (10%), [[topics/sociala-politika|Sociālā politika]] (10%)
+- **30d:** 8 claims, 1.5× bāzes līnija
 <!-- /SYNC-AUTO -->

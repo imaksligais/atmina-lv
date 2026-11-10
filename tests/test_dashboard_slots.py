@@ -149,7 +149,7 @@ def test_force_refresh_bypasses_cache(tmp_path, monkeypatch):
     assert call_count["n"] == 1
 
     # Force-refresh — counter must tick again
-    resp = app.test_client().post("/api/slots/refresh")
+    resp = app.test_client().post("/api/slots/refresh", headers={"HX-Request": "true"})
     assert resp.status_code == 200
     assert call_count["n"] == 2, "force-refresh must bypass the 60 s cache"
 
@@ -169,7 +169,7 @@ def test_refresh_returns_updated_slot_panel(tmp_path, monkeypatch):
     init_db(str(db_path))
     app = create_app(db_path=str(db_path))
 
-    resp = app.test_client().post("/api/slots/refresh")
+    resp = app.test_client().post("/api/slots/refresh", headers={"HX-Request": "true"})
     html = resp.get_data(as_text=True)
     assert 'id="slot-panel"' in html
     for i in range(1, 7):
@@ -197,7 +197,7 @@ def test_refresh_toast_warns_when_below_threshold(tmp_path, monkeypatch):
     init_db(str(db_path))
     app = create_app(db_path=str(db_path))
 
-    resp = app.test_client().post("/api/slots/refresh")
+    resp = app.test_client().post("/api/slots/refresh", headers={"HX-Request": "true"})
     trigger = _json.loads(resp.headers["HX-Trigger"])
     assert trigger["showToast"]["level"] == "warning"
 

@@ -1,11 +1,11 @@
 """Pytest collection guards.
 
 1. **Optional-dependency skip** — some test files exercise heavy ML / fetch
-   dependencies (faster-whisper, pyannote.audio, yt-dlp). They are pinned in
-   requirements.txt, so a normal install has them and nothing is skipped; in an
-   environment without them, collection ImportError would abort the whole run,
-   so we skip those modules and the rest of the suite still runs.
-   Re-enable with ``pip install -r requirements.txt``.
+   dependencies (faster-whisper, pyannote.audio, pydub, soundfile, yt-dlp).
+   Since 2026-11-10 they live in requirements-video.txt, which CI does not
+   install; collection ImportError would abort the whole run, so we skip those
+   modules and the rest of the suite still runs.
+   Re-enable with ``pip install -r requirements-video.txt``.
 
 2. **Pre-existing-failure xfail** — `docs/refactor/baseline-2026-04-29.md`
    tracked known-failing tests that existed BEFORE Phase 0 refactoring. We
@@ -255,6 +255,8 @@ def _production_db_is_not_a_test_fixture():
 _OPTIONAL = {
     "faster_whisper": ["test_video_ingest_asr.py"],
     "pyannote.audio": ["test_video_ingest_diarize.py"],
+    "pydub": ["test_video_ingest_diarize.py"],
+    "soundfile": ["test_video_ingest_diarize.py"],
     "yt_dlp": ["test_video_ingest_fetch.py"],
 }
 

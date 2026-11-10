@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 2
 votes: 7183
 contradictions: 0
-mentioned_in: 64
+mentioned_in: 65
 last_active: 2025-02-11
 top_topics:
 - Klimats

@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 118
 votes: 0
 contradictions: 0
-mentioned_in: 6534
+mentioned_in: 6624
 last_active: 2026-08-20
 top_topics:
 - Tieslietas

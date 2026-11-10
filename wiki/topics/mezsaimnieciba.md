@@ -1,10 +1,10 @@
 ---
 topic: Mežsaimniecība
-positions: 104
-votes: 2771
+positions: 105
+votes: 2859
 politicians: 30
 contradictions: 0
-last_activity: '2026-11-05 00:00:00'
+last_activity: '2026-11-09 00:00:00'
 top_politicians:
 - '[[persons/uldis-augulis|Uldis Augulis]]'
 - '[[persons/armands-krauze|Armands Krauze]]'

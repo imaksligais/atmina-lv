@@ -24,7 +24,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from p3_backfill_year_urllib import SAEIMA_BASE, _extract_vote_urls_from_agenda, _fetch
+from p3_backfill_year_urllib import (
+    SAEIMA_BASE,
+    TechDKPError,
+    _extract_vote_urls_from_agenda,
+    _fetch,
+)
 
 DEFAULT_UUID = "886631a9-c2b2-4de0-9d9d-34adbcf3d4ae"
 
@@ -32,7 +37,12 @@ DEFAULT_UUID = "886631a9-c2b2-4de0-9d9d-34adbcf3d4ae"
 def main() -> int:
     uuid = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_UUID
     agenda = _fetch(f"{SAEIMA_BASE}/DK?ReadForm&nr={uuid}")
-    urls = _extract_vote_urls_from_agenda(agenda)
+    try:
+        # follow_tech: apakšpunktu balsojumi (getTechDKP) dzīvā dienā lapā nav redzami.
+        urls = _extract_vote_urls_from_agenda(agenda, follow_tech=True, fetch=_fetch)
+    except TechDKPError as e:
+        print(f"STOP: {e}")
+        return 2
     if not urls:
         print(
             f"STOP: darba kārtībā {uuid} nav nevienas balsojuma saites — nepareiza "

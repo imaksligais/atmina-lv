@@ -1,6 +1,8 @@
 import asyncio
+import json
 
 import src.db as _db_mod
+from src import x_scraper as _x_scraper
 from src.db import insert_document, insert_chunks, log_action
 from src.embeddings import embed_document
 from src.x_scraper import fetch_user_tweets, fetch_user_replies, fetch_all_x_accounts, reset_replies_flag
@@ -91,6 +93,22 @@ def _link_first_party_mentions(
     return added
 
 
+def _context_counts(tweets: list[dict]) -> dict:
+    """``log_action`` details for the quote/reply context (2026-11-10).
+
+    ``ctx_reply`` counts tweets that got a direct reply parent; with
+    ``replies > 0`` and ``ctx_reply == 0`` over a week the block parsing has
+    drifted. ``ctx_missing`` = a quote or reply parent the payload did not
+    carry (retweets excluded, see ``x_scraper._quote_context``).
+    """
+    kinds = [{c.get("kind") for c in (t.get("context") or [])} for t in tweets]
+    return {
+        "ctx_quote": sum("quote" in k for k in kinds),
+        "ctx_reply": sum("reply" in k for k in kinds),
+        "ctx_missing": sum(bool(t.get("ctx_missing")) for t in tweets),
+    }
+
+
 def _store_tweets(tweets: list[dict], opponent_id: int) -> list[dict]:
     """Store tweet dicts as documents with embeddings. Returns stored tweets.
 
@@ -117,6 +135,14 @@ def _store_tweets(tweets: list[dict], opponent_id: int) -> list[dict]:
     own-timeline fetch could never add it). Author handles owned by a RELAY
     account never get 'subject' this way — the relay convention defers them to
     the text scan. Handle ownership does not expire, so inactive accounts count.
+
+    2026-11-10: the replies path returns only the account's OWN tweets; a
+    foreign reply parent / thread root / quoted tweet arrives as the tweet's
+    ``context`` and is stored in ``documents.context_json`` — never in
+    ``content``, so no junction, mention scan or embedding sees it (operator
+    decision 2026-11-10: foreign parents are no longer documents). The
+    "someone else's tweet" branch below still serves any foreign tweet the
+    Tweets timeline surfaces.
 
     2026-08-18: first_party documents additionally get a text scan for OTHER
     tracked politicians, stored strictly as role='mentioned'
@@ -200,6 +226,7 @@ def _store_tweets(tweets: list[dict], opponent_id: int) -> list[dict]:
             if mapped and mapped[0] != opponent_id and mapped[1] == "first_party":
                 politician_links.append((mapped[0], "subject"))
 
+        context = tweet.get("context") or []
         doc_id = insert_document(
             content=text,
             politician_links=politician_links,
@@ -211,6 +238,7 @@ def _store_tweets(tweets: list[dict], opponent_id: int) -> list[dict]:
             reply_count=tweet.get("reply_count"),
             retweet_count=tweet.get("retweet_count"),
             favorite_count=tweet.get("favorite_count"),
+            context_json=json.dumps(context, ensure_ascii=False) if context else None,
         )
         if doc_id:
             chunks = embed_document(text)
@@ -268,7 +296,10 @@ def fetch_twitter(account_id: int) -> list[dict]:
         "social_fetch",
         opponent_id=account["opponent_id"],
         status="success",
-        details={"platform": "twitter", "tweets": len(tweets), "replies": len(replies), "stored": len(stored)},
+        details={"platform": "twitter", "tweets": len(tweets), "replies": len(replies),
+                 "stored": len(stored), **_context_counts(all_posts),
+                 "foreign_parents_skipped": _x_scraper.last_replies_foreign_skipped,
+                 "replies_before_floor": _x_scraper.last_replies_before_floor},
     )
     return all_posts
 
@@ -333,10 +364,14 @@ def fetch_all_twitter() -> dict[int, list[dict]]:
                 if handle_tweets:
                     _update_cursor(acc["id"], handle_tweets[0]["id"])
 
+    all_fetched = [t for tweets in results.values() for t in tweets]
     log_action(
         "social_fetch_all",
         status="success",
-        details={"accounts": len(account_dicts), "stored": total_stored},
+        details={"accounts": len(account_dicts), "stored": total_stored,
+                 "fetched": len(all_fetched), **_context_counts(all_fetched),
+                 "foreign_parents_skipped": _x_scraper.last_batch_foreign_skipped,
+                 "replies_before_floor": _x_scraper.last_batch_before_floor},
     )
     # Saglabātie, ne ielādētie: dublikāti (content_hash) un īsie tvīti ir
     # izlaisti, un žurnālam tas jāredz (klusā panākuma klase, kā X/Mentions).

@@ -14,7 +14,7 @@ import asyncio
 import logging
 import re
 import time
-from datetime import datetime
+from datetime import date, datetime, timezone
 
 from twikit.errors import (
     NotFound,
@@ -117,10 +117,69 @@ def _tweet_text(tweet) -> str:
     return f"RT @{handle}: {full}" if handle else full
 
 
-def _normalize_tweet(tweet) -> dict:
-    """Convert a twikit Tweet object to a flat dict matching our pipeline format."""
+def _safe_attr(tweet, name):
+    """twikit properties parse raw payload internals (``is_quote_status`` is a
+    bare ``_legacy[...]`` lookup); payload drift must cost the context, never
+    the tweet."""
+    try:
+        return getattr(tweet, name, None)
+    except Exception:
+        return None
+
+
+def _author(tweet) -> str | None:
+    user = _safe_attr(tweet, "user")
+    return getattr(user, "screen_name", None) if user else None
+
+
+def _ctx_entry(kind: str, tweet) -> dict | None:
+    """One context item: ``{kind, author, id, url, text}``.
+
+    The project's own account is never context (PROJECT_X_HANDLES, as it is
+    never a source).
+    """
+    from src.matcher import PROJECT_X_HANDLES
+
+    author = _author(tweet)
+    tid = _safe_attr(tweet, "id")
+    if not author or not tid or author.lower() in PROJECT_X_HANDLES:
+        return None
+    text = (_tweet_text(tweet) or "").strip()
+    if not text:
+        return None
+    return {"kind": kind, "author": author, "id": str(tid),
+            "url": f"https://x.com/{author}/status/{tid}", "text": text}
+
+
+def _quote_context(tweet) -> tuple[list[dict], bool]:
+    """(quote entries, quote_missing) for one tweet.
+
+    A pure retweet is skipped: its quote flag belongs to the retweeted tweet
+    (live probe 2026-11-10: 15/15 ``is_quote_status`` without ``quote`` were
+    retweets), and a retweet is nobody's own words anyway.
+    """
+    if _safe_attr(tweet, "retweeted_tweet") is not None:
+        return [], False
+    quoted = _safe_attr(tweet, "quote")
+    if quoted is not None:
+        entry = _ctx_entry("quote", quoted)
+        return ([entry] if entry else []), False
+    return [], bool(_safe_attr(tweet, "is_quote_status"))
+
+
+def _normalize_tweet(tweet, reply_context: list[dict] | None = None,
+                     reply_missing: bool = False) -> dict:
+    """Convert a twikit Tweet object to a flat dict matching our pipeline format.
+
+    ``context`` carries the quoted tweet and (from the replies path) the reply
+    parent/root — read-only context for the extractor, kept out of ``text``
+    so the matcher, embeddings, simhash and the ``support`` gate never see it
+    (plan 2026-11-10-citetais-tvits). ``ctx_missing`` marks a quote or a
+    reply whose referenced tweet the payload did not carry.
+    """
     handle = tweet.user.screen_name if tweet.user else "unknown"
     created = tweet.created_at_datetime
+    quote_ctx, quote_missing = _quote_context(tweet)
     return {
         "id": str(tweet.id),
         "text": _tweet_text(tweet),
@@ -131,7 +190,89 @@ def _normalize_tweet(tweet) -> dict:
         "retweet_count": getattr(tweet, "retweet_count", 0) or 0,
         "favorite_count": getattr(tweet, "favorite_count", 0) or 0,
         "source_url": f"https://x.com/{handle}/status/{tweet.id}",
+        "context": (reply_context or []) + quote_ctx,
+        "ctx_missing": quote_missing or reply_missing,
     }
+
+
+def _own_from_block(top, handle: str) -> tuple[list[dict], int]:
+    """Own tweets of one Replies-timeline entry, each with its reply context.
+
+    twikit turns a ``profile-conversation`` block into ``top`` = first element
+    and ``top.replies`` = the rest (client.py ~1943). Live probe 2026-11-10:
+    the account's own reply is the LAST element and replies to the one before
+    it; the first element of a 3-element block is the thread root. Until
+    2026-11-10 only ``top`` was kept — the foreign parent was stored and the
+    politician's own reply thrown away.
+
+    Foreign elements are context only, never returned (operator decision
+    2026-11-10). An own parent (self-thread) is not context: that tweet is
+    stored as its own document. Returns (normalized own tweets, foreign
+    elements skipped).
+    """
+    replies = _safe_attr(top, "replies") or []
+    block = [top] + list(replies)
+    me = handle.lower()
+    by_id = {str(_safe_attr(t, "id")): t for t in block}
+    own, foreign = [], 0
+    for t in block:
+        if (_author(t) or "").lower() != me:
+            foreign += 1
+            continue
+        context: list[dict] = []
+        missing = False
+        parent_id = _safe_attr(t, "in_reply_to")
+        if parent_id:
+            parent = by_id.get(str(parent_id))
+            if parent is None:
+                missing = True
+            elif (_author(parent) or "").lower() != me:
+                entry = _ctx_entry("reply", parent)
+                if entry:
+                    context.append(entry)
+                root = block[0]
+                if (root is not parent and root is not t
+                        and (_author(root) or "").lower() != me):
+                    root_entry = _ctx_entry("reply_root", root)
+                    if root_entry:
+                        context.append(root_entry)
+        own.append(_normalize_tweet(t, context, missing))
+    return own, foreign
+
+
+# Last fetch_user_replies() call's foreign block elements skipped (stored only
+# as context since 2026-11-10). Module-level like x_mentions.last_run_strategy
+# so the return type the callers and tests rely on stays a plain list.
+last_replies_foreign_skipped = 0
+last_batch_foreign_skipped = 0
+# Own replies dropped by REPLIES_DATE_FLOOR, same convention.
+last_replies_before_floor = 0
+last_batch_before_floor = 0
+
+# Fixed floor for the replies path (operator-reported, 2026-11-10): own
+# replies dated before this LV day are not stored. Since the 2026-11-10 fix
+# the path returns the account's OWN replies, which until then were thrown
+# away — without a floor the first runs would pull in an old backlog of
+# replies as new pending work. A fixed date, NOT a rolling age; the Tweets
+# timeline is untouched (its since_id cursor already bounds it).
+REPLIES_DATE_FLOOR = date(2026, 11, 3)
+
+
+def _before_floor(created_at: str | None) -> bool:
+    """True when the tweet's LV calendar date is before REPLIES_DATE_FLOOR.
+
+    twikit dates are UTC; a naive value is read as UTC. An unparseable date
+    is kept (the floor is a backlog guard, not a validity check).
+    """
+    from src.db import LV_TZ
+
+    try:
+        dt = datetime.fromisoformat(created_at or "")
+    except ValueError:
+        return False
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(LV_TZ).date() < REPLIES_DATE_FLOOR
 
 
 def reset_client():
@@ -335,6 +476,9 @@ async def fetch_user_replies(handle: str, limit: int = 10, *,
     drifts the format again. See wiki/operations/twikit-notes.md § 2026-05-08
     and wiki/CHANGELOG.md § 2026-05-08.
     """
+    global last_replies_foreign_skipped, last_replies_before_floor
+    last_replies_foreign_skipped = 0
+    last_replies_before_floor = 0
     pool = await get_pool()
 
     if len(_replies_broken_slots) >= pool.slot_count:
@@ -399,12 +543,21 @@ async def fetch_user_replies(handle: str, limit: int = 10, *,
                 return []
             continue
 
-        replies = []
-        if result:
-            for tweet in result:
-                replies.append(_normalize_tweet(tweet))
-                if len(replies) >= limit:
-                    break
+        # `limit` counts the account's OWN tweets returned (2026-11-10). Before,
+        # it counted timeline entries, whose first element is usually the
+        # foreign parent.
+        replies: list[dict] = []
+        skipped = old = 0
+        for top in result or []:
+            own, foreign = _own_from_block(top, handle)
+            skipped += foreign
+            fresh = [t for t in own if not _before_floor(t.get("created_at"))]
+            old += len(own) - len(fresh)
+            replies.extend(fresh[:limit - len(replies)])
+            if len(replies) >= limit:
+                break
+        last_replies_foreign_skipped = skipped
+        last_replies_before_floor = old
         return replies
 
     logger.warning("fetch_user_replies(@%s): exhausted all slots", handle)
@@ -412,7 +565,15 @@ async def fetch_user_replies(handle: str, limit: int = 10, *,
 
 
 async def fetch_all_x_accounts(accounts: list[dict], delay: float = REQUEST_DELAY) -> dict[int, list[dict]]:
-    """Fetch tweets + replies for a batch of social_accounts rows."""
+    """Fetch tweets + replies for a batch of social_accounts rows.
+
+    ``last_batch_foreign_skipped`` afterwards holds the batch's foreign reply
+    block elements kept only as context (see ``_own_from_block``);
+    ``last_batch_before_floor`` the own replies cut by ``REPLIES_DATE_FLOOR``.
+    """
+    global last_batch_foreign_skipped, last_batch_before_floor
+    last_batch_foreign_skipped = 0
+    last_batch_before_floor = 0
     results = {}
     total = len(accounts)
 
@@ -429,6 +590,8 @@ async def fetch_all_x_accounts(accounts: list[dict], delay: float = REQUEST_DELA
                 handle, since_id=since_id, limit=20, known_users=known_users)
             replies = await fetch_user_replies(
                 handle, limit=10, known_users=known_users)
+            last_batch_foreign_skipped += last_replies_foreign_skipped
+            last_batch_before_floor += last_replies_before_floor
         except Exception as e:
             logger.exception("  @%s: failed (%s), skipping", handle, type(e).__name__)
             if i < total:

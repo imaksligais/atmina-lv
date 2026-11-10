@@ -60,3 +60,25 @@ Katrai partijai: datums, skaitļi ar saucējiem, rollback faili. Deploy — tika
 - freeze/apply: 7 atslēgas, kur balsojumu tēma ≠ lēmums; 27 balsojumi, 2027 pozīcijas snapshotā, `collisions=0`, `parity_mismatch=0` (`data/rollback_vote_topics_b02n.sql`); bills-sync 7/7 (`data/rollback_bill_topics_b02n.sql`).
 - Neiekļauts: `motif:264f72e241b8` (2609 + 6686) — tā Jev lēmums kļūdains, sadalīšana b03.
 - Strīdami lēmumi operatoram: 1200/Lp14 (valoda vs mediji), 1542/Lp14 (izglītība vs imigrācija).
+
+## b03 — 2026-11-08 (00:20–01:00 LV, pirms 08.11. rutīnas dienas; `vote_topics.py status` rāda UTC — 07.11. 22:42, T17)
+
+- **Klasifikācija:** Jev `jev-1.14.0`, viens dokuments pieprasījumā, slieksnis 0,8, rubrika 2026-10-22.2 (sliekšņi mērīti uz .1 — kontrole ir nejaušā izlase). 300 dokumenti: auto 247 (tēma mainīta 197, < 0,9 — 15), pending 50, noteikums 2; 296 pieprasījumi, ~$0,04.
+- **Pārskatīšana:** 65 dokumenti (49 pending + 15 mainīti < 0,9 + 1 multi), 3 Opus pārbaudītāji pret avotu (titania PDF, stenogrammas), katrai rindai burtisks citāts; nepiekrīt Jev 13/65. Orķestrētājs izlēma visus `medium`/`low` strīdus: 906/Lm14 → «Tieslietas» (cietušo kompensācija), 92/P14 → «Pašvaldības» (lauku infrastruktūra), 631/Lm14 → «Valsts pārvalde» (Iedzīvotāju reģistra personas kods), 93/P14 → «Koalīcija un partijas» (valdības darba vērtējums ar aicinājumu atkāpties; zema noteiktība, operatoram var pārskatīt), 739/Lp14 → «Transports» (8. noteikums), 927/Lp14 → «Budžets un finanses» (rubrikas robeža).
+- **Nejaušā izlase:** 20 auto (sēkla 20261108, no 233) — 19/20 pareizi; kļūda `motif:5ad40b66b691` (priekšlikumu termiņš pēc 67/Lp14 1. las.) «Saeimas darbs» → «Aizsardzība un drošība». Vārti izturēti.
+- **decide:** 66 (method human), pārbaudīts skriptā 66/66. Pārbaudītāju CSV `.scratch/b03_review/` (nav komitēti).
+- **freeze/apply:** 300 atslēgas, 925 balsojumi, 80 881 pozīcija (100 % `saeima_vote` → vektorus nepārrēķina); tēma faktiski mainīta 348 balsojumiem un 30 856 pozīcijām; `collisions=0`, `parity_mismatch=0`, `parity_mismatch_global=0` (`data/rollback_vote_topics_b03.sql`, commit 1de2f23d).
+- **bills-sync b03:** 28 likumprojekti, mainīti 18 (`data/rollback_bill_topics_b03.sql`).
+- **party_contradictions kandidāti:** pirms 21 101 (votes_considered 45 210, vetoed_procedural 23 255) → pēc 20 215 (44 341; 23 302).
+- **T16 pēc apply:** «Saeimas darbs» 110 atslēgas — 108 pareizas (pilnvaras, sesijas, komisiju sastāvs, atvaļinājumi, pārtraukumi, darba kārtība, izslēgšana no sēdes); 2 kļūdas → b03k. Rubrikā minētie piemēri b03: 14/14 sakrīt.
+- **Renders:** `--only=balsojumi,bills,likumi` un `--only=politiki,pozicijas,partijas` (pozīciju tēmas profilos); `likumprojekti/1420-lp14.html` rāda «Aizsardzība un drošība». `test_likumi_*_byte_identical` lieto testu DB → bāzlīnija nemainās. Nav deplojots — aizies live ar nākamo deploy.
+- **Nepareizi `summary`** (nelabots, `backlog/saeima.md`): 46/P14, 50/P14, 87/P14, 90/P14 pieprasījumu sauc par lēmuma projektu; 666/Lm14 «Brišķens» (pareizi Briškens); 812/Lp14 priekšlikums Nr.7 ar 1. las. rezultātu; 1108/Lp14 steidzamības balsojums ar nogrieztu 2. las. tekstu; 739/Lp14 «ievieš CO2 aprēķinu» (likmes tikai indeksē); 1011/Lp14 un 1058/Lp14 procesuālie balsojumi ar 1. las. tekstu; 727/Lp14 kopsummā trūkst «pret».
+
+## b03k — 2026-11-08 (korekcija pēc T16)
+
+- `motif:9c6e6cc44ed3` (priekšlikumu termiņš tūlīt pēc 592/Lp14 Pašvaldības domes vēlēšanu likuma 1. las.) → «Vēlēšanas»; `motif:cd3da3fd8955` (Norvēģijas investīciju līguma 36/Lp14 izslēgšana no darba kārtības) → «Ekonomika un uzņēmējdarbība» (1. noteikums; saskaņā ar 36/Lp14 cilvēka lēmumu). freeze/apply: 2 balsojumi, 181 pozīcija, `collisions=0`, `parity_mismatch=0` (`data/rollback_vote_topics_b03k.sql`).
+
+## ob1108 — 2026-11-08 (likumprojekti ārpus partijām)
+
+- Izmēģinājums uz DB kopijas (`bills-sync trial_all`): 579 likumprojekti, mainīti 46, visiem vecā tēma NULL (likuma lapa tēmu nerādīja, balsojumu lapa rādīja). No tiem 27 nav nevienā b03–b10 partijā (ielādēti pēc 22.10. vai b01/b02 bez sinhronizācijas): 9 cilvēka lēmumi, 18 Jev auto no ielādes. 18 pārbaudīti pret avotu (1 Opus pārbaudītājs): nepiekrīt 1 (1246/Lp14 → «Aizsardzība un drošība», medium) — atstāts Jev «Digitālā politika», jo rubrika elektroniskos sakarus ieskaita tajā.
+- bills-sync/apply: 27/27 (`data/rollback_bill_topics_ob1108.sql`). Pārējie 18 izmēģinājuma likumprojekti pieder b04–b07 un tiks sinhronizēti ar savām partijām.

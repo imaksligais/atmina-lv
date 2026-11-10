@@ -47,7 +47,7 @@ from src.render._common import (
     faction_alignment_data,
     vote_alignment_data,
 )
-from src.render._common import _photo_data_uri, og_render
+from src.render._common import _photo_data_uri, og_render, tweet_context_links
 from src.saeima.convocation import SAEIMA_CONVOCATION
 from src.scope import NOT_ATTENDANCE_SQL
 from src.render.bills import _stage_label, card_status
@@ -807,7 +807,7 @@ def _fetch_politician_detail(
     x_posts_rows = db.execute("""
         SELECT d.id, d.content, d.source_url, d.source_domain,
                d.platform, d.published_at, d.scraped_at, d.language,
-               dp.role
+               dp.role, d.context_json
         FROM documents d
         JOIN document_politicians dp ON dp.document_id = d.id
         WHERE dp.politician_id = ?
@@ -817,7 +817,13 @@ def _fetch_politician_detail(
         ORDER BY COALESCE(d.published_at, d.scraped_at) DESC
         LIMIT 50
     """, (pid,)).fetchall()
-    x_posts = [dict(r) for r in x_posts_rows]
+    # Reply parent / quoted tweet: label + link only, never the foreign text
+    # (operator decision 2026-11-10, src/render/_common/tweet_context.py).
+    x_posts = []
+    for r in x_posts_rows:
+        post = dict(r)
+        post["ctx_links"] = tweet_context_links(post.pop("context_json"))
+        x_posts.append(post)
 
     # Bills this politician is linked to via saeima_bill_politicians junction.
     # Currently empty in production (Phase 1A backfill didn't populate junction);

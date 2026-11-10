@@ -3,11 +3,11 @@ name: Nauris Puntulis
 party: Nacionālā apvienība
 role: Kultūras ministrs
 relationship_type: tracked
-positions: 63
+positions: 64
 votes: 5002
 contradictions: 0
-mentioned_in: 958
-last_active: 2026-11-05
+mentioned_in: 971
+last_active: 2026-11-10
 top_topics:
 - Kultūra
 - Valodu politika

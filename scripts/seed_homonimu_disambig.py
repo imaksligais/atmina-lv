@@ -16,7 +16,7 @@ apvieno BOTH lauk-pārveides:
 Idempotents — atkārtota palaišana producē identiskus UPDATE statements.
 
 Usage:
-    python scripts/seed_homonimu_disambig.py
+    python scripts/seed_homonimu_disambig.py            # REFUSED since 2026-11-10
     python scripts/seed_homonimu_disambig.py --dry-run
 """
 
@@ -184,12 +184,24 @@ def _apply(db, cfg: HomonymConfig, *, dry_run: bool) -> bool:
     return True
 
 
-def main() -> int:
+REFUSAL = (
+    "ATTEIKTS: seed_homonimu_disambig.py ir pabeigts vienreizējs skripts (2026-05).\n"
+    "  Rakstot tas pārrakstītu `keywords` un `negative_patterns` ar 2026. gada maija\n"
+    "  vērtībām un dzēstu vēlākus operatora lēmumus.\n"
+    "  `--dry-run` joprojām strādā. Jaunus izslēgumus pievieno caur /seed-entity\n"
+    "  ar operatora apstiprinājumu un pāra data/rollback_*.sql."
+)
+
+
+def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("--dry-run", action="store_true")
-    args = p.parse_args()
+    args = p.parse_args(argv)
+    # Refusal added 2026-11-10 (docs/audits/2026-11-07-koda-parskats § 4).
+    if not args.dry_run:
+        raise SystemExit(REFUSAL)
 
     db = get_db()
     n_touched = 0

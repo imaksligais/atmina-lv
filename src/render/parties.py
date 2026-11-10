@@ -269,8 +269,11 @@ def _fetch_party_detail(db: sqlite3.Connection, party: dict) -> dict[str, Any]:
         total = db.execute("SELECT COALESCE(SUM(amount_eur), 0) FROM knab_donations WHERE party = ?", (name,)).fetchone()[0]
         donors = db.execute("SELECT COUNT(DISTINCT donor_id) FROM knab_donations WHERE party = ?", (name,)).fetchone()[0]
         alerts = db.execute("SELECT COUNT(*) FROM knab_alerts WHERE party = ?", (name,)).fetchone()[0]
+        # Datu datums = pēdējā KNAB ielāde (scraped_at, LV laiks); plūsma stāv kopš 2026-07-24.
+        data_date = db.execute("SELECT MAX(scraped_at) FROM knab_donations WHERE party = ?", (name,)).fetchone()[0]
         if total > 0 or donors > 0:
-            knab_summary = {"total_donations": total, "donor_count": donors, "alert_count": alerts}
+            knab_summary = {"total_donations": total, "donor_count": donors, "alert_count": alerts,
+                            "data_date": data_date}
     except sqlite3.OperationalError:
         pass
 

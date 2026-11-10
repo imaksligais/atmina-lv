@@ -35,8 +35,15 @@ def _db():
     return db
 
 
-def test_candidate_docs_skips_bare_rt_and_already_judged():
+def test_candidate_docs_skips_bare_rt_already_judged_and_old_source():
     db = _db()
+    # Scraped today, published a month ago: an old tweet would become "today's" tension.
+    db.execute("INSERT INTO documents (id, content, content_hash, platform, source_url, scraped_at, published_at) "
+               "VALUES (4, 'Kulbergs kritizē Dombravu.', 'h4', 'twitter', 'https://x.com/a/status/4', "
+               "datetime('now'), strftime('%Y-%m-%dT%H:%M:%S+00:00', 'now', '-30 days'))")
+    db.executemany("INSERT INTO document_politicians (document_id, politician_id, role) VALUES (4, ?, ?)",
+                   [(10, "subject"), (6, "mentioned")])
+    db.commit()
     assert sp.candidate_docs(db, days=1) == [1]
 
 

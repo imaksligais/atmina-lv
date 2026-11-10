@@ -287,3 +287,64 @@ def test_api_activity_endpoint_returns_html_fragment(activity_db):
     # Fragment, not full page
     assert "<!doctype" not in html.lower()
     assert "<html" not in html.lower()
+
+
+# --- Poll cursor + merge-then-page (2026-11-09) ------------------------------
+# Failure named: docs/audits/2026-11-07-koda-parskats/README.md § 3 «Dashboard
+# activity panel» — the 30 s poll never advanced its cursor and re-appended
+# old rows (~2 400/hour), and a per-table OFFSET before the merge hid ~35 %
+# of events (filter chips showed guardrail 0/125).
+
+import re  # noqa: E402
+
+_POLL_URL = re.compile(r'hx-get="(/api/activity\?[^"]*)"')
+
+
+def _ids(html: str) -> list[tuple[str, str]]:
+    return re.findall(r'data-table="(\w+)"\s+data-source-id="(\d+)"', html)
+
+
+def test_activity_poll_appends_each_new_row_once(activity_db):
+    from src.dashboard.server import create_app
+
+    db = sqlite3.connect(activity_db)
+    _seed_analysis(db, opponent_id=7, ts="2026-04-06 09:00:00")  # off-screen table
+    for i in range(25):
+        _seed_log(db, action="ingest", ts=f"2026-04-07 {i % 24:02d}:{i:02d}:00")
+    db.commit()
+
+    client = create_app(db_path=activity_db).test_client()
+    poll = _POLL_URL.search(client.get("/").get_data(as_text=True)).group(1)
+    assert _ids(client.get(poll).get_data(as_text=True)) == []  # nothing new
+
+    _seed_log(db, action="deploy", ts="2026-04-08 10:00:00")
+    db.commit()
+    db.close()
+    resp = client.get(poll).get_data(as_text=True)
+    assert _ids(resp) == [("logs", "26")]
+    # The response carries the advanced cursor; polling with it adds nothing.
+    poll = _POLL_URL.search(resp).group(1)
+    assert _ids(client.get(poll).get_data(as_text=True)) == []
+
+
+def test_activity_filter_and_page_two_see_every_source(activity_db):
+    from src.dashboard.views.activity import get_activity_context
+
+    db = sqlite3.connect(activity_db)
+    for i in range(5):
+        _seed_log(db, action="mentions_fetch_guardrail", ts=f"2026-04-07 0{i}:00:00")
+    for i in range(20):
+        _seed_log(db, action="ingest", ts=f"2026-04-07 {10 + i}:00:00"[:19]
+                  if 10 + i < 24 else f"2026-04-08 0{i - 14}:00:00")
+    for i in range(10):
+        _seed_analysis(db, opponent_id=i, ts=f"2026-04-06 1{i}:00:00")
+    db.commit()
+    db.close()
+    now = datetime(2026, 4, 9, 0, 0)
+
+    guard = get_activity_context(db_path=activity_db, filter="guardrail", now=now)
+    assert len(guard["rows"]) == 5
+
+    page2 = get_activity_context(db_path=activity_db, limit=20, offset=20, now=now)
+    assert [r["table"] for r in page2["rows"]] == ["logs"] * 5 + ["analyses"] * 10
+    assert page2["has_more"] is False

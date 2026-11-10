@@ -34,14 +34,13 @@ Atvērtie tehniskā parāda + iezīmētie darbi, kas nav vēl pabeigti. Pārcelt
 - **`store_contradiction()` dublikātu izmeklēšana** — kods ir kails `INSERT`, bet DB 0 dublikātu un 0 karājošos atsauču (2026-08-01). Nepārmērī bez jauna fakta.
 - **JAUNA `x_handle` ↔ `social_accounts` pārbaude** — to sedz `/audit-integrity` 2. pārbaude; nebūvē dublikātu.
 - **`ensure_embeddings_live()` visos rakstošajos skriptos** — vārti apzināti tikai bulk ieejas punktos, kas embedo; `ingest_url.py` un parity audits noraidīti pēc vārda (CHANGELOG 2026-07-25).
-- **`audit_matcher_name_forms` mūžīgais karogs 'Ilja Ivanovs' — NAV datu robs, neko nepievieno** (2026-08-04). Forma ir pid=92, balsojumi piesaistīti; `match_politician` → None priekšvārda veto dēļ ('Ilja' pret 'Iļja') bez ekspozīcijas. Koda darbs ar eval vārtiem — tikai pie īstas ekspozīcijas.
 
 - **Pavediena attēlus git kokā NEGLABĀ — operatora lēmums 2026-08-27.** Ģenerēšana NAV deterministiska: promptu JSON (`docs/tweet_bank/{DATE}-thread-prompts.json`) glabā nodomu, ne rezultātu; ~10 MB mēnesī nav samērīgi. Jauns fakts būtu prasība pārpublicēt vecu pavedienu identiski.
   - **Izņēmums, kas NAV pretruna: deterministiskam ģeneratoram kods iet kokā** (`scripts/oneoff-content/make_k2_timeline.py`). Robeža ir determinisms: AI attēlam — prompts, skripta attēlam — skripts; attēls nekad.
 
 - **2026-08-22 slop/bloat audita NORAIDĪTIE — septiņas klases, katra izmērīta** ([`docs/audits/2026-08-22-slop-un-bloat-audits.md`](docs/audits/2026-08-22-slop-un-bloat-audits.md) § 3):
   - **Stance garuma / „virziena verba" vārti — NĒ.** Pieaugums ir 08-03/08-11 pret-fabrikācijas guardrail iznākums. Atlikums = tipogrāfija → `backlog/vietne-ui.md`.
-  - **Git vēstures pārrakstīšana / `gc --aggressive` — NĒ.** Simtiem commit hešu citēti kā pierādījums; spogulis ir bezvēstures squash.
+  - **Git vēstures pārrakstīšana / `gc --aggressive` — NĒ.** Simtiem commit hešu citēti kā pierādījums; spogulī ir tikai sync līmeņa commiti (kopš 2026-11-11 bez force-push).
   - **„Nepieslēgto" skriptu arhivēšana — NĒ.** 14 no 41 nosaukti `data/rollback_*.sql` galvenēs; ieguvums 0 konteksta tokenu. Pārmērīts 2026-10-11: 33 vienreizējie skripti bez nevienas atsauces — operators: paturēt ([arhitektūras pārskats](docs/audits/2026-10-11-arhitekturas-parskats.md)).
   - **VAD momentuzņēmuma eksports+dzēšana — NĒ.** Kaskāde 505 rindas 10 tabulās (priekšlikums izlaida `vad_companies`); +0,8 % vietas.
   - **`.gitignore` tīrīšana — NĒ.** Likumi ar 0 failiem ir aizsargi; skenējums negācijas neredz.
@@ -107,7 +106,7 @@ _Pievienots 2026-09-25 backlog triāžā (pierādījumi: `docs/audits/2026-09-25
 - **Ārpolitikas confidence drift +0,18 (2026-07-10) nereproducējas** — `SELECT DATE(created_at), COUNT(*), ROUND(AVG(confidence),2) FROM claims WHERE topic='Ārpolitika' AND claim_type='position' …`: 0,730 → 0,731. Pie n<5 detektors klusē (`_MIN_HALF_CLAIMS`).
 - **#7308 un #11003 (Čudars → Balševica pārbaude, 10.04.2026) — viens notikums divās tēmās**; konsolidācija ir redakcionāla, ne defekts.
 - **X pieminējumu `timeline` fallback — bez aktivizācijas kopš 2026-07-20** (pēdējais `mentions_fetch_guardrail` ieraksts `logs`). Atver, ja nostrādā atkārtoti; (a)/(c) lēmums operatoram.
-- **`scripts/ingest_url.py` embedēšanu NEpieslēgt** — 418 web doki bez chunkiem ir dizains; pārchunkošana — kopā ar `backlog/avoti.md` truncated (b).
+- **`scripts/ingest_url.py` embedēšanu NEpieslēgt** — 418 web doki bez chunkiem ir dizains; pārchunkošana noraidīta 2026-11-09 (zemāk).
 - **2026-07-23 drošības audita paliekas (a)–(e) pieņemtas** — `site.webmanifest` 404, tap-target, `<title>` 28 zīmes, robots meta, `style-src 'unsafe-inline'`. Viltus pozitīvi: leta.lv «timeouts», HTTP versijas zonde, «apple-touch-icon trūkst».
 
 _Pievienots 2026-11-03 (verdikti [`docs/verdikti-2026-11-03.md`](docs/verdikti-2026-11-03.md)):_
@@ -119,6 +118,25 @@ _Pievienots 2026-11-03 (verdikti [`docs/verdikti-2026-11-03.md`](docs/verdikti-2
 _Pievienots 2026-11-07:_
 
 - **Iestādes `subject` web dokos automātiski NEdemotē** (`first_party` organizācijas). Mērīts 987 dokos ar 142 iestādes pozīcijām: virsraksts vai citāta signāls ±120 zīmes patur tikai 98/142 (69 %), un ≤1 pieminējums trāpa 39 no pozitīvajiem pret 36 % negatīvo. Vārti zaudētu īstas pozīcijas, ko saka iestādes vadītāji. Cena, ko atstājam: 30 dienās 144 web doki bez iestādes pozīcijas, no tiem 7 ar cita pozīciju. Skripti: `docs/audits/2026-11-07-org-subject/`. Jauns fakts: noteikums, kas uz šīs kopas patur ≥97 %.
+
+_Pievienots 2026-11-09:_
+
+- **Saite uz pilnu UR akcionāru datu kopiju (arī mūsu Wayback kopija) — NĒ** (operators 2026-11-09; CHANGELOG 2026-11-09 (3)): Satversmes tiesa 2024-01-01 — dati nav publiski; kopija ir tikai pierādījums.
+
+_Pievienots 2026-11-09 (verdikti [`docs/verdikti-2026-11-09.md`](docs/verdikti-2026-11-09.md); iekavās verdikta numurs):_
+
+- **Bāreņu vektorus (`claim_vectors` 7 010, `document_vectors` 450) NETĪRĪT** (25): `search_similar_claims` filtrē ar `claim_id IN (…)` jau vaicājumā (`src/db.py`), tāpēc bāreņi rezultātos vietu neaizņem. Saucējs: `SELECT COUNT(*) FROM claim_vectors_rowids WHERE rowid NOT IN (SELECT id FROM claims)` → 7 010 no 669 192. Jauns fakts: lasītājs bez šī filtra.
+- **Dokumentu pārchunkošana (398 pārlādētie + 418 `ingest_url.py` doki) — NĒ** (26), kamēr dokumentu vektorus neviens nelasa.
+- **Attēla paraksta OCR vai stūru heiristika — NĒ** (29): prompta aizliegums ir (`TEXT_FREE_CONSTRAINTS`, 2026-09-05), un katru attēlu operators apstiprina; stūru apskate pirms apstiprināšanas paliek obligāta. Jauns fakts: otrs izdomāts paraksts.
+- **Forma «Šleseri» `name_forms` — NEPIEVIENOT** (30): tā ir gan Danas Šleseres akuzatīvs, gan ģimenes daudzskaitlis.
+- **Vēstneša 130 «tikai uzvārda» `mentioned` rindas — ATSTĀT, nelasīt pa vienai** (33): ekstrakcijas rinda tās nelasa. Izlase: `docs/audits/2026-10-01-vestnesis-saites-izlase.md`.
+- **Tvīti pēc 52 pozīcijām, kas dzēstas 2026-10-06, — ATSTĀT cilnē «X ieraksti»** (34): tie ir paša politiķa publiski ieraksti; pozīcijas dzēšana dokumentu neizņem (CLAUDE.md § Working Conventions).
+- **Par/Pret/Atturas mini josla profila Pārskatā — NĒ** (35): rāda koalīciju vai opozīciju, ne cilvēku.
+- **«Vakardienas pozīcija nenonāk nevienā pārskatā» — defekta NAV** (41): `_BRIEF_DAY_WINDOW_SQL` ņem arī tajā kalendārajā dienā ielādētās pozīcijas ar `stated_at` līdz 7 dienām atpakaļ. 10-25 piemērs (#747484, #747489, #747495; ielādēti 26.10. 00:17) atlasās 26.10. skeletā, 25.10. skeletā ne — pārbaudīts 2026-11-09 ar pašu predikātu.
+- **Auguļa #725139 ↔ #717891 (degvielas PVN) nav dublikāts** (31): divi izteikumi ar 8 dienu starpību dažādos raidījumos.
+- **Pretrunas #40, #48, #49, #50, #51, #55 (`minor_shift`, atklātas pirms 2026-10-08) NEPUBLICĒT; #47 noraidīta 07-30** (23). Paliek `confirmed=0`. Kozlovska 521100 → 753374 paliek noraidīts (32).
+- **Kļūdu komplektu v2 (§ Atliktais 50) neturpināt** (28): ne stiprāks mutants, ne 11 Opus; `@stance-checker` kopš 2026-11-09 ir pastāvīgs rutīnas solis.
+- **saeima.lv amatu parseri NEBŪVĒT** (37): `deputy_unid` no šīm lapām nav iegūstams; gaidīt titania DepWeb.
 
 ## Atliktais pēc 2026-09-06 verdiktiem
 
@@ -134,11 +152,11 @@ Bijusī § Operatora verdikti. 2026-09-06 verdikti (52 lēmumi) izpildīti 2026-
 - **43 — komisiju balsojumu ievilkšana.** Jauns datu avots; atgriezties pēc kampaņas. → [`backlog/saeima.md`](backlog/saeima.md).
 - **45 / 46 — UI.** Konsekvences rādītājs = NĒ (§ Ne-darīt); laika ass profilā un dalīšanās kartiņas → [`backlog/vietne-ui.md`](backlog/vietne-ui.md) § Profilu UI parāds; tēmu direktorijas 2. kārta → § Tēmu direktorija ([DEFERRED]). Abi līdz lasītāju signālam.
 - **49a — repo tīrīšanas Brief (c) grupa.** c3 NVO, c4 publicēto attēlu apcirpšana, c5 plānu arhīvs, c7 sīkumi. c8 `data/saeima_snapshots` NEAIZTIKT. 08-19 papildus izpildīta § A sīkā dzēšana (~6,3 MB) un divu audita dokumentu arhivēšana.
-- **50 — citātu un stance triāža: izpildīta 2026-09-30, paliek atlikums.** Atskaites: [`docs/audits/2026-09-30-citatu-triaza.md`](docs/audits/2026-09-30-citatu-triaza.md) (383 rindas; <90 % burtiskā seguma 356 → 69) un [`docs/audits/2026-09-30-stance-izlase/README.md`](docs/audits/2026-09-30-stance-izlase/README.md); rollback `data/rollback_{quotes_set{1..4},withdraw_unsound,stance_grades,stance_b_rewrite}_2026-09-30.sql`. **Paliek:** (b)–(d) izpildīti 2026-10-01 (verdikti C1–C7; atlikums → rinda «2026-10-01 verdiktu atlikums»); (e) **operatora lēmums 09-30: iziet cauri VISĀM atlikušajām pozīcijām** (later 5 315 + noquote 746 + jaunās) PĒC claim-extractor pārbūves — **noquote izpildīts 09-30, later tvīti (3 758) izpildīti 10-14** (CHANGELOG 2026-10-14 (2); 8 HOLD gaida operatoru; #42 pārsieta 10-14); **izlase v4 240 + later web 300 izpildīta 10-14** (CHANGELOG 2026-10-14 (4); v4 0/240 (akli 1/30), later web 05–07 virs 10 %, 08/09 3,3 %); **2. kārta izpildīta 10-14** (CHANGELOG 2026-10-14 (5); 05–07 pilnā 680, 08/09 < 5 %, vestnesis 1/75; 8 HOLD izšķirti) — **50(e) stance slānis pabeigts pēc sliekšņa noteikuma** (operators 10-14; aizstāj 09-30 «iziet cauri VISĀM»): 08/09 web 455 rindas un v4 tvīti/web ~1 400 rindas pa vienai NAV pārbaudītas; paliek: HOLD #20389, regulāra izlase; uzlabojums (c) kļūdu komplekts v2 uzbūvēts + bāzes skrējiens 10-14 (CHANGELOG 2026-10-14 (6)): jutība NAV pierādīta — pagaidu precizitātes screen; nākamais iespējamais solis (operatora lēmums): stiprāks mutants vai `bf7ab3f4` (11 Opus) vai paturēt kā ir; blakusatradums: akli vērtētāji palaida garām apmelojuma atrunas nomešanu (RUBRIKA 6. noteikums) — kādreiz deterministiska pārbaude šai klasei (NEatvērt darbu tagad); plāns un apjoms (~125 Opus palīgi, vajag «jā» ar skaitu): [`docs/arhivs/handoffs/HANDOFF-2026-09-30-claim-extractor-parbuve.md`](docs/arhivs/handoffs/HANDOFF-2026-09-30-claim-extractor-parbuve.md).
+- **50 — citātu un stance triāža: izpildīta 2026-09-30, paliek atlikums.** Atskaites: [`docs/audits/2026-09-30-citatu-triaza.md`](docs/audits/2026-09-30-citatu-triaza.md) (383 rindas; <90 % burtiskā seguma 356 → 69) un [`docs/audits/2026-09-30-stance-izlase/README.md`](docs/audits/2026-09-30-stance-izlase/README.md); rollback `data/rollback_{quotes_set{1..4},withdraw_unsound,stance_grades,stance_b_rewrite}_2026-09-30.sql`. **Paliek:** (b)–(d) izpildīti 2026-10-01 (verdikti C1–C7; atlikums → rinda «2026-10-01 verdiktu atlikums»); (e) **operatora lēmums 09-30: iziet cauri VISĀM atlikušajām pozīcijām** (later 5 315 + noquote 746 + jaunās) PĒC claim-extractor pārbūves — **noquote izpildīts 09-30, later tvīti (3 758) izpildīti 10-14** (CHANGELOG 2026-10-14 (2); 8 HOLD gaida operatoru; #42 pārsieta 10-14); **izlase v4 240 + later web 300 izpildīta 10-14** (CHANGELOG 2026-10-14 (4); v4 0/240 (akli 1/30), later web 05–07 virs 10 %, 08/09 3,3 %); **2. kārta izpildīta 10-14** (CHANGELOG 2026-10-14 (5); 05–07 pilnā 680, 08/09 < 5 %, vestnesis 1/75; 8 HOLD izšķirti) — **50(e) stance slānis pabeigts pēc sliekšņa noteikuma** (operators 10-14; aizstāj 09-30 «iziet cauri VISĀM»): 08/09 web 455 rindas un v4 tvīti/web ~1 400 rindas pa vienai NAV pārbaudītas; paliek: HOLD #20389, regulāra izlase; uzlabojums (c) kļūdu komplekts v2 uzbūvēts + bāzes skrējiens 10-14 (CHANGELOG 2026-10-14 (6)): jutība NAV pierādīta — pagaidu precizitātes screen; operators 2026-11-09: paturēt, kā ir (§ Ne-darīt); blakusatradums: akli vērtētāji palaida garām apmelojuma atrunas nomešanu (RUBRIKA 6. noteikums) — kādreiz deterministiska pārbaude šai klasei (NEatvērt darbu tagad); plāns un apjoms (~125 Opus palīgi, vajag «jā» ar skaitu): [`docs/arhivs/handoffs/HANDOFF-2026-09-30-claim-extractor-parbuve.md`](docs/arhivs/handoffs/HANDOFF-2026-09-30-claim-extractor-parbuve.md).
   - **Klase `confidence>0.65` bez citāta — 572 rindas izskatītas 2026-11-04, klase tukša** (verdikts 18; CHANGELOG 2026-11-04 (2)). Paliek: `open_review_queue()` 89 rindas (14 dienu robeža; marķieris 2026-11-04) un 9 izvērtētās rindas ar palīga šaubām: [`docs/audits/2026-11-04-c065-triaza/README.md`](docs/audits/2026-11-04-c065-triaza/README.md). *Īpašnieks:* operators (lēmumi), rutīna (rinda).
 - **51 — video ingest (NAV palaists).** → [`backlog/avoti.md`](backlog/avoti.md) § Video ingest (`platform='video'` = 0, 2026-09-25).
 - **52 — NVO × VAD 24 jauno pāru triāža.** Gaida UR izrakstus; bez tiem sesija apstātos pirmajā pārī. → [`backlog/vad.md`](backlog/vad.md).
-- **2026-10-01 verdiktu atlikums** → Zalāna (pid=186) 3 radiosakaru deklarācijas: [`backlog/dati-db.md`](backlog/dati-db.md) § 2026-09-25 (c)(2); Vēstneša 130 `mentioned` → `backlog/matcher.md` § LIELO burtu (b). Pārējais: [`docs/verdikti-2026-10-01.md`](docs/verdikti-2026-10-01.md).
+- **2026-10-01 verdiktu atlikums** → Zalāna (pid=186) 3 radiosakaru deklarācijas: [`backlog/dati-db.md`](backlog/dati-db.md) § 2026-09-25 (c)(2). Pārējais: [`docs/verdikti-2026-10-01.md`](docs/verdikti-2026-10-01.md).
 
 
 **Infra stāvoklis:**
@@ -165,46 +183,37 @@ _Detalizētie ieraksti dzīvo tēmas failos `backlog/*.md` (sadale 2026-08-19). 
 - **[DEFERRED]** Komisiju balsojumu ievilkšana — jauns datu avots (operatora lēmums 2026-08-20)
 - **[OPEN]** Komisiju priekšlikumu tabulas netiek ievāktas — deputātu iesniegtie grozījumi nav redzami
 - **[FIX]** Saeimas ielādes sīkumi — paralēlas ielādes daļēja rakstīšana (c)
-- **[OPEN]** Dzīvās sēdes apakšpunktu balsojumi — automātisks saucējs (`nr={actualXML_DkId}` ∪ `getTechDKP`); šobrīd tikai rokas paritāte
+- **[OPEN]** Dzīvās sēdes apakšpunktu balsojumi — automātiskā paritāte (`--tech`) ieviesta 2026-11-10; dzīvā sēdē vēl nav darbināta
 - **[OPEN]** «Atradums» par pilsonību ar Saeimas balsojumu — PUBLICĒTS 2026-11-01 (deploy b2035f72); atlikusi arhivēšana
 - **[OPEN]** Saeimas balsojumu tēmas — klasifikācija pa dokumentiem, 34. tēma «Saeimas darbs», partiju pārrakstīšana (2026-10-21)
 - **[OPEN]** Jaunu sēžu `parentID=` balsojumu saites kļūst tukšas — sēdes dienā pastāvīgās nav, labo pēc tam (2026-11-04)
 
-**[`backlog/agenti-pipeline.md`](backlog/agenti-pipeline.md)** — 10 ieraksti:
-- **[OPEN]** Stance precizitāte rutīnā: neatkarīga pārbaude atrod 10–20 % defektu, aģenta pašpārbaude ne
+**[`backlog/agenti-pipeline.md`](backlog/agenti-pipeline.md)** — 6 ieraksti:
 - **[OPEN]** Aģentu promptu optimizācija pēc claim-extractor v4 — audit-integrity → skripts, quality-reviewer uz RUBRIKA
-- **[OPEN]** Stance-fidelity atlikums: matcher neskenē `title`, paywall stop-gate nevar balstīties uz `is_paywall`
+- **[DEFERRED]** Stance-fidelity atlikums: matcher neskenē `title`; tvnet maksas ievadi nav atšķirami (2026-11-10)
 - **[OPEN]** Medību pēdas @contradiction-hunter (07-25 adversārā pārbaude + 08-03 ekstrakcija)
-- **[DEFERRED]** `visual_brief_json` renderam miris, bet `@graphics-designer` to joprojām lasa — attēls un virsraksts var atšķirties
-- **[OPEN]** Vēstneša ingest pienāk PĒC analīzes loga — septembrī 16 no 18 dienām pēc 15:00
 - **[OPEN]** Krossavota/divvalodu dublikāti — `possible_duplicate` tīkls kopš 2026-09-24; atliek pārmērīt 6. pārbaudes 101 grupu
 - **[OPEN]** `find_inversions` — `speaks()` nosaka lomu pēc pieminējuma; aklās zonas raža nav triāžēta
-- **[OPEN]** Pozīcija ar `stated_at` = vakardiena, kas ielādēta pēc vakardienas pārskata, nenonāk nevienā pārskatā
 - **[OPEN]** Stance šūnas pārskata tabulās arvien garākas — 26/41 pārsniedz 30 vārdus
 
-**[`backlog/matcher.md`](backlog/matcher.md)** — 10 ieraksti:
-- **[OPEN]** B2 priekšvārda veto nesaloka garumzīmes — īsts politiķis noraidīts kā «ārzemju vārds» (2026-11-01)
-- **[OPEN]** Stale junction atlikums — 50 rindas bez vārda tekstā (23 doki) un 23 vēlākas piesaistes
+**[`backlog/matcher.md`](backlog/matcher.md)** — 8 ieraksti:
+- **[OPEN]** Stale junction atlikums — 52 rindas bez vārda tekstā, 28 vēlākas piesaistes; twitter un x_mention nav auditēti (2026-11-10)
 - **[OPEN]** Releja kanāla dokuments ar citā plūsmā piesaistītu autoru (`subject`) netiek pārbaudīts pieminējumu meklēšanā
 - **[OPERATOR]** Junction lomas apgrieztas pārstāstos — `mentioned` runātājs nesasniedz rindu
 - **[OPERATOR]** Matcher plāna 2026-07-27 atlikums (B2+D2+H ieviests)
 - **[OPEN]** T1 locījumu kolīziju klase (2026-08 gadījumi)
 - **[OPERATOR]** Lūša ≤4 zīmju formas (T1) — `Lūsi` dala arī pid 206 Lūse
 - **[OPEN]** Citētā runātāja joslas atlikums — bezpersonisko atribūciju veto kandidāts
-- **[OPERATOR]** `negative_patterns` apkalpo divus filtrus (VAD haystack + ziņu matcher) + Kulberga `vad_disambig` hinti
-- **[OPERATOR]** LIELO burtu un handle labojumu atlikumi (2026-10-01)
+- **[OPERATOR]** Četri VAD vajadzībām iesēti `negative_patterns` paterni aizliedz ziņas — pārcelt uz `vad_negative_patterns` (2026-11-10)
 
-**[`backlog/dati-db.md`](backlog/dati-db.md)** — 12 ieraksti:
+**[`backlog/dati-db.md`](backlog/dati-db.md)** — 9 ieraksti:
 - **[OPERATOR]** 15. Saeima — `parties.coalition_status` un `tracked_politicians` pēc jaunās Saeimas sanākšanas (2026-10-04)
-- **[OPERATOR]** 2026-10-07 rutīnas atlikums — LETA (195) `mentioned` pāris doc 126284, LDDK rubrikas autors
 - **[OPERATOR]** Jev keša atslēga jaucē `jev-latest`, ne atbildējušo modeli — jaukti modeļi pēc aliasa maiņas (2026-10-17)
 - **[OPERATOR]** LETA URL satura nomaiņa — vēsturisko title≠content kandidātu triāža (doc 72446 klase)
 - **[DEFERRED]** "Aizsardzības industrija" topika splits
-- **[DEFERRED]** `claim_vectors` 7 010 + `document_vectors` 450 bāreņu rindas; ne-vote claims bez vektora 0 (vote — apzināti, 08-21)
 - **[OPEN]** LSM slug dreifs — 40 raksta ID ar divām `documents` rindām (32 slugs, 8 `utm`)
 - **[OPERATOR]** 2026-09-25 profila bio un NEEDS_REVIEW triāžas atlikumi — Zalāna radiosakaru deklarācijas (3)
 - **[DEFERRED]** Pilna amatu pārskatīšana pēc 15. Saeimas sanākšanas — komisiju un frakciju vadītāji
-- **[OPEN]** Spriedzei nav notikuma datuma — veci tvīti nonāk dienas pārskatā (2026-10-08)
 - **[OPERATOR]** 2026-10-20 rutīnas atlikums — Mieriņas partija
 - **[OPEN]** Implicītie stāvokļu automāti — ~38 dzīves cikli bez noteiktām pārejām, 10 ar reālu risku (2026-11-02)
 
@@ -234,9 +243,8 @@ _Detalizētie ieraksti dzīvo tēmas failos `backlog/*.md` (sadale 2026-08-19). 
 - **[OPEN]** Statiskās analīžu lapas dreifē — `vad-2026` klase pārējām `content/analizes/*.md` (2026-09-20)
 - **[OPEN]** good-css 5. kārtas atlikums — mazi mērķi un operatora jautājumi (2026-10-21)
 
-**[`backlog/repo-higiena.md`](backlog/repo-higiena.md)** — 6 ieraksti:
+**[`backlog/repo-higiena.md`](backlog/repo-higiena.md)** — 5 ieraksti:
 - **[OPEN]** Testu vide pēc 2026-10-29 iekāršanās labojuma — atlikušais (2026-10-29)
-- **[OPEN]** Attēla paraksta pēcapstrādes vārts — (b) OCR/stūru heiristika (prompta aizliegums ieviests 2026-09-05)
 - **[OPEN]** «Kurš un kas redzams vietnē» — noteikums ~90 vietās bez īpašnieka; paplašināt `src/scope.py` (2026-10-11)
 - **[FIX]** Koda sīkumi no handoffiem 09-25…10-13 — divu pulksteņu daļa izlabota 2026-10-18 (2026-10-11)
 - **[OPEN]** Svaigā klonā nav parauga DB — `check.sh` jaunam līdzautoram krīt (2026-10-11)

@@ -40,6 +40,25 @@ def create_app(db_path: str | None = None) -> Flask:
     app = Flask(__name__)
     app.config["JSON_AS_ASCII"] = False
     app.config["DB_PATH"] = db_path
+    # DNS rebinding: a foreign Host header gets 400 before any route runs.
+    app.config["TRUSTED_HOSTS"] = ["127.0.0.1", "localhost"]
+
+    @app.before_request
+    def _refuse_cross_site_post():
+        """Every dashboard action is an HTMX POST, and HTMX sends
+        ``HX-Request: true``. A page on another site cannot add that header
+        without a CORS preflight this server never grants, and a browser
+        always names its Origin on a POST — so either signal missing or
+        foreign means the request did not come from the dashboard itself
+        (audit 2026-11-07 § 1 (4): a cross-site POST reached deploy)."""
+        if request.method != "POST":
+            return None
+        origin = request.headers.get("Origin")
+        if request.headers.get("HX-Request") != "true" or (
+            origin is not None and origin != request.host_url.rstrip("/")
+        ):
+            return ("cross-site request refused", 403)
+        return None
 
     @app.route("/")
     def index() -> str:

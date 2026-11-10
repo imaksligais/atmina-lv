@@ -1,10 +1,10 @@
 ---
 topic: Degviela un enerģētika
-positions: 332
-votes: 18386
+positions: 335
+votes: 22402
 politicians: 79
 contradictions: 1
-last_activity: '2026-11-04 00:00:00'
+last_activity: '2026-11-09 00:00:00'
 top_politicians:
 - '[[persons/viktors-valainis|Viktors Valainis]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

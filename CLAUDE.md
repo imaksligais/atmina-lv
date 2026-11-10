@@ -8,7 +8,7 @@ atmina is a Latvian political transparency platform. Scrapes news sources + Twit
 
 ## Session Start
 
-Read `wiki/index.md` first. Runbooks: `wiki/operations/operacijas.md`. Open work: `BACKLOG.md` (index + § Ne-darīt + § Atliktais) and `backlog/*.md` (read the topic file before working in that area). Decisions: `wiki/CHANGELOG.md` (≤5 lines per entry; narrative is `git log`), rationale before 2026-09-07: `wiki/CHANGELOG-arhivs.md`, 2026-09-07…09-30: `wiki/CHANGELOG-arhivs-2026-09.md`. Claude Code IS the analysis engine — analysis is written interactively, not by scripts. Longer earlier versions of this file: `git show f83b799c:CLAUDE.md`, `git show 196490a6:CLAUDE.md`, `git show 079da816:CLAUDE.md`.
+Read `wiki/index.md` first. Runbooks: `wiki/operations/operacijas.md`. Open work: `BACKLOG.md` (index + § Ne-darīt + § Atliktais) and `backlog/*.md` (read the topic file before working in that area). Current state and what the last session left open: the newest `docs/HANDOFF-*.md`. Decisions: `wiki/CHANGELOG.md` (≤5 lines per entry; narrative is `git log`), rationale before 2026-09-07: `wiki/CHANGELOG-arhivs.md`, 2026-09-07…09-30: `wiki/CHANGELOG-arhivs-2026-09.md`, 2026-10: `wiki/CHANGELOG-arhivs-2026-10.md`. Claude Code IS the analysis engine — analysis is written interactively, not by scripts. Longer earlier versions of this file: `git show f83b799c:CLAUDE.md`, `git show 196490a6:CLAUDE.md`, `git show 079da816:CLAUDE.md`.
 
 ## Standing Decisions (operator-set; do not re-litigate)
 

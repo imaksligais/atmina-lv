@@ -59,6 +59,22 @@ _INTERESTING_LOG_ACTIONS = {
 }
 
 
+# Per-table (kind expression, SELECT head). The kind expression mirrors the
+# row's displayed kind so a filter chip can be applied in SQL, before LIMIT.
+_TABLE_KIND_SQL: dict[str, tuple[str, str]] = {
+    "logs": ("action",
+             "SELECT id, timestamp, action, status, details FROM logs"),
+    "brief_images": (
+        "CASE approved WHEN 1 THEN 'image_approved' WHEN 2 THEN 'image_rejected' "
+        "WHEN -1 THEN 'image_superseded' ELSE 'image_generated' END",
+        "SELECT id, note_id, approved, cost_usd, generated_at, error_message "
+        "FROM brief_images"),
+    "context_notes": ("COALESCE(note_type, 'context')",
+                      "SELECT id, note_type, topic, created_at FROM context_notes"),
+    "analyses": ("'analysis'", "SELECT id, opponent_id, created_at FROM analyses"),
+}
+
+
 def lv_relative_time(ts: datetime, now: datetime) -> str:
     """Format ``ts`` as a Latvian relative-time string against ``now``."""
     delta = now - ts
@@ -165,92 +181,80 @@ def get_activity_context(
 
     db = get_db(db_path) if db_path else get_db()
     try:
-        rows: list[dict[str, Any]] = []
-
-        # --- logs ---
-        log_rows = db.execute(
-            "SELECT id, timestamp, action, status, details "
-            "FROM logs "
-            "WHERE action IN ({}) AND id > ? "
-            "ORDER BY id DESC LIMIT ? OFFSET ?".format(
-                ",".join("?" * len(_INTERESTING_LOG_ACTIONS))
-            ),
-            (*_INTERESTING_LOG_ACTIONS, since.get("logs", 0), limit, offset),
-        ).fetchall()
-        for r in log_rows:
-            rows.append({
-                "ts": r["timestamp"],
-                "table": "logs",
-                "source_id": r["id"],
-                "kind": r["action"],
-                "status": r["status"],
-                "summary": _summary_for_log(r["action"], r["status"], r["details"]),
-            })
-
-        # --- brief_images ---
-        img_rows = db.execute(
-            "SELECT id, note_id, approved, cost_usd, generated_at, error_message "
-            "FROM brief_images WHERE id > ? "
-            "ORDER BY id DESC LIMIT ? OFFSET ?",
-            (since.get("brief_images", 0), limit, offset),
-        ).fetchall()
-        for r in img_rows:
-            kind, summary = _summary_for_image(
-                r["approved"], r["note_id"], r["cost_usd"], r["error_message"]
-            )
-            rows.append({
-                "ts": r["generated_at"],
-                "table": "brief_images",
-                "source_id": r["id"],
-                "kind": kind,
-                "status": "ok",
-                "summary": summary,
-            })
-
-        # --- context_notes ---
-        cn_rows = db.execute(
-            "SELECT id, note_type, topic, created_at FROM context_notes "
-            "WHERE id > ? "
-            "ORDER BY id DESC LIMIT ? OFFSET ?",
-            (since.get("context_notes", 0), limit, offset),
-        ).fetchall()
-        for r in cn_rows:
-            rows.append({
-                "ts": r["created_at"],
-                "table": "context_notes",
-                "source_id": r["id"],
-                "kind": r["note_type"] or "context",
-                "status": "ok",
-                "summary": (r["topic"] or "(bez topica)")[:80],
-            })
-
-        # --- analyses ---
-        an_rows = db.execute(
-            "SELECT id, opponent_id, created_at FROM analyses "
-            "WHERE id > ? "
-            "ORDER BY id DESC LIMIT ? OFFSET ?",
-            (since.get("analyses", 0), limit, offset),
-        ).fetchall()
-        for r in an_rows:
-            rows.append({
-                "ts": r["created_at"],
-                "table": "analyses",
-                "source_id": r["id"],
-                "kind": "analysis",
-                "status": "ok",
-                "summary": f"analīze politiķim #{r['opponent_id']}",
-            })
+        # Upper bound per table, read FIRST: rows are fetched with id <= bound
+        # and the poll cursor is the bound itself. A cursor built from the
+        # rows on screen stayed 0 for any table outside the top-N, so every
+        # 30 s poll re-appended its old rows (audit 2026-11-07).
+        bound = {
+            t: db.execute(f"SELECT COALESCE(MAX(id), 0) FROM {t}").fetchone()[0]
+            for t in _TABLE_KIND_SQL
+        }
+        # Merge first, page after: each table gives its newest offset+limit
+        # rows (kind filter applied in SQL), the merged list is sliced once.
+        # A per-table OFFSET before the merge skipped rows of every table.
+        window = offset + limit
+        fetched: dict[str, list] = {}
+        for table, (kind_sql, sql) in _TABLE_KIND_SQL.items():
+            where = ["id > ?", "id <= ?"]
+            params: list[Any] = [since.get(table, 0), bound[table]]
+            if table == "logs":
+                where.append("action IN ({})".format(
+                    ",".join("?" * len(_INTERESTING_LOG_ACTIONS))))
+                params.extend(sorted(_INTERESTING_LOG_ACTIONS))
+            if kinds_filter:
+                where.append(f"{kind_sql} IN ({','.join('?' * len(kinds_filter))})")
+                params.extend(sorted(kinds_filter))
+            fetched[table] = db.execute(
+                f"{sql} WHERE {' AND '.join(where)} ORDER BY id DESC LIMIT ?",
+                (*params, window + 1),
+            ).fetchall()
     finally:
         db.close()
 
-    # Filter by kinds chip
-    if kinds_filter:
-        rows = [r for r in rows if r["kind"] in kinds_filter]
+    rows: list[dict[str, Any]] = []
+    for r in fetched["logs"]:
+        rows.append({
+            "ts": r["timestamp"],
+            "table": "logs",
+            "source_id": r["id"],
+            "kind": r["action"],
+            "status": r["status"],
+            "summary": _summary_for_log(r["action"], r["status"], r["details"]),
+        })
+    for r in fetched["brief_images"]:
+        kind, summary = _summary_for_image(
+            r["approved"], r["note_id"], r["cost_usd"], r["error_message"]
+        )
+        rows.append({
+            "ts": r["generated_at"],
+            "table": "brief_images",
+            "source_id": r["id"],
+            "kind": kind,
+            "status": "ok",
+            "summary": summary,
+        })
+    for r in fetched["context_notes"]:
+        rows.append({
+            "ts": r["created_at"],
+            "table": "context_notes",
+            "source_id": r["id"],
+            "kind": r["note_type"] or "context",
+            "status": "ok",
+            "summary": (r["topic"] or "(bez topica)")[:80],
+        })
+    for r in fetched["analyses"]:
+        rows.append({
+            "ts": r["created_at"],
+            "table": "analyses",
+            "source_id": r["id"],
+            "kind": "analysis",
+            "status": "ok",
+            "summary": f"analīze politiķim #{r['opponent_id']}",
+        })
 
-    # Final chronological sort, trim to limit (each source is pre-limited so
-    # we have at most 4 * limit candidates before trimming).
     rows.sort(key=lambda r: r["ts"] or "", reverse=True)
-    rows = rows[:limit]
+    has_more = len(rows) > window
+    rows = rows[offset:window]
 
     # Augment with display fields
     for r in rows:
@@ -284,11 +288,8 @@ def get_activity_context(
             current_group["rows"].append(r)
         grouped.append(current_group)
 
-    # Cursor for HTMX poll — the highest id seen per table
-    cursor = {}
-    for r in rows:
-        t = r["table"]
-        cursor[t] = max(cursor.get(t, 0), r["source_id"])
+    # Cursor for HTMX poll — the per-table bound read before the fetch.
+    cursor = {t: max(bound[t], since.get(t, 0)) for t in bound}
 
     return {
         "rows": rows,
@@ -297,5 +298,5 @@ def get_activity_context(
         "current_filter": filter or "all",
         "offset": offset,
         "limit": limit,
-        "has_more": len(rows) == limit,
+        "has_more": has_more,
     }

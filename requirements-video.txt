@@ -1,0 +1,17 @@
+# Video ingest stack (src/video_ingest, Data Contract #13) — install only on a
+# machine that runs `python -m src.video_ingest`:
+#   .venv/Scripts/python.exe -m pip install -r requirements.txt -r requirements-video.txt
+# Split out of requirements.txt 2026-11-10: nothing outside src/video_ingest
+# imports these, and CI skips the video tests that need them (tests/conftest.py).
+#
+# NB: speechbrain must NOT be installed — pyannote 4.x doesn't need it (community-1
+# uses wespeaker embeddings), and both released lines break this venv (1.1.0 = k2
+# lazy-import cascade, 1.0.x = torchaudio 2.11 API mismatch). pyannote guards its
+# absence with try/except ImportError.
+yt-dlp==2025.10.22
+faster-whisper==1.1.1
+pyannote.audio==4.0.7
+pydub==0.25.1
+soundfile==0.14.0
+# Must match torch==2.13.0 in requirements.txt (bump together).
+torchaudio==2.11.0

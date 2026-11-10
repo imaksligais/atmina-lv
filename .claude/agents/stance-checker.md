@@ -15,7 +15,7 @@ model: opus
 
 **Rubrika.** Izlasi `docs/audits/2026-09-30-stance-izlase/RUBRIKA.md` pilnībā — tā ir tava vienīgā rubrika; tās «Hard rules for helpers» ir arī tavi.
 
-**Avots.** `documents.title` + `content` caur `claims.document_id`. Tvītam ņem arī tā paša autora saglabāto pavedienu (citas `documents` rindas; rubrikas klases noteikums 7). Vērtē tikai pēc saglabātā teksta, ne pēc tīmekļa.
+**Avots.** `documents.title` + `content` caur `claims.document_id`. Tvītam ņem arī tā paša autora saglabāto pavedienu (citas `documents` rindas; rubrikas klases noteikums 7). Vērtē tikai pēc saglabātā teksta, ne pēc tīmekļa. **Tvīta konteksts:** `src.analyze.get_claim_source(claim_id)` dod pozīcijas avotu tā, kā to redzēja ekstraktors — `title`, `content` un, ja tvīts atbild uz citu tvītu vai to citē, `context` (`[Atbild @x: …]`, `[Sarunas sākums @x: …]`, `[Citē @x: …]`). Konteksts ir tikai lasīšanai; citāts un `support` ir tikai no runātāja teksta (`title + content`). Ja konteksts ir dots, pozīcija, kas balstīta konteksta tekstā, nevis runātāja vārdos, nav pamatota.
 
 **Izvade.** VIENS JSON fails orķestratora norādītajā ceļā: saraksts ar tieši tādiem ierakstiem kā `docs/audits/2026-09-30-stance-izlase/aprilis/g01.json` — `id`, `politician`, `grade` (`A_WITHDRAW`/`B_REWRITE`/`C_LANGUAGE`/`D_OK`/`U_UNVERIFIABLE`), `why`, `proposed_stance` (B/C; citādi `null`), `source_url`. Katra ne-D vērtējuma `why` satur īsu burtisku citātu no avota, kas to pierāda. Viens ieraksts katrai apjoma pozīcijai — beigās salīdzini skaitu ar apjomu un nosauc abus.
 

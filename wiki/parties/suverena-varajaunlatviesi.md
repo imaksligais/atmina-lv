@@ -1,7 +1,7 @@
 ---
 party: Suverēnā vara/Jaunlatvieši
 members: 15
-claims: 65
+claims: 73
 program_promises: 24
 contradictions: 1
 votes_par: 0
@@ -12,13 +12,13 @@ top_politicians:
 - Karina Sprūde
 - Rūdolfs Brēmanis
 - Ļubova Švecova
-- Edgars Dārznieks
+- Andrejs Pagors
 top_topics:
 - Vēlēšanas
 - Ukraina un Krievija
 - Koalīcija un partijas
+- Valsts pārvalde
 - Pašvaldības
-- Korupcija un KNAB
 ---
 
 <!-- SYNC-AUTO -->

@@ -1034,3 +1034,39 @@ def test_politician_outside_full_name_only_set_keeps_bare_surname(monkeypatch):
     assert match_politicians("Paraudziņš paziņoja, ka budžets jāpārskata.") == [(962, "subject")]
     assert match_politicians("Paraudziņa priekšlikums paziņots vakar.") == [(962, "subject")]
     _clear_politician_cache()
+
+
+# --- B2 diacritic fold (2026-11-09) -----------------------------------------
+# Failure named: doc 148016 — «Ainārs Latkovskis» in text, DB «Ainars»
+# (pid 114): the veto read «Ainārs» as a foreign first name and dropped the
+# link (backlog/matcher.md § B2 priekšvārda veto). Same class both ways:
+# Šlesers DB «Ainārs», text «Ainars».
+
+
+def test_foreign_first_name_veto_folds_diacritics(monkeypatch):
+    import src.matcher as m
+    from src.matcher import match_politicians
+
+    _patch_forms(monkeypatch, [
+        (114, ["Ainars Latkovskis", "Latkovskis"], "Ainars", []),
+        (3, ["Šlesers", "Šlesera"], "Ainārs", []),
+    ])
+    monkeypatch.setattr(m, "_politician_aux_cache", {
+        114: {"name": "Ainars Latkovskis", "tokens": ["Ainars"]},
+        3: {"name": "Ainārs Šlesers", "tokens": ["Ainārs"]}})
+    text = ('"Jaunās Vienotības" deputāts Ainārs Latkovskis brīdina, ka mazāks '
+            'valsts atbalsts varētu palielināt privāto finansētāju ietekmi.')
+    assert match_politicians(text) == [(114, "subject")]
+    assert match_politicians("Ainars Šlesers vakar paziņoja.") == [(3, "subject")]
+    # A genuinely different first name still vetoes.
+    assert match_politicians("Jānis Latkovskis vakar paziņoja.") == []
+    # Shared surname: the first-name proximity filter folds too.
+    _patch_forms(monkeypatch, [
+        (3, ["Šlesers", "Šlesera"], "Ainārs", []),
+        (56, ["Ričards Šlesers", "Šlesers"], "Ričards", []),
+    ])
+    monkeypatch.setattr(m, "_politician_aux_cache", {
+        3: {"name": "Ainārs Šlesers", "tokens": ["Ainārs"]},
+        56: {"name": "Ričards Šlesers", "tokens": ["Ričards"]}})
+    monkeypatch.setattr(m, "_shared_surname_set", {"Šlesers", "Šlesera"})
+    assert match_politicians("Ainars Šlesers vakar paziņoja.") == [(3, "subject")]

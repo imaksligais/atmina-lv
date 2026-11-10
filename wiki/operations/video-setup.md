@@ -1,5 +1,7 @@
 # Video ingest — vienreizējais setup
 
+**Python pakotnes (kopš 2026-11-10 atsevišķi no `requirements.txt`):** `.venv/Scripts/python.exe -m pip install -r requirements-video.txt`.
+
 ## 1. ffmpeg
 
 yt-dlp un pydub atkarība.
@@ -59,4 +61,4 @@ Pirmā `.venv/Scripts/python.exe -m src.video_ingest fetch ...` lejupielādēs:
 
 Pēc tam ātri.
 
-**NB (Windows):** `speechbrain` NEDRĪKST būt instalēts venv (skat. piezīmi `requirements.txt`), un torchcodec FFmpeg-shared-DLL prasība ir apieta kodā — `diarize.py` padod pipeline'am jau dekodētu waveform caur `soundfile`.
+**NB (Windows):** `speechbrain` NEDRĪKST būt instalēts venv (skat. piezīmi `requirements-video.txt`), un torchcodec FFmpeg-shared-DLL prasība ir apieta kodā — `diarize.py` padod pipeline'am jau dekodētu waveform caur `soundfile`.

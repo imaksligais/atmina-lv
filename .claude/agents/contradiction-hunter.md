@@ -127,6 +127,18 @@ faction_pattern = db.execute('''
 ''', (row['vote_id'], row['faction'])).fetchall()
 ```
 
+   **15. Saeimas pagaidu izņēmums (operatora lēmums 2026-11-09).** Kamēr avots frakcijas nav reģistrējis, `faction` ir NULL VISĀM balsojuma rindām (8643: 96/96, 8644: 98/98), un `faction IS NULL` atgriež visu Saeimu, nevis frakciju — tas nav frakcijas sadalījums un disciplīnas slieksni ar to nemēra. Vispirms pārbaudi: `SELECT COUNT(*), SUM(faction IS NULL) FROM saeima_individual_votes WHERE vote_id = ?`. Ja abi skaitļi sakrīt, grupē pēc partijas un kontekstā raksti «frakcijas vēl nav reģistrētas; salīdzināts ar partijas biedru balsīm»:
+```python
+party_pattern = db.execute('''
+    SELECT siv.vote, COUNT(*) AS cnt
+    FROM saeima_individual_votes siv
+    JOIN tracked_politicians tp ON tp.id = siv.politician_id
+    WHERE siv.vote_id = ? AND tp.party = ?
+    GROUP BY siv.vote
+''', (row['vote_id'], politician_party)).fetchall()
+```
+   `tracked_politicians.party` var būt novecojis (T6) — ja politiķis nesen mainījis partiju vai `party` ir NULL, disciplīnu nenosaki un pasaki to atskaitē. Izņēmums beidzas, tiklīdz balsojumā ir kaut viena ne-NULL frakcija; jaukta balsojuma atsevišķs NULL joprojām ir ārpusfrakcijas deputāts (T6 korolārs).
+
 3. **Competing bill check:** `saeima_votes` has no submitter column (src/saeima/schema.py). Check the competing bill or announced alternative through the agenda item's submitter and the bill's politician context.
 
 ### Step 2: Position-over-Time Detection (CO-PRIMARY)

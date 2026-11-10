@@ -1,10 +1,10 @@
 ---
 topic: Budžets un finanses
-positions: 646
-votes: 166068
-politicians: 90
-contradictions: 1
-last_activity: '2026-11-06 00:00:00'
+positions: 672
+votes: 166350
+politicians: 92
+contradictions: 2
+last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/guntars-vitols|Guntars Vītols]]'

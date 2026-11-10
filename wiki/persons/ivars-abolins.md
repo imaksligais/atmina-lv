@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 29
 votes: 5
 contradictions: 0
-mentioned_in: 491
+mentioned_in: 505
 last_active: 2026-11-03
 top_topics:
 - Valodu politika
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/valodu-politika|Valodu politika]] (55%), [[topics/nvo-un-pilsoniska-sabiedriba|NVO un pilsoniskā sabiedrība]] (28%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (7%)
-- **30d:** 2 claims, 0.5× bāzes līnija
+- **30d:** 2 claims, 0.6× bāzes līnija
 <!-- /SYNC-AUTO -->

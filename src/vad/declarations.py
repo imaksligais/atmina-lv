@@ -80,16 +80,25 @@ def _year_from_label(declaration_type: str) -> int | None:
 def _load_disambig_config(
     db: sqlite3.Connection, opponent_id: int
 ) -> tuple[list[str], list[str]]:
-    """Load (vad_disambig hints, negative_patterns) for a politician.
+    """Load (vad_disambig hints, reject patterns) for a politician.
 
     vad_disambig dzīvo ``tracked_politicians.keywords`` JSON kā ``vad_disambig``
-    lauks. negative_patterns dzīvo savā kolonnā kā JSON list. Abi tukši → ([], []).
-    Tukšs disambig saraksts → trust full-name search (skip filtra).
+    lauks. Reject patterns = ``vad_negative_patterns`` (tikai VAD) ∪
+    ``negative_patterns`` (kopīgs ar ziņu matcher), abi JSON list. Abi tukši →
+    ([], []). Tukšs disambig saraksts → trust full-name search (skip filtra).
+    VAD homonīma paterns iet ``vad_negative_patterns`` — ziņu matcher to nelasa
+    (``negative_patterns`` veto visu ziņu doku; backlog/matcher.md).
 
     Phase 1.5 — homonīmu V+U kontaminācija pret 11 pids; skat. spec § 15.2 F13.
     """
+    cols = {r[1] for r in db.execute("PRAGMA table_info(tracked_politicians)")}
+    vad_col = (
+        "vad_negative_patterns" if "vad_negative_patterns" in cols
+        else "NULL AS vad_negative_patterns"
+    )
     row = db.execute(
-        "SELECT keywords, negative_patterns FROM tracked_politicians WHERE id=?",
+        f"SELECT keywords, negative_patterns, {vad_col} "
+        "FROM tracked_politicians WHERE id=?",
         (opponent_id,),
     ).fetchone()
     if row is None:
@@ -104,13 +113,15 @@ def _load_disambig_config(
         except (json.JSONDecodeError, TypeError):
             pass
     neg: list[str] = []
-    if row["negative_patterns"]:
+    for col in ("vad_negative_patterns", "negative_patterns"):
+        if not row[col]:
+            continue
         try:
-            np_ = json.loads(row["negative_patterns"])
-            if isinstance(np_, list):
-                neg = list(np_)
+            np_ = json.loads(row[col])
         except (json.JSONDecodeError, TypeError):
-            pass
+            continue
+        if isinstance(np_, list):
+            neg.extend(p for p in np_ if p not in neg)
     return hints, neg
 
 

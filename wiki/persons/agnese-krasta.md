@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 16
 votes: 8110
 contradictions: 0
-mentioned_in: 94
+mentioned_in: 96
 last_active: 2026-10-01
 top_topics:
 - Tieslietas

@@ -10,21 +10,9 @@ _Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uztur
 
 Provizoriskie CVK dati 10-04 08:22 (1024/1059 iecirkņi, `data/cvk_sv2026_rezultati.yaml`): Saeimā AS 42, LPV 17, SV/AJ 14, NA 11, PRO 9, JV 7; ZZS 4,46 % — ārā. `coalition_status` 10-04 apzināti NEmainīts: 14. Saeima un valdība joprojām strādā. *Trigeris:* 15. Saeimas pirmā sēde (statusi `not_in_saeima`/`opposition`, SV/AJ (`parties.id`=19) ieiet Saeimā) un jaunās valdības apstiprināšana (`coalition`). Tad arī: ievēlēto deputātu saraksts pret `tracked_politicians` (jauni deputāti → `/seed-entity`; neievēlētie paliek, bet `role` jāpārbauda, T6). Pēc valdības apstiprināšanas arī `scripts/seed_coalition_periods.py --apply` (+ rollback), citādi balsojumu kartītes rāda veco koalīciju (audit 24). **Amati (operators 2026-10-24):** pēc pirmās sēdes (2026-11-03, Satversmes 13. p.) — `SAEIMA_CONVOCATION` 14→15 (`src/saeima/convocation.py`), `scripts/ingest_saeima_activity.py` amatiem (Saeima15 DepWeb līdz tam atgriež 401), tad Saeimas lapā ieslēdzas lēca «Amati» un Prezidija gredzeni (pārbaudi saucēju leģendā). Pirms 15. sasaukuma balsojumu ielādes: Saeimas lapas lēcas «Balsoja 14. Saeimā» vaicājums (`src/render/saeima.py`) nefiltrē sasaukumu — citādi 15. Saeimas balsis to sajauks. *Īpašnieks:* operators.
 
-**2026-11-03:** pāreja uz 15. Saeimu izpildīta (CHANGELOG 2026-11-03 (5)); SV/AJ jau `opposition`. Atlikušais trigeris — jaunās valdības apstiprināšana: ZZS un «Stabilitātei!» → `not_in_saeima`, jaunā koalīcija, `seed_coalition_periods.py --apply`, ministru `role`, tad Personu lapas partiju rail grupēšana (`backlog/vietne-ui.md`, atlikta 2026-10-09). `scripts/check_new_session_votes.py` pieņem tikai pašreizējā sasaukuma UUID (citam dod STOP, exit 2).
+**2026-11-03:** pāreja uz 15. Saeimu izpildīta (CHANGELOG 2026-11-03 (5)); SV/AJ jau `opposition`. Atlikušais trigeris — jaunās valdības apstiprināšana: ZZS un «Stabilitātei!» → `not_in_saeima`, jaunā koalīcija, `seed_coalition_periods.py --apply`, ministru `role`, tad Personu lapas partiju rail grupēšana (`backlog/vietne-ui.md`, atlikta 2026-10-09). `scripts/check_new_session_votes.py` pieņem tikai pašreizējā sasaukuma UUID (citam dod STOP, exit 2). **2026-11-10:** valdības maiņas dienas soļi un skripts sagatavoti — `wiki/operations/seeding.md` § Valdības maiņas diena (CHANGELOG 2026-11-10 (2)).
 
 Tajā pašā reizē (T6, no handoffiem 10-04…10-09; DB 2026-10-14 nemainīts): «Stabilitātei!» (`parties.id`=9) ir `opposition`, kaut frakcijas vairs nav; Štāls (pid 173) — JKP apsver likvidāciju vai zīmola maiņu; Siliņas (pid 2) `role` pēc JV ārkārtas kongresa.
-
-### [OPERATOR] 2026-10-07 rutīnas atlikums — LETA (195) `mentioned` pāris doc 126284, LDDK rubrikas autors
-
-**2026-10-14 (verdikti):** Dombrovskis 126705, Butāns 127368 → `mentioned`; doc 114881 `published_at`=2026-09-23 (datelīnija); LDDK #729892 — autors LDDK («LDDK ieskatā»), bez marķiera. Krusta (pid 45) `party` = «Bezpartejisks» (CHANGELOG 2026-10-15 (6)). Paliek: LETA (195) pāris.
-
-Atrasts 10-07 ekstrakcijas un atgūšanas aģentu atskaitēs.
-- ~~Viltus junction 127450 → Maija Krastiņa~~ — dzēsts 2026-10-08 (`data/rollback_junction_claim_fix_2026-10-08.sql`); `negative_patterns` («Imant», 4 formas) piemērots 2026-10-08 ar operatora apstiprinājumu (`data/fix_krastina_negative_patterns_imants_2026-10-08.sql`).
-- ~~Claim 20597 (Švinka)~~ — stance + citāts izlaboti, re-embed 2026-10-08 (tas pats rollback).
-- ~~Dublētas doc rindas 127349 / 127395~~ — kods labots 2026-10-08 (`normalize_source_url`); 9 esošās grupas atstātas (nevienā nav vienas pozīcijas divreiz), CHANGELOG 2026-10-08 (2).
-- ~~Baško pāris (30, 126284)~~ — 2026-10-08 claim 730811, 0 pretrunu; Krusts tukšs. Paliek: LETA (195, `mentioned`) pāris doc 126284 `extracted_at` NULL.
-- ~~Pozīcijas ar `NEEDS_REVIEW` (17)~~ — triāža 2026-10-08, CHANGELOG 2026-10-08.
-- **LDDK rubrikas «Bizness par biznesu» autors nav norādīts** (2026-10-09): doc 129933 atzīmēts tukšs; tas pats var attiekties uz 10-04 claim #729892 (glabāts LDDK, pid 193).
 
 ### [OPERATOR] Jev keša atslēga jaucē `jev-latest`, ne atbildējušo modeli — jaukti modeļi pēc aliasa maiņas (2026-10-17)
 
@@ -36,11 +24,7 @@ Koda daļa izpildīta (`src/db.py:318,399-409`: UPDATE zars pārraksta `title` u
 
 ### [DEFERRED] "Aizsardzības industrija" topika splits
 
-Tēmā `Aizsardzība un drošība` **970** pozīcijas (`SELECT COUNT(*) FROM claims WHERE claim_type='position' AND topic='Aizsardzība un drošība'`, 2026-10-21; 09-25 — 810, 06-10 ~409). Industrijas/iepirkumu klasteris (ASCOD, lokalizācija, SAFE iegādes) pēc atslēgvārdu zondes (`industrij|ASCOD|SAFE|iepirkum|lokaliz|ražotn`) pa mēnešiem: 04 — 5, 05 — 11, 06 — 13, 07 — 13, 08 — 7, 09 (līdz 25.) — **19**. Trigeris «turpina augt vēlēšanu sezonā» izskatās izpildīts, bet tā ir zonde, ne lasīta kopa (T18). *Rīcība:* izlasīt septembra 19 rindas; ja klasteris apstiprinās — jauns kanoniskais topiks + aliasi + backfill + tēmas lapa (CHANGELOG 2026-06-10). *Īpašnieks:* operators.
-
-### [DEFERRED] `claim_vectors` 7 010 + `document_vectors` 450 bāreņu rindas; ne-vote claims bez vektora 0 (vote — apzināti, 08-21)
-
-Pārmērīts 2026-09-25 (kopu starpība, vec0 tabulai ne JOIN): `claim_vectors_rowids.rowid` − `claims.id` = **7 010** (nemainīts kopš 08-18); `document_vectors_rowids.rowid` − `document_chunks.id` = **450** (nemainīts). Ne-vote claims bez vektora **0**; `saeima_vote` bez vektora 18 525 — apzināti pēc 2026-08-21 verdikta. Ietekme kosmētiska: kNN var atgriezt mirušu `claim_id`/chunk. *Rīcība:* ja tīra — pāra rollback + pārbaude, ka neviens lasītājs uz bāreņiem nepaļaujas. *Īpašnieks:* operators.
+Tēmā `Aizsardzība un drošība` **970** pozīcijas (`SELECT COUNT(*) FROM claims WHERE claim_type='position' AND topic='Aizsardzība un drošība'`, 2026-10-21; 09-25 — 810, 06-10 ~409). Industrijas/iepirkumu klasteris (ASCOD, lokalizācija, SAFE iegādes) pēc atslēgvārdu zondes (`industrij|ASCOD|SAFE|iepirkum|lokaliz|ražotn`) pa mēnešiem: 04 — 5, 05 — 11, 06 — 13, 07 — 13, 08 — 7, 09 (līdz 25.) — **19**. Trigeris «turpina augt vēlēšanu sezonā» izskatās izpildīts, bet tā ir zonde, ne lasīta kopa (T18). *Rīcība:* izlasīt septembra 19 rindas; ja klasteris apstiprinās — jauns kanoniskais topiks + aliasi + backfill + tēmas lapa (CHANGELOG 2026-06-10). **Operators 2026-11-09: pagaidām NĒ.** *Trigeris:* lasītāju signāls vai tēma pārsniedz 1 500 pozīciju. *Īpašnieks:* operators.
 
 ### [OPEN] LSM slug dreifs — 40 raksta ID ar divām `documents` rindām (32 slugs, 8 `utm`)
 
@@ -65,13 +49,7 @@ Pārmērīts 2026-09-25 (kopu starpība, vec0 tabulai ne JOIN): `claim_vectors_r
 
 *Trigeris:* 15. Saeimas komisiju sastāvu apstiprināšana. *Rīcība:* viena pilna `role` pārskatīšana visiem deputātiem pret saeima.lv komisiju/frakciju lapām (**2026-10-06: Playwright NAV vajadzīgs** — amati ar datumiem jau ir `saeima_deputy_positions`, `scripts/ingest_saeima_activity.py --what profiles`; pārskatīšana = lasošs diff `role` pret pašreizējiem amatiem, ne skrāpēšana), pārī ar rollback; pārbaudi `derive_profile_kind` iznākumu katram mainītajam. *Īpašnieks:* operators.
 
-**2026-11-04, rezerves avots:** saeima.lv `/lv/sasaukumi/15-saeima/{deputati,komisijas,frakcijas}/` jau rāda 15. Saeimas amatus ar datumiem (statisks HTML, «No … Līdz»), titania DepWeb tikmēr atbild 401. Parseri neveidot bez operatora lēmuma: lapās nav saites uz DepWeb (`deputy_unid` nav iegūstams), un `deputy_unid` ir UNIQUE atslēgā — aizvietots ID dotu dublikātus dienā, kad titania atveras.
-
-### [OPEN] Spriedzei nav notikuma datuma — veci tvīti nonāk dienas pārskatā (2026-10-08)
-
-- **Problēma:** `political_tensions` datējas ar izveides dienu (notikuma datuma kolonnas nav), un saišu priekšlikumi pieņem arī vecus tvītus. 2026-10-08 20 no 36 spriedzēm bija no 2013.–2026-09 avotiem un publiski rādījās ar 10-08 datumu → dzēstas (`data/fix_drop_old_tensions_2026-10-08.sql`, rollback blakus; 8 no tām — 2026. gada septembris, 464–466, 470, 477, 488–490 — dzēstas datuma attēlojuma dēļ, ne novecojuma). 2026-10-12 tā paša iemesla dēļ noraidīti 15 veci priekšlikumi.
-- **Rīcība:** filtrs pēc avota `published_at` vai notikuma datuma kolonna; pēc tam izvērtēt, vai rollback atjauno 8 septembra spriedzes.
-- **Īpašnieks:** operators (shēmas vai filtra izvēle).
+**2026-11-04, rezerves avots:** saeima.lv `/lv/sasaukumi/15-saeima/{deputati,komisijas,frakcijas}/` jau rāda 15. Saeimas amatus ar datumiem (statisks HTML, «No … Līdz»), titania DepWeb tikmēr atbild 401. Parseri NEBŪVĒT (operators 2026-11-09, § Ne-darīt): lapās nav saites uz DepWeb (`deputy_unid` nav iegūstams), un `deputy_unid` ir UNIQUE atslēgā — aizvietots ID dotu dublikātus dienā, kad titania atveras.
 
 ### [OPERATOR] 2026-10-20 rutīnas atlikums — Mieriņas partija
 - **Mieriņa (pid 17)** saka, ka līdz ZZS kongresam lems par dalību partijā (claim 743270) — pēc kongresa pārbaudīt `party` (T6).

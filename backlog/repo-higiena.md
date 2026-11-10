@@ -14,12 +14,6 @@ Iekāršanos novērsa testu `socketpair` aizvietotājs (`tests/_socketpair_shim.
 
 *Īpašnieks:* koda darbs (pirmie divi), operators (draiveris).
 
-### [OPEN] Attēla paraksta pēcapstrādes vārts — (b) OCR/stūru heiristika (prompta aizliegums ieviests 2026-09-05)
-
-2026-09-04 modelis brief attēlā (`brief_images` #310) apakšējā labajā stūrī uzzīmēja **izdomātu kursīvu mākslinieka parakstu**, lai gan `--no-text` prompts aizliedza tekstu. Anonīmai vietnei autorības zīme attēlā ir fabricēta atribūcija, un vārtos to neviens nemeklē. (a) prompta aizliegums ieviests (`src/graphics/prompt.py::TEXT_FREE_CONSTRAINTS` + `tests/test_graphics_prompt.py::test_text_free_constraints_forbid_authorship_marks`; CHANGELOG 2026-09-05 (4)), bet tas paļaujas uz modeļa paklausību.
-
-*Rīcība (b):* pēcapstrādes vārts — OCR vai malu/stūru heiristika pār ģenerēto PNG pirms `save_image_row()`, kas karogo tumšus sīkstruktūras blāķus tukšajā malā. Līdz tam manuālā stūru apskate pirms apstiprināšanas paliek obligāta. *Īpašnieks:* operators (vai būvēt OCR).
-
 ### [OPEN] «Kurš un kas redzams vietnē» — noteikums ~90 vietās bez īpašnieka; paplašināt `src/scope.py` (2026-10-11)
 
 Aktīvā politiķa filtrs render slānī 31 kopijā trijās formās, 7 auditorijas saraksti ar 4 dažādiem saturiem, «publicēta pretruna» trijos pierakstos. Latentas novirzes: `render/contradictions.py`, `topics.py:200`, `links.py:286` nefiltrē neaktīvos (10-08 kopijā 0 skartu rindu); `render/focus.py:26` izlaiž `influencer`, `briefs.py:817` to iekļauj; `src/dashboard/views/backlog.py:57` apiet `scope.queue_politician_sql()`.
@@ -43,8 +37,11 @@ Norādes izkaisītas (README:87, CONTRIBUTING:24, dev-setup:36); `init_db()` dod
 ### [OPEN] 2026-11-07 koda pārskata atlikums — drošība, atkarības, mirušais kods (2026-11-07)
 
 Pārskats (36 aģenti, tikai lasīšana; katru atradumu pārbaudīja vēl viens aģents) — pilns saraksts ar `file:line` un pierādījumiem: [`docs/audits/2026-11-07-koda-parskats/README.md`](../docs/audits/2026-11-07-koda-parskats/README.md). Tajā pašā dienā izlabots: CI kļūme (`HTMLParser._pending`), divi salauzti frontmatter, instrukciju drifts (audita beigās). Atlikušais:
-- **Operatora lēmumi:** audita § 1, 3. punkts (viens datu fails publiskajā spogulī; detaļas tikai audita failā); DB kopija ārpus šī datora (visas 7 kopijas ir tajā pašā datorā); KNAB partiju finanses (redzamas 2 no 19 partijām, plūsma stāv kopš 07-24) — atjaunot vai iesaldēt; `src/social_agent` — apturēt vai arhivēt.
-- **Koda labojumi (S):** ops paneļa `POST` maršrutiem nav izcelsmes pārbaudes (`src/dashboard/server.py`); aktivitāšu panelis slēpj ~35 % notikumu, un 30 s atjaunošana dublē rindas; `src/dashboard/views/pending.py:23` budžets 5 USD (īstais `MONTHLY_BUDGET_USD`); CI pytest bez `-n` (654 s no 20 min limita); `guard_force_push.py` neredz `git -C … push`; trīs vienreizēji skripti bez atteikuma atsauktu operatora lēmumus.
-- **Atkarības un mirušais kods (S):** `crawl4ai` nesasniedzams (249 MB), video steks galvenajā `requirements.txt` (374 MB), `anthropic` un 11 neizmantotas keyring atslēgas, novecojis `requirements.lock`, matcher uzvārdu rezerves ceļš, KNAB HTML ceļš, `lemmatize`, `og-image.png`, lieki DB indeksi.
+- **Izdarīts 2026-11-10** (verdikts 4, commit «Verdikts 4: liekās pakotnes ārā…»): `crawl4ai` un `anthropic` izņemti no `requirements.txt`, video steks pārcelts uz `requirements-video.txt`, CI `pytest -n 3 --durations=25`, seši pabeigti vienreizējie skripti atsaka rakstīšanu (`tests/test_oneoff_refusals.py`), divi `filterwarnings`.
+- **`src/social_agent` paliek kokā** (verdikts 39 nesakrīt ar mērījumu): to importē `scripts/oneoff-content/render_infografiku_tweet_bank.py`, `render_pretrunu_tweet_bank.py`, `gen_spruds_tour_image.py` un `tests/test_contradiction_labels.py`; pēdējā maiņa modulī ir 2026-11-04 (`77511fdbd`). Jauns fakts: šie importi pārcelti citur.
+- **KNAB partiju finanses** (redzamas 2 no 19 partijām, plūsma stāv kopš 07-24): operators 2026-11-09 — tagad datuma etiķete lapā, atjaunošana atsevišķs darbs pēc valdības maiņas. Etiķete izdarīta 2026-11-10 (partijas cilnē «Finanses»: «KNAB dati uz 24.07.2026», no `MAX(knab_donations.scraped_at)`); nav deplojots. Atjaunošana nav sākta.
+- **Koda labojumi (S):** izdarīts 2026-11-10 — `guard_force_push.py` redz arī `git -C …`/`-c …` pirms `push` (`tests/test_guard_force_push.py`). **Atvērts:** `src/coalition.py:190` `_short_name_map` ignorē padoto DB un atver noklusēto `data/atmina.db`, tāpēc `src.render --db <kopija>` šajā solī klusi lasa dzīvo DB, bet no worktree izveido tukšu failu (atrasts 2026-11-10).
+- **Atkarības un mirušais kods (S), atlikušie:** 11 neizmantotas keyring atslēgas, `requirements.txt` komentāri par `social_agent`, matcher uzvārdu rezerves ceļš, KNAB HTML ceļš, `lemmatize`, `og-image.png`, lieki DB indeksi. `requirements.lock`: 2026-11-10 izņemtas `crawl4ai`, `anthropic` un 38 tikai to atkarības; pārējās versijas nav mainītas. Fails joprojām neapraksta venv (koda pārskats 11-07: 102 no 217 ierakstiem neatbilst, neviens to nelasa, CI to neizmanto). Atliek izvēlēties: ģenerēt kā soli vai dzēst.
+- **`embed_text` aizstājējs testos** (§ Testu vide augstāk) nav sākts: prasa pilnu testu skrējienu vienatnē.
 
-*Trigeris:* nākamā koda sesija vai operatora lēmums par § 1, 3. punktu. *Īpašnieks:* operators (lēmumi), koda darbs (pārējais).
+*Trigeris:* nākamā koda sesija. *Īpašnieks:* koda darbs; KNAB — operators.

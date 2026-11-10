@@ -1,7 +1,7 @@
 # Melnraksts. Avoti un datumi pārņemti tikai no četriem norādītajiem rakstiem.
 slug: saites-visvanati-2026
 title: 'Kas ar ko saistīts: pilsonības, institūts un uzņēmumi'
-data_date: '2026-10-25'
+data_date: '2026-11-09'
 draft: false
 articles:
   visvanati-pilsoniba-2026: Divas Saeimas pilsonības vienai ģimenei
@@ -114,7 +114,7 @@ entities:
   - 16
   summary: Pilsonības likums pieņemts 2026. gada 15. oktobrī un atcelts 22. oktobrī.
   not_claimed: Saite nav pārkāpums. Reģistrēts amats Latvijas uzņēmumos šeit nav konstatēts; darbu laboratorijā
-    apraksta anotācija.
+    apraksta anotācija, viespētnieces statusu institūtā — LETA publikācija (līgumu neesam redzējuši).
   color: vis
 - id: kalvins
   type: person
@@ -1402,6 +1402,18 @@ links:
   article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
   caveat: Paša emitenta ziņojums SEC; neapgalvojam, ka galvojums ir izmantots.
 
+- id: s69
+  from: divja
+  to: lza-ei
+  verb: ir vadošā viespētniece ar bezatlīdzības sadarbības līgumu
+  period: Kopš 2026. gada janvāra; LETA publikācija — 2026. gada 5. novembrī
+  tier: 2
+  kind: amats
+  source:
+    label: TVNET/LETA · 05.11.2026 · arhīvs
+    url: https://web.archive.org/web/20261108234209/https://www.tvnet.lv/8577640/visvanatas-latvijas-pilsonibas-pamatojuma-minetie-investiciju-projekti-ir-solijumu-limeni
+  article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
+  caveat: Pēc LETA publikācijas, kurā atstāstīti institūta skaidrojumi; līgumu neesam redzējuši. Pienākumi — galvenokārt ekonomikas foruma organizēšana un ekspertu piesaiste.
 guides:
 - article: visvanati-pilsoniba-2026
   label: Pilsonības
@@ -1451,6 +1463,7 @@ guides:
   - s51
   - s59
   - s60
+  - s69
 - article: s-baltic-uzturesanas-atlaujas-2026
   label: S-Baltic un 50 000 €
   links:

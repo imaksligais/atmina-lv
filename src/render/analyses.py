@@ -226,6 +226,8 @@ def _load_analyses(*, articles_dir: Path | None = None, include_drafts: bool = F
             "title": fm.get("title", ""),
             "description": fm.get("description", ""),
             "date": str(fm.get("date", "")),
+            # Statiska lapa (verdikts 19): datums, uz kuru dati ir pareizi; dzīvai lapai nav.
+            "as_of": str(fm.get("as_of") or ""),
             "tags": fm.get("tags", []),
             "url": f"analizes/{md_file.stem}.html",
             "content_html": content_html,
@@ -321,6 +323,7 @@ def render_analyses(
         post_ctx: dict[str, Any] = {
             "title": analysis["title"],
             "date": analysis["date"],
+            "as_of": analysis.get("as_of") or "",
             "type_label": "Atradums" if is_atradums else "Tematiskā analīze",
             # blog-post.html.j2 og:description lasa post.preview.
             "preview": analysis["description"],

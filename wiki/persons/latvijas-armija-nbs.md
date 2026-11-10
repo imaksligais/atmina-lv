@@ -6,7 +6,7 @@ relationship_type: organization
 positions: 83
 votes: 0
 contradictions: 0
-mentioned_in: 2829
+mentioned_in: 2855
 last_active: 2026-11-04
 top_topics:
 - Aizsardzība un drošība
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (60%), [[topics/droni|Droni]] (27%), [[topics/imigracija|Imigrācija]] (7%)
-- **30d:** 16 claims, 1.0× bāzes līnija
+- **30d:** 14 claims, 0.8× bāzes līnija
 <!-- /SYNC-AUTO -->

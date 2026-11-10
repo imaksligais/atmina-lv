@@ -190,7 +190,7 @@ def rendered(tmp_path_factory):
     withdraw_contradiction(2, NOTE, db_path=db_path)
     og_ids: list[int] = []
 
-    def _no_playwright(contradictions, env, out_dir):
+    def _no_playwright(contradictions, env, out_dir, versions=None):
         og_ids.extend(c["id"] for c in contradictions)
         return 0
 

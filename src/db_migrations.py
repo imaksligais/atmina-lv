@@ -130,6 +130,11 @@ def apply_migrations(db: sqlite3.Connection) -> None:
         db.execute("ALTER TABLE documents ADD COLUMN summary TEXT")
     if "is_paywall" not in doc_cols:
         db.execute("ALTER TABLE documents ADD COLUMN is_paywall BOOLEAN DEFAULT FALSE")
+    # 2026-11-10 (plāns 2026-11-10-citetais-tvits): citētais tvīts un atbildes
+    # vecāks — JSON saraksts {kind, author, id, url, text}. Tikai ekstraktora
+    # kontekstam; `content` paliek runātāja paša teksts.
+    if "context_json" not in doc_cols:
+        db.execute("ALTER TABLE documents ADD COLUMN context_json TEXT")
 
     # Migration: add negative_patterns to tracked_politicians for
     # name-collision rejection (e.g. pid=146 Andris Bērziņš ZZS deputy vs.
@@ -137,6 +142,12 @@ def apply_migrations(db: sqlite3.Connection) -> None:
     tp_cols = [r[1] for r in db.execute("PRAGMA table_info(tracked_politicians)").fetchall()]
     if "negative_patterns" not in tp_cols:
         db.execute("ALTER TABLE tracked_politicians ADD COLUMN negative_patterns TEXT DEFAULT '[]'")
+    # 2026-11-10 (verdikti 11-09 #5): VAD-only reject patterns. The VAD
+    # declarations filter reads vad_negative_patterns ∪ negative_patterns; the
+    # news matcher reads ONLY negative_patterns (a VAD namesake pattern there
+    # vetoed whole news documents — backlog/matcher.md).
+    if "vad_negative_patterns" not in tp_cols:
+        db.execute("ALTER TABLE tracked_politicians ADD COLUMN vad_negative_patterns TEXT")
     # x_handle is live in production via ad-hoc migration but predated schema.sql.
     # It is SELECTed unconditionally by render_personas/parties/politicians; a
     # fresh init_db DB without it crashes those pages. Several test files already

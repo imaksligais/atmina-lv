@@ -48,12 +48,7 @@ Args:
   </div>
   {% endif %}
 
-  {# HTMX 30s poll target — appends new rows above the existing list. M2/Task 2.x can fully wire. #}
-  <div hx-get="/api/activity?since_logs={{ activity.cursor.logs | default(0) }}&since_images={{ activity.cursor.brief_images | default(0) }}&since_notes={{ activity.cursor.context_notes | default(0) }}&since_analyses={{ activity.cursor.analyses | default(0) }}&filter={{ activity.current_filter }}"
-       hx-trigger="every 30s"
-       hx-swap="beforeend"
-       hx-target="#activity-rows"
-       class="hidden"></div>
+  {% include "partials/_activity_poll.html.j2" %}
   {% else %}
   <div class="mt-4 rounded border border-dashed border-slate-300 dark:border-slate-700 p-6 text-center">
     <p class="text-sm text-slate-500 dark:text-slate-400">

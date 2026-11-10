@@ -77,7 +77,7 @@
     <div class="brief-pagehead-meta">
       <span class="brief-pagehead-kicker">{{ post.type_label }}</span>
       <span class="brief-pagehead-sep">·</span>
-      <span class="brief-pagehead-date">{{ post.date|lv_date }}</span>
+      <span class="brief-pagehead-date">{% if post.as_of %}Stāvoklis uz {{ post.as_of|lv_date }}{% else %}{{ post.date|lv_date }}{% endif %}</span>
     </div>
     <h1 class="brief-pagehead-title">{{ post.display_title or post.title }}</h1>
   </header>

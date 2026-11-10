@@ -6,7 +6,7 @@ relationship_type: organization
 positions: 21
 votes: 0
 contradictions: 0
-mentioned_in: 804
+mentioned_in: 806
 last_active: 2026-10-20
 top_topics:
 - Mežsaimniecība

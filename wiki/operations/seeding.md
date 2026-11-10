@@ -53,6 +53,8 @@ Tie ir divi cilvēki: id=81 ir JV deputāts ar 6 473 `faction='JV'` balsojumiem 
 
 `negative_patterns` salīdzina burtiski, bez normalizācijas. Svešvārdam ar vairākām LV rakstībām (vienkāršs/dubults līdzskanis) ieraksti VISUS variantus: Kols (id=24) 2026-04-26 atkal piesaistījās amerikāņa «Cole Thomas Allen» rakstam, jo bija tikai «Tomass Alens», ne «Tomass Allens».
 
+`negative_patterns` ir ziņu matcher veto visam dokumentam; VID deklarāciju tādvārža iestādes/amata paterns iet `vad_negative_patterns` ([vad-declarations.md](vad-declarations.md)).
+
 ## Amatu terminoloģija `role` laukā
 
 «Rīgas domes priekšsēdētājs» IR mēra formālais tituls, tāpēc «priekšsēdētāja vietnieks» un «mērs» nav sinonīmi (Ķirša gadījums, 2026-08-18).
@@ -66,3 +68,19 @@ Tie ir divi cilvēki: id=81 ir JV deputāts ar 6 473 `faction='JV'` balsojumiem 
 Partijas maiņa = manuāls `UPDATE tracked_politicians SET party` + pāra rollback (T6). Atsevišķas `party_history` tabulas nav; to atver, ja pārskatam vajag partiju izteikuma brīdī (2026-09-25: `ls data/rollback_*party*` → 18 rokas labojumi, 4 no tiem 09-23…09-25).
 
 **Deputāts pārstāj balsot** (kļūst par ministru, mandāts beidzas, cits amats) → rinda `data/bio/saeima_mandats.yaml` (`kind`, `since` = Saeimas puses datums, `office`, `source_url`); patiesības avots — titania.saeima.lv `deputiesByMandate`. Profila Saeimā cilne to rāda; sargs teikumu paslēpj pats, kad politiķis atkal balso, bet jaunu rindu nepievieno (CHANGELOG 2026-10-09 (9)).
+
+## Valdības maiņas diena
+
+Dienā, kad Saeima izsaka uzticību jaunam Ministru kabinetam, secība ir šāda:
+
+1. `/saeima-ingest` par šo sēdi — uzticības balsojumam jābūt DB ar visām deputātu rindām.
+2. `scripts/seed_coalition_periods.py` (dry-run) → rollback rinda `data/rollback_*.sql` commitā → `--apply`. Ja frakcijas balsojumā vēl nav, skripts grupē pēc deputātu partijas un izdrukā saucēju; tukša koalīcija ir STOP.
+3. `scripts/government_switch.py --template --out <plāns>.yaml` — koalīcija no tā paša balsojuma, ieteiktie partiju statusi, ministru un parlamentāro sekretāru lomas.
+4. Operators plānā aizpilda `new_role` (un, ja vajag, labo `new_status`); `status`/`role` nemaina — tās ir novecošanās pārbaude. Sagatavē ir tikai tie, kuru `role` jau min ministru vai parlamentāro sekretāru: jaunam ministram rindu pievieno ar roku (`id`, `name` un `role` tieši kā DB, `new_role` — jaunais amats).
+5. `government_switch.py --plan <plāns>.yaml` (dry-run): izmaiņas, profila veids pirms/pēc, audit 24 pēc piemērošanas.
+6. `--plan <plāns>.yaml --write-sql` → `data/fix_valdiba_<datums>.sql` + `data/rollback_valdiba_<datums>.sql`; abus commit.
+7. `--plan <plāns>.yaml --apply` — viena transakcija; novecojis plāns vai labots SQL fails ir STOP.
+8. `/audit-integrity` — pārbaudei 24 jābūt 0.
+9. Render un deploy — tikai ar operatora skaidru atļauju.
+
+Skripts nedara: Personu lapas grupēšanu sānjoslā (`backlog/vietne-ui.md`) un pilnu komisiju/frakciju lomu pārskatu (`backlog/dati-db.md`, gaida titania datus). Tos dara atsevišķi.

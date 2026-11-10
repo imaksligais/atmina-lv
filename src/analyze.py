@@ -16,7 +16,7 @@ from typing import Optional
 from src.db import _float_list_to_bytes, get_db, lv_cutoff, now_lv
 from src.embeddings import embed_text
 from src.preflight import ensure_analysis_env
-from src.quality import quote_end_mismatch
+from src.quality import paywall_marker, quote_end_mismatch
 from src.quoted_speaker import pending_quoted_mentioned
 from src.scope import queue_politician_sql
 from src.support import check_support, dropped_qualifiers
@@ -354,6 +354,70 @@ def get_pending_politicians(days: int = 1) -> list[dict]:
     return sorted(result.values(), key=lambda e: e["doc_count"], reverse=True)
 
 
+_CONTEXT_LABELS = {
+    "quote": "Citē",
+    "reply": "Atbild",
+    "reply_root": "Sarunas sākums",
+}
+
+
+def format_tweet_context(context_json: str | None) -> str | None:
+    """Extractor-only view of ``documents.context_json`` (2026-11-10).
+
+    One ``[Atbild @x: …]`` / ``[Citē @x: …]`` / ``[Sarunas sākums @x: …]``
+    line per item. It is READ-ONLY context: ``quote`` and ``support`` come
+    from ``content`` only — the ``support`` gate checks ``title + content``
+    and refuses anything from here (``.claude/agents/claim-extractor.md``).
+    """
+    if not context_json:
+        return None
+    try:
+        items = json.loads(context_json)
+    except (TypeError, ValueError):
+        return None
+    lines = []
+    for c in items if isinstance(items, list) else []:
+        label = _CONTEXT_LABELS.get(c.get("kind"))
+        if label and c.get("author") and c.get("text"):
+            lines.append(f"[{label} @{c['author']}: {c['text']}]")
+    return "\n".join(lines) or None
+
+
+def _attach_context(d: dict) -> None:
+    """Replace the raw ``context_json`` column with the extractor view."""
+    ctx = format_tweet_context(d.pop("context_json", None))
+    if ctx:
+        d["context"] = ctx
+
+
+def get_claim_source(claim_id: int) -> dict | None:
+    """The source a claim is JUDGED against, as the extractor saw it.
+
+    For readers that check a stored claim against its document —
+    ``@stance-checker``, ``@devils-advocate``, the NEEDS_REVIEW resolution
+    (``/dienas-rutina`` 2c): ``{claim_id, document_id, source_url, title,
+    content}`` plus ``context`` when the tweet replies to or quotes another
+    one. ``context`` is read-only: quote/support come only from
+    ``title + content``. None when the claim or its document is missing.
+    """
+    db = get_db()
+    try:
+        row = db.execute(
+            """SELECT c.id AS claim_id, d.id AS document_id, d.source_url,
+                      d.title, d.content, d.context_json
+               FROM claims c JOIN documents d ON d.id = c.document_id
+               WHERE c.id = ?""",
+            (claim_id,),
+        ).fetchone()
+    finally:
+        db.close()
+    if row is None:
+        return None
+    d = dict(row)
+    _attach_context(d)
+    return d
+
+
 def get_politician_documents(
     pid: int, days: int = 1, max_results: int = 20
 ) -> list[dict]:
@@ -361,7 +425,9 @@ def get_politician_documents(
 
     Each entry: {id, content, source_url, source_domain, platform, language,
                  scraped_at, word_count, is_auto_caption}
-    Content is truncated to ~2000 words if very long.
+    Content is truncated to ~2000 words if very long. A tweet that quotes or
+    replies to another tweet also carries ``context`` (``format_tweet_context``)
+    — read-only, never a source for ``quote``/``support``.
 
     When the pending queue holds MORE than ``max_results`` docs, the cut is
     reported instead of silent: stderr gets a warning and every returned doc
@@ -388,7 +454,8 @@ def get_politician_documents(
     ).fetchone()[0]
     rows = db.execute(
         f"""SELECT d.id, d.content, d.source_url, d.source_domain, d.platform, d.language,
-                  d.scraped_at, d.published_at, d.word_count, d.is_auto_caption, dp.role
+                  d.scraped_at, d.published_at, d.word_count, d.is_auto_caption, dp.role,
+                  d.context_json
            {queue_sql}
            ORDER BY d.scraped_at DESC LIMIT ?""",
         (pid, cutoff, max_results),
@@ -397,6 +464,7 @@ def get_politician_documents(
     docs = []
     for r in rows:
         d = dict(r)
+        _attach_context(d)
         # Truncate very long content
         content = d.get("content", "")
         if content and len(content.split()) > 2000:
@@ -425,13 +493,15 @@ def get_politician_documents(
         lane_rows = db.execute(
             f"""SELECT d.id, d.content, d.source_url, d.source_domain,
                       d.platform, d.language, d.scraped_at, d.published_at,
-                      d.word_count, d.is_auto_caption, 'mentioned' AS role
+                      d.word_count, d.is_auto_caption, 'mentioned' AS role,
+                      d.context_json
                FROM documents d WHERE d.id IN ({ph})
                ORDER BY d.scraped_at DESC""",
             take,
         ).fetchall()
         for r in lane_rows:
             d = dict(r)
+            _attach_context(d)
             content = d.get("content", "")
             if content and len(content.split()) > 2000:
                 words = content.split()
@@ -807,6 +877,19 @@ def save_analysis(
                             file=sys.stderr,
                         )
 
+                    # Paywall ievads (claim-extractor § 4 šaubu pazīme): pozīcija
+                    # balstās tikai uz bezmaksas daļu. Nebloķē — atzīmē pārskatei
+                    # (līdz 2026-11-10 23 no 51 šādām pozīcijām bija confidence > 0,6).
+                    paywall = (
+                        paywall_marker(doc_text_cache.get(doc_id))
+                        if c.get("claim_type", "position") == "position" else None
+                    )
+                    if paywall and "NEEDS_REVIEW" not in reasoning:
+                        reasoning = (
+                            f"NEEDS_REVIEW: paywall stub — source text is only the "
+                            f"free preview ({paywall!r}). Original reasoning: {reasoning}"
+                        )
+
                     claim_result = json.loads(store_claim(
                         opponent_id=pid,
                         document_id=c["document_id"],
@@ -964,6 +1047,26 @@ def save_analysis(
                             print(
                                 f"[save_analysis] quote_end_mismatch pid={pid} "
                                 f"claim_id={new_claim_id} source continues {cut!r}",
+                                file=sys.stderr,
+                            )
+
+                        if paywall and new_claim_id > pre_call_max_id and first_idx is None:
+                            failures.append({
+                                "type": "paywall_stub",
+                                "opponent_id": pid,
+                                "claim_id": new_claim_id,
+                                "document_id": doc_id,
+                                "marker": paywall,
+                                "hint": (
+                                    "Stored, marked NEEDS_REVIEW, not blocked. "
+                                    "The document is a paywall preview: keep "
+                                    "confidence <= 0.6 and make sure the stance "
+                                    "rests only on the visible text."
+                                ),
+                            })
+                            print(
+                                f"[save_analysis] paywall_stub pid={pid} "
+                                f"claim_id={new_claim_id} doc={doc_id}",
                                 file=sys.stderr,
                             )
 

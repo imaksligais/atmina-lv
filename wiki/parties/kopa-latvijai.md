@@ -1,7 +1,7 @@
 ---
 party: Kopā Latvijai
 members: 2
-claims: 27
+claims: 28
 program_promises: 0
 contradictions: 0
 votes_par: 2
@@ -14,8 +14,8 @@ top_topics:
 - Pašvaldības
 - Aizsardzība un drošība
 - Vēlēšanas
+- Tieslietas
 - Ārpolitika
-- Valsts pārvalde
 ---
 
 <!-- SYNC-AUTO -->

@@ -17,7 +17,7 @@ from __future__ import annotations
 import logging
 from itertools import permutations
 
-from src.db import lv_cutoff
+from src.db import TENSION_MAX_SOURCE_AGE_DAYS, lv_cutoff
 from src.matcher import extract_twitter_author_handle
 from src.typesafe_client import TypeSafeUnavailable, system_one
 
@@ -55,17 +55,24 @@ def _is_bare_retweet(content: str) -> bool:
 
 
 def candidate_docs(db, days: int) -> list[int]:
-    """Docs in the window linking 2..MAX_POLS_PER_DOC tracked persons, not yet judged, not bare RTs."""
+    """Docs in the window linking 2..MAX_POLS_PER_DOC tracked persons, not yet judged, not bare RTs.
+
+    The window is by scraped_at, but an old tweet can be scraped today: a doc
+    whose published_at is older than TENSION_MAX_SOURCE_AGE_DAYS is not proposed
+    (store_tension would refuse it on accept). No parsable published_at = kept."""
     kinds = ",".join("?" * len(_TRACKED_KINDS))
     rows = db.execute(
         f"""SELECT d.id, d.content FROM documents d
             JOIN document_politicians dp ON dp.document_id = d.id
             JOIN tracked_politicians p ON p.id = dp.politician_id
             WHERE d.scraped_at >= ?
+              AND (julianday(d.published_at) IS NULL
+                   OR julianday('now') - julianday(d.published_at) <= ?)
               AND p.relationship_type IN ({kinds})
               AND d.id NOT IN (SELECT document_id FROM tension_judged)
             GROUP BY d.id HAVING COUNT(DISTINCT dp.politician_id) BETWEEN 2 AND ?
-            ORDER BY d.id""", (lv_cutoff(days), *_TRACKED_KINDS, MAX_POLS_PER_DOC)).fetchall()
+            ORDER BY d.id""", (lv_cutoff(days), TENSION_MAX_SOURCE_AGE_DAYS, *_TRACKED_KINDS,
+                               MAX_POLS_PER_DOC)).fetchall()
     return [r["id"] for r in rows if not _is_bare_retweet(r["content"])]
 
 

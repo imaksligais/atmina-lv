@@ -21,6 +21,7 @@ from src.render._common import (
     _render_page,
     _slugify,
     party_color_map,
+    tweet_context_links,
 )
 
 
@@ -52,7 +53,7 @@ def _fetch_x_data(db: sqlite3.Connection) -> dict[str, Any]:
     # discipline as the profile X subtab (`politicians.py` role filter).
     post_rows = db.execute("""
         SELECT d.id, d.content, d.source_url, d.scraped_at, d.published_at,
-               d.reply_count, d.retweet_count, d.favorite_count,
+               d.reply_count, d.retweet_count, d.favorite_count, d.context_json,
                p.id AS politician_id, p.name AS politician_name, p.party
         FROM documents d
         JOIN document_politicians dp ON dp.document_id = d.id
@@ -81,6 +82,8 @@ def _fetch_x_data(db: sqlite3.Connection) -> dict[str, Any]:
         d["content_short"] = (d["content"] or "")[:280]
         d["date"] = _format_tweet_time(d.get("published_at"), d.get("scraped_at"))
         d["is_rt"] = (d["content"] or "").startswith("RT @")
+        # Label + link only; the foreign text stays out of the page (2026-11-10).
+        d["ctx_links"] = tweet_context_links(d.pop("context_json"))
         d["topic"] = topic_map.get(d["source_url"])
         d["party_color"] = party_colors.get(d["party"], FALLBACK_COLOR)
         d["handle"] = handle_map.get(d["politician_id"])

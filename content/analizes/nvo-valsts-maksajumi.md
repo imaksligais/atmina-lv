@@ -2,6 +2,7 @@
 title: Valsts maksājumi NVO 2024–2026
 description: "Valsts budžeta maksājumi biedrībām un nodibinājumiem pēc Valsts kases datiem: 2025. gadā 168,7 miljoni eiro 1 940 organizācijām — 25 lielākās saņem 41%. Resori, jomas, ģeogrāfija un koncentrācija interaktīvā datu analīzē."
 date: 2026-08-09
+as_of: "2026-08-09"
 tags:
   - NVO
   - finansējums

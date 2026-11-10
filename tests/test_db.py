@@ -1243,6 +1243,36 @@ class TestStoreTensionUrlValidation:
         )
         assert isinstance(tid, int)
 
+    def test_old_source_refused_fresh_stored_undated_flagged(self, seeded_db, capsys):
+        """A tension is dated by created_at, so an old source renders as today's
+        news (2026-10-08: 20 of 36 tensions from 2013–2026-09 sources). Old
+        published_at → refused; fresh → stored; no published_at → stored with
+        a «date not checked» warning (we cannot prove it is old)."""
+        from src.db import store_tension
+        db = get_db(seeded_db)
+        db.execute("INSERT INTO documents (id, content, content_hash, source_url, published_at) VALUES "
+                   "(3, 'old', 'h3', 'https://x.com/a/status/3', "
+                   "strftime('%Y-%m-%dT%H:%M:%S+00:00', 'now', '-30 days'))")
+        db.execute("INSERT INTO documents (id, content, content_hash, source_url, published_at) VALUES "
+                   "(4, 'new', 'h4', 'https://x.com/a/status/4', "
+                   "strftime('%Y-%m-%dT%H:%M:%S+00:00', 'now', '-1 days'))")
+        db.commit()
+        db.close()
+        kw = dict(source_pid=1, target_pid=2, topic="airBaltic",
+                  description="Alpha kritizē Beta pozīciju par ārpolitiku.", db_path=seeded_db)
+
+        with pytest.raises(ValueError, match="days old"):
+            store_tension(source_url="https://x.com/a/status/3", **kw)
+        assert isinstance(store_tension(source_url="https://x.com/a/status/4", **kw), int)
+        assert "date not checked" not in capsys.readouterr().err
+        assert isinstance(store_tension(source_url="https://real.lv/a", **kw), int)
+        assert "date not checked" in capsys.readouterr().err
+
+        db = get_db(seeded_db)
+        stored = {r[0] for r in db.execute("SELECT source_url FROM political_tensions")}
+        db.close()
+        assert stored == {"https://x.com/a/status/4", "https://real.lv/a"}, stored
+
 
 class TestSearchSimilarClaimsFilter:
     """Phase A: search_similar_claims accepts claim_type_filter. The filter

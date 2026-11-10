@@ -1,14 +1,14 @@
 ---
 topic: Transports
-positions: 174
-votes: 24851
-politicians: 46
+positions: 180
+votes: 25776
+politicians: 47
 contradictions: 1
-last_activity: '2026-11-06 00:00:00'
+last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/atis-svinka|Atis Švinka]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
-- '[[persons/rihards-kozlovskis|Rihards Kozlovskis]]'
 - '[[persons/viktors-valainis|Viktors Valainis]]'
+- '[[persons/rihards-kozlovskis|Rihards Kozlovskis]]'
 - '[[persons/ansis-pupols|Ansis Pūpols]]'
 ---

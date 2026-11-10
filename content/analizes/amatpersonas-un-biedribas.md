@@ -2,6 +2,7 @@
 title: "Amatpersonas un valsts finansētās biedrības: ko rāda deklarāciju un maksājumu sasaiste"
 description: "Sasaistījām 2 095 amatpersonu deklarācijas ar 76 819 valsts budžeta maksājumu rindām biedrībām. 165 pārklājumi, no kuriem lielākā daļa izrādās nevainīgi — un tieši tas padara redzamus divus kanālus, kuros ministrijas rīcības brīvība ir īsta, un sešus gadījumus, kuros amats, nauda un lēmumu vara atrodas tuvu cits citam."
 date: "2026-08-12"
+as_of: "2026-08-12"
 tags: ["NVO", "deklarācijas", "interešu konflikts", "Valsts kase", "SIF", "caurskatāmība"]
 image: "amatpersonas-un-biedribas.png"
 image_light: "amatpersonas-un-biedribas-light.png"

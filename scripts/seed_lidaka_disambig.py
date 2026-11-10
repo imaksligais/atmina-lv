@@ -33,7 +33,18 @@ NEGATIVE_PATTERNS = [
 FALSE_POSITIVE_DOCS = [29378, 7363]
 
 
+REFUSAL = (
+    "ATTEIKTS: seed_lidaka_disambig.py ir pabeigts vienreizējs skripts (2026-05-03).\n"
+    "  Palaišana pārrakstītu pid=109 `negative_patterns` ar 2026. gada maija sarakstu\n"
+    "  un dzēstu junction rindas, apejot vēlākus operatora lēmumus.\n"
+    "  Jaunus izslēgumus pievieno caur /seed-entity ar operatora apstiprinājumu\n"
+    "  un pāra data/rollback_*.sql."
+)
+
+
 def main():
+    # Refusal added 2026-11-10 (docs/audits/2026-11-07-koda-parskats § 4).
+    raise SystemExit(REFUSAL)
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
 

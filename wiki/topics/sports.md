@@ -1,7 +1,7 @@
 ---
 topic: Sports
 positions: 54
-votes: 1513
+votes: 1608
 politicians: 32
 contradictions: 0
 last_activity: '2026-11-04 00:00:00'

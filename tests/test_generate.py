@@ -1001,6 +1001,37 @@ class TestPretrunaDetailTemplate:
         assert "pretrunas/17.html" in html
 
 
+def test_pretruna_og_image_url_changes_when_card_text_changes(tmp_path, monkeypatch):
+    """X/FB kešo kartīti pēc URL: pēc teksta labojuma tai pašai pretrunai jābūt
+    jaunai og:image adresei (?v=<kartītes heša>), kā «Atradumiem» (2026-10-21 (4))."""
+    import re
+    from pathlib import Path
+
+    import src.render._orchestrator as orch
+    from src.render.contradictions import render_contradictions
+
+    monkeypatch.chdir(Path(__file__).resolve().parent.parent)
+    row = _og_row(
+        id=17, slug="nav-tada-foto", opponent_id=5, party_color="#0066cc",
+        severity_glyph="↺", has_photo=False, old_source="https://lsm.lv/a",
+        new_source="https://delfi.lv/b", old_source_domain="lsm.lv",
+        new_source_domain="delfi.lv", summary="Kopsavilkums", detected_at="2026-10-14 12:00:00",
+        salience=0.5, delta_days=7, vote_summary=None, vote_id=None,
+    )
+
+    def og(stance):
+        site = tmp_path / f"s{len(list(tmp_path.iterdir()))}"
+        site.mkdir()
+        render_contradictions(orch._make_env(), site, [dict(row, new_stance=stance)], ["Jaunā Vienotība"])
+        html = (site / "pretrunas" / "17.html").read_text(encoding="utf-8")
+        return re.search(r'<meta property="og:image" content="([^"]+)"', html).group(1)
+
+    first = og("Pašlaik stance")
+    assert re.fullmatch(r"https://atmina\.lv/assets/og/pretruna-17\.png\?v=[0-9a-f]{8}", first), first
+    assert og("Pašlaik stance") == first
+    assert og("Labota pozīcija") != first
+
+
 class TestPhotoDataUri:
     def test_missing_returns_none(self):
         assert _photo_data_uri("this-slug-does-not-exist") is None

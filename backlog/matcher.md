@@ -6,20 +6,15 @@ _Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uztur
 
 > Konsolidēts 2026-08-01 — kolīziju darbs bija izkaisīts pa trim sadaļām. Kodā ievieso vārtus tur `scripts/eval_matcher_collisions.py` (FP≤3, zelts≥1260); slēgtie per-gadījumi dzīvo CHANGELOG § 2026-08-01.
 
-### [OPEN] B2 priekšvārda veto nesaloka garumzīmes — īsts politiķis noraidīts kā «ārzemju vārds» (2026-11-01)
+### [OPEN] Stale junction atlikums — 52 rindas bez vārda tekstā, 28 vēlākas piesaistes; twitter un x_mention nav auditēti (2026-11-10)
 
-`match_politicians()` salīdzina tekstā esošo priekšvārdu ar DB vārda priekšvārdu burtiski: «Ainārs» pret DB «Ainars» (Latkovskis, Labanovskis «Ervīns»/«Ervins»), un otrādi «Ainars» pret DB «Ainārs» (Šlesers). Tā pati klase kā «Ilja»/«Iļja» (`BACKLOG.md` § Ne-darīt), kur gaidījām īstu ekspozīciju — tagad tā ir: 49 934 doki kopš 2026-09-01 → 6 doki / 3 politiķi, 5 trūkstošas saites; 2 pazaudētas Latkovska pozīcijas (atgūtas 752829, 752830). 5 saites pievienotas ar roku (`data/rollback_dp_diacritic_veto_links_2026-11-01.sql`). *Rīcība:* veto priekšvārdu salīdzināt pēc diakritiku saloces; pierādīt ar `scripts/eval_matcher_collisions.py` (FP nedrīkst augt) un vienu e2e testu uz 148016 tekstu. *Mērījuma skripts:* `match_politicians(veto_log=…)`, kur `fold(preceding)==fold(first) and preceding!=first`.
+Apakšvirknes klase web dokos slēgta. `scripts/audit_stale_politician_links.py` 2026-11-10: 13 799 doki pārbaudīti, 647 rindas saistītājs vairs neradītu, no tām 244 «teksts nepamato», **DEFEKTI 0**. Izdarīts 2026-11-10 (verdikti 15 un 16; `data/rollback_verdikti_15_junction_2026-11-10.sql`, `data/rollback_verdikti_15_reload_2026-11-10.sql`, `data/rollback_verdikti_16_rajevs_2026-11-10.sql`): 35 `teksts_nomainits` rindām `suspect_at` (visas 81 tagad karogotas), 7 organizāciju saites CVK programmu lapās dzēstas, 86 pid 121 saites no «@Rajevskis» dzēstas. Paliek:
 
-### [OPEN] Stale junction atlikums — 50 rindas bez vārda tekstā (23 doki) un 23 vēlākas piesaistes
+- **(1) `varda_nav_tekstā` — 52 rindas / 25 doki (mērījums pirms pārlādes).** Pārlāde gandrīz nepalīdz: `backfill_truncated_docs.py` 2026-11-10 atjaunoja 2 dokus (90333, 95768); 15 nav garāki, 1 avots atbild 404, 1 ir tiešraide (netiek pārrakstīta), 6 nav web. *Rīcība:* izlasīt; nekad nedzēst uz klasifikatora vārda (T19).
+- **(2) `piesaiste_velak` — 28 rindas / 27 doki.** *Rīcība:* noskaidrot, kurš koda ceļš tās raksta.
+- **(3) Audits izlaiž `twitter` un `x_mention`** (`SKIP_PLATFORMS`), tāpēc 86 Rajeva rindas tas neredzēja. *Rīcība:* tāds pats salīdzinājums šīm platformām tikai `mentioned` lomai (subjekts tur nāk no autora); izlasi lasīt pirms dzēšanas (T18). **Izmērīts 2026-11-10** (`docs/audits/2026-11-10-merijumi/` § 1): 29 580 `mentioned` rindas, 1 731 saistītājs vairs neradītu, lielākoties pēc noteikumiem (retvīti C4, vecās D5 saites, institūcijas). Atlikums: izlasīt 8 DEFEKTI rindas; 545 vecajām saitēm `suspect_at` vai lasīt katru. **Skripta kļūda:** `audit_stale_politician_links.py::forms_by_pid` skaita `negative_patterns` kā vārda formas, tāpēc 10.11. web skaitļi ir apšaubāmi.
 
-Apakšvirknes klase slēgta (commits `2cd75bba`, `5669fb66`, `15ec5079`, `b8349d18`, `1775832c`). `scripts/audit_stale_politician_links.py` 2026-09-25: 9 973 doki pārbaudīti, 559 rindas saistītājs vairs neradītu, no tām 184 «teksts nepamato», **DEFEKTI 0**. Paliek četras grupas:
-
-- **(1) `varda_nav_tekstā` — 50 rindas / 23 doki (09-22: 51).** Tās NEgaida `avoti.md` truncated kampaņu: tās atlase (`word_count<90`) sedz tikai 1 no 23 dokiem. 42838 (313 vārdi) un 42843 (365) nes 26 no 50 rindām; seši doki ir 2 494–18 980 vārdu (vestnesis, dati.cvk), tātad birka «nogriezts» tur nav pārbaudīta (T18). *Rīcība:* mērķēta pārlāde 22 dokiem vai sešu garo doku lasīšana; nekad nedzēst uz klasifikatora vārda (T19).
-- **(2) `piesaiste_velak` — 23 rindas / 22 doki.** *Rīcība:* noskaidrot, kurš koda ceļš tās raksta.
-- **(3) `teksts_nomainits` — 35 rindas / 13 doki.** `_reconcile_junction_suspects` karogo tikai turpmākās pārrakstīšanas; vēsturiskās rindas retrospektīvi nav karogotas. *Rīcība:* vienreizējs `suspect_at` pēc operatora vārda. Blakus: `SELECT COUNT(*) FROM document_politicians WHERE suspect_at IS NOT NULL` → **38** (2026-10-21; pēc `DATE(suspect_at)`: 10-01 7, 10-04 19, 10-05 9, 10-14 3); 10-01 rindas ir rokas `suspect_at` (LIELO burtu (b)); jāpārbauda, vai 10-04/05 rindas rakstīja `_reconcile_junction_suspects` — līdz tam vārts pierādīts tikai testos (`tests/test_junction_suspect_flags.py`).
-- **(4) CVK lapu organizāciju rindas pēc 2026-10-14 izņēmuma** (verdikts C7, slēgtā NBS pid=204 ieraksta atlikums): atstātas 3 pid 204 `mentioned` + 4 citu organizāciju rindas CVK lapās, nelasītas. Jaunas `src.roles.drop_cvk_organization_links` vairs nerada. *Rīcība:* izlasīt 7 rindas; dzēst tikai ar pāra rollback.
-
-*Īpašnieks:* operators. Pierādījumi: `docs/audits/2026-09-25-backlog-triaza/triage_matcher.md`.
+*Īpašnieks:* koda darbs (3), operators (1, 2).
 
 ### [OPEN] Releja kanāla dokuments ar citā plūsmā piesaistītu autoru (`subject`) netiek pārbaudīts pieminējumu meklēšanā
 
@@ -51,7 +46,7 @@ _(a) Fantoma `mentioned` (svešs tvīts laika joslā) — IZPILDĪTS, CHANGELOG 
 
 ### [OPERATOR] Matcher plāna 2026-07-27 atlikums (B2+D2+H ieviests)
 
-Plāns `docs/plans/2026-07-27-matcher-koliziju-plans.md`. Paliek: (a) § 6 vēsturisko viltus junction rindu triāža (07-27: ~10, t.sk. @Rajevskis ↔ Igors Rajevs ×8) — pirms darba pārmērīt ar `scripts/eval_matcher_collisions.py`; (b) vīriešu -a uzvārdu datīvi — ģeneratorā NEtaisa (2026-11-03): tas dzimumu nezina, un -am visiem -a uzvārdiem kolidētu ar vīriešu -š datīvu (Siliņa→«Siliņam» = Siliņš); -e zars jau dod abus (Krauzem), Putra/Dombrava/Švinka formas DB jau ir. Trūkstošās pievienotas 2026-11-03 ar operatora «jā» (`data/fix_name_forms_datives_2026-11-03.sql`; Lapsai tikai «Lato Lapsam»); (c) title skenēšanas 2. fāze (§ 5 7. solis, pilnvārda vārti, loma `mentioned`). Bērziņa pilnvārda dvīņi — neatrisināma klase. *Īpašnieks:* operators.
+Plāns `docs/plans/2026-07-27-matcher-koliziju-plans.md`. Paliek: (a) IZPILDĪTS 2026-11-10 — § 6 nosauktās 11 saites jau bija dzēstas, Rajeva klases atlikums (86) dzēsts (§ Stale junction atlikums); (b) vīriešu -a uzvārdu datīvi — ģeneratorā NEtaisa (2026-11-03): tas dzimumu nezina, un -am visiem -a uzvārdiem kolidētu ar vīriešu -š datīvu (Siliņa→«Siliņam» = Siliņš); -e zars jau dod abus (Krauzem), Putra/Dombrava/Švinka formas DB jau ir. Trūkstošās pievienotas 2026-11-03 ar operatora «jā» (`data/fix_name_forms_datives_2026-11-03.sql`; Lapsai tikai «Lato Lapsam»); (c) title skenēšanas 2. fāze (§ 5 7. solis, pilnvārda vārti, loma `mentioned`). Bērziņa pilnvārda dvīņi — neatrisināma klase. *Īpašnieks:* operators.
 
 ### [OPEN] T1 locījumu kolīziju klase (2026-08 gadījumi)
 
@@ -60,9 +55,6 @@ Plāns `docs/plans/2026-07-27-matcher-koliziju-plans.md`. Paliek: (a) § 6 vēst
 **Paliek atvērts — sistēmiskais kandidāts:** `scripts/audit_matcher_name_forms.py` sweep pār fem `-e` / masc `-is` pāriem (`_latvian_surname_inflections('Lāce')` dod `Lāci` ≡ `Lācis` akuzatīvs; B2+D2+H šo klasi strukturāli neķer — korekts vārds, korektas robežas — tāpēc tā atkārtosies ar citiem pāriem). **Saucējs 2026-09-25:** `_latvian_surname_inflections` pār visiem ne-organizāciju `-e` uzvārdiem — **28 no 28** ģenerē `X-i`, kas ir `X-is` akuzatīvs (Lāci/Lācis, Pūci/Pūcis, Zīli/Zīlis, Priedi/Priedis, Kalnieti/Kalnietis…); sweep skriptā nav (`grep -n "pair\|masc" scripts/audit_matcher_name_forms.py` → nekā). *Rīcība:* sweep = korpusā skaitīt `X-i` trāpījumus, kuru tuvumā ir vīriešu priekšvārds, un tikai tad lemt par kodu. *Īpašnieks:* operators. Daģa (id=81) brīdinājumi pārcelti uz `wiki/operations/seeding.md`.
 
 **2026-10-23 vēl viens gadījums:** «Lāci» (lietvārda *lācis* akuzatīvs) piesaistīja pid 158 Lāci rakstam par lāča nošaušanu (doc 140598) — saite dzēsta ar aizliegumu, rollback `data/rollback_lace_lacis_140598_2026-10-23.sql`. Tā pati `-e`/`-is` klase, bet ar sugasvārdu, ne cilvēku — `negative_patterns` neder, sweep jāskaita arī šis.
-
-**Atvērts 2026-10-05:** forma «Šleseri» ir gan Danas Šleseres akuzatīvs, gan ģimenes daudzskaitlis (3 doki) — lēmums par formu `name_forms` nav pieņemts. *Īpašnieks:* operators.
-
 ### [OPERATOR] Lūša ≤4 zīmju formas (T1) — `Lūsi` dala arī pid 206 Lūse
 
 **2026-10-14 (verdikti):** pid 206 `negative_patterns` = 6 formas ieviestas; cena: nākamais rescan atmetīs 50079 (Lūse + Viesturs Lūsis, `mentioned`, 0 claims — INSERT rollback galvā). Paliek: ≤4 formas pie reaktivācijas.
@@ -75,16 +67,10 @@ Substring-defekts (`raksta` iekš `saraksta`) slēgts 2026-08-05. Paliek kandid�
 
 **Otrs robs (2026-10-11):** `recovery_survey` nepamana runātāju bez nominatīva blakus («pauda ministrs» — Smiltēns doc 131912, pievienots ar roku).
 
-### [OPERATOR] `negative_patterns` apkalpo divus filtrus (VAD haystack + ziņu matcher) + Kulberga `vad_disambig` hinti
+### [OPERATOR] Četri VAD vajadzībām iesēti `negative_patterns` paterni aizliedz ziņas — pārcelt uz `vad_negative_patterns` (2026-11-10)
 
-**2026-10-14 (verdikti):** Kulberga hinti papildināti («Valsts kanceleja», «Ministru prezidents»). Paliek strukturālais jautājums (atsevišķa kolonna).
+Kolonna `tracked_politicians.vad_negative_patterns` ieviesta 2026-11-10 (CHANGELOG 2026-11-10 (1)): VAD filtrs lasa abas kolonnas, ziņu matcher tikai `negative_patterns`. Glabātās vērtības nav pārvietotas.
 
-- **Problēma:** `tracked_politicians.negative_patterns` lasa divi semantiski atšķirīgi patērētāji — `src/vad/declarations.py:92` (`_row_passes_disambig`, haystack = institūcija + amats) un `src/matcher.py:421` (`match_politicians`, `any(p in text …)` uz VISU dokumentu → viss doks veto). Kulberga «Valsts policija» (seedēts VAD homonīmam) 60 dienās veto 66/66 ziņu dokus par premjeru; paterns noņemts 09-13, bet klase paliek — 46 politiķiem ir netukši `negative_patterns`.
-- **Rīcība:** atsevišķa kolonna VAD haystack paterniem vai `match_politicians` veto tikai teikuma/loga robežās; līdz tam katrs VAD motivēts paterns ir ziņu matcher risks. Blakus: pid 10 `keywords.vad_disambig` = `["Latvijas Republikas Saeima", "Saeimas deputāts"]` — hinti papildināti 2026-10-14 («Valsts kanceleja», «Ministru prezidents»).
-- **Īpašnieks:** operators. Biogrāfiskās atsauces instances (a) pārceltas uz § Junction lomas apgrieztas pārstāstos (agrāk «`subject`» lomai vajag runātāja pierādījumu).
-
-**2026-10-21 (6):** ziņu matcherī paraugs pārbauda VISU doku (`p in text`), lai gan docstring saka «around a name match» — saskaņot docstring vai kodu. Pid 243 izvēlnes paraugi ar to pieņemti apzināti (šodien 0/35 doku ar īstu pieminējumu).
-
-### [OPERATOR] LIELO burtu un handle labojumu atlikumi (2026-10-01)
-
-Kods un pārrēķins — CHANGELOG 2026-10-01 (1)–(2). Verdikti 2026-10-01 B1–B4 izpildīti (`docs/verdikti-2026-10-01.md`): (a) pieņemts, (c) slēgts, (d) Svirskis forma ārā. **Paliek (b) Vēstneša mantotās saites** — 30 rindu izlase (`docs/audits/2026-10-01-vestnesis-saites-izlase.md`): 28/30 pareizi (16 parakstītāji); kļūdas tikai «tikai uzvārda» grupā — 54 no 62 `subject` rindām nav par politiķi (ielas, pagasti, vārdabrāļi), 7 nepārbaudāmas (T19 → `suspect_at`), ~65 no 130 `mentioned` aplami. Filtrs labots 2026-10-01: parakstītāja «I. Uzvārds» un kanoniskais vārds vairs netiek nogriezti. 54 `subject` dzēsti un 7 `suspect_at` 2026-10-01 (`data/rollback_open_questions_2026-10-01.sql`). *Paliek:* 130 `mentioned` «tikai uzvārda» slānī — lasīt pa vienai (T18), ne masveidā. *Īpašnieks:* operators.
+- **Mērījums 2026-11-10** (read-only; 69 384 doki ar `scraped_at` pēdējās 90 dienās; 51 politiķis, 242 paterni, 142 bez neviena trāpījuma): četri paterni, ko VAD vajadzībām iesēja `scripts/seed_homonimu_disambig.py` un `seed_homonimu_phase2_disambig.py`, aizliedz ziņu dokus, kuros politiķis nosaukts pilnā vārdā — pid 104 «Finanšu ministrija» 6 no 24, pid 137 «Valsts policija» 4 no 26, pid 132 «Tieslietu ministrija» 4 no 11, pid 101 «Tiesu administrācija» 1 no 9. Vēl 8 iesētie paterni (pid 81, 101, 104, 116, 132, 158) 90 dienās neaizliedz nevienu. Klasifikatora iznākums, ne darba saraksts (T18).
+- **Rīcība:** izlasīt 15 aizliegtos dokus; ja tie ir par politiķi — 12 iesētos paternus pārcelt uz `vad_negative_patterns` ar pāra rollback un pārskenēt skartos dokus. **Izlasīts 2026-11-10** (`docs/audits/2026-11-10-merijumi/` § 2): visi 15 doki ir par īsto politiķi. Ieteikums: pārcelt 11 no 12 paterniem, pid 81 Jelgavas paternu atstāt. Lēmums ir operatora.
+- **Īpašnieks:** operators (`negative_patterns` vērtības bez operatora nemaina).

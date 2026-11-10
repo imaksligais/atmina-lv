@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 18
 votes: 7666
 contradictions: 0
-mentioned_in: 139
+mentioned_in: 140
 last_active: 2026-10-21
 top_topics:
 - Budžets un finanses
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (44%), [[topics/sociala-politika|Sociālā politika]] (17%), [[topics/airbaltic|airBaltic]] (11%)
-- **30d:** 5 claims, 1.4× bāzes līnija
+- **30d:** 4 claims, 1.0× bāzes līnija
 <!-- /SYNC-AUTO -->

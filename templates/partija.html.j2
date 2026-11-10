@@ -212,6 +212,7 @@
   <!-- Finanses tab -->
   {% if knab_summary %}
   <div class="party-tab" id="tab-finanses" role="tabpanel" aria-labelledby="tab-btn-finanses" style="display:none;">
+    {% if knab_summary.data_date %}<p class="muted">KNAB dati uz {{ knab_summary.data_date|lv_date }}</p>{% endif %}
     <div class="stats-row" style="margin-bottom:1.5rem;">
       <div class="stat-card">
         <div class="stat-value">€{{ "{:,.0f}".format(knab_summary.total_donations) }}</div>

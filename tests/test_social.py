@@ -239,8 +239,9 @@ def test_store_tweets_dedup_merges_missing_subject_junction(tmp_social_db):
 
 def test_store_tweets_dedup_different_url_does_not_merge(tmp_social_db):
     """Copypasta gate: identical text under a DIFFERENT source_url must NOT
-    merge junctions onto the first doc. Second insert creates no new doc
-    (content_hash dup) and leaves the first doc's junctions untouched."""
+    merge junctions onto the first doc. Since 2026-11-10 the second tweet is
+    its own document (URL-salted content_hash) — it used to be silently
+    dropped — and the first doc's junctions stay untouched."""
     from src.social import _store_tweets
     text = "Kopēts identisks teksts par politiku, kas ir pietiekami garš, lai to saglabātu kā dokumentu."
 
@@ -260,9 +261,10 @@ def test_store_tweets_dedup_different_url_does_not_merge(tmp_social_db):
         "created_at": "2026-07-24T10:00:00+00:00", "lang": "lv",
     }], opponent_id=1)
 
-    doc_ids2 = [r[0] for r in tmp_social_db.execute("SELECT id FROM documents").fetchall()]
-    assert len(doc_ids2) == 1, "content_hash dup — no new doc"
+    doc_ids2 = [r[0] for r in tmp_social_db.execute("SELECT id FROM documents ORDER BY id").fetchall()]
+    assert len(doc_ids2) == 2, "a different tweet is a separate document"
     assert _junctions(tmp_social_db, doc_ids2[0]) == before, "different-url must not merge"
+    assert _junctions(tmp_social_db, doc_ids2[1]) == {(1, "subject")}
 
 
 def test_store_tweets_relay_feed_cross_author_subject(tmp_social_db):
@@ -674,7 +676,8 @@ def test_fetch_twitter_twice_in_one_process_keeps_fetching(tmp_social_db, tmp_pa
                 text=None,
                 retweeted_tweet=None,
                 user=SimpleNamespace(screen_name=user_id),
-                created_at_datetime=datetime(2026, 10, 19, tzinfo=timezone.utc),
+                # After the replies-path floor (x_scraper.REPLIES_DATE_FLOOR).
+                created_at_datetime=datetime(2026, 11, 10, tzinfo=timezone.utc),
                 lang="lv",
             )]
 

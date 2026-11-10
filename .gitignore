@@ -53,6 +53,7 @@
 !/pyproject.toml
 !/requirements.lock
 !/requirements.txt
+!/requirements-video.txt
 !/serve.py
 !/sources.yaml
 

@@ -250,6 +250,21 @@ def _compute_content_hash(content: str) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()
 
 
+def _x_status_author(url: Optional[str]) -> Optional[str]:
+    """Lowercased author handle of an ``x.com/<handle>/status/<id>`` URL."""
+    parts = (url or "").split("/")
+    if len(parts) > 4 and parts[4] == "status":
+        return parts[3].lower()
+    return None
+
+
+def _tweet_salted_hash(content: str, source_url: str) -> str:
+    """content_hash for a tweet whose exact text another tweet URL already
+    holds (``insert_document`` copypasta branch). Deterministic, so a re-read
+    of the same tweet finds its own row again."""
+    return hashlib.sha256(f"{content}|{source_url}".encode()).hexdigest()
+
+
 def _compute_simhash(content: str) -> int:
     # Truncate to 10k chars for simhash — the library has overflow bugs
     # on large texts with certain Unicode characters. 10k is more than
@@ -443,6 +458,7 @@ def insert_document(
     title: Optional[str] = None,
     preserve_scraped_at: bool = False,
     db_path: str | None = None,
+    context_json: Optional[str] = None,
 ) -> Optional[int]:
     """Store a document, deduplicating first by content hash and then by URL.
 
@@ -497,6 +513,19 @@ def insert_document(
     document into today's day bucket (every ``scraped_at``-scoped reader
     would misattribute it to the campaign day). True keeps the stored value;
     default False is unchanged.
+
+    ``context_json`` (2026-11-10, X only): the quoted tweet / reply parent, as
+    read-only extractor context. It is never part of ``content`` and so never
+    of the hashes. A duplicate of the SAME post only fills a stored NULL —
+    replies are re-read on every ingest — and never touches ``reviewed_at``.
+
+    Twitter copypasta (2026-11-10): identical text from a DIFFERENT tweet URL
+    is a separate post when the author differs, or when its reply/quote
+    context differs (the same «@x Paldies …» to two parents). It gets its own
+    row under a URL-salted ``content_hash`` (``_tweet_salted_hash``); until
+    then it was silently dropped. One author reposting the same text without
+    new context stays a duplicate, and bare retweets keep the shared-document
+    rule below.
     """
     # Stored URL = normalized (utm keys dropped, 2026-10-08); every same-URL
     # lookup below also matches a legacy row stored with its raw utm URL.
@@ -510,9 +539,29 @@ def insert_document(
 
     # Check exact content_hash duplicate (same bytes already stored)
     existing = db.execute(
-        "SELECT id, source_url FROM documents WHERE content_hash = ?", (content_hash,)
+        "SELECT id, source_url, context_json FROM documents WHERE content_hash = ?",
+        (content_hash,),
     ).fetchone()
+    if (existing and platform == "twitter" and source_url
+            and normalize_source_url(existing["source_url"]) != source_url
+            and not is_bare_retweet(content)
+            and (_x_status_author(existing["source_url"]) != _x_status_author(source_url)
+                 or (context_json and context_json != existing["context_json"]))):
+        # Same words, different post: a separate document (see docstring).
+        content_hash = _tweet_salted_hash(content, source_url)
+        existing = db.execute(
+            "SELECT id, source_url FROM documents WHERE content_hash = ?",
+            (content_hash,),
+        ).fetchone()
     if existing:
+        if (context_json and source_url
+                and normalize_source_url(existing["source_url"]) == source_url):
+            db.execute(
+                "UPDATE documents SET context_json = ? "
+                "WHERE id = ? AND context_json IS NULL",
+                (context_json, existing["id"]),
+            )
+            db.commit()
         # Merge any new junctions onto the existing doc IF this is the same
         # canonical post (same source_url). The same-URL gate is deliberate:
         # identical text under a DIFFERENT url (copypasta tweets by different
@@ -634,11 +683,13 @@ def insert_document(
     db.execute(
         """INSERT INTO documents (content, content_hash, simhash, source_id,
            platform, is_auto_caption, near_dupe_of, source_domain, source_url, word_count, language,
-           published_at, scraped_at, reply_count, retweet_count, favorite_count, title)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+           published_at, scraped_at, reply_count, retweet_count, favorite_count, title,
+           context_json)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (content, content_hash, sim, source_id, platform,
          is_auto_caption, near_dupe_of, source_domain, source_url, word_count, language,
-         published_at, now_lv(), reply_count, retweet_count, favorite_count, title),
+         published_at, now_lv(), reply_count, retweet_count, favorite_count, title,
+         context_json),
     )
     doc_id = db.execute("SELECT last_insert_rowid()").fetchone()[0]
 
@@ -1432,6 +1483,12 @@ def withdraw_contradiction(
             db.close()
 
 
+# A tension has no event-date column: it is dated by created_at, so the brief
+# shows it as that day's news. A source older than this is old news (the brief
+# skeleton's own window, `_BRIEF_DAY_WINDOW_SQL`). Operator decision 2026-11-09.
+TENSION_MAX_SOURCE_AGE_DAYS = 7
+
+
 def store_tension(source_pid: int, target_pid: int, topic: str, description: str,
                   tension_type: str = "spriedze", source_url: str = None,
                   target_url: str = None, db_path: str | None = None) -> int:
@@ -1442,6 +1499,10 @@ def store_tension(source_pid: int, target_pid: int, topic: str, description: str
       - ``source_url`` is missing or does not reference a row in ``documents``.
         Catches hallucinated URLs (e.g. guessed tweet status IDs, wrong article
         slugs). Tension sources must always point to a scraped document.
+      - the source document's ``published_at`` is more than
+        ``TENSION_MAX_SOURCE_AGE_DAYS`` days old (old news would render with
+        today's date). When ``published_at`` is missing or unparseable the age
+        cannot be checked: the row is stored and a warning goes to stderr.
       - ``target_url`` is set but does not reference a row in ``documents``.
     """
     ok, reason = validate_lv_diacritics(description)
@@ -1471,6 +1532,26 @@ def store_tension(source_pid: int, target_pid: int, topic: str, description: str
             f"likely hallucinated. Look up the real URL from documents.source_url "
             f"before storing. source_pid={source_pid}, target_pid={target_pid}, "
             f"source_url={source_url!r}"
+        )
+    # julianday() folds the stored offsets (+03:00, Z) to UTC and is compared
+    # with UTC 'now'; a naive published_at is read as UTC — at most 3 h off,
+    # irrelevant at a 7-day threshold. Several documents may share one URL:
+    # the newest decides, so only a URL that is old everywhere is refused.
+    age = db.execute(
+        "SELECT julianday('now') - MAX(julianday(published_at)) FROM documents "
+        "WHERE source_url = ?", (source_url,)
+    ).fetchone()[0]
+    if age is None:
+        print(f"[store_tension] WARNING: source date not checked — no parsable "
+              f"published_at for source_url={source_url!r} "
+              f"(source_pid={source_pid}, target_pid={target_pid})", file=sys.stderr)
+    elif age > TENSION_MAX_SOURCE_AGE_DAYS:
+        db.close()
+        raise ValueError(
+            f"store_tension: source is {age:.0f} days old (published_at older than "
+            f"{TENSION_MAX_SOURCE_AGE_DAYS} days) — a tension is dated by its creation "
+            f"day, so old news would show as today's. source_pid={source_pid}, "
+            f"target_pid={target_pid}, source_url={source_url!r}"
         )
     if target_url:
         known_t = db.execute(

@@ -81,6 +81,7 @@ Before calling `store_context_note`, verify:
 16. ✅ **Novecojusi partija (T6).** Ja pozīcija ziņo par izstāšanos, pievienošanos vai izslēgšanu, pārbaudi politiķa partijas birku un bloku — `tracked_politicians.party` nesinhronizējas (Vergina, 2026-06-29). Neatbilstību ziņo operatoram; DB nelabo (labojumam vajag pāra rollback).
 17. ✅ **`Atturas` (2026-07-25; 2026-08-09).** Raksti «atturējās» — nekad «balsoja pret», «nepiedalījās», «bija neitrāls» vai «neieņēma nostāju». Saeimā atturēšanās vairākumu liedz tāpat kā «pret». Pirms politikas secinājuma izlasi visus balsojumus ar to pašu `document_nr`: procedūras atturēšanās nav politikas nostāja (T14).
 18. ✅ **Prozas saucējs (A+B, 2026-09-02).** Ziņo paša prozas bloku skaitu, garākā bloka vārdu skaitu, bloku skaitu virs 120 vārdiem (0); tēmas ar skeleta kastīti un tās, kur zem tabulas ir >1 teikums (0). Skeleta kastītes un tabulas neskaiti.
+19. ✅ **Nozieguma pārmetums bez apsūdzības (operators 2026-11-09; ievērots kopš 2026-10-01).** Bijušā Progresīvo deputāta, kuram publiski pārmests noziegums pret nepilngadīgo, uzvārdu pārskata prozā un spriedžu aprakstos neraksti, kamēr apsūdzība nav celta: raksti «bijušais Progresīvo deputāts». Citāti un skeleta kastītes paliek burtiski. Noteikums beidzas, kad prokuratūra ceļ apsūdzību vai lietu izbeidz.
 
 If any check fails, fix before storing. The `store_context_note` function will reject briefs that fail structural validation.
 

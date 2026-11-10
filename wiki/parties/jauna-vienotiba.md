@@ -1,7 +1,7 @@
 ---
 party: Jaunā Vienotība
 members: 35
-claims: 1630
+claims: 1667
 program_promises: 20
 contradictions: 14
 votes_par: 108529

@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 3
 votes: 6593
 contradictions: 0
-mentioned_in: 34
+mentioned_in: 35
 last_active: 2026-09-25
 top_topics:
 - Kultūra

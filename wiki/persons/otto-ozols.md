@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 38
 votes: 0
 contradictions: 0
-mentioned_in: 607
+mentioned_in: 632
 last_active: 2026-10-20
 top_topics:
 - Koalīcija un partijas
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (21%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (18%), [[topics/arpolitika|Ārpolitika]] (18%)
-- **30d:** 1 claims, 0.3× bāzes līnija
+- **30d:** 1 claims
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (2 uzbrukumi)
 <!-- /SYNC-AUTO -->

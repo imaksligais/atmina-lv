@@ -130,6 +130,7 @@ from src.render._common.dates import (  # noqa: F401  re-eksportēts
     lv_gap_label,
     trailing_days_cutoff,
 )
+from src.render._common.tweet_context import tweet_context_links  # noqa: F401  re-eksportēts
 from src.render._common.text import (  # noqa: F401  re-eksportēts
     _BRACKET_RE,
     _CLAUSE_PUNCT,

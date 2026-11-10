@@ -1,0 +1,10 @@
+{# HTMX 30 s poll target. New rows go on top of #activity-rows; every poll
+response re-sends this div out-of-band (oob=True) with the advanced cursor,
+so the next poll asks only for rows newer than the last one shown. #}
+<div id="activity-poll"
+     {% if oob %}hx-swap-oob="true"{% endif %}
+     hx-get="/api/activity?since_logs={{ activity.cursor.logs | default(0) }}&since_images={{ activity.cursor.brief_images | default(0) }}&since_notes={{ activity.cursor.context_notes | default(0) }}&since_analyses={{ activity.cursor.analyses | default(0) }}&filter={{ activity.current_filter }}"
+     hx-trigger="every 30s"
+     hx-swap="afterbegin"
+     hx-target="#activity-rows"
+     class="hidden"></div>

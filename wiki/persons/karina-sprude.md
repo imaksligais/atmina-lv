@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 9
 votes: 5
 contradictions: 0
-mentioned_in: 61
+mentioned_in: 62
 last_active: 2026-10-10
 top_topics:
 - Aizsardzība un drošība
@@ -17,6 +17,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 1 claims
 - **Spriedzes:** [[persons/baiba-braze|Baiba Braže]] (1 spriedze)
 <!-- /SYNC-AUTO -->

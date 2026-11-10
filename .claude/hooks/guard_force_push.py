@@ -3,7 +3,8 @@
 
 Reads the hook JSON from stdin, inspects the Bash command, and DENIES (via the
 PreToolUse ``permissionDecision`` protocol) ONLY when the command force-pushes
-to ``master``. It allows:
+to ``master`` — also with git global options before ``push``
+(``git -C <path> push …``, ``git -c k=v push …``). It allows:
   - ``--force-with-lease`` (the safe variant),
   - force-pushing any non-master / feature branch,
   - every non-push command.
@@ -23,14 +24,26 @@ _SEP = re.compile(r"&&|\|\||;|\n|\|")
 _ENV_PREFIX = re.compile(r"^\s*(sudo\s+)?([A-Za-z_]\w*=\S+\s+)*")
 
 
+# git global options before the subcommand: `-C <path>` / `-c <k=v>` take a value
+# (quoted paths with spaces included), the rest are single tokens.
+_GIT_GLOBAL_OPTS = re.compile(
+    r"""^git((?:\s+(?:-[Cc]\s+(?:"[^"]*"|'[^']*'|\S+)|--?[\w-]+(?:=\S+)?))*)\s+push(\s|$)"""
+)
+_GIT_C_PATH = re.compile(r"""\s-C\s+("[^"]*"|'[^']*'|\S+)""")
+
+
 def _deny_reason(cmd: str) -> str | None:
     """Return a deny reason if *cmd* force-pushes to master, else None."""
     # Scan each shell segment so e.g. `echo "git push -f master"` is ignored.
     for seg in _SEP.split(cmd):
         s = _ENV_PREFIX.sub("", seg).strip()
-        if not re.match(r"git\s+push(\s|$)", s):
+        m = _GIT_GLOBAL_OPTS.match(s)
+        if not m:
             continue
-        toks = s.split()
+        globals_part = m.group(1)
+        cwd_m = _GIT_C_PATH.search(globals_part)
+        cwd = cwd_m.group(1).strip("\"'") if cwd_m else None
+        toks = ["git"] + s[m.end(1):].split()  # 'git push ...' without global options
         has_force = any(
             t in ("--force", "-f") or re.fullmatch(r"-[a-zA-Z]*f[a-zA-Z]*", t)
             for t in toks
@@ -61,7 +74,7 @@ def _deny_reason(cmd: str) -> str | None:
             try:
                 cur = subprocess.run(
                     ["git", "rev-parse", "--abbrev-ref", "HEAD"],
-                    capture_output=True, text=True, timeout=5,
+                    capture_output=True, text=True, timeout=5, cwd=cwd,
                 ).stdout.strip()
             except Exception:
                 cur = ""
