@@ -1,7 +1,7 @@
 ---
 topic: Valodu politika
 positions: 172
-votes: 4905
+votes: 5332
 politicians: 52
 contradictions: 0
 last_activity: '2026-11-05 00:00:00'

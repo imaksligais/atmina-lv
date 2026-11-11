@@ -1,7 +1,7 @@
 ---
 topic: Pensijas
 positions: 107
-votes: 171
+votes: 13131
 politicians: 40
 contradictions: 0
 last_activity: '2026-10-25 00:00:00'

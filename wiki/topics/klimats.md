@@ -1,7 +1,7 @@
 ---
 topic: Klimats
 positions: 38
-votes: 2970
+votes: 3060
 politicians: 20
 contradictions: 0
 last_activity: '2026-11-09 00:00:00'

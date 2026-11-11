@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (29%), [[topics/imigracija|Imigrācija]] (17%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%)
-- **30d:** 9 claims, 2.0× bāzes līnija
+- **30d:** 8 claims, 1.8× bāzes līnija
 <!-- /SYNC-AUTO -->

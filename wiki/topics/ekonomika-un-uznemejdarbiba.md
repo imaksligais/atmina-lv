@@ -1,7 +1,7 @@
 ---
 topic: Ekonomika un uzņēmējdarbība
 positions: 41
-votes: 17874
+votes: 29533
 politicians: 22
 contradictions: 0
 last_activity: '2026-11-10 00:00:00'

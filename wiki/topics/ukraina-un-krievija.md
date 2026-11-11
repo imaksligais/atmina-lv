@@ -1,7 +1,7 @@
 ---
 topic: Ukraina un Krievija
 positions: 920
-votes: 14606
+votes: 18169
 politicians: 103
 contradictions: 4
 last_activity: '2026-11-10 00:00:00'

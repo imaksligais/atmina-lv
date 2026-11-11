@@ -1,7 +1,7 @@
 ---
 topic: Ārpolitika
 positions: 366
-votes: 4055
+votes: 3781
 politicians: 68
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

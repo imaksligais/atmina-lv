@@ -1,7 +1,7 @@
 ---
 topic: Saeimas darbs
 positions: 19
-votes: 16932
+votes: 43188
 politicians: 16
 contradictions: 0
 last_activity: '2026-11-10 00:00:00'

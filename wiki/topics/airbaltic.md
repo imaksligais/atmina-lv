@@ -1,7 +1,7 @@
 ---
 topic: airBaltic
 positions: 299
-votes: 619
+votes: 1210
 politicians: 50
 contradictions: 1
 last_activity: '2026-11-08 00:00:00'

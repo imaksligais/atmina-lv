@@ -1,7 +1,7 @@
 ---
 topic: Koalīcija un partijas
 positions: 1073
-votes: 2996
+votes: 4654
 politicians: 125
 contradictions: 11
 last_activity: '2026-11-10 00:00:00'

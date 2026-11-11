@@ -1,7 +1,7 @@
 ---
 topic: Degviela un enerģētika
 positions: 335
-votes: 22402
+votes: 26906
 politicians: 79
 contradictions: 1
 last_activity: '2026-11-09 00:00:00'

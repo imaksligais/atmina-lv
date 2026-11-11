@@ -1,6 +1,6 @@
 # Politiķi — Indekss
 
-_Atjaunots: 2026-11-11 00:52:30_
+_Atjaunots: 2026-11-11 16:45:47_
 
 **257** politiķi, **11060** pozīcijas
 

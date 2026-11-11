@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (13%), [[topics/pilsetvide|Pilsētvide]] (12%), [[topics/imigracija|Imigrācija]] (11%)
-- **30d:** 44 claims, 1.3× bāzes līnija
+- **30d:** 43 claims, 1.3× bāzes līnija
 - **Spriedzes:** [[persons/baiba-braze|Baiba Braže]] (5 uzbrukumi), [[persons/evika-silina|Evika Siliņa]] (3 uzbrukumi), [[persons/janis-dombrava|Jānis Dombrava]] (3 atbalsti)
 <!-- /SYNC-AUTO -->

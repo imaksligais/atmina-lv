@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/imigracija|Imigrācija]] (23%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (16%), [[topics/tieslietas|Tieslietas]] (8%)
-- **30d:** 20 claims, 1.3× bāzes līnija
+- **30d:** 19 claims, 1.3× bāzes līnija
 - **Spriedzes:** [[persons/andrejs-judins|Andrejs Judins]] (2 spriedzes), [[persons/edvards-smiltens|Edvards Smiltēns]] (2 uzbrukumi), [[persons/edgars-rinkevics|Edgars Rinkēvičs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

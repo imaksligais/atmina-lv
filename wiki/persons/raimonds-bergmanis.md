@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (50%), [[topics/imigracija|Imigrācija]] (18%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (10%)
-- **30d:** 14 claims, 3.5× bāzes līnija
+- **30d:** 12 claims, 2.7× bāzes līnija
 - **Spriedzes:** [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

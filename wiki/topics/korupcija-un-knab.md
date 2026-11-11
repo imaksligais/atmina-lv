@@ -1,7 +1,7 @@
 ---
 topic: Korupcija un KNAB
 positions: 239
-votes: 5110
+votes: 6151
 politicians: 66
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

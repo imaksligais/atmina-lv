@@ -6,6 +6,13 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-11 (2) — Balsojumu tēmas: visas partijas piemērotas; Jev neievēro 8. noteikumu nodokļos
+- **Piemērots un live** (deploy `b49509f7`): b04–b10, b04k, kor1111 — 4 338 balsojumi, 380 629 pozīcijas snapshotā, visur `collisions=0`, `parity_mismatch=0`; `vote_topics.py status`: ar lēmumu 2 746 no 2 750 (bez lēmuma 4 budžeta likumi, `pending` 863/Lp14). Skaitļi un rollback: `data/saeima_topic_gold/BATCH_LOG.md`.
+- **Jev auto nodokļu likumprojektos kļūdās 33/110** (vienas nozares PVN, akcīze, IIN atvieglojums → «Budžets un finanses» pret 8. noteikumu); visi laboti, atlikušie 52 auto ar nodokļu vārdiem izlasīti — 0. Ielādē tas paliek: priekšlikums `pending` nodokļu likumprojektiem — `backlog/saeima.md`.
+- **Partijas pārbaudes kārtība** (rīki `docs/audits/2026-11-11-balsojumu-temas/`): pārskatāmie + 20 auto izlase + visi auto nodokļu dokumenti pret avotu; rubrikas piemēri pirms freeze (`rubcheck.py`, 116/116). 7 operatora jautājumi `backlog/saeima.md`.
+- **Atradums Višvanati:** HEA reģistra 9. augusta Common Crawl kopija (pārbaudīja Sol un advisor; operatora «jā» 11.11.).
+- **Operatora lēmumi (rubrika):** 863/Lp14, 74/P14 → «Budžets un finanses» (kor1111b); grupu nodokļu atvieglojumi, budžeta pārdales, 420/Lp14, 1240/Lp14, 570/Lp14 paliek; precedenti RUBRIKA.md § Operatora lēmumi 2026-11-11, `RUBRIC_VERSION` nemainās (Jev promptā tikai «Ietver»).
+
 ## 2026-11-11 (1) — Saeimas lapa: amati no kurēta YAML, iepriekšējās Saeimas lēca, partiju krāsas pēc logo
 - **Amati** (Prezidijs, frakciju vadība, komisiju statuss): `data/saeima15_amati.yaml` no saeima.lv (kopijas ar SHA `docs/audits/2026-11-11-saeima-amati/`; 100/100 vārdi = CVK saraksts, 18/18 amati vārds vārdā); lapa `tracked_politicians.role` nelasa. Ielādētājs krīt pie neievēlēta vārda, saraksta bez frakcijas ieraksta vai cita komisiju statusa. § Ne-darīt 37 paliek. Dizains: `docs/superpowers/specs/2026-11-11-saeimas-lapa-amati-design.md`.
 - **Lēca «Balsoja N. Saeimā» = `SAEIMA_CONVOCATION − 1`:** pēc 03.11. pārslēgšanas tā rādīja pašreizējo Saeimu (98/100), tagad iepriekšējo (41/100; skaits = deputāti ar ≥1 nodotu balsi titania URL `LIVS<N>`, renderētā `saeima.html` 11.11.). `tests/test_render_saeima.py`, pierādīts ar mutāciju.

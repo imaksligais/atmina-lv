@@ -1,7 +1,7 @@
 ---
 topic: Pilsētvide
 positions: 215
-votes: 95
+votes: 183
 politicians: 31
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

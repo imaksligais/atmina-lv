@@ -1,7 +1,7 @@
 ---
 topic: Kultūra
 positions: 128
-votes: 9679
+votes: 9852
 politicians: 55
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

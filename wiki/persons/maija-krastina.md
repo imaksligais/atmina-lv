@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/vide|Vide]] (23%), [[topics/nvo-un-pilsoniska-sabiedriba|NVO un pilsoniskā sabiedrība]] (19%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (8%)
-- **30d:** 14 claims, 1.6× bāzes līnija
+- **30d:** 13 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

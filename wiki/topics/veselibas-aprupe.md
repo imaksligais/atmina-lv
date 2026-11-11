@@ -1,7 +1,7 @@
 ---
 topic: Veselības aprūpe
 positions: 242
-votes: 18348
+votes: 17561
 politicians: 65
 contradictions: 0
 last_activity: '2026-11-10 00:00:00'

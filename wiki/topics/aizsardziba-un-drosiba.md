@@ -1,7 +1,7 @@
 ---
 topic: Aizsardzība un drošība
 positions: 1047
-votes: 54193
+votes: 44417
 politicians: 113
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

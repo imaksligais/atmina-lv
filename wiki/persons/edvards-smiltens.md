@@ -18,7 +18,7 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/tieslietas|Tieslietas]] (30%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (11%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (9%)
-- **30d:** 37 claims, 1.0× bāzes līnija
+- **30d:** 34 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/julija-stepanenko|Jūlija Stepaņenko]] (3 spriedzes), [[persons/evika-silina|Evika Siliņa]] (1 uzbrukums), [[persons/reinis-poznaks|Reinis Pozņaks]] (1 atbalsts)
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/koalicija-un-partijas|Koalīcija un partijas]], 2026-05-17
 <!-- /SYNC-AUTO -->

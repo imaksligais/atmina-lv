@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/imigracija|Imigrācija]] (25%), [[topics/pilsetvide|Pilsētvide]] (17%), [[topics/pasvaldibas|Pašvaldības]] (15%)
-- **30d:** 20 claims, 1.2× bāzes līnija
+- **30d:** 19 claims, 1.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

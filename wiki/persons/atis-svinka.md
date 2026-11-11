@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/transports|Transports]] (15%), [[topics/airbaltic|airBaltic]] (10%), [[topics/rail-baltica|Rail Baltica]] (8%)
-- **30d:** 39 claims, 1.3× bāzes līnija
+- **30d:** 39 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (9 spriedzes), [[persons/viktors-valainis|Viktors Valainis]] (3 uzbrukumi), [[persons/ilze-indriksone|Ilze Indriksone]] (2 spriedzes)
 <!-- /SYNC-AUTO -->

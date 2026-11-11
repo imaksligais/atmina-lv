@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (25%), [[topics/valsts-parvalde|Valsts pārvalde]] (22%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (8%)
-- **30d:** 8 claims, 1.1× bāzes līnija
+- **30d:** 7 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/andrejs-judins|Andrejs Judins]] (2 uzbrukumi), [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/viktors-valainis|Viktors Valainis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

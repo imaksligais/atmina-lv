@@ -125,7 +125,7 @@ katra kļūme = `exit 1`, deploy nenotiek. Apzināta apiešana: `--no-output-che
    audits A1): labojums pēc apstiprināšanas → apstiprini vēlreiz; citādi deploy
    preflight atsaka (`saturs mainījies pēc apstiprināšanas`).
    **Publicēta «Atraduma» labojumu pirms operatora «jā» pārbauda divi neatkarīgi
-   lasītāji — advisor un otrs modelis (Astra caur Codex)** (operatora lēmums
+   lasītāji — advisor un otrs modelis (Codex; kopš 2026-11-11 Sol `gpt-6.1-sol`, agrāk Astra)** (operatora lēmums
    2026-11-04); secība: abi lasītāji → operatora «jā» → `approve_publish.py` → renders → deploy.
 
 Melnraksts gaida atļauju? Citus labojumus var deployēt kā parasti — tā lapa kokā nav.

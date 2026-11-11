@@ -167,7 +167,7 @@ Katram dokumentam (likumprojektam `Lp`, lēmumam `Lm`, pieprasījumam `P` vai ba
 ### Valodu politika
 - Ietver: valsts valodas lietošanu un kontroli, valsts valodas prasības, arī nozares likumā (14. noteikums), mācību valodu, latgaliešu un citu valodu statusu.
 - Neietver: valodu sabiedriskajos medijos → «Sabiedriskie mediji»; izglītības saturu kopumā → «Izglītība»; valodas prasmi kā uzturēšanās atļaujas nosacījumu → «Imigrācija».
-- Robeža: Administratīvo sodu likuma grozījumi valsts valodas lietošanas jomā (863/Lp14) → «Valodu politika»; Augstskolu likuma grozījumi par akadēmiskā personāla valodas apliecinājumu (571/Lp14) → «Valodu politika»; latgaliešu valoda sabiedriskajos medijos (84/P14) → «Sabiedriskie mediji».
+- Robeža: Augstskolu likuma grozījumi par akadēmiskā personāla valodas apliecinājumu (571/Lp14) → «Valodu politika»; latgaliešu valoda sabiedriskajos medijos (84/P14) → «Sabiedriskie mediji».
 
 ### Sabiedriskie mediji
 - Ietver: LSM, LTV un LR, SEPLP padomi, sabiedrisko mediju finansēšanu un reformu, valodas lietojumu tajos.
@@ -211,3 +211,21 @@ Katram dokumentam (likumprojektam `Lp`, lēmumam `Lm`, pieprasījumam `P` vai ba
 ## Operatora lēmumi 2026-10-22 (versija 2026-10-22.2)
 
 Jaunas tēmas neievieš; robi iekļauti esošajās: darba tiesības, mazākumtautības un sabiedrības saliedētība → «Sociālā politika»; sabiedrības veselība (tabaka, e-cigaretes, alkohols) → «Veselības aprūpe»; kriminālsods par vienas nozares pārkāpumu → nozares tēma (13. noteikums); personu apliecinoši dokumenti un dzīvesvietas deklarēšana → «Valsts pārvalde»; pilsonība, arī atņemšana drošības nolūkā → «Sociālā politika» (15. noteikums); Saeimas kārtības rullis → «Valsts pārvalde» (robeža slēgta).
+
+## Operatora lēmumi 2026-11-11 (versija nemainās)
+
+«Ietver» rindas nav mainītas, tāpēc Jev prompts un `RUBRIC_VERSION` paliek tie paši (`src/saeima/topic_classifiers.py`: promptā nonāk tikai «Ietver»). Šīs rindas ir cilvēkiem un pārbaudītājiem; pamatojums — `data/saeima_topic_gold/BATCH_LOG.md` (b04–kor1111b).
+
+- Nodokļu un muitas policijas kompetence Administratīvo sodu likumā par pārkāpumiem pārvaldes, sabiedriskās kārtības un valsts valodas lietošanas jomā (863/Lp14) → «Budžets un finanses» (13. noteikums, kā 1108/Lp14; «valsts valodas» ir tikai likuma nosaukumā); pieprasījums par Nodokļu un muitas policijas darbu (74/P14) → «Budžets un finanses».
+- Nodokļa atvieglojums cilvēku grupai (pensionāriem, vecākiem, pirmajā darbavietā; PVN zīdaiņu pārtikai un autiņbiksītēm, 1427/Lp14, 1329/Lp14, 1402/Lp14) → «Budžets un finanses»; 8. noteikums attiecas tikai uz vienas nozares precēm vai pakalpojumiem.
+- Saeimas piekrišana budžeta apropriāciju pārdalei (1109/Lm14, 1129/Lm14, 208/Lm14) → «Budžets un finanses»; 10. noteikuma piezīme par saņēmēja programmu attiecas uz budžeta likuma priekšlikumiem.
+- Dubultpilsoņu kandidēšanas ierobežojums Saeimas vēlēšanās (420/Lp14) → «Vēlēšanas» (ierobežo kandidēšanu, ne pilsonību — tēmu nosaka grozāmais likums, ne 15. noteikums).
+- Ieturamais nodoklis maksājumiem uz visām zemu nodokļu valstīm (1240/Lp14) → «Budžets un finanses» (10. noteikums: instruments vispārējs).
+- Samazināta PVN likme grāmatām tikai oficiālajās valodās (570/Lp14) → «Valodu politika» (14. noteikums: valodas nosacījums ir galvenais saturs); daudznozaru PVN grozījumi ar līdzīgu punktu (1124/Lp14) → «Budžets un finanses».
+- Naudas atmazgāšanas novēršanas likums (392/Lp14, 426/Lp14) → «Budžets un finanses».
+- Sabiedrisko pakalpojumu regulators (1155/Lp14, 1085/Lm14) → «Ekonomika un uzņēmējdarbība».
+- EEZ un Norvēģijas finanšu instrumentu vadība (1306/Lp14) → «Budžets un finanses» (nav ES instruments).
+- Iekšlietu jomas ES fondi (1247/Lp14) → «Aizsardzība un drošība» (13. noteikums).
+- Pamattiesības pandēmiju laikā (1120/Lm14) → «Veselības aprūpe».
+- Tonnāžas nodoklis (1449/Lp14) → «Transports» (8. noteikums: nozares nodoklis).
+- Covid-19 infekcijas izplatības pārvaldības likums (91/Lp14, 340/Lp14) → «Veselības aprūpe»; Covid-19 infekcijas izplatības seku pārvarēšanas likums (92/Lp14, 504/Lp14) → «Ekonomika un uzņēmējdarbība».

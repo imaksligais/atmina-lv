@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (15%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (10%), [[topics/budzets-un-finanses|Budžets un finanses]] (9%)
-- **30d:** 20 claims, 1.5× bāzes līnija
+- **30d:** 19 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/baiba-braze|Baiba Braže]] (2 spriedzes), [[persons/rihards-kols|Rihards Kols]] (1 spriedze), [[persons/rihards-kozlovskis|Rihards Kozlovskis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

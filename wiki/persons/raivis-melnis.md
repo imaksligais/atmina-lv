@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (58%), [[topics/droni|Droni]] (23%), [[topics/imigracija|Imigrācija]] (6%)
-- **30d:** 13 claims, 1.2× bāzes līnija
+- **30d:** 13 claims, 1.3× bāzes līnija
 - **Spriedzes:** [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

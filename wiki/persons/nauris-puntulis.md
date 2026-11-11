@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/kultura|Kultūra]] (38%), [[topics/valodu-politika|Valodu politika]] (27%), [[topics/imigracija|Imigrācija]] (6%)
-- **30d:** 10 claims, 1.0× bāzes līnija
+- **30d:** 9 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

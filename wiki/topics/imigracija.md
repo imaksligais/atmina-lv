@@ -1,7 +1,7 @@
 ---
 topic: Imigrācija
 positions: 740
-votes: 23146
+votes: 22341
 politicians: 92
 contradictions: 0
 last_activity: '2026-11-10 00:00:00'

@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/budzets-un-finanses|Budžets un finanses]] (15%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (9%)
-- **30d:** 14 claims, 1.0× bāzes līnija
+- **30d:** 14 claims, 1.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (11 spriedzes), [[persons/baiba-braze|Baiba Braže]] (2 spriedzes), [[persons/andris-suvajevs|Andris Šuvajevs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

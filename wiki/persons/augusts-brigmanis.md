@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 2 claims, 0.7× bāzes līnija
+- **30d:** 1 claims, 0.3× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/reinis-uzulnieks|Reinis Uzulnieks]] (1 spriedze)
 <!-- /SYNC-AUTO -->

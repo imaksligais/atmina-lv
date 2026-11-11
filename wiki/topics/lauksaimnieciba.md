@@ -1,7 +1,7 @@
 ---
 topic: Lauksaimniecība
 positions: 105
-votes: 8384
+votes: 8511
 politicians: 29
 contradictions: 0
 last_activity: '2026-11-06 00:00:00'

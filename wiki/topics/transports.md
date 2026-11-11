@@ -1,7 +1,7 @@
 ---
 topic: Transports
 positions: 180
-votes: 25776
+votes: 25208
 politicians: 47
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

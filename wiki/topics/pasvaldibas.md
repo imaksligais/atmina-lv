@@ -1,7 +1,7 @@
 ---
 topic: Pašvaldības
 positions: 278
-votes: 36492
+votes: 25965
 politicians: 65
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

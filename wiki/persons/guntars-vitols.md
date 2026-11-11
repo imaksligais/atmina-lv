@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (28%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%), [[topics/airbaltic|airBaltic]] (10%)
-- **30d:** 34 claims, 1.0× bāzes līnija
+- **30d:** 32 claims, 1.0× bāzes līnija
 - **Spriedzes:** [[persons/kaspars-briskens|Kaspars Briškens]] (2 spriedzes), [[persons/evika-silina|Evika Siliņa]] (1 spriedze), [[persons/baiba-braze|Baiba Braže]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

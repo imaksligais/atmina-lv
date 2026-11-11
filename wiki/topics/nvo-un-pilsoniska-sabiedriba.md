@@ -1,7 +1,7 @@
 ---
 topic: NVO un pilsoniskā sabiedrība
 positions: 146
-votes: 1562
+votes: 1891
 politicians: 50
 contradictions: 1
 last_activity: '2026-11-10 00:00:00'

@@ -1,7 +1,7 @@
 ---
 topic: ES politika
 positions: 279
-votes: 6372
+votes: 949
 politicians: 56
 contradictions: 0
 last_activity: '2026-11-10 00:00:00'

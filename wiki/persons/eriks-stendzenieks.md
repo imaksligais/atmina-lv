@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (24%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (13%), [[topics/imigracija|Imigrācija]] (8%)
-- **30d:** 35 claims, 2.6× bāzes līnija
+- **30d:** 34 claims, 2.4× bāzes līnija
 - **Spriedzes:** [[persons/baiba-braze|Baiba Braže]] (4 uzbrukumi), [[persons/andris-kulbergs|Andris Kulbergs]] (2 uzbrukumi), [[persons/andris-spruds|Andris Sprūds]] (2 uzbrukumi)
 <!-- /SYNC-AUTO -->

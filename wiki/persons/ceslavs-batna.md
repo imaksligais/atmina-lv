@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (69%), [[topics/kultura|Kultūra]] (10%), [[topics/sociala-politika|Sociālā politika]] (10%)
-- **30d:** 8 claims, 1.5× bāzes līnija
+- **30d:** 8 claims, 1.6× bāzes līnija
 <!-- /SYNC-AUTO -->

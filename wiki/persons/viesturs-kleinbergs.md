@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (33%), [[topics/pilsetvide|Pilsētvide]] (21%), [[topics/transports|Transports]] (10%)
-- **30d:** 16 claims, 1.9× bāzes līnija
+- **30d:** 15 claims, 1.7× bāzes līnija
 - **Spriedzes:** [[persons/viktors-valainis|Viktors Valainis]] (3 uzbrukumi), [[persons/maris-sprindzuks|Māris Sprindžuks]] (1 spriedze)
 <!-- /SYNC-AUTO -->

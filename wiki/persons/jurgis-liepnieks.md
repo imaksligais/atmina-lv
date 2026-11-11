@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (22%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (19%), [[topics/velesanas|Vēlēšanas]] (8%)
-- **30d:** 24 claims, 0.8× bāzes līnija
+- **30d:** 23 claims, 0.8× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (17 uzbrukumi), [[persons/baiba-braze|Baiba Braže]] (3 uzbrukumi), [[persons/alvis-hermanis|Alvis Hermanis]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

@@ -1,7 +1,7 @@
 ---
 topic: Sociālā politika
 positions: 441
-votes: 47282
+votes: 32412
 politicians: 109
 contradictions: 10
 last_activity: '2026-11-10 00:00:00'

@@ -1,7 +1,7 @@
 ---
 topic: Izglītība
 positions: 291
-votes: 28677
+votes: 28038
 politicians: 75
 contradictions: 1
 last_activity: '2026-11-07 00:00:00'
