@@ -14,6 +14,11 @@ Sadaļa ieviesta 2026-10-17 (`kind: atradums`, `src/render/analyses.py`, `tests/
 
 ## Profili / UI
 
+### [OPEN] Partiju krāsas — atlikums pēc 2026-11-11 (ārpus Saeimas partijas, kontrasts)
+- **Problēma:** 11.11. sešas Saeimas partijas pārkrāsotas pēc logo (CHANGELOG 2026-11-11 (1)). Partiju lapā AS #f5ae00 ir tuvu ASL #fbbf24 un GKR #f59e0b, JV #4cae5a — ZZS #84cc16. Kontrasts pret fonu (dataviz validators): tumšajā tēmā NA 1,75:1, gaišajā AS 1,67:1 — atšķiramas tikai ar leģendas nosaukumiem.
+- **Rīcība:** ārpus Saeimas partiju krāsas pārskatīt pret logo ar to pašu metodi (`fix`+`rollback`, validators, pilns renders); ja kontrasts traucē — tumšās tēmas tonis kodā (`parties.color` ir viena kolonna abām tēmām).
+- *Trigeris:* operatora lūgums vai lasītāja signāls. *Īpašnieks:* operators.
+
 ### [OPEN] Sava vizuālā identitāte — unikāls fonts (2026-10-08, zema prioritāte)
 - **Signāls:** lasītāja komentārs Reddit: lapa izskatās pēc «noklusējuma Claude izvades», tāpēc dati šķiet mazāk ticami. Fakts: Styrene netiek lietots (sistēmas sans + serifs + JetBrains Mono; serifs kopš 2026-10-11 ir pašmitināts Source Serif 4, Georgia tikai rezerve — CHANGELOG 2026-10-11), bet serifa virsraksti + mono etiķetes + krēmīgi toņi + sepijas attēli veido atpazīstamu AI-ģenerētu stilu.
 - **Rīcība (operators 2026-10-08: «vēlāk darīsim ar savu unikālo fontu»):** savs burtveidolu pāris (LV diakritika!), krāsa, logotips. Paralēli — redzamāka «Kā mēs strādājam» un labojumu žurnāls; `about`/`kontakti` roku veidotā varoņa galvene → kopā ar šo (nav `pagehead`). Tumšās tēmas toņi: `--bg` viens avots (`chrome-v1.js`, `theme-init.js` literālis piesprausts testā). *Īpašnieks:* operators.

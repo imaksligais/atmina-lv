@@ -1,6 +1,6 @@
 ---
 topic: Sociālā politika
-positions: 442
+positions: 441
 votes: 47282
 politicians: 109
 contradictions: 10

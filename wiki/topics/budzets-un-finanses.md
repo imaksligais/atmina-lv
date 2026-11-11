@@ -3,7 +3,7 @@ topic: Budžets un finanses
 positions: 672
 votes: 166350
 politicians: 92
-contradictions: 2
+contradictions: 1
 last_activity: '2026-11-10 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

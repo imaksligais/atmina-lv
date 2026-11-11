@@ -1,21 +1,21 @@
 # atmina — Indekss
 
-_Atjaunots: 2026-11-10 23:26:54_
+_Atjaunots: 2026-11-11 00:52:54_
 
 ## Stāvoklis
 
-- **228** politiķi, **11113** pozīcijas + **694798** Saeimas balsojumi, **49** pretrunas, **143186** dokumenti
+- **228** politiķi, **11111** pozīcijas + **694798** Saeimas balsojumi, **48** pretrunas, **143186** dokumenti
 - Saucējs: «politiķi» = tikai `relationship_type='tracked'` ieraksti; mediju, žurnālistu un iestāžu sloti nav ieskaitīti
 - **35** tēmas, **33** likumi
 - Pēdējais ingest: 2026-11-10 21:55
 - Media pārklājums: mediāns 11 claims/politiķi, 27/228 bez neviena media claim
 - Nepārskatīts backlog: 3 ziņu raksti
 - Pārskatīti bez claims: 4778 (ceremoniāli/dublikāti — re-extraction var atgūt daļu)
-- Pēdējo 7 dienu media claims: Andris Kulbergs (51), Baiba Braže (23), Edgars Rinkēvičs (20), Edvards Smiltēns (19), Ainārs Šlesers (16)
+- Pēdējo 7 dienu media claims: Andris Kulbergs (50), Baiba Braže (21), Ainārs Šlesers (16), Edvards Smiltēns (15), Ansis Pūpols (15)
 
 ## Struktūra
 
-- [[persons/personas|Politiķi]] — 257 profili, 11062 pozīcijas (tikai aktīvie)
+- [[persons/personas|Politiķi]] — 257 profili, 11060 pozīcijas (tikai aktīvie)
 - [[parties/partijas|Partijas]] — 18 partijas
 - [[topics/temas|Tēmas]] — 35 tēmas
 - [[mediji|Mediji]] — 11 mediju caurskatāmības profili (publiskā vietne `mediji.html`)

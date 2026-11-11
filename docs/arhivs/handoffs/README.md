@@ -104,3 +104,7 @@ Atsauces nomainītas `wiki/CHANGELOG.md`, `backlog/repo-higiena.md` un `docs/sup
 ## 2026-11-09 — `HANDOFF-2026-11-07.md`
 
 Fails nesa trīs dienas (07.–09.11.). Atvērtie punkti pārcelti uz `docs/HANDOFF-2026-11-09.md`; aizvērtie (#123, `vad-2026`, 22 Krištopans, Brēmanis 753073, vārdabrāļu atsaiste, Melnis 730655, Braže 154165) paliek tikai šeit un `git log`.
+
+## 2026-11-11 — `HANDOFF-2026-11-09.md`, `HANDOFF-2026-11-10.md`, `HANDOFF-2026-11-10-rutina.md`
+
+Atvērtie punkti pārcelti uz `docs/HANDOFF-2026-11-11.md`; 11-09 saraksti «gaida notikumu» un «apzināti nelabots» paliek spēkā un ir norādīti no jaunā handoffa. Atsauce nomainīta `docs/verdikti-2026-11-09.md`; plānos (`docs/plans/`) un arhivētajos failos nav aiztiktas.

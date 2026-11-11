@@ -18,6 +18,7 @@
     <div class="slv-card-ident">
       <div class="slv-card-eyebrow"><span class="slv-swatch" aria-hidden="true"></span>{{ s.list.short }}{% if s.region %} · {{ s.region }}{% endif %}</div>
       <div class="slv-card-name">{{ s.name }}</div>
+      {% if s.office %}<div class="slv-office">{{ s.office }}</div>{% endif %}
     </div>
   </div>
   {% if s.tracked %}
@@ -74,7 +75,7 @@
       <div class="slv-arc">
         <svg class="slv-svg" viewBox="-212 -212 424 222" role="group" aria-label="15. Saeimas sēdvietas pa sarakstiem">
           {%- for s in seats %}
-          <a href="#dep-{{ s.slug }}" class="seat" data-slug="{{ s.slug }}" data-list="{{ s.list.nr }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}" aria-label="{{ s.name }}, {{ s.list.short }}" style="--seat-list:{{ s.list.color }}"><title>{{ s.name }} · {{ s.list.short }}</title><circle class="seat-hit" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ hit_r }}"/><circle class="seat-dot" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ dot_r }}"/></a>
+          <a href="#dep-{{ s.slug }}" class="seat{% if s.ring %} has-office{% endif %}" data-slug="{{ s.slug }}" data-list="{{ s.list.nr }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}" aria-label="{{ s.name }}, {{ s.list.short }}{% if s.office %}, {{ s.office }}{% endif %}" style="--seat-list:{{ s.list.color }}"><title>{{ s.name }} · {{ s.list.short }}{% if s.office %} · {{ s.office }}{% endif %}</title><circle class="seat-hit" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ hit_r }}"/><circle class="seat-dot" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ dot_r }}"/>{% if s.ring %}<circle class="seat-ring" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ ring_r }}"/>{% endif %}</a>
           {%- endfor %}
         </svg>
         <div class="slv-center" aria-hidden="true">
@@ -101,7 +102,7 @@
           <li><span class="slv-key slv-key-v14-ja" aria-hidden="true"></span>balsoja <span class="slv-key-n">{{ voted_n }}</span></li>
           <li><span class="slv-key slv-key-v14-ne" aria-hidden="true"></span>nebalsoja <span class="slv-key-n">{{ total - voted_n }}</span></li>
         </ul>
-        <p class="slv-legend-note">Vai deputāts {{ vote_convocation }}. Saeimā ir balsojis vismaz vienu reizi. Ministrs, kurš nolika mandātu, balsojumos neparādās. Dati par {{ total }} no {{ total }}.</p>
+        <p class="slv-legend-note">Vai deputāts iepriekšējā, {{ vote_convocation }}. Saeimā ir balsojis vismaz vienu reizi. Ministrs, kurš nolika mandātu, balsojumos neparādās. Dati par {{ total }} no {{ total }}.</p>
       </div>
       <div class="slv-legend" data-lens-for="pozicijas">
         <ul class="slv-keys">
@@ -122,6 +123,7 @@
         </ul>
         <p class="slv-legend-note">Publicētās pretrunas — visā laikā, kopš sekojam deputātam. Dati par {{ tracked_n }} no {{ total }}.</p>
       </div>
+      <p class="slv-ring-note"><span class="slv-key slv-key-ring" aria-hidden="true"></span>Gredzens — Prezidijs vai frakcijas priekšsēdētājs</p>
     </div>
 
     <aside class="slv-pop" id="slv-pop" aria-label="Deputāta kartīte" hidden>
@@ -138,6 +140,27 @@
   </div>
   <div class="slv-backdrop" hidden></div>
 
+  <section class="slv-prez" aria-labelledby="slv-prez-title">
+    <div class="section-head">
+      <div>
+        <div class="section-head-kicker">Vada Saeimu</div>
+        <h2 class="section-head-title" id="slv-prez-title">Prezidijs</h2>
+      </div>
+    </div>
+    <ul class="slv-prez-grid" role="list">
+      {% for s in presidium %}
+      <li class="slv-prez-card" style="--seat-list:{{ s.list.color }}">
+        {% if s.has_photo %}<img class="slv-prez-avatar" src="assets/photos/{{ s.slug }}.jpg" alt="" loading="lazy" decoding="async" width="64" height="64">{% else %}<span class="slv-prez-avatar slv-prez-avatar-ph" aria-hidden="true">{{ s.name.split()|map('first')|join('')|upper }}</span>{% endif %}
+        <a class="slv-prez-name" href="#dep-{{ s.slug }}">{{ s.name }}</a>
+        <span class="slv-prez-office">{{ s.office }}</span>
+        <span class="slv-prez-party"><span class="slv-swatch" aria-hidden="true"></span>{{ s.list.short }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="slv-prez-note">{{ committees.n }} komisiju sastāvs un vadība vēl nav ievēlēti · <a href="{{ committees.source_url|safe_url }}" target="_blank" rel="noopener">saeima.lv{% if offices_checked %}, {{ offices_checked }}{% endif %} ↗</a></p>
+    <p class="slv-prez-note">Amati pēc saeima.lv datiem{% if offices_checked %}, pārbaudīti {{ offices_checked }}{% endif %}: <a href="{{ presidium_source_url|safe_url }}" target="_blank" rel="noopener">Prezidijs ↗</a> · <a href="{{ factions_source_url|safe_url }}" target="_blank" rel="noopener">frakcijas ↗</a></p>
+  </section>
+
   <section class="slv-lists" aria-labelledby="slv-lists-title">
     <div class="section-head">
       <div>
@@ -146,12 +169,17 @@
       </div>
     </div>
     {% for l in lists %}
-    <details class="slv-group" open style="--seat-list:{{ l.color }}">
+    <details class="slv-group" data-list="{{ l.nr }}" open style="--seat-list:{{ l.color }}">
       <summary class="slv-group-sum">
         <span class="slv-key slv-key-list" aria-hidden="true"></span>
-        <span class="slv-group-name">{{ l.name }}</span>
+        <span class="slv-group-title"><span class="slv-group-name">{{ l.name }}</span>{% if l.chair_label %}<span class="slv-group-chair">{{ l.chair_label }}</span>{% endif %}</span>
         <span class="slv-group-n">{{ l.seats_text }}</span>
       </summary>
+      {#- Vadība grupas ķermenī, ne <summary>: saites kopsavilkumā pārslēgtu grupu
+          un ekrānlasītājs tās nolasītu kā daļu no pogas. -#}
+      {% if l.leadership %}
+      <p class="slv-group-lead">Frakcijas vadība: {% for ld in l.leadership %}<a href="#dep-{{ ld.slug }}">{{ ld.name }}</a> <span class="slv-group-lead-title">({{ ld.title }})</span>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+      {% endif %}
       <div class="slv-deps">
         {% for s in l.members %}
         <details class="slv-dep" id="dep-{{ s.slug }}" data-slug="{{ s.slug }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}">
@@ -160,7 +188,7 @@
             {% if s.has_photo %}<img class="slv-dep-avatar" src="assets/photos/{{ s.slug }}.jpg" alt="" loading="lazy" decoding="async" width="36" height="36">{% else %}<span class="slv-dep-avatar slv-dep-avatar-ph" aria-hidden="true">{{ s.name.split()|map('first')|join('')|upper }}</span>{% endif %}
             <span class="slv-dep-ident">
               <span class="slv-dep-name">{{ s.name }}</span>
-              <span class="slv-dep-region">{{ s.region }}</span>
+              {% if s.office_row %}<span class="slv-dep-role">{{ s.office_row }}</span>{% else %}<span class="slv-dep-region">{{ s.region }}</span>{% endif %}
             </span>
             <span class="slv-val" data-lens-val="v14">{{ s.v14_text }}</span>
             <span class="slv-val" data-lens-val="pos">{{ s.pos_text }}</span>

@@ -420,6 +420,10 @@ def rendered_site(tmp_path_factory, _stable_assets_version, render_fixture_db):
         _saeima, "RESULTS_PATH",
         Path(__file__).parent / "fixtures" / "cvk_sv2026_rezultati.yaml",
     )
+    mpatch.setattr(
+        _saeima, "AMATI_PATH",
+        Path(__file__).parent / "fixtures" / "saeima15_amati.yaml",
+    )
 
     # Likumu lapas (likumi.html, likumi/*.html, likumprojektu tituli): fiksēta
     # wiki/laws kopija, lai rutīnas wiki sync nepārbīda baseline.

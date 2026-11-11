@@ -231,9 +231,10 @@ _Detalizētie ieraksti dzīvo tēmas failos `backlog/*.md` (sadale 2026-08-19). 
 - **[DAĻĒJI SLĒGTS 2026-08-21]** NVO maksājumi × VAD deklarācijas — JOIN atkārtots; parsera robi aizvērti; paliek operatora triāža
 - **[DEFERRED]** VAD: `_norm_kind` «stājoties amatā» / «Beidzot darbu» → `interim`; kartējums dublēts
 
-**[`backlog/vietne-ui.md`](backlog/vietne-ui.md)** — 10 ieraksti:
+**[`backlog/vietne-ui.md`](backlog/vietne-ui.md)** — 11 ieraksti:
 - **[OPERATOR]** Nākamie «Atradumi» — Toca deklarācijas un tiesas lieta par policijas izpostītu dārzu (sadaļa kopš 2026-10-17)
 - **[DEFERRED]** Wiki pārskati grafā izolēti — pārskatiem nav strukturēta dalībnieku saraksta (2026-10-18)
+- **[OPEN]** Partiju krāsas — atlikums pēc 2026-11-11 (ārpus Saeimas partijas, kontrasts)
 - **[OPEN]** Sava vizuālā identitāte — unikāls fonts (2026-10-08, zema prioritāte)
 - **[OPEN]** Tēmu ikonas — Lucide SVG sprite, tēmas krāsā, tikai lielajās virsmās (2026-10-21)
 - **[OPEN]** UI audits 2026-10-27 — atlikums (S1 nedēļas diagramma, kastes→līnijas, S2)

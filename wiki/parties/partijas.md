@@ -1,12 +1,12 @@
 # Partijas — Indekss
 
-_Atjaunots: 2026-11-10 23:26:49_
+_Atjaunots: 2026-11-11 00:52:45_
 
 **18** partijas
 
 | Partija | Biedri | Pozīcijas | Pretrunas | Par | Pret | Atturas |
 |---|---|---|---|---|---|---|
-| [[parties/apvienotais-saraksts\|Apvienotais saraksts]] | 48 | 2150 | 14 | 63624 | 12026 | 4712 |
+| [[parties/apvienotais-saraksts\|Apvienotais saraksts]] | 48 | 2149 | 13 | 63624 | 12026 | 4712 |
 | [[parties/jauna-vienotiba\|Jaunā Vienotība]] | 35 | 1667 | 14 | 108529 | 38260 | 24686 |
 | [[parties/nacionala-apvieniba\|Nacionālā apvienība]] | 22 | 1613 | 5 | 59637 | 11179 | 2855 |
 | [[parties/progresivie\|Progresīvie]] | 18 | 898 | 6 | 41173 | 11946 | 7238 |
@@ -16,7 +16,7 @@ _Atjaunots: 2026-11-10 23:26:49_
 | [[parties/mmn\|MMN]] | 9 | 567 | 0 | 4310 | 845 | 283 |
 | [[parties/austosa-saule-latvijai\|Austošā Saule Latvijai]] | 4 | 396 | 0 | 0 | 0 | 0 |
 | [[parties/latvijas-attistibai\|Latvijas attīstībai]] | 2 | 140 | 0 | 0 | 0 | 0 |
-| [[parties/jkp\|JKP]] | 2 | 76 | 0 | 0 | 0 | 0 |
+| [[parties/jkp\|JKP]] | 2 | 75 | 0 | 0 | 0 | 0 |
 | [[parties/suverena-varajaunlatviesi\|Suverēnā vara/Jaunlatvieši]] | 15 | 73 | 1 | 0 | 30 | 0 |
 | [[parties/gods-kalpot-rigai\|Gods kalpot Rīgai]] | 1 | 61 | 0 | 3876 | 1203 | 770 |
 | [[parties/sarauj-latgale\|SARAUJ, LATGALE!]] | 1 | 53 | 1 | 0 | 0 | 0 |

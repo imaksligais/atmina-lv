@@ -1,21 +1,21 @@
 # Politiķi — Indekss
 
-_Atjaunots: 2026-11-10 23:26:39_
+_Atjaunots: 2026-11-11 00:52:30_
 
-**257** politiķi, **11062** pozīcijas
+**257** politiķi, **11060** pozīcijas
 
 ## Apvienotais saraksts (48)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/andris-kulbergs\|Andris Kulbergs]] | 932 | 9 | 5520 | 2026-11-10 |
+| [[persons/andris-kulbergs\|Andris Kulbergs]] | 932 | 8 | 5520 | 2026-11-10 |
 | [[persons/guntars-vitols\|Guntars Vītols]] | 263 | 0 | 5 | 2026-11-08 |
 | [[persons/edvards-smiltens\|Edvards Smiltēns]] | 201 | 1 | 5610 | 2026-11-10 |
 | [[persons/maris-kucinskis\|Māris Kučinskis]] | 161 | 1 | 5199 | 2026-11-10 |
 | [[persons/edgars-tavars\|Edgars Tavars]] | 107 | 1 | 6780 | 2026-11-10 |
 | [[persons/karlis-serzants\|Kārlis Seržants]] | 71 | 0 | 0 | 2026-11-09 |
 | [[persons/reinis-poznaks\|Reinis Pozņaks]] | 56 | 0 | 0 | 2026-11-08 |
-| [[persons/aivis-cerins\|Aivis Ceriņš]] | 50 | 0 | 0 | 2026-11-10 |
+| [[persons/aivis-cerins\|Aivis Ceriņš]] | 49 | 0 | 0 | 2026-11-10 |
 | [[persons/juris-vilums\|Juris Viļums]] | 46 | 0 | 7207 | 2026-11-09 |
 | [[persons/raimonds-bergmanis\|Raimonds Bergmanis]] | 40 | 0 | 6415 | 2026-11-03 |
 | [[persons/ceslavs-batna\|Česlavs Batņa]] | 29 | 0 | 7120 | 2026-11-07 |
@@ -288,7 +288,7 @@ _Atjaunots: 2026-11-10 23:26:39_
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/martins-stals\|Mārtiņš Štāls]] | 57 | 0 | 0 | 2026-11-05 |
+| [[persons/martins-stals\|Mārtiņš Štāls]] | 56 | 0 | 0 | 2026-11-04 |
 | [[persons/janis-citskovskis\|Jānis Citskovskis]] | 19 | 0 | 0 | 2026-10-29 |
 
 ## Suverēnā vara/Jaunlatvieši (15)

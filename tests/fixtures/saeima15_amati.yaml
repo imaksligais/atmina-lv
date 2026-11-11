@@ -1,0 +1,70 @@
+# TESTU FIXTURE — kopija no data/saeima15_amati.yaml (2026-11-11). Visi vārdi ir arī
+# tests/fixtures/cvk_sv2026_ievēlētie.yaml ar tiem pašiem list_nr — validācija iziet.
+# Fiksēta, lai data/ faila maiņa nepārbīda test_render_chars bāzlīniju.
+convocation: 15
+checked: 2026-11-11
+
+presidium:
+  source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/prezidijs/
+  members:
+    - {name: Edvards Smiltēns, office: Saeimas priekšsēdētājs, since: 2026-11-03}
+    - {name: Ināra Mūrniece, office: Saeimas priekšsēdētāja biedre, since: 2026-11-03}
+    - {name: Raimonds Vējonis, office: Saeimas priekšsēdētāja biedrs, since: 2026-11-03}
+    - {name: Ramona Petraviča, office: Saeimas sekretāre, since: 2026-11-03}
+    - {name: Antoņina Ņenaševa, office: Saeimas sekretāres biedre, since: 2026-11-03}
+
+factions:
+  source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/frakcijas/
+  items:
+    - list_nr: 7  # AS
+      since: 2026-11-03
+      leaders:
+        - {name: Māris Kučinskis, role: chair, title: Priekšsēdētājs}
+        - {name: Raimonds Bergmanis, role: deputy, title: Priekšsēdētāja vietnieks}
+        - {name: Dāvis Melnalksnis, role: deputy, title: Priekšsēdētāja vietnieks}
+    - list_nr: 8  # LPV
+      since: 2026-11-03
+      leaders:
+        - {name: Ainārs Šlesers, role: chair, title: Priekšsēdētājs}
+        - {name: Edmunds Zivtiņš, role: deputy, title: Priekšsēdētāja vietnieks}
+    - list_nr: 1  # SV/AJ
+      since: 2026-11-03
+      leaders:
+        - {name: Jūlija Stepaņenko, role: chair, title: Priekšsēdētāja}
+        - {name: Rūdolfs Brēmanis, role: deputy, title: Priekšsēdētājas vietnieks}
+    - list_nr: 5  # NA
+      since: 2026-11-03
+      leaders:
+        - {name: Artūrs Butāns, role: chair, title: Priekšsēdētājs}
+        - {name: Uģis Mitrevics, role: deputy, title: Priekšsēdētāja vietnieks}
+    - list_nr: 14  # PRO
+      since: 2026-11-03
+      leaders:
+        - {name: Andris Šuvajevs, role: chair, title: Priekšsēdētājs}
+        - {name: Agnese Lāce, role: deputy, title: Priekšsēdētāja vietniece}
+    - list_nr: 9  # JV
+      since: 2026-11-03
+      leaders:
+        - {name: Inese Lībiņa-Egnere, role: chair, title: Priekšsēdētāja}
+        - {name: Inga Bērziņa, role: deputy, title: Priekšsēdētājas vietniece}
+
+committees:
+  source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/
+  status: not_elected
+  names:
+    - Ārlietu komisija
+    - Budžeta un finanšu (nodokļu) komisija
+    - Juridiskā komisija
+    - Cilvēktiesību un sabiedrisko lietu komisija
+    - Izglītības, kultūras un zinātnes komisija
+    - Aizsardzības, iekšlietu un korupcijas novēršanas komisija
+    - Valsts pārvaldes un pašvaldības komisija
+    - Tautsaimniecības, agrārās, vides un reģionālās politikas komisija
+    - Sociālo un darba lietu komisija
+    - Mandātu, ētikas un iesniegumu komisija
+    - Pieprasījumu komisija
+    - Publisko izdevumu un revīzijas komisija
+    - Nacionālās drošības komisija
+    - Pilsonības, migrācijas un sabiedrības saliedētības komisija
+    - Eiropas lietu komisija
+    - Ilgtspējīgas attīstības un demogrāfijas jautājumu komisija

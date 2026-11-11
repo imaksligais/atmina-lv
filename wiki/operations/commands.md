@@ -56,7 +56,7 @@ Pilns render ~3 min (169 s pēc 2026-05-29 `idx_claims_document_id` fix; agrāk 
 | Saeimas sēdes IELĀDE (jauni likumprojekti) | `bills,balsojumi,likumi,static` | ~1 min |
 | Politikim pievienoti jauni claims/pretrunas | `pretrunas,pozicijas,dashboard,politiki,blog,saeima` | ~1-2 min (`render_politicians` ~60 s) |
 | Tikai static (about/kontakti/404/sitemap) | `static` | ~5s |
-| `saeima.html` (15. Saeimas pusloks; sastāvs `data/cvk_sv2026_ievēlētie.yaml`) | `saeima` | ~5s |
+| `saeima.html` (15. Saeimas pusloks; sastāvs `data/cvk_sv2026_ievēlētie.yaml`, amati `data/saeima15_amati.yaml`) | `saeima` | ~5s |
 
 > **Saeimas sēdes ielāde paplašina rendera tvērumu — `dashboard,blog,static` NEPIETIEK (2026-09-10).** `process_vote_snapshot()` upserto arī `saeima_bills`, un `static` domēns ieliek sitemapā `likumprojekti/<slug>.html` rindas KATRAM likumprojektam — bet pašas lapas renderē `bills` domēns. Ja tajā pašā dienā ir bijusi sēdes ielāde un renderē tikai pārskata recepti, sitemaps norāda uz lapām, kuru kokā nav: 2026-09-10 tas bija **40 salauztas atsauces** (52 jauni likumprojekti), un `deploy.sh` preflight `check_output.py` deploy pareizi atteica ar `ERROR: built tree has broken references`. Tas ir vārts, kas nostrādāja, ne kļūda — bet tā ir arī vienīgā vieta, kur to pamana, tāpēc pēc sēdes ielādes renderē `bills,balsojumi,likumi,static` PIRMS pārskata recepti (vai vienkārši abus kopā). Pēc labojuma: 1001 lapa, 53 289 atsauces, sitemaps 1000/1000 atrisinās.
 

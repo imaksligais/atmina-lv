@@ -155,6 +155,8 @@ uv.lock
 !docs/tweet_bank/**/*.png
 # Avotu kopijas (ekrānattēli), uz kurām atsaucas publiskie raksti
 !assets/sources/**/*.png
+# Partiju logo pierādījums krāsu lēmumam (CHANGELOG 2026-11-11 (1))
+!docs/audits/2026-11-11-partiju-krasas/*.png
 # Brand assets — versionēti, lai svaigs klons/publiskais spogulis renderē pilnu vietni
 !assets/og-image.png
 !assets/favicon-*.png

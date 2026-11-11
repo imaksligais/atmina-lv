@@ -51,6 +51,8 @@ Tēmā `Aizsardzība un drošība` **970** pozīcijas (`SELECT COUNT(*) FROM cla
 
 **2026-11-04, rezerves avots:** saeima.lv `/lv/sasaukumi/15-saeima/{deputati,komisijas,frakcijas}/` jau rāda 15. Saeimas amatus ar datumiem (statisks HTML, «No … Līdz»), titania DepWeb tikmēr atbild 401. Parseri NEBŪVĒT (operators 2026-11-09, § Ne-darīt): lapās nav saites uz DepWeb (`deputy_unid` nav iegūstams), un `deputy_unid` ir UNIQUE atslēgā — aizvietots ID dotu dublikātus dienā, kad titania atveras.
 
+**2026-11-11, Saeimas lapa:** `saeima.html` amatus lasa no kurēta `data/saeima15_amati.yaml` (ne no `role`; CHANGELOG 2026-11-11 (1)). Kad saeima.lv parāda komisiju vadību un sastāvu: papildināt to pašu YAML un uzbūvēt komisiju bloku (ielādētājs tagad apzināti krīt, ja `committees.status` nav `not_elected`). Ja ministrs noliek mandātu un ienāk aizstājējs, lapa klusi rāda CVK sastāvu; jāatjauno `data/cvk_sv2026_ievēlētie.yaml`, pēc tam `data/saeima15_amati.yaml` (ielādētājs krīt pie neievēlēta vārda). `role` pārskatīšana (šis ieraksts) paliek atsevišķa.
+
 ### [OPERATOR] 2026-10-20 rutīnas atlikums — Mieriņas partija
 - **Mieriņa (pid 17)** saka, ka līdz ZZS kongresam lems par dalību partijā (claim 743270) — pēc kongresa pārbaudīt `party` (T6).
 

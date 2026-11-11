@@ -6,6 +6,12 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-11 (1) — Saeimas lapa: amati no kurēta YAML, iepriekšējās Saeimas lēca, partiju krāsas pēc logo
+- **Amati** (Prezidijs, frakciju vadība, komisiju statuss): `data/saeima15_amati.yaml` no saeima.lv (kopijas ar SHA `docs/audits/2026-11-11-saeima-amati/`; 100/100 vārdi = CVK saraksts, 18/18 amati vārds vārdā); lapa `tracked_politicians.role` nelasa. Ielādētājs krīt pie neievēlēta vārda, saraksta bez frakcijas ieraksta vai cita komisiju statusa. § Ne-darīt 37 paliek. Dizains: `docs/superpowers/specs/2026-11-11-saeimas-lapa-amati-design.md`.
+- **Lēca «Balsoja N. Saeimā» = `SAEIMA_CONVOCATION − 1`:** pēc 03.11. pārslēgšanas tā rādīja pašreizējo Saeimu (98/100), tagad iepriekšējo (41/100; skaits = deputāti ar ≥1 nodotu balsi titania URL `LIVS<N>`, renderētā `saeima.html` 11.11.). `tests/test_render_saeima.py`, pierādīts ar mutāciju.
+- **Partiju krāsas pēc logo** (operators 11.11.): AS #f5ae00, LPV #d4264e, SV-AJ #6a55d0, NA #7e1c3a, PRO #f06a1c, JV #4cae5a — `data/{fix,rollback}_party_colors_2026-11-11.sql`; logo kopijas `docs/audits/2026-11-11-partiju-krasas/`. dataviz validators (visi pāri): normālai redzei ≥ 15,1, CVD 6,8 (iepriekš PRO↔JV 0,9).
+- **Krāsu vai veidņu maiņai vajag pilnu `.venv/Scripts/python.exe -m src.render`:** `check.sh` renderē tikai `dashboard,blog,static` (11.11. pēc `check.sh` kokā vēl bija vecās krāsas).
+
 ## 2026-11-10 (3) — X: citētais tvīts un atbildes vecāks kā konteksts
 - **Defekts:** `fetch_user_replies` no sarunas bloka ņēma tikai pirmo elementu (svešu vecāku), politiķa paša atbilde pazuda (pašu `@`-tvīti 56 no 8 251 / 30 d, plāns `docs/plans/2026-11-10-citetais-tvits.md`). Tagad atgriež tikai pašu tvītus; svešs vecāks, sarunas sākums un citētais tvīts glabājas `documents.context_json`, nekad `content` (matcher, `support`, embeddingi to neredz).
 - **Operators (2026-11-10):** sveši vecāki vairs nav dokumenti (esošās rindas paliek); publiski tikai «↪ Atbild @x» / «Citē @x» ar saiti, bez svešā teksta; ekstraktors kontekstu redz `get_politician_documents()['context']`.

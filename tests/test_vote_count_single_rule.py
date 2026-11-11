@@ -201,9 +201,9 @@ def test_saeima_voted_flag(site, monkeypatch):
     import src.render.saeima as saeima_render
     from src.render.saeima import _fetch_people
 
-    # Fiksētie balsojumi ir LIVS14; Saeimas lapas lēca filtrē pašreizējo
-    # sasaukumu (kopš 2026-11-03 — 15.), tāpēc noteikumu salīdzina 14. sasaukumā.
-    monkeypatch.setattr(saeima_render, "SAEIMA_CONVOCATION", 14)
+    # Fiksētie balsojumi ir LIVS14; Saeimas lapas lēca rāda IEPRIEKŠĒJO
+    # sasaukumu (SAEIMA_CONVOCATION − 1), tāpēc pašreizējais = 15 → lēca lasa 14.
+    monkeypatch.setattr(saeima_render, "SAEIMA_CONVOCATION", 15)
     people = _fetch_people(site["db"], [A_NAME, B_NAME])
     assert people[B_NAME]["voted14"] is (_rule_count(site["db"], B_ID) > 0)
 

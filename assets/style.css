@@ -9222,6 +9222,142 @@ html[data-theme="light"] .slv {
 .slv-dep:hover, .slv-dep.is-hot { border-color: var(--accent); border-left-color: var(--seat-list); }
 .slv-dep:target { border-color: var(--accent); border-left-color: var(--seat-list); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent); }
 
+/* ── Amati (data/saeima15_amati.yaml): gredzens, čips, Prezidijs, frakcijas vadība ── */
+/* Gredzens — atsevišķs aplis, lai lēcu --ring/--dash uz .seat-dot paliek savs. */
+.slv .seat-ring {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.25;
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.slv .seat.is-hot .seat-ring,
+.slv .seat.is-active .seat-ring,
+.slv .seat:focus-visible .seat-ring { transform: scale(1.28); }
+.slv-svg.has-active .seat:not(.is-active) .seat-ring { opacity: 0.55; }
+.slv-ring-note {
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  margin-block: 0.8rem 0; margin-inline: 0;
+  font-size: 0.8rem; color: var(--text-muted); text-align: center;
+}
+.slv-key-ring { background: var(--text-muted); box-shadow: 0 0 0 1.5px var(--surface), 0 0 0 2.75px var(--text); }
+
+/* Amats rindā novada vietā — vienā rindā, lai visas rindas vienā augstumā;
+   pilns teksts kartītē un sēdvietas aria-label. */
+.slv-dep-role {
+  min-inline-size: 0;
+  white-space: nowrap; overflow: clip; text-overflow: ellipsis;
+  font-size: 0.75rem; line-height: 1.15; color: var(--text-soft);
+}
+/* Aizvērtas grupas galvenē — frakcijas priekšsēdētājs (teksts, ne saite);
+   atvērtā grupā to aizstāj pilnā vadības rinda. */
+.slv-group-title { display: grid; min-inline-size: 0; }
+.slv-group-chair {
+  font-size: 0.8rem; line-height: 1.35; color: var(--text-muted);
+  white-space: nowrap; overflow: clip; text-overflow: ellipsis;
+}
+.slv-group[open] .slv-group-chair { display: none; }
+
+/* Amata čips kartītē zem vārda. */
+.slv-office {
+  display: inline-block;
+  align-self: start;
+  margin-block-start: 0.3rem;
+  padding-block: 0.1rem; padding-inline: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--seat-list, var(--border)) 50%, transparent);
+  background: color-mix(in oklch, var(--seat-list, var(--surface2)) 14%, var(--surface2));
+  color: var(--text);
+  font-size: 0.72rem; line-height: 1.35; text-wrap: balance;
+}
+
+/* Prezidijs: 5 kartītes, telefonā 2 kolonnās, platā ekrānā rindā. Visa kartīte
+   klikšķināma caur vārda saites ::after (bez <a> ap visu kartīti). */
+.slv-prez { margin-block-end: 2.5rem; container-type: inline-size; }
+.slv-prez-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+}
+.slv-prez-card {
+  position: relative;
+  display: grid; justify-items: center; align-content: start; gap: 0.3rem;
+  min-inline-size: 0;
+  padding-block: 0.9rem 0.8rem; padding-inline: 0.6rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-block-start: 3px solid var(--seat-list);
+  border-radius: var(--radius);
+}
+.slv-prez-avatar {
+  inline-size: 64px; block-size: 64px;
+  border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--seat-list); box-sizing: border-box;
+  background: var(--surface2);
+  margin-block-end: 0.3rem;
+}
+.slv-prez-avatar-ph {
+  display: grid; place-items: center;
+  color: var(--text-muted);
+  font-family: var(--xv1-serif); font-size: 1.35rem; letter-spacing: 0.5px;
+}
+.slv-prez-name {
+  font-family: var(--xv1-serif); font-size: 1.05rem; font-weight: 500; line-height: 1.2;
+  color: var(--text); text-decoration: none;
+}
+.slv-prez-name::after { content: ""; position: absolute; inset: 0; }
+.slv-prez-name:focus-visible { outline: 2px solid transparent; }
+.slv-prez-card:has(.slv-prez-name:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.slv-prez-card:active { transform: scale(0.98); }
+.slv-prez-office { font-size: 0.8rem; line-height: 1.35; color: var(--text-soft); }
+.slv-prez-party {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--xv1-mono); font-size: 10px; letter-spacing: 0.8px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.slv-prez-note { margin-block: 0.6rem 0; margin-inline: 0; font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); }
+.slv-prez-note a { font-family: var(--xv1-mono); font-size: 11px; letter-spacing: 0.6px; color: var(--text-muted); }
+
+/* Šaurā konteinerā 5 kartītes 2+2+1 izskatās nepabeigti — tur tās ir kompaktas
+   rindas vienā kolonnā (foto pa kreisi, teksts pa labi). */
+@container (inline-size < 36rem) {
+  .slv-prez-grid { grid-template-columns: 1fr; }
+  .slv-prez-card {
+    grid-template-columns: 48px 1fr; column-gap: 0.85rem; row-gap: 0.1rem;
+    justify-items: start; align-items: center;
+    padding-block: 0.65rem; padding-inline: 0.75rem;
+    text-align: start;
+    border-block-start-width: 1px; border-block-start-color: var(--border);
+    border-inline-start: 3px solid var(--seat-list);
+  }
+  .slv-prez-avatar { grid-row: 1 / span 3; inline-size: 48px; block-size: 48px; margin: 0; }
+}
+
+/* Frakcijas vadība — grupas ķermenī virs kartītēm (saites <summary> iekšā būtu slazds). */
+.slv-group-lead { margin-block: 0 0.75rem; margin-inline: 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); }
+.slv-group-lead a {
+  font-family: var(--xv1-serif); font-weight: 500; color: var(--text);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklch, var(--seat-list) 70%, transparent);
+}
+.slv-prez-note a:focus-visible,
+.slv-group-lead a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.slv-prez-note a:active,
+.slv-group-lead a:active { opacity: 0.7; }
+
+@media (hover: hover) and (pointer: fine) {
+  .slv .seat:hover .seat-ring { transform: scale(1.28); }
+  .slv-prez-card:hover { border-color: var(--accent); border-block-start-color: var(--seat-list); }
+  .slv-prez-note a:hover,
+  .slv-group-lead a:hover { color: var(--accent); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .slv .seat-ring { transition: transform 0.15s ease-out, opacity 0.2s ease-out; }
+  .slv-prez-card { transition: border-color 0.15s ease-out, transform 0.16s ease-out; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .seat-dot, .slv-dep-dot, .slv-pop, .slv-group-sum::after { transition: none; }
 }

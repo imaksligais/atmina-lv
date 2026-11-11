@@ -1,6 +1,6 @@
 ---
 topic: Digitālā politika
-positions: 167
+positions: 166
 votes: 6536
 politicians: 51
 contradictions: 0

@@ -5,7 +5,7 @@ role: Ministru prezidents
 relationship_type: tracked
 positions: 932
 votes: 5520
-contradictions: 9
+contradictions: 8
 mentioned_in: 10894
 last_active: 2026-11-10
 top_topics:

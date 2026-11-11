@@ -123,7 +123,9 @@
     var group = row.closest('.slv-group');
     if (group) group.open = true;
     row.open = true;
-    row.scrollIntoView({ block: 'center' });
+    // Nākamajā kadrā: pārlūka paša (smooth) enkura lēciens uz aizvērtas grupas
+    // rindu citādi pārtrauc šo ritinājumu (telefonā Prezidija kartīte → rinda).
+    requestAnimationFrame(function () { row.scrollIntoView({ block: 'center' }); });
     return true;
   }
   if (!wide.matches) {
