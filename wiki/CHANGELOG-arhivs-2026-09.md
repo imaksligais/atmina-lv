@@ -103,7 +103,7 @@
 
 ## 2026-09-25 (5) — T4: «~8 politiķi sesijā» robeža izņemta pēc pārmērījuma
 
-- **Mērījums** (`docs/audits/2026-09-25-t4-dreifs/`, metode README): Opus 5.5 vienā kontekstā pēc kārtas 40 dokumenti (28 bez garumzīmēm) → `validate_lv_diacritics` 0/80 atteikumu; kontrole — tās pašas rindas bez garumzīmēm 40/40 atteiktas; īpatsvars pirmie 10 → pēdējie 10: 10,2 % → 9,4 % (slieksnis 1,5 %).
+- **Mērījums** (`docs/arhivs/audits/2026-09-25-t4-dreifs/`, metode README): Opus 5.5 vienā kontekstā pēc kārtas 40 dokumenti (28 bez garumzīmēm) → `validate_lv_diacritics` 0/80 atteikumu; kontrole — tās pašas rindas bez garumzīmēm 40/40 atteiktas; īpatsvars pirmie 10 → pēdējie 10: 10,2 % → 9,4 % (slieksnis 1,5 %).
 - **Lēmums:** robeža (viens 2026-04-16 gadījums ar toreizējo modeli) izņemta no `daily-routine.md`, `dienas-rutina.md`. T4 noteikums (vārti atsaka → STOP, jauna sesija) paliek — to nes kods. Nesedz citus modeļus un kontekstus >~140k tokenu.
 
 ## 2026-09-25 (4) — CLAUDE.md saīsināts: vēsture uz git, dublikāti uz vienu vietu
@@ -144,7 +144,7 @@
 - **DST:** `now_lv()`/`utc_to_lv()` seko `Europe/Riga` (bija fiksēts +3 h līdz 2026-10-25); `review_status_at` trigeris lieto SQLite `localtime`, tāpēc DB rakstītājam jābūt uz Rīgas laika (CI `TZ=Europe/Riga`, `tests/test_lv_time.py`). Trigeri pārbūvējas nākamajā `init_db()`. Blakus efekts: ziemas laika tvītu laiki renderā −1 h (labojums, ne kļūda).
 - **Plānotājs** `scripts/plan_extraction.py` (viens pid = viens aģents kārtā, >12 → kārtas, tīrie RT pa 20 pēdējā kārtā; `pending`/`dropped` saucēji) un **atgūšanas apsekojums** `scripts/recovery_survey.py` (bez platformu filtra; 23.09 koda josla 0, rokas vaicājums 18 pāri → +9 pozīcijas). Abi `print_routine`.
 - **Deploy:** `deploy.sh` raksta `logs.action='deploy'` (`version_id`, `approved_slugs`); jauns solis «11. Deploy» — `done` tikai, ja jaunākais deploy pēc atļaujas nes pārskata slugu. Vēsturiskām dienām pēdu nav (✗ ir godīgs).
-- **Dublikāti:** `save_analysis` ziņo `possible_duplicate` (tas pats pid, `stated_at` ±5 d, attālums ≤ 0,398; kalibrēts 6/10 recall, 0/40 FP, pāri nav neatkarīgi), nebloķē. `get_existing_claims(stated_around=…)`. Testi + mutācijas katram; `check.sh` 3013 passed. Plāns `docs/plans/2026-09-24-rutinas-uzlabojumi-plans.md`. Ieplānota ielāde — NĒ (operators, § Ne-darīt).
+- **Dublikāti:** `save_analysis` ziņo `possible_duplicate` (tas pats pid, `stated_at` ±5 d, attālums ≤ 0,398; kalibrēts 6/10 recall, 0/40 FP, pāri nav neatkarīgi), nebloķē. `get_existing_claims(stated_around=…)`. Testi + mutācijas katram; `check.sh` 3013 passed. Plāns `docs/plans/archive/2026-09-24-rutinas-uzlabojumi-plans.md`. Ieplānota ielāde — NĒ (operators, § Ne-darīt).
 
 ## 2026-09-23 (7) — Truncated backfill pēc pārlādes pārrēķina piesaistes; jauni politiķi dokā ar esošu runātāju = `mentioned`
 
@@ -178,7 +178,7 @@
 
 ## 2026-09-23 (2) — Citātu aizstāšana ar burtisku avota teikumu (operatora lēmums)
 
-- Kad pozīcijas `quote` ir žurnālista ievads, virsraksts, `''` vai avotā neatrodams teksts, to drīkst aizstāt ar politiķa paša vārdiem no TĀ PAŠA dokumenta — ja jaunais citāts ir **burtiski** dokumentā un labojumam ir rollback. Abus nosacījumus kodā izpilda `scripts/replace_claim_quotes.py` (nepārtraukts fragments pēc atstarpju/HTML entītiju normalizācijas; rollback fsync pirms UPDATE; sauss pēc noklusējuma). Kas runā, kods nepārbauda — to dara Opus aģents pēc `docs/plans/2026-09-23-quote-replacement-brief.md`.
+- Kad pozīcijas `quote` ir žurnālista ievads, virsraksts, `''` vai avotā neatrodams teksts, to drīkst aizstāt ar politiķa paša vārdiem no TĀ PAŠA dokumenta — ja jaunais citāts ir **burtiski** dokumentā un labojumam ir rollback. Abus nosacījumus kodā izpilda `scripts/replace_claim_quotes.py` (nepārtraukts fragments pēc atstarpju/HTML entītiju normalizācijas; rollback fsync pirms UPDATE; sauss pēc noklusējuma). Kas runā, kods nepārbauda — to dara Opus aģents pēc `docs/plans/archive/2026-09-23-quote-replacement-brief.md`.
 - Iemesls: truncated backfill izmēģinājumā ~41 no ~50 veco claims citāts bija ievads (stubā politiķa vārdu nebija); pilnajā tekstā burtisks citāts gandrīz vienmēr ir. `quote` nav embeddingā (`"{topic}: {stance}"`), tāpēc re-embed nevajag. Stance/topic/confidence labojumi joprojām ir atsevišķi operatora lēmumi.
 - Vārti: `tests/test_replace_claim_quotes.py` (10; mutācija — verbatim pārbaude izņemta → 4 krīt).
 
@@ -245,7 +245,7 @@
 - Skaitļi (avots `partiju_tests_audit.py`, renders no datiem): bilance 65:19 → **56:14**, nolasāmas 84 → **70 no 168**, avotu līmeņi cvk 61 / pilna 4 / izteikums 5, quiz vārts 2/12 → **1/12** (iztur tikai q05; q01 nokrita, jo mazākums 3 → 2). `test_repo_audit_known_state` momentuzņēmums 10 → 11 FAIL.
 - Operatora lēmums pēc programmu pārbaudes: q01 LPV/ASL/SC paliek `par` (visos „Atbalstīsim … Ukrainas”), **q01/JKP → klusē** (vienīgais Ukrainas teikums ir par Latvijas ieguvumu — „pārņemot kara pieredzi”). Kopā 15 šūnas; gala skaitļi **55:14**, 69 nolasāmas, cvk 60 / pilna 4 / izteikums 5.
 - Interaktīvais tests **pagaidām atcelts** (operators): lapas teikums „tiks pievienots” → „pagaidām nav plānots”; vārta skaitlis (1/12) paliek redzams. Metodoloģijā jauns D1b teikums; skaitļi nāk no `<!-- d1b: -->` komentāra `kodejums_draft.md` (`_d1b_note`, tests `test_d1b_note_comes_from_draft_comment`), ne literāļa.
-- Lēmumu saraksts un pierādījumi: `docs/plans/2026-09-22-partiju-tests-d1b-rubrika.md`; aģentu atskaites `.scratch/d1b/report_A..D.md`. **PUBLICĒTS 2026-09-22**: pilns renders, `check_output` 1052 lapas tīrs, deploy versija `0badcb2d`, dzīvā lapa 200 un baitu identiska build.
+- Lēmumu saraksts un pierādījumi: `docs/plans/archive/2026-09-22-partiju-tests-d1b-rubrika.md`; aģentu atskaites `.scratch/d1b/report_A..D.md`. **PUBLICĒTS 2026-09-22**: pilns renders, `check_output` 1052 lapas tīrs, deploy versija `0badcb2d`, dzīvā lapa 200 un baitu identiska build.
 
 ---
 
@@ -392,7 +392,7 @@ Virsraksta forma `## YYYY-MM-DD (n) — …` ir atsauces atslēga (`BACKLOG.md`,
 
 ## 2026-09-20 (3) — VAD izmeklēšanas lapa: homonīmu verifikācija 34/34 «nē»; Matisones statuss un Jaunzemes summa laboti
 
-- Pēc Baltiņa katrai lapas personai (34 — § 2–6; Lūks 0 ierakstu) pārbaudīts, vai citētie skaitļi nāk no viena ģimenes paraksta (Māte/Tēvs) un vienas amata līnijas — runbook § Homonīmu piesārņojums soļi 2–4, bez Jev. Tabula ar rindu katrai: `docs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md` § Homonīmu verifikācija pa personai. Rezultāts 34/34 — homonīms: nē; trīs lielajos klasteros (Vītoliņš 12/260, Jaunzeme 12/260, Krūmiņš 12/237 parsētās mērķpersonas rindas) lapas skaitļi pārrēķināti tikai no mērķpersonas klastera un turas.
+- Pēc Baltiņa katrai lapas personai (34 — § 2–6; Lūks 0 ierakstu) pārbaudīts, vai citētie skaitļi nāk no viena ģimenes paraksta (Māte/Tēvs) un vienas amata līnijas — runbook § Homonīmu piesārņojums soļi 2–4, bez Jev. Tabula ar rindu katrai: `docs/arhivs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md` § Homonīmu verifikācija pa personai. Rezultāts 34/34 — homonīms: nē; trīs lielajos klasteros (Vītoliņš 12/260, Jaunzeme 12/260, Krūmiņš 12/237 parsētās mērķpersonas rindas) lapas skaitļi pārrēķināti tikai no mērķpersonas klastera un turas.
 - Blakusatradums FINDINGS līmenī: `finanse_FINDINGS.md` piedēvēja Jaunzemei «Bauskas vadītāja vietniece 2022–25» — tā ir Rundāles bērnudārza tādvārde (meita Beāte Baļuka); lapā nav.
 - **Divas faktu kļūdas lapā, labotas ar operatora «jā»:** Matisone 2020.–2021. gadā bija Liepājas domes, ne «14. Saeimas» deputāte (DB `vad_declarations` pid 113); Jaunzemes «~232 000 €» nebija reproducējams — VID alga 2020–2024 = 274 286 € → «~274 000 € piecos gados». Tajā pašā reizē operators norādīja divus kalkus lapas tekstā — «neviendārtā» → «nevienmērīga», «dedupēts» → «attīrīts no atkārtojumiem» (4 vietas + 4 tādas pašas `vad-2026.md`; grep `dedup|neviendār` abās = 0). Renders `--only=analizes`, `test_render_chars` bāzlīnija REGEN (divi hash); deploy — operatora solis.
 
@@ -400,7 +400,7 @@ Virsraksta forma `## YYYY-MM-DD (n) — …` ir atsauces atslēga (`BACKLOG.md`,
 
 ## 2026-09-20 (2) — VAD izmeklēšanas lapa: 18 amata statusi pārbaudīti, Baltiņš izņemts kā homonīms
 
-- Operatora pamanītais «Lembergs — Ventspils mērs» izvērtās par klasi: sweep-laika etiķetes bija pieņēmumi, ne pārbaudīti statusi. Pārbaudīti visi 18 (VAD pirmavots + lsm.lv/iestāžu lapas, pilns saraksts `docs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md` § Labojumi 2026-09-20); nepareizi bija 12: Stepaņenko (Rīgas dome, ne Saeima), Lembergs, Truksnis (mēra biroja vadītājs kopš 08-2026), Cīrule (pagaidu KNAB vadītāja, ne priekšniece), Keišs (AT senators, ne TP priekšsēdētājs), Rezevska un Razmusa (bijušās), Gaugers, Burkāns, Grišins (NMP priekšnieks kopš 2026-01), Purgaile (LB vietniece), Sesks.
+- Operatora pamanītais «Lembergs — Ventspils mērs» izvērtās par klasi: sweep-laika etiķetes bija pieņēmumi, ne pārbaudīti statusi. Pārbaudīti visi 18 (VAD pirmavots + lsm.lv/iestāžu lapas, pilns saraksts `docs/arhivs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md` § Labojumi 2026-09-20); nepareizi bija 12: Stepaņenko (Rīgas dome, ne Saeima), Lembergs, Truksnis (mēra biroja vadītājs kopš 08-2026), Cīrule (pagaidu KNAB vadītāja, ne priekšniece), Keišs (AT senators, ne TP priekšsēdētājs), Rezevska un Razmusa (bijušās), Gaugers, Burkāns, Grišins (NMP priekšnieks kopš 2026-01), Purgaile (LB vietniece), Sesks.
 - **Māris Baltiņš izņemts no lapas** — VAD "deputāta deklarācijas" ar SIA "OGN" 413,5k € dividendēm pieder Priekuļu novada deputātam, ne VVC direktoram; pati rinda «tikai deputāta deklarācijās, ne VVC direktora» bija homonīma paraksts pēc mūsu pašu metodes.
 - Toca AAE dzīvokļi paliek AED (operators aizdomājās par USD): deklarāciju darījumu šūnās burtiski «432411.34 | AED», «715454.32 | AED» (pārlādēts no VAD 2026-09-20).
 - Render baseline REGEN (`tests/test_render_chars.py`), lapa pārrenderēta `--only=analizes`; deploy — atsevišķs operatora solis.
@@ -418,7 +418,7 @@ Virsraksta forma `## YYYY-MM-DD (n) — …` ir atsauces atslēga (`BACKLOG.md`,
 ## 2026-09-19 (3) — VAD profili rāda VISAS deklarācijas (bija 5); homonīmu verifikācijas metode; parādu/aizdevumu datu zudums salabts; deploy no WSL nedarbojas
 
 - Profils: `templates/_vad_panel.html.j2` `vad_data[:5]` → `vad_data` — cilnēs visas deklarācijas (operatora lēmums: Šlesers kandidē, vecie dati pārbaudīti; max 28 cilnes — Kalniņa-Lukaševica). Šlesera 2002. gada deklarācija ar 5,93M USD aizdevumiem tagad publiska profilā.
-- Homonīmu verifikācijas metode (pilns audits `docs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md`, runbook `wiki/operations/vad-declarations.md` § Homonīmu piesārņojums): ģimenes-paraksts → amata līnija legacy deklarācijām → `vad_income.source` kā identitātes pirksts → Jev strīdīgajiem. Trīs purge partijas: 31+19+79 = 129 svešas deklarācijas, denylist 7→136, rollback SQL katrā. Jānis Zalāns paliek flagged (19 dekl., ≥2 tādvārži, nav pierādāms ne uz vienu pusi).
+- Homonīmu verifikācijas metode (pilns audits `docs/arhivs/audits/2026-09-19-vad-interesantas-deklaracijas-sweep.md`, runbook `wiki/operations/vad-declarations.md` § Homonīmu piesārņojums): ģimenes-paraksts → amata līnija legacy deklarācijām → `vad_income.source` kā identitātes pirksts → Jev strīdīgajiem. Trīs purge partijas: 31+19+79 = 129 svešas deklarācijas, denylist 7→136, rollback SQL katrā. Jānis Zalāns paliek flagged (19 dekl., ≥2 tādvārži, nav pierādāms ne uz vienu pusi).
 - Parseris+render: `vad_debts` bija tukša — `_parse_debts` prasīja ≥4 kolonnas, VAD dod 3-kolonnu (892 dekl.) un 1-šūnas brīvtekstu (105 dekl.); backfill 0→1499 debts / 365→458 loans; multiset-delta fix tukšam `creditor_name` (rindas salipa). Commiti `03fe769a`, `73cb9f35`; testi `tests/test_vad_parser_gaps.py`.
 - Deploy: `bash scripts/deploy.sh` WSL shellī krīt ar «CLOUDFLARE_API_TOKEN missing» — `npx` iet caur Windows interop, Linux env nepropagējas (`WSLENV` nepalīdz). Deploy jātaisa no native Windows shell; WSL apdare `scratchpad/deploy_cf.ps1`. Dokumentēts `wiki/operations/deploy.md`.
 

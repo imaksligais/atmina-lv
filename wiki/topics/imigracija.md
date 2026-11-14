@@ -1,10 +1,10 @@
 ---
 topic: Imigrācija
-positions: 740
+positions: 753
 votes: 22341
 politicians: 92
 contradictions: 0
-last_activity: '2026-11-10 00:00:00'
+last_activity: '2026-11-14 00:00:00'
 top_politicians:
 - '[[persons/janis-dombrava|Jānis Dombrava]]'
 - '[[persons/andris-velps|Andris Velps]]'

@@ -9,7 +9,7 @@ Vispārīgais tests: **iestādes slots atbild uz «vai iestāde to saka?», pers
 | `relationship_type` | `feed_type` | Piemēri | Ko sagaidīt |
 |---|---|---|---|
 | `journalist` | `relay` | visi 7 žurnālistu ieraksti (Lapsa, Madžiņš, Ozols, Kasems, K. Kļaviņš, Tetarenko-Supe, Iļjinska) | Atklāšanas kanāls, ne pozīciju avots: slota pasei noklusējums `empty_doc_ids`. Text-scan piesaista politiķus, ko viņi citē |
-| `organization` | `relay` | LETA, TV3 Ziņas, IR žurnāls, Saeimas ziņas | ~95–99 % tukši: ziņu virsraksti un RT |
+| `organization` | `relay` | LETA, TV3 Ziņas, TV24, IR žurnāls, Saeimas ziņas | ~95–99 % tukši: ziņu virsraksti un RT. TV24 (kopš 2026-11-14) tvīti atstāsta raidījumu: pozīcija tikai kā «TV24 atstāsta…», citāts — tikai tas, kas tvītā pēdiņās |
 | `organization` | `first_party` | NBS, LVM, LDDK | Tikai nostāja, ko pauž pati iestāde (reti) |
 | `neutral` | dažādi | Rajevskis, G. Vītols, Slaidiņš | Kā parasts politiķis — lēmums par katru dokumentu |
 

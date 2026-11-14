@@ -1,14 +1,14 @@
 ---
 topic: Ekonomika un uzņēmējdarbība
-positions: 41
+positions: 55
 votes: 29533
-politicians: 22
+politicians: 27
 contradictions: 0
-last_activity: '2026-11-10 00:00:00'
+last_activity: '2026-11-14 00:00:00'
 top_politicians:
-- '[[persons/filips-rajevskis|Filips Rajevskis]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
-- '[[persons/roberts-zemaitis|Roberts Žemaitis]]'
+- '[[persons/filips-rajevskis|Filips Rajevskis]]'
+- '[[persons/guntars-vitols|Guntars Vītols]]'
 - '[[persons/latvijas-banka|Latvijas Banka]]'
-- '[[persons/aleksandrs-kirsteins|Aleksandrs Kiršteins]]'
+- '[[persons/roberts-zemaitis|Roberts Žemaitis]]'
 ---

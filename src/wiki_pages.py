@@ -39,7 +39,7 @@ def _build_person_frontmatter(
     ).fetchone()[0]
 
     contradictions_count = db.execute(
-        "SELECT COUNT(*) FROM contradictions WHERE opponent_id = ?", (pid,)
+        "SELECT COUNT(*) FROM contradictions WHERE opponent_id = ? AND confirmed = 1", (pid,)
     ).fetchone()[0]
 
     votes_count = db.execute(
@@ -377,7 +377,7 @@ def _build_topic_frontmatter(
     ).fetchone()[0]
 
     contradictions_count = db.execute(
-        "SELECT COUNT(*) FROM contradictions WHERE topic = ?", (topic,)
+        "SELECT COUNT(*) FROM contradictions WHERE topic = ? AND confirmed = 1", (topic,)
     ).fetchone()[0]
 
     last_activity_row = db.execute(

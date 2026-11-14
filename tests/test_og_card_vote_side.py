@@ -142,3 +142,42 @@ def test_detail_page_pane_shows_the_politicians_ballot_not_the_bill_line(make_db
 def _fetch(db):
     from src.render.contradictions import _fetch_contradictions
     return _fetch_contradictions(db)
+
+
+@pytest.mark.parametrize("pos_date", ["2026-09-16", "2026-10-20"])
+def test_detail_pane_says_what_the_vote_was_about_on_either_side(make_db, pos_date):
+    """Lasītājs redz, par ko bija balsojums, arī ja balsojums ir vecākā puse.
+
+    Kļūme (2026-11-13, pretruna #68): apraksts rādījās tikai jaunākajā rūtī,
+    tāpēc 2022. gada balsojums pret 2026. gada vārdiem bija tikai likuma
+    nosaukums un skaitļi — operators nevarēja saprast, par ko balsoja."""
+    from src.render._orchestrator import _make_env
+
+    db = make_db("Par", pos_date=pos_date)
+    db.execute("UPDATE saeima_votes SET summary = ? WHERE id = 7", (BILL_SUMMARY,))
+    db.commit()
+    (c,) = _fetch(db)
+    html = _make_env().from_string(
+        '{% from "_macros.html.j2" import prv2_card %}{{ prv2_card(c) }}'
+    ).render(c=c, assets_prefix="")
+    assert "Likumprojekts" in html, "likumprojekta apraksta bloks nav rūtī"
+    assert html.count(BILL_SUMMARY) == 1, "aprakstam jābūt tieši vienreiz"
+    vote_pane = html.split('prv2-pane-old')[1].split('prv2-pane-new')[0] if pos_date == "2026-10-20" \
+        else html.split('prv2-pane-new')[1]
+    assert BILL_SUMMARY in vote_pane, "apraksts nav balsojuma rūtī"
+
+
+def test_proposal_vote_pane_has_no_bill_outcome(make_db):
+    """Priekšlikuma balsojumā likumprojekta apraksts («… Pieņemts (89 par)») stāvētu
+    blakus noraidītam priekšlikumam (pretruna #65, 2026-11-13) — bloku nerāda."""
+    from src.render._orchestrator import _make_env
+
+    db = make_db("Atturas")
+    db.execute("UPDATE saeima_votes SET summary = ?, motif = ? WHERE id = 7",
+               (BILL_SUMMARY, "Par priekšlikumu Nr.6. Arhitektūras likums (1549/Lp14), 2.lasījums"))
+    db.commit()
+    (c,) = _fetch(db)
+    html = _make_env().from_string(
+        '{% from "_macros.html.j2" import prv2_card %}{{ prv2_card(c) }}'
+    ).render(c=c, assets_prefix="")
+    assert BILL_SUMMARY not in html, "priekšlikuma rūtī parādījās likumprojekta apraksts"

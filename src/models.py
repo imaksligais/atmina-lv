@@ -1,7 +1,9 @@
 from datetime import date, datetime
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+import re
+
+from pydantic import BaseModel, Field, field_validator
 
 
 class AnalysisResult(BaseModel):
@@ -50,6 +52,25 @@ class Contradiction(BaseModel):
     headline: Optional[str] = Field(default=None, max_length=60, pattern=r"^[^\n]+$")
     # Tikai šaurajai partiju pretrunu klasei (programma pret frakcijas balsojumu).
     party_id: Optional[int] = None
+
+    @field_validator("summary")
+    @classmethod
+    def _context_brackets(cls, v: str) -> str:
+        """Renders katru [..] izceļ kastītē «Konteksts» (`_split_summary`).
+
+        Tukša etiķete «[Konteksts]» (bez kola) deva kastīti ar vārdu «Konteksts»
+        un kontekstu iekšā kopsavilkumā (pretruna #68, 2026-11-13); [..] citātā
+        izrautu daļu no citāta."""
+        for m in re.finditer(r"\[([^\]]*)\]", v):
+            body = m.group(1).strip()
+            bare = re.sub(r"^(Konteksts|Iespējams skaidrojums)\s*[:—]?", "", body).strip()
+            if not bare:
+                raise ValueError(
+                    f"tukša konteksta etiķete «{m.group(0)}» — raksti «[Konteksts: …]», viss konteksts iekavās")
+            if v[:m.start()].count("«") > v[:m.start()].count("»"):
+                raise ValueError(
+                    f"kvadrātiekavas citātā «{m.group(0)[:40]}» — renders tās izceļ no citāta; lieto (…) vai «…»")
+        return v
 
 
 class ContextNote(BaseModel):

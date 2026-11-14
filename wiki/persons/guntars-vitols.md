@@ -3,21 +3,21 @@ name: Guntars Vītols
 party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 263
+positions: 287
 votes: 5
 contradictions: 0
-mentioned_in: 1797
-last_active: 2026-11-08
+mentioned_in: 1833
+last_active: 2026-11-14
 top_topics:
 - Budžets un finanses
 - Valsts pārvalde
 - airBaltic
 - Degviela un enerģētika
-- Korupcija un KNAB
+- Sociālā politika
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (28%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%), [[topics/airbaltic|airBaltic]] (10%)
-- **30d:** 32 claims, 1.0× bāzes līnija
+- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (27%), [[topics/valsts-parvalde|Valsts pārvalde]] (10%), [[topics/airbaltic|airBaltic]] (9%)
+- **30d:** 54 claims, 1.6× bāzes līnija
 - **Spriedzes:** [[persons/kaspars-briskens|Kaspars Briškens]] (2 spriedzes), [[persons/evika-silina|Evika Siliņa]] (1 spriedze), [[persons/baiba-braze|Baiba Braže]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

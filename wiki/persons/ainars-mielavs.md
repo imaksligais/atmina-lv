@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 12
 votes: 0
 contradictions: 0
-mentioned_in: 274
+mentioned_in: 279
 last_active: 2026-10-23
 top_topics:
 - Vēlēšanas

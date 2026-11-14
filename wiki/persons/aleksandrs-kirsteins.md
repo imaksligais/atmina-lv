@@ -3,21 +3,21 @@ name: Aleksandrs Kiršteins
 party: MMN
 role: Bijušais Saeimas deputāts (14. Saeima)
 relationship_type: tracked
-positions: 37
+positions: 40
 votes: 7034
 contradictions: 0
-mentioned_in: 380
-last_active: 2026-11-10
+mentioned_in: 391
+last_active: 2026-11-14
 top_topics:
 - Sabiedriskie mediji
+- Ārpolitika
 - Degviela un enerģētika
 - Koalīcija un partijas
-- Ārpolitika
-- Ekonomika un uzņēmējdarbība
+- Klimats
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (16%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (11%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (11%)
-- **30d:** 26 claims, 5.8× bāzes līnija
+- **Top tēmas:** [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (15%), [[topics/arpolitika|Ārpolitika]] (12%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (10%)
+- **30d:** 28 claims, 5.6× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (2 spriedzes)
 <!-- /SYNC-AUTO -->

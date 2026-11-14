@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 91
 votes: 999
 contradictions: 0
-mentioned_in: 968
+mentioned_in: 992
 last_active: 2026-10-25
 top_topics:
 - Budžets un finanses

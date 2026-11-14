@@ -15,6 +15,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 2 claims
+- **30d:** 1 claims
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/sociala-politika|Sociālā politika]], 2026-10-29
 <!-- /SYNC-AUTO -->

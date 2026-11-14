@@ -1,14 +1,14 @@
 ---
 topic: Rail Baltica
-positions: 152
+positions: 154
 votes: 4870
-politicians: 36
-contradictions: 2
-last_activity: '2026-11-09 00:00:00'
+politicians: 37
+contradictions: 3
+last_activity: '2026-11-14 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/atis-svinka|Atis Švinka]]'
 - '[[persons/rihards-kozlovskis|Rihards Kozlovskis]]'
-- '[[persons/ainars-slesers|Ainārs Šlesers]]'
 - '[[persons/kristaps-kristopans|Kristaps Krištopans]]'
+- '[[persons/ainars-slesers|Ainārs Šlesers]]'
 ---

@@ -10,3 +10,5 @@ rakstītas pirms pārvietošanas — lasi tās kā `archive/<fails>.md`. Dzīvo 
 (kods, šabloni, testi, speci) atsauces atjauninātas pārvietošanas commitā.
 
 **Kopš 2026-09 šeit atkal top aktīvie plāni.** Izpildītu plānu pārceļ uz `archive/` un dzīvo failu atsauces atjaunina tajā pašā commitā (2026-10-16: 8 plāni; 2026-10-21: 4 plāni — Saites pārveide, backlog izpilde 10-18, Cloudflare migrācija un tās Task 9, BACKLOG 67 izpildīts 10-19). Paliek: `2026-10-16-atradumi-sadala.md`.
+
+**2026-11-14:** uz `archive/` pārcelti izpildītie `2026-11-01-politiku-lodzini.md` (CHANGELOG 2026-11-02) un `2026-11-03-publicesanas-satura-hess.md` (CLAUDE.md T15). Paliek: `2026-10-16-atradumi-sadala.md`, `2026-10-21-saeimas-balsojumu-temas.md`, `2026-11-01-nedelas-stasti.md`.

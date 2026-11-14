@@ -153,8 +153,8 @@
 - Nesēji: `.claude/references/claim-extractor/datumi-dublikati.md` § `stated_at` 3. p., `wiki/operations/stale-sweep-brief.md` (d). Esošās 42 rindas (743302–743343) nav bīdītas.
 
 ## 2026-10-21 (8) — Vēstneša stenogrammu sweep: 55/55 pāri izskatīti, +42 pozīcijas
-- 5 Opus @claim-extractor pēc `plan_stale_sweep.py --include-vestnesis` (44 stenogrammu + 11 citi pāri); stenogrammām papildbrīfs `docs/audits/2026-10-21-stale-sweep/brief-stenogrammas.md` (dala pēc runātāju rindām, sēdes diena stance tekstā, `stated_at` = publicēšana, dublikātu logs sēde→publicēšana).
-- Vārti: `extracted_at` 55/55, `reviewed_at` 20/20, `claims` +42 = aģentu summa; 2 NEEDS_REVIEW izvērtēti (`data/rollback_review_sweep_2026-10-21.sql`). Atskaite `docs/audits/2026-10-21-stale-sweep/atskaite.md`.
+- 5 Opus @claim-extractor pēc `plan_stale_sweep.py --include-vestnesis` (44 stenogrammu + 11 citi pāri); stenogrammām papildbrīfs `docs/arhivs/audits/2026-10-21-stale-sweep/brief-stenogrammas.md` (dala pēc runātāju rindām, sēdes diena stance tekstā, `stated_at` = publicēšana, dublikātu logs sēde→publicēšana).
+- Vārti: `extracted_at` 55/55, `reviewed_at` 20/20, `claims` +42 = aģentu summa; 2 NEEDS_REVIEW izvērtēti (`data/rollback_review_sweep_2026-10-21.sql`). Atskaite `docs/arhivs/audits/2026-10-21-stale-sweep/atskaite.md`.
 
 ## 2026-10-21 (7) — Stenogrammas runātājs = `subject` (operators; atceļ 2026-10-17 (4) «loma netiek mainīta»)
 - `src.roles.enforce_subject_guards(..., platform=)`: uz `platform='vestnesis'` pārbaudīts runātājs («E. Jurēvics (JV).», `matcher.transcript_speaker_pids` — viens aktīvs īpašnieks) kļūst par `subject`, pirms relay pazemināšanas; visi rakstītāji padod `platform`. Tests `TestTranscriptSpeakerIsSubject` (krita pirms; 4 mutācijas krīt).
@@ -221,7 +221,7 @@ Noteikumi Informācija u.c.», «Latvijas Banka Latvijas Nacionālais arhīvs» 
 - 2. kārta — sk. (7).
 
 ## 2026-10-20 (5) — «Atradumu» papildinājumi: Tocs, Višvanati
-- `vad-izmeklesana-2026`: Toca sadaļā UR ieraksts — «Latvijas Drošības biznesa asociācijas» valdē kopš 2025-12-12 (tas pats maskētais personas kods kā 5 uzņēmumos; agrākie sastāvi atvērtajos datos nav). Avots `docs/audits/2026-10-20-tocs-turpinajums.md`.
+- `vad-izmeklesana-2026`: Toca sadaļā UR ieraksts — «Latvijas Drošības biznesa asociācijas» valdē kopš 2025-12-12 (tas pats maskētais personas kods kā 5 uzņēmumos; agrākie sastāvi atvērtajos datos nav). Avots `docs/arhivs/audits/2026-10-20-tocs-turpinajums.md`.
 - `visvanati-pilsoniba-2026`: Višvanatas atbilde sadaļā «Zinātniskais profils» (mājaslapas teksts tagad pagātnē ar datumu 17.10.) + sadaļa «Pēc publikācijas» (komisija, Valsts policija, Kūtris ar atrunu, NA, Melnalksnis, Kalviņš abas puses, Satversmes 75. p.); avoti LSM 19.10., LETA 19.10.
 - Pilsonības piešķiršanas izpēte → `docs/drafts/pilsoniba-2026/` (ārpus publiskā spoguļa), 4 labojumi pēc pārbaudes; nākamā daļa `backlog/saeima.md` [BLOKĒTS] līdz 15.10. stenogrammai.
 
@@ -279,7 +279,7 @@ Noteikumi Informācija u.c.», «Latvijas Banka Latvijas Nacionālais arhīvs» 
 - `src.db.store_contradiction()` validē ar `Contradiction` modeli PIRMS INSERT (nederīgs `severity`/`salience`/`headline` → `ValueError`, 0 rindu) un pieņem `party_id`; `confirmed` paliek 0 (eskalācija 3). Tests `tests/test_store_contradiction_db_layer.py`.
 
 ## 2026-10-18 — Saites lapa sākas no partijas/politiķa; pilnais tīkls pēc pogas
-- Spec/plāns `docs/superpowers/specs/2026-10-18-saites-redizains-design.md`, `docs/superpowers/plans/archive/2026-10-18-saites-redizains.md`; vārts T18 `docs/audits/2026-10-18-kulbergs-saites-paraugs.md` (10/10). Pele NEizmanto (ego-tīkls jau ir profila Saites cilnē).
+- Spec/plāns `docs/superpowers/specs/2026-10-18-saites-redizains-design.md`, `docs/superpowers/plans/archive/2026-10-18-saites-redizains.md`; vārts T18 `docs/arhivs/audits/2026-10-18-kulbergs-saites-paraugs.md` (10/10). Pele NEizmanto (ego-tīkls jau ir profila Saites cilnē).
 - `saites.html` 1 217 522 → ~245 000 B; D3 + `data/saites-graph.json` tikai pēc pogas; tabula → `spriedzes.html`, kas lasa `?type&party&person`, partija = autors VAI adresāts.
 - Pāra saite → profils, kur kartīte redzama (prod 282 enkuri, 0 bez elementa, 6 pāri → `#saites`); pogas tikai tipiem ar saitēm (Balsojumi 0 — 9 034 pāri, neviens virs sliekšņa).
 - Wiki: grafa filtrs bez operations/CHANGELOG; tēmu `top_politicians` → wikilinki (lint 628 lapas, 0 salauztu). Pārbaudīja: 3 e2e faili + Astra 2. kārta (8/10, 3. labots, 7. noraidīts).
@@ -634,7 +634,7 @@ Noteikumi Informācija u.c.», «Latvijas Banka Latvijas Nacionālais arhīvs» 
 - `vad-2026.md`: § 1 grupas, § 3 ienākumu sastāvs, § 6b–6d NĪ, § 7 ģimene pārrēķināti (bija novecojuši jau pirms 10-08); rangu tabulas nemainījās. `vad_analysis_numbers.py`: § 1 grupas pēc etiķetes, § 6d top 20.
 
 ## 2026-10-08 (12) — VAD resweep: denylist identitātes kāja, +38 deklarācijas, Zīle/Elksniņš; X cilņu secība
-- Resweep «166 jaunās» = 101 jau izņemts vārdabrālis (uuid kājas klusi mirušas) → denylist kāja `identity` (etiķete + iestāde + amats); 150 ierakstiem atjaunota, +7 jauni (`d028a392`, tests redzēts krītam). Triāža: `docs/audits/2026-10-08-vad-resweep-triaza/`.
+- Resweep «166 jaunās» = 101 jau izņemts vārdabrālis (uuid kājas klusi mirušas) → denylist kāja `identity` (etiķete + iestāde + amats); 150 ierakstiem atjaunota, +7 jauni (`d028a392`, tests redzēts krītam). Triāža: `docs/arhivs/audits/2026-10-08-vad-resweep-triaza/`.
 - Ielāde `ingest_vad_declarations.py --pids` (jauns karogs) 28 pid: 38/38. Zīle id 3053 izņemts (vārdabrālis pēc ģimenes paraksta), Elksniņa 2 VP 2004 rindas atjaunotas (paša 2005 deklarācijā tās pašas pārvaldes pabalsts). Kopā 2783 → 2822; rollback `data/rollback_vad_{resweep_load,zile_elksnins}_2026-10-08.sql`.
 - `vad-2026.md` kopskaits 2776/201 → 2822/202; salīdzinātas tikai rangu tabulas (kopsummu tabulas bija novecojušas — labots (13)), `audit_vad_profile_match` [OK].
 - X: cilnes «Tikai ieraksti» → «Tikai pieminējumi» → «Visi»; jebkura filtra maiņa (arī «Pieminētākie») atgriež «Tikai ieraksti» (`2aa89f34`, aizstāj (11)).
@@ -782,7 +782,7 @@ Noteikumi Informācija u.c.», «Latvijas Banka Latvijas Nacionālais arhīvs» 
 - Dati ar rollback: citāti/stance C1–C7, 396/Lp14 kopsavilkums (183 stances), 17 ASCII + Svirskis formas (eval FP 1, gold 2274). Per-rinda: `docs/verdikti-2026-10-01.md`.
 
 ## 2026-10-01 (5) — Testi paralēli (`pytest-xdist`); CLAUDE.md uz pusi; testu masveida dzēšana NĒ (operatora lēmums)
-- **Mērījums** (`docs/audits/2026-10-01-testu-segums.md`): 360 testi nesedz Python rindas (tie pārbauda HTML/JS/galvenes — tuvākais E2E), 1 657 pārklājas segumā (robežtesti), 0 tikai-testu moduļu → segums nedod pamatu dzēst; noteikums «dzēš tikai ar mutācijas pierādījumu» paliek.
+- **Mērījums** (`docs/arhivs/audits/2026-10-01-testu-segums.md`): 360 testi nesedz Python rindas (tie pārbauda HTML/JS/galvenes — tuvākais E2E), 1 657 pārklājas segumā (robežtesti), 0 tikai-testu moduļu → segums nedod pamatu dzēst; noteikums «dzēš tikai ar mutācijas pierādījumu» paliek.
 - **`check.sh`** palaiž pytest ar `-n auto`, ja `xdist` ir instalēts (`CHECK_PYTEST_WORKERS=0` = secīgi): 3281 passed 2 min 08 s pret ~6 min. `tests/conftest.py` pirms katra testa atjauno Windows Proactor cilpu (twikit imports to nomaina; bez tā 26 renderēšanas kļūdas — redzēts).
 - **CLAUDE.md** 42 179 → ~22,5 KB (`c95ccd91` + šis): kodā/promptā dzīvojošais → pointeri; `store_tension()` atsaka aprakstu ar jaunu rindu.
 

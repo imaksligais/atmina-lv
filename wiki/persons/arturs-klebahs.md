@@ -3,11 +3,16 @@ name: Artūrs Klēbahs
 party: Suverēnā vara/Jaunlatvieši
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 1
+positions: 2
 votes: 5
 contradictions: 0
-mentioned_in: 39
-last_active: 2024-10-24
+mentioned_in: 40
+last_active: 2026-11-12
 top_topics:
+- Aizsardzība un drošība
 - Veselības aprūpe
 ---
+
+<!-- SYNC-AUTO -->
+- **30d:** 1 claims
+<!-- /SYNC-AUTO -->

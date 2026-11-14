@@ -1273,6 +1273,28 @@ class TestStoreTensionUrlValidation:
         db.close()
         assert stored == {"https://x.com/a/status/4", "https://real.lv/a"}, stored
 
+    def test_quote_marks_around_words_not_in_source_are_reported(self, seeded_db, capsys):
+        """Guillemets promise a verbatim quote. An inflected or retold fragment is
+        reported at store time (5 of the reviewer's tension fixes 05.–11.11.2026);
+        a verbatim one and a short capitalised name are not. Report only — stored."""
+        from src.db import store_tension
+        db = get_db(seeded_db)
+        db.execute("UPDATE documents SET content = ? WHERE id = 1",
+                   ("Valdībai vajadzīga pamatīga budžeta revīzija, tas ir rupjš aprēķins par Rail Baltic.",))
+        db.commit()
+        db.close()
+        kw = dict(source_pid=1, target_pid=2, topic="Budžets un finanses",
+                  source_url="https://real.lv/a", db_path=seeded_db)
+
+        assert isinstance(store_tension(
+            description="Alpha atgādina Beta solīto «pamatīgo budžeta revīziju».", **kw), int)
+        err = capsys.readouterr().err
+        assert "avotā tā nav rakstīti" in err and "«pamatīgo budžeta revīziju»" in err
+
+        assert isinstance(store_tension(
+            description="Alpha plānu sauc par «rupjš aprēķins» un min «Rail Baltica».", **kw), int)
+        assert "avotā tā nav rakstīti" not in capsys.readouterr().err
+
 
 class TestSearchSimilarClaimsFilter:
     """Phase A: search_similar_claims accepts claim_type_filter. The filter

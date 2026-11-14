@@ -68,8 +68,9 @@ For each contradiction, answer these questions:
 - Faction discipline: if >80 % of the faction voted the same way, cap severity at `minor_shift` and put the faction vote in `[Konteksts: …]` (unless the politician openly opposed their party on this issue) — do not reject it for that alone; reject only when the speaker has no words of their own on the same issue ([`quality-bars.md`](../../wiki/operations/quality-bars.md) § Pretruna). If `faction` is NULL for EVERY row of that `vote_id` (15th Saeima until the source registers factions), the "faction" is the whole Saeima — measure discipline by party instead, per `contradiction-hunter.md` Step 1 item 2 (operator decision 2026-11-09), and say so in the context.
 
 ### 3. Source check
+- **Run the fact check first and read its fact sheet against the summary, sentence by sentence** (since 2026-11-13; 12 of 37 published contradictions carried a wrong fact although all had passed this review): `.venv/Scripts/python.exe scripts/check_contradiction.py --draft <file>` for a candidate, `--id <N>` for a stored row. It prints what the DB says — the politician's own ballot, the faction split in THAT vote, the whole `document_nr` chain, both sources — and then its findings. `KĻŪDA` = reject or send back for a rewrite. Answer every `PĀRBAUDI` in your report with the fact-sheet line that settles it. A clean run proves little (the machine caught 7 of 37 old texts): every number, date, ballot and "the faction voted…" in the summary must be found in the fact sheet or in a source you opened.
 - Are both source URLs valid and accessible?
-- Do the quotes accurately represent what was said?
+- Do the quotes accurately represent what was said? A `quote` that is the journalist's paraphrase is not the speaker's words (#68).
 - Is context missing that would change the meaning?
 
 ### 4. Robustness score

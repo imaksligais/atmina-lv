@@ -3,11 +3,11 @@ name: Valsts kontrole
 party: ''
 role: Neatkarīga koleģiāla augstākā revīzijas iestāde
 relationship_type: organization
-positions: 46
+positions: 48
 votes: 0
 contradictions: 0
-mentioned_in: 855
-last_active: 2026-11-09
+mentioned_in: 924
+last_active: 2026-11-13
 top_topics:
 - Valsts pārvalde
 - Pašvaldības
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/valsts-parvalde|Valsts pārvalde]] (22%), [[topics/pasvaldibas|Pašvaldības]] (17%), [[topics/veselibas-aprupe|Veselības aprūpe]] (13%)
-- **30d:** 13 claims, 1.6× bāzes līnija
+- **Top tēmas:** [[topics/valsts-parvalde|Valsts pārvalde]] (23%), [[topics/pasvaldibas|Pašvaldības]] (17%), [[topics/veselibas-aprupe|Veselības aprūpe]] (12%)
+- **30d:** 15 claims, 1.9× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/viktors-valainis|Viktors Valainis]] (1 spriedze), [[persons/hosams-abu-meri|Hosams Abu Meri]] (1 spriedze)
 <!-- /SYNC-AUTO -->

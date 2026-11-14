@@ -12,6 +12,10 @@ Arhivēti 14 dokumenti, uz kuriem ārpus arhīva neatsaucas nekas (vai tikai CHA
 
 Paliek, kaut izskatās veci: dokumenti, uz kuriem atsaucas kods, testi, `data/*.sql`, backlogs vai neiesaldēti pieraksti (piem., `docs/refactor/` — `tests/test_schema.py`, `verdikti-*` — `data/fix_*`). `docs/drafts/` nepārvieto: mape ir izslēgta no publiskā spoguļa, `arhivs/drafts` nebūtu.
 
+## 2026-11-14
+
+Arhivēti 46 dokumenti (63 faili), uz kuriem neatsaucas nekas dzīvs — kods, testi, `data/*.sql`, `content/`, backlogs, prasmes, aģenti, `wiki/operations` vai citi dzīvi dokumenti — vai tikai cits arhivējams dokuments. Mērķi pēc publiskā spoguļa līmeņa, lai nekas nepārietu no izslēgtas mapes publiskā: `docs/audits/` 25 → `audits/` (abas izslēgtas); `docs/plans/` 12 → `docs/plans/archive/`; 2 izpildīti `superpowers/plans/` → tās `archive/`; publiskie paliek publiski: `research/` 3, `security-audit-2026-04-14.md`, `cleanup/`, `specs/` un `docs/architecture.md` → `architecture-2026-04-14.md` (aktuālais apraksts — `ARCHITECTURE.md` saknē). Pierādījumu kopijas (`docs/audits/*-avoti`, `*-arhivs`, `*-x-ekrani`, `*-ddv-research`, `2026-11-01-lsm`) paliek vietā, arī bez atsaucēm. CHANGELOG atsauces nomainītas. Tajā pašā dienā dzēsti 172 sociālo tīklu melnraksti, kas datēti pirms 2026-10-15 un uz kuriem nekas neatsaucas (12 no sākotnēji dzēstajiem 184 atjaunoti — tiem galvenē nebija atzīmes «postēts»), un `wiki/operations/monthly-routine.md`.
+
 ## Handoff dokumentu dzīves cikls
 
 Handoff tiek rakstīts repozitorijā kā `docs/HANDOFF-<datums>.md`, nevis privātajā atmiņā. Kad tas ir noslēgts, failu pārvieto uz `docs/arhivs/handoffs/`. Abas mapes ir publiskas, tāpēc pirms publiskā spoguļa sinhronizācijas katram handoff jāiziet identitātes pārbaude (sk. [`docs/funding/repo-sync.md`](../funding/repo-sync.md)).

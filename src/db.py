@@ -1383,6 +1383,8 @@ def store_contradiction(
     reviewed: bool = False,
     headline: str | None = None,
     party_id: int | None = None,
+    fact_check: list[str] | None = None,
+    extra_sources: list[dict[str, str]] | None = None,
 ) -> int:
     """Validē (``src.models.Contradiction``) un ieraksta pretrunu; ``confirmed``
     paliek shēmas noklusējumā 0 (eskalācija 3 — publicē tikai operators).
@@ -1391,6 +1393,17 @@ def store_contradiction(
     ceļš to neapiet (2026-10-18). Nederīga rinda → ``ValueError``
     (pydantic ``ValidationError``) pirms DB atvēršanas. ``party_id`` — tikai
     partiju pretrunu klasei (``scripts/partiju_pretrunas.py`` 4. solis).
+
+    Faktu vārti (2026-11-13): kopsavilkumu saliek blakus avotiem un balsojumu
+    tabulai (``src.contradiction_check``); ``KĻŪDA`` — izdomāts citāts, «visa
+    frakcija» pie sadalītas frakcijas, nepieminēta atturēšanās, trešās personas
+    vai ``needs_review`` pozīcija — ir ``ValueError``, rindu neieraksta. 12 no 37
+    publicētajām pretrunām bija kļūdains fakts, un prompta solis vien to
+    neaptur. Partiju pretrunām (``party_id``) vārti nepiemērojas: tur balsojuma
+    puse ir cita deputāta reprezentatīvs claim. Padotā ``fact_check`` sarakstā
+    ieliek ``PĀRBAUDI`` rindas, ko mašīna nevar izšķirt. ``extra_sources``
+    (``[{"url", "text"}]``) — burtisks citāts no avota ārpus abu pozīciju
+    dokumentiem, tāpat kā ``check_contradiction.py --draft``.
     """
     # reviewed=True only for a @devils-advocate survivor (verify-then-store,
     # 2026-10-12); otherwise print_routine step 4 counts it as unreviewed.
@@ -1406,6 +1419,18 @@ def store_contradiction(
         party_id=party_id,
     )
     db = get_db(db_path)
+    if party_id is None:
+        from src.contradiction_check import ERROR, problems_for  # vēlīns imports: modulis lasa src.saeima
+
+        problems = problems_for(db, c.opponent_id, c.claim_old_id, c.claim_new_id, c.summary, c.headline, extra_sources)
+        errors = [str(p) for p in problems if p.level == ERROR]
+        if fact_check is not None:
+            fact_check.extend(str(p) for p in problems if p.level != ERROR)
+        if errors:
+            db.close()
+            raise ValueError(
+                "pretrunas faktu pārbaude (scripts/check_contradiction.py --draft): " + " | ".join(errors)
+            )
     db.execute(
         """INSERT INTO contradictions (opponent_id, claim_old_id, claim_new_id,
            topic, summary, severity, salience, detected_at, reviewed, headline,
@@ -1564,6 +1589,21 @@ def store_tension(source_pid: int, target_pid: int, topic: str, description: str
                 f"likely hallucinated. source_pid={source_pid}, "
                 f"target_pid={target_pid}, target_url={target_url!r}"
             )
+    # Tikai ziņo: «…» fragments, kas nav burtiski avota (vai mērķa) dokumentā.
+    # Mērīts 2026-11-12: 6 no 12 @quality-reviewer spriedžu labojumiem 05.–11.11.
+    # bija šī klase (docs/audits/2026-11-12-rutinas-uzlabojumi/README.md).
+    from src.support import unverbatim_quotes
+    urls = [u for u in (source_url, target_url) if u]
+    src_text = " ".join(
+        f"{r['title'] or ''} {r['content'] or ''}" for r in db.execute(
+            f"SELECT title, content FROM documents WHERE source_url IN ({','.join('?' * len(urls))})", urls)
+    )
+    loose = unverbatim_quotes(description, src_text)
+    if loose:
+        print(f"[store_tension] WARNING: pēdiņās ir vārdi, kas avotā tā nav rakstīti: "
+              f"{', '.join('«' + q + '»' for q in loose)} — locījums vai pārstāsts; pārbaudi pret avotu, "
+              f"citē burtiski vai pārstāsti bez pēdiņām "
+              f"(source_pid={source_pid}, target_pid={target_pid})", file=sys.stderr)
     cursor = db.execute(
         """INSERT INTO political_tensions (source_pid, target_pid, topic, description, tension_type, source_url, target_url)
            VALUES (?, ?, ?, ?, ?, ?, ?)""",

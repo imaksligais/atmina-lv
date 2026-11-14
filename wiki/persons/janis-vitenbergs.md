@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 63
 votes: 3681
 contradictions: 0
-mentioned_in: 570
+mentioned_in: 580
 last_active: 2026-11-04
 top_topics:
 - Degviela un enerģētika

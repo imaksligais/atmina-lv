@@ -1,7 +1,7 @@
 ---
 party: MMN
 members: 9
-claims: 567
+claims: 575
 program_promises: 25
 contradictions: 0
 votes_par: 4310

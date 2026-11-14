@@ -39,6 +39,15 @@ def test_profile_vote_contradiction_has_words_deeds_badge_and_chronological_pane
         source_url="https://example.lv/vote", stated_at="2026-09-01",
         claim_type="saeima_vote",
     )
+    # store_contradiction() salīdzina balsojuma pusi ar balsojumu tabulu (2026-11-13),
+    # tāpēc balsojuma pozīcijai vajag īstu balsojuma un balss rindu.
+    db = get_db(db_path)
+    db.execute("INSERT INTO saeima_votes (id, motif, vote_date, url, result, total_par) "
+               "VALUES (1, 'Valsts budžets, 2. lasījums', '2026-09-01', 'https://example.lv/vote', 'Pieņemts', 60)")
+    db.execute("INSERT INTO saeima_individual_votes (vote_id, deputy_name, faction, vote, politician_id) "
+               "VALUES (1, 'Testa Politiķis', 'TP', 'Par', 1)")
+    db.commit()
+    db.close()
     # Detection order is reversed: the backfilled vote must appear on the left.
     cid = store_contradiction(
         opponent_id=1, old_claim_id=statement, new_claim_id=vote,

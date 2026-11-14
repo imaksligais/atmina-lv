@@ -14,7 +14,3 @@ top_topics:
 - Valsts pārvalde
 - Vēlēšanas
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

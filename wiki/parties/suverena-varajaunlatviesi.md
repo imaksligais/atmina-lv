@@ -1,9 +1,9 @@
 ---
 party: Suverēnā vara/Jaunlatvieši
 members: 15
-claims: 73
+claims: 81
 program_promises: 24
-contradictions: 1
+contradictions: 0
 votes_par: 0
 votes_pret: 30
 votes_atturas: 0
@@ -11,8 +11,8 @@ top_politicians:
 - Jūlija Stepaņenko
 - Karina Sprūde
 - Rūdolfs Brēmanis
-- Ļubova Švecova
 - Andrejs Pagors
+- Ļubova Švecova
 top_topics:
 - Vēlēšanas
 - Ukraina un Krievija

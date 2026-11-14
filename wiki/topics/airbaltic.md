@@ -3,7 +3,7 @@ topic: airBaltic
 positions: 299
 votes: 1210
 politicians: 50
-contradictions: 1
+contradictions: 0
 last_activity: '2026-11-08 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

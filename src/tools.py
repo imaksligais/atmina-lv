@@ -584,9 +584,13 @@ def store_contradiction(
     reviewed: bool = False,
     headline: str | None = None,
     party_id: int | None = None,
+    extra_sources: list[dict[str, str]] | None = None,
 ) -> str:
     """JSON apvalks ap ``src.db.store_contradiction`` — validācija (severity,
-    salience, headline, topic normalizācija) dzīvo tur; kļūdu atgriež, nemet."""
+    salience, headline, topic normalizācija, faktu vārti) dzīvo tur; kļūdu
+    atgriež, nemet. Veiksmes atbildē ``fact_check`` ir ``PĀRBAUDI`` rindas, ko
+    mašīna nevar izšķirt — izsaucējs tās izlasa, citādi veiksme tās noklusē."""
+    fact_check: list[str] = []
     try:
         cid = db_store_contradiction(
             opponent_id=opponent_id,
@@ -599,8 +603,10 @@ def store_contradiction(
             reviewed=reviewed,
             headline=headline,
             party_id=party_id,
+            fact_check=fact_check,
+            extra_sources=extra_sources,
         )
-        return _json_success({"contradiction_id": cid})
+        return _json_success({"contradiction_id": cid, "fact_check": fact_check})
     except Exception as e:
         return _json_error(str(e))
 

@@ -1,10 +1,10 @@
 ---
 topic: Veselības aprūpe
-positions: 242
+positions: 243
 votes: 17561
-politicians: 65
+politicians: 66
 contradictions: 0
-last_activity: '2026-11-10 00:00:00'
+last_activity: '2026-11-11 00:00:00'
 top_politicians:
 - '[[persons/hosams-abu-meri|Hosams Abu Meri]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

@@ -3,11 +3,11 @@ name: Juris Pūce
 party: Latvijas attīstībai
 role: Partijas valdes priekšsēdētājs
 relationship_type: tracked
-positions: 110
+positions: 115
 votes: 0
 contradictions: 0
-mentioned_in: 1075
-last_active: 2026-11-10
+mentioned_in: 1093
+last_active: 2026-11-12
 top_topics:
 - Koalīcija un partijas
 - Budžets un finanses
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/budzets-un-finanses|Budžets un finanses]] (15%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (9%)
-- **30d:** 14 claims, 1.1× bāzes līnija
-- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (11 spriedzes), [[persons/baiba-braze|Baiba Braže]] (2 spriedzes), [[persons/andris-suvajevs|Andris Šuvajevs]] (1 spriedze)
+- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (20%), [[topics/budzets-un-finanses|Budžets un finanses]] (16%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (9%)
+- **30d:** 17 claims, 1.3× bāzes līnija
+- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (12 spriedzes), [[persons/baiba-braze|Baiba Braže]] (2 spriedzes), [[persons/andris-suvajevs|Andris Šuvajevs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

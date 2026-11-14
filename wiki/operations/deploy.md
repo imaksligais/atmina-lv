@@ -127,6 +127,11 @@ katra kļūme = `exit 1`, deploy nenotiek. Apzināta apiešana: `--no-output-che
    **Publicēta «Atraduma» labojumu pirms operatora «jā» pārbauda divi neatkarīgi
    lasītāji — advisor un otrs modelis (Codex; kopš 2026-11-11 Sol `gpt-6.1-sol`, agrāk Astra)** (operatora lēmums
    2026-11-04); secība: abi lasītāji → operatora «jā» → `approve_publish.py` → renders → deploy.
+   Raksta lapas pārrakstās tikai ar domēnu `analizes` (`--only=analizes,dashboard,blog,static`).
+   **Wayback kopija, kas atbild 404, nav pazudusi** (2026-11-12): 4 kopijas, kas 08.–11.11.
+   atbildēja 404 ar tukšu CDX, 12.11. atkal atvērās, tāpat 11 no 14 agrāk nomainītajām
+   (`docs/audits/2026-11-12-arhivs/`). Tāpēc citētu kopiju nenomaini un neizņem — pieliec blakus
+   otru kopiju vai mūsu pašu kopiju.
 
 Melnraksts gaida atļauju? Citus labojumus var deployēt kā parasti — tā lapa kokā nav.
 Korektūrai renderētā HTML: `python -m src.render --only=blog,dashboard,static --drafts

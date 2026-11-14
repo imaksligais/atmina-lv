@@ -1,7 +1,7 @@
 ---
 party: Bezpartejisks
 members: 7
-claims: 621
+claims: 639
 program_promises: 0
 contradictions: 1
 votes_par: 9820
@@ -9,9 +9,9 @@ votes_pret: 3142
 votes_atturas: 2483
 top_politicians:
 - Edgars Rinkēvičs
+- Matīss Žuravļevs
 - Hosams Abu Meri
 - Raivis Melnis
-- Matīss Žuravļevs
 - Igors Rajevs
 top_topics:
 - Aizsardzība un drošība

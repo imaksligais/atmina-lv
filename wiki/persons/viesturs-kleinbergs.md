@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 81
 votes: 0
 contradictions: 0
-mentioned_in: 1487
+mentioned_in: 1512
 last_active: 2026-11-10
 top_topics:
 - Pašvaldības
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (33%), [[topics/pilsetvide|Pilsētvide]] (21%), [[topics/transports|Transports]] (10%)
-- **30d:** 15 claims, 1.7× bāzes līnija
+- **30d:** 9 claims, 0.8× bāzes līnija
 - **Spriedzes:** [[persons/viktors-valainis|Viktors Valainis]] (3 uzbrukumi), [[persons/maris-sprindzuks|Māris Sprindžuks]] (1 spriedze)
 <!-- /SYNC-AUTO -->

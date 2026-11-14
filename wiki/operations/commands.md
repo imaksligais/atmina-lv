@@ -7,9 +7,16 @@ Atskaites punkts visām CLI/REPL komandām. CLAUDE.md tikai uzrāda divas oblig�
 ```bash
 .venv/Scripts/activate                    # Windows venv aktivācija
 bash scripts/check.sh                     # Refactor safety net: ruff + pytest + generate_public_site smoke
-.venv/Scripts/python.exe -m pytest tests/ -v                # Pilna testu paka
+.venv/Scripts/python.exe -m pytest tests/test_<joma>.py -q  # Iterējot: tikai skartās uzvedības tests
 .venv/Scripts/python.exe -c "from src.routine import print_routine; print_routine()"   # Rutīnas statuss
 ```
+
+**Testēšana īsumā** (sīkāk — piezīmes zemāk):
+- **Iterējot** palaid tikai tās uzvedības testu failu, ko maini. Pilno komplektu — vienreiz, pirms saki «gatavs».
+- **Pilnais komplekts = `check.sh`, Git Bash, fonā:** `bash scripts/check.sh > .scratch/check.log 2>&1; echo $?` — ilgst 7–10 min (14.11.: 8,3 min, 4196 testi), tāpēc Claude Code `Bash` rīkā laid ar `run_in_background` (priekšplāna robeža 10 min to nogriež). Pēc noklusējuma 3 xdist darbinieki (`CHECK_PYTEST_WORKERS`; `0` = secīgi, lasāmai tracebackai; vairāk → «os error 1455», atmiņa).
+- **Ne reizē ar:** DB rakstošu aģentu (ekstrakcija, `@brief-writer`, `@graphics-designer` — `tests/conftest.py` sargs skaita rindas un krīt), otru Playwright skrējienu vai būvējumu (dators sastingst — Playwright tikai pa vienam, ar vienu darbinieku).
+- **Testi dzīvo DB neaiztiek** (`tests/conftest.py` § 4–5); tests, kam tā tiešām vajag, sauc `src.db.PRODUCTION_DB_PATH` un izlaižas, ja tās nav.
+- **Iesprūst vai `Page.goto` noildze** → piezīme «check.sh iesprūst» zemāk.
 
 > **Vienmēr `.venv/Scripts/python.exe`, nekad kails `python`.** Uz šīs mašīnas `python` PATH-ā aizved uz svešu vidi (`%LOCALAPPDATA%\hermes\hermes-agent\venv`, ielikta lietotāja pastāvīgajā PATH), un tālāk aiz tās ir tikai neesoši Python 3.10 ceļi un Microsoft Store aizbāznis. Projekta vide ir Python 3.12. Sliktākais scenārijs nav "komanda nestrādā", bet daļēja rakstīšana: `store_vote()` commit-o pirms claim ģenerēšanas, tāpēc svešā vidē balsojumi nonāk DB, bet claims krīt (2026-07-25, 20 rindas). Rakstošie skripti tagad to notver ar `ensure_embeddings_live()`, bet vārti nav visur. `scripts/check.sh` un `deploy.sh` paši atrod `.venv`, tāpēc tos drīkst saukt tieši.
 

@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 102
 votes: 1513
 contradictions: 1
-mentioned_in: 686
+mentioned_in: 694
 last_active: 2026-11-08
 top_topics:
 - airBaltic
@@ -18,7 +18,7 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/airbaltic|airBaltic]] (19%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (17%), [[topics/transports|Transports]] (13%)
-- **30d:** 7 claims, 0.4× bāzes līnija
+- **30d:** 7 claims, 0.5× bāzes līnija
 - **Spriedzes:** [[persons/janis-dombrava|Jānis Dombrava]] (1 uzbrukums), [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/transports|Transports]], 2026-07-21
 <!-- /SYNC-AUTO -->

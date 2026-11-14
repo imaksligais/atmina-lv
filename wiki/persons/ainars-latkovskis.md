@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 24
 votes: 7910
 contradictions: 0
-mentioned_in: 255
+mentioned_in: 260
 last_active: 2026-11-08
 top_topics:
 - Aizsardzība un drošība

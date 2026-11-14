@@ -8,7 +8,6 @@ _Atjaunots: 2026-11-09_
 | ------------------------------------- | ------------ | ---------------------------------------------------------------------------- |
 | [Dienas rutīna](../../.claude/commands/dienas-rutina.md) (`/dienas-rutina`) | Katru dienu  | 11 soļi (+ 2b veci pāri): ingest → analīze → pretrunas → brief → featured image → publikācija → deploy |
 | [Nedēļas rutīna](weekly-routine.md)   | Reizi nedēļā | `/deep-check` pretrunu medības, nedēļas pārskats, Saeimas sesijas, auditi |
-| [Ikmēneša rutīna](monthly-routine.md) | —            | Nav praktizēta kopš 2026-04 (vēsture — `git log`)                            |
 
 ## Prasmes (`.claude/commands/` + `.claude/workflows/`)
 

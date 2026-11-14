@@ -74,3 +74,9 @@ Priekšlikumu balsojumi jau ienāk caur agendas URL apvienību: `SELECT COUNT(*)
 - **Dublikāti slēgti 2026-11-07:** `store_vote()` to pašu (datums, laiks ar sekundēm) uzskata par to pašu balsojumu, patur esošo saiti un ieraksta `logs` `saeima_vote_same_moment`; citas kopsummas → `ValueError`, nekas nav rakstīts (`tests/test_saeima_vote_same_moment.py`).
 - **Atlikums:** dzīvā darba kārtība pastāvīgo saiti nerāda, tāpēc sēdes dienā ielāde glabā `parentID=`; saiti pēc tam nomaina `fix_parentid_vote_urls.py`. Atgādinājums ir paritātes audits (izejas kods 1 pēc 7 dienām); uz jaunas sēdes vēl nav darbināts.
 - **Izdarīts tajā pašā dienā:** 17 publicētajos pārskatos saites nomaina render pēc `src/saeima/parentid_url_map.json` (`src/saeima/vote_url_map.py`; teksts un heši nemainās; `wiki/dailies` lokālajā kopijā paliek vecās). 3 sintēzes laboju tieši. Konteksta piezīmes 377, 640 (`source`) paliek — append-only (inv. #8).
+
+### [FIX] Vienam likumprojektam vairākas `document_nr` formas vai NULL — ķēdes vaicājums tos neredz (2026-11-13)
+
+- **Problēma:** 24 balsojumiem 23 likumprojektos `document_nr` ir bez sufiksa (`1149` blakus `1149/Lp14`; `SELECT COUNT(*), COUNT(DISTINCT document_nr) FROM saeima_votes WHERE document_nr NOT LIKE '%/%'`), dažiem NULL (6449, 126, 26). T14 ķēdes lasījums, `scripts/check_contradiction.py` faktu lapa un pieprasījumu filtrs (`/P14`) šos balsojumus izlaiž.
+- **Rīcība:** normalizēt ar rollback (`bill_id` neaiztikt — inv #12) un ielādē rakstīt vienu formu; pēc tam pārskatīt #69 un #70 faktu lapas. Blakus: balsojuma 6719 `summary` apraksta balsojuma 218 iznākumu.
+- **Īpašnieks:** orķestrators ar operatora «jā».

@@ -998,7 +998,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
 - id: s35
@@ -1020,7 +1020,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: visvanati-pilsoniba-2026#as-gtech-un-as-lights-21-iemaksa-pa-50-000-
 - id: s37
@@ -1031,7 +1031,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
 - id: s38
@@ -1053,7 +1053,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: visvanati-pilsoniba-2026#as-gtech-un-as-lights-21-iemaksa-pa-50-000-
 - id: s40
@@ -1064,7 +1064,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
   caveat: Viens no desmit ir Kanans; ne visiem 21 pieder GTECH akcijas.
@@ -1076,7 +1076,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
   caveat: Viens no vienpadsmit ir Hoppstaedter; ne visiem 21 pieder LIGHTS akcijas.
@@ -1111,7 +1111,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
 - id: s45
@@ -1122,7 +1122,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
 - id: s46
@@ -1133,7 +1133,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
 - id: s47
@@ -1144,7 +1144,7 @@ links:
   tier: 1
   kind: ipasums
   source:
-    label: UR akcionāri
+    label: UR akcionāri (datu kopa vairs nav publiska)
     url: https://data.gov.lv/dati/lv/dataset/stockholders
   article: s-baltic-uzturesanas-atlaujas-2026#gtech-un-lights-akcijas-bez-balsstiesibam-par-50-000-
   caveat: Vārdu nepublicējam.

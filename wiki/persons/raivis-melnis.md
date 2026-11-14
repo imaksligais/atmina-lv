@@ -3,11 +3,11 @@ name: Raivis Melnis
 party: Bezpartejisks
 role: Aizsardzības ministrs
 relationship_type: tracked
-positions: 66
+positions: 67
 votes: 0
 contradictions: 0
-mentioned_in: 483
-last_active: 2026-11-09
+mentioned_in: 492
+last_active: 2026-11-12
 top_topics:
 - Aizsardzība un drošība
 - Droni
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (58%), [[topics/droni|Droni]] (23%), [[topics/imigracija|Imigrācija]] (6%)
-- **30d:** 13 claims, 1.3× bāzes līnija
+- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (58%), [[topics/droni|Droni]] (22%), [[topics/imigracija|Imigrācija]] (6%)
+- **30d:** 9 claims, 0.8× bāzes līnija
 - **Spriedzes:** [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

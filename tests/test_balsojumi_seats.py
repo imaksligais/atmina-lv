@@ -191,6 +191,9 @@ class _Ctx:
     def open(self, url):
         self.page.goto(url)
         self.page.wait_for_selector(f"#vote-{V} .vote-chamber")
+        # Fonti ir `font-display: swap`: vēla nomaiņa maina izkārtojumu, ritināšanas
+        # enkurs pabīda scrollY, un (b) krita CI 13.11. (run 43515409247).
+        self.page.evaluate("document.fonts.ready.then(() => true)")
         return self.page
 
     def close(self):
@@ -308,7 +311,8 @@ def _case_b(browser, base, errors, notes):
         ok, g = _adjacent(page, a)
         assert ok, f"(b) lodziņš nav pie A: {g}"
     _mouse_to(page, b)
-    assert page.evaluate("scrollY") == y0, "(b) lapa ritināja — A→B nav pārbaudīts"
+    y1 = page.evaluate("scrollY")
+    assert y1 == y0, f"(b) lapa ritināja ({y0}→{y1}) — A→B nav pārbaudīts"
     pop = _wait_pop(page, "15", "(b) B")
     assert pop["name"] == "Gatis Gulbis", f"(b) B teksts: {pop}"
     if notes.get("position_area"):

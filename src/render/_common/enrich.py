@@ -317,14 +317,22 @@ def _enrich_contradiction(d: dict[str, Any], db: sqlite3.Connection) -> None:
     d["new_link"] = _source_to_internal_link(d.get("new_source"), d["politician_name"], db)
     d["vote_summary"] = None
     d["vote_id"] = None
-    if d.get("new_source") and "SaeimaLIVS" in (d["new_source"] or ""):
-        vote = db.execute(
-            "SELECT id, summary FROM saeima_votes WHERE url = ?",
-            (d["new_source"],),
-        ).fetchone()
-        if vote:
-            d["vote_summary"] = vote["summary"]
-            d["vote_id"] = vote["id"]
+    # «Par ko bija balsojums» katrā rūtī, kurā ir balsojums — arī vecākajā
+    # (pretruna #68: balsojums 2022, vārdi 2026, apraksts nerādījās).
+    for side in ("old", "new"):
+        d[f"{side}_vote_summary"] = None
+        src = d.get(f"{side}_source")
+        if src and "SaeimaLIVS" in src:
+            vote = db.execute(
+                "SELECT id, summary, motif FROM saeima_votes WHERE url = ?", (src,),
+            ).fetchone()
+            # Priekšlikuma balsojumam likumprojekta apraksts nes VISA likumprojekta
+            # iznākumu («Pieņemts 89:0») blakus noraidītam priekšlikumam (#65, T20).
+            if vote and not (vote["motif"] or "").startswith("Par priekšlikumu"):
+                d[f"{side}_vote_summary"] = vote["summary"]
+                if side == "new":
+                    d["vote_summary"] = vote["summary"]
+                    d["vote_id"] = vote["id"]
     d["severity_glyph"] = _SEVERITY_GLYPHS.get(d["severity"], "·")
     d["initials"] = _initials_from_name(d["politician_name"])
     d["has_photo"] = (ASSETS_DIR / "photos" / f"{d['slug']}.jpg").exists()

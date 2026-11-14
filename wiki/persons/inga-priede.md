@@ -3,15 +3,19 @@ name: Inga Priede
 party: Apvienotais saraksts
 role: Saeimas deputāte
 relationship_type: tracked
-positions: 5
+positions: 6
 votes: 972
 contradictions: 0
-mentioned_in: 82
-last_active: 2026-08-26
+mentioned_in: 89
+last_active: 2026-11-12
 top_topics:
+- Sociālā politika
 - Degviela un enerģētika
 - Pašvaldības
-- Sociālā politika
 - Valsts pārvalde
 - Vide
 ---
+
+<!-- SYNC-AUTO -->
+- **30d:** 1 claims
+<!-- /SYNC-AUTO -->

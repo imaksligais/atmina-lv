@@ -28,8 +28,11 @@ Kanoniskie nesēji: `/deep-check` + [`.claude/agents/devils-advocate.md`](../../
 - [ ] Izgājusi `@devils-advocate` (nav procedurāls konteksts, žurnālista pārstāsts vai divas savienojamas pozīcijas)
 - [ ] Frakcijas disciplīna: ja >80 % frakcijas balsoja vienādi, smagums ne augstāks par `minor_shift`, un frakcijas balsojums ir `[Konteksts]`, izņemot, ja politiķis šajā jautājumā atklāti iebildis savai partijai. Ja nav paša runātāja vārdu par to pašu jautājumu, noraida.
 - [ ] Retorika-pret-balsojumu nāk no strukturālās SQL pārbaudes ar frakcijas salīdzinājumu (T9), ne no embeddings
+- [ ] **Fakti salikti blakus avotam: `.venv/Scripts/python.exe scripts/check_contradiction.py --draft <fails>` pirms glabāšanas un `--id <N>` pirms jautājuma operatoram.** `KĻŪDA` (pēdiņās vārdi, kas nav burtiski avotā — arī locīti vai saīsināti; «visa frakcija» pie sadalītas frakcijas; nepieminēta atturēšanās) jāizlabo — `store_contradiction()` tādu rindu atsaka; uz katru `PĀRBAUDI` atbild atskaitē ar faktu lapas rindu. Mašīna noķer daļu: vecajos tekstos 7 no 37 (2026-11-13), tāpēc faktu lapu — paša balss, frakcijas sadalījums, visa `document_nr` ķēde — lasa arī tad, ja kļūdu nav
 - [ ] Saglabāta `confirmed=0` līdz operatora apstiprinājumam
 - [ ] Kopsavilkums latviski, smaguma apzīmējumi latviski, bez kailiem `#NNNNN`
+- [ ] **Pirmais teikums pasaka, par ko bija balsojums vai notikums** (ko likums vai lēmums darīja, cilvēku valodā, pēc avota), tikai tad politiķa rīcība un vārdi ar datumiem. Likumprojekta numurs vai nosaukums viens nepietiek (operators 2026-11-13: «grūti saprast, nezinu, par ko tie balsojumi»; paraugs — pretruna #68). Konteksts tikai vienā `[Konteksts: …]` blokā ar kolu beigās; citur kvadrātiekavu nav (renders tās izceļ kastītē; `src/models.py` atsaka tukšu etiķeti un iekavas citātā)
+- [ ] Pēc apstiprināšanas izlasi live pretrunas lapu, ne tikai HTTP 200 (#68 aizgāja ar tukšu konteksta kastīti)
 
 ## Dienas pārskats
 

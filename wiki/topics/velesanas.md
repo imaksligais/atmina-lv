@@ -3,7 +3,7 @@ topic: Vēlēšanas
 positions: 500
 votes: 16005
 politicians: 114
-contradictions: 4
+contradictions: 2
 last_activity: '2026-11-09 00:00:00'
 top_politicians:
 - '[[persons/alvis-hermanis|Alvis Hermanis]]'

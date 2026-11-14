@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/imigracija|Imigrācija]] (22%), [[topics/sociala-politika|Sociālā politika]] (19%), [[topics/izglitiba|Izglītība]] (9%)
-- **30d:** 4 claims, 0.4× bāzes līnija
+- **30d:** 2 claims, 0.2× bāzes līnija
 - **Spriedzes:** [[persons/ainars-slesers|Ainārs Šlesers]] (1 uzbrukums), [[persons/andris-kulbergs|Andris Kulbergs]] (1 uzbrukums), [[persons/andris-spruds|Andris Sprūds]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

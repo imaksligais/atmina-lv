@@ -74,3 +74,26 @@ def dropped_qualifiers(support, stance: str | None) -> list[str]:
     s_text = unicodedata.normalize("NFC", " ".join(f for f in (support or []) if isinstance(f, str)))
     st_text = unicodedata.normalize("NFC", stance or "")
     return [w for w, rx in QUALIFIERS.items() if rx.search(s_text) and not rx.search(st_text)]
+
+
+_GUILLEMET_FRAGMENT = re.compile(r"«([^«»]+)»")
+
+
+def unverbatim_quotes(text: str | None, source_text: str | None) -> list[str]:
+    """«…» fragmenti tekstā, kas nav burtiski avotā (tikai ziņošanai).
+
+    Pēdiņas sola burtisku citātu; locījumā pielāgots vai pārstāstīts fragments
+    («pamatīgo budžeta revīziju», avotā «pamatīga budžeta revīzija») tāds nav.
+    Salīdzina `norm()` formu bez lielo burtu atšķirības. Nosaukumus pēdiņās
+    («Rail Baltica», «Kārtības rullī») izlaiž: fragments ar lielo sākumburtu un
+    ne vairāk kā trim vārdiem. Tāpēc īss citāts teikuma sākumā paliek nepamanīts.
+    """
+    src = norm(source_text or "").casefold()
+    out = []
+    for frag in _GUILLEMET_FRAGMENT.findall(text or ""):
+        f = norm(frag).rstrip(".,!?…")
+        if not f or (f[0].isupper() and len(f.split()) <= 3):
+            continue
+        if f.casefold() not in src:
+            out.append(frag)
+    return out

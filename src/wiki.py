@@ -290,7 +290,7 @@ def wiki_sync(
                (SELECT COUNT(*) FROM claims c WHERE c.claim_type = 'position'
                 AND c.opponent_id IN
                 (SELECT id FROM tracked_politicians WHERE party = tp.party)) AS claims,
-               (SELECT COUNT(*) FROM contradictions ct WHERE ct.opponent_id IN
+               (SELECT COUNT(*) FROM contradictions ct WHERE ct.confirmed = 1 AND ct.opponent_id IN
                 (SELECT id FROM tracked_politicians WHERE party = tp.party)) AS contradictions
         FROM tracked_politicians tp
         WHERE party IS NOT NULL AND relationship_type != 'inactive'

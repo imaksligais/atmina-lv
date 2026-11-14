@@ -1,6 +1,6 @@
 # Architecture
 
-A contributor-level intro to how atmina is structured. `docs/architecture.md` ir vēsturisks 2026-04-14 momentuzņēmums (netiek uzturēts) — šis fails ir vienīgais aktuālais arhitektūras apraksts.
+A contributor-level intro to how atmina is structured. `docs/arhivs/architecture-2026-04-14.md` ir vēsturisks 2026-04-14 momentuzņēmums (netiek uzturēts) — šis fails ir vienīgais aktuālais arhitektūras apraksts.
 
 ## Design premise
 

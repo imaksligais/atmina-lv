@@ -1144,3 +1144,30 @@ def test_topic_top_politicians_link_person_pages_inactive_stays_text(tmp_path):
     assert (wiki_dir / "persons" / "testa-politike.md").exists()
     assert "Bijušais Deputāts" in tops, tops
     assert not (wiki_dir / "persons" / "bijusais-deputats.md").exists()
+
+
+def test_wiki_frontmatter_counts_only_published_contradictions(tmp_path):
+    """wiki/ ir publiskajā spogulī: frontmatter skaits nedrīkst atklāt
+    nepublicētus (confirmed=0) vai atsauktus (confirmed=-1) kandidātus."""
+    import re
+    from src.wiki import wiki_sync
+    db_path = str(tmp_path / "test.db")
+    db = _create_test_db(db_path)
+    for confirmed in (1, 0, -1):
+        db.execute(
+            "INSERT INTO contradictions (opponent_id, topic, summary, severity, confirmed, detected_at) "
+            "VALUES (1, 'Budžets un finanses', 's', 'minor_shift', ?, '2026-11-13')",
+            (confirmed,),
+        )
+    db.commit()
+    wiki_dir = tmp_path / "wiki"
+    wiki_sync(db_path=db_path, wiki_dir=str(wiki_dir))
+    counts = {
+        str(p.relative_to(wiki_dir)): m.group(1)
+        for p in wiki_dir.rglob("*.md")
+        for m in [re.search(r"^contradictions: (\d+)$", p.read_text(encoding="utf-8"), re.M)]
+        if m and m.group(1) != "0"
+    }
+    assert counts, "neviena lapa nenes contradictions skaitu — tests neko nepārbauda"
+    wrong = {k: v for k, v in counts.items() if v != "1"}
+    assert not wrong, f"lapas skaita nepublicētas pretrunas: {wrong}"

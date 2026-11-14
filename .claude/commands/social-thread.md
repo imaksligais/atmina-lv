@@ -38,6 +38,14 @@ Seko pārskata «Galvenais» (nedēļas pārskatā — stāstu secībai): **1. t
 - **Nedēļas dienu aprēķini** (`date(Y,M,D).weekday()`) vai neraksti; «vakar/šodien» nav droši — pārskata datums ir rutīnas diena (2026-07-25).
 - **Skaitļa vārti (2026-10-06, divas kļūdas vienā tvītā).** Katram skaitlim melnrakstā: (a) ko tieši tas skaita, (b) par kādu periodu un vai persona visu periodu bija amatā («visilgāk runājis» deputāts, kas Saeimā bija 2,5 no 4 gadiem), (c) vai tas salīdzināms ar blakus esošo (146 = jautājumi + pieprasījumi blakus «no 144 pieprasījumiem»). Ja (b) vai (c) lasītājam nav acīmredzams — precizē vai izvēlies citu skaitli.
 
+## 3a. Viens garš tvīts (izmēģinājums kopš 2026-11-14)
+
+Operators 14.11.: 6 tvītu pavedieni ir maz skatīti. Kamēr operators nav izlēmis, piedāvā **šo formātu pēc noklusējuma**, pavedienu — ja prasa.
+- **Viens dienas stāsts**, ne kopsavilkums: tas, ap kuru dienā visvairāk spriedžu / pozīciju (pārskata «Galvenais» + «Spriedzes»). Pārējās tēmas — FB/Reddit postā.
+- **Āķis pirmajās ~280 zīmēs** (tās redz bez «Rādīt vairāk»): burtisks, īss citāts; datums «13. novembrī» tekstā — tvīts ceļo bez atbildes. ≤3 rindkopas (~600–900 zīmes), visi § 2–3 noteikumi (tagi, nesākt ar @, skaitļa un ierāmējuma vārti) paliek.
+- **Bez saites;** otrs tvīts kā atbilde: viena rinda par pārskatu + saite. Attēls — pārskata plakāts pie 1. tvīta (jaunus attēlus neģenerē).
+- Paraugs: `docs/tweet_bank/2026-11-14-dienas-parskats-social.md`.
+
 ## 4. Attēli
 
 - Katram satura tvītam unikāls attēls: sepia, 16:9, **bez teksta**, **full-bleed** (2026-07-08): promptā «full-bleed, edge-to-edge, NO border/frame/paper margins»; ja malas tomēr ir — PIL crop ~3 % katrā pusē, ne pārģenerēšana.

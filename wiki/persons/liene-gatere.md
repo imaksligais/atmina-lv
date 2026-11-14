@@ -18,5 +18,4 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (21%), [[topics/droni|Droni]] (21%), [[topics/valsts-parvalde|Valsts pārvalde]] (21%)
-- **30d:** 1 claims
 <!-- /SYNC-AUTO -->

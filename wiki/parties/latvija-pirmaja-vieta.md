@@ -1,9 +1,9 @@
 ---
 party: Latvija Pirmajā Vietā
 members: 24
-claims: 746
+claims: 767
 program_promises: 23
-contradictions: 4
+contradictions: 2
 votes_par: 51870
 votes_pret: 12223
 votes_atturas: 204
@@ -18,7 +18,7 @@ top_topics:
 - Valsts pārvalde
 - Imigrācija
 - airBaltic
-- Vēlēšanas
+- Budžets un finanses
 ---
 
 <!-- SYNC-AUTO -->

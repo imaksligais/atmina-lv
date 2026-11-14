@@ -12,7 +12,3 @@ top_topics:
 - Koalīcija un partijas
 - Vēlēšanas
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

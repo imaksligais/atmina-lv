@@ -1,10 +1,10 @@
 ---
 topic: Izglītība
-positions: 291
+positions: 292
 votes: 28038
 politicians: 75
-contradictions: 1
-last_activity: '2026-11-07 00:00:00'
+contradictions: 0
+last_activity: '2026-11-13 00:00:00'
 top_politicians:
 - '[[persons/ilze-indriksone|Ilze Indriksone]]'
 - '[[persons/ceslavs-batna|Česlavs Batņa]]'

@@ -31,7 +31,9 @@
         }
       };
       search.addEventListener('change', go);
-      search.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+      search.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.isComposing) go();
+      });
     }
 
     var btn = document.getElementById('saites-open-graph');

@@ -3,11 +3,11 @@ name: Edvards Ratnieks
 party: Nacionālā apvienība
 role: Rīgas vicemērs
 relationship_type: tracked
-positions: 153
+positions: 154
 votes: 0
 contradictions: 0
-mentioned_in: 3800
-last_active: 2026-11-06
+mentioned_in: 3815
+last_active: 2026-11-11
 top_topics:
 - Imigrācija
 - Pilsētvide

@@ -1,14 +1,14 @@
 ---
 topic: Saeimas darbs
-positions: 19
+positions: 32
 votes: 43188
-politicians: 16
+politicians: 24
 contradictions: 0
-last_activity: '2026-11-10 00:00:00'
+last_activity: '2026-11-12 00:00:00'
 top_politicians:
-- '[[persons/daiga-mierina|Daiga Mieriņa]]'
+- '[[persons/edvards-smiltens|Edvards Smiltēns]]'
+- '[[persons/andris-suvajevs|Andris Šuvajevs]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
+- '[[persons/daiga-mierina|Daiga Mieriņa]]'
 - '[[persons/edgars-rinkevics|Edgars Rinkēvičs]]'
-- '[[persons/rudolfs-bremanis|Rūdolfs Brēmanis]]'
-- '[[persons/janis-jenzis|Jānis Jenzis]]'
 ---

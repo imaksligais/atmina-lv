@@ -42,11 +42,11 @@ Doc 87866 ir laika prognozes raksts; Rinkēviča vārds tajā ir tikai navigāci
 - **Rīcība:** plāns — kā stenogrammu sadalīt pa runātājiem (sēdes vadītāja «Vārds deputātam …» robežas), vai atsevišķa josla `plan_extraction.py` vai nedēļas sweep, citāta precizitātes vārti, saite uz balsojumu (T9/T14). Pirms koda — plāns operatoram.
 - **Trigeris:** nākamā sesija ar laiku koda darbam. **Īpašnieks:** operators (apstiprina plānu), tad koda darbs.
 
-### [OPEN] X skrāpis nesaglabā citēto tvītu un tvītu, uz ko atbild (2026-10-30)
+### [OPEN] X citētā un atbildētā tvīta konteksts — atpakaļaizpilde 153 dokiem (plāna 7. solis)
 
-- **Problēma:** `src/x_scraper.py::_tweet_text` pārbūvē tikai retvīta oriģinālu (`RT @…`); citēto tvītu (`tweet.quote`) un atbildes vecāku nesaglabā. Tāpēc «reakcija bez redzama konteksta» ir biežs `NEEDS_REVIEW` iemesls. 2026-10-30: Velps 752706 izskatījās pēc apsūdzības bez adresāta, bet citētajā tvītā (@ilmarmors) bija viss konteksts (Kalviņa atzinības raksts Višvanatai).
-- **Rīcība:** glabāt citēto tekstu skaidri atdalītu (piem. `[Citē @handle: …]`), lai `@claim-extractor` to lieto tikai kā kontekstu, nekad kā runātāja vārdus; matcher NEdrīkst saistīt politiķus no citētā bloka (vai tikai `mentioned`); `support` vārti — tikai paša teksts. Tests: e2e ar citētu tvītu.
-- **Īpašnieks:** operators izlemj, tad koda darbs (vairāki faili — plāns pirms diffiem).
+- **Stāvoklis:** konteksta glabāšana ieviesta 2026-11-10 (CHANGELOG 2026-11-10 (3), `documents.context_json`); vecajiem dokumentiem konteksta nav.
+- **Rīcība:** `docs/plans/2026-11-10-citetais-tvits.md` 7. solis — vispirms 3 ID zonde, ziņot «aizpildīti N no 153»; izmanto X kontu. Plašākais kandidātu loks: `replies_before_floor` = 2142.
+- **Īpašnieks:** orķestrators, kad operators saka.
 
 ### [OPEN] Ingest atnes releja tvītu, bet ne rakstu, uz kuru tas rāda (2026-11-06)
 

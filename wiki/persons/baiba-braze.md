@@ -3,11 +3,11 @@ name: Baiba Braže
 party: Jaunā Vienotība
 role: Ārlietu ministre
 relationship_type: tracked
-positions: 374
+positions: 381
 votes: 5
 contradictions: 0
-mentioned_in: 6399
-last_active: 2026-11-10
+mentioned_in: 6491
+last_active: 2026-11-14
 top_topics:
 - Ukraina un Krievija
 - Aizsardzība un drošība
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (44%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (19%), [[topics/arpolitika|Ārpolitika]] (19%)
-- **30d:** 50 claims, 1.0× bāzes līnija
+- **30d:** 47 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (3 spriedzes), [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze), [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

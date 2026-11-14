@@ -1,7 +1,7 @@
 ---
 party: JKP
 members: 2
-claims: 75
+claims: 76
 program_promises: 23
 contradictions: 0
 votes_par: 0

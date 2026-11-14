@@ -3,11 +3,11 @@ name: Māris Kučinskis
 party: Apvienotais saraksts
 role: Finanšu ministrs, AS frakcijas vadītājs
 relationship_type: tracked
-positions: 161
+positions: 168
 votes: 5199
-contradictions: 1
-mentioned_in: 1146
-last_active: 2026-11-10
+contradictions: 2
+mentioned_in: 1162
+last_active: 2026-11-13
 top_topics:
 - Budžets un finanses
 - Koalīcija un partijas
@@ -18,7 +18,7 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (27%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (13%), [[topics/valsts-parvalde|Valsts pārvalde]] (13%)
-- **30d:** 31 claims, 1.4× bāzes līnija
+- **30d:** 34 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 atbalsts), [[persons/viktors-valainis|Viktors Valainis]] (1 spriedze), [[persons/olegs-burovs|Oļegs Burovs]] (1 atbalsts)
-- **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/degviela-un-energetika|Degviela un enerģētika]], 2026-06-08
+- **Pretrunas:** 2 apstiprinātas (1 retorika↔balsojums, 1 pozīciju maiņa); pēdējā par [[topics/valsts-parvalde|Valsts pārvalde]], 2026-11-12
 <!-- /SYNC-AUTO -->

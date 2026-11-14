@@ -3,11 +3,11 @@ name: Latvijas Banka
 party: ''
 role: Latvijas centrālā banka
 relationship_type: organization
-positions: 58
+positions: 62
 votes: 0
 contradictions: 0
-mentioned_in: 905
-last_active: 2026-11-06
+mentioned_in: 959
+last_active: 2026-11-13
 top_topics:
 - Budžets un finanses
 - Vide
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (55%), [[topics/vide|Vide]] (16%), [[topics/ekonomika-un-uznemejdarbiba|Ekonomika un uzņēmējdarbība]] (5%)
-- **30d:** 14 claims, 0.8× bāzes līnija
+- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (55%), [[topics/vide|Vide]] (15%), [[topics/ekonomika-un-uznemejdarbiba|Ekonomika un uzņēmējdarbība]] (6%)
+- **30d:** 16 claims, 0.9× bāzes līnija
 <!-- /SYNC-AUTO -->

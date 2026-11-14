@@ -1,10 +1,10 @@
 ---
 topic: Tieslietas
-positions: 347
+positions: 350
 votes: 75111
 politicians: 80
-contradictions: 1
-last_activity: '2026-11-08 00:00:00'
+contradictions: 0
+last_activity: '2026-11-13 00:00:00'
 top_politicians:
 - '[[persons/andrejs-judins|Andrejs Judins]]'
 - '[[persons/edvards-smiltens|Edvards Smiltēns]]'

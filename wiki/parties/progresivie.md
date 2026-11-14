@@ -1,7 +1,7 @@
 ---
 party: Progresīvie
 members: 18
-claims: 898
+claims: 915
 program_promises: 22
 contradictions: 6
 votes_par: 41173

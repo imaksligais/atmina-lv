@@ -1,9 +1,9 @@
 ---
 party: Nacionālā apvienība
 members: 22
-claims: 1613
+claims: 1662
 program_promises: 23
-contradictions: 5
+contradictions: 2
 votes_par: 59637
 votes_pret: 11179
 votes_atturas: 2855
@@ -11,8 +11,8 @@ top_politicians:
 - Ansis Pūpols
 - Jānis Dombrava
 - Rihards Kols
-- Edvards Ratnieks
 - Ilze Indriksone
+- Edvards Ratnieks
 top_topics:
 - Imigrācija
 - Aizsardzība un drošība

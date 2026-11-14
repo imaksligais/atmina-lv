@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (39%), [[topics/valsts-parvalde|Valsts pārvalde]] (22%), [[topics/tieslietas|Tieslietas]] (17%)
-- **30d:** 10 claims
+- **30d:** 9 claims
 <!-- /SYNC-AUTO -->

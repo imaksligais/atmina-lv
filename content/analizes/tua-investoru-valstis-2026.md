@@ -51,6 +51,8 @@ Vairāk norāda vārda forma, lai gan pilsonību tā nepierāda. Latvijas pilso�
 
 **Kā atlasījām uzņēmumus.** No UR atvērtajiem datiem par SIA dalībniekiem un AS akcionāriem ([dalībnieki](https://data.gov.lv/dati/lv/dataset/members), [akcionāri](https://data.gov.lv/dati/lv/dataset/stockholders); 2026. gada 17. oktobris) atlasījām uzņēmumus, kuros vismaz trim fiziskām personām katrai pieder daļas vai akcijas tieši par 50 000 € vai 100 000 €. Tādi ir 50. Katra uzņēmuma izrakstu no UR portāla lasījām atsevišķi. Investoru skaits izrakstos sakrīt ar atvērtajiem datiem visos 50 uzņēmumos. Ja daļas par 50 000 € vai 100 000 € piederēja arī cilvēkam, kuram pieder balsstiesīgās daļas (uzņēmuma organizatoram), šīs daļas investoru skaitā neieskaitījām.
 
+**Datu kopas pieejamība.** Satversmes tiesa 2026. gada 9. novembrī nolēma, ka ziņas par akcionāriem, kas ir fiziskas personas, nedrīkst būt pieejamas ikvienam bez pamatojuma ([paziņojums](https://www.satversmestiesa.lv/lv/jaunums/satversmei-neatbilst-neierobezota-piekluve-akcionaru-personas-datiem)). 12. novembrī akcionāru datu kopa vietnē data.gov.lv vairs nebija publiski pieejama, un saite uz to rāda kļūdu 404. Datu kopas nepieejamības iemesls vietnē nav norādīts; nav zināms, vai tā saistīta ar šo spriedumu.
+
 **Vecā parauga kods.** Kodi, kas piešķirti līdz 2017. gada 1. jūlijam, paliek spēkā; pāriet uz jaunā parauga kodu var tikai pēc paša pieteikuma. Tāpēc vecā parauga kods ir lielākajai daļai pieaugušo Latvijas iedzīvotāju. Tas ir mūsu secinājums no likuma, ne citāts.
 
 **Vārda forma.** Visus 245 personas kodu turētāju vārdus pārskatījām pa vienam. Latviskā formā ierakstīti 2 vārdi no 236 jaunā parauga kodu turētājiem un 4 vārdi no 9 vecā parauga kodu turētājiem. Visu 165 investoru ar pasi vārdi rakstīti oriģinālrakstībā. Vārdus nepublicējam.
@@ -154,3 +156,4 @@ Likums šo ceļu atļauj. Kurš no šiem cilvēkiem atļauju saņēma, publiski 
 Labojumu pagaidām nav. Papildinājumi:
 
 - 2026\. gada 24. oktobrī pievienota sadaļa «Vienkāršiem vārdiem» un saite uz rakstu «Divas Saeimas pilsonības vienai ģimenei».
+- 2026\. gada 12. novembrī sadaļā «Kas ir 410 investori» pievienots, ka UR akcionāru datu kopa vietnē data.gov.lv vairs nav publiski pieejama, un ziņa par Satversmes tiesas 9. novembra spriedumu. Fakti nav mainīti.

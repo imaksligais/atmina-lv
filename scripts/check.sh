@@ -71,6 +71,11 @@ echo "==> ruff check"
 # Default 3, not auto (=6 here), 2026-10-29: each worker holds ~1-2 GB and the
 # Windows commit limit is fixed at 48 GB with other apps holding ~37 GB, so 6
 # workers ran into "os error 1455" (paging file too small); 3 left >=4.4 GB.
+# Pamests pytest koks no pārtraukta skrējiena nogāž šo ar `EEE` / access
+# violation (2026-11-11) — aptur to pirms sākuma. Sīkāk: kill_stale_pytest.sh.
+echo "==> pamestie pytest procesi"
+bash "$(dirname "$0")/kill_stale_pytest.sh" "$PY"
+
 XDIST=()
 if "$PY" -c "import xdist" 2>/dev/null && [ "${CHECK_PYTEST_WORKERS-3}" != "0" ]; then
     XDIST=(-n "${CHECK_PYTEST_WORKERS-3}")

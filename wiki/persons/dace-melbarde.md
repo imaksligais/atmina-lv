@@ -7,7 +7,7 @@ relationship_type: tracked
 positions: 19
 votes: 0
 contradictions: 0
-mentioned_in: 292
+mentioned_in: 295
 last_active: 2026-11-08
 top_topics:
 - Ārpolitika
@@ -19,5 +19,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/arpolitika|Ārpolitika]] (26%), [[topics/es-politika|ES politika]] (16%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (16%)
-- **30d:** 7 claims, 1.8× bāzes līnija
+- **30d:** 5 claims, 1.0× bāzes līnija
 <!-- /SYNC-AUTO -->

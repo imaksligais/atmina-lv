@@ -6,6 +6,77 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-14 (5) — Docs sakārtoti: 46 arhivēti, 173 dzēsti, testēšanas recepte vienuviet
+- **Atlase** (`.scratch/docs_inventory.py`, ārpus repo): docs vienība, uz kuru neatsaucas nekas dzīvs (kods, testi, `data/*.sql`, `content/`, backlogs, prasmes, aģenti, `wiki/operations`) vai tikai cits arhivējams dokuments. Pirmās kārtas nenoteiktie izlasīti; otrā kārta atlasīta pēc atsauču ķēdes, nelasot (T18). Atsauces no paliekošajiem dokumentiem nomainītas. Pierādījumu kopijas paliek bez atsaucēm. 46 dokumenti (63 faili, tīrs `git mv`) arhīvā tajā pašā spoguļa līmenī; saraksts `docs/arhivs/README.md` § 2026-11-14.
+- **Dzēsti:** 172 sociālie melnraksti pirms 2026-10-15 bez atsaucēm (precedents 09-27); 12 ne-pārskatu melnraksti bez atzīmes «postēts» atjaunoti pēc statusa galvenes, `wiki/operations/monthly-routine.md`.
+- **Vārti:** mirušo ceļu skaits dzīvajās virsmās (prasmes, aģenti, `wiki/operations`, backlog, CLAUDE.md) pirms 11 / pēc 13 no ~1000 (visi apzināti: plānots vai izņemts; 2 jaunie — arhīva README nosauc vecos ceļus); neizsekoto failu saraksts nemainīgs.
+- **`commands.md` § Verifikācija:** «Testēšana īsumā» — iterē ar vienu failu, pilnais `check.sh` vienreiz fonā, ne reizē ar DB rakstītājiem vai otru Playwright.
+
+## 2026-11-14 (4) — Rutīnas advisor vārti: pašu teksts, partijas, QR labojumi
+- **Mērīts 14.11. rutīnā** (sesijas žurnāls, QR atskaites, `.scratch/qr_fix*_2026-11-14.py`): QR § H 5 + 1 + 2 atradumi trijās kārtās (13.11.: 7 divās) un 1 advisor labojums. Vismaz 3 no 9 radās orķestratora paša tekstā (spriedze #666, piezīmes 834 un 835), kas glabāts bez advisor; 1 radīja paša labojums; 2c 4 vakara rindas gāja bez advisor.
+- **`/dienas-rutina`:** advisor pirms spriedžu un piezīmju glabāšanas (5. solis); 2c katrai partijai savs advisor izsaukums, skaitus atskaitē dala; QR labojumus piemēro pēc domas visās vietās, pēc labojuma lint + blakus teikumi, labojumus pēc pēdējās QR kārtas pirms operatora jautājuma parāda advisor.
+- Strādāja: `vote_candidates` 0 procedūras rindu 11 sarakstos; Self-Check 20 — 0 locītu citātu atradumu (vārti šajā skrējienā nav redzēti krītam).
+
+## 2026-11-14 (3) — Pretruna #69 atsaukta pēc Krištopana iebilduma
+- **Operatora «jā» 14.11.** Krištopans X atbildē (doc 158160) iebilda; pilnā 1149/Lp14 ķēde (titania 2. lasījuma priekšlikumu tabula, dok. 4621): 16.04. «Par» apturēšanas priekšlikumiem Nr. 1, 17–20, viņš viens no pieciem pārvaldības priekšlikuma Nr. 10 iesniedzējiem (iekļauts Nr. 11). Publicētais teksts tos izlaida — T14 pārkāpums. `@devils-advocate`: ATSAUKT.
+- `withdraw_contradiction(69)`, rollback `data/rollback_withdraw_contradiction_69_2026-11-14.sql`; claims 20702, 21177 paliek. Live `59692200`, `verify_host` 9/9, labojuma lapa izlasīta dzīvajā vietnē; 13.11. pārskatā vecais teksts paliek (precedents 13.11.).
+- **Mācība:** `check_contradiction.py` ķēdē rāda priekšlikumu balsojumus ar likumprojekta aprakstu, ne priekšlikuma saturu — «Par priekšlikumu Nr. N» jāizlasa tabulā. Tāda paša ķēde ar paša balsīm vēl #65, #68 (`backlog/agenti-pipeline.md`).
+
+## 2026-11-14 (2) — TV24 kā relay plūsma; pozīcija 18256; wiki pretrunu skaits
+- **Operatora «jā» 14.11.** `tv24_lv` iesēts kā `relay` (pid 305, `organization`); `name_forms` — retas frāzes, jo tukšs saraksts liktu matcherim lietot vārdu «TV24». Tvīti ir atstāsti: pozīciju ietīt «TV24 atstāsta…» (kā 753760). Rollback `data/rollback_seed_tv24_relay_2026-11-14.sql`.
+- **Pozīcija 18256** lasījās pretēji avotam (iebilst JV, ne autors) — pārrakstīta, pārembedota; `data/{fix,rollback}_claim_18256_stance_2026-11-14.sql`.
+- **Wiki frontmatter `contradictions:`** skaita tikai `confirmed=1` (personas, partijas, tēmas; wiki ir spogulī). Spoguļa CI atkal zaļa (rerun 43048997029).
+
+## 2026-11-14 (1) — X: viens garš tvīts pavediena vietā (izmēģinājums)
+- **Operators 14.11.:** dienas pārskata pavedieni X «nav baigi populāri». Izmēģinājums: viens garš tvīts par vienu dienas stāstu (citāts pirmajās ~280 zīmēs, bez saites) + saite atbildē; posts kopā ar FB un Reddit par 13.11. pārskatu postēts 14.11.
+- **Skatījumu skaitļu repo nav** — formāts ir spriedums, ne mērījums; operators salīdzina ar pēdējo pavedienu. Procedūra: `/social-thread` § 3a; 6 tvītu pavediens paliek kā otrs variants, līdz operators izlemj.
+- Faili: `docs/tweet_bank/2026-11-14-dienas-parskats-social.md`, `docs/social/2026-11-14-dienas-parskats-{facebook,reddit-atminalv}.md`.
+
+## 2026-11-13 (6) — Rutīna 13.11. (~103 min) un trīs labojumi 14.11. skrējienam
+- **Rutīna publicēta** (live `46561b4b`): 57 pozīcijas, 6 spriedzes, 1 pretrunu kandidāts nepublicēts (operators: gaidīt). Saucēji: `docs/audits/2026-11-13-rutinas-merijumi/README.md`.
+- **`src/vote_candidates.py`:** sēdes vadības balsojumi (pārtraukums, debašu laiks, kvorums, klātbūtne; 647 balsojumi) vairs nav īsajā sarakstā; zelta tests nemainīgs (top-10 12/15), 13.11. saraksti 6 → 0 procedūras rindu.
+- **`@brief-writer` Self-Check 20:** citāts paša prozā burtiski (`unverbatim_quotes`), saiklis tikai no avota — 4 no 7 QR § H atradumiem 13.11. bija šīs klases.
+- **`/dienas-rutina`:** operatoram QR pēdējais verdikts, kāds tas ir; rindas nemainoši labojumi drīkst iet `check.sh` laikā; sēdi pārbaudīt titania kalendārā. RT pakošana nav mainīta (31 pozīcija no 1 902 RT 30 d).
+
+## 2026-11-13 (5) — Pretrunas #69 un #70 publicētas; #71 paliek kandidāts
+- **Operatora «jā» 13.11.** pēc pārskata ar advisor: #69 Krištopans (Rail Baltica) un #70 Švinka (Rail Baltica valdes amatu savienošana) `confirmed=1`; rollback `data/rollback_confirm_69_70_2026-11-13.sql`. Live `676f8402`, `verify_host` 9/9, abas lapas izlasītas dzīvajā vietnē, `pretrunas/71.html` → 404.
+- **Pirms publicēšanas pārbaudīts pirmavotos:** #70 datums likumi.lv/ta/id/369888, tvīta saite ved uz ministra priekšlikumu, debašu citāti ir Švinkas runā (doc 83269); #69 tvīts nav ne atbilde, ne citāts (X publiskais ieraksts), pozīcijas 20702 `stated_at` 21.05. → 20.05. Teksti pārrakstīti (`data/{fix,rollback}_pretrunas_69_70_71_2026-11-13.sql`): pirmais teikums pasaka, ko balsojums dara; lapas pirms «jā» renderētas no DB kopijas un izlasītas telefona platumā.
+- **#71 Mieriņa nav publicēta** (`confirmed=0`): fakti pareizi, bet solījumu viņa daļēji izpildīja (atbalstīja šauro likumu, noraidīja lietderības revīzijas), un lapas «Darbi» kartīte priekšlikuma balsojumam nepasaka, ko priekšlikums paredzēja. Atvērts: `backlog/agenti-pipeline.md`.
+
+## 2026-11-13 (4) — Vēsturiskais pārgājiens: vecās pozīcijas pret balsojumiem, 3 nepublicēti kandidāti
+- **Ceļš:** īsais saraksts (top-10 likumprojekti pozīcijai) → Jev priekššķirotājs (`src/vote_candidates.py` `VOTE_INSTRUCTIONS` v2; zelta tests `eval_vote_jev.py`: pie θ = 0,3 zelts 8/13, nejaušo pāru paliek 1,6 %) → filtri (pieprasījumi `/P14`, procedūra) → `@contradiction-hunter` → `@devils-advocate` ar bināru verdiktu → `store_contradiction()`.
+- **Mērīts:** 3 385 pozīcijas pirms 19.08., 30 412 pāri, Jev 0,93 USD; Opus lasīja 347 pārus divās kārtās (~1,4 milj. tokenu): 1. kārtā 2 no 187, 2. kārtā 1 no 160. Glabāti ar `confirmed=0`: #69 Krištopans, #70 Švinka, #71 Mieriņa (visi `minor_shift`). Skaitļi un rīki: `docs/audits/2026-11-13-pretrunu-faktu-parbaude/README.md` § 6.
+- **Apstājos pie p 0,4;** slānis 0,3–0,4 (443 pāri) nav lasīts — lēmums operatoram pēc triju kandidātu izvērtēšanas. Dienas rutīnā Jev solis balsojumiem NAV iesiets (tikai īsais saraksts).
+- **Faktu vārti pirmo reizi īstā glabāšanā:** 3 rindas, 0 atteikumu. `PĀRBAUDI [priekšlikums]` atdalīts no `[procedūra]` — priekšlikuma balsojums ir saturisks grozījums.
+
+## 2026-11-13 (3) — Solījumu izmēģinājums: jaunu pretrunu nav, paliek gaidīšanas saraksts
+- **Mērīts:** 15 amatpersonu 148 pozīcijas ar solījuma vai izslēgšanas vārdu, 4 `@contradiction-hunter` + 1 `@devils-advocate` (~1,05 milj. Opus tokenu): īsti solījumi 92, turēti 35, gaida notikumu 33, lauzts 1 (jau publicētā #39), jaunu pretrunu 0 (2 kandidāti, abi noraidīti). Tabula `docs/audits/2026-11-13-pretrunu-faktu-parbaude/solijumi_triage.json`, README § 5.
+- **Lēmums pēc iepriekš noteikta kritērija:** medības pārējiem 79 politiķiem nepaplašina, kamēr 33 gaidošie nav pārbaudīti pie pirmā notikuma — jaunās valdības uzticības balsojuma (pēc tam 2027. gada budžets). Saraksts pa notikumiem: README § 5 «Gaida».
+
+## 2026-11-13 (2) — Pretrunas faktu pārbaude ir pastāvīgs solis
+- **`scripts/check_contradiction.py`** (`--draft` pirms glabāšanas, `--id` pirms jautājuma operatoram, `--published`) izdrukā faktu lapu — paša balss, frakcijas sadalījums tajā balsojumā, visa `document_nr` ķēde — un salīdzina ar kopsavilkumu. `KĻŪDA` aptur: izdomāts citāts, «visa frakcija» pie sadalītas frakcijas, nepieminēta atturēšanās.
+- **Mērīts** (`docs/audits/2026-11-13-pretrunu-faktu-parbaude/replay.py`): veco tekstu 37, ar kļūdu 7. Viltus trāpījumu īpatsvars nav izmērīts (33 publicētās rakstītas pret to pašu pārbaudi); 13 atteiktie citāti izlasīti: 5 pārstāsti, 6 locīti vai saīsināti, 2 saīsināti nosaukumi. Mašīna noķer daļu, tāpēc faktu lapu lasa `@devils-advocate` arī pie tīra rezultāta.
+- **Cietie vārti (operators 2026-11-13):** `src.db.store_contradiction()` rindu ar `KĻŪDU` atsaka (`ValueError`), `src.tools` apvalks atgriež `fact_check`; partiju pretrunām nepiemēro. Locīts citāts pēdiņās ir atteikums — stingrāk nekā `store_tension()` (12.11.), jo pretruna ir publisks apgalvojums par cilvēka vārdiem. Tests `tests/test_check_contradiction.py` (3), 5 mutācijas.
+- **Balsojumu īsais saraksts** `scripts/vote_candidates.py`: dienas pozīcijai 10 tuvākie likumprojekti ar paša balsīm; sēdes dienā `--votes-day` likumprojektam 10 tuvākās pozīcijas. Zelta tests (`eval_vote_candidates.py`, 13 publicētās, mērīts paraugā): top-10 ir 10 un 12. Palaiž orķestrators, mednieks lasa pirmo; T9 strukturālā pārbaude paliek. Divas vecas puses (#65, #66, #68) saraksts pats neatrod. Tests `tests/test_vote_candidates.py` (2), 3 mutācijas.
+- Medību raža (57 % noraidīto kandidātu ir «cits jautājums» vai «savienojamas pozīcijas») un kur vēl meklēt (706 solījumu pozīcijas, 276 programmu solījumi, 3 405 pozīcijas bez balsojumu pārbaudes): tā paša audita README § 2 un § 4.
+
+## 2026-11-13 — Pretrunu teksti: vispirms «par ko», konteksts atsevišķi; 5 atsauktas
+- **Operators par #68: «grūti saprast, nezinu, par ko tie balsojumi».** Visas 37 publicētās pretrunas pārskatītas (4 Opus palīgi + savstarpēja pārbaude pret avotiem, `.scratch/c-rewrite/check.py`, `facts_diff.py`): 32 pārrakstītas (12 ar kļūdainu publicētu faktu, piem. «visa frakcija atturējās»), 5 atsauktas ar `withdraw_contradiction()` pēc `@devils-advocate` (#4, #6, #15, #18, #24 — pamata nav). Rollback `data/rollback_pretrunas_parrakstitas_2026-11-13.sql`; live `3adbf092`.
+- **Noteikums** `quality-bars.md` § Pretruna: pirmais teikums pasaka, par ko bija balsojums; konteksts tikai `[Konteksts: …]`. `src/models.py` atsaka tukšu «[Konteksts]» un kvadrātiekavas citātā (#68 renderējās ar tukšu kastīti).
+- **Rūts «Likumprojekts»** abās pusēs, ne tikai jaunākajā; priekšlikuma balsojumam bloku nerāda (#65: «Pieņemts 89:0» blakus noraidītam priekšlikumam). Testi `test_og_card_vote_side.py` (2 jauni, mutācija).
+- Saglabātajos pārskatos paliek vecie pretrunu teksti (labojums mainītu satura hešu un prasītu jaunu apstiprinājumu) — apzināti nelabots.
+
+## 2026-11-12 (2) — Rutīna: 2c solim pastāvīgs rīks; spriedzes apraksta pēdiņas pret avotu
+- **`scripts/resolve_needs_review.py`** aizstāj ikdienas vienreizējo skriptu (20 tādi `scripts/`): `--list` izdrukā dienas rindas ar avotu, `--decisions` → `--write-rollback` → commit → `--apply`; raksta tikai `claims.reasoning`, atsaka visu partiju, ja rinda nesākas ar marķieri vai rollback nav commitēts. Pārbaude: 11.11. izvērtējuma atkārtojums uz DB kopijas — 18 no 18 `reasoning` sakrīt ar produkciju; 2 testi, 4 mutācijas.
+- **`store_tension()` ziņo (stderr, glabā tāpat)** par «…» fragmentu, kas nav burtiski avota vai mērķa dokumentā (`src.support.unverbatim_quotes`; nosaukumi — lielais sākumburts un ≤ 3 vārdi — izlaisti). Mērīts: seši no 12 `@quality-reviewer` spriedžu labojumiem četrās rutīnas dienās (05., 07., 08., 11.11.) bija šī klase; 30 dienās 15 karogi 140 spriedzēs, izlasē 3 no 5 ir locījums, tāpēc atteikuma nav.
+- Mērījumi, ielādes laika sadalījums un neieviestais priekšlikums (RSS reizē ar X): `docs/audits/2026-11-12-rutinas-uzlabojumi/README.md`.
+
+## 2026-11-12 — Atradumi: arhīva kopija ar 404 nav pazudusi; UR akcionāru datu kopa slēgta
+- **Wayback kopiju, kas atbild 404, nenomaina un neizņem — pieliek otru blakus.** Četras kopijas, kas 08.–11.11. atbildēja 404 ar tukšu CDX, 12.11. atkal atvērās, tāpat 11 no 14 agrāk nomainītajām (`docs/audits/2026-11-12-arhivs/README.md`). Noteikums: `wiki/operations/deploy.md`. Saites rakstos atjaunotas blakus 11.11. kopijām.
+- **UR datu kopa `stockholders` vietnē data.gov.lv 12.11. vairs nav publiska** (404; CKAN «Pieeja liegta»). Trijos rakstos un tāfelē piezīme ar atsauci uz Satversmes tiesas 09.11. spriedumu; cēlonību neapgalvojam, saites paliek. Jauniem atradumiem tas neko nemaina (CHANGELOG 2026-11-09 (3)).
+- **Pilna avotu pārbaude:** 262 no 272 adresēm atbild 200; 84 lapām mainīts teksts, 76 pamatteksts identisks (`docs/audits/2026-11-12-avoti/README.md`, `check.py` + `retry.py` + `triage.py`).
+- Abus labojumus pirms deploy lasīja advisor un Sol; live `f1fa7a28`.
+
 ## 2026-11-11 (2) — Balsojumu tēmas: visas partijas piemērotas; Jev neievēro 8. noteikumu nodokļos
 - **Piemērots un live** (deploy `b49509f7`): b04–b10, b04k, kor1111 — 4 338 balsojumi, 380 629 pozīcijas snapshotā, visur `collisions=0`, `parity_mismatch=0`; `vote_topics.py status`: ar lēmumu 2 746 no 2 750 (bez lēmuma 4 budžeta likumi, `pending` 863/Lp14). Skaitļi un rollback: `data/saeima_topic_gold/BATCH_LOG.md`.
 - **Jev auto nodokļu likumprojektos kļūdās 33/110** (vienas nozares PVN, akcīze, IIN atvieglojums → «Budžets un finanses» pret 8. noteikumu); visi laboti, atlikušie 52 auto ar nodokļu vārdiem izlasīti — 0. Ielādē tas paliek: priekšlikums `pending` nodokļu likumprojektiem — `backlog/saeima.md`.
@@ -183,7 +254,7 @@ Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rind
 - 11-02: operators izvēlējās #428 (trīs paneļi); `cli brief` nedēļas noklusējums = `stories`, bez teksta (`_resolve_style`, `graphics-designer.md`). Pārskats apstiprināts publicēšanai.
 
 ## 2026-11-01 (5) — Politiķu saites ar lodziņu Atradumos
-- Frontmatter `politicians:` (pilni slugi) tagad dod arī saiti + lodziņu PIRMAJAI pieminēšanai tekstā: `link_politicians()` (`src/render/_common/politician_links.py`, `assets/polpop.js`), tests `tests/test_politician_links.py`. Plāns `docs/superpowers/plans/2026-11-01-politiku-lodzini.md`.
+- Frontmatter `politicians:` (pilni slugi) tagad dod arī saiti + lodziņu PIRMAJAI pieminēšanai tekstā: `link_politicians()` (`src/render/_common/politician_links.py`, `assets/polpop.js`), tests `tests/test_politician_links.py`. Plāns `docs/superpowers/plans/archive/2026-11-01-politiku-lodzini.md`.
 - Tikai pilnais vārds burtiski ar vārdu robežām; uzvārdu/locījumu meklēšanas nav (T1). Vārds, kas minēts tikai avota `<a>` iekšā, paliek bez saites. Neatrasts vārds = stderr ar saucēju (listed / resolved / linked), ne izņēmums — dienas pārskati to lietos tālāk.
 - Lodziņā balsojumu skaits = profila čips (viss vēsturiskais bez klātbūtnes); «apmeklējuma» rādītāja vietnē nav, netiek izgudrots.
 

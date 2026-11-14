@@ -81,3 +81,17 @@ def test_partiju_pretrunas_script_runs_on_temp_db(seeded, monkeypatch, capsys):
     out = json.loads(capsys.readouterr().out)
     assert "stats" in out and out["candidates"] == []
     assert _count(seeded) == 0
+
+
+@pytest.mark.parametrize("summary", [
+    "Balsoja «Par». [Konteksts] Frakcija balsoja vienoti.",       # #68: tukša etiķete
+    "Teica: «mēs [toreiz] bijām pret». [Konteksts: frakcija vienoti]",  # [..] citātā
+])
+def test_summary_brackets_that_render_broken_are_refused(seeded, summary):
+    """Renders katru [..] izceļ kastītē «Konteksts»: tukša etiķete deva kastīti
+    «Konteksts / Konteksts» (pretruna #68, 2026-11-13), [..] citātā izrauj daļu citāta."""
+    with pytest.raises(ValueError):
+        store_contradiction(**{**OK, "summary": summary}, db_path=seeded)
+    assert _count(seeded) == 0
+    store_contradiction(**{**OK, "summary": "Balsoja «Par». [Konteksts: frakcija vienoti]"}, db_path=seeded)
+    assert _count(seeded) == 1

@@ -1,10 +1,10 @@
 ---
 topic: Lauksaimniecība
-positions: 105
+positions: 108
 votes: 8511
-politicians: 29
+politicians: 31
 contradictions: 0
-last_activity: '2026-11-06 00:00:00'
+last_activity: '2026-11-13 00:00:00'
 top_politicians:
 - '[[persons/uldis-augulis|Uldis Augulis]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

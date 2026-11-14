@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 75
 votes: 1306
 contradictions: 0
-mentioned_in: 569
+mentioned_in: 578
 last_active: 2026-11-06
 top_topics:
 - Veselības aprūpe
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (75%), [[topics/sociala-politika|Sociālā politika]] (4%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (3%)
-- **30d:** 14 claims, 1.1× bāzes līnija
+- **30d:** 11 claims, 0.8× bāzes līnija
 <!-- /SYNC-AUTO -->

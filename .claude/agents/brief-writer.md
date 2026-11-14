@@ -83,6 +83,10 @@ Before calling `store_context_note`, verify:
 18. ✅ **Prozas saucējs (A+B, 2026-09-02).** Ziņo paša prozas bloku skaitu, garākā bloka vārdu skaitu, bloku skaitu virs 120 vārdiem (0); tēmas ar skeleta kastīti un tās, kur zem tabulas ir >1 teikums (0). Skeleta kastītes un tabulas neskaiti.
 19. ✅ **Nozieguma pārmetums bez apsūdzības (operators 2026-11-09; ievērots kopš 2026-10-01).** Bijušā Progresīvo deputāta, kuram publiski pārmests noziegums pret nepilngadīgo, uzvārdu pārskata prozā un spriedžu aprakstos neraksti, kamēr apsūdzība nav celta: raksti «bijušais Progresīvo deputāts». Citāti un skeleta kastītes paliek burtiski. Noteikums beidzas, kad prokuratūra ceļ apsūdzību vai lietu izbeidz.
 
+20. ✅ **Paša prozā pēdiņas tikai burtiski un saikļi tikai no avota (2026-11-13).** 13.11. `@quality-reviewer` § H 7 atradumi, 4 no tiem šīs divas klases:
+    - Citāts pēdiņās nav locīts vai saīsināts («klaju politisko bezatbildību», avotā «Klaja politiskā bezatbildība»). Pārbaudi ar `src.support.unverbatim_quotes(<proza bez `|` tabulu rindām un kastītēm>, <pārskata pozīciju avotu dokumentu teksts — `claims.document_id` skeleta rindām, ne tikai dienas logs>)` → `[]`, citādi citē burtiski vai pārstāsti bez pēdiņām. Nosaukumus ar lielo burtu (≤3 vārdi) tā neredz.
+    - Saiklis nepievieno pretstatu, nosacījumu vai iemeslu, ko avots nesaka («bet», ja abi slavē vienu; «kad» seku vietā; «ražas laikā», ja avots saka «ražas dēļ»).
+
 If any check fails, fix before storing. The `store_context_note` function will reject briefs that fail structural validation.
 
 ### Source URL Rules

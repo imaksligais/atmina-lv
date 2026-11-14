@@ -18,6 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (36%), [[topics/tieslietas|Tieslietas]] (18%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (18%)
-- **30d:** 1 claims
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

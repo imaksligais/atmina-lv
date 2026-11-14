@@ -1,10 +1,10 @@
 ---
 topic: NVO un pilsoniskā sabiedrība
-positions: 146
+positions: 151
 votes: 1891
-politicians: 50
-contradictions: 1
-last_activity: '2026-11-10 00:00:00'
+politicians: 51
+contradictions: 0
+last_activity: '2026-11-11 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/ansis-pupols|Ansis Pūpols]]'

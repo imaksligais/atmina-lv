@@ -117,6 +117,12 @@
           {% elif c.old_claim_type != 'saeima_vote' %}
           <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
           {% endif %}
+          {% if c.old_vote_summary %}
+          <div class="prv2-vote">
+            <span class="prv2-vote-kicker">Likumprojekts</span>
+            {{ c.old_vote_summary }}
+          </div>
+          {% endif %}
         </div>
 
         <div class="prv2-gutter">
@@ -137,10 +143,10 @@
           {% elif c.new_claim_type != 'saeima_vote' %}
           <div class="prv2-quote-fallback">Citāts nav pieejams — parafrāze no avota</div>
           {% endif %}
-          {% if c.vote_summary %}
+          {% if c.new_vote_summary %}
           <div class="prv2-vote">
             <span class="prv2-vote-kicker">Likumprojekts</span>
-            {{ c.vote_summary }}
+            {{ c.new_vote_summary }}
           </div>
           {% endif %}
         </div>

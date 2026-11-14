@@ -5,8 +5,8 @@ role: Saeimas deputāte
 relationship_type: tracked
 positions: 24
 votes: 3026
-contradictions: 2
-mentioned_in: 220
+contradictions: 0
+mentioned_in: 222
 last_active: 2026-10-21
 top_topics:
 - Izglītība
