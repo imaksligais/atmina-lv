@@ -11,7 +11,3 @@ last_active: 2026-10-16
 top_topics:
 - Tieslietas
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

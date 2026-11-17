@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 20
 votes: 5053
 contradictions: 0
-mentioned_in: 614
+mentioned_in: 615
 last_active: 2026-10-29
 top_topics:
 - Koalīcija un partijas

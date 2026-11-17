@@ -1,7 +1,7 @@
 ---
 party: Zaļo un Zemnieku savienība
 members: 21
-claims: 800
+claims: 801
 program_promises: 21
 contradictions: 1
 votes_par: 78871

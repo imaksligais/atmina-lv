@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 10
 votes: 5
 contradictions: 0
-mentioned_in: 58
+mentioned_in: 59
 last_active: 2026-11-13
 top_topics:
 - Transports

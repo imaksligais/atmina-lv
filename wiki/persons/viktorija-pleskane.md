@@ -18,5 +18,4 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/transports|Transports]] (17%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (17%)
-- **30d:** 1 claims, 0.2× bāzes līnija
 <!-- /SYNC-AUTO -->

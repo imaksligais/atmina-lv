@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 30
 votes: 5
 contradictions: 0
-mentioned_in: 522
+mentioned_in: 531
 last_active: 2026-11-12
 top_topics:
 - Valodu politika

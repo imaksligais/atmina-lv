@@ -1,15 +1,15 @@
 ---
 party: Progresīvie
 members: 18
-claims: 915
+claims: 923
 program_promises: 22
 contradictions: 6
 votes_par: 41173
 votes_pret: 11946
 votes_atturas: 7238
 top_politicians:
-- Atis Švinka
 - Andris Šuvajevs
+- Atis Švinka
 - Andris Sprūds
 - Viesturs Kleinbergs
 - Mārtiņš Staķis

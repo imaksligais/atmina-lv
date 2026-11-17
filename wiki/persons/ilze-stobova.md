@@ -18,5 +18,4 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (33%), [[topics/valsts-parvalde|Valsts pārvalde]] (25%), [[topics/sociala-politika|Sociālā politika]] (17%)
-- **30d:** 1 claims, 0.3× bāzes līnija
 <!-- /SYNC-AUTO -->

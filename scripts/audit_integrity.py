@@ -75,8 +75,10 @@ from src.lv_text import fold_lower  # noqa: E402
 ACCEPTED_2: frozenset[int] = frozenset({27, 62})
 # 3. pārbaude: pretruna #27 atsaukta 2026-09-30 (confirmed=-1), tās vecā
 # pozīcija #6991 dzēsta ar operatora lēmumu — `claim_old_id` NULL ir
-# dokumentētas atsaukšanas pēda, ne bārenis (commit 65eb6b76).
-ACCEPTED_3: frozenset[int] = frozenset({27})
+# dokumentētas atsaukšanas pēda, ne bārenis (commit 65eb6b76). Pretruna #17
+# atsaukta 2026-11-04 (confirmed=-1; avotā nav pašas runātājas izteikuma),
+# `claim_new_id` NULL — tā pati klase (operators 2026-11-16).
+ACCEPTED_3: frozenset[int] = frozenset({17, 27})
 # 9. pārbaude: īstas partijas maiņas, `party` ir pareizs — «leave them alone,
 # they will flag again every run» (BACKLOG § Ne-darīt: Ābrama 77, Kiršteins 96,
 # Ceļapīters 145). + Drelinga 87, J. Kļaviņa 100, Pleškāne 119: ST → LPV jau

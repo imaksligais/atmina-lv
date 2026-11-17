@@ -11,7 +11,3 @@ last_active: 2026-10-15
 top_topics:
 - Aizsardzība un drošība
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

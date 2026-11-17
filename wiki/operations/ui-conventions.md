@@ -67,6 +67,7 @@ Uz datora bija SLIKTĀK: `.table-scroll > table { min-width: max-content }` noz�
 
 ## Kartītes un saraksti
 
+- **Jauns satura veids izmanto esošās sākumlapas virsmas** (operators 2026-04-22, nedēļas pārskata lēmums): aptaujas, izpētes, dziļās analīzes atšķir ar `type_label` / kickeru esošā režģī; jaunu slotu vai hero pievieno tikai ar operatora piekrišanu — vispirms pajautā. Nedēļas pārskata gadījums: `.claude/agents/weekly-brief-writer.md` § Izvietojums mājaslapā.
 - **Bez bēšas kastes kastē** (operators 2026-10-21/23: «izskatās lēti»). Saraksta vienums = plakana rinda ar 3 px krāsainu `border-inline-start` + 1 px apakšlīniju (paraugs `.saites-pair-row`, `.prv2-detail-related`); kartīte = viena virsma (`--paper`), daļas atdala līnijas, ne fona toņi (paraugs `.prv2-card`). Dalīšanās = `share_buttons` makro, ne sava poga.
 - **Sākumlapas galva = avīzes galva** (operators 2026-10-23): bez kastes, spīduma un punktu fona — matlīnijas, serif virsraksti, skaitļi kā kolonnas (`subgrid`); statiska taksonomija (tips, datums) ir teksts, pilulas tikai interaktīviem elementiem (meklētājs, ieejas saites).
 

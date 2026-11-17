@@ -3,17 +3,17 @@ name: Liene Apine
 party: Apvienotais saraksts
 role: Saeimas deputāte
 relationship_type: tracked
-positions: 5
+positions: 6
 votes: 5
 contradictions: 0
-mentioned_in: 96
-last_active: 2026-10-29
+mentioned_in: 97
+last_active: 2026-11-16
 top_topics:
-- Sociālā politika
 - Sports
+- Sociālā politika
 - Korupcija un KNAB
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 2 claims
+- **30d:** 3 claims
 <!-- /SYNC-AUTO -->

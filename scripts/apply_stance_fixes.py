@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Apstiprināto `@stance-checker` labojumu piemērošana pozīcijām (`claims.stance` / `stated_at`).
+"""Apstiprināto `@stance-checker` labojumu piemērošana pozīcijām (`stance` / `stated_at` / `quote`).
 
 Noklusējums: dry-run (tikai lasa DB). Kārtība (CLAUDE.md escalation 8 — rollback
 commitē PIRMS izmaiņas):
@@ -9,9 +9,12 @@ commitē PIRMS izmaiņas):
     git commit data/rollback_stance_<rutīnas-diena>_<tag>.sql                              # 3. commit
     .venv/Scripts/python.exe scripts/apply_stance_fixes.py --fixes F.json --apply          # 4. apply
 
-`--fixes` = JSON saraksts `{"id": int, "stance": str|null, "stated_at": "YYYY-MM-DD"|null}`;
-null = lauku neaiztikt. Raksta TIKAI `stance`/`stated_at` — nekad `quote`, `topic`,
-`review_status`. Pēc apply pārrēķina vektorus rindām, kuru stance mainījās.
+`--fixes` = JSON saraksts `{"id": int, "stance": str|null, "stated_at": "YYYY-MM-DD"|null,
+"quote": str|null}`; null vai trūkstošs = lauku neaiztikt. `quote` pieņem tikai tad, ja
+tas BURTISKI ir pozīcijas dokumenta tekstā (CLAUDE.md: citāts ir verbatim) — citādi
+atsaka visu partiju. Vārti pierāda tikai to, ka teksts ir dokumentā — ka tie ir
+RUNĀTĀJA vārdi (ne žurnālista vai cita cilvēka), pārbaudi pats. Nekad neraksta `topic`, `review_status`. Pēc apply pārrēķina
+vektorus rindām, kuru stance mainījās (`quote` vektorā neietilpst).
 """
 
 from __future__ import annotations
@@ -28,6 +31,7 @@ sys.path.insert(0, str(REPO))
 
 from src.briefs import current_routine_day  # noqa: E402
 from src.db import get_db  # noqa: E402
+from src.quality import restore_text_from_source  # noqa: E402
 
 DATA_DIR = REPO / "data"
 _ID_LINE = re.compile(r"WHERE id = (\d+);")
@@ -67,8 +71,10 @@ def load_fixes(path: str) -> list[dict]:
     if len(ids) != len(set(ids)):
         raise ValueError("dublēti id fixes failā")
     for f in fixes:
-        if f.get("stance") is None and f.get("stated_at") is None:
-            raise ValueError(f"id {f['id']}: nav ne stance, ne stated_at")
+        if all(f.get(k) is None for k in ("stance", "stated_at", "quote")):
+            raise ValueError(f"id {f['id']}: nav ne stance, ne stated_at, ne quote")
+        if f.get("quote") is not None and not str(f["quote"]).strip():
+            raise ValueError(f"id {f['id']}: tukšs quote")
         if f.get("stance") is not None and not str(f["stance"]).strip():
             raise ValueError(f"id {f['id']}: tukša stance")
         if f.get("stated_at") is not None and not _DATE.match(f["stated_at"]):
@@ -80,16 +86,17 @@ def rollback_sql(fixes: list[dict], old: dict[int, dict], day: str) -> str:
     ids = " ".join(str(int(f["id"])) for f in fixes)
     lines = [
         f"-- Rollback: stance-checker labojumi {day} (scripts/apply_stance_fixes.py).",
-        f"-- Forward: UPDATE claims SET stance/stated_at šīm {len(fixes)} position rindām; "
-        "quote/topic/review_status netiek aiztikti.",
-        f"-- Apply date: {day}. Atjauno veco stance un stated_at.",
+        f"-- Forward: UPDATE claims SET stance/stated_at/quote šīm {len(fixes)} position rindām; "
+        "topic/review_status netiek aiztikti.",
+        f"-- Apply date: {day}. Atjauno veco stance, stated_at un quote.",
         f"-- Pēc rollback: .venv/Scripts/python.exe scripts/reembed_claims.py {ids}",
         "BEGIN;",
     ]
     for f in fixes:
         o = old[int(f["id"])]
         lines.append(f"UPDATE claims SET stance = {_sql(o['stance'])}, "
-                     f"stated_at = {_sql(o['stated_at'])} WHERE id = {int(f['id'])};")
+                     f"stated_at = {_sql(o['stated_at'])}, quote = {_sql(o['quote'])} "
+                     f"WHERE id = {int(f['id'])};")
     lines.append("COMMIT;")
     return "\n".join(lines) + "\n"
 
@@ -121,13 +128,22 @@ def main(argv: list[str] | None = None) -> int:
     db = get_db()
     try:
         rows = db.execute(
-            f"SELECT id, stance, stated_at FROM claims WHERE claim_type = 'position' "
-            f"AND id IN ({','.join('?' * len(ids))})", ids,
+            f"SELECT c.id, c.stance, c.stated_at, c.quote, d.content FROM claims c "
+            f"LEFT JOIN documents d ON d.id = c.document_id WHERE c.claim_type = 'position' "
+            f"AND c.id IN ({','.join('?' * len(ids))})", ids,
         ).fetchall()
         old = {r["id"]: dict(r) for r in rows}
         missing = [i for i in ids if i not in old]
         if missing:
             print(f"ATSAKU: nav position rindas id {missing}")
+            return 2
+        # Citāts ir verbatim: tikai precīzs avota fragments (diakritika un reģistrs
+        # ieskaitot). Diakritiku zudums vai pārfrāze → atsaka visu partiju.
+        bad = [int(f["id"]) for f in fixes if f.get("quote") is not None
+               and restore_text_from_source(f["quote"], old[int(f["id"])]["content"]) != f["quote"]]
+        if bad:
+            print(f"ATSAKU: quote nav burtiski pozīcijas dokumentā id {bad} — "
+                  "kopē teikumu no avota precīzi (arī garumzīmes).")
             return 2
 
         for f in fixes:
@@ -137,6 +153,8 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  stance:    {_short(o['stance'])}\n        →    {_short(f['stance'])}")
             if f.get("stated_at") is not None:
                 print(f"  stated_at: {o['stated_at']} → {f['stated_at']} 00:00:00")
+            if f.get("quote") is not None:
+                print(f"  quote:     {_short(o['quote'])}\n        →    {_short(f['quote'])}")
 
         if args.write_rollback:
             rb.parent.mkdir(parents=True, exist_ok=True)
@@ -171,6 +189,9 @@ def main(argv: list[str] | None = None) -> int:
                 if f.get("stated_at") is not None:
                     sets.append("stated_at = ?")
                     params.append(f"{f['stated_at']} 00:00:00")
+                if f.get("quote") is not None:
+                    sets.append("quote = ?")
+                    params.append(f["quote"])
                 cur = db.execute(
                     f"UPDATE claims SET {', '.join(sets)} WHERE id = ? AND claim_type = 'position'",
                     (*params, int(f["id"])),

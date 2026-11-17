@@ -404,3 +404,22 @@ def test_evaluated_pair_returns_after_document_text_is_rewritten(db):
     res = _survey(db)
     assert _pairs(res["bands"]["beside_subject"]) == [(151, B)]
     assert res["evaluated_no_claim"] == 0
+
+
+def test_relay_quote_band_takes_listed_relay_account_only(db):
+    """Fails if a TV24 clip tweet (politician only `mentioned`, no subject, often
+    linked by @handle so no speech signal) stays in the blind zone — 14.11. its
+    quotes were extracted by hand — or if any other subject-less tweet is let in."""
+    clip = "🏛️ Trīs iestādes apvienot vienā? Saeimas deputāte @kulbergs_a rosina to darīt. #TV24"
+    _doc(db, 160, clip, [(B, "mentioned")], platform="twitter")
+    _doc(db, 161, clip, [(B, "mentioned")], platform="twitter")
+    db.execute("UPDATE documents SET source_url = 'https://x.com/TV24_lv/status/1' WHERE id = 160")
+    db.execute("UPDATE documents SET source_url = 'https://x.com/ltvzinas/status/2' WHERE id = 161")
+    db.commit()
+
+    res = _survey(db)
+    assert _pairs(res["bands"]["relay_quote"]) == [(160, B)]
+    assert res["bands"]["blind_no_subject"] == {"docs": 1}      # 161 only
+    assert res["checked"] == 1
+    from src.quoted_speaker import format_recovery_line
+    assert format_recovery_line(res).startswith("ATGŪŠANA: 1 pāris (web 0 / twitter 1 / x_mention 0), aklā zona 1 doks")

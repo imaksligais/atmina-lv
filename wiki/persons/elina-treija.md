@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 100
 votes: 0
 contradictions: 0
-mentioned_in: 1478
+mentioned_in: 1506
 last_active: 2026-11-14
 top_topics:
 - Sociālā politika

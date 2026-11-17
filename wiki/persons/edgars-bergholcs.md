@@ -3,21 +3,21 @@ name: Edgars Bergholcs
 party: Apvienotais saraksts
 role: Rīgas domes Pilsētas attīstības komitejas priekšsēdētājs
 relationship_type: tracked
-positions: 26
+positions: 28
 votes: 0
 contradictions: 0
-mentioned_in: 140
-last_active: 2026-11-02
+mentioned_in: 142
+last_active: 2026-11-15
 top_topics:
 - Pilsētvide
 - Pašvaldības
 - Sports
+- Transports
 - Degviela un enerģētika
-- Kultūra
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/pilsetvide|Pilsētvide]] (46%), [[topics/pasvaldibas|Pašvaldības]] (19%), [[topics/sports|Sports]] (15%)
-- **30d:** 4 claims, 1.0× bāzes līnija
+- **Top tēmas:** [[topics/pilsetvide|Pilsētvide]] (46%), [[topics/pasvaldibas|Pašvaldības]] (18%), [[topics/sports|Sports]] (14%)
+- **30d:** 5 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/elina-treija|Elīna Treija]] (1 spriedze)
 <!-- /SYNC-AUTO -->

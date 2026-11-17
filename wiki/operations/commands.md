@@ -75,7 +75,7 @@ CLI implementācija un `KNOWN_DOMAINS` saraksts: `src/render/__main__.py` + `src
 
 **Noteikums:** pirms renderēšanas nosaki tvērumu un lieto `--only=DOMAIN`. Pilns renders ir tikai laidienam vai bāzlīnijai — citādi tas maksā minūtes un pārraksta lapas, kuras neviens nav mainījis.
 
-> **Meklēšanas ieteikumu sidecars:** `data/sg-index.json` — sākumlapas typeahead indekss (`src/render/search_index.py`, lasa `assets/sgv1.js`). To atsvaidzina gan `dashboard`, gan `pozicijas` domēns, tāpēc dienas rutīnas narrow renderi to nekad neatstāj novecojušu. Tuple-shēma ir load-bearing — sk. [CHANGELOG § sg-index](../CHANGELOG.md).
+> **Meklēšanas ieteikumu sidecars:** `output/atmina/data/sg-index.json` (vietnē `/data/sg-index.json`) — sākumlapas typeahead indekss (`src/render/search_index.py`, lasa `assets/sgv1.js`). To atsvaidzina gan `dashboard`, gan `pozicijas` domēns, tāpēc dienas rutīnas narrow renderi to nekad neatstāj novecojušu. Tuple-shēma ir load-bearing — sk. [CHANGELOG § sg-index](../CHANGELOG.md).
 
 `scripts/render_balsojumi_only.py` ir vēl ātrāks (~15s) tikai balsojumiem — neaktīvē politicians/claims/contradictions fetches.
 

@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (17%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (12%), [[topics/budzets-un-finanses|Budžets un finanses]] (8%)
-- **30d:** 2 claims
+- **30d:** 1 claims
 - **Spriedzes:** [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze)
 <!-- /SYNC-AUTO -->

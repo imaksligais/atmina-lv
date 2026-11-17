@@ -1,6 +1,6 @@
 # Likumi — Indekss
 
-_Atjaunots: 2026-11-14 22:43:49_
+_Atjaunots: 2026-11-16 23:06:08_
 
 **33** likumi
 

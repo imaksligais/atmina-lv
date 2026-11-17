@@ -21,6 +21,7 @@ Pozīcija ir **ŠĪ politiķa paša** pausts vērtējums, prasība, apņemšanā
 - aicinājums skatīties vai lasīt (anonss, tīzeris), ja nav paša viedokļa;
 - apsveikums vai rituāla formula bez jauna konkrēta instrumenta (summa, termiņš, likuma solis);
 - retorisks jautājums vai sarkasms bez nosaukta viedokļa;
+- atsauce uz paša agrāk teikto («vēl janvārī X solīja…»), ja dokumentā nav jauna paša izteikuma — tā ir atgādināta, ne jauna pozīcija (2026-06-08; `save_analysis()` stiprus netiešuma marķierus atzīmē ar `NEEDS_REVIEW:`);
 - simulācijas vai lomu spēle; teksts par ko citu (vārdabrālis, T1); iestādes operatīvs paziņojums bez vērtējuma.
 
 **Ir pozīcija, bet stance jāraksta šaurāk** — tieši šīs kļūdas ir 16 % pozīciju kopš maija:
@@ -53,7 +54,7 @@ Noliec stance blakus `support` fragmentiem:
 3. **Visi kvalifikatori saglabāti?** «ja», «varētu», «izskatās», «daļa», konkrētais nosaukums, laika logs, skaitļu robežas. Biežākie zudumi (neatkarīga pārbaude 2026-10-15, ~10–20 % pozīciju): «ir bīstamība, ka» → fakts; «īsti neviens» → «neviens»; «bez vērā ņemamas pieredzes» → «bez pieredzes»; «cietais kurināmais» → «kurināmais»; «ja būtu zināms termiņš» izmests.
 4. **`quote` ir nepārtraukts pirmās personas teksts?** Tas sākas teikuma sākumā, un beigu pieturzīme ir tā pati, kas avotā. Citādi `quote=null`.
 5. **Stance nav plašāks par avotu?** Vēlme nav prasība, jautājums nav apgalvojums, nosaukts nav kategorija.
-6. **Strīdīgs apzīmējums ietīts atrunā?** Ja stance atkārto runātāja strīdīgu apzīmējumu par citu personu vai organizāciju, raksti «ko viņš raksturo kā …». Atrunas pret apmelojumu («apgalvo, ka … esot», «viņaprāt») nekad nemazina. Asums vien nav iemesls atmest pozīciju vai likt `NEEDS_REVIEW`: politiķis drīkst teikt jebko, un pozīcija var būt jebkāda (operatora lēmums 2026-10-06).
+6. **Strīdīgs apzīmējums ietīts atrunā?** Ja stance atkārto runātāja strīdīgu apzīmējumu par citu personu vai organizāciju, raksti «ko viņš raksturo kā …». Atrunas pret apmelojumu («apgalvo, ka … esot», «viņaprāt») nekad nemazina. Runātāja pārmetumu vai strīdīgu apgalvojumu par nosauktu personu vai organizāciju neievada ar faktu pasniedzošu verbu («norāda», «atklāj», «konstatē») — raksti «apgalvo, ka …» vai «pārmet …» (RUBRIKA 6. klase, 2026-11-16). Asums vien nav iemesls atmest pozīciju vai likt `NEEDS_REVIEW`: politiķis drīkst teikt jebko, un pozīcija var būt jebkāda (operatora lēmums 2026-10-06).
 7. **Katru stance vārdu sedz kāds `support` fragments — ar to pašu laiku, modalitāti un cēloņsakarību?** Ja stance satur faktu vai vērtējumu, ko neviens fragments nesaka, izņem to.
 
 Ja atbilde ir «nē» un to nevar izlabot, dokuments ir `empty` vai pozīcija ar `NEEDS_REVIEW:` (§ 4).

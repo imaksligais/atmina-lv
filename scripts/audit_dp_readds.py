@@ -30,6 +30,9 @@ from pathlib import Path
 from typing import Callable
 
 _SKIP = re.compile(r"(BEGIN|COMMIT|END|ROLLBACK|SAVEPOINT|RELEASE)\b", re.I)
+_NO_RESTORE = re.compile(  # `role` tikai SET daļā (līdz WHERE), ne nosacījumā
+    r"\s*(DELETE\b|UPDATE\s+document_politicians\s+SET\s+(?!(?:(?!\bWHERE\b)[^;])*\brole\s*=))",
+    re.I)
 _LEAD_COMMENTS = re.compile(r"\A(\s*(--[^\n]*\n|/\*.*?\*/))*\s*", re.S)
 _FWD_INSERT = re.compile(r"INTO\s+document_politicians\s*\(([^)]*)\)\s*VALUES\s*(.+?);", re.I | re.S)
 _FWD_ROLE = re.compile(
@@ -87,6 +90,11 @@ def _restored_rows(m: sqlite3.Connection, text: str) -> tuple[list[tuple], int, 
                 continue
             if ("document_politicians" not in code and "_grupaE_restore" not in code
                     and not re.search(r"create\s+temp", code, re.I)):
+                continue
+            # Nevar atjaunot saiti (trigeri ir tikai INSERT un UPDATE OF role):
+            # DELETE un UPDATE bez `role`. Atmiņas kopijā nav citu tabulu, tāpēc to
+            # apakšvaicājumi tikai ražoja «SQL kļūdas» troksni (16.11.: 9 no 9).
+            if _NO_RESTORE.match(code):
                 continue
             try:
                 m.execute(s)

@@ -418,3 +418,27 @@ def test_weekly_skeleton_carries_previous_forward_look(tmp_path):
     assert "- [followup] - Ceturtdien, 28. maijā, komisijas termiņš." in comment
     assert "nav šis" not in comment and "Tēma" not in comment
     assert "Dienu pārskati" not in comment
+
+
+def test_weekly_word_count_counts_prose_only():
+    """Fails if the counter counts what a reader does not read as story text —
+    link URLs, headings, comments, the stats and movers blocks — or splits a
+    decimal or a hyphenated word (09.11.: writer 754, reviewer 618, one brief)."""
+    from src.briefs import weekly_brief_word_counts
+
+    md = (
+        "# Nedēļas stāsti — 2026-11-09 līdz 2026-11-15\n\n"
+        "## Kulbergs rosina taupīt 3,5 miljardus\n\n"
+        "Otrdien, 10. novembrī, «Progresīvie» iebilda ([lsm.lv](https://www.lsm.lv/raksts/gars-url-ar-daudziem-vardiem.a1/)).\n\n"
+        "<!-- AGENT: šis komentārs nav teksts -->\n"
+        "Vice-premjers — nē.\n\n"
+        "## Īsumā\n\n- Trīs droni ([leta.lv](https://leta.lv/x)).\n\n"
+        "## Nedēļa skaitļos\n\nŠie vārdi netiek skaitīti.\n\n"
+        "## Kas kustējās\n\n- **Andris Kulbergs** — 64\n"
+    )
+    counts = weekly_brief_word_counts(md)
+    assert counts["sections"] == [
+        ("Kulbergs rosina taupīt 3,5 miljardus", 9, True),   # Otrdien 10 novembrī Progresīvie iebilda lsm lv + Vice-premjers nē
+        ("Īsumā", 4, False),                                  # Trīs droni leta lv
+    ]
+    assert (counts["stories"], counts["total"]) == (9, 13)

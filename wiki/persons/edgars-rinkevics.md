@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 295
 votes: 120
 contradictions: 0
-mentioned_in: 3545
+mentioned_in: 3567
 last_active: 2026-11-12
 top_topics:
 - Aizsardzība un drošība
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (27%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (12%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (9%)
-- **30d:** 39 claims, 0.9× bāzes līnija
+- **30d:** 37 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (2 spriedzes), [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze)
 <!-- /SYNC-AUTO -->

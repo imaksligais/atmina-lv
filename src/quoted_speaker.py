@@ -412,6 +412,22 @@ def _nominative_from_row(name: str, name_forms_raw: str | None) -> list[str]:
 # PALIEK — satīras brīdinājums dzīvo prasmē, ne SQL (sk. find_inversions).
 _SURVEY_EXCLUDED_REL: tuple[str, ...] = ("inactive", "journalist", "organization")
 
+# Releja konti, kuru tvīts pats ir avots: raidījuma fragments ar politiķa citātu,
+# kam raksta mūsu ielādē nav. Šādā tvītā politiķis ir tikai `mentioned` un
+# subjekta nav, tāpēc pāris citādi paliek aklajā zonā (14.11. TV24 pāri izvilkti
+# ar roku). Saraksts ir šaurs ar nolūku: 2026-11-09…15 no 17 releja kontiem
+# jaunas pozīcijas deva tikai šis viens (118 izlasīti tvīti,
+# docs/audits/2026-11-16-relay-citati.md). Jauns konts = operatora lēmums.
+RELAY_QUOTE_HANDLES: frozenset[str] = frozenset({"tv24_lv"})
+_TWEET_AUTHOR_RE = re.compile(r"(?:x|twitter)\.com/([^/?#]+)/status/", re.I)
+
+
+def _is_relay_quote_tweet(platform: str | None, source_url: str | None) -> bool:
+    if platform != "twitter":
+        return False
+    m = _TWEET_AUTHOR_RE.search(source_url or "")
+    return bool(m) and m.group(1).lower() in RELAY_QUOTE_HANDLES
+
 
 def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     """Junction-atgūšanas apsekojums: citētie `mentioned` runātāji, ko neviens
@@ -433,8 +449,13 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
       ``scraped_at`` logā, runas signāls ≥1. **Platformu nefiltrē** — divi vārti
       ar vienu aklo zonu nav divi vārti (2026-08-26). Inversijas pāri te
       neatkārtojas.
-    * ``blind_no_subject`` — doki ar tādu pašu neapstrādātu `mentioned` pāri,
-      bet bez neviena aktīva subjekta; tikai skaitlis (doku), ne rinda.
+    * ``relay_quote`` — tādi paši neapstrādāti `mentioned` pāri tvītā bez
+      aktīva subjekta, kura autors ir ``RELAY_QUOTE_HANDLES`` (TV24). Runas
+      signālu NEprasa: šajos tvītos politiķi bieži piesaista tikai @rokturis,
+      un nominatīva formas tekstā nav. Aģents nosaka ``stated_at`` = tvīta
+      Latvijas diena, ja tvīts raidījuma dienu nenosauc.
+    * ``blind_no_subject`` — pārējie doki ar tādu pašu neapstrādātu `mentioned`
+      pāri, bet bez neviena aktīva subjekta; tikai skaitlis (doku), ne rinda.
 
     Runas signāls = ``CITATION_SIGNALS | RECOVERY_EXTRA_SIGNALS`` trāpījums ±``CITATION_WINDOW`` zīmēs ap
     politiķa NOMINATĪVA formu no ``tracked_politicians.name_forms`` (matcher
@@ -466,7 +487,7 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     rows = db.execute(
         f"""
         SELECT dp.document_id, dp.politician_id, tp.name, tp.name_forms,
-               d.platform, d.content,
+               d.platform, d.content, d.source_url,
                EXISTS (
                    SELECT 1 FROM document_politicians s
                    JOIN tracked_politicians st ON st.id = s.politician_id
@@ -517,6 +538,7 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
 
     checked_keys = set(inversion_keys)
     beside: list[dict[str, Any]] = []
+    relay_quote: list[dict[str, Any]] = []
     blind_docs: set[int] = set()
     already_claimed: set[tuple[int, int]] = set()
     evaluated = _evaluated_pairs(db)
@@ -530,7 +552,12 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
             evaluated_skipped.add(key)
             continue
         if not r["has_subject"]:
-            blind_docs.add(r["document_id"])
+            if key not in inversion_keys and _is_relay_quote_tweet(r["platform"], r["source_url"]):
+                checked_keys.add(key)
+                relay_quote.append(_pair(r["document_id"], r["politician_id"], r["name"],
+                                         r["platform"], r["content"], r["name_forms"]))
+            else:
+                blind_docs.add(r["document_id"])
             continue
         checked_keys.add(key)
         if key in inversion_keys:
@@ -543,10 +570,11 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
     by_platform: dict[str, dict[str, int]] = {
         p: {"inversion": 0, "beside_subject": 0} for p in DEFAULT_INVERSION_PLATFORMS
     }
-    for band, pairs in (("inversion", inversion), ("beside_subject", beside)):
+    for band, pairs in (("inversion", inversion), ("beside_subject", beside),
+                        ("relay_quote", relay_quote)):
         for p in pairs:
             by_platform.setdefault(p["platform"], {"inversion": 0, "beside_subject": 0})
-            by_platform[p["platform"]][band] += 1
+            by_platform[p["platform"]][band] = by_platform[p["platform"]].get(band, 0) + 1
 
     return {
         "checked": len(checked_keys),
@@ -555,6 +583,7 @@ def recovery_survey(db, days: int = 1) -> dict[str, Any]:
         "bands": {
             "inversion": inversion,
             "beside_subject": beside,
+            "relay_quote": relay_quote,
             "blind_no_subject": {"docs": len(blind_docs)},
         },
         "by_platform": by_platform,
@@ -576,7 +605,8 @@ def format_recovery_line(survey: dict[str, Any]) -> str:
         if p in DEFAULT_INVERSION_PLATFORMS or n:
             parts.append(f"{p} {n}")
     bands = survey["bands"]
-    total = len(bands["inversion"]) + len(bands["beside_subject"])
+    total = (len(bands["inversion"]) + len(bands["beside_subject"])
+             + len(bands.get("relay_quote", [])))
     blind = bands["blind_no_subject"]["docs"]
     line = (f"ATGŪŠANA: {total} {lv_pairs(total)} ({' / '.join(parts)}), "
             f"aklā zona {blind} {_lv_plural(blind, 'doks', 'doku')}")

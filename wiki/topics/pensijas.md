@@ -1,10 +1,10 @@
 ---
 topic: Pensijas
-positions: 109
+positions: 111
 votes: 13131
-politicians: 40
+politicians: 41
 contradictions: 0
-last_activity: '2026-11-11 00:00:00'
+last_activity: '2026-11-16 00:00:00'
 top_politicians:
 - '[[persons/ainars-slesers|Ainārs Šlesers]]'
 - '[[persons/reinis-uzulnieks|Reinis Uzulnieks]]'

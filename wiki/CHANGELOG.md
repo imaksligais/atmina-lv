@@ -6,6 +6,34 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-16 (4) — 2d: ekstraktoru paš-atzīmes iet tajā pašā labojumu partijā
+- **Mērīts** (16.11. rutīna, `.scratch/rutina-2026-11-16/`): ekstraktori atskaitēs nosauca 4 stance defektus, ko atkārtota saglabāšana nelabo (753951, 753933, 753984, 753980); `@stance-checker` no tiem atzīmēja 1 (753980).
+- **Lēmums:** `/dienas-rutina` 2d — šādas atzīmes orķestrators pēc avota lasījuma liek tajā pašā `apply_stance_fixes.py` failā.
+
+## 2026-11-16 (3) — Pārbaudes, kas palaida garām zināmu defektu: citāts, «norāda», `document_nr`
+- **`apply_stance_fixes.py` raksta `quote`**, tikai ja tas burtiski (arī garumzīmes) ir pozīcijas dokumentā, citādi atsaka partiju; rollback atjauno arī `quote`. Abi sargi redzēti krītam (mutācijas). 753856 citāts ierakstīts.
+- **RUBRIKA 6. klase:** faktu pasniedzošs verbs («norāda») uz pārmetumu nosauktai personai = B, arī aiz semikola; norāde `claim-extractor.md` § 3.6. Viens `@stance-checker` skrējiens (`docs/audits/2026-11-16-norada/`): zināmie 753546, 753867 noķerti, bet NE akli (noteikums bija rakstīts pēc tiem); 32 aklajās kontrolēs 1 jauns īsts (753843, izlabots), viltus 0; prognoze/skaitlis 0 no 3 — `backlog/agenti-pipeline.md`.
+- **`document_nr`:** NULL ar numuru motīvā 118 (ne «daži»), visi no ielādēm 04–08. Labojums 138 rindām (ar 6449), tēmas atslēga nemainās (izņemot 6449), sagatavots ar rollback, izmēģināts uz kopijas; piemērots ar operatora «jā» (138 no 138). Audita 23. pārbaude: `DELETE` un `UPDATE` bez `role` vairs neizpilda — «SQL kļūdas» 9 → 0, citi skaitļi nemainīti (`tests/test_audit_dp_readds.py`).
+
+## 2026-11-16 (2) — Atgūšanas josla `relay_quote` TV24 tvītiem
+- **Mērīts** (`docs/audits/2026-11-16-relay-citati.md`): 2026-11-09…15 17 releja kontos 205 tvīti ar 251 `mentioned` pāri, izlasīti 118; žurnālistu kontos jaunu pozīciju 0, mediju kontos ar rakstu aiz saites politiķim pozīcija jau ir; TV24 — 6 no 7 ir citāts bez raksta.
+- **Lēmums (operators 2026-11-16):** vispārīgu joslu nebūvēt; `recovery_survey` josla `relay_quote` tikai `RELAY_QUOTE_HANDLES` (`tv24_lv`), bez runas signāla prasības; jauns konts = operatora lēmums. Pirmais skrējiens (8 dienu logs): 1 pāris, doc 159050. `seeding.md`: relay tvītā pieminētie ir `mentioned`, ne `subject`.
+
+## 2026-11-16 — Pārskata labojumu skripts un kopīgs nedēļas vārdu skaitītājs
+- **Mērīts:** pirmais nedēļas skrējiens pēc 15.11. vārtiem — QR 5 + 0 + 0 (02.11.: 9, 09.11.: 13), nepareizu dienu 0, `unverbatim_quotes` 0; rakstītājs un QR ar vienu skaitītāju abi 974 (09.11.: 754 pret 618). `.scratch/` krājas 16 rokas `qr_fix*.py`.
+- **`scripts/apply_brief_fixes.py`** aizstāj rokas skriptus (`/dienas-rutina`, `weekly-routine.md` § 2): vietas atrod pats (pārskats + rutīnas dienas vai nedēļas piezīmes un spriedzes), atsaka pie neatrasta teksta, jauna lint atraduma, publicētas piezīmes (inv. #8), necommitēta vai novecojuša rollback; agrākas dienas pārskatam patur `created_at`. Rollback teksts ir pa rindām ar `char(10)` — CRLF izrakstīts fails atjauno baitu baitā. 10 no 10 sargiem redzēti krītam (mutācijas).
+- **`src.briefs.weekly_brief_word_counts`** + `scripts/weekly_brief_words.py`: viena definīcija rakstītājam un QR; tikai ziņo.
+
+## 2026-11-15 (2) — Nedēļas pārskats: diena tikai no avota, citāti, dienas rutīnas vārti
+- **Mērīts** (sesiju žurnāli `c6847bdc` 02.11., `56e83080` 09.11., QR atskaites): atradumi 9 un 13; diena ņemta no publicēšanas datuma 2 un 5 reizes; abās reizēs viena QR kārta un publicēts pēc labojumiem bez atkārtotas. `unverbatim_quotes` uz 09.11. melnraksta (`.scratch/weekly-2026-11-02/draft.md`, 26 no 29 saitēm DB): 2 trāpījumi, 1 no 3 QR citātu atradumiem.
+- **`@weekly-brief-writer`:** diena tikai tvītam vai no avota teksta; citāts burtiski un nenogriezts; Self-check 11–12. **`weekly-routine.md` § 2:** dienas rutīnas labojumu un tīrās kārtas noteikumi attiecas arī uz nedēļas pārskatu.
+- **`@brief-writer` Self-Check 21 precizēts:** izteikuma dienu raksta tikai tvītam vai no avota teksta — `stated_at` rakstam bieži ir publicēšanas diena. Vārti vēl nav redzēti krītam; pirmais nedēļas skrējiens 16.11.
+
+## 2026-11-15 — Rutīnas vārti pēc 14.11. izvērtējuma: tīra QR kārta, datums «Galvenais» punktos, Jev saraksts
+- **Mērīts** (sesiju žurnāli `74e93556`, `fcfe4a1e`; `claims` pēc `created_at` rutīnas dienas loga): 14.11. trešā QR kārta 22:42 — BLOCKED, 2 labojumi 22:43, apstiprināts 22:51 un deploy 22:57 bez ceturtās kārtas; 9 no 44 dienas pozīcijām ar `stated_at` 13.11., otrais «Galvenais» punkts tikai no tām; Jev izdruku nesaņēma 2 no 3 medniekiem.
+- **`/dienas-rutina`:** operatoram jautā tikai pēc kārtas ar 0 § H atradumiem (atkārtotā kārta lasa visu prozu, labojumus pirms tās redz advisor; pēc piektās kārtas — stop un operatoram); Jev īso sarakstu katram balsotājam palaiž orķestrators (maksas zvani). **`@brief-writer` Self-Check 21:** punkts ar agrākas dienas avotiem nosauc dienu.
+- Neviens no trim vārtiem vēl nav redzēts krītam — pirmais skrējiens 15.11. Mērķis salīdzināšanai: § H pirmajā kārtā ≤ 2 (14.11.: 5), 0 no orķestratora paša teksta (14.11.: vismaz 3).
+
 ## 2026-11-14 (5) — Docs sakārtoti: 46 arhivēti, 173 dzēsti, testēšanas recepte vienuviet
 - **Atlase** (`.scratch/docs_inventory.py`, ārpus repo): docs vienība, uz kuru neatsaucas nekas dzīvs (kods, testi, `data/*.sql`, `content/`, backlogs, prasmes, aģenti, `wiki/operations`) vai tikai cits arhivējams dokuments. Pirmās kārtas nenoteiktie izlasīti; otrā kārta atlasīta pēc atsauču ķēdes, nelasot (T18). Atsauces no paliekošajiem dokumentiem nomainītas. Pierādījumu kopijas paliek bez atsaucēm. 46 dokumenti (63 faili, tīrs `git mv`) arhīvā tajā pašā spoguļa līmenī; saraksts `docs/arhivs/README.md` § 2026-11-14.
 - **Dzēsti:** 172 sociālie melnraksti pirms 2026-10-15 bez atsaucēm (precedents 09-27); 12 ne-pārskatu melnraksti bez atzīmes «postēts» atjaunoti pēc statusa galvenes, `wiki/operations/monthly-routine.md`.

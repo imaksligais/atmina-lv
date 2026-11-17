@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 117
 votes: 0
 contradictions: 0
-mentioned_in: 1137
+mentioned_in: 1140
 last_active: 2026-11-13
 top_topics:
 - Koalīcija un partijas
@@ -22,6 +22,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (25%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (9%), [[topics/valsts-parvalde|Valsts pārvalde]] (8%)
-- **30d:** 13 claims, 1.2× bāzes līnija
+- **30d:** 12 claims, 1.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (4 spriedzes), [[persons/evika-silina|Evika Siliņa]] (2 uzbrukumi), [[persons/baiba-braze|Baiba Braže]] (2 uzbrukumi)
 <!-- /SYNC-AUTO -->

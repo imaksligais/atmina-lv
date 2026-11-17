@@ -1,10 +1,10 @@
 ---
 topic: Sociālā politika
-positions: 467
+positions: 475
 votes: 32412
-politicians: 111
+politicians: 112
 contradictions: 8
-last_activity: '2026-11-14 00:00:00'
+last_activity: '2026-11-16 00:00:00'
 top_politicians:
 - '[[persons/elina-treija|Elīna Treija]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

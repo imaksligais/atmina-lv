@@ -108,3 +108,7 @@ Fails nesa trīs dienas (07.–09.11.). Atvērtie punkti pārcelti uz `docs/HAND
 ## 2026-11-11 — `HANDOFF-2026-11-09.md`, `HANDOFF-2026-11-10.md`, `HANDOFF-2026-11-10-rutina.md`
 
 Atvērtie punkti pārcelti uz `docs/HANDOFF-2026-11-11.md`; 11-09 saraksti «gaida notikumu» un «apzināti nelabots» paliek spēkā un ir norādīti no jaunā handoffa. Atsauce nomainīta `docs/verdikti-2026-11-09.md`; plānos (`docs/plans/`) un arhivētajos failos nav aiztiktas.
+
+## 2026-11-16 — `HANDOFF-2026-11-14.md`, `HANDOFF-2026-11-15.md`
+
+Atvērtie punkti pārcelti uz `docs/HANDOFF-2026-11-16.md`. Izpildītais paliek tikai šeit un `git log`: 11-14 § 3 visi trīs būvdarbi (labojumu skripts, vārdu skaitītājs, releja citātu josla — CHANGELOG 2026-11-16, (2)), `zinas`/`saites` renders, rutīnu 14. un 15.11. skaitļi un mērījumi. Atsauce nomainīta `docs/audits/2026-11-16-relay-citati.md`.

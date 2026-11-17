@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/izglitiba|Izglītība]] (29%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (18%), [[topics/sociala-politika|Sociālā politika]] (18%)
-- **30d:** 3 claims
+- **30d:** 2 claims
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/sociala-politika|Sociālā politika]], 2026-11-03
 <!-- /SYNC-AUTO -->

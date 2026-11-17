@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%), [[topics/droni|Droni]] (9%)
-- **30d:** 10 claims, 1.5× bāzes līnija
+- **30d:** 7 claims, 0.9× bāzes līnija
 <!-- /SYNC-AUTO -->

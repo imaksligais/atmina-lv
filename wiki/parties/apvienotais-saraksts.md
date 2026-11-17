@@ -1,7 +1,7 @@
 ---
 party: Apvienotais saraksts
 members: 48
-claims: 2239
+claims: 2272
 program_promises: 23
 contradictions: 12
 votes_par: 63624

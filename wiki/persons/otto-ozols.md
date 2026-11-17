@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 38
 votes: 0
 contradictions: 0
-mentioned_in: 637
+mentioned_in: 645
 last_active: 2026-10-20
 top_topics:
 - Koalīcija un partijas

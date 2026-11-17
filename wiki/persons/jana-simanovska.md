@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/mezsaimnieciba|Mežsaimniecība]] (43%), [[topics/klimats|Klimats]] (10%), [[topics/tieslietas|Tieslietas]] (10%)
-- **30d:** 2 claims, 0.6× bāzes līnija
+- **30d:** 1 claims, 0.2× bāzes līnija
 - **Spriedzes:** [[persons/uldis-augulis|Uldis Augulis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

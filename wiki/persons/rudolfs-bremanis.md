@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 10
 votes: 5
 contradictions: 0
-mentioned_in: 296
+mentioned_in: 322
 last_active: 2026-11-12
 top_topics:
 - Ukraina un Krievija

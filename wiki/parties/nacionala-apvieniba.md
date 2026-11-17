@@ -1,7 +1,7 @@
 ---
 party: Nacionālā apvienība
 members: 22
-claims: 1662
+claims: 1685
 program_promises: 23
 contradictions: 2
 votes_par: 59637

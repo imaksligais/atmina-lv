@@ -89,6 +89,7 @@ Kanoniskie nesēji: rakstīts ar roku (standing lēmums 2026-04-22) + [`.claude/
 - [ ] Frontmatter: `title`, `description`, `created`, `politicians`, `topics` (kanoniskie nosaukumi vai to slugi — `_normalize_synthesis_topics` nezināmu vērtību raksta stderr; 0 brīdinājumu renderī)
 - [ ] Katram ārpus-citāta skaitlim un notikumam saite uz pirmavotu; visas saites HTTP 200 (skaits atskaitē)
 - [ ] Vārds «pretruna» / «mainīja nostāju» tikai ar `contradictions` rindu; pārējais ir hronoloģija
+- [ ] Teikumā «X un Y [darbība] Z» katram nosauktajam runātājam DB ir vismaz viena `claims` rinda tieši par Z; kopīga pieminēšana vai tēmas grupējums nav pierādījums ([brief-shared-rules.md](agenti/brief-shared-rules.md) § Per-speaker atribūcija; 2026-05-21 incidents)
 - [ ] Darījuma stadija nosaukta (piedāvāts / pilnvarots / noslēgts / izmaksāts); nenoslēgts darījums nav pagātnes formā
 - [ ] Balsojumu ķēdes citētas veselas (T14); frakcijas apgalvojumi no `faction` sadalījumā TAJĀ `vote_id` (T6)
 - [ ] Analīzes beigu datums tekstā; turpinājums saitē uz iepriekšējo daļu, iepriekšējā — uz turpinājumu (abas publicē kopā)

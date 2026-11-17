@@ -25,5 +25,5 @@ model: opus
 - **B** → piemēro tikai pēc tam, kad pats izlasīji avota fragmentu (2026-10-15 neatkarīgie priekšlikumi kļūdījās 7 no 39).
 - **A** → nekad automātiski nedzēst: tikai paša lasījums + rollback, vai atstāj operatoram (T19).
 - **U** → neko nedara.
-- Piemēro ar `scripts/apply_stance_fixes.py` (dry-run → `--write-rollback` → commit → `--apply`).
+- Piemēro ar `scripts/apply_stance_fixes.py` (dry-run → `--write-rollback` → commit → `--apply`). Tas pats skripts var ierakstīt `quote` (kopš 2026-11-16): tikai burtisku dokumenta fragmentu, citādi atsaka; ka tie ir runātāja vārdi, pārbaudi pats.
 - Solis notiek PIRMS pretrunu pārbaudes un pārskata — tie lasa stance.

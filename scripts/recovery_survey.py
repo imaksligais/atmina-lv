@@ -48,7 +48,7 @@ def main(argv: list[str] | None = None) -> int:
 
     n = survey["checked"]
     print(f"{format_recovery_line(survey)} — pārbaudīti {n} {lv_pairs(n)}")
-    for band in ("inversion", "beside_subject"):
+    for band in ("inversion", "beside_subject", "relay_quote"):
         pairs = survey["bands"][band]
         print(f"\n{band} ({len(pairs)}):")
         if not pairs:

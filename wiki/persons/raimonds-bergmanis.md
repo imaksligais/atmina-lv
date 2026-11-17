@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 40
 votes: 6415
 contradictions: 0
-mentioned_in: 202
+mentioned_in: 204
 last_active: 2026-11-03
 top_topics:
 - Aizsardzība un drošība
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (50%), [[topics/imigracija|Imigrācija]] (18%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (10%)
-- **30d:** 12 claims, 2.7× bāzes līnija
+- **30d:** 12 claims, 3.0× bāzes līnija
 - **Spriedzes:** [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

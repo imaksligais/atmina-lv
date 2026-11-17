@@ -21,7 +21,7 @@ Tas pats paterns bez koda izmaiņas: LBAS, LTRK, LPS, LBA u.c.
 
 ## Žurnālisti — `feed_type='relay'` pēc noklusējuma (operatora lēmums 2026-08-21)
 
-**Likums:** seedējot personu ar `relationship_type='journalist'`, `social_accounts` rinda saņem `feed_type='relay'`, NE `first_party`. Relay nezaudē atklāšanas kanālu — žurnālista tvīti ienāk un tajos pieminētie politiķi caur teksta skenu kļūst `subject` (kā RSS plūsma); pazūd tikai žurnālists-kā-pozīciju-turētājs (viņa paša "pozīcijas" neģenerējas, X subtabs profilā nepapildinās).
+**Likums:** seedējot personu ar `relationship_type='journalist'`, `social_accounts` rinda saņem `feed_type='relay'`, NE `first_party`. Relay tvīti ienāk, un tajos pieminētie politiķi caur teksta skenu kļūst `mentioned` — ne `subject` (tvītā `subject` ir tikai pats autors, `src/matcher.py`; 2026-11-09…15: 251 `mentioned`, 0 `subject`). Ekstrakcijas rinda `mentioned` pārus nelasa, tāpēc relay tvīts pats par sevi pozīciju nedod — sk. [`docs/audits/2026-11-16-relay-citati.md`](../../docs/audits/2026-11-16-relay-citati.md). Pazūd arī žurnālists-kā-pozīciju-turētājs (viņa paša "pozīcijas" neģenerējas, X subtabs profilā nepapildinās).
 
 **Kāpēc:** misijas fokuss (platforma seko vēlētu politiķu atbildībai; 2026-08-20 pārskatā 14/57 pozīcijas bija komentētāju), redakcionālais risks (first_party žurnālistam nozīmē sistemātiski republicēt invektīvas kā verbatim citātus — quote NEDRĪKST labot), signāls/troksnis (Lapsa viens deva 3193 subject-dokus, lielākā atsevišķā plūsma).
 

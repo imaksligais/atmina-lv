@@ -1,10 +1,10 @@
 ---
 topic: Aizsardzība un drošība
-positions: 1064
+positions: 1074
 votes: 44334
-politicians: 115
+politicians: 116
 contradictions: 0
-last_activity: '2026-11-14 00:00:00'
+last_activity: '2026-11-16 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/edgars-rinkevics|Edgars Rinkēvičs]]'

@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 1 claims, 0.3× bāzes līnija
+- **30d:** 1 claims
 - **Spriedzes:** [[persons/viesturs-kleinbergs|Viesturs Kleinbergs]] (2 spriedzes)
 <!-- /SYNC-AUTO -->

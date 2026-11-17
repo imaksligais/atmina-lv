@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/es-politika|ES politika]] (34%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (24%), [[topics/rail-baltica|Rail Baltica]] (10%)
-- **30d:** 3 claims
+- **30d:** 2 claims
 <!-- /SYNC-AUTO -->

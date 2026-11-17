@@ -3,11 +3,11 @@ name: Valdis Dombrovskis
 party: Jaunā Vienotība
 role: Eiropas komisārs
 relationship_type: tracked
-positions: 139
+positions: 142
 votes: 0
 contradictions: 0
-mentioned_in: 758
-last_active: 2026-11-12
+mentioned_in: 768
+last_active: 2026-11-16
 top_topics:
 - ES politika
 - Ukraina un Krievija
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/es-politika|ES politika]] (43%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (21%), [[topics/arpolitika|Ārpolitika]] (16%)
-- **30d:** 33 claims, 1.2× bāzes līnija
+- **Top tēmas:** [[topics/es-politika|ES politika]] (43%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (22%), [[topics/arpolitika|Ārpolitika]] (15%)
+- **30d:** 32 claims, 1.1× bāzes līnija
 <!-- /SYNC-AUTO -->

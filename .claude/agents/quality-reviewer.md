@@ -518,7 +518,10 @@ Tad IZLASI visu tekstu kā lasītājs, rindkopu pa rindkopai, un pārbaudi:
    paralēlu piemēru, kur pietiek ar diviem; nav «nav X, bet Y» MŪSU tekstā
    (politiķa citātā drīkst). Treknraksts prozā ir FIX (atļauts tikai «Kas
    kustējās» movers rindās). Saraksts: `.claude/agents/weekly-brief-writer.md`
-   § Valoda.
+   § Valoda. Vārdus skaiti TIKAI ar
+   `.venv/Scripts/python.exe scripts/weekly_brief_words.py --note <id>` (to
+   pašu lieto rakstītājs) un atskaitē ielīmē izvadi; skaitlis ārpus latiņas ir
+   piezīme, ne BLOCKED.
 
 **Atskaite (obligāta, ar saucēju).** Tabula: rindkopas izlasītas N,
 `lint_lv_style` M, lasījumā atrasts K, no tiem labots L (ar `pirms → pēc`

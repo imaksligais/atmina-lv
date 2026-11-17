@@ -1560,6 +1560,41 @@ def weekly_vote_breakdown(db_path: str | None = None, week_start: str | None = N
     return "\n".join(head + body) + "\n"
 
 
+WEEKLY_WORDS_TARGET = (700, 1000)
+WEEKLY_STORY_WORDS_TARGET = (60, 220)
+_WEEKLY_NON_STORY = ("Īsumā", "Ko gaidīt")
+_WEEKLY_WORD = re.compile(r"[^\W\d_]+(?:[-’'][^\W\d_]+)*|\d+(?:[.,]\d+)*")
+
+
+def weekly_brief_word_counts(content: str) -> dict:
+    """«Nedēļas stāstu» vārdu skaits — viens skaitītājs rakstītājam un pārbaudītājam.
+
+    09.11. rakstītājs saskaitīja 754 vārdus, pārbaudītājs 618, publicēts tika
+    681 pret latiņu 700–1 000: katrs skaitīja citu teksta daļu. Definīcija:
+    - skaita visu starp H1 un `## Nedēļa skaitļos` (stāsti, «Īsumā», «Ko gaidīt»);
+      «Kas kustējās» un «Vizuālais brief» neskaita;
+    - `## ` virsrakstu rindas un HTML komentārus neskaita;
+    - saitei `[etiķete](url)` skaita tikai etiķeti;
+    - vārds = burtu virkne (ar defisi vai apostrofu vidū) vai skaitlis
+      («3,5» un «2026» ir pa vienam vārdam; pēdiņas un domuzīmes nav vārdi).
+
+    Tikai ziņo: glabāšanu neaptur (operators 2026-11-15).
+    Atgriež `{"sections": [(virsraksts, vārdi, ir_stāsts)], "stories": N, "total": N}`.
+    """
+    body = re.sub(r"<!--.*?-->", "", content or "", flags=re.S).split("## Nedēļa skaitļos")[0]
+    sections = []
+    for part in re.split(r"^## ", body, flags=re.M)[1:]:
+        title, _, text = part.partition("\n")
+        text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+        title = title.strip()
+        sections.append((title, len(_WEEKLY_WORD.findall(text)), title not in _WEEKLY_NON_STORY))
+    return {
+        "sections": sections,
+        "stories": sum(n for _, n, is_story in sections if is_story),
+        "total": sum(n for _, n, _ in sections),
+    }
+
+
 def generate_weekly_brief(db_path: str = None, week_start: str = None,
                           chart_dir: str = "output/images/briefs") -> str:
     """Generate a neutral weekly brief in markdown covering 7 days from week_start.

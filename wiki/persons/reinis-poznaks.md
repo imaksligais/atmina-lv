@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (26%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (23%), [[topics/droni|Droni]] (8%)
-- **30d:** 16 claims, 3.2× bāzes līnija
+- **30d:** 16 claims, 4.0× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

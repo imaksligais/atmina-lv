@@ -7,7 +7,7 @@ relationship_type: tracked
 positions: 19
 votes: 0
 contradictions: 0
-mentioned_in: 295
+mentioned_in: 296
 last_active: 2026-11-08
 top_topics:
 - Ārpolitika

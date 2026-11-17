@@ -16,5 +16,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 2 claims
+- **30d:** 1 claims
 <!-- /SYNC-AUTO -->

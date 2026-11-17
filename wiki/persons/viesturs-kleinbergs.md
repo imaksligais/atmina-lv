@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 81
 votes: 0
 contradictions: 0
-mentioned_in: 1512
+mentioned_in: 1515
 last_active: 2026-11-10
 top_topics:
 - Pašvaldības

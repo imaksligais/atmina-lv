@@ -189,13 +189,14 @@ _Detalizētie ieraksti dzīvo tēmas failos `backlog/*.md` (sadale 2026-08-19). 
 - **[OPEN]** Jaunu sēžu `parentID=` balsojumu saites kļūst tukšas — sēdes dienā pastāvīgās nav, labo pēc tam (2026-11-04)
 - **[FIX]** Vienam likumprojektam vairākas `document_nr` formas vai NULL — ķēdes vaicājums tos neredz (2026-11-13)
 
-**[`backlog/agenti-pipeline.md`](backlog/agenti-pipeline.md)** — 7 ieraksti:
+**[`backlog/agenti-pipeline.md`](backlog/agenti-pipeline.md)** — 8 ieraksti:
 - **[OPEN]** Aģentu promptu optimizācija pēc claim-extractor v4 — audit-integrity → skripts, quality-reviewer uz RUBRIKA
 - **[DEFERRED]** Stance-fidelity atlikums: matcher neskenē `title`; tvnet maksas ievadi nav atšķirami (2026-11-10)
 - **[OPEN]** Medību pēdas @contradiction-hunter (07-25 adversārā pārbaude + 08-03 ekstrakcija)
 - **[OPEN]** Krossavota/divvalodu dublikāti — `possible_duplicate` tīkls kopš 2026-09-24; atliek pārmērīt 6. pārbaudes 101 grupu
 - **[OPEN]** `find_inversions` — `speaks()` nosaka lomu pēc pieminējuma; aklās zonas raža nav triāžēta
 - **[OPEN]** Stance šūnas pārskata tabulās arvien garākas — 26/41 pārsniedz 30 vārdus
+- **[OPEN]** «Norāda» prognozei vai skaitlim — plašā klase ārpus RUBRIKA 6. klases (2026-11-16)
 - **[OPEN]** Pretrunu meklēšana pēc 2026-11-13 — nākamais slānis, Jev solis rutīnā, solījumu saraksts
 
 **[`backlog/matcher.md`](backlog/matcher.md)** — 8 ieraksti:

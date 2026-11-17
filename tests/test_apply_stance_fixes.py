@@ -4,8 +4,9 @@ Failures named first:
 1. An unapproved plan reaches live rows — `--apply` runs without a committed
    rollback (missing file, or present but not git-tracked).
 2. Apply touches more than it was approved for, or cannot be undone — it
-   rewrites `quote`, re-embeds rows whose stance did not change, or the
-   rollback file cannot restore the old stance / stated_at.
+   rewrites a field it was not given, re-embeds rows whose stance did not
+   change, or the rollback file cannot restore the old stance / stated_at.
+3. A non-verbatim quote fix reaches `claims.quote`.
 """
 
 import json
@@ -98,3 +99,38 @@ def test_apply_updates_only_approved_fields_and_rollback_holds_old(env, monkeypa
     rows = _rows(env["path"])
     assert rows[101]["stance"] == rows[102]["stance"] == OLD
     assert rows[102]["stated_at"] == "2026-10-01 12:00:00"
+
+
+def test_quote_fix_written_only_when_verbatim_in_source(env, monkeypatch):
+    """Failure 3: a quote fix that is not the source's exact wording reaches
+    `claims.quote` (CLAUDE.md: quote is VERBATIM), or a verbatim one cannot be
+    applied at all (claim 753856 stayed `quote=null` with a clean sentence)."""
+    db = get_db(env["path"])
+    db.execute("UPDATE documents SET content = ? WHERE id = 10",
+               ("Ievads. Mēs pašvaldībā vēl neesam izdarījuši mājasdarbus. Beigas.",))
+    db.commit()
+    db.close()
+    monkeypatch.setattr(asf, "is_git_tracked", lambda p: True)
+    fixes = Path(env["fixes"])
+    before = _rows(env["path"])
+
+    for bad in ("Mes pasvaldiba vel neesam izdarijusi majasdarbus",  # diacritics stripped
+                "Mēs pašvaldībā neesam izdarījuši mājasdarbus"):     # not in source
+        fixes.write_text(json.dumps([{"id": 101, "stance": None, "stated_at": None,
+                                      "quote": bad}]), encoding="utf-8")
+        assert asf.main(["--fixes", env["fixes"], "--write-rollback"]) == 2
+        assert asf.main(["--fixes", env["fixes"], "--apply"]) == 2
+        assert _rows(env["path"]) == before
+
+    good = "Mēs pašvaldībā vēl neesam izdarījuši mājasdarbus."
+    fixes.write_text(json.dumps([{"id": 101, "stance": None, "stated_at": None,
+                                  "quote": good}]), encoding="utf-8")
+    assert asf.main(["--fixes", env["fixes"], "--write-rollback"]) == 0
+    assert asf.main(["--fixes", env["fixes"], "--apply"]) == 0
+    assert _rows(env["path"])[101]["quote"] == good
+    assert env["reembedded"] == []  # quote is not part of the vector
+
+    db = get_db(env["path"])
+    db.executescript(env["rollback"].read_text(encoding="utf-8"))
+    db.close()
+    assert _rows(env["path"])[101]["quote"] == QUOTE

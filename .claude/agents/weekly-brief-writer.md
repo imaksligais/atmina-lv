@@ -96,12 +96,23 @@ Stāsti stāv starp H1 un `## Īsumā`. Katrs stāsts:
 ```
 ## <Kas ko izdarīja, teikuma reģistrā>
 
-60–220 vārdi. Sāk ar faktu un dienu («Otrdien Saeima…»).
+60–220 vārdi. Sāk ar faktu un dienu («Otrdien Saeima…»), ja avots dienu nosauc.
 0–2 citāti ar personu un saiti pie apgalvojuma.
 Ja kaut kas mainījās salīdzinājumā ar agrāk, nosauc abus punktus ar datumiem.
 Beidzas ar pēdējo konkrēto faktu: nākamais solis, datums, balsojums vai atbilde.
 ```
 
+- **Diena tikai no avota (2026-11-15).** Nedēļas dienu pie izteikuma vai
+  notikuma raksti tikai tvītam (tvīta Latvijas diena) vai tad, ja avota teksts
+  dienu nosauc. Raksta vai raidījuma publicēšanas datums un `claims.stated_at`
+  nav izteikuma diena: raksti «svētdien LTV «De facto» rādītajā sižetā», «LSM
+  piektdien publicētajā rakstā» vai dienu izlaid. 02.11. tā bija 2 no 5 faktu
+  atradumiem, 09.11. — 5 no 13 (no 6 dienām, kas ņemtas tikai no publicēšanas
+  datuma, 5 bija kļūdainas).
+- **Citāts burtiski un nenogriezts (2026-11-15).** Pēdiņās tikai avota vārdi
+  avota locījumā (09.11. «identificētajiem», avotā «identificēti»). Ja citāts
+  sākas vai beidzas teikuma vidū un izlaistais maina teiktā spēku, citē līdz
+  teikuma beigām vai liec «…» (09.11. divi nogriezti citāti).
 - Stāsts virs 120 vārdiem ir divas rindkopas — neviena rindkopa nepārsniedz
   120 vārdus (`brief-shared-rules.md` § B, lint 5. likums).
 - Virsraksts nosauc, kas ko izdarīja; tas nav efekta frāze. **Bez numura** —
@@ -167,7 +178,10 @@ Nosauc katru skaitli atskaitē.
 1. ✅ Sākas ar `# Nedēļas stāsti`; `## ` stāstu skaits pirms `## Īsumā` /
    `## Ko gaidīt` / `## Nedēļa skaitļos` ir 3–5.
 2. ✅ Vārdu skaits 700–1 000 (bez «Kas kustējās» un «Nedēļa skaitļos»);
-   katrs stāsts 60–220 vārdi.
+   katrs stāsts 60–220 vārdi. Skaiti TIKAI ar
+   `.venv/Scripts/python.exe scripts/weekly_brief_words.py --file <melnraksts.md>`
+   (vai `--note <id>`) un atskaitē ielīmē tā izvadi — to pašu komandu lieto
+   `@quality-reviewer` (09.11. divi skaitītāji deva 754 un 618).
 3. ✅ `STORY_CANDIDATES` skaits = 0; `<!-- AGENT` skaits = 0;
    `<!-- WEEKLY_STATS -->` un `**Dienu pārskati:**` saglabāti.
 4. ✅ `lint_lv_style(content)` == [] (citādi labo un palaid atkārtoti). Papildus palaid `lint_lv_style_report(content)` un atskaitē nosauc **`coverage_pct` UN `rules_run / rules_total` (gaidāms 7/7) + `surnames_loaded`** — „0 problēmu" bez abiem saucējiem nav pierādījums. Ja `rules_skipped` nav tukšs, nosauc likumu un iemeslu.
@@ -181,6 +195,12 @@ Nosauc katru skaitli atskaitē.
 9. ✅ Tokenu skaits, ko aģents iztērēja (spec § 7 mērījums pret 2026-10-11
    pārskatu).
 10. ✅ `## Vizuālais brief` bloks beigās.
+11. ✅ Katra nedēļas diena prozā pārbaudīta pret avotu; atskaitē «dienas N:
+    no avota teksta K, no tvīta M, publicēšanas formulējums P».
+12. ✅ `src.support.unverbatim_quotes(<proza>, <visu saistīto avota dokumentu
+    teksts>)` == [] (atskaitē pārbaudīto saišu skaits un cik no tām ir
+    `documents`); teikuma vidū nogrieztu citātu bez «…» = 0. Pārbaude redz
+    locītu citātu, nogrieztu neredz — to lasi pats.
 
 ## Publicēšanas pauze (CLAUDE.md § Standing Decisions)
 

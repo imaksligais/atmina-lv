@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (26%), [[topics/pensijas|Pensijas]] (22%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%)
-- **30d:** 5 claims, 1.4× bāzes līnija
+- **30d:** 3 claims, 0.7× bāzes līnija
 <!-- /SYNC-AUTO -->
