@@ -1,23 +1,23 @@
 ---
 name: Maija Armaņeva
 party: Latvija Pirmajā Vietā
-role: Saeimas deputāte
+role: Saeimas deputāte, Cilvēktiesību un sabiedrisko lietu komisijas priekšsēdētāja
 relationship_type: tracked
-positions: 24
-votes: 3026
+positions: 26
+votes: 3048
 contradictions: 0
-mentioned_in: 222
-last_active: 2026-10-21
+mentioned_in: 289
+last_active: 2026-11-23
 top_topics:
 - Izglītība
 - Sabiedriskie mediji
+- Sociālā politika
 - Budžets un finanses
 - Imigrācija
-- Koalīcija un partijas
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/izglitiba|Izglītība]] (17%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (12%), [[topics/budzets-un-finanses|Budžets un finanses]] (8%)
-- **30d:** 1 claims
+- **Top tēmas:** [[topics/izglitiba|Izglītība]] (15%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (15%), [[topics/sociala-politika|Sociālā politika]] (12%)
+- **30d:** 2 claims
 - **Spriedzes:** [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze)
 <!-- /SYNC-AUTO -->

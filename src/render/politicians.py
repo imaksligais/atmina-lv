@@ -594,6 +594,7 @@ def _fetch_politician_detail(
     feed_outlets: dict[int, dict[str, Any]] | None = None,
     align: dict[str, Any] | None = None,
     faction_alignment: dict[int, dict[str, int]] | None = None,
+    crossings: list[Any] | None = None,
 ) -> dict[str, Any]:
     """Full detail for one politician: positions, contradictions, votes.
 
@@ -857,12 +858,12 @@ def _fetch_politician_detail(
 
     saites_data = _fetch_saites_for_profile(
         db, pid, profile_kind, tensions, commentary_about, align=align,
-        has_votes=votes_total > 0,
+        has_votes=votes_total > 0, crossings=crossings,
     )
     has_saites_content = bool(
         saites_data["uzbrukumi"] or saites_data["spriedzes"]
         or saites_data["atbalsts"] or saites_data["commentary_about"]
-        or saites_data["vote_alignment_top"]
+        or saites_data["vote_alignment_top"] or saites_data["crossings"]
     )
     commentary_by: list[dict[str, Any]] = []
     if profile_kind in ("journalist", "analyst"):
@@ -897,7 +898,7 @@ def _fetch_politician_detail(
     # Skaitļu josla (plāns 2026-10-07 B.3). Reālie kopskaiti, ne sarakstu
     # griesti: x_posts/news/commentary_by/tensions saraksti ir ar LIMIT.
     saites_count = tensions_total + sum(len(saites_data[k]) for k in (
-        "commentary_about", "vote_alignment_top", "vote_alignment_bottom"))
+        "commentary_about", "vote_alignment_top", "vote_alignment_bottom", "crossings"))
     saites_data["tensions_shown"] = len(tensions)
     saites_data["tensions_total"] = tensions_total
     stat_counts = {
@@ -1081,8 +1082,12 @@ def render_politicians(
     politicians: list[dict[str, Any]],
     pid_to_syntheses: dict[int, list[dict[str, Any]]],
     pid_to_atradumi: dict[int, list[dict[str, Any]]] | None = None,
+    places: dict[str, Any] | None = None,
 ) -> int:
     """Render one politiki/<slug>.html per tracked politician.
+
+    ``places`` = ``src.render.vietas.build_places`` rezultāts (tas pats, no kā
+    uzbūvētas vietas/<slug>.html), lai profils saitē tikai uz esošām lapām.
 
     Mirrors the inline block previously at ``src/generate.py`` lines
     3146-3173. Returns the count of pages emitted (one per politician).
@@ -1126,6 +1131,7 @@ def render_politicians(
             db, p["id"], profile_kind, vad_data=vad_for_pid,
             feed_outlets=feed_outlets, align=align,
             faction_alignment=faction_alignment,
+            crossings=(places or {}).get("by_pid", {}).get(p["id"], []),
         )
         wiki_profile = _load_wiki_profile(p["slug"])
         has_photo = (photos_dir / f"{p['slug']}.jpg").exists() if photos_exist else False

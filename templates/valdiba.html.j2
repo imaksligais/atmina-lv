@@ -1,0 +1,86 @@
+{% extends "base.html.j2" %}
+{% set active_page = "valdiba" %}
+{% set assets_prefix = "" %}
+
+{% block title %}Valdība{% endblock %}
+{% block description %}Ministru kabinets: katrs ministrs un viņa publiski paustās pozīcijas par savas ministrijas jomu, ar datumu un avotu.{% endblock %}
+{% block og_title %}Valdība — atmina.lv{% endblock %}
+{% block og_description %}Katrs ministrs un tas, ko viņš publiski teicis par savas ministrijas jomu.{% endblock %}
+
+{% macro vld_rows(rows) -%}
+    {% for row in rows %}
+      {% for m in row.ministers %}
+    <details class="vld-row"{% if loop.first %} id="{{ row.anchor }}"{% endif %}>
+      <summary data-count="{{ m.count }}">
+        <span class="vld-post">{{ row.post }}</span>
+        <span class="vld-name">{{ m.name }}</span>
+        <span class="vld-party">{{ m.party_short or "—" }}</span>
+        <span class="vld-num">{{ m.count|lv_number }}<span class="vld-num-unit"> {{ m.count | lv_plural("pozīcija", "pozīcijas") }}</span></span>
+      </summary>
+      <div class="vld-panel">
+        <p class="muted vld-topics">{% if row.topics %}Ministrijas tēmas: {{ row.topics | join(", ") }}.{% else %}Visas tēmas.{% endif %}</p>
+        {% if m.positions %}
+        <ol class="vld-positions">
+          {% for p in m.positions %}
+          <li>
+            {% if p.stated_at %}<time datetime="{{ p.stated_at[:10] }}">{{ p.stated_at | lv_date }}</time>{% endif %}
+            <span class="vld-stance">{{ p.stance }}</span>
+            <a class="vld-src" href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener">Avots ↗</a>
+          </li>
+          {% endfor %}
+        </ol>
+        {% else %}
+        <p class="vld-empty">Par šīm tēmām pozīciju vēl nav.</p>
+        {% endif %}
+        <a class="vld-profile" href="politiki/{{ m.slug }}.html">Profila lapa ›</a>
+      </div>
+    </details>
+      {% else %}
+    <div class="vld-row vld-row--none" id="{{ row.anchor }}">
+      <span class="vld-post">{{ row.post }}</span>
+      <span class="vld-name">Mūsu datos amatā neviena nav</span>
+    </div>
+      {% endfor %}
+    {% endfor %}
+{%- endmacro %}
+
+{% block content %}
+<section class="vld-section">
+  <header class="pagehead-header vld-head">
+    <div class="pagehead-header-title">
+      <div class="pagehead-kicker">Ministru kabinets</div>
+      <h1 class="pagehead-h1">Valdība</h1>
+      <p class="pagehead-lead">Katrs ministrs un tas, ko viņš publiski teicis par savas ministrijas jomu. Atver rindu, lai redzētu jaunākās pozīcijas ar avotu.</p>
+    </div>
+    {% if vote %}
+    <a class="vld-vote" href="{{ vote.url | safe_url }}" target="_blank" rel="noopener">
+      <span class="pagehead-metric-label">Uzticība Saeimā, {{ vote.vote_date | lv_date }}</span>
+      <span class="vld-vote-num">{{ vote.total_par }}</span>
+      <span class="vld-vote-rest">par, {{ vote.total_pret }} pret, {{ vote.total_atturas }} atturējās</span>
+      <span class="vld-vote-link">Balsojums Saeimas vietnē ↗</span>
+    </a>
+    {% else %}
+    <p class="muted vld-vote-none">Uzticības balsojums šai valdībai vēl nav mūsu datos.</p>
+    {% endif %}
+  </header>
+
+  <div class="vld-table">
+    <div class="vld-thead" aria-hidden="true">
+      <span>Ministrija</span>
+      <span>Ministrs</span>
+      <span>Partija</span>
+      <span class="vld-num">Pozīcijas nozarē</span>
+    </div>
+{{ vld_rows(cabinet) }}
+  </div>
+
+  {% if others %}
+  <h2 class="vld-h2">Citi valdības locekļi</h2>
+  <div class="vld-table">
+{{ vld_rows(others) }}
+  </div>
+  {% endif %}
+
+  <p class="muted vld-foot">Ministri ir no mūsu datu bāzes amatu ieraksta. «Pozīcijas nozarē» ir publiski izteikumi par ministrijas tēmām, ko atmina.lv ir saglabājusi kopš novērošanas sākuma. Tas nav vērtējums.</p>
+</section>
+{% endblock %}

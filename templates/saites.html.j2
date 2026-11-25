@@ -16,6 +16,16 @@
 </li>
 {%- endmacro %}
 
+{% macro place_row(p, group) -%}
+<li class="places-row">
+  <a class="places-name" href="vietas/{{ p.slug }}.html">{{ p.name }}</a>
+  {%- if group == "saeima" %}
+  <span class="places-kind">{{ (p.kind_label|replace("Saeimas ", ""))|capitalize }}</span>
+  {%- endif %}
+  <span class="places-n">{{ p.members|length }} {{ p.members|length|lv_plural("politiķis", "politiķi") }}</span>
+</li>
+{%- endmacro %}
+
 {% block title %}Saites{% endblock %}
 
 {% block content %}
@@ -44,29 +54,101 @@
       </datalist>
     </div>
 
-    {#- Viena atvērta partija vienlaikus (`name`); atvērtā aizņem visu rindu zem
-        savas rindas (CSS grid-column + dense). Pirmie 12 pāri redzami, pārējie
-        aiz «Rādīt vēl N» — saraksts neizplūst pa visu lapu. #}
-    <div class="saites-parties">
-      {%- for p in party_pairs %}
-      <details class="saites-party" name="saites-party">
-        <summary><span class="saites-party-name">{{ p.party or "Bez partijas" }}</span> <span class="saites-party-count">{{ p.count }} {{ p.count|lv_plural("saikne", "saiknes") }}</span></summary>
-        <div class="saites-party-body">
-          <ul class="saites-pairs">
-            {%- for r in p.pairs[:12] %}{{ pair_row(r) }}{% endfor %}
-          </ul>
-          {%- if p.pairs|length > 12 %}
-          <details class="saites-more">
-            <summary>Rādīt vēl {{ p.pairs|length - 12 }} {{ (p.pairs|length - 12)|lv_plural("pāri", "pārus") }}</summary>
-            <ul class="saites-pairs">
-              {%- for r in p.pairs[12:] %}{{ pair_row(r) }}{% endfor %}
-            </ul>
-          </details>
+    {#- Jaunākās saiknes (Saites v2, 2026-11-22): pirmā = lapas lielais moments,
+        nākamās 4 kompaktas rindas. Datums = kad MĒS ierakstījām (created_at).
+        Bez krāsainām nozīmītēm un sānu svītrām (operatora jautājums §2.4/§2.6). #}
+    {%- if newest %}
+    <section class="saites-newest" aria-labelledby="saites-newest-h">
+      <h2 id="saites-newest-h" class="saites-h2">Jaunākās saiknes</h2>
+      <ol class="saites-newest-list">
+        {%- for r in newest %}
+        <li class="saites-newest-row{% if loop.first %} saites-newest-lead{% endif %}">
+          <a class="saites-newest-names" href="politiki/{{ r.a_slug }}.html#{{ r.anchor }}">{{ r.a_name }} <span class="saites-pair-sep" aria-hidden="true">↔</span><span class="sr-only"> un </span> {{ r.b_name }}</a>
+          {%- if r.desc %}
+          <p class="saites-newest-desc">{{ r.desc }}</p>
           {%- endif %}
-        </div>
+          <span class="saites-newest-type">{{ r.type_label }}</span>
+          <span class="saites-newest-date">ierakstīts <time datetime="{{ r.last }}">{{ r.last|lv_date }}</time></span>
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+
+    {#- Partiju tabula (§1.4): četri veidi saskaitās līdz «Saiknes». Rinda pati
+        ir vadīkla: atver savus pārus nākamajā rindā (assets/ssv1.js); bez JS
+        pāri ir redzami. Vienlaikus atvērta viena partija. #}
+    <section class="saites-by-party" aria-labelledby="saites-party-h">
+      <h2 id="saites-party-h" class="saites-h2">Pa partijām</h2>
+      <div class="saites-party-wrap">
+      <table class="saites-party-table">
+        <caption class="sr-only">Saiknes pa partijām: kopā un pa veidiem</caption>
+        <thead>
+          <tr>
+            <th scope="col">Partija</th>
+            <th scope="col" class="num">Saiknes</th>
+            {%- for tt, long, short in party_cols %}
+            <th scope="col" class="num"><span class="col-long">{{ long }}</span><abbr class="col-short" title="{{ long }}">{{ short }}</abbr></th>
+            {%- endfor %}
+          </tr>
+        </thead>
+        {%- for p in party_pairs %}
+        <tbody class="saites-party" data-party="{{ p.party }}">
+          <tr class="saites-party-row">
+            <th scope="row"><button type="button" class="saites-party-toggle" aria-expanded="true" aria-controls="saites-pp-{{ loop.index }}"><span class="saites-party-name">{% for part in (p.party or "Bez partijas").split("/") %}{% if not loop.first %}/<wbr>{% endif %}{{ part }}{% endfor %}</span></button></th>
+            <td class="num saites-party-count">{{ p.count }}</td>
+            {%- for tt, long, short in party_cols %}
+            <td class="num">{{ p.types.get(tt, 0) or "–" }}</td>
+            {%- endfor %}
+          </tr>
+          <tr class="saites-party-pairs" id="saites-pp-{{ loop.index }}">
+            <td colspan="{{ party_cols|length + 2 }}">
+              <p class="saites-party-pairs-n">{{ p.pairs|length }} {{ p.pairs|length|lv_plural("pāris", "pāri") }}, jaunākie augšā</p>
+              <ul class="saites-pairs">
+                {%- for r in p.pairs[:12] %}{{ pair_row(r) }}{% endfor %}
+              </ul>
+              {%- if p.pairs|length > 12 %}
+              <details class="saites-more">
+                <summary>Rādīt vēl {{ p.pairs|length - 12 }} {{ (p.pairs|length - 12)|lv_plural("pāri", "pārus") }}</summary>
+                <ul class="saites-pairs">
+                  {%- for r in p.pairs[12:] %}{{ pair_row(r) }}{% endfor %}
+                </ul>
+              </details>
+              {%- endif %}
+            </td>
+          </tr>
+        </tbody>
+        {%- endfor %}
+      </table>
+      </div>
+      <p class="saites-party-note">Saikne starp divu partiju politiķiem skaitās abās partijās, tāpēc kolonnu kopsumma ir lielāka par {{ metrics.total }}.</p>
+    </section>
+
+    {#- Kopīgās vietas (Saites v2, 2. posms): neitrāls slānis, tikai fakti ar
+        avotu. Vieta ir sarakstā tikai tad, ja vismaz divi izsekoti politiķi tajā
+        bijuši vienlaikus. Kārtojums pēc nosaukuma, ne pēc skaita (nav rangs).
+        Visa rinda ved uz vietas lapu; «Rādīt vēl» = tas pats <details> kā pāriem. #}
+    {%- if place_groups %}
+    <section class="saites-places" id="kopigas-vietas" aria-labelledby="saites-places-h">
+      <h2 id="saites-places-h" class="saites-h2">Kopīgās vietas</h2>
+      <p class="saites-places-intro">Saeimas komisijas un delegācijas, kurās vismaz divi izsekoti politiķi bijuši vienā laikā, un organizācijas, kurās vismaz divi norādījuši amatu viena gada deklarācijās. Tie ir fakti no Saeimas un amatpersonu deklarācijām, nevis saiknes.</p>
+      {%- for g in place_groups %}
+      <h3 class="saites-places-h3">{{ g.title }}</h3>
+      {%- set rows = g.places %}
+      <ul class="places-list">
+        {%- for p in rows[:12] %}{{ place_row(p, g.key) }}{% endfor %}
+      </ul>
+      {%- if rows|length > 12 %}
+      <details class="saites-more">
+        <summary>Rādīt vēl {{ rows|length - 12 }} {{ (rows|length - 12)|lv_plural("vietu", "vietas") }}</summary>
+        <ul class="places-list">
+          {%- for p in rows[12:] %}{{ place_row(p, g.key) }}{% endfor %}
+        </ul>
       </details>
+      {%- endif %}
       {%- endfor %}
-    </div>
+    </section>
+    {%- endif %}
 
     {#- Tabula (dublēja spriedzes.html) izņemta 2026-10-18 — spriedzes.html ir
         tas pats saraksts ar tipa/partijas/personas filtriem URL adresē. #}
@@ -98,7 +180,7 @@
       <div class="detail-pane" id="detail-pane">
         <div class="detail-pane-empty" id="detail-empty">
           <span class="hint-icon">&#8644;</span>
-          <p>Uzklikšķini uz <strong>politiķa</strong> vai <strong>saites līnijas</strong>, lai redzētu detaļas</p>
+          <p>Uzspied <strong>politiķi</strong> vai <strong>līniju</strong>, lai redzētu detaļas.</p>
         </div>
         <div id="detail-content" hidden></div>
       </div>
@@ -109,8 +191,21 @@
       {%- for lt in link_types %}
       <li class="lt-{{ lt.cls }}"><span class="legend-line"></span>{{ lt.label }}</li>
       {%- endfor %}
+      <li class="lt-vote-top"><span class="legend-line"></span>Visbiežāk balso vienādi</li>
+      <li class="lt-vote-bottom"><span class="legend-line"></span>Visretāk balso vienādi</li>
       <li class="lt-pretrunas"><span class="legend-dot"></span>Pretrunas</li>
     </ul>
+    {#- Partiju leģenda: mezgla krāsa = partija. Poga izceļ partijas mezglus
+        (sav1.js); otrs spiediens noņem. Krāsa caur --pc (CSP style-src atļauj). #}
+    <div class="graph-party-legend">
+      <p class="graph-legend-title" id="graph-party-legend-h">Partijas (aplis)</p>
+      <ul class="graph-party-list" aria-labelledby="graph-party-legend-h">
+        {%- for gp in graph_parties %}
+        <li><button type="button" class="graph-party-btn" data-party="{{ gp.party }}" aria-pressed="false"{% if gp.color %} style="--pc: {{ gp.color }}"{% endif %}><span class="graph-party-swatch" aria-hidden="true"></span>{{ gp.label }} <span class="graph-party-n">{{ gp.n }}</span></button></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <p class="graph-vote-note">Balsojumu līnijas parādās, kad izvēlies politiķi: 3 kolēģi, ar kuriem viņš Saeimā balso vienādi visbiežāk, un 3, ar kuriem visretāk (ja kopā ir vismaz {{ vote_min_shared }} balsojumu).</p>
   </div>
 
 </section>

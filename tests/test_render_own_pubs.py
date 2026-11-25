@@ -8,12 +8,11 @@ pieminējumi), un pieminējumu saraksts pārmarķēts uz "Pieminēts medijos".
 Fikstūru paterns aizgūts no test_render_mediji.py (stub outlets, www.-prefiksēts
 source_domain normalizācijai) un test_render_politicians_parskats.py.
 """
-from jinja2 import Environment, FileSystemLoader
 
 from src.db import get_db, init_db
-from src.render._common import _safe_json_filter, _safe_url_filter
 from src.render.politicians import _fetch_politician_detail, render_politicians
 from src.saeima.schema import init_saeima_tables
+from src.render._orchestrator import _make_env
 
 # NRA gadījums: outletam ir hosts + X feeds (saskan ar social_accounts.handle),
 # bet NAV neviena document_politicians saites uz outletu (pieminējumu = 0).
@@ -105,9 +104,7 @@ def test_has_publikacijas_with_zero_mentions_but_own_pubs(tmp_path):
 
 
 def _env():
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
+    env = _make_env()
     env.filters["lv_date"] = (
         lambda s: f"{s[8:10]}.{s[5:7]}.{s[:4]}"
         if s and len(s) >= 10 and "-" in s else s or ""

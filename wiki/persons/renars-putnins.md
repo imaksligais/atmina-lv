@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
 positions: 5
-votes: 5
+votes: 26
 contradictions: 0
-mentioned_in: 40
+mentioned_in: 47
 last_active: 2026-10-29
 top_topics:
 - Budžets un finanses

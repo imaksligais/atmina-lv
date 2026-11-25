@@ -18,9 +18,9 @@ import shutil
 from pathlib import Path
 
 import pytest
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
-from src.render._common import _party_page_slug, _safe_json_filter, _safe_url_filter, lv_date_short
+from src.render._orchestrator import _make_env
 
 sync_api = pytest.importorskip("playwright.sync_api")
 
@@ -30,12 +30,8 @@ DARK_SURFACE = "rgb(22, 26, 34)"     # :root --surface style.css (#161a22)
 
 
 def _env() -> Environment:
-    env = Environment(loader=FileSystemLoader(str(REPO / "templates")), autoescape=True)
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
-    env.filters["party_page_slug"] = _party_page_slug
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s or ""
-    env.filters["lv_date_short"] = lv_date_short
     env.filters["lv_plural"] = lambda n, *a, **k: ""
     env.filters["autolink_bills"] = lambda s, *a, **k: s
     env.globals["assets_version"] = "test"

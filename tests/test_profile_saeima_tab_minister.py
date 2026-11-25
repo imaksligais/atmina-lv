@@ -26,18 +26,18 @@ def test_minister_kind_with_votes_gets_saeima_tab(tmp_path):
         "(1, 'Anna Ozola', 'X', 'Finanšu ministre', 'tracked'),"
         "(2, 'Juris Bērzs', 'X', 'Saeimas deputāts', 'tracked')"
     )
-    # 10 kopīgi balsojumi — _vote_alignment_for slieksnis sakritībai.
-    for vid in range(1, 11):
+    # 100 kopīgi balsojumi — VOTE_ALIGN_MIN_SHARED slieksnis sakritībai.
+    for vid in range(1, 101):
         motif = "Par likumprojektu" if vid == 1 else f"Par grozījumiem {vid}"
         db.execute("INSERT INTO saeima_votes (id, motif, vote_date, vote_time) "
-                   "VALUES (?, ?, '2026-06-05', ?)", (vid, motif, f"10:{vid:02d}"))
+                   "VALUES (?, ?, '2026-06-05', ?)", (vid, motif, f"{10 + vid // 60}:{vid % 60:02d}"))
         for pid, name in ((1, "Ozola Anna"), (2, "Bērzs Juris")):
             db.execute("INSERT INTO saeima_individual_votes (vote_id, deputy_name, vote, politician_id)"
                        " VALUES (?, ?, 'Par', ?)", (vid, name, pid))
     db.execute("INSERT INTO saeima_votes (id, motif, vote_date, vote_time) "
-               "VALUES (99, 'Deputātu klātbūtnes reģistrācija', '2026-06-05', '09:00')")
+               "VALUES (999, 'Deputātu klātbūtnes reģistrācija', '2026-06-05', '09:00')")
     db.execute("INSERT INTO saeima_individual_votes (vote_id, deputy_name, vote, politician_id)"
-               " VALUES (99, 'Ozola Anna', 'Nereģistrējies', 1)")
+               " VALUES (999, 'Ozola Anna', 'Nereģistrējies', 1)")
     db.commit()
 
     politicians = _fetch_politicians(db)
@@ -53,9 +53,9 @@ def test_minister_kind_with_votes_gets_saeima_tab(tmp_path):
     assert "Par likumprojektu" in html
     # «Vēsturisks» piezīme ir tikai ``former`` profiliem.
     assert "Vēsturisks (bijušais deputāts)" not in html
-    # Klātbūtnes reģistrācija nav balsojums: nav sarakstā, cilnes skaitlis = 10.
+    # Klātbūtnes reģistrācija nav balsojums: nav sarakstā, cilnes skaitlis = 100.
     assert "Deputātu klātbūtnes reģistrācija" not in html
     assert re.search(r'id="tab-btn-saeima"[^>]*>\s*<span class="pp-tab-label">Saeimā</span>'
-                     r'<span class="pp-tab-count">10</span>', html)
+                     r'<span class="pp-tab-count">100</span>', html)
     # Saites: balsojumu sakritība arī ``minister`` kind profilam ar balsojumiem.
     assert "Visbiežāk balso vienādi" in html and "Juris Bērzs" in html

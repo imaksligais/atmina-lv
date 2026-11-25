@@ -10,9 +10,13 @@
 (function () {
   var root = document.getElementById('slv');
   if (!root) return;
-  var LENSES = ['saraksts', 'v14', 'pozicijas', 'pretrunas'];
   var svg = root.querySelector('.slv-svg');
   var lensBar = root.querySelector('.slv-lenses');
+  // Lēcas = lapā esošās pogas: «Koalīcija»/«Uzticība» renderē tikai tad, kad
+  // ir šī sasaukuma uzticības balsojums — #lens=… bez pogas → «Saraksts».
+  var LENSES = Array.prototype.map.call(lensBar.querySelectorAll('.slv-lens'), function (b) {
+    return b.getAttribute('data-lens');
+  });
   var pop = document.getElementById('slv-pop');
   var popBody = pop.querySelector('.slv-pop-body');
   var closeBtn = pop.querySelector('.slv-pop-close');

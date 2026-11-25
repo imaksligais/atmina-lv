@@ -90,6 +90,7 @@ piezīmēm, ko raksti tāpēc, ka kastītes nav.
 - Bloka pirmais teikums ir dienas būtība tajā tēmā (līdz ~25 vārdiem) un drīkst
   būt treknrakstā; detaļas seko zem tā.
 - Saraksta rindas sākas ar `-`, nekad ar `N. ` (markdown `<ol>` slazds, sk. augstāk).
+- **Viens teikums — viens runātājs vai avots (2026-11-21).** Starp diviem runātājiem vai avotiem liec punktu, ne semikolu, arī pie 2–3 aktieriem. Teikumu virs ~30 vārdiem dali. «X saka, ka A un ka B» — bez komata pirms «un ka». 14.–20.11. teikuma uzbūve bija lielākā pirmās korektūras kārtas klase (27 no 74 labojumiem, 6 dienas no 7).
 
 **Kopš 2026-09-02 abus sedz kods, ne tikai šis teksts.** `lint_lv_style()` 5. un
 6. likums (`prose-block-too-long`, `context-box-synthesis-duplication`,

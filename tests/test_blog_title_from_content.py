@@ -19,10 +19,8 @@ import os
 import sqlite3
 import tempfile
 
-from jinja2 import Environment, FileSystemLoader
 
-from src.image_variants import variant_filename as _brief_image_variant
-from src.render._common import _lv_plural, lv_date
+from src.render._orchestrator import _make_env
 
 _SCHEMA = """
 CREATE TABLE documents (id INTEGER PRIMARY KEY, scraped_at TEXT, platform TEXT, source_domain TEXT);
@@ -105,10 +103,7 @@ def _post(content: str, visual_brief_json: str | None, *, with_image: bool = Tru
 
 
 def _render(post: dict) -> str:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["image_variant"] = _brief_image_variant
-    env.filters["lv_plural"] = _lv_plural
-    env.filters["lv_date"] = lv_date
+    env = _make_env()
     env.globals["assets_version"] = "test"
     return env.get_template("blog-post.html.j2").render(
         post=post,

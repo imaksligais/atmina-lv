@@ -121,6 +121,17 @@ def test_dropped_hedge_paraphrase_is_refused(db_path):
     assert [f["type"] for f in r["failures"]] == ["support_not_in_source"]
 
 
+def test_stance_over_45_words_is_refused(db_path):
+    # 2026-11-20: a stored stance cannot be fixed by re-saving (first-write-wins);
+    # 7 of 134 stances fixed 10.–19.11. were >45 words and cost extra QR rounds.
+    # Mutation proof (2026-11-20): with the `stance_too_long` block in
+    # save_analysis removed, this test fails (claim stored, no failure entry).
+    long_stance = "Neatbalsta reformas atlikšanu " + " ".join(["vārds"] * 43) + "."
+    r = _save(_claim(support=["Es to neatbalstu, kamēr nav aprēķinu."], stance=long_stance))
+    assert [f["type"] for f in r["failures"]] == ["stance_too_long"]
+    assert _stored(db_path) == 0
+
+
 def test_program_promise_is_not_gated(db_path):
     r = _save(_claim(claim_type="program_promise"))
     assert r["status"] == "success", r["failures"]

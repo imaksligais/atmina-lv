@@ -8,23 +8,14 @@ from __future__ import annotations
 
 from src.render import _orchestrator as orch
 from src.render.analyses import render_analyses
+from src.render._orchestrator import _make_env
 
 
 def _env():
-    from jinja2 import Environment, FileSystemLoader
 
-    env = Environment(loader=FileSystemLoader(orch.TEMPLATES_DIR), autoescape=True)
+    env = _make_env()
     for name in ("lv_date", "lv_date_short", "lv_dates_in_text"):
         env.filters[name] = getattr(orch, name)
-    env.filters["safe_json"] = orch._safe_json_filter
-    env.filters["safe_url"] = orch._safe_url_filter
-    env.filters["autolink_bills"] = orch._autolink_bills_filter
-    env.filters["image_variant"] = orch._brief_image_variant
-    env.filters["lv_plural"] = orch._lv_plural
-    env.filters["lv_money"] = orch._lv_money
-    env.filters["salience_label"] = orch._salience_label
-    env.filters["party_page_slug"] = orch._party_page_slug
-    env.globals["_party_short_name"] = orch._party_short_name
     env.globals["assets_version"] = "test"
     return env
 

@@ -16,7 +16,6 @@ import os
 import tempfile
 
 import pytest
-from jinja2 import Environment, FileSystemLoader
 
 from src.db import get_db, init_db
 from src.saeima.schema import init_saeima_bills, init_saeima_tables
@@ -72,8 +71,9 @@ def make_db():
 
 
 def _card_html(db) -> str:
+    from src.render._orchestrator import _make_env
     from src.render.contradictions import _fetch_contradictions, _og_card_context
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+    env = _make_env()
     (c,) = _fetch_contradictions(db)
     return env.get_template("og-card.html.j2").render(card=_og_card_context(c), fonts={})
 

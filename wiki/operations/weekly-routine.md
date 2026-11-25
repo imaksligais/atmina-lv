@@ -21,7 +21,7 @@ Skeletu bagātina `@weekly-brief-writer` aģents (**NE** `@brief-writer` — tas
 - Aģents izvēlas 3–5 stāstus (katrs ar savu `## ` virsrakstu, 60–220 vārdi, kopā 700–1 000) un komentāru aizvāc.
 - Tad `## Īsumā` un `## Ko gaidīt` (abas izlaiž, ja nav ko teikt), `## Nedēļa skaitļos` un `## Kas kustējās` (deterministiski, no DB), `## Vizuālais brief`.
 - Validators atsaka glabāt pārskatu ar `STORY_CANDIDATES` vai `<!-- AGENT` komentāru vai ar mazāk nekā 3 stāstiem; vecās formas pārskati paliek derīgi.
-- Dizains: `docs/superpowers/specs/2026-11-01-nedelas-stasti-design.md`; plāns: `docs/superpowers/plans/2026-11-01-nedelas-stasti.md`.
+- Dizains: `docs/superpowers/specs/2026-11-01-nedelas-stasti-design.md`; plāns: `docs/superpowers/plans/archive/2026-11-01-nedelas-stasti.md`.
 
 Saglabā ar:
 

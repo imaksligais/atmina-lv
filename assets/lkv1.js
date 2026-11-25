@@ -7,6 +7,8 @@
 // window.filterOptions vairs netiek definēts — meklēšanas filtrēšanu pārņem
 // assets/ms-a11y.js deleģētais 'input' klausītājs.
 (function() {
+  // Tūkstošu atstarpe — kopīgā window.atminaFmtN (assets/sgv1.js).
+  function fmtN(n) { return window.atminaFmtN ? window.atminaFmtN(n) : String(n); }
   const selectedTopics = new Set();
   let hasFilter = '';  // '' | 'yes' | 'no' — «Ar / Bez likumprojektiem» (2026-10-20)
 
@@ -27,7 +29,7 @@
       if (ok) shown++;
     });
     const count = document.getElementById('laws-count');
-    if (count) count.textContent = 'Rāda ' + shown + ' no ' + cards.length;
+    if (count) count.textContent = 'Rāda ' + fmtN(shown) + ' no ' + fmtN(cards.length);
     const empty = document.getElementById('laws-empty');
     if (empty) empty.hidden = shown !== 0;
   };

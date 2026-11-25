@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 4
 votes: 0
 contradictions: 0
-mentioned_in: 70
+mentioned_in: 72
 last_active: 2026-10-30
 top_topics:
 - Izglītība
@@ -15,5 +15,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 4 claims
+- **30d:** 3 claims
 <!-- /SYNC-AUTO -->

@@ -8,6 +8,7 @@ ar 0 vietām tiek nosaukts «0 vietas» nevis «0 vietu».
 from __future__ import annotations
 
 from src.render.parties import _build_election_context, load_election_results
+from src.render._orchestrator import _make_env
 
 
 def test_missing_yaml_means_no_block(tmp_path):
@@ -48,11 +49,9 @@ def test_card_names_keep_lv_case_and_order_by_votes(tmp_path, monkeypatch):
     gāja `parties.id` secībā, ne pēc vēlēšanu rezultāta."""
     import re
 
-    from jinja2 import Environment, FileSystemLoader
 
     from src.db import get_db, init_db
     from src.render import parties as parties_mod
-    from src.render._common import TEMPLATES_DIR, _party_page_slug, lv_date
     from src.saeima.schema import init_saeima_tables
 
     db_path = str(tmp_path / "t.db")
@@ -76,10 +75,8 @@ def test_card_names_keep_lv_case_and_order_by_votes(tmp_path, monkeypatch):
         ],
     }
     monkeypatch.setattr(parties_mod, "load_election_results", lambda *a, **k: doc)
-    env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
-    env.filters["party_page_slug"] = _party_page_slug
+    env = _make_env()
     env.filters["lv_plural"] = lambda n, *a: ""
-    env.filters["lv_date"] = lv_date
     env.globals["assets_version"] = "t"
     out = tmp_path / "out"
     out.mkdir()

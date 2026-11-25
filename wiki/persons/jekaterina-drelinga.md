@@ -7,7 +7,7 @@ positions: 3
 votes: 6593
 contradictions: 0
 mentioned_in: 35
-last_active: 2026-09-25
+last_active: 2026-09-24
 top_topics:
 - Kultūra
 - Pensijas

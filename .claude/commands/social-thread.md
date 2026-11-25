@@ -1,6 +1,6 @@
 ---
 name: social-thread
-description: Uzraksti X/Twitter pavedienu par dienas vai nedēļas pārskatu (pēc pieprasījuma arī Facebook/Reddit postu) — rindkopu tvīti katrs savā kopējamā blokā, DB-verificēti @tagi, unikāli sepia attēli, saite tikai pēdējā tvītā.
+description: Uzraksti X/Twitter pavedienu par dienas vai nedēļas pārskatu (pēc pieprasījuma arī Facebook/Reddit postu) — rindkopu tvīti katrs savā kopējamā blokā, DB-verificēti @tagi, citātu kartīte (sepia tikai rezervē), saite tikai pēdējā tvītā.
 argument-hint: "[YYYY-MM-DD vai nedēļa] (pārskata datums; noklusējums — jaunākais daily_brief)"
 ---
 
@@ -43,12 +43,12 @@ Seko pārskata «Galvenais» (nedēļas pārskatā — stāstu secībai): **1. t
 Operators 14.11.: 6 tvītu pavedieni ir maz skatīti. Kamēr operators nav izlēmis, piedāvā **šo formātu pēc noklusējuma**, pavedienu — ja prasa.
 - **Viens dienas stāsts**, ne kopsavilkums: tas, ap kuru dienā visvairāk spriedžu / pozīciju (pārskata «Galvenais» + «Spriedzes»). Pārējās tēmas — FB/Reddit postā.
 - **Āķis pirmajās ~280 zīmēs** (tās redz bez «Rādīt vairāk»): burtisks, īss citāts; datums «13. novembrī» tekstā — tvīts ceļo bez atbildes. ≤3 rindkopas (~600–900 zīmes), visi § 2–3 noteikumi (tagi, nesākt ar @, skaitļa un ierāmējuma vārti) paliek.
-- **Bez saites;** otrs tvīts kā atbilde: viena rinda par pārskatu + saite. Attēls — pārskata plakāts pie 1. tvīta (jaunus attēlus neģenerē).
+- **Bez saites;** otrs tvīts kā atbilde: viena rinda par pārskatu + saite. **1. tvītam — CITS attēls, ne plakāts** (operators 2026-11-22: saites kartīte 2. tvītā jau rāda `og:image`, citādi abiem tvītiem viens attēls): **pēc noklusējuma citātu kartīte** (operators 2026-11-25: sepija «visiem šķiet garlaicīga»; kartīte postēta tās vietā). Kartīte: virsraksts + skaitļu skaidrojums tumšajā panelī, zemāk 3–5 politiķu burtiski citāti ar vārdu un amatu, avotu rinda; 1080×1350 (telefonā liela), stils un renderēšana pēc § 4 «Datu vizuāļi». Paraugs: `src/graphics/templates/citatu-kartite.html` + `docs/tweet_bank/2026-11-25-dienas-parskats-social.md`. Sepia attēls (§ 4) tikai tad, ja stāstam nav īsu burtisku citātu.
 - Paraugs: `docs/tweet_bank/2026-11-14-dienas-parskats-social.md`.
 
 ## 4. Attēli
 
-- Katram satura tvītam unikāls attēls: sepia, 16:9, **bez teksta**, **full-bleed** (2026-07-08): promptā «full-bleed, edge-to-edge, NO border/frame/paper margins»; ja malas tomēr ir — PIL crop ~3 % katrā pusē, ne pārģenerēšana.
+- Garā tvīta (§ 3a) 1. attēls pēc noklusējuma ir citātu kartīte, ne sepia. Pavedienā (pēc pieprasījuma) — katram satura tvītam unikāls attēls: kartīte vai sepia, 16:9, **bez teksta**, **full-bleed** (2026-07-08): promptā «full-bleed, edge-to-edge, NO border/frame/paper margins»; ja malas tomēr ir — PIL crop ~3 % katrā pusē, ne pārģenerēšana.
 - **Vide LATVISKA** (2026-08-21). Saeima: kompakts gaiša ozolkoka sēžu pusloks koncentriskos lokos, zaļi krēsli, mikrofoni un klēpjdatori (ekrāni tukši), koka paneļi, publikas balkons, paaugstināts prezidijs ar tribīni, Latvijas karogs kreisajā malā, ES karogs pie prezidija, moderni uzvalki. Citur — Rīgas siluets, Latvijas ainava, ne ģenēriska Rietumeiropa vai debesskrāpji.
 - Prompti → `docs/tweet_bank/{PUB_DATE}-thread-prompts.json` (`{"1-slug": "…"}`), ģenerē:
   `.venv/Scripts/python.exe -m src.graphics.cli thread --date {PUB_DATE} --prompts FILE [--backend codex]` → `output/images/threads/{PUB_DATE}-thread-{key}.png`. Gemini 429 → `--backend codex`.

@@ -36,6 +36,11 @@
   </div>
   {% if t.topic %}<span class="topic-tag">{{ t.topic }}</span>{% endif %}
   <p class="saites-card-desc">{{ t.description }}</p>
+  {%- if t.shared_places %}
+  {#- Fakts blakus saiknei (Saites v2, 2. posms): nominatīvā, jo vietu nosaukumi
+      ir brīvi teksti un tos nelokām. #}
+  <p class="saites-card-shared">{{ "Kopīgā vieta" if t.shared_places|length == 1 else "Kopīgās vietas" }}: {% for sp in t.shared_places %}{% if not loop.first %}; {% endif %}<a href="../vietas/{{ sp.slug }}.html">{{ sp.name }}</a>{% endfor %}</p>
+  {%- endif %}
   {% if t.source_url %}<a href="{{ t.source_url | safe_url }}" target="_blank" rel="noopener">Avots ↗</a>{% endif %}
   {% if t.target_url %}<a href="{{ t.target_url | safe_url }}" target="_blank" rel="noopener">Atbilde ↗</a>{% endif %}
   {% if t.other_slug %}<a href="../politiki/{{ t.other_slug }}.html" class="saites-card-profile-btn">Skatīt profilu →</a>{% endif %}
@@ -43,7 +48,7 @@
 {%- endmacro %}
 {% macro tab_button(id, label, count, default_tab) -%}
 <button class="pp-tab{% if default_tab == id %} active{% endif %}" data-tab="{{ id }}" id="tab-btn-{{ id }}" role="tab" aria-controls="tab-{{ id }}" aria-selected="{% if default_tab == id %}true{% else %}false{% endif %}" tabindex="{% if default_tab == id %}0{% else %}-1{% endif %}">
-  <span class="pp-tab-label">{{ label }}</span>{% if count is not none %}<span class="pp-tab-count">{{ count }}</span>{% endif %}
+  <span class="pp-tab-label">{{ label }}</span>{% if count is not none %}<span class="pp-tab-count">{{ count|lv_number if count is number else count }}</span>{% endif %}
 </button>
 {%- endmacro %}
 
@@ -203,7 +208,7 @@
     {% if 'komentari-by' in tab_set and commentary_by %}{{ tab_button('komentari-by', 'Komentāri', commentary_by|length, default_tab) }}{% endif %}
     {% if 'publikacijas' in tab_set and (x_posts or news or own_pubs) %}{{ tab_button('publikacijas', 'Publikācijas', pub_totals.x + pub_totals.news + pub_totals.own, default_tab) }}{% endif %}
     {% if 'pretrunas' in tab_set and contradictions %}{{ tab_button('pretrunas', 'Pretrunas', contradictions|length, default_tab) }}{% endif %}
-    {% if 'saites' in tab_set and (saites_data.uzbrukumi or saites_data.spriedzes or saites_data.atbalsts or saites_data.commentary_about or saites_data.vote_alignment_top) %}
+    {% if 'saites' in tab_set and (saites_data.uzbrukumi or saites_data.spriedzes or saites_data.atbalsts or saites_data.commentary_about or saites_data.vote_alignment_top or saites_data.crossings) %}
     {# Saites skaits = VISI cilnes saturi: uzbrukumi/spriedzes/atbalsts (REĀLAIS
        kopskaits, ne griestotais saraksts) + komentāri par šo politiķi +
        balsojumu sakritības kaimiņi — saites_count nāk no _fetch_politician_detail. #}
@@ -321,7 +326,7 @@
 
         {% if parskats_data.top_contradiction %}
         <div class="parskats-block parskats-block-contradiction">
-          <div class="parskats-kicker">Ievērojamākā pretruna{% if parskats_data.top_contradiction.delta_days is not none %} · ΔT {{ parskats_data.top_contradiction.delta_days }}d{% endif %}</div>
+          <div class="parskats-kicker">Ievērojamākā pretruna{% if parskats_data.top_contradiction.delta_days is not none %} · ΔT {{ parskats_data.top_contradiction.delta_days|lv_number }}d{% endif %}</div>
           {% if parskats_data.top_contradiction.topic %}
           <h3 class="parskats-headline">{{ parskats_data.top_contradiction.topic }}</h3>
           {% endif %}
@@ -828,7 +833,26 @@
     </div>
     {% endif %}
 
-    {% if not saites_data.uzbrukumi and not saites_data.spriedzes and not saites_data.atbalsts and not saites_data.commentary_about and not saites_data.vote_alignment_top %}
+    {%- if saites_data.crossings %}
+    {#- «Kur ceļi krustojas» (Saites v2, 2. posms): neitrāli fakti, pelēki, bez
+        krāsainām malām. Visa rinda ved uz vietas lapu, kur ir avoti. #}
+    <div class="saites-section saites-section-crossings" id="kur-celi-krustojas">
+      <h4>Kur ceļi krustojas ({{ saites_data.crossings|length }})</h4>
+      <p class="pp-muted">Saeimas komisijas un delegācijas, kurās tajā pašā laikā bija arī citi izsekoti politiķi, un organizācijas, kurās amatu tā paša gada deklarācijās norādījuši arī citi. Avoti ir katras vietas lapā.</p>
+      <ul class="places-list places-list-profile">
+        {%- for c in saites_data.crossings %}
+        <li class="places-row">
+          <a class="places-name" href="../vietas/{{ c.slug }}.html">{{ c.name }}</a>
+          <span class="places-role">{{ c.role }}</span>
+          <span class="places-when">{{ c.when }}</span>
+          <span class="places-with">{{ "Tā paša gada deklarācijās arī" if c.kind == "organizacija" else "Tajā pašā laikā arī" }}: {{ c.others|join(", ") }}{% if c.others_more %} un vēl {{ c.others_more }}{% endif %}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+
+    {% if not saites_data.uzbrukumi and not saites_data.spriedzes and not saites_data.atbalsts and not saites_data.commentary_about and not saites_data.vote_alignment_top and not saites_data.crossings %}
     <p style="color:var(--text-muted);">Nav saišu datu.</p>
     {% endif %}
 

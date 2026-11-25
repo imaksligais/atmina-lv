@@ -3,11 +3,11 @@ name: Latvijas armija (NBS)
 party: ''
 role: ''
 relationship_type: organization
-positions: 88
+positions: 89
 votes: 0
 contradictions: 0
-mentioned_in: 2957
-last_active: 2026-11-14
+mentioned_in: 3064
+last_active: 2026-11-20
 top_topics:
 - Aizsardzība un drošība
 - Droni
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (59%), [[topics/droni|Droni]] (28%), [[topics/imigracija|Imigrācija]] (7%)
-- **30d:** 19 claims, 1.3× bāzes līnija
+- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (60%), [[topics/droni|Droni]] (28%), [[topics/imigracija|Imigrācija]] (7%)
+- **30d:** 15 claims, 1.1× bāzes līnija
 <!-- /SYNC-AUTO -->

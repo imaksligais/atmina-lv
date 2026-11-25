@@ -162,10 +162,11 @@
   if (hash && validTabs.has(hash)) {
     var hashBtn = document.querySelector('.pp-tabs [data-tab="' + hash + '"]');
     if (hashBtn) showProfileTab(hash, hashBtn);
-  } else if (/^saites-\d+$/.test(hash) && validTabs.has("saites")) {
+  } else if (/^(saites-\d+|kur-celi-krustojas)$/.test(hash) && validTabs.has("saites")) {
     // Dziļā saite uz pāra kartīti (Saites lapa → profils, 2026-10-18):
     // atver Saites cilni, atstāj adresē #saites-<pid> un ritina uz kartīti
     // (tikai pāra pirmajai ir id). Nezināms pid → cilne atvērta, bez ritināšanas.
+    // #kur-celi-krustojas = sadaļa «Kur ceļi krustojas» (vietas lapa → profils).
     var saitesBtn = document.querySelector('.pp-tabs [data-tab="saites"]');
     if (saitesBtn) {
       showProfileTab("saites", saitesBtn);

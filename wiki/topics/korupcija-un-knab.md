@@ -1,10 +1,10 @@
 ---
 topic: Korupcija un KNAB
-positions: 242
+positions: 251
 votes: 6151
-politicians: 67
+politicians: 70
 contradictions: 0
-last_activity: '2026-11-15 00:00:00'
+last_activity: '2026-11-23 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/andris-suvajevs|Andris Šuvajevs]]'

@@ -25,18 +25,23 @@ canonical name (CLAUDE.md §Output Conventions: ``store_claim`` /
 
 from __future__ import annotations
 
+import re
 import sqlite3
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
 from jinja2 import Environment
+from markupsafe import Markup
 
 from src.render._common.contradictions import fetch_contradictions
 from src.render._common import (
     BASE_URL,
     FALLBACK_COLOR,
+    FALLBACK_TOPIC_ICON,
+    PROJECT_ROOT,
     TOPIC_COLORS,
+    TOPIC_ICONS,
     _confidence_tier,
     _domain_label,
     _party_short_name,
@@ -102,6 +107,7 @@ def _fetch_topics(db: sqlite3.Connection) -> list[dict[str, Any]]:
             "name": name,
             "slug": _slugify(name),
             "color": TOPIC_COLORS.get(name, FALLBACK_COLOR),
+            "icon": TOPIC_ICONS.get(name, FALLBACK_TOPIC_ICON),
             "position_count": position_count,
             "contradiction_count": contradiction_count,
             "politician_count": pos["politician_count"] if pos else 0,
@@ -264,6 +270,7 @@ def _fetch_topic_detail(
         "name": name,
         "slug": _slugify(name),
         "color": TOPIC_COLORS.get(name, FALLBACK_COLOR),
+        "icon": TOPIC_ICONS.get(name, FALLBACK_TOPIC_ICON),
         # The directory's own number, reused verbatim (never recomputed with
         # different conditions) so the "Skatīt visas N pozīcijas" archive link
         # can never disagree with the temas.html card. ``latest_positions`` is
@@ -277,6 +284,25 @@ def _fetch_topic_detail(
         "related_bills": related_bills,
         "related_syntheses": related_syntheses,
         "keep_digging": keep_digging,
+    }
+
+
+def _directory_og_card(topics: list[dict[str, Any]]) -> dict[str, Any]:
+    """Tēmu direktorijas OG kartīte: skaitļi ir `temas.html` kartīšu summa, ikonas
+    tajā pašā secībā. Simbolus ņem no `assets/topics.svg` un ieliek inline."""
+    sprite = (PROJECT_ROOT / "assets" / "topics.svg").read_text(encoding="utf-8")
+    symbols = "".join(re.findall(r"<symbol.*?</symbol>", sprite, re.S))
+    return {
+        "kind": "Tēmas",
+        "name": "{value} {label}".format(**og_render.og_stat(len(topics), "tēma", "tēmas")),
+        "lead": "Ko par katru teikuši politiķi, kā balsoja Saeima un kur viņu teiktais mainījies.",
+        "stats": [
+            og_render.og_stat(sum(t["position_count"] for t in topics), "pozīcija", "pozīcijas"),
+            og_render.og_stat(sum(t["contradiction_count"] for t in topics), "pretruna", "pretrunas"),
+        ],
+        "url": "atmina.lv/temas",
+        "symbols": Markup(symbols),
+        "topics": [{"icon": t["icon"], "color": t["color"]} for t in topics],
     }
 
 
@@ -333,6 +359,8 @@ def render_topics(
         )
         og_jobs.append((atmina_dir / "assets" / "og" / "temas" / f"{t['slug']}.png",
                         og_tpl.render(card=card)))
+    og_jobs.append((atmina_dir / "assets" / "og" / "temas.png",
+                    env.get_template("og-temas.html.j2").render(card=_directory_og_card(topics))))
     og_rendered = og_render.render_og_images(og_jobs, atmina_dir)
     print(f"  assets/og/temas/: rendered {og_rendered}/{len(og_jobs)} topic preview PNGs")
 

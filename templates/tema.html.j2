@@ -1,7 +1,7 @@
 {% extends "base.html.j2" %}
 {% set active_page = "temas" %}
 {% set assets_prefix = "../" %}
-{% from "_macros.html.j2" import pagehead, metric, share_buttons %}
+{% from "_macros.html.j2" import pagehead, metric, share_buttons, topic_icon %}
 
 {% block title %}{{ topic.name }}{% endblock %}
 {% block description %}{{ topic.name }} — Latvijas politiķu pozīcijas un pretrunas par šo tēmu atmina.lv.{% endblock %}
@@ -20,10 +20,8 @@
   <div class="tema-detail-back">
     <a href="{{ assets_prefix }}temas.html">← Visas tēmas</a>
   </div>
-{% set tema_kicker %}
-        <span class="tema-card-dot" style="background: {{ topic.color }}" aria-hidden="true"></span> Tēma
-      {% endset %}
-  {% call pagehead(tema_kicker, topic.name, metrics=false) %}
+{% set tema_title %}<span class="tema-h1" style="--topic-color: {{ topic.color }}">{{ topic_icon(topic.icon, assets_prefix) }}<span>{{ topic.name }}</span></span>{% endset %}
+  {% call pagehead("Tēma", tema_title, metrics=false) %}
     {% set tema_share_url = BASE_URL ~ "/temas/" ~ topic.slug ~ ".html" %}
     <div class="share-row">
       {{ share_buttons(tema_share_url, 'Tēma: ' ~ topic.name ~ ' — atmina.lv') }}

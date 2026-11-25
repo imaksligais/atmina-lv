@@ -3,11 +3,11 @@ name: Latvijas valsts meži (LVM)
 party: ''
 role: Valsts mežu apsaimniekotājs (kapitālsabiedrība)
 relationship_type: organization
-positions: 22
+positions: 24
 votes: 0
 contradictions: 0
-mentioned_in: 816
-last_active: 2026-11-13
+mentioned_in: 836
+last_active: 2026-11-23
 top_topics:
 - Mežsaimniecība
 - Digitālā politika
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/mezsaimnieciba|Mežsaimniecība]] (55%), [[topics/digitala-politika|Digitālā politika]] (14%), [[topics/valsts-kapitalsabiedribas|Valsts kapitālsabiedrības]] (14%)
-- **30d:** 2 claims
+- **Top tēmas:** [[topics/mezsaimnieciba|Mežsaimniecība]] (54%), [[topics/digitala-politika|Digitālā politika]] (12%), [[topics/valsts-kapitalsabiedribas|Valsts kapitālsabiedrības]] (12%)
+- **30d:** 3 claims
 <!-- /SYNC-AUTO -->

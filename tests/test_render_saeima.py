@@ -10,7 +10,12 @@ fixture sastāva/rezultātu YAML. Kļūmes, ko tas noķer:
       renderē nepilnu lapu, nevis krīt;
   (e) amati (data/saeima15_amati.yaml) nenonāk lapā: Prezidija bloks ar 5
       saitēm uz #dep-*, frakcijas vadība savā grupā, amata čips rindā un
-      sēdvietas aria-label, gredzens tieši 11 amatpersonu sēdvietām.
+      sēdvietas aria-label, gredzens tieši 11 amatpersonu sēdvietām;
+  (f) koalīcijas lēca neņem statusu no `parties.coalition_status` (vai liek
+      kādu pusi sarakstam, kura partijas DB nav);
+  (g) uzticības balsojuma lēcā deputāts bez balsojuma rindas izskatās kā «pret»;
+  (h) bloks «Valdība» nerāda ministru vai ved uz neesošu valdiba.html rindu
+      (enkurs ≠ ``fetch_cabinet`` enkurs).
 """
 
 from __future__ import annotations
@@ -96,8 +101,48 @@ def _row(html: str, slug: str) -> str:
     return m.group(0)
 
 
+def _seed_confidence_vote(db_path: str, ballots: dict[str, str]) -> None:
+    """Šī sasaukuma uzticības balsojums + coalition_periods rinda, kas uz to rāda."""
+    from src.db import get_db
+    from src.saeima.convocation import SAEIMA_CONVOCATION, base_url
+
+    db = get_db(db_path)
+    vote_id = db.execute(
+        "INSERT INTO saeima_votes (motif, vote_date, vote_time, url, result) "
+        "VALUES ('Uzticības izteikšana Ministru kabinetam', '2026-11-17', '22:27:39', ?, 'Pieņemts')",
+        (base_url(SAEIMA_CONVOCATION) + "/Voting?ReadForm&parentID=test",),
+    ).lastrowid
+    db.execute(
+        "INSERT INTO coalition_periods (valid_from_date, valid_from_time, factions, source_vote_id) "
+        "VALUES ('2026-11-17', '22:27:39', 'AS,NA', ?)",
+        (vote_id,),
+    )
+    for name, vote in ballots.items():
+        pid = db.execute("SELECT id FROM tracked_politicians WHERE name = ?", (name,)).fetchone()[0]
+        db.execute(
+            "INSERT INTO saeima_individual_votes (vote_id, politician_id, deputy_name, vote) VALUES (?, ?, ?, ?)",
+            (vote_id, pid, name, vote),
+        )
+    db.commit()
+    db.close()
+
+
 def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
     from src.render._common import _slugify
+
+    elected_rows = yaml.safe_load(ELECTED.read_text(encoding="utf-8"))["elected"]
+    tracked_all = _tracked_names(fixture_db)
+    # Uzticības balsojums: AS deputātam «Par», PRO deputātam «Pret»; izsekotam NA
+    # deputātam rindas nav (jābūt «nav ieraksta», ne «pret»).
+    def _tracked_from(list_nr: int) -> str:
+        return next(e["name"] for e in elected_rows if e["list_nr"] == list_nr and e["name"] in tracked_all)
+
+    voter_par, voter_pret, no_row = _tracked_from(7), _tracked_from(14), _tracked_from(5)
+    sv_any = next(e["name"] for e in elected_rows if e["list_nr"] == 1)
+    _seed_confidence_vote(fixture_db, {voter_par: "Par", voter_pret: "Pret"})
+    import sqlite3
+    with sqlite3.connect(fixture_db) as c:  # (h) viens zināms ministrs
+        c.execute("UPDATE tracked_politicians SET role = 'Labklājības ministrs' WHERE name = ?", (voter_par,))
 
     html = _render(tmp_path, monkeypatch, fixture_db, ELECTED)
 
@@ -145,6 +190,37 @@ def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
     ringed = set(re.findall(r'<a [^>]*class="seat has-office"[^>]*data-slug="([^"]+)"', html))
     expected = {_slugify(x["name"]) for x in prez + chairs}
     assert len(expected) == 11 and ringed == expected, f"gredzens {len(ringed)} sēdvietām, gaidīts 11"
+
+    # (f) koalīcija no fixture `parties.coalition_status`: AS (id 6) = coalition,
+    # PRO (id 2) = opposition; SV-AJ (party_id 19 fixture DB nav) = «nav datu».
+    assert 'data-lens="koalicija"' in html and 'data-lens="uzticiba"' in html, "valdības lēcu pogu nav"
+    assert 'data-gov="koalicija"' in _seat(html, voter_par)
+    assert 'data-gov="opozicija"' in _seat(html, voter_pret)
+    assert 'data-gov="nav"' in _seat(html, sv_any)
+    assert re.search(r'data-lens-val="gov"[^>]*>\s*opozīcija\s*<', _row(html, _slugify(voter_pret)))
+
+    # (g) uzticības balss: rinda → sava vērtība; nav rindas → «nav ieraksta», nekad «pret».
+    assert 'data-uzt="par"' in _seat(html, voter_par)
+    assert 'data-uzt="pret"' in _seat(html, voter_pret)
+    for name in (no_row, untracked[0]):
+        assert 'data-uzt="nav"' in _seat(html, name), f"{name}: bez rindas jābūt data-uzt=nav"
+        r = _row(html, _slugify(name))
+        assert re.search(r'data-lens-val="uzt"[^>]*>\s*nav ieraksta\s*<', r), f"{name}: rindā nav «nav ieraksta»"
+        assert "balsoja pret" not in r, f"{name}: bez rindas rādīts «balsoja pret»"
+    assert re.search(r'data-lens-val="uzt"[^>]*>\s*balsoja pret\s*<', _row(html, _slugify(voter_pret)))
+    assert "Dati par 2 no 100" in html, "uzticības lēcas saucējs nav 2 no 100"
+
+    # (h) Valdība: ministrs rindā ar saiti uz SAVU rindu valdiba.html (tas pats enkurs).
+    from src.db import get_db
+    from src.render.valdiba import fetch_cabinet
+
+    gov_block = re.search(r'<section class="slv-gov".*?</section>', html, re.S)
+    assert gov_block, "bloka «Valdība» nav"
+    cabinet, _ = fetch_cabinet(get_db(fixture_db))
+    lab = next(r for r in cabinet if r["post"] == "Labklājības ministrija")
+    row = re.search(r'<a class="slv-gov-row" href="valdiba\.html#' + re.escape(lab["anchor"]) + r'">.*?</a>',
+                    gov_block.group(0), re.S)
+    assert row and voter_par in row.group(0), "ministrs nav rindā ar saiti uz savu valdiba.html rindu"
 
 
 def test_saeima_incomplete_composition_fails(tmp_path, monkeypatch, fixture_db):

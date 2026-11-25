@@ -14,18 +14,10 @@ from pathlib import Path
 from urllib.parse import quote
 
 import pytest
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
-from src.image_variants import variant_filename as _brief_image_variant
-from src.render import _common
-from src.render._common import (
-    _autolink_bills_filter,
-    _lv_plural,
-    _party_short_name,
-    _safe_json_filter,
-    _safe_url_filter,
-    _slugify,
-)
+from src.render._common import _slugify
+from src.render._orchestrator import _make_env
 from src.render.syntheses import _normalize_synthesis_topics
 from src.render.topics import RELATED_TOPICS, _fetch_topics, render_topics
 from src.topic_map import TOPIC_GROUPS
@@ -66,21 +58,11 @@ def fixture_db(tmp_path_factory):
 
 
 def _build_env() -> Environment:
-    """Jinja env with the same filters/globals the orchestrator registers
-    (src/render/_orchestrator.py ~lines 286-299)."""
-    env = Environment(
-        loader=FileSystemLoader(_common.TEMPLATES_DIR),
-        autoescape=True,
-    )
+    """The orchestrator's own Jinja env, with test-only overrides."""
+    env = _make_env()
     env.filters["lv_date"] = lambda s: (
         f"{s[8:10]}.{s[5:7]}.{s[:4]}" if s and len(s) >= 10 and "-" in s else s or ""
     )
-    env.filters["safe_json"] = _safe_json_filter
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["autolink_bills"] = _autolink_bills_filter
-    env.filters["image_variant"] = _brief_image_variant
-    env.filters["lv_plural"] = _lv_plural
-    env.globals["_party_short_name"] = _party_short_name
     env.globals["bill_slugs"] = set()
     env.globals["assets_version"] = "test"
     return env
@@ -139,6 +121,39 @@ def test_directory_page_lists_topic_cards(fixture_db, tmp_path):
     # Directory links to each non-empty topic's detail page.
     for t in non_empty:
         assert f'href="temas/{t["slug"]}.html"' in text
+    # Saites priekšskatījums: direktorijai savs attēls (ikonu režģis), ne vietnes
+    # vispārīgais — un fails, uz ko lapa atsaucas, ir kokā.
+    assert '<meta property="og:image" content="https://atmina.lv/assets/og/temas.png">' in text
+    assert (atmina_dir / "assets" / "og" / "temas.png").exists()
+
+
+def test_every_topic_shows_an_icon_that_exists_in_the_sprite(fixture_db, tmp_path):
+    """Tēmas ikona: direktorijas kartītē un tēmas lapas galvenē ir `<use>` uz
+    simbolu, kas `assets/topics.svg` tiešām ir. Kļūme, ko tas sargā: jauna tēma
+    vai pārsaukta ikona bez pārbūvēta sprite — lapā paliek tukšs kvadrātiņš."""
+    from src.render._common.constants import TOPIC_COLORS, TOPIC_ICONS
+
+    sprite = (Path(__file__).resolve().parent.parent / "assets" / "topics.svg").read_text(
+        encoding="utf-8"
+    )
+    symbols = set(re.findall(r'<symbol id="ti-([a-z0-9-]+)"', sprite))
+    assert set(TOPIC_ICONS) == set(TOPIC_COLORS), "katrai tēmai krāsa un ikona"
+    assert set(TOPIC_ICONS.values()) <= symbols, set(TOPIC_ICONS.values()) - symbols
+
+    atmina_dir = tmp_path / "atmina"
+    atmina_dir.mkdir(parents=True)
+    render_topics(_build_env(), fixture_db, atmina_dir)
+
+    non_empty = _fetch_topics(fixture_db)
+    directory = (atmina_dir / "temas.html").read_text(encoding="utf-8")
+    used = re.findall(r'<use href="assets/topics\.svg\?v=test#ti-([a-z0-9-]+)"', directory)
+    assert len(used) == len(non_empty) > 0
+    assert set(used) <= symbols
+
+    slug = non_empty[0]["slug"]
+    detail = (atmina_dir / "temas" / f"{slug}.html").read_text(encoding="utf-8")
+    icon = TOPIC_ICONS[non_empty[0]["name"]]
+    assert f'<use href="../assets/topics.svg?v=test#ti-{icon}"' in detail
 
 
 def test_fetch_topics_only_non_empty_groups(fixture_db):

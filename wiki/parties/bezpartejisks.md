@@ -1,12 +1,12 @@
 ---
 party: Bezpartejisks
-members: 7
-claims: 646
+members: 10
+claims: 777
 program_promises: 0
 contradictions: 1
-votes_par: 9820
-votes_pret: 3142
-votes_atturas: 2483
+votes_par: 4928
+votes_pret: 1698
+votes_atturas: 1205
 top_politicians:
 - Edgars Rinkēvičs
 - Matīss Žuravļevs
@@ -15,10 +15,10 @@ top_politicians:
 - Igors Rajevs
 top_topics:
 - Aizsardzība un drošība
-- Veselības aprūpe
 - Ukraina un Krievija
+- Veselības aprūpe
 - Koalīcija un partijas
-- Sociālā politika
+- Imigrācija
 ---
 
 <!-- SYNC-AUTO -->
@@ -27,8 +27,11 @@ top_topics:
 - [[persons/edgars-rinkevics|Edgars Rinkēvičs]]
 - [[persons/hosams-abu-meri|Hosams Abu Meri]]
 - [[persons/igors-rajevs|Igors Rajevs]]
-- [[persons/ilze-vergina|Ilze Vergina]]
+- [[persons/kriss-lipsans|Krišs Lipšāns]]
+- [[persons/karlis-purgailis|Kārlis Purgailis]]
 - [[persons/matiss-zuravlevs|Matīss Žuravļevs]]
+- [[persons/normunds-stanevics|Normunds Staņēvičs]]
 - [[persons/raivis-melnis|Raivis Melnis]]
 - [[persons/reinis-uzulnieks|Reinis Uzulnieks]]
+- [[persons/girts-jaunzems|Ģirts Jaunzems]]
 <!-- /SYNC-AUTO -->

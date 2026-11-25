@@ -3,6 +3,9 @@
 // Meklēšana bez garumzīmēm — tas pats fold kā bmv1.js::foldText. Teksts
 // normalizēts vienreiz ielādē, ievadē — tikai vaicājums.
 (function () {
+  // Tūkstošu atstarpe — kopīgā window.atminaFmtN (assets/sgv1.js). Tas ir defer,
+  // šis fails nav, tāpēc meklē izsaukuma brīdī.
+  function fmtN(n) { return window.atminaFmtN ? window.atminaFmtN(n) : String(n); }
   var selectedTopics = new Set();
   var selectedStatus = '';
   var hiddenTypes = new Set();
@@ -30,7 +33,7 @@
       card.style.display = ok ? '' : 'none';
       if (ok) visible++;
     });
-    document.getElementById('bills-count').textContent = 'Rāda ' + visible + ' no ' + total;
+    document.getElementById('bills-count').textContent = 'Rāda ' + fmtN(visible) + ' no ' + fmtN(total);
     document.getElementById('bills-empty-state').style.display = visible === 0 ? 'block' : 'none';
   }
 

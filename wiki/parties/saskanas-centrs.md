@@ -1,7 +1,7 @@
 ---
 party: Saskaņas Centrs
 members: 1
-claims: 5
+claims: 7
 program_promises: 15
 contradictions: 0
 votes_par: 0

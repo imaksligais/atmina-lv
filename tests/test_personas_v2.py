@@ -4,6 +4,7 @@ import sqlite3
 
 from src.render._common import _persona_category
 from src.render.personas import _fetch_personas, _fetch_personas_metrics, _persona_sort_name
+from src.render._orchestrator import _make_env
 
 
 class TestPersonaSortName:
@@ -268,10 +269,7 @@ class TestSaeima15Flags:
     def _render(self, tmp_path):
         import re
 
-        from jinja2 import Environment, FileSystemLoader
 
-        from src.render._orchestrator import _safe_url_filter
-        from src.render._common import _lv_number
         from src.render.personas import render_personas
 
         db = _build_personas_db()
@@ -303,9 +301,7 @@ class TestSaeima15Flags:
         cohort = tmp_path / "cohort.yaml"
         cohort.write_text("- name: Jauna Deputāte\n- name: Arī Nav DB\n", encoding="utf-8")
 
-        env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-        env.filters["safe_url"] = _safe_url_filter
-        env.filters["lv_number"] = _lv_number
+        env = _make_env()
         env.globals["assets_version"] = "test"
         render_personas(env, db, tmp_path, elected_path=elected, cohort_path=cohort)
         html = (tmp_path / "personas.html").read_text(encoding="utf-8")

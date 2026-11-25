@@ -3,11 +3,11 @@ name: Jānis Dombrava
 party: Nacionālā apvienība
 role: Iekšlietu ministrs
 relationship_type: tracked
-positions: 300
-votes: 6158
+positions: 307
+votes: 6167
 contradictions: 0
-mentioned_in: 4498
-last_active: 2026-11-16
+mentioned_in: 4730
+last_active: 2026-11-24
 top_topics:
 - Imigrācija
 - Aizsardzība un drošība
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/imigracija|Imigrācija]] (51%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (17%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (7%)
-- **30d:** 35 claims, 0.8× bāzes līnija
-- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (6 politikas nostāju konflikts), [[persons/ainars-slesers|Ainārs Šlesers]] (2 spriedzes), [[persons/baiba-braze|Baiba Braže]] (2 spriedzes)
+- **Top tēmas:** [[topics/imigracija|Imigrācija]] (51%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (18%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (7%)
+- **30d:** 34 claims, 0.8× bāzes līnija
+- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (7 politikas nostāju konflikts), [[persons/ainars-slesers|Ainārs Šlesers]] (2 spriedzes), [[persons/baiba-braze|Baiba Braže]] (2 spriedzes)
 <!-- /SYNC-AUTO -->

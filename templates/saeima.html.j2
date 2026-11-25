@@ -21,6 +21,18 @@
       {% if s.office %}<div class="slv-office">{{ s.office }}</div>{% endif %}
     </div>
   </div>
+  {%- if gov %}
+  <dl class="slv-facts slv-facts-gov">
+    <div class="slv-fact">
+      <dt>Koalīcija vai opozīcija</dt>
+      <dd>{{ s.gov_text }}</dd>
+    </div>
+    <div class="slv-fact">
+      <dt>Uzticības balsojums {{ gov.date_short }}</dt>
+      <dd>{{ s.uzt_text }}</dd>
+    </div>
+  </dl>
+  {%- endif %}
   {% if s.tracked %}
   <dl class="slv-facts">
     <div class="slv-fact">
@@ -63,8 +75,12 @@
       {{ metric("Ar profilu", tracked_n) }}
   {%- endcall %}
 
-  <div class="slv-lenses seg-ctl" role="group" aria-label="Ko rāda krāsas" hidden>
+  <div class="slv-lenses seg-ctl{% if gov %} has-gov{% endif %}" role="group" aria-label="Ko rāda krāsas" hidden>
     <button type="button" class="seg-ctl-btn slv-lens" data-lens="saraksts" aria-pressed="true">Saraksts</button>
+    {%- if gov %}
+    <button type="button" class="seg-ctl-btn slv-lens" data-lens="koalicija" aria-pressed="false">Koalīcija</button>
+    <button type="button" class="seg-ctl-btn slv-lens" data-lens="uzticiba" aria-pressed="false"><span class="slv-long">Uzticības balsojums</span><span class="slv-short">Uzticība</span></button>
+    {%- endif %}
     <button type="button" class="seg-ctl-btn slv-lens" data-lens="v14" aria-pressed="false"><span class="slv-long">Balsoja </span>{{ vote_convocation }}. Saeimā</button>
     <button type="button" class="seg-ctl-btn slv-lens" data-lens="pozicijas" aria-pressed="false">Pozīcijas</button>
     <button type="button" class="seg-ctl-btn slv-lens" data-lens="pretrunas" aria-pressed="false">Pretrunas</button>
@@ -75,7 +91,7 @@
       <div class="slv-arc">
         <svg class="slv-svg" viewBox="-212 -212 424 222" role="group" aria-label="15. Saeimas sēdvietas pa sarakstiem">
           {%- for s in seats %}
-          <a href="#dep-{{ s.slug }}" class="seat{% if s.ring %} has-office{% endif %}" data-slug="{{ s.slug }}" data-list="{{ s.list.nr }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}" aria-label="{{ s.name }}, {{ s.list.short }}{% if s.office %}, {{ s.office }}{% endif %}" style="--seat-list:{{ s.list.color }}"><title>{{ s.name }} · {{ s.list.short }}{% if s.office %} · {{ s.office }}{% endif %}</title><circle class="seat-hit" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ hit_r }}"/><circle class="seat-dot" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ dot_r }}"/>{% if s.ring %}<circle class="seat-ring" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ ring_r }}"/>{% endif %}</a>
+          <a href="#dep-{{ s.slug }}" class="seat{% if s.ring %} has-office{% endif %}" data-slug="{{ s.slug }}" data-list="{{ s.list.nr }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}"{% if gov %} data-gov="{{ s.gov }}" data-uzt="{{ s.uzt }}"{% endif %} aria-label="{{ s.name }}, {{ s.list.short }}{% if s.office %}, {{ s.office }}{% endif %}" style="--seat-list:{{ s.list.color }}"><title>{{ s.name }} · {{ s.list.short }}{% if s.office %} · {{ s.office }}{% endif %}</title><circle class="seat-hit" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ hit_r }}"/><circle class="seat-dot" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ dot_r }}"/>{% if s.ring %}<circle class="seat-ring" cx="{{ s.x }}" cy="{{ s.y }}" r="{{ ring_r }}"/>{% endif %}</a>
           {%- endfor %}
         </svg>
         <div class="slv-center" aria-hidden="true">
@@ -86,6 +102,10 @@
 
       <p class="slv-summary">
         <span data-lens-for="saraksts">{{ total }} deputāti no {{ lists|length }} sarakstiem</span>
+        {%- if gov %}
+        <span data-lens-for="koalicija">{{ gov.counts.koalicija }} no {{ total }} deputātiem ir valdības koalīcijā</span>
+        <span data-lens-for="uzticiba">Uzticības balsojumā {{ gov.date_short }}: {{ gov.uzt_counts.par }} par, {{ gov.uzt_counts.pret }} pret{% if gov.uzt_counts.atturas %}, {{ gov.uzt_counts.atturas }} atturas{% endif %}</span>
+        {%- endif %}
         <span data-lens-for="v14">{{ voted_n }} no {{ total }} balsoja arī {{ vote_convocation }}. Saeimā</span>
         <span data-lens-for="pozicijas">{{ pos_total_text }} {{ pos_total|lv_plural("pozīcija", "pozīcijas") }} pēdējās {{ window_days }} dienās</span>
         <span data-lens-for="pretrunas">{% if ctr_people %}{{ ctr_people }} {{ ctr_people|lv_plural("deputātam", "deputātiem") }} ir publicētas pretrunas{% else %}Publicētu pretrunu nav{% endif %}</span>
@@ -97,6 +117,26 @@
         </ul>
         <p class="slv-legend-note">Krāsa — saraksts, no kura deputāts ievēlēts. Kārtība — pēc saņemto vietu skaita, ne pēc politiskā spektra. Dati par {{ total }} no {{ total }}.</p>
       </div>
+      {%- if gov %}
+      <div class="slv-legend" data-lens-for="koalicija">
+        <ul class="slv-keys">
+          <li><span class="slv-key slv-key-gov-k" aria-hidden="true"></span>koalīcija <span class="slv-key-n">{{ gov.counts.koalicija }}</span></li>
+          <li><span class="slv-key slv-key-gov-o" aria-hidden="true"></span>opozīcija <span class="slv-key-n">{{ gov.counts.opozicija }}</span></li>
+          {% if gov.counts.nav %}<li><span class="slv-key slv-key-nav" aria-hidden="true"></span>nav datu <span class="slv-key-n">{{ gov.counts.nav }}</span></li>{% endif %}
+        </ul>
+        <p class="slv-legend-note">Krāsa rāda, vai deputāta saraksta partija ir valdības koalīcijā. Valdībai uzticību Saeima izteica {{ gov.date }}{% if gov.coalition_text %}; koalīcijā ir {{ gov.coalition_text }}{% endif %}. Dati par {{ gov.known_n }} no {{ total }}. <a href="{{ gov.url|safe_url }}" target="_blank" rel="noopener">Balsojums ↗</a></p>
+      </div>
+      <div class="slv-legend" data-lens-for="uzticiba">
+        <ul class="slv-keys">
+          <li><span class="slv-key slv-key-uzt-par" aria-hidden="true"></span>par <span class="slv-key-n">{{ gov.uzt_counts.par }}</span></li>
+          <li><span class="slv-key slv-key-uzt-pret" aria-hidden="true"></span>pret <span class="slv-key-n">{{ gov.uzt_counts.pret }}</span></li>
+          {% if gov.uzt_counts.atturas %}<li><span class="slv-key slv-key-uzt-atturas" aria-hidden="true"></span>atturas <span class="slv-key-n">{{ gov.uzt_counts.atturas }}</span></li>{% endif %}
+          <li><span class="slv-key slv-key-uzt-nebalsoja" aria-hidden="true"></span>nebalsoja <span class="slv-key-n">{{ gov.uzt_counts.nebalsoja }}</span></li>
+          {% if gov.uzt_counts.nav %}<li><span class="slv-key slv-key-nav" aria-hidden="true"></span>nav ieraksta <span class="slv-key-n">{{ gov.uzt_counts.nav }}</span></li>{% endif %}
+        </ul>
+        <p class="slv-legend-note">Katra deputāta balss, kad Saeima {{ gov.date }} lēma par uzticību Ministru kabinetam. Rāda ievēlēto sastāvu balsojuma brīdī; vēlāk ministru vietā Saeimā nāks aizstājēji.{% if gov.uzt_counts.nav %} «Nav ieraksta»: mūsu balsojuma datos šim deputātam balss nav.{% endif %} Dati par {{ gov.rows_n }} no {{ total }}. <a href="{{ gov.url|safe_url }}" target="_blank" rel="noopener">Balsojums ↗</a></p>
+      </div>
+      {%- endif %}
       <div class="slv-legend" data-lens-for="v14">
         <ul class="slv-keys">
           <li><span class="slv-key slv-key-v14-ja" aria-hidden="true"></span>balsoja <span class="slv-key-n">{{ voted_n }}</span></li>
@@ -161,6 +201,28 @@
     <p class="slv-prez-note">Amati pēc saeima.lv datiem{% if offices_checked %}, pārbaudīti {{ offices_checked }}{% endif %}: <a href="{{ presidium_source_url|safe_url }}" target="_blank" rel="noopener">Prezidijs ↗</a> · <a href="{{ factions_source_url|safe_url }}" target="_blank" rel="noopener">frakcijas ↗</a></p>
   </section>
 
+  {% if cabinet %}
+  <section class="slv-gov" aria-labelledby="slv-gov-title">
+    <div class="section-head">
+      <div>
+        <div class="section-head-kicker">Ministru kabinets</div>
+        <h2 class="section-head-title" id="slv-gov-title">Valdība</h2>
+      </div>
+      <a class="section-head-link" href="valdiba.html">Valdības lapa &rsaquo;</a>
+    </div>
+    <div class="slv-gov-head" aria-hidden="true"><span>Amats</span><span>Ministrs</span><span>Partija</span></div>
+    <ul class="slv-gov-list" role="list">
+      {% for c in cabinet %}
+      <li><a class="slv-gov-row" href="valdiba.html#{{ c.anchor }}">
+        <span class="slv-gov-post">{{ c.post }}</span>
+        <span class="slv-gov-name">{{ c.name }}</span>
+        <span class="slv-gov-party">{{ c.party_short or "—" }}</span>
+      </a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   <section class="slv-lists" aria-labelledby="slv-lists-title">
     <div class="section-head">
       <div>
@@ -182,7 +244,7 @@
       {% endif %}
       <div class="slv-deps">
         {% for s in l.members %}
-        <details class="slv-dep" id="dep-{{ s.slug }}" data-slug="{{ s.slug }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}">
+        <details class="slv-dep" id="dep-{{ s.slug }}" data-slug="{{ s.slug }}" data-v14="{% if s.voted14 %}ja{% else %}ne{% endif %}" data-pos="{{ s.pos_bucket }}" data-ctr="{{ s.ctr_bucket }}"{% if gov %} data-gov="{{ s.gov }}" data-uzt="{{ s.uzt }}"{% endif %}>
           <summary class="slv-dep-sum">
             <span class="slv-dep-dot" aria-hidden="true"></span>
             {% if s.has_photo %}<img class="slv-dep-avatar" src="assets/photos/{{ s.slug }}.jpg" alt="" loading="lazy" decoding="async" width="36" height="36">{% else %}<span class="slv-dep-avatar slv-dep-avatar-ph" aria-hidden="true">{{ s.name.split()|map('first')|join('')|upper }}</span>{% endif %}
@@ -190,6 +252,10 @@
               <span class="slv-dep-name">{{ s.name }}</span>
               {% if s.office_row %}<span class="slv-dep-role">{{ s.office_row }}</span>{% else %}<span class="slv-dep-region">{{ s.region }}</span>{% endif %}
             </span>
+            {%- if gov %}
+            <span class="slv-val" data-lens-val="gov">{{ s.gov_text }}</span>
+            <span class="slv-val" data-lens-val="uzt">{{ s.uzt_text }}</span>
+            {%- endif %}
             <span class="slv-val" data-lens-val="v14">{{ s.v14_text }}</span>
             <span class="slv-val" data-lens-val="pos">{{ s.pos_text }}</span>
             <span class="slv-val" data-lens-val="ctr">{{ s.ctr_text }}</span>

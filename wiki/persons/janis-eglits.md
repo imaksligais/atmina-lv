@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (14%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (10%), [[topics/imigracija|Imigrācija]] (10%)
-- **30d:** 3 claims, 0.4× bāzes līnija
+- **30d:** 1 claims, 0.1× bāzes līnija
 - **Spriedzes:** [[persons/zanda-kalnina-lukasevica|Zanda Kalniņa-Lukaševica]] (1 spriedze), [[persons/linda-liepina|Linda Liepiņa]] (1 spriedze)
 <!-- /SYNC-AUTO -->

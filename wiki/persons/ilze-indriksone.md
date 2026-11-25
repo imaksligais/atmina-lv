@@ -1,24 +1,24 @@
 ---
 name: Ilze Indriksone
 party: Nacionālā apvienība
-role: Izglītības un zinātnes ministre
+role: Labklājības ministre
 relationship_type: tracked
-positions: 165
-votes: 5300
+positions: 172
+votes: 5309
 contradictions: 1
-mentioned_in: 1980
-last_active: 2026-11-16
+mentioned_in: 2080
+last_active: 2026-11-24
 top_topics:
-- Izglītība
 - Koalīcija un partijas
+- Izglītība
 - Budžets un finanses
-- Valsts pārvalde
 - Imigrācija
+- Valsts pārvalde
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/izglitiba|Izglītība]] (29%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (28%), [[topics/budzets-un-finanses|Budžets un finanses]] (8%)
-- **30d:** 34 claims, 1.3× bāzes līnija
+- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (28%), [[topics/izglitiba|Izglītība]] (28%), [[topics/budzets-un-finanses|Budžets un finanses]] (8%)
+- **30d:** 41 claims, 1.7× bāzes līnija
 - **Spriedzes:** [[persons/janis-dombrava|Jānis Dombrava]] (1 atbalsts), [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/inga-berzina|Inga Bērziņa]] (1 spriedze)
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/koalicija-un-partijas|Koalīcija un partijas]], 2026-05-11
 <!-- /SYNC-AUTO -->

@@ -1,7 +1,7 @@
 # Melnraksts. Avoti un datumi pārņemti tikai no četriem norādītajiem rakstiem.
 slug: saites-visvanati-2026
 title: 'Kas ar ko saistīts: pilsonības, institūts un uzņēmumi'
-data_date: '2026-11-09'
+data_date: '2026-11-20'
 draft: false
 articles:
   visvanati-pilsoniba-2026: Divas Saeimas pilsonības vienai ģimenei
@@ -57,7 +57,7 @@ zones:
 - id: zoar
   name: Kaimanu salas · Honkonga
   kind: foreign
-  note: Atsevišķi uzņēmumi. Darījumā paredzētās saites nav pabeigts darījums.
+  note: Atsevišķi uzņēmumi. Darījums noslēgts 2026. gada 17. novembrī.
   box:
   - 410
   - 445
@@ -528,7 +528,7 @@ entities:
   pos:
   - 610
   - 615
-  summary: Plānotā apvienošanās ar Zoar.
+  summary: Apvienojās ar Zoar 2026. gada 17. novembrī.
   not_claimed: Saite nav pārkāpums.
   zone: zoar
   label: ASV biržas uzņēmums
@@ -538,10 +538,10 @@ entities:
   pos:
   - 610
   - 715
-  summary: Akciju sadalījums tikai pēc darījuma.
+  summary: Akciju sadalījums pēc darījuma.
   not_claimed: Saite nav pārkāpums.
   zone: zoar
-  label: Plānots, nav pabeigts
+  label: Darījums noslēgts 17.11.2026
 - id: akcionari21
   type: aggregate
   name: 21 akcionārs pa 50 000 €
@@ -742,20 +742,19 @@ links:
     label: VID deklarācijas
     url: https://www6.vid.gov.lv/VAD
   article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
-  caveat: Šeit neapstiprinām amata turpinājumu 2026. gadā.
+  caveat: UR informācijas portālā 2026. gada 20. novembrī viņa ir padomes priekšsēdētāja (iecelta 2012. gada 3. jūlijā).
 - id: s13
   from: kanans
   to: lza-ei
   verb: ir padomes loceklis
-  period: 2026. gada ziņojums; iecelšanas datums nav zināms
-  tier: 2
+  period: UR ieraksts par iecelšanu — 2024. gada 22. aprīlī
+  tier: 1
   kind: amats
   source:
-    label: SEC · F-4/A
-    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226045654/formf-4a.htm
+    label: UR publikācija Nr. 48015
+    url: https://info.ur.gov.lv/#/publications/48015
   article: lza-ieteikums-ekonomikas-instituts-2026#viens-uznemums-tris-lomas
-  caveat: Pēc Zoar ziņojuma SEC; 30. oktobrī to LTV apstiprināja arī pats institūts (LSM). Viņa uzņēmuma Dr Ashleys komandas lapā 2023.–2024. gadā viņš nosaukts arī par institūta «Director & senior researcher»; institūta komandas lapā viņa nav.
-  quote: a member of the council of the Institute of Economics, Latvian Academy of Science
+  caveat: Amats minēts arī Zoar ziņojumā SEC, un 30. oktobrī LTV to apstiprināja pats institūts (LSM). Viņa uzņēmuma Dr Ashleys komandas lapā jau 2023. gadā viņš nosaukts par padomes locekli un arī par institūta «Director & senior researcher»; institūta komandas lapā viņa nav. Amats pats par sevi nepierāda, ka viņš piedalījās sievas ieteikuma sagatavošanā.
 - id: s14
   from: hoppstaedter
   to: lza-ei
@@ -1223,39 +1222,37 @@ links:
 - id: s54
   from: kanans
   to: apvienotais
-  verb: pēc darījuma būtu aptuveni 93,32 % akciju īpašnieks
-  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  verb: kontrolē balsu vairākumu
+  period: Kopš darījuma noslēgšanas 2026. gada 17. novembrī
   tier: 1
   kind: zoar
   source:
-    label: SEC · F-4/A · 21.10.2026
-    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+    label: SEC · Impact 8-K · 17.11.2026
+    url: https://www.sec.gov/Archives/edgar/data/1834105/000149315226053017/form8-k.htm
   article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
-  caveat: Tikai pēc darījuma noslēgšanas, nevis pašreizējs akciju sadalījums.
+  caveat: Impact ziņojumā viņa daļa ir ap 94,02 %, Zoar paziņojumā — ap 93,32 %; kāpēc procenti atšķiras, ziņojumi nepaskaidro.
 - id: s55
   from: zoar-ltd
   to: impact
-  verb: pēc plānotā darījuma kļūtu par mātesuzņēmumu
-  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  verb: ir mātesuzņēmums
+  period: Kopš darījuma noslēgšanas 2026. gada 17. novembrī
   tier: 1
   kind: zoar
   source:
-    label: SEC · F-4/A · 21.10.2026
-    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+    label: SEC · Impact 8-K · 17.11.2026
+    url: https://www.sec.gov/Archives/edgar/data/1834105/000149315226053017/form8-k.htm
   article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
-  caveat: Darījums nav pabeigts.
 - id: s56
   from: zoar-ltd
   to: zoar-labs
-  verb: pēc plānotā darījuma kļūtu par mātesuzņēmumu
-  period: Plānots; ziņojums — 2026. gada 21. oktobrī
+  verb: ir mātesuzņēmums
+  period: Kopš darījuma noslēgšanas 2026. gada 17. novembrī
   tier: 1
   kind: zoar
   source:
-    label: SEC · F-4/A · 21.10.2026
-    url: https://www.sec.gov/Archives/edgar/data/2078148/000149315226047960/formf-4a.htm
+    label: SEC · Impact 8-K · 17.11.2026
+    url: https://www.sec.gov/Archives/edgar/data/1834105/000149315226053017/form8-k.htm
   article: visvanati-pilsoniba-2026#zoar-darijums-asv-birza
-  caveat: Darījums nav pabeigts.
 - id: s57
   from: zoar-labs
   to: zoar-hk

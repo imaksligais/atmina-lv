@@ -1,15 +1,15 @@
 ---
 party: MMN
 members: 9
-claims: 579
+claims: 595
 program_promises: 25
 contradictions: 0
 votes_par: 4310
 votes_pret: 845
 votes_atturas: 283
 top_politicians:
-- Alvis Hermanis
 - Jāzeps Baško
+- Alvis Hermanis
 - Jānis Hermanis
 - Edvarts Krusts
 - Aleksandrs Kiršteins

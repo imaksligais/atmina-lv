@@ -26,6 +26,7 @@ from src.render.politicians import (
     _profile_tab_set,
     _top_contradiction_block,
 )
+from src.render._orchestrator import _make_env
 
 
 # ── relative time formatting ────────────────────────────────────────
@@ -467,10 +468,8 @@ def test_profile_shows_faction_alignment_block(tmp_path):
     """E2E: īsts DB → _fetch_politician_detail → politician.html.j2.
     Sargā, ka skaitlis nonāk lapā ar saucēju un ka bloks pats atver Pārskata
     cilni. Kolēģi bez politician_id (nesaskaņoti) skaitās «citos»."""
-    from jinja2 import Environment, FileSystemLoader
 
     from src.db import get_db, init_db
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.politicians import _fetch_politician_detail
     from src.saeima import init_saeima_tables
 
@@ -498,9 +497,7 @@ def test_profile_shows_faction_alignment_block(tmp_path):
     db.close()
     assert "parskats" in detail["tab_set"]
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     html = env.get_template("politician.html.j2").render(
         politician={"id": pid, "name": "Ieva Tests", "slug": "ieva-tests", "party": "JV",

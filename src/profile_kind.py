@@ -96,6 +96,19 @@ _LEFT_OFFICE_RE = re.compile(r"atkāp|demisionēj|atbrīvot")
 _NOT_MINISTER_MARKERS = ("padomniek", "parlamentār", "kandidāt", "ministrijas")
 
 
+def active_role_chunks(role: Optional[str]) -> list[str]:
+    """``role`` daļas (pēc komata), kas apraksta PAŠREIZĒJU amatu, mazajiem burtiem.
+
+    Izmet «bijušais …» un amatu atstājušā daļas — tas pats noteikums, ko lieto
+    ``derive_profile_kind``.
+    """
+    chunks = [c.strip().lower() for c in (role or "").split(",")]
+    return [
+        c for c in chunks
+        if c and not _BIJUS_PREFIX_RE.match(c) and not _LEFT_OFFICE_RE.search(c)
+    ]
+
+
 def derive_profile_kind(
     relationship_type: str,
     role: Optional[str],
@@ -121,12 +134,8 @@ def derive_profile_kind(
     if relationship_type == "neutral":
         return "analyst"
 
-    chunks = [c.strip() for c in (role or "").split(",")]
-    active_chunks = [
-        c for c in chunks
-        if not _BIJUS_PREFIX_RE.match(c.lower()) and not _LEFT_OFFICE_RE.search(c.lower())
-    ]
-    active_role = ", ".join(active_chunks).lower()
+    active_chunks = active_role_chunks(role)
+    active_role = ", ".join(active_chunks)
 
     # «ministr» apakšvirkne viena pati ieliek ministros arī padomniekus,
     # parlamentāros sekretārus un premjera amata kandidātus (2026-10-07) —

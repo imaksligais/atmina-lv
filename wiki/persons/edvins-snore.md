@@ -3,11 +3,11 @@ name: Edvīns Šnore
 party: Nacionālā apvienība
 role: Saeimas deputāts, Iekšlietu ministrijas parlamentārais sekretārs
 relationship_type: tracked
-positions: 79
-votes: 7664
+positions: 80
+votes: 7686
 contradictions: 0
-mentioned_in: 940
-last_active: 2026-11-01
+mentioned_in: 953
+last_active: 2026-11-21
 top_topics:
 - Imigrācija
 - Ukraina un Krievija
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/imigracija|Imigrācija]] (24%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (16%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (13%)
-- **30d:** 7 claims, 0.9× bāzes līnija
+- **Top tēmas:** [[topics/imigracija|Imigrācija]] (24%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (16%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (12%)
+- **30d:** 2 claims, 0.2× bāzes līnija
 - **Spriedzes:** [[persons/evika-silina|Evika Siliņa]] (2 uzbrukumi), [[persons/antonina-nenaseva|Antoņina Ņenaševa]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

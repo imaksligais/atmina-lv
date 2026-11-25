@@ -4,21 +4,21 @@ party: JKP
 role: Bijušais Valsts kancelejas direktors; 15. Saeimas vēlēšanās bija JKP premjera
   amata kandidāts
 relationship_type: tracked
-positions: 19
+positions: 21
 votes: 0
 contradictions: 0
-mentioned_in: 229
-last_active: 2026-10-29
+mentioned_in: 233
+last_active: 2026-11-24
 top_topics:
 - Valsts pārvalde
 - Korupcija un KNAB
 - Vēlēšanas
 - Aizsardzība un drošība
-- ES politika
+- Budžets un finanses
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/valsts-parvalde|Valsts pārvalde]] (37%), [[topics/korupcija-un-knab|Korupcija un KNAB]] (32%), [[topics/velesanas|Vēlēšanas]] (11%)
-- **30d:** 1 claims, 0.2× bāzes līnija
-- **Spriedzes:** [[persons/kaspars-gorkss|Kaspars Gorkšs]] (1 atbalsts)
+- **Top tēmas:** [[topics/valsts-parvalde|Valsts pārvalde]] (38%), [[topics/korupcija-un-knab|Korupcija un KNAB]] (29%), [[topics/velesanas|Vēlēšanas]] (10%)
+- **30d:** 3 claims, 0.5× bāzes līnija
+- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/kaspars-gorkss|Kaspars Gorkšs]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

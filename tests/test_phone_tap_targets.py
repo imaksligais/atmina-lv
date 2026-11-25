@@ -179,8 +179,17 @@ def _blog(out: Path) -> None:
 
     env = _template_env()
     env.filters.setdefault("safe_url", lambda u: u or "")
+    # Pārskata tabula telefonā ir kartītes: vārda saite un «Avots» saite bija
+    # 20 px augstas (mērīts 2026-11-23 uz 22.11. pārskata: 101/101 < 44 px).
+    rows = "".join(
+        f'<tr><td data-label="Politiķis"><a href="../politiki/{s}.html">{n}</a></td>'
+        f'<td data-label="Partija">JV</td><td data-label="Pozīcija">Atbalsta budžetu.</td>'
+        f'<td data-label="Avots"><a href="https://example.lv/{s}">lsm.lv</a></td></tr>'
+        for s, n in [("anna-kalna", "Anna Kalna"), ("bruno-liepa", "Bruno Liepa")])
+    table = ('<div class="table-scroll"><table><thead><tr><th>Politiķis</th><th>Partija</th>'
+             f'<th>Pozīcija</th><th>Avots</th></tr></thead><tbody>{rows}</tbody></table></div>')
     _write(out / "blog" / "2026-08-14.html", env.get_template("blog-post.html.j2").render(
-        post=_daily_post(), content="<p>Saturs.</p>",
+        post=_daily_post(), content_html="<p>Saturs.</p>" + table,
         prev_post={"slug": "2026-08-13", "date": "2026-08-13"},
         next_post={"slug": "2026-08-15", "date": "2026-08-15"}))
     # Gara analīze ar «Saturs» (vad-2026 — 10 h2): rindas cieši viena zem otras,
@@ -275,12 +284,12 @@ CASES = [
     ("partija-spriedzes", "partijas/tap.html", "spriedzes", "#tab-spriedzes .card",
      "#tab-spriedzes a", 2),
     ("raksts", "blog/2026-08-14.html", None, ".brief-back",
-     ".brief-back, .brief-footnav-link", 4),
+     ".brief-back, .brief-footnav-link, .post-content td a", 8),
     ("saturs", "blog/analize.html", ".post-toc-head", ".post-toc",
      ".post-toc-head, .post-toc-list a", 11),
     ("sakumlapa", "index.html", None, ".focus-grid",
      ".focus-quote-who a, .focus-quote-meta a, .focus-duel-name, .focus-duel-meta a,"
-     " .prv2-pane-meta a", 12),
+     " .prv2-pane-meta a, .hero-search-input, .hero-search-btn", 14),
     # Kājene (base.html.j2, katrā lapā): 3 teksta saites + 4 ikonas bija 24 px.
     ("kajene", "index.html", None, ".footer-links", ".footer-links a", 7),
 ]

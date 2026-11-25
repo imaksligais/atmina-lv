@@ -71,6 +71,18 @@ Uz datora bija SLIKTĀK: `.table-scroll > table { min-width: max-content }` noz�
 - **Bez bēšas kastes kastē** (operators 2026-10-21/23: «izskatās lēti»). Saraksta vienums = plakana rinda ar 3 px krāsainu `border-inline-start` + 1 px apakšlīniju (paraugs `.saites-pair-row`, `.prv2-detail-related`); kartīte = viena virsma (`--paper`), daļas atdala līnijas, ne fona toņi (paraugs `.prv2-card`). Dalīšanās = `share_buttons` makro, ne sava poga.
 - **Sākumlapas galva = avīzes galva** (operators 2026-10-23): bez kastes, spīduma un punktu fona — matlīnijas, serif virsraksti, skaitļi kā kolonnas (`subgrid`); statiska taksonomija (tips, datums) ir teksts, pilulas tikai interaktīviem elementiem (meklētājs, ieejas saites).
 
+## Tēmu ikonas
+
+- **Ikona tikai lielajās virsmās** (tēmu direktorija, tēmas lapas virsraksts) ar makro `topic_icon(icon, prefix)`; birkās, filtros un meklēšanā ikonu nav. Krāsu dod vecāka `--topic-color`.
+- **Krāsu ikonai jauc `in srgb`, ne `in oklch`**: WebKit (iPhone) `in oklch` toni griež caur fona krāsu, un violetā tēma iznāk persiku krāsā (Playwright WebKit, 2026-11-23). Esošās tēmu birkas tumšajā tēmā vēl jauc `in oklch` — nav pārbaudītas.
+- **Jauna ikona:** nosaukums `TOPIC_ICONS`, tad `scripts/build_topic_sprite.py <lucide-static/icons>`; licence `assets/topics-LICENSE.txt`.
+
+## Skaitļi
+
+- **Katrs skaitītājs, kas var pārsniegt 999, iet caur formatētāju** (2026-11-23): veidnē `{{ n|lv_number }}` («26 682», nedalāma atstarpe), Python kodā `_lv_number()`, JS — `window.atminaFmtN` (`assets/sgv1.js`). `toLocaleString('lv-LV')` četrciparu skaitli NEgrupē («7956») — to nelieto. Identifikatori (reģistrācijas numurs, likumprojekta numurs) nav skaitītāji un paliek kā ir.
+- **Jaunu filtru reģistrē tikai `_make_env()`** (`src/render/_orchestrator.py`): testi vidi ņem no turienes (kopš 2026-11-23, `3cf5e74a6`), savus aizstājējus liek pēc tam. Testā nebūvē `Environment(loader=FileSystemLoader(...))` ar roku — tāda vide krīt ar `No filter named …`, tiklīdz veidne dabū jaunu filtru.
+- Pārbaude pārlūkā, ne ar grep: `.scratch/rsf-2026-11-23/measure.py` metode — redzamā teksta mezgli ar ≥4 cipariem pēc kārtas, izņemot gadus un citētu avota tekstu; nosauc, cik lapu pārbaudītas.
+
 ## Layout slazdi
 
 - **`.hero-top` mobilajā kļūst `flex-direction:column`** → bērna `flex-basis:320px` kļūst par AUGSTUMU (320px tukšums). Jauniem `.hero-top` bērniem mobilajā vajag `flex:0 0 auto` (tas pats paterns kā `.hero-search`).

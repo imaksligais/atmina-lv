@@ -1,11 +1,11 @@
 ---
 party: Progresīvie
 members: 18
-claims: 923
+claims: 951
 program_promises: 22
 contradictions: 6
-votes_par: 41173
-votes_pret: 11946
+votes_par: 41289
+votes_pret: 11976
 votes_atturas: 7238
 top_politicians:
 - Andris Šuvajevs

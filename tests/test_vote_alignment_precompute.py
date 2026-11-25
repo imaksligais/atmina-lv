@@ -113,8 +113,8 @@ def test_vote_alignment_for_uses_shared_bundle(db):
     db.execute("INSERT INTO tracked_politicians VALUES (1, 'A', 'X', 'tracked')")
     db.execute("INSERT INTO tracked_politicians VALUES (2, 'B', 'Y', 'tracked')")
     db.execute("INSERT INTO tracked_politicians VALUES (3, 'C', 'Z', 'inactive')")
-    for vid in range(1, 13):
-        for pid, vote in ((1, "Par"), (2, "Par" if vid <= 6 else "Pret"), (3, "Par")):
+    for vid in range(1, 101):  # VOTE_ALIGN_MIN_SHARED = 100
+        for pid, vote in ((1, "Par"), (2, "Par" if vid <= 50 else "Pret"), (3, "Par")):
             db.execute(
                 "INSERT INTO saeima_individual_votes (vote_id, politician_id, vote)"
                 " VALUES (?, ?, ?)", (vid, pid, vote))
@@ -127,4 +127,4 @@ def test_vote_alignment_for_uses_shared_bundle(db):
     top, bottom = with_bundle
     names = [x["name"] for x in top + bottom]
     assert "C" not in names  # inactive partneris izslēgts
-    assert top[0]["name"] == "B" and top[0]["agree"] == 6 and top[0]["total"] == 12
+    assert top[0]["name"] == "B" and top[0]["agree"] == 50 and top[0]["total"] == 100

@@ -196,6 +196,11 @@ _JUNCTION_INSERT_ALLOWLIST = {
     "scripts/_fix_open_questions_2026-10-01.py": None,
     "scripts/fix_berzins_talsu_2026_09_29.py": None,
     "scripts/fix_operator_verdicts_2026-09-23.py": None,
+    "scripts/fix_delete_nr_and_namesakes_2026-11-21.py": None,  # INSERT only in its rollback SQL
+    "scripts/fix_delete_vk_lietuva_links_2026-11-22.py": None,  # INSERT only in its rollback SQL
+    "scripts/fix_delete_lapins_namesakes_2026-11-22.py": None,  # INSERT only in its rollback SQL
+    "scripts/fix_negative_patterns_lapins_vk_2026-11-22.py": None,  # INSERT only in its rollback SQL
+    "scripts/_fix_operator_2026_11_24.py": None,  # INSERT only in its rollback SQL
     "scripts/audit_dp_readds.py": None,  # writes only its own :memory: copy (audit check 23)
 }
 _INSERT_RE = re.compile(r"INSERT(\s+OR\s+\w+)?\s+INTO\s+document_politicians\b", re.I)

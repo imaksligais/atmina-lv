@@ -1,11 +1,11 @@
 ---
 party: Nacionālā apvienība
-members: 22
-claims: 1685
+members: 23
+claims: 1751
 program_promises: 23
 contradictions: 2
-votes_par: 59637
-votes_pret: 11179
+votes_par: 59741
+votes_pret: 11199
 votes_atturas: 2855
 top_politicians:
 - Ansis Pūpols
@@ -46,4 +46,5 @@ top_topics:
 - [[persons/roberts-kipurs|Roberts Ķipurs]]
 - [[persons/rolands-keiss|Rolands Keišs]]
 - [[persons/ugis-mitrevics|Uģis Mitrevics]]
+- [[persons/girts-lapins|Ģirts Lapiņš]]
 <!-- /SYNC-AUTO -->

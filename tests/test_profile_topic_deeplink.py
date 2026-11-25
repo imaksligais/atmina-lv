@@ -13,13 +13,12 @@ Renderēšanas fikstūras paterns aizgūts no ``tests/test_render_own_pubs.py``.
 from datetime import date, timedelta
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
 from src.db import get_db, init_db
-from src.render._common import _safe_json_filter, _safe_url_filter, lv_date, lv_date_short
 from src.render.politicians import render_politicians
 from src.saeima.schema import init_saeima_tables
-from src.render._common.filters import _lv_number
+from src.render._orchestrator import _make_env
 
 TOPIC = "Aizsardzība un drošība"
 TOPIC_ENC = "Aizsardz%C4%ABba%20un%20dro%C5%A1%C4%ABba"
@@ -27,14 +26,9 @@ OTHER_TOPIC = "airBaltic"
 
 
 def _env() -> Environment:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
-    env.filters["lv_date"] = lv_date
-    env.filters["lv_date_short"] = lv_date_short
+    env = _make_env()
     env.filters["autolink_bills"] = lambda s, *a, **k: s
     env.filters["lv_plural"] = lambda n, *a, **k: ""
-    env.filters["lv_number"] = _lv_number
     env.globals["assets_version"] = "test"
     return env
 

@@ -4,7 +4,7 @@ party: Apvienotais saraksts
 role: Saeimas deputāte
 relationship_type: tracked
 positions: 0
-votes: 5
+votes: 27
 contradictions: 0
-mentioned_in: 24
+mentioned_in: 33
 ---

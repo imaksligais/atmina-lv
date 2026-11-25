@@ -19,7 +19,7 @@ from src.preflight import ensure_analysis_env
 from src.quality import paywall_marker, quote_end_mismatch
 from src.quoted_speaker import pending_quoted_mentioned
 from src.scope import queue_politician_sql
-from src.support import check_support, dropped_qualifiers
+from src.support import STANCE_MAX_WORDS, check_support, dropped_qualifiers, stance_too_long
 from src.tools import (
     store_analysis,
     store_claim,
@@ -853,6 +853,35 @@ def save_analysis(
                             print(
                                 f"[save_analysis] {s_fail} pid={pid} doc={doc_id} "
                                 f"topic={c.get('topic')!r}: {s_detail}",
+                                file=sys.stderr,
+                            )
+                            continue
+
+                        # Stance garuma vārti (2026-11-20): glabātu stance
+                        # atkārtota saglabāšana nemaina (first-write-wins), un
+                        # 10.–19.11. 7 no 134 labotajām stance bija >45 vārdi —
+                        # tās labošana prasīja papildu QR kārtas. Atsaka pirms
+                        # glabāšanas, lai aģents saīsina un saglabā vēlreiz.
+                        n_words = stance_too_long(c.get("stance"))
+                        if n_words:
+                            failures.append({
+                                "type": "stance_too_long",
+                                "opponent_id": pid,
+                                "document_id": doc_id,
+                                "topic": c.get("topic"),
+                                "stance": c.get("stance"),
+                                "error": f"stance has {n_words} words (max {STANCE_MAX_WORDS})",
+                                "hint": (
+                                    "Shorten the stance to one sentence of at "
+                                    "most 45 words and save it again. Do not "
+                                    "split it into two claims on the same topic "
+                                    "(T2 merge)."
+                                ),
+                            })
+                            refused_doc_ids.add(doc_id)
+                            print(
+                                f"[save_analysis] stance_too_long pid={pid} doc={doc_id} "
+                                f"topic={c.get('topic')!r}: {n_words} words",
                                 file=sys.stderr,
                             )
                             continue

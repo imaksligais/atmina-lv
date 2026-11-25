@@ -122,6 +122,50 @@ TOPIC_COLORS: dict[str, str] = {
     "Ekonomika un uzņēmējdarbība": "#29757a",   # klusināts petrolejas zilganzaļš
 }
 
+# Tēma → Lucide ikonas nosaukums (ISC; simbols `ti-<nosaukums>` failā
+# assets/topics.svg, ko būvē scripts/build_topic_sprite.py). Atslēgas tās pašas,
+# kas TOPIC_COLORS (sargā tests/test_topics.py); jaunai tēmai pieliec abas un
+# pārbūvē sprite. Ikonas tikai lielajās virsmās (tēmu direktorija, tēmas
+# lapa) — ne birkās un meklēšanā (backlog/vietne-ui.md, 2026-10-21).
+TOPIC_ICONS: dict[str, str] = {
+    "Aizsardzība un drošība":      "shield",
+    "airBaltic":                   "plane",
+    "Koalīcija un partijas":       "handshake",
+    "Ukraina un Krievija":         "swords",
+    "Valsts pārvalde":             "landmark",
+    "Ārpolitika":                  "globe",
+    "Vēlēšanas":                   "vote",
+    "Degviela un enerģētika":      "fuel",
+    "Tieslietas":                  "scale",
+    "Budžets un finanses":         "coins",
+    "Pašvaldības":                 "map-pinned",
+    "Imigrācija":                  "id-card",
+    "Transports":                  "bus",
+    "Sabiedriskie mediji":         "radio-tower",
+    "Droni":                       "drone",
+    "Sociālā politika":            "hand-heart",
+    "ES politika":                 "circle-star",
+    "Rail Baltica":                "train-front",
+    "Mežsaimniecība":              "trees",
+    "Valsts kapitālsabiedrības":   "briefcase-business",
+    "Izglītība":                   "graduation-cap",
+    "Valodu politika":             "languages",
+    "Vide":                        "recycle",
+    "Pensijas":                    "piggy-bank",
+    "Lauksaimniecība":             "wheat",
+    "Kultūra":                     "drama",
+    "Klimats":                     "cloud-sun",
+    "Veselības aprūpe":            "stethoscope",
+    "Pilsētvide":                  "building",
+    "Korupcija un KNAB":           "hand-coins",
+    "Digitālā politika":           "cpu",
+    "Sports":                      "trophy",
+    "NVO un pilsoniskā sabiedrība": "users-round",
+    "Saeimas darbs":               "scroll-text",
+    "Ekonomika un uzņēmējdarbība": "chart-line",
+}
+FALLBACK_TOPIC_ICON = "circle-dashed"
+
 # Contradiction type labels — ONE source of truth in src/contradiction_labels.py
 # (operator decision 2026-09-28), re-exported here for the render package.
 from src.contradiction_labels import CATEGORY_LV, SEVERITY_LV  # noqa: E402,F401

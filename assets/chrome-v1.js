@@ -201,3 +201,16 @@ document.addEventListener('click', function (e) {
   if (rel.indexOf('noopener') === -1) rel.push('noopener');
   a.setAttribute('rel', rel.join(' '));
 });
+
+// Saite uz aizvērtu <details> rindu (piem. saeima.html → valdiba.html#<ministrija>)
+// to atver, lai lasītājs uzreiz redz rindas saturu, ne tikai virsrakstu.
+(function () {
+  function openTarget() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === 'DETAILS') el.open = true;
+  }
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+})();

@@ -1,0 +1,13 @@
+{
+ "seplp-3802": {
+  "url": "https://www.seplp.lv/lv/media/3802/download?attachment=",
+  "wayback": "https://web.archive.org/web/20261123012615/https://www.seplp.lv/lv/media/3802/download?attachment=",
+  "ts": "20261123012615",
+  "head": 200,
+  "raw_bytes": 163664,
+  "raw_sha256": "d3aeee9ec671cb6f4c064d7a494187537a60eaa28398359261faf80b4cef953f",
+  "expect_sha256": "d3aeee9ec671cb6f4c064d7a494187537a60eaa28398359261faf80b4cef953f",
+  "ok": true,
+  "checked_utc": "2026-11-23T01:26:42Z"
+ }
+}

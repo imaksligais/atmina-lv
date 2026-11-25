@@ -3,11 +3,11 @@ name: Viesturs Kleinbergs
 party: Progresīvie
 role: Rīgas mērs
 relationship_type: tracked
-positions: 81
+positions: 82
 votes: 0
 contradictions: 0
-mentioned_in: 1515
-last_active: 2026-11-10
+mentioned_in: 1543
+last_active: 2026-11-19
 top_topics:
 - Pašvaldības
 - Pilsētvide
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (33%), [[topics/pilsetvide|Pilsētvide]] (21%), [[topics/transports|Transports]] (10%)
-- **30d:** 9 claims, 0.8× bāzes līnija
+- **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (33%), [[topics/pilsetvide|Pilsētvide]] (21%), [[topics/transports|Transports]] (11%)
+- **30d:** 9 claims, 0.9× bāzes līnija
 - **Spriedzes:** [[persons/viktors-valainis|Viktors Valainis]] (3 uzbrukumi), [[persons/maris-sprindzuks|Māris Sprindžuks]] (1 spriedze)
 <!-- /SYNC-AUTO -->

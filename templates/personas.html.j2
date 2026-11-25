@@ -74,6 +74,8 @@
           </button>
           {% if cat == 'Mediji' %}
           <a class="pnv1-rail-sublink" href="mediji.html">Mediju caurskatāmība →</a>
+          {% elif cat == 'Valdība' and valdiba_published %}
+          <a class="pnv1-rail-sublink" href="valdiba.html">Ministri un viņu pozīcijas →</a>
           {% endif %}
           {% endfor %}
         </div>

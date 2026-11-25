@@ -95,8 +95,9 @@ def build_template(db: sqlite3.Connection) -> dict:
     elif p and p["source_vote_id"] not in stored_periods(db):
         print("coalition_periods rindas šim balsojumam vēl nav — pirms dry-run palaid "
               "scripts/seed_coalition_periods.py --apply.")
-    coalition = set(p["factions"]) if derivable else set()
-    voted = set(p["counts"]) if derivable else set()
+    # Frakcijas etiķete «SV/AJ» ↔ parties.short_name «SV-AJ».
+    coalition = {f.replace("/", "-") for f in p["factions"]} if derivable else set()
+    voted = {f.replace("/", "-") for f in p["counts"]} if derivable else set()
 
     parties = []
     for r in db.execute("SELECT short_name, coalition_status FROM parties "

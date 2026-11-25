@@ -1,22 +1,23 @@
 ---
 name: Zane Skujiņa-Rubene
 party: Jaunā Vienotība
-role: Saeimas deputāte (14. Saeima)
+role: Bijusī Saeimas deputāte (14. Saeima)
 relationship_type: tracked
-positions: 19
+positions: 22
 votes: 7731
 contradictions: 0
-mentioned_in: 151
-last_active: 2026-11-12
+mentioned_in: 170
+last_active: 2026-11-23
 top_topics:
 - Sociālā politika
 - Budžets un finanses
 - Izglītība
 - Veselības aprūpe
-- Saeimas darbs
+- Koalīcija un partijas
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (47%), [[topics/budzets-un-finanses|Budžets un finanses]] (16%), [[topics/izglitiba|Izglītība]] (11%)
-- **30d:** 13 claims
+- **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (45%), [[topics/budzets-un-finanses|Budžets un finanses]] (14%), [[topics/izglitiba|Izglītība]] (9%)
+- **30d:** 16 claims
+- **Spriedzes:** [[persons/inese-libina-egnere|Inese Lībiņa-Egnere]] (1 atbalsts), [[persons/katrina-iljinska|Katrīna Iļjinska]] (1 spriedze)
 <!-- /SYNC-AUTO -->

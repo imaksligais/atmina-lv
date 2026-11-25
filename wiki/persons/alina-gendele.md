@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 6
 votes: 6839
 contradictions: 0
-mentioned_in: 39
+mentioned_in: 40
 last_active: 2026-10-20
 top_topics:
 - Pašvaldības
@@ -14,7 +14,3 @@ top_topics:
 - Pensijas
 - Veselības aprūpe
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

@@ -6,6 +6,91 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-25 (2) — Garā tvīta 1. attēls: citātu kartīte, ne sepia
+- Operators: sepia attēli «visiem šķiet garlaicīgi»; 24.11. pārskata tvīts postēts ar citātu kartīti (`src/graphics/templates/citatu-kartite.html`, 1080×1350). `/social-thread` § 3a un § 4: kartīte pēc noklusējuma, sepia tikai, ja nav īsu burtisku citātu. Skatījumu mērījuma nav — tas ir spriedums.
+- Neskarts: pārskata plakāts (`cli brief`, `SEPIA_STYLE`) — atsevišķs lēmums.
+
+## 2026-11-25 — `AGENTS.md` atjaunots kā norāde uz `CLAUDE.md`; backloga tīrīšana
+- Operators: Codex lasa tikai `AGENTS.md` (vientuļu `CLAUDE.md` ignorē), bet seko norādei uz to (pārbaudīts 24.11.). `AGENTS.md` = viena rinda, noteikumu NAV (2026-08-01 dzēstā kopija novecoja); `.gitignore` `!/AGENTS.md`, BACKLOG § Ne-darīt un `portability.md` atjaunoti. Pārbaude: `codex exec -s read-only` atbild no `CLAUDE.md` (avots + `.venv/Scripts/python.exe` noteikums).
+- Backloga audits (163 ieraksti): dzēsti 4 izpildīti/novecojuši (Vītols, Bartaševičs #11, #63, 8666/8667 saites), atjaunināti 18 (valdība 17.11., `document_nr` normalizēts, Uzulnieks bezpartejisks u.c.); `tests/test_backlog_index_sync.py` 17/17.
+
+## 2026-11-24 — RSS plūsma `feed.xml` (deploy a6a88daa)
+- 30 jaunākie publicētie pārskati un «Atradumi»; ieraksti no tiem pašiem sarakstiem kā lapas (`publish_approvals`, bez `draft: true`), `pubDate` = satura datums. `src/render/feed.py`, commit `7114cabe4`; renderē `blog`/`dashboard`/`static` (`commands.md` § render recepte).
+- Dzīvajā `curl -s https://atmina.lv/feed.xml | grep -c "<item>"` → 30 (24.11.). `output/atmina/**/*.html`: `rel="alternate"` (`application/rss+xml`) galvenē 1388/1403 lapās, jebkura `feed.xml` saite 1402/1403; bez nevienas tikai `analizes/partiju-tests.html` (atsevišķa veidne).
+- `tests/test_feed.py`: derīgs XML, katra saite uz esošu lapu, secība; mutācija (apgriezta secība) krīt.
+
+## 2026-11-23 (2) — Tēmu ikonas (deploy 51d58620); testu veidņu vides no `_make_env()`
+- 35 tēmām Lucide (ISC) ikona tēmu direktorijā un tēmas lapā; `TOPIC_ICONS`, `assets/topics.svg`, `scripts/build_topic_sprite.py`, noteikumi `ui-conventions.md` § Tēmu ikonas. Commit `d93d37d1e`; publicēts ar operatora atļauju (pilns renders, `check_output` tīrs, verify_host 9/9, dzīvajā ikonas 37/37); sānu svītras un ikonu izvēle vēl gaida operatoru (`backlog/vietne-ui.md`).
+- Pārlūkā: Chrome 108 ielādes (36 lapas × 320/390/1280 px) un WebKit iPhone 36 ielādes — platāka lapa 0, neuzzīmēta ikona 0 (`.scratch/temu-ikonas/measure_all.py`). Krāsu jaukšana `in srgb`, jo `in oklch` WebKit maina toni.
+- Testi vairs nebūvē Jinja vidi ar roku (46 vietas 27 failos → `_make_env()`, `3cf5e74a6`); jauns filtrs veidnē testus nelauž.
+- `temas.html` saites priekšskatījums: savs `assets/og/temas.png` ar ikonu režģi (`og-temas.html.j2`, `a67dbf852`; deploy a7eca3ef, dzīvajā `og:image` → 200, verify_host 9/9). X posta melnraksts `docs/tweet_bank/2026-11-23-temu-ikonas-social.md`.
+
+## 2026-11-23 — Skaitļu formāts visā vietnē, telefona mērķi, `check.sh` smoke tvērums (deploy 63895ba5)
+- Skaitītāji ar tūkstošu atstarpi: veidnēs `|lv_number`, JS `window.atminaFmtN`; noteikums `wiki/operations/ui-conventions.md` § Skaitļi. Pārbaudīts pārlūkā 30 lapās (`.scratch/rsf-2026-11-23/measure.py`): neformatētu skaitītāju 0. Commit `b11a34086`.
+- Telefonā 44 px: sākumlapas meklētāja lauks un pārskata kartīšu vārda/«Avots» saites (22.11. pārskatā 101/101 → 0/101 zem 44 px; `tests/test_phone_tap_targets.py` «raksts», «sakumlapa», abi krīt bez kārtulām). `.badge-red` tumšajā 4,23 → 5,18:1; likuma lapā no galvenes līnijas līdz saturam 96 → 48 px (`8483544a1`).
+- `scripts/check.sh` smoke noklusējums `dashboard,blog,static,politiki,bills` (bija bez pēdējiem diviem): dienā ar jaunu politiķi vai likumprojektu vairs nekrīt uz sitemap; deploy preflight nemainīts (`c8bb04e6d`).
+- 21.11. pārskats papildināts pēc lasītāja norādes (RSF 2023. gadā nosauca LŽA vadītāju par savu korespondenti Latvijā; deploy 9a4dcc0e, rollback `data/rollback_qr_fixes_2026-11-21_rsf.sql`).
+
+## 2026-11-22 (3) — Saites v2, 2. posms: «Kopīgās vietas» (komisijas, delegācijas, organizācijas; deploy b92128c6)
+- Jaunas lapas `vietas/<slug>.html` (79: 39 komisijas, 6 delegācijas, 34 organizācijas; `src/render/vietas.py::build_places` uz prod DB). Vieta tikai tad, ja ≥2 izsekoti politiķi bijuši vienlaikus: komisijā ≥30 d (14. Saeima, titania), organizācijā kopīgs deklarācijas gads (VID). Teksts «abi deklarējuši», nekad «strādāja kopā».
+- Organizācijas tikai no slēgta `ORG_ALLOWLIST` (34); partijas, apvienības un politiskas biedrības `ORG_EXCLUDED` (51, 4 pēc Codex gpt-6.2-astra pārbaudes); jauna organizācija pēc VID ielādes netiek publicēta (renders brīdina ar skaitu). Neaizvērts 14. Saeimas amats beidzas 03.11.2026, kā profila Saeimā cilnē.
+- Saites lapā sadaļa «Kopīgās vietas», profila «Saites» cilnē «Kur ceļi krustojas» (127 profili), pāra kartītē kopīgā vieta. Kopīgie likumprojekti, uzņēmumi, ģimene — vēlāk. Plāns: `docs/plans/2026-11-22-saites-v2-posms2-plans.md`.
+- `tests/test_render_vietas.py`: 5 mutācijas (30 d slieksnis, allowlist, sasaukuma beigas, amata maiņas artefakts, profila padeve) — katra krīt. `vietas/` dzēš vecās lapas tikai, ja renderā ir gan `saites`, gan `politiki`.
+
+## 2026-11-22 (2) — Saites v2, 1. posms: jaunākās saiknes, partiju tabula, tīkla izcelšana ar pieskārienu (deploy e778f021)
+- `saites.html` augšā 5 jaunākās saiknes (vienam cilvēkam ≤2 rindas; prod 21.11. Kulbergs bija 4 no 12 jaunākajiem pāriem), partiju kastu vietā tabula ar visiem 4 veidiem (summa = «Saiknes»), rinda atver pārus (`ssv1.js`). Plāns: `docs/plans/2026-11-22-saites-v2-posms1-plans.md`.
+- Tīklā izcelšana uz klikšķa/pieskāriena (hover tikai ar peli), partiju leģenda, panelis atveras uz «Saites», resize pārbūvē tikai platuma maiņā.
+- Balsojumu sakritība: nav pastāvīgu līniju (sliekšņi deva 0); izvēlētajam mezglam 3+3 partneri no `_vote_alignment_for` (tie paši skaitļi kā profilā). Globālais top/bottom N noraidīts: augšā tikai koalīcijas 99 %, apakšā viens fakts (operators 22.11.).
+- `VOTE_ALIGN_MIN_SHARED` 10 → 100 kopīgu balsojumu (ceturtdaļai pāru ≤18) — maina arī profila sarakstu. Mutācija: `test_saites_default_view` krīt bez ≤2 vāciņa un ar paneli uz «Pozīcijas».
+
+## 2026-11-22 — Stenogrammu `stated_at` = sēdes diena (101 rinda); `negative_patterns` tikai pēc dry-run; 1. tvītam ne plakāts (nav deployots)
+- 101/130 Vēstneša stenogrammu pozīcijām `stated_at` bija publicēšanas datums (visas 2026-10, pirms `datumi-dublikati.md` § 3) → sēdes diena (`scripts/fix_stenogram_stated_at_2026-11-22.py` + rollback; mērījuma vaicājums skripta galvenē). Strukturālā atkārtotā pārbaude 94/102: 0 jaunu pretrunu, kontrole 743319 atrada #73.
+- `negative_patterns` ir doka līmeņa veto — paterns tikai no pierādīta vārdabrāļa teksta un pēc dry-run ar 0 zaudētām īstām saitēm (`seeding.md`). 218: 20 formas (4 vārdabrāļi, 0 īstu), 241: «Segalovič» (2 Lietuvas VK doki, 0 LV).
+- `check_output` plain režīms uzskaita arī publish-gate allowlist trāpījumus: kopīgs saraksts katrā režīmā rādīja otra režīma paternus kā mirušus (2 + 2 viltus; pilnajā 4/4 trāpa). Izdomāts paterns joprojām nosaukts (mutācija).
+- `/social-thread` § 3a: vienā garā tvītā 1. tvītam cits attēls, ne `og:image` — 2. tvīta saites kartīte jau rāda plakātu (operators 22.11.).
+
+## 2026-11-21 — Ingest preflight kļūme vairs nav «OK»; brief-writer teikuma un verba noteikumi; mednieka per-pid pēda (deploy 7bf094f2)
+- `ingest_all()` pie preflight kļūmes met `RuntimeError`, nevis atgriež `[]`: 21.11. embedding modelis nenoslodzējās (os error 1455), RSS deva 0 rakstu, bet `morning_ingest` rādīja 5/5 OK. Tests `tests/test_morning_ingest.py::test_rss_preflight_failure_is_a_failure` (redzēts krītam pirms labojuma).
+- Brief-writer: noteikums B «viens teikums — viens runātājs» (`brief-shared-rules.md`), pašpārbaude 22 «verbs nav stiprāks par avotu», 20. punkta citātu pārbaude arī tabulu rindām. Pamats: 14.–20.11. korektūras 147 pāri / 24 kārtas — teikuma uzbūve 33 (6 dienas), verba spēks 9 (4 dienas); 21.11. QR kārtas 5 + 1 + 0.
+- `@contradiction-hunter` Step 5: per-pid tabula (izlasītās `saeima_vote` rindas, `document_nr` ķēdes); pēdā `politician_ids` tikai pid ar skaitļiem (20.11. #73 atrada tieši izlaistā pāreja). 21.11.: 14/14 ar skaitļiem.
+- Tabulu citātu pārbaude neskaita skeleta stance šūnas (`quality-reviewer.md` § H 4; orķestratora lēmums pēc deleģējuma, kā 2026-11-20 «locīts vārds pēdiņās» — tikai ziņošanai). Vēlā kārta: dzēstas 755950, 755949 (dublikāti), 755929; 4 vārdabrāļu saites noņemtas (`scripts/fix_delete_nr_and_namesakes_2026-11-21.py` + rollback).
+- Kulberga 755901 dzēsta (operatora «jā»): Purgaiļa atvaļinājuma rīkojumu Vēstnesī parakstīja p. i. E. Tavars, ne Kulbergs, kā rakstīja Diena/NRA (`scripts/fix_delete_claim_755901_2026-11-21.py` + rollback). Balsojumi 8666/8667 → pastāvīgās saites (`data/{fix,rollback}_parentid_vote_urls_2026-11-21.sql`, 95 claims).
+
+## 2026-11-20 — `save_analysis` atsaka stance >45 vārdiem; 6 jauni deputāti (deploy b4c64fc5)
+- `stance_too_long`: pozīciju ar stance >45 vārdiem `save_analysis()` atsaka pirms glabāšanas un ziņo `failures` (`src/support.py::stance_too_long`, `src/analyze.py`). Pamats: 10.–19.11. 7 no 134 labotajām stance bija >45 vārdi (rollback_stance_2026-11-1*.sql), un glabātu stance atkārtota saglabāšana nemaina. Tests `tests/test_support_gate.py::test_stance_over_45_words_is_refused` (mutācija pierādīta). 20.11.: 0 no 94 pārsniedz.
+- «Locīts vārds pēdiņās» paliek tikai ziņošanai: 41 no 528 nedēļas pozīcijām, lielākā daļa — `claim-extractor.md` atļautais «raksturo kā «…»» akuzatīvs.
+- Seed (operatora atļauja): pid 310–315 (AS, mandāts uz laiku) + Ģ. Lapiņš (218) aktīvs, bez vēsturiskā rescan; `negative_patterns` 310/311 vārdabrāļiem (`data/{seed,rollback_seed}_saeima_aizstajeji_2026-11-20.sql`, `data/{fix,rollback}_negative_patterns_liepins_gruntmanis_2026-11-20.sql`).
+
+## 2026-11-18 (3) — «Valdība» sasniedzama: Saeimas lapas bloks, izvēlne «Vairāk», pārskata 845 saite (deploy 9ea3856b)
+- `saeima.html` bloks «Valdība» zem Prezidija: tie paši dati, ko `valdiba.html` (`fetch_cabinet`), katra rinda ved uz savu ministrijas rindu (`valdiba.html#<ministrija>`, enkurs no `fetch_cabinet`); `chrome-v1.js` atver `<details>`, uz kuru rāda hash. Testi: `test_render_saeima.py` (h), `test_render_valdiba.py` enkurs (abi pierādīti ar mutāciju).
+- Prezidijs, 17 frakciju vadītāji un komisiju statuss pārbaudīti 18.11. pret saeima.lv — izmaiņu nav (`docs/audits/2026-11-18-saeima-amati/SHA256SUMS`); komisijās 0 deputātu. `checked: 2026-11-18`.
+- Pārskatam 845 viens teikums ar saitēm uz «Valdība» un `saeima.html#lens=uzticiba` (`data/{fix,rollback_fix}_brief_845_valdiba_saite_2026-11-18.sql`). Saturs mainīts → pirms deploy atkārtots `approve_publish.py 2026-11-17`.
+
+## 2026-11-18 (2) — Nakts sakopšana: 754600 datums, Purgaiļa X, Kulberga partija nemainīta
+- 754600 (Braže) `stated_at` → 17.11. (tvīta ID un `published_at` 13:43 LV; `data/{fix,rollback}_stated_at_754600_2026-11-18.sql`); tā pati klase 17.11. pozīcijās 0/166.
+- X: Purgailis @KarlisPurgailis (identitāte: bio saite → citadele.lv; kluss kopš 2025-01-24; `data/{seed,rollback_seed}_x_handle_purgailis_2026-11-18.sql`). NAV: otrs Purgaiļa kandidātkonts (1 tvīts) un Staņēviča konts (kluss kopš 2018) — neizmantoti.
+- **Kulbergs paliek «Apvienotais saraksts» (operatora lēmums gaida):** «bezpartejisks» viņu sauc 3 avoti (161203, 102908, tvīts 126259; 91 doks ar abiem vārdiem, teikumu filtrs). Bet `party_status("Bezpartejisks")` = «other» — premjers izkristu no koalīcijas grupas personās (`personas.py`) un pārskatu koalīcijas/opozīcijas joslā (`briefs.py`), kā jau tagad Purgailis u. c. bezpartejiskie ministri. Tas ir dizaina lēmums, ne etiķete.
+- Valdības deklarācija paliek 5 Kulberga pozīcijas (754595–754599), `program_promise` netiek veidots. «Garumzīmju regresija» 2/167 = burtiski citāti bez garumzīmju vārdiem (viltus trauksme, vārti nemainīti).
+
+## 2026-11-18 — Lapa «Valdība» publicēta; Saeimas lapā lēcas «Koalīcija» un «Uzticības balsojums» (deploy ecc2c821)
+- `VALDIBA_PUBLISHED = True` (operatora «jā»), saite no `personas.html` kategorijas «Valdība»; IZM tēmām pievienots «Sports».
+- `saeima.html`: lēcas no jaunākās `coalition_periods` rindas, ja tā ir šī sasaukuma; balss tikai caur precīzā vārda `politician_id`, bez rindas «nav ieraksta» (8649: 96/100 ar rindu). Tests `tests/test_render_saeima.py` (2 mutācijas).
+- X konti: Lipšāns @krisslipsans, Jaunzems @GirtsJaunzems13 (`data/{seed,rollback_seed}_x_handles_ministri_2026-11-18.sql`).
+
+## 2026-11-17 (3) — Kulberga 2. valdība DB; publicēts deploy f75e33fa
+- Uzticības balsojums 8649 (57:34; `saeima_individual_votes`); `coalition_periods` + AS/NA, JV opozīcijā, ZZS/ST ārpus Saeimas, 18 lomas pēc Saeimas paziņojuma 14/Lm15 (Kulbergs arī KEM) — `data/{fix,rollback}_valdiba_2026-11-17.sql`, audit 24 = 0.
+- `government_switch.py`: frakcijas etiķete «SV/AJ» ↔ partija «SV-AJ» (sagatave to lika «nav Saeimā»). pid 306–309 `party='Bezpartejisks'` pēc LETA doc 161203 (operatora «jā»; rollback).
+- Pirmā dzīvā sēde ar `--tech` paritāti: rīks krīt (defises ID), reģistrācijas zūd — `backlog/saeima.md`.
+
+## 2026-11-17 (2) — 4 jaunās valdības ministru kandidāti iesēti; Purgailis un Jaunzems tikai ar pilnu vārdu
+- pid 306–309 (Lipšāns, Purgailis, Staņēvičs, Jaunzems; `data/seed_ministri_kulbergs2_2026-11-17.sql` + rollback): `party` NULL (nav neatkarīgi pārbaudīts), loma «… ministra amata kandidāts» — ministra amatu ieraksta `government_switch` pēc balsojuma ielādes.
+- `src/matcher.py::_FULL_NAME_ONLY` + Purgailis («Purgaili» = Santas Purgailes akuzatīvs, doc 12883) un Jaunzems (vietvārdi, cita persona: 3543, 22158).
+- Saites 205 (`data/fix_links_ministri_kulbergs2_2026-11-17.sql`, `doc_ids` = 232 dokumenti ar celmiem, uz kopijas), T13 paraugs 32/32 pareizi. Neekstrahēti `subject` pāri: Purgailis 24 (bankas ekonomista komentāri), Staņēvičs 7 — operatora lēmums.
+
+## 2026-11-17 — Lapa «Valdība» aiz publicēšanas slēdža
+- `valdiba.html`: ministrs pēc `role`, pozīcijas viņa ministrijas tēmās, uzticības balsojums; ministri bez ministrijas nepazūd. `VALDIBA_PUBLISHED = False` — pilns build un sitemap to neliek (pārbaudīts ar `--only=static`). Tests `tests/test_render_valdiba.py` (5 mutācijas noķertas). `profile_kind.active_role_chunks()` — viens «pašreizējās lomas» noteikums abām vietām.
+- Publicēšanas priekšnosacījumi: `backlog/vietne-ui.md` § Lapa «Valdība».
+
 ## 2026-11-16 (4) — 2d: ekstraktoru paš-atzīmes iet tajā pašā labojumu partijā
 - **Mērīts** (16.11. rutīna, `.scratch/rutina-2026-11-16/`): ekstraktori atskaitēs nosauca 4 stance defektus, ko atkārtota saglabāšana nelabo (753951, 753933, 753984, 753980); `@stance-checker` no tiem atzīmēja 1 (753980).
 - **Lēmums:** `/dienas-rutina` 2d — šādas atzīmes orķestrators pēc avota lasījuma liek tajā pašā `apply_stance_fixes.py` failā.
@@ -276,7 +361,7 @@ Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rind
 ## 2026-11-01 (6) — Nedēļas stāsti: nedēļas pārskats = 3–5 stāsti no koda kandidātiem
 - `weekly_story_candidates()` (`src/briefs.py`) dod skeletā `STORY_CANDIDATES` komentāru (7 veidi); tēmu, bloku, «Pārējās tēmas» un pretrunu sadaļas skeletā izņemtas. Validators atsaka neaizpildītu skeletu; vecās formas pārskati paliek derīgi. Tests `tests/test_weekly_stories_e2e.py`.
 - Raksta pirmdienas rītā par iepriekšējo nedēļu. Lint 7. likums «iezīmē» (`analytic-filler-iezime`) attiecas arī uz dienas pārskatiem — apzināti.
-- Spec/plāns: `docs/superpowers/specs/2026-11-01-nedelas-stasti-design.md`, `docs/superpowers/plans/2026-11-01-nedelas-stasti.md`.
+- Spec/plāns: `docs/superpowers/specs/2026-11-01-nedelas-stasti-design.md`, `docs/superpowers/plans/archive/2026-11-01-nedelas-stasti.md`.
 - 11-02: «atkārtojas» slieksnis 3 dienas. Pilots 10-26…11-01 = `context_notes` #777 (5 stāsti, 61 kandidāts → 27 izmantoti; 928 vārdi pret 1 452 #699, tas pats skaitīšanas veids; aģents ~225 tūkst. tokenu, 10-11 bāzes nav). Nepublicēts.
 - 11-02: QR § H #777 (59 teikumi, FIX ne BLOCKED) + advisor → 18 labojumi saglabāti #777 (svarīgākie: izdevumi «par», ne «līdz» 500 milj.; Kučinska atruna). Attēlu stils `stories` (tinte + nedēļas zelts, bez teksta), kandidāti 427–430 `approved=0`.
 - 11-02: operators izvēlējās #428 (trīs paneļi); `cli brief` nedēļas noklusējums = `stories`, bez teksta (`_resolve_style`, `graphics-designer.md`). Pārskats apstiprināts publicēšanai.

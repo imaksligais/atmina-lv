@@ -11,25 +11,21 @@ Nosauktās kļūmes, ko šis tests ķer (plāns 2026-10-06-saeimas-aktivitate.md
 - adresāta loma tiek ieskaitīta iesniegtajos jautājumos;
 - politiķim bez datiem parādās tukši bloki.
 """
-from jinja2 import Environment, FileSystemLoader
 
 from src.db import get_db, init_db
-from src.render._common import _lv_plural, _safe_json_filter, _safe_url_filter
 from src.render.politicians import render_politicians
 from src.saeima.convocation import SAEIMA_CONVOCATION
 from src.saeima.schema import init_saeima_bills, init_saeima_tables
+from src.render._orchestrator import _make_env
 
 
 def _env():
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
+    env = _make_env()
     env.filters["lv_date"] = (
         lambda s: f"{s[8:10]}.{s[5:7]}.{s[:4]}"
         if s and len(s) >= 10 and "-" in s else s or ""
     )
     env.filters["autolink_bills"] = lambda s, *a, **k: s
-    env.filters["lv_plural"] = _lv_plural
     env.globals["assets_version"] = "test"
     return env
 

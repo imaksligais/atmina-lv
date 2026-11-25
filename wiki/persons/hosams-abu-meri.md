@@ -1,22 +1,23 @@
 ---
 name: Hosams Abu Meri
 party: Bezpartejisks
-role: Veselības ministrs
+role: Bijušais veselības ministrs (līdz 2026-11-17)
 relationship_type: tracked
-positions: 75
+positions: 79
 votes: 1306
 contradictions: 0
-mentioned_in: 579
-last_active: 2026-11-06
+mentioned_in: 588
+last_active: 2026-11-19
 top_topics:
 - Veselības aprūpe
+- Koalīcija un partijas
 - Sociālā politika
 - Aizsardzība un drošība
-- Izglītība
-- Koalīcija un partijas
+- Budžets un finanses
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (75%), [[topics/sociala-politika|Sociālā politika]] (4%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (3%)
-- **30d:** 11 claims, 0.8× bāzes līnija
+- **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (73%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (4%), [[topics/sociala-politika|Sociālā politika]] (4%)
+- **30d:** 13 claims, 1.0× bāzes līnija
+- **Spriedzes:** [[persons/normunds-stanevics|Normunds Staņēvičs]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

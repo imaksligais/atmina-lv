@@ -1,21 +1,22 @@
 ---
 name: Edgars Putra
 party: Apvienotais saraksts
-role: Saeimas deputāts, Finanšu ministrijas parlamentārais sekretārs
+role: Zemkopības ministrs
 relationship_type: tracked
-positions: 19
-votes: 6949
+positions: 27
+votes: 6958
 contradictions: 0
-mentioned_in: 126
-last_active: 2026-09-30
+mentioned_in: 202
+last_active: 2026-11-23
 top_topics:
-- Degviela un enerģētika
 - Lauksaimniecība
+- Degviela un enerģētika
 - Budžets un finanses
+- Mežsaimniecība
 - Valsts pārvalde
-- Aizsardzība un drošība
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (21%), [[topics/lauksaimnieciba|Lauksaimniecība]] (16%), [[topics/budzets-un-finanses|Budžets un finanses]] (11%)
+- **Top tēmas:** [[topics/lauksaimnieciba|Lauksaimniecība]] (26%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (15%), [[topics/budzets-un-finanses|Budžets un finanses]] (11%)
+- **30d:** 8 claims, 2.3× bāzes līnija
 <!-- /SYNC-AUTO -->

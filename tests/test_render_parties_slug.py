@@ -5,19 +5,16 @@ Locks task-5 behavior: short_name 'X/Y' -> partijas/x-y.html, and the
 partijas.html card's heading link uses the identical slug.
 """
 
-from jinja2 import Environment, FileSystemLoader
 
 from src.db import get_db, init_db
-from src.render._common import TEMPLATES_DIR, _party_page_slug, lv_date
 from src.render.parties import _fetch_parties_page, render_parties
 from src.saeima.schema import init_saeima_tables
+from src.render._orchestrator import _make_env
 
 
 def _env():
-    env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
-    env.filters["party_page_slug"] = _party_page_slug
+    env = _make_env()
     env.filters["lv_plural"] = lambda n, *a: ""
-    env.filters["lv_date"] = lv_date
     env.globals["assets_version"] = "t"
     return env
 

@@ -14,7 +14,9 @@
 # kokā apklusināja **0** robus, t.i. tie bija miruši ieraksti, kas dzīvoja ilgāk
 # par savu cēloni. Miris allowlist ieraksts nav nekaitīgs — ja tā pati klase
 # atgriežas, tas to apklusina klusi. Tāpēc saraksts tagad ir vārti pats sev:
-# `check_output` katrā palaidienā nosauc paternus, kas neapslāpēja neko.
+# `check_output` nosauc paternus, kas neapslāpēja neko — plain režīmā (deploy pirmais
+# izsaukums), kas kopš 2026-11-22 uzskaita arī publish-gate trāpījumus;
+# `--publish-gate-only` mirušos paternus nenosauc (robu paternus tas neredz).
 
 # --- Bezpaplašinājuma sintēžu saites pārskatā #184 (2026-08-01, PĀRVĒRTĒTS 2026-08-03) ---
 # context_notes #184 (pārskats 2026-04-30) tekstā ir divi iekšēji URL bez

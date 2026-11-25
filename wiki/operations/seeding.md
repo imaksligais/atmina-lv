@@ -55,6 +55,12 @@ Tie ir divi cilvēki: id=81 ir JV deputāts ar 6 473 `faction='JV'` balsojumiem 
 
 `negative_patterns` ir ziņu matcher veto visam dokumentam; VID deklarāciju tādvārža iestādes/amata paterns iet `vad_negative_patterns` ([vad-declarations.md](vad-declarations.md)).
 
+## `negative_patterns` — doka līmeņa veto; vispirms dry-run (2026-11-22)
+
+- Paterns noraida politiķi VISAM dokam, ja apakšvirkne ir jebkur tekstā — arī dokā, kurā īstais politiķis ir minēts blakus vārdabrālim. Tāpēc paternu ņem no pierādīta vārdabrāļa teksta (vārds + uzvārds vai iniciālis + uzvārds), ne vispārīgu («Lietuvas Valsts kontrol» vetotu LV stenogrammu 141308, «Seim» — 3 LV dokus).
+- Pirms rakstīšanas — dry-run pār visiem politiķa saistītajiem dokiem: cik vārdabrāļu atmet, cik īstu saišu zaudē (`scripts/dry_run_negative_patterns.py --pid N --neg "a|b" [--grep X]`; 2026-11-22 skaitļi — `scripts/fix_negative_patterns_lapins_vk_2026-11-22.py` galvenē). Īstu saišu zudums > 0 → paternu neliek.
+- Pilnā vārda locījumi `name_forms` (piem., «Ģirtam Lapiņam») NEder kā aizvietotājs kailajam uzvārdam: forma bez nominatīva vārda («Ģirts») iekrīt svešā vārda veto (`src/matcher.py` B2), ja priekšā ir cits vārds — dry-run zaudēja 16 saites, t. sk. īstas.
+
 ## Amatu terminoloģija `role` laukā
 
 «Rīgas domes priekšsēdētājs» IR mēra formālais tituls, tāpēc «priekšsēdētāja vietnieks» un «mērs» nav sinonīmi (Ķirša gadījums, 2026-08-18).

@@ -4,9 +4,9 @@ party: Progresīvie
 role: Saeimas deputāte
 relationship_type: tracked
 positions: 3
-votes: 5
+votes: 16
 contradictions: 0
-mentioned_in: 68
+mentioned_in: 76
 last_active: 2026-11-07
 top_topics:
 - Kultūra

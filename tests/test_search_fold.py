@@ -17,14 +17,11 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 import pytest
-from jinja2 import Environment, FileSystemLoader
 
 from src.db import get_db, init_db
-from src.render._common import _safe_url_filter, lv_date, lv_date_short
-from src.render._common.slugs import _party_short_name
 from src.saeima import init_saeima_bills
 from src.saeima.schema import init_saeima_tables
-from src.render._common.filters import _lv_number
+from src.render._orchestrator import _make_env
 
 sync_api = pytest.importorskip("playwright.sync_api")
 
@@ -45,14 +42,9 @@ class _Quiet(SimpleHTTPRequestHandler):
 
 
 def _env():
-    env = Environment(loader=FileSystemLoader(str(REPO / "templates")), autoescape=True)
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["lv_date"] = lv_date
-    env.filters["lv_date_short"] = lv_date_short
+    env = _make_env()
     env.filters["lv_plural"] = lambda n, one, many: one if n % 10 == 1 and n % 100 != 11 else many
-    env.filters["lv_number"] = _lv_number
     env.globals["assets_version"] = "test"
-    env.globals["_party_short_name"] = _party_short_name
     return env
 
 

@@ -12,6 +12,8 @@ Provizoriskie CVK dati 10-04 08:22 (1024/1059 iecirkņi, `data/cvk_sv2026_rezult
 
 **2026-11-03:** pāreja uz 15. Saeimu izpildīta (CHANGELOG 2026-11-03 (5)); SV/AJ jau `opposition`. Atlikušais trigeris — jaunās valdības apstiprināšana: ZZS un «Stabilitātei!» → `not_in_saeima`, jaunā koalīcija, `seed_coalition_periods.py --apply`, ministru `role`, tad Personu lapas partiju rail grupēšana (`backlog/vietne-ui.md`, atlikta 2026-10-09). `scripts/check_new_session_votes.py` pieņem tikai pašreizējā sasaukuma UUID (citam dod STOP, exit 2). **2026-11-10:** valdības maiņas dienas soļi un skripts sagatavoti — `wiki/operations/seeding.md` § Valdības maiņas diena (CHANGELOG 2026-11-10 (2)).
 
+**2026-11-17:** valdība apstiprināta — AS+NA `coalition`, ZZS un «Stabilitātei!» `not_in_saeima`, `coalition_periods` 4 rindas. Paliek: Personu lapas rail (`backlog/vietne-ui.md`), zemāk minētie amati.
+
 Tajā pašā reizē (T6, no handoffiem 10-04…10-09; DB 2026-10-14 nemainīts): «Stabilitātei!» (`parties.id`=9) ir `opposition`, kaut frakcijas vairs nav; Štāls (pid 173) — JKP apsver likvidāciju vai zīmola maiņu; Siliņas (pid 2) `role` pēc JV ārkārtas kongresa.
 
 ### [OPERATOR] Jev keša atslēga jaucē `jev-latest`, ne atbildējušo modeli — jaukti modeļi pēc aliasa maiņas (2026-10-17)
@@ -43,7 +45,7 @@ Tēmā `Aizsardzība un drošība` **970** pozīcijas (`SELECT COUNT(*) FROM cla
 
 **(c) Zalāna (pid=186) VID deklarācijās — divas citas personas ar tādu pašu vārdu.** 2026-10-01 ģimenes paraksts (runbook `vad-declarations.md` § Homonīmu piesārņojums 2.–3. solis): decl 2208–2223 (16) — **pierādīts vārdabrālis**, jo ģimenes sastāvs nav savienojams ar kandidāta dzimšanas gadu (CVK: dz. 1987); decl 2224–2226 (3) — cita ģimene nekā pirmajai grupai, un vai tas ir kandidāts, nav pierādāms. Ģimenes un amatu detaļas ir tikai `data/vad_denylist.json` un purge skriptā (publiskajā spogulī tie nenonāk). (1) **Izpildīts 2026-10-01** (operatora «jā»): 16 dekl. dzēstas, denylist +16 (14 stabili, 2 uuid), `data/{purge,rollback}_vad_zalans_2026-10-01.sql`. *Paliek:* (2) flagged — atrisināms tikai ar ārēju avotu par kandidāta darba vēsturi.
 
-### [DEFERRED] Pilna amatu pārskatīšana pēc 15. Saeimas sanākšanas — komisiju un frakciju vadītāji
+### [OPEN] Pilna amatu pārskatīšana pēc 15. Saeimas sanākšanas — komisiju un frakciju vadītāji
 
 2026-09-28 apsekojums atrada komisiju priekšsēdētājus, kuru `tracked_politicians.role` vēl nes amatu, ko tagad ieņem cits: Cepurītis (76), Briškens (67; lsm.lv 15.09. Tautsaimniecības komisijas vadītāju sauc Ašeradenu), Zariņa-Stūre (143), Inga Bērziņa (144) — jaunais amats bez pierādījuma, tāpēc nerakstīts (T6, stop beats write). Deviņi citi amati izlaboti 2026-09-28 ar rollback (`data/rollback_roles_t6_2026-09-28.sql`, `data/rollback_roles_t6b_2026-09-28.sql`). 15. Saeima novembrī sadalīs visus komisiju un frakciju amatus no jauna, tāpēc pa vienam labot tagad nav jēgas.
 
@@ -52,6 +54,9 @@ Tēmā `Aizsardzība un drošība` **970** pozīcijas (`SELECT COUNT(*) FROM cla
 **2026-11-04, rezerves avots:** saeima.lv `/lv/sasaukumi/15-saeima/{deputati,komisijas,frakcijas}/` jau rāda 15. Saeimas amatus ar datumiem (statisks HTML, «No … Līdz»), titania DepWeb tikmēr atbild 401. Parseri NEBŪVĒT (operators 2026-11-09, § Ne-darīt): lapās nav saites uz DepWeb (`deputy_unid` nav iegūstams), un `deputy_unid` ir UNIQUE atslēgā — aizvietots ID dotu dublikātus dienā, kad titania atveras.
 
 **2026-11-11, Saeimas lapa:** `saeima.html` amatus lasa no kurēta `data/saeima15_amati.yaml` (ne no `role`; CHANGELOG 2026-11-11 (1)). Kad saeima.lv parāda komisiju vadību un sastāvu: papildināt to pašu YAML un uzbūvēt komisiju bloku (ielādētājs tagad apzināti krīt, ja `committees.status` nav `not_elected`). Ja ministrs noliek mandātu un ienāk aizstājējs, lapa klusi rāda CVK sastāvu; jāatjauno `data/cvk_sv2026_ievēlētie.yaml`, pēc tam `data/saeima15_amati.yaml` (ielādētājs krīt pie neievēlēta vārda). `role` pārskatīšana (šis ieraksts) paliek atsevišķa.
+
+- **2026-11-23:** 10 komisiju priekšsēdētājiem (23.11. ievēlētajiem) `role` atjaunots pēc LSM doc 166111 (`data/rollback_roles_komisiju_vaditaji_2026-11-23.sql`, `data/rollback_role_lace_2026-11-23.sql`). 20.11. ievēlēto sešu komisiju vadītāju `role` nav pārbaudīts. Arigo Toro (234) un Skujiņas-Rubenes (133) `role` izlaboti tajā pašā vakarā (`data/rollback_roles_toro_skujina_2026-11-23.sql`). Ar lomām: doc 166097 junction samainīts — runā Kalviņš (304, `mentioned`), Batņa (79) ir `subject`; Kalviņa pozīcija 756098 glabāta, lomas nemainītas.
+- **2026-11-28 trigeris:** pēc «Vienotības» kongresa pārbaudīt Daugavieša (85) amatu partijā (`role` kopš 22.11. «Bijušais Saeimas deputāts (14. Saeima)»). Šlesera (56) un Verginas (135) amati 22.11. balstīti uz vienu avotu katrs; Verginas `party`=AS pēc saraksta konvencijas, biedrība nav apstiprināta. Operators AS apstiprināja 2026-11-22 (`ACCEPTED_9` += 135).
 
 ### [OPERATOR] 2026-10-20 rutīnas atlikums — Mieriņas partija
 - **Mieriņa (pid 17)** saka, ka līdz ZZS kongresam lems par dalību partijā (claim 743270) — pēc kongresa pārbaudīt `party` (T6).

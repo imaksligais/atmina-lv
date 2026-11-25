@@ -1,13 +1,13 @@
 ---
 name: Arigo Toro
 party: Gobzema saraksts
-role: Gobzema saraksta līderis (Rīga); bijušais 13. Saeimas deputāts, līdz vārda maiņai
-  Aldis Gobzems
+role: Gobzema saraksta līderis (Rīga); deputāta Brēmaņa palīgs Saeimā (kopš 2026-11-23);
+  bijušais 13. Saeimas deputāts, līdz vārda maiņai Aldis Gobzems
 relationship_type: tracked
 positions: 6
 votes: 0
 contradictions: 0
-mentioned_in: 134
+mentioned_in: 140
 last_active: 2026-10-04
 top_topics:
 - Koalīcija un partijas

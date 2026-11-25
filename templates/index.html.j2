@@ -102,7 +102,7 @@
             <span class="hero-feature-name">{{ c.politician_name }}</span>
             <span class="hero-feature-role">{{ c.party_short }}{% if c.topic %} · {{ c.topic }}{% endif %}</span>
           </span>
-          <span class="hero-feature-badge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}{% if c.delta_days is not none %} · ΔT {{ c.delta_days }}d{% endif %}</span>
+          <span class="hero-feature-badge">{{ c.severity_glyph }} {{ c.category_label or c.severity_lv }}{% if c.delta_days is not none %} · ΔT {{ c.delta_days|lv_number }}d{% endif %}</span>
         </div>
         {#- T1 (2026-09-05): īss citāts nenosauc savu priekšmetu, tāpēc pirms
             citātu pāra rādām jau esošo analīzi — `summary` un no kvadrātiekavām
@@ -397,12 +397,12 @@
           {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
           {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.initials }}</span>{% endif %}
           <span class="rank-leader-name">{{ r.name }}</span>
-          <span class="rank-leader-value">{{ r.count }}</span>
+          <span class="rank-leader-value">{{ r.count|lv_number }}</span>
         </a>
         {% else %}
         <a href="politiki/{{ r.slug }}.html" class="rank-row" style="--pc: {{ r.party_color }}">
           {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
-          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count }}</span>
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count|lv_number }}</span>
         </a>
         {% endif %}
         {% endfor %}
@@ -420,12 +420,12 @@
           {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
           {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.initials }}</span>{% endif %}
           <span class="rank-leader-name">{{ r.name }}</span>
-          <span class="rank-leader-value">{{ r.delta_days }}d</span>
+          <span class="rank-leader-value">{{ r.delta_days|lv_number }}d</span>
         </a>
         {% else %}
         <a href="pretrunas/{{ r.id }}.html" class="rank-row" style="--pc: {{ r.party_color }}">
           {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
-          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.delta_days }}d</span>
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.delta_days|lv_number }}d</span>
         </a>
         {% endif %}
         {% endfor %}
@@ -443,12 +443,12 @@
           {% if r.has_photo %}<img class="rank-leader-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="44" height="44" loading="lazy">
           {% else %}<span class="rank-leader-photo rank-leader-initials">{{ r.initials }}</span>{% endif %}
           <span class="rank-leader-name">{{ r.name }}</span>
-          <span class="rank-leader-value">{{ r.count }}</span>
+          <span class="rank-leader-value">{{ r.count|lv_number }}</span>
         </a>
         {% else %}
         <a href="politiki/{{ r.slug }}.html" class="rank-row" style="--pc: {{ r.party_color }}">
           {% if r.has_photo %}<img class="rank-row-photo" src="assets/photos/{{ r.slug }}.jpg" alt="" width="20" height="20" loading="lazy">{% else %}<span class="rank-row-photo rank-row-initials" style="--pc: {{ r.party_color }}"></span>{% endif %}
-          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count }}</span>
+          <span class="rank-row-name">{{ r.name }}</span><span class="rank-row-value">{{ r.count|lv_number }}</span>
         </a>
         {% endif %}
         {% endfor %}

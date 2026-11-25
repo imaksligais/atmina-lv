@@ -1046,7 +1046,9 @@ def ingest_all(dry_run: bool = False) -> list[dict]:
             print("Preflight check failed:")
             for issue in issues:
                 print(f"  - {issue}")
-            return []
+            # Raise, not `return []`: morning_ingest reads [] as a clean step,
+            # and 2026-11-21 printed "5/5 OK" with 0 web documents ingested.
+            raise RuntimeError("ingest preflight failed: " + "; ".join(issues))
 
     init_db()
     sources = _load_sources()

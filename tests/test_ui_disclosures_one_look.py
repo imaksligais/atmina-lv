@@ -1,6 +1,6 @@
 """Izvēršana: pārlūka trijstūri un gadu taisnstūri nedrīkst atgriezties.
 
-Īstais renderētājs, astoņas lapas, sintētiska DB (produkcijas DB nelasa).
+Īstais renderētājs, septiņas lapas (saites.html partiju tabulas poga lieto to pašu bultiņas kārtulu), sintētiska DB (produkcijas DB nelasa).
 Katrs summary, arī slēptajās profila cilnēs: kopīgs bultiņas paraksts abos
 stāvokļos, nav otra marķiera, 44 px telefonā. Gadi = čipi, ritināma rinda.
 DISCLOSURE_TEST_CSS ļauj pierādīt kļūmi ar veco CSS, nemainot darba koku.
@@ -20,12 +20,12 @@ sync_api = pytest.importorskip("playwright.sync_api")
 REPO = Path(__file__).resolve().parent.parent
 PAGES = (
     "politiki/agnese-krasta.html", "blog/2026-10-22.html", "likumprojekti.html",
-    "saites.html", "about.html", "analizes/kanans-visvanats-nopelni-2023.html",
+    "about.html", "analizes/kanans-visvanats-nopelni-2023.html",
     "kontakti.html", "statistika/IBE010.html",
 )
 EXPECTED = {
     "profile-bio-more", "pp-chart-table", "pp-quote", "vad-year-more", "vad-section",
-    "brief-topic-details", "lpv1-laws", "saites-party", "classless", "post-more",
+    "brief-topic-details", "lpv1-laws", "classless", "post-more",
     "claim-card", "post-toc-box", "stat-data-table-wrap",
 }
 
@@ -74,7 +74,7 @@ def disclosure_site(tmp_path_factory):
         mp.setattr(orch, "_download_annotation_plugin", lambda *a, **k: None)
         mp.setattr(og_render, "render_og_images", lambda jobs, root: 0)
         orch.generate_public_site(db_path=db_path, output_dir=str(base / "site"),
-                                  only={"politiki", "blog", "bills", "saites", "static", "analizes"})
+                                  only={"politiki", "blog", "bills", "static", "analizes"})
     out = base / "site" / "atmina"
     (out / "statistika").mkdir(exist_ok=True)
     shutil.copyfile(REPO / "curated/atmina/statistika/IBE010.html", out / "statistika/IBE010.html")

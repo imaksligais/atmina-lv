@@ -1,10 +1,10 @@
 ---
 topic: Pilsētvide
-positions: 223
+positions: 231
 votes: 183
-politicians: 31
+politicians: 32
 contradictions: 0
-last_activity: '2026-11-15 00:00:00'
+last_activity: '2026-11-23 00:00:00'
 top_politicians:
 - '[[persons/marta-kotello|Marta Kotello]]'
 - '[[persons/ansis-pupols|Ansis Pūpols]]'

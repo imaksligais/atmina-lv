@@ -265,6 +265,12 @@ def _build_parskats_data(
 # ── Saites cilnes palīgi ────────────────────────────────────────────
 
 
+# Kopīgo balsojumu minimums sakritības sarakstam (profils un Saites tīkls).
+# Ar 10 (vote_alignment_data noklusējums) «visretāk» galā nonāca nejauši pāri:
+# ceturtdaļai pāru ir ≤18 kopīgu balsojumu (prod 2026-11-22).
+VOTE_ALIGN_MIN_SHARED = 100
+
+
 def _vote_alignment_for(
     db: sqlite3.Connection,
     pid: int,
@@ -273,8 +279,8 @@ def _vote_alignment_for(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Top/bottom-N most/least aligned co-deputies by Saeima vote agreement.
 
-    Restricted to pairs sharing >=10 votes (filters seat-warmers and
-    one-off appearances). Returns ``(top, bottom)`` lists of dicts with
+    Restricted to pairs sharing >= ``VOTE_ALIGN_MIN_SHARED`` cast votes
+    (filters seat-warmers and short overlaps). Returns ``(top, bottom)`` lists of dicts with
     name/slug/party/agree_pct. Empty lists when the pid has no
     qualifying co-voters.
 
@@ -300,7 +306,8 @@ def _vote_alignment_for(
     for (lo, hi), (agree, total) in align["pairs"].items():
         if pid not in (lo, hi):
             continue
-        partners.append((hi if lo == pid else lo, agree, total))
+        if total >= VOTE_ALIGN_MIN_SHARED:
+            partners.append((hi if lo == pid else lo, agree, total))
     partners.sort()
     items = []
     for other, agree, total in partners:
@@ -308,6 +315,7 @@ def _vote_alignment_for(
         if p is None or p["relationship_type"] == "inactive":
             continue
         items.append({
+            "pid": other,
             "name": p["name"],
             "slug": _slugify(p["name"]),
             "party": p["party"],
@@ -359,6 +367,7 @@ def _fetch_saites_for_profile(
     commentary_about: list[dict[str, Any]],
     align: dict[str, Any] | None = None,
     has_votes: bool = False,
+    crossings: list[Any] | None = None,
 ) -> dict[str, Any]:
     """Build the Saites tab payload from already-fetched per-politician data.
 
@@ -397,6 +406,23 @@ def _fetch_saites_for_profile(
     # saņem is_anchor=True, kalpojot kā URL fragment target.
     anchored_pids: set[int] = set()
 
+    # «Kur ceļi krustojas» (Saites v2, 2. posms): vietas no build_places —
+    # (Place, savs Member, [(otrs Member, teksts)]). Kartītei: kopīgās vietas
+    # ar otru pāra dalībnieku (tikai tās, kur abi bijuši vienlaikus).
+    crossing_rows: list[dict[str, Any]] = []
+    shared_by_other: dict[int, list[dict[str, str]]] = {}
+    for place, me, together in crossings or []:
+        if not together:
+            continue
+        crossing_rows.append({
+            "slug": place.slug, "name": place.name, "kind": place.kind,
+            "role": me.role, "when": me.when,
+            "others": [o.name for o, _ in together[:3]],
+            "others_more": max(0, len(together) - 3),
+        })
+        for o, _ in together:
+            shared_by_other.setdefault(o.pid, []).append({"slug": place.slug, "name": place.name})
+
     def _annotate_card(t: dict[str, Any]) -> dict[str, Any]:
         if t.get("source_pid") == pid:
             other_pid = t.get("target_pid")
@@ -412,6 +438,7 @@ def _fetch_saites_for_profile(
             "other_pid": other_pid,
             "other_slug": _slugify(other_name) if other_name else "",
             "is_anchor": is_anchor,
+            "shared_places": shared_by_other.get(other_pid, []) if is_anchor else [],
         }
 
     uzbrukumi = [_annotate_card(t) for t in uzbrukumi]
@@ -456,6 +483,7 @@ def _fetch_saites_for_profile(
         "vote_alignment_top": vote_top,
         "vote_alignment_bottom": vote_bottom,
         "mini_graph": {"neighbors": neighbors},
+        "crossings": crossing_rows,
     }
 
 

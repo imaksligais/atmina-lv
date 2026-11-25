@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (27%), [[topics/valsts-parvalde|Valsts pārvalde]] (16%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (9%)
-- **30d:** 8 claims, 0.9× bāzes līnija
+- **30d:** 3 claims, 0.3× bāzes līnija
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/ukraina-un-krievija|Ukraina un Krievija]], 2026-04-05
 <!-- /SYNC-AUTO -->

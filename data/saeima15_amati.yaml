@@ -1,12 +1,13 @@
 # 15. Saeimas amati — Prezidijs, frakciju vadība, komisiju statuss.
 # Rakstīts ar roku no saglabātajām saeima.lv lapām (SHA-256:
-# docs/audits/2026-11-11-saeima-amati/SHA256SUMS). Parseri NEBŪVĒ (BACKLOG § Ne-darīt 37).
+# docs/audits/2026-11-11-saeima-amati/SHA256SUMS; atkārtoti pārbaudīts 18.11. pēc valdības
+# apstiprināšanas: docs/audits/2026-11-18-saeima-amati/SHA256SUMS, izmaiņu nav). Parseri NEBŪVĒ (BACKLOG § Ne-darīt 37).
 # Amatu teksti — VERBATIM no saeima.lv katram cilvēkam (dzimte NEatvasina).
 # Vārdi = precīzi kā data/cvk_sv2026_ievēlētie.yaml; list_nr = data/cvk_sv2026_rezultati.yaml.
 # Lasa src/render/saeima.py (saeima.html); ielādētājs krīt, ja kāds vārds nav ievēlēto sarakstā.
 
 convocation: 15
-checked: 2026-11-11
+checked: 2026-11-18
 
 presidium:
   source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/prezidijs/

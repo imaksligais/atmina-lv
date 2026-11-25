@@ -92,7 +92,7 @@ def test_web_scraper_counts_as_journalism(tmp_path):
 
 def test_volume_phrase_lv_singular_plural():
     from src.render.mediji import _volume_phrase
-    assert _volume_phrase(1421, "dokumenti") == "1421 dokuments"
+    assert _volume_phrase(1421, "dokumenti") == "1\u00a0421 dokuments"
     assert _volume_phrase(2, "raksti") == "2 raksti"
     assert _volume_phrase(11, "raksti") == "11 raksti"
 
@@ -105,15 +105,9 @@ def test_cross_outlet_avg_party_share(tmp_path):
 
 
 def _env():
-    from jinja2 import Environment, FileSystemLoader, select_autoescape
+    from src.render._orchestrator import _make_env
 
-    from src.render._common import lv_date
-    env = Environment(
-        loader=FileSystemLoader("templates"),
-        autoescape=select_autoescape(["html", "j2"]),
-    )
-    env.filters["lv_date"] = lv_date
-    return env
+    return _make_env()
 
 
 def test_render_mediji_writes_index_and_detail(tmp_path):

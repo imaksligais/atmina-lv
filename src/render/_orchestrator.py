@@ -64,6 +64,7 @@ from src.render._common import og_render
 from src.render.analyses import _draft_analysis_image_stems, _load_analyses, render_analyses
 from src.render.bills import _fetch_bills, render_bills, render_bills_index
 from src.render.blog import _fetch_blog_posts, _fetch_context_notes, render_blog
+from src.render.feed import write_feed
 from src.render.contradictions import (
     _fetch_contradictions,
     _fetch_withdrawn_contradictions,
@@ -88,6 +89,7 @@ from src.render.saeima import render_saeima
 from src.render.search_index import render_search_index
 from src.render.syntheses import _load_syntheses, _map_syntheses_to_politicians, render_syntheses
 from src.render.tensions import _fetch_tensions, render_tensions
+from src.render.valdiba import VALDIBA_PUBLISHED, render_valdiba
 from src.render.tafeles import render_tafeles
 from src.render.votes import _fetch_votes, render_votes
 from src.render.x import render_x
@@ -133,6 +135,7 @@ KNOWN_DOMAINS = frozenset({
     "zinas",        # zinas.html
     "x",            # X/Twitter timeline
     "spriedzes",    # spriedzes.html (political tensions)
+    "valdiba",      # valdiba.html (Ministru kabinets + pozīcijas nozarē)
     "saites",       # saites.html (force-graph)
     "blog",         # blog.html + blog/<slug>.html (daily + weekly briefs)
     "analizes",     # analizes/<slug>.html (thematic)
@@ -294,7 +297,28 @@ def generate_public_site(
     False, because a draft in the tree blocks every deploy (2026-10-26).
 
     Returns the output directory path.
+
+    ``db_path`` also becomes ``src.db.DB_PATH`` for the duration, so helpers
+    that open the DB themselves (party short names and colours in
+    ``src.coalition``) read the same copy, not the live DB (2026-11-10).
     """
+    import src.db as dbmod
+
+    db_path = db_path or DEFAULT_DB_PATH
+    previous = dbmod.DB_PATH
+    dbmod.DB_PATH = db_path
+    try:
+        return _generate_public_site(db_path, output_dir, only, include_drafts)
+    finally:
+        dbmod.DB_PATH = previous
+
+
+def _generate_public_site(
+    db_path: str,
+    output_dir: Optional[str],
+    only: Optional[set[str]],
+    include_drafts: bool,
+) -> str:
     if only is not None:
         unknown = set(only) - KNOWN_DOMAINS
         if unknown:
@@ -306,7 +330,6 @@ def generate_public_site(
     def _want(domain: str) -> bool:
         return only is None or domain in only
 
-    db_path = db_path or DEFAULT_DB_PATH
     output_dir = output_dir or DEFAULT_OUTPUT_DIR
 
     output = Path(output_dir)
@@ -578,9 +601,25 @@ def generate_public_site(
     if _want("spriedzes"):
         render_tensions(env, db, atmina_dir, tensions)
 
+    # Valdība (ministri + pozīcijas viņu nozarē). Kamēr operators nav apstiprinājis
+    # publicēšanu (VALDIBA_PUBLISHED), renderē TIKAI ar skaidru --only=valdiba
+    # (priekšskatījumam atsevišķā --output) — pilns build to kokā neliek (T15).
+    if VALDIBA_PUBLISHED and _want("valdiba") or (only is not None and "valdiba" in only):
+        render_valdiba(env, db, atmina_dir)
+
+    # Kopīgās vietas (Saites v2, 2. posms): aprēķina VIENREIZ un uzbūvē
+    # vietas/<slug>.html katrā renderā, kas skar Saites lapu vai profilus — tā
+    # neviens profils nesaitē uz vietu, kuras lapas kokā nav.
+    places = None
+    if _want("saites") or _want("politiki"):
+        from src.render.vietas import build_places, render_places
+        places = build_places(db)
+        logger.info("Generated %d vietas pages", render_places(
+            env, places, atmina_dir, prune=_want("saites") and _want("politiki")))
+
     # Saites (force-graph + per-politician detail panel)
     if _want("saites"):
-        render_links(env, db, atmina_dir, tensions)
+        render_links(env, db, atmina_dir, tensions, places=places)
 
     # Finanses page is manually curated — see OppTracker/Deklare2/finanses_content.html
 
@@ -598,6 +637,10 @@ def generate_public_site(
                     pol_summaries=pol_summaries,
                     day_politician_ids=brief_day_politician_ids(db))
 
+    # 9b. feed.xml — visos domēnos, kuros blog_posts ir ielādēts (_heavy_fetch_plan).
+    if _want("blog") or _want("dashboard") or _want("static"):
+        write_feed(atmina_dir, blog_posts, analyses)
+
     # 10. Individual analysis pages (analizes/<slug>.html)
     if _want("analizes"):
         render_analyses(env, atmina_dir, analyses, pol_summaries=pol_summaries)
@@ -610,7 +653,8 @@ def generate_public_site(
     # 11. Politician pages
     if _want("politiki"):
         politician_count = render_politicians(
-            env, db, atmina_dir, politicians, pid_to_syntheses, pid_to_atradumi
+            env, db, atmina_dir, politicians, pid_to_syntheses, pid_to_atradumi,
+            places=places,
         )
 
     if _want("static"):
@@ -728,6 +772,8 @@ def _generate_sitemap(
         "likumprojekti.html",
         "statistika.html", "saeima.html",
     ]
+    if VALDIBA_PUBLISHED:
+        root_pages.append("valdiba.html")
     for p in root_pages:
         urls.append(f"{BASE_URL}/{p}")
 
@@ -739,6 +785,11 @@ def _generate_sitemap(
 
     for p in politicians:
         urls.append(f"{BASE_URL}/politiki/{p['slug']}.html")
+
+    # Kopīgās vietas: no koka, jo render_places tās raksta (un vecās dzēš)
+    # katrā saites/politiki renderā.
+    for page in sorted((atmina_dir / "vietas").glob("*.html")):
+        urls.append(f"{BASE_URL}/vietas/{page.name}")
 
     for party in parties:
         sn = party.get("short_name") or ""

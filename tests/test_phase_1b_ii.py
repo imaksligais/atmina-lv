@@ -2,14 +2,13 @@
 
 import os
 import re
-import sqlite3
 import tempfile
-from pathlib import Path
 
 import pytest
 
 from src.db import init_db, get_db
-from src.saeima import init_saeima_bills, init_saeima_tables, upsert_bill, append_bill_stage
+from src.saeima import init_saeima_bills, init_saeima_tables, upsert_bill
+from src.render._orchestrator import _make_env
 
 
 def _safe_unlink(path):
@@ -286,8 +285,7 @@ def test_fetch_law_pages_shape(tmp_path):
 
 
 def test_likums_template_renders(tmp_path, db_with_bills_for_backfill):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter, lv_date
+    from src.render._common import lv_date
     from src.render.laws import _fetch_law_pages
     from scripts.backfill_base_law_slug import backfill_base_law_slug
 
@@ -306,8 +304,7 @@ def test_likums_template_renders(tmp_path, db_with_bills_for_backfill):
     db.close()
     law = pages[0]
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lv_date  # _macros.html.j2 (prv2_card) to lieto
     template = env.get_template("likums.html.j2")
     html = template.render(law=law)
@@ -320,8 +317,7 @@ def test_likums_template_renders(tmp_path, db_with_bills_for_backfill):
 
 
 def test_generate_law_pages_emits_files(tmp_path, db_with_bills_for_backfill):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter, lv_date
+    from src.render._common import lv_date
     from src.render.laws import _generate_law_pages
 
     laws_dir = tmp_path / "wiki" / "laws"
@@ -333,8 +329,7 @@ def test_generate_law_pages_emits_files(tmp_path, db_with_bills_for_backfill):
     output_dir = tmp_path / "out"
     output_dir.mkdir()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lv_date  # _macros.html.j2 (prv2_card) to lieto
 
     db = get_db(db_with_bills_for_backfill)
@@ -369,8 +364,6 @@ def test_fetch_bill_detail_returns_base_law_fields(db_with_bills_for_backfill, w
 
 
 def test_likumprojekts_template_renders_base_law_section(db_with_bills_for_backfill, wiki_with_laws):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
     from scripts.backfill_base_law_slug import backfill_base_law_slug
 
@@ -381,8 +374,7 @@ def test_likumprojekts_template_renders_base_law_section(db_with_bills_for_backf
     bill = _fetch_bill_detail(db, bid, wiki_dir=wiki_with_laws)
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -392,8 +384,6 @@ def test_likumprojekts_template_renders_base_law_section(db_with_bills_for_backf
 
 
 def test_likumprojekts_template_no_base_law_when_null(db_with_bills_for_backfill):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
 
     db = get_db(db_with_bills_for_backfill)
@@ -402,8 +392,7 @@ def test_likumprojekts_template_no_base_law_when_null(db_with_bills_for_backfill
     bill = _fetch_bill_detail(db, bid)
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -417,8 +406,6 @@ def test_likumprojekts_template_no_base_law_when_null(db_with_bills_for_backfill
 
 def test_politician_profile_no_likumprojekti_section_when_empty(tmp_path):
     """Junction empty for politiķa → sekcija + butons absent no DOM."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.politicians import _fetch_politician_detail
 
     fd, db_path = tempfile.mkstemp(suffix=".db", dir=str(tmp_path))
@@ -441,9 +428,7 @@ def test_politician_profile_no_likumprojekti_section_when_empty(tmp_path):
     _safe_unlink(db_path)
     assert detail["bills_involved"] == []
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("politician.html.j2")
     html = template.render(
@@ -460,8 +445,6 @@ def test_politician_profile_no_likumprojekti_section_when_empty(tmp_path):
 
 
 def test_politician_profile_likumprojekti_section_when_data_present(tmp_path, db_with_bills_for_backfill):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.politicians import _fetch_politician_detail
 
     db = get_db(db_with_bills_for_backfill)
@@ -487,9 +470,7 @@ def test_politician_profile_likumprojekti_section_when_data_present(tmp_path, db
     assert len(detail["bills_involved"]) == 1
     assert detail["bills_involved"][0]["document_nr"] == "1315/Lp14"
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["safe_json"] = _safe_json_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("politician.html.j2")
     html = template.render(

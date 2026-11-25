@@ -511,7 +511,14 @@ Tad IZLASI visu tekstu kā lasītājs, rindkopu pa rindkopai, un pārbaudi:
    domu; tabulas šūna ar teikumu virkni; virsraksts, kas sola vairāk nekā
    teksts dod; pirmais teikums, kas nepasaka, par ko ir sadaļa.
 4. Pārskatāmība — skaitļi bez avota; «vienā dienā» bez pirmavota datuma
-   (C2); vārds «pretruna» bez `contradictions` rindas.
+   (C2); vārds «pretruna» bez `contradictions` rindas. Citātu burtiskums
+   (`src.support.unverbatim_quotes`) — tikai MŪSU tekstam: prozai un tabulu
+   rindām, ko rakstītājs pats uzrakstījis vai pārrakstījis. Skeleta pozīciju
+   šūnas (`claims.stance`) šeit neskaiti un neziņo — tās jau pārbauda
+   `@stance-checker`, un `raksturo kā «…»` akuzatīvs tajās ir atļauts
+   (orķestratora lēmums 2026-11-21 pēc operatora deleģējuma, operators var
+   atcelt; tā pati līnija kā CHANGELOG 2026-11-20 — locīts vārds pēdiņās tikai
+   ziņošanai; 21.11. tabulās 7 no 51 tādu fragmentu).
 5. Nedēļas pārskats «Nedēļas stāsti» (kopš 2026-11-01) — katram stāstam
    spriedums, ne regex: pēdējais teikums nav punkta atkārtojums; pirmais
    teikums neatkārto virsrakstu; nav «kāpēc tas svarīgi» soļa; nav trīs

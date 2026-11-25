@@ -226,7 +226,11 @@ _INFLECTION_COMMON_WORD_BLOCKLIST: set[str] = {"daudzi"}
 # dropped. Keyed by NAME — pids differ between fixtures and production.
 # Operatora lēmums 2026-10-05, 15. Saeimas kohorta T13: ~58 % / ~41 % svešu saišu.
 # Kalviņš (2026-10-26): «Kalviņa» = Agita Kalviņa, Reinis Kalviņš (režisors), «Kalvins» = Calvin.
-_FULL_NAME_ONLY: set[str] = {"Māris Ozoliņš", "Andrejs Jakovļevs", "Ivars Kalviņš"}
+# Kārlis Purgailis: «Purgaili» = Santas Purgailes (Latvijas Banka) akuzatīvs;
+# Ģirts Jaunzems: «Jaunzem-» = vietvārdi (Jaunzemes iela, Jaunzemji) un cita persona (2026-11-17).
+_FULL_NAME_ONLY: set[str] = {
+    "Māris Ozoliņš", "Andrejs Jakovļevs", "Ivars Kalviņš", "Kārlis Purgailis", "Ģirts Jaunzems",
+}
 
 # Words near the surname that signal a person reference (not a common word usage).
 # Before surname: role/title words

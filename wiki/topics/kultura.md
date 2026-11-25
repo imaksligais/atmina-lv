@@ -1,10 +1,10 @@
 ---
 topic: Kultūra
-positions: 135
+positions: 140
 votes: 9852
 politicians: 55
 contradictions: 1
-last_activity: '2026-11-15 00:00:00'
+last_activity: '2026-11-24 00:00:00'
 top_politicians:
 - '[[persons/nauris-puntulis|Nauris Puntulis]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

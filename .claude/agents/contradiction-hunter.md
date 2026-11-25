@@ -337,6 +337,14 @@ cik retorika-pret-balsojumu pāru izveidoji, cik frakcijas noviržu pārbaudīji
 `document_nr` ķēžu izvilki (T14), cik balsojumu bija sesijā. Vārts bez saucēja nav
 pierādījums.
 
+**Strukturālā pāreja — atskaitē katram pid atsevišķi (kopš 2026-11-21).** Atskaitē
+ieliec tabulu: pid → cik `saeima_vote` rindu izlasīji ar SQL (Step 1) un kuras
+likumprojektu ķēdes (`document_nr`) izvilki. Ja pid nav ne viena skaitļa, pāreja
+nav izpildīta — tā arī raksti, nevis «pārbaudīts». Iemesls: 20.11. četriem
+balsotājiem šī pāreja palika neizdarīta, un tieši tā atrada dienas vienīgo
+pretrunu (#73). Orķestrators pēdas `politician_ids` liek tikai tos pid, kuriem
+tabulā ir skaitļi.
+
 ## Severity Rubric
 
 | Severity | Criteria | Example |

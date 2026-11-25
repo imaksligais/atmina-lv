@@ -54,33 +54,33 @@
     </div>
     <div class="profile-stats-bar" role="tablist" aria-label="Partijas sadaļas">
       <button class="profile-stat active" id="tab-btn-biedri" role="tab" aria-controls="tab-biedri" aria-selected="true" tabindex="0" data-tab="biedri">
-        <span class="profile-stat-value">{{ members|length }}</span>
+        <span class="profile-stat-value">{{ members|length|lv_number }}</span>
         <span class="profile-stat-label">Biedri</span>
       </button>
       <button class="profile-stat" id="tab-btn-pozicijas" role="tab" aria-controls="tab-pozicijas" aria-selected="false" tabindex="-1" data-tab="pozicijas">
         {#- Kopskaits, ne saraksta griesti (`claims` ir LIMIT 100) — tas pats skaitlis kā OG kartītē. #}
-        <span class="profile-stat-value">{{ claims_count }}</span>
+        <span class="profile-stat-value">{{ claims_count|lv_number }}</span>
         <span class="profile-stat-label">Pozīcijas</span>
       </button>
       {% if program_by_topic %}
       <button class="profile-stat" id="tab-btn-programma" role="tab" aria-controls="tab-programma" aria-selected="false" tabindex="-1" data-tab="programma">
-        <span class="profile-stat-value">{{ program_count }}</span>
+        <span class="profile-stat-value">{{ program_count|lv_number }}</span>
         <span class="profile-stat-label">Programma</span>
       </button>
       {% endif %}
       <button class="profile-stat" id="tab-btn-balsojumi" role="tab" aria-controls="tab-balsojumi" aria-selected="false" tabindex="-1" data-tab="balsojumi">
-        <span class="profile-stat-value">{{ votes|length }}</span>
+        <span class="profile-stat-value">{{ votes|length|lv_number }}</span>
         <span class="profile-stat-label">Balsojumi</span>
       </button>
       {% if tensions %}
       <button class="profile-stat" id="tab-btn-spriedzes" role="tab" aria-controls="tab-spriedzes" aria-selected="false" tabindex="-1" data-tab="spriedzes">
-        <span class="profile-stat-value">{{ tensions|length }}</span>
+        <span class="profile-stat-value">{{ tensions|length|lv_number }}</span>
         <span class="profile-stat-label">Spriedzes</span>
       </button>
       {% endif %}
       {% if knab_summary %}
       <button class="profile-stat" id="tab-btn-finanses" role="tab" aria-controls="tab-finanses" aria-selected="false" tabindex="-1" data-tab="finanses">
-        <span class="profile-stat-value">€{{ "{:,.0f}".format(knab_summary.total_donations) }}</span>
+        <span class="profile-stat-value">{{ knab_summary.total_donations|lv_number }}&nbsp;€</span>
         <span class="profile-stat-label">Finanses</span>
       </button>
       {% endif %}
@@ -107,7 +107,7 @@
           <span class="stat-dot">·</span>
           {% if m.contradictions_count > 0 %}<span style="color:var(--red-bright);">{{ m.contradictions_count }} pretr.</span>{% else %}<span>0 pretr.</span>{% endif %}
           <span class="stat-dot">·</span>
-          <span>{{ m.votes_count }} bals.</span>
+          <span>{{ m.votes_count|lv_number }} bals.</span>
         </div>
         {% if m.last_activity %}
         <div class="card-last-activity">
@@ -215,7 +215,7 @@
     {% if knab_summary.data_date %}<p class="muted">KNAB dati uz {{ knab_summary.data_date|lv_date }}</p>{% endif %}
     <div class="stats-row" style="margin-bottom:1.5rem;">
       <div class="stat-card">
-        <div class="stat-value">€{{ "{:,.0f}".format(knab_summary.total_donations) }}</div>
+        <div class="stat-value">{{ knab_summary.total_donations|lv_number }}&nbsp;€</div>
         <div class="stat-label">Kopējie ziedojumi</div>
       </div>
       <div class="stat-card">

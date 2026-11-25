@@ -42,6 +42,7 @@
 !/wrangler.json
 !/.gitattributes
 !/.gitignore
+!/AGENTS.md
 !/ARCHITECTURE.md
 !/BACKLOG.md
 !/CLAUDE.md

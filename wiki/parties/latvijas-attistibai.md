@@ -1,7 +1,7 @@
 ---
 party: Latvijas attīstībai
 members: 2
-claims: 147
+claims: 155
 program_promises: 11
 contradictions: 0
 votes_par: 0

@@ -3,16 +3,17 @@ name: Regīna Ločmele
 party: Latvija Pirmajā Vietā
 role: Saeimas deputāte
 relationship_type: tracked
-positions: 2
-votes: 5
+positions: 3
+votes: 27
 contradictions: 0
-mentioned_in: 30
-last_active: 2026-11-08
+mentioned_in: 49
+last_active: 2026-11-21
 top_topics:
 - Ekonomika un uzņēmējdarbība
 - Koalīcija un partijas
+- Tieslietas
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 1 claims
+- **30d:** 2 claims
 <!-- /SYNC-AUTO -->

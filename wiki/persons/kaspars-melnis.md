@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (53%), [[topics/valsts-parvalde|Valsts pārvalde]] (12%), [[topics/izglitiba|Izglītība]] (7%)
-- **30d:** 1 claims, 0.2× bāzes līnija
+- **30d:** 1 claims
 - **Spriedzes:** [[persons/dace-melbarde|Dace Melbārde]] (1 spriedze)
 <!-- /SYNC-AUTO -->

@@ -36,6 +36,7 @@ from src.render._common import (
 )
 from src.render._common.constants import PROJECT_ROOT
 from src.render._common.cvk import read_elected
+from src.render.valdiba import VALDIBA_PUBLISHED
 from src.scope import not_attendance_sql
 
 # «15. Saeima» rails. Ievēlēto saraksts = CVK oficiālais (apstiprināts 2026-10-16);
@@ -243,4 +244,5 @@ def render_personas(
         "parties_with_counts": parties_with_counts,
         "metrics": personas_metrics,
         "saeima15_counts": saeima15_counts,
+        "valdiba_published": VALDIBA_PUBLISHED,
     })

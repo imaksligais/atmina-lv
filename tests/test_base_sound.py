@@ -23,11 +23,11 @@ skripta atsauce (chrome-sync kontrakts — sk. ``_orchestrator._CHROME_SPECS``).
 
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
+from src.render._orchestrator import _make_env
 
 
 def _render_base() -> str:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+    env = _make_env()
     env.globals["assets_version"] = "test"
     return env.get_template("base.html.j2").render()
 

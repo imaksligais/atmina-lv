@@ -3,11 +3,11 @@ name: Ivars Ijabs
 party: Latvijas attīstībai
 role: EP deputāts, Renew Europe VP
 relationship_type: tracked
-positions: 31
+positions: 33
 votes: 0
 contradictions: 0
-mentioned_in: 365
-last_active: 2026-11-11
+mentioned_in: 398
+last_active: 2026-11-19
 top_topics:
 - Ukraina un Krievija
 - Ārpolitika
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (26%), [[topics/arpolitika|Ārpolitika]] (16%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (10%)
-- **30d:** 6 claims, 1.5× bāzes līnija
+- **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (27%), [[topics/arpolitika|Ārpolitika]] (18%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (9%)
+- **30d:** 7 claims, 1.8× bāzes līnija
 <!-- /SYNC-AUTO -->

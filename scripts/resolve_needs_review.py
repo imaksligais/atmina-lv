@@ -35,7 +35,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
-from src.briefs import current_routine_day, needs_review_day_claims  # noqa: E402
+from src.briefs import current_routine_day, needs_review_day_claims, routine_day_window  # noqa: E402
 from src.db import get_db, now_lv  # noqa: E402
 
 DATA_DIR = REPO / "data"
@@ -119,6 +119,19 @@ def list_day(day: str) -> int:
     db = get_db()
     try:
         rows = needs_review_day_claims(db, day)
+        # Atpakaļdatētas pozīcijas (veci tvīti, kas ielādēti šodien) skeleta
+        # logā (`stated_at`) nekrīt, bet ir šīs rutīnas darbs: ņem arī tās pēc
+        # `created_at` (LV pulkstenis) rutīnas dienas logā (2026-11-18: 3 no 17).
+        start, end = routine_day_window(day)
+        seen = {r["id"] for r in rows}
+        n_window = len(rows)
+        rows += [r for r in db.execute(
+            """SELECT c.id, p.name, c.topic FROM claims c
+               JOIN tracked_politicians p ON c.opponent_id = p.id
+               WHERE c.created_at >= ? AND c.created_at < ? AND c.claim_type = 'position'
+                 AND c.review_status = 'needs_review' AND p.relationship_type != 'inactive'
+               ORDER BY c.id""", (start, end),
+        ) if r["id"] not in seen]
         ids = [r["id"] for r in rows]
         claims = {
             r["id"]: r for r in db.execute(
@@ -128,7 +141,8 @@ def list_day(day: str) -> int:
         } if ids else {}
     finally:
         db.close()
-    print(f"Rutīnas diena {day}: needs_review pozīcijas {len(rows)}")
+    print(f"Rutīnas diena {day}: needs_review pozīcijas {len(rows)} "
+          f"(dienas logā {n_window}, kā print_routine; atpakaļdatētas {len(rows) - n_window})")
     for r in rows:
         c = claims[r["id"]]
         src = get_claim_source(r["id"]) or {}

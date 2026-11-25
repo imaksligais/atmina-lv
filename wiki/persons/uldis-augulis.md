@@ -1,13 +1,13 @@
 ---
 name: Uldis Augulis
 party: Zaļo un Zemnieku savienība
-role: Zemkopības ministrs, labklājības ministra pienākumu izpildītājs
+role: Bijušais zemkopības ministrs (līdz 2026-11-17)
 relationship_type: tracked
-positions: 114
+positions: 117
 votes: 3709
 contradictions: 0
-mentioned_in: 779
-last_active: 2026-11-16
+mentioned_in: 789
+last_active: 2026-11-18
 top_topics:
 - Lauksaimniecība
 - Mežsaimniecība
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/lauksaimnieciba|Lauksaimniecība]] (39%), [[topics/mezsaimnieciba|Mežsaimniecība]] (15%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (6%)
-- **30d:** 5 claims, 0.3× bāzes līnija
+- **Top tēmas:** [[topics/lauksaimnieciba|Lauksaimniecība]] (38%), [[topics/mezsaimnieciba|Mežsaimniecība]] (15%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (6%)
+- **30d:** 7 claims, 0.5× bāzes līnija
 - **Spriedzes:** [[persons/kaspars-briskens|Kaspars Briškens]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

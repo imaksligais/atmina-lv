@@ -3,11 +3,11 @@ name: Edgars Rinkēvičs
 party: Bezpartejisks
 role: Valsts prezidents
 relationship_type: tracked
-positions: 295
+positions: 305
 votes: 120
 contradictions: 0
-mentioned_in: 3567
-last_active: 2026-11-12
+mentioned_in: 3729
+last_active: 2026-11-23
 top_topics:
 - Aizsardzība un drošība
 - Ukraina un Krievija
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (27%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (12%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (9%)
-- **30d:** 37 claims, 0.9× bāzes līnija
+- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (27%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (13%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (9%)
+- **30d:** 42 claims, 1.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (2 spriedzes), [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze)
 <!-- /SYNC-AUTO -->

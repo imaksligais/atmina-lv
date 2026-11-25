@@ -28,9 +28,10 @@ import tempfile
 from pathlib import Path
 
 import pytest
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
 from src.render.votes import _faction_sort_key, _result_counts
+from src.render._orchestrator import _make_env
 
 _ROOT = Path(__file__).resolve().parents[1]
 _TEMPLATE = Path("templates/balsojumi.html.j2")
@@ -78,7 +79,7 @@ def test_faction_sort_key_puts_canonical_first_then_alphabetical():
 # ──────────────────────────────────────────────────────────────────
 
 def _env() -> Environment:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+    env = _make_env()
     env.globals["assets_version"] = "test"
     env.filters["lv_date"] = lambda s: s or ""
     env.filters["safe_url"] = lambda u: u or ""

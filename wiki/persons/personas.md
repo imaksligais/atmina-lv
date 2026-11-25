@@ -1,89 +1,96 @@
 # Politiķi — Indekss
 
-_Atjaunots: 2026-11-16 23:05:55_
+_Atjaunots: 2026-11-24 23:49:43_
 
-**258** politiķi, **11478** pozīcijas
+**269** politiķi, **12200** pozīcijas
 
-## Apvienotais saraksts (48)
+## Apvienotais saraksts (55)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/andris-kulbergs\|Andris Kulbergs]] | 975 | 8 | 5520 | 2026-11-16 |
-| [[persons/guntars-vitols\|Guntars Vītols]] | 290 | 0 | 5 | 2026-11-16 |
-| [[persons/edvards-smiltens\|Edvards Smiltēns]] | 213 | 1 | 5610 | 2026-11-16 |
-| [[persons/maris-kucinskis\|Māris Kučinskis]] | 175 | 2 | 5199 | 2026-11-16 |
-| [[persons/edgars-tavars\|Edgars Tavars]] | 108 | 1 | 6780 | 2026-11-12 |
-| [[persons/karlis-serzants\|Kārlis Seržants]] | 73 | 0 | 0 | 2026-11-12 |
-| [[persons/reinis-poznaks\|Reinis Pozņaks]] | 62 | 0 | 0 | 2026-11-14 |
-| [[persons/aivis-cerins\|Aivis Ceriņš]] | 60 | 0 | 0 | 2026-11-16 |
-| [[persons/juris-vilums\|Juris Viļums]] | 46 | 0 | 7207 | 2026-11-09 |
-| [[persons/raimonds-bergmanis\|Raimonds Bergmanis]] | 40 | 0 | 6415 | 2026-11-03 |
-| [[persons/ceslavs-batna\|Česlavs Batņa]] | 29 | 0 | 7120 | 2026-11-07 |
-| [[persons/edgars-bergholcs\|Edgars Bergholcs]] | 28 | 0 | 0 | 2026-11-15 |
-| [[persons/edgars-putra\|Edgars Putra]] | 19 | 0 | 6949 | 2026-09-30 |
-| [[persons/aiva-viksna\|Aiva Vīksna]] | 18 | 0 | 7666 | 2026-10-21 |
-| [[persons/andris-skride\|Andris Skride]] | 16 | 0 | 5 | 2026-11-09 |
+| [[persons/andris-kulbergs\|Andris Kulbergs]] | 1032 | 8 | 5529 | 2026-11-24 |
+| [[persons/guntars-vitols\|Guntars Vītols]] | 322 | 0 | 27 | 2026-11-24 |
+| [[persons/edvards-smiltens\|Edvards Smiltēns]] | 222 | 1 | 5632 | 2026-11-20 |
+| [[persons/maris-kucinskis\|Māris Kučinskis]] | 177 | 2 | 5221 | 2026-11-22 |
+| [[persons/edgars-tavars\|Edgars Tavars]] | 116 | 1 | 6789 | 2026-11-24 |
+| [[persons/aivis-cerins\|Aivis Ceriņš]] | 77 | 0 | 0 | 2026-11-24 |
+| [[persons/karlis-serzants\|Kārlis Seržants]] | 76 | 0 | 0 | 2026-11-18 |
+| [[persons/reinis-poznaks\|Reinis Pozņaks]] | 66 | 0 | 0 | 2026-11-18 |
+| [[persons/juris-vilums\|Juris Viļums]] | 48 | 0 | 7229 | 2026-11-23 |
+| [[persons/raimonds-bergmanis\|Raimonds Bergmanis]] | 41 | 0 | 6437 | 2026-11-20 |
+| [[persons/ceslavs-batna\|Česlavs Batņa]] | 34 | 0 | 7129 | 2026-11-24 |
+| [[persons/edgars-bergholcs\|Edgars Bergholcs]] | 29 | 0 | 0 | 2026-11-19 |
+| [[persons/edgars-putra\|Edgars Putra]] | 27 | 0 | 6958 | 2026-11-23 |
+| [[persons/aiva-viksna\|Aiva Vīksna]] | 19 | 0 | 7688 | 2026-11-20 |
+| [[persons/andris-skride\|Andris Skride]] | 18 | 0 | 27 | 2026-11-24 |
 | [[persons/maris-sprindzuks\|Māris Sprindžuks]] | 15 | 0 | 3324 | 2026-10-27 |
-| [[persons/martins-brencis\|Mārtiņš Brencis]] | 12 | 0 | 5 | 2026-11-11 |
+| [[persons/maris-ozolins\|Māris Ozoliņš]] | 15 | 0 | 27 | 2026-11-21 |
+| [[persons/martins-brencis\|Mārtiņš Brencis]] | 13 | 0 | 27 | 2026-11-23 |
 | [[persons/ingmars-lidaka\|Ingmārs Līdaka]] | 10 | 1 | 7740 | 2026-10-29 |
-| [[persons/maris-ozolins\|Māris Ozoliņš]] | 10 | 0 | 5 | 2026-11-13 |
-| [[persons/linda-matisone\|Linda Matisone]] | 9 | 0 | 8154 | 2026-10-21 |
-| [[persons/juris-lazdins\|Juris Lazdiņš]] | 9 | 0 | 5 | 2026-11-03 |
-| [[persons/viesturs-vitovskis\|Viesturs Vitovskis]] | 7 | 0 | 5 | 2026-10-16 |
-| [[persons/inga-priede\|Inga Priede]] | 6 | 0 | 972 | 2026-11-12 |
-| [[persons/liene-apine\|Liene Apine]] | 6 | 0 | 5 | 2026-11-16 |
-| [[persons/janis-jenzis\|Jānis Jenzis]] | 5 | 0 | 5 | 2026-11-09 |
-| [[persons/renars-putnins\|Renārs Putniņš]] | 5 | 0 | 5 | 2026-10-29 |
-| [[persons/andrejs-svilans\|Andrejs Svilāns]] | 4 | 0 | 4487 | 2026-10-02 |
-| [[persons/davis-melnalksnis\|Dāvis Melnalksnis]] | 4 | 1 | 1112 | 2026-10-20 |
-| [[persons/raivis-kalejs\|Raivis Kalējs]] | 3 | 0 | 1063 | 2026-10-08 |
-| [[persons/anete-bike\|Anete Biķe]] | 3 | 0 | 5 | 2023-01-16 |
+| [[persons/linda-matisone\|Linda Matisone]] | 10 | 0 | 8176 | 2026-11-23 |
+| [[persons/juris-lazdins\|Juris Lazdiņš]] | 9 | 0 | 27 | 2026-11-03 |
+| [[persons/edgars-stelmahers\|Edgars Štelmahers]] | 8 | 0 | 14 | 2026-11-23 |
+| [[persons/viesturs-vitovskis\|Viesturs Vitovskis]] | 8 | 0 | 14 | 2026-11-22 |
+| [[persons/inga-priede\|Inga Priede]] | 7 | 0 | 994 | 2026-11-23 |
+| [[persons/liene-apine\|Liene Apine]] | 7 | 0 | 27 | 2026-11-20 |
+| [[persons/ilze-vergina\|Ilze Vergina]] | 6 | 0 | 8222 | 2026-11-07 |
+| [[persons/janis-jenzis\|Jānis Jenzis]] | 5 | 0 | 27 | 2026-11-09 |
+| [[persons/renars-putnins\|Renārs Putniņš]] | 5 | 0 | 26 | 2026-10-29 |
+| [[persons/andrejs-svilans\|Andrejs Svilāns]] | 4 | 0 | 4509 | 2026-10-02 |
+| [[persons/davis-melnalksnis\|Dāvis Melnalksnis]] | 4 | 1 | 1134 | 2026-10-20 |
+| [[persons/anete-bike\|Anete Biķe]] | 4 | 0 | 27 | 2026-11-20 |
+| [[persons/valters-bolevics\|Valters Bolevics]] | 4 | 0 | 9 | 2026-01-27 |
+| [[persons/raivis-kalejs\|Raivis Kalējs]] | 3 | 0 | 1085 | 2026-10-01 |
 | [[persons/lauris-lizbovskis\|Lauris Lizbovskis]] | 2 | 0 | 7183 | 2025-02-11 |
-| [[persons/liga-mengelsone\|Līga Meņģelsone]] | 2 | 0 | 5 | 2026-11-03 |
-| [[persons/edgars-stelmahers\|Edgars Štelmahers]] | 2 | 0 | 5 | 2026-11-08 |
-| [[persons/janis-sterninieks\|Jānis Stērninieks]] | 2 | 0 | 5 | 2026-11-08 |
-| [[persons/raimonds-vejonis\|Raimonds Vējonis]] | 2 | 0 | 5 | 2026-10-03 |
-| [[persons/karina-mikelsone\|Karīna Miķelsone]] | 1 | 0 | 5 | 2026-05-18 |
-| [[persons/ilmars-luksts\|Ilmārs Luksts]] | 1 | 0 | 4 | 2026-10-15 |
-| [[persons/janis-urtans\|Jānis Urtāns]] | 0 | 0 | 5 |  |
-| [[persons/agnese-kupaca\|Agnese Kupača]] | 0 | 0 | 5 |  |
-| [[persons/dagnis-straubergs\|Dagnis Straubergs]] | 0 | 0 | 5 |  |
-| [[persons/peteris-dimants\|Pēteris Dimants]] | 0 | 0 | 5 |  |
-| [[persons/valdis-karklins\|Valdis Kārkliņš]] | 0 | 0 | 5 |  |
-| [[persons/andis-caunitis\|Andis Caunītis]] | 0 | 0 | 5 |  |
-| [[persons/martins-prisis\|Mārtiņš Prīsis]] | 0 | 0 | 5 |  |
-| [[persons/valdis-kotans\|Valdis Kotāns]] | 0 | 0 | 5 |  |
-| [[persons/janis-dzerins\|Jānis Džeriņš]] | 0 | 0 | 5 |  |
-| [[persons/nellija-kleinberga\|Nellija Kleinberga]] | 0 | 0 | 5 |  |
-| [[persons/baiba-atmane\|Baiba Atmane]] | 0 | 0 | 5 |  |
+| [[persons/liga-mengelsone\|Līga Meņģelsone]] | 2 | 0 | 27 | 2026-11-03 |
+| [[persons/janis-sterninieks\|Jānis Stērninieks]] | 2 | 0 | 27 | 2026-11-08 |
+| [[persons/raimonds-vejonis\|Raimonds Vējonis]] | 2 | 0 | 16 | 2026-10-03 |
+| [[persons/karina-mikelsone\|Karīna Miķelsone]] | 1 | 0 | 27 | 2026-05-18 |
+| [[persons/agnese-kupaca\|Agnese Kupača]] | 1 | 0 | 27 | 2026-11-20 |
+| [[persons/dagnis-straubergs\|Dagnis Straubergs]] | 1 | 0 | 27 | 2026-11-23 |
+| [[persons/peteris-dimants\|Pēteris Dimants]] | 1 | 0 | 27 | 2026-11-23 |
+| [[persons/ilmars-luksts\|Ilmārs Luksts]] | 1 | 0 | 26 | 2026-10-15 |
+| [[persons/janis-urtans\|Jānis Urtāns]] | 0 | 0 | 27 |  |
+| [[persons/valdis-karklins\|Valdis Kārkliņš]] | 0 | 0 | 27 |  |
+| [[persons/andis-caunitis\|Andis Caunītis]] | 0 | 0 | 27 |  |
+| [[persons/martins-prisis\|Mārtiņš Prīsis]] | 0 | 0 | 27 |  |
+| [[persons/valdis-kotans\|Valdis Kotāns]] | 0 | 0 | 27 |  |
+| [[persons/janis-dzerins\|Jānis Džeriņš]] | 0 | 0 | 27 |  |
+| [[persons/nellija-kleinberga\|Nellija Kleinberga]] | 0 | 0 | 27 |  |
+| [[persons/baiba-atmane\|Baiba Atmane]] | 0 | 0 | 27 |  |
+| [[persons/janis-liepins\|Jānis Liepiņš]] | 0 | 0 | 12 |  |
+| [[persons/lauris-gruntmanis\|Lauris Gruntmanis]] | 0 | 0 | 11 |  |
+| [[persons/luize-utane\|Luīze Utāne]] | 0 | 0 | 10 |  |
+| [[persons/maris-truselis\|Māris Trušelis]] | 0 | 0 | 8 |  |
+| [[persons/maris-dadzis\|Māris Dadzis]] | 0 | 0 | 7 |  |
 
 ## Jaunā Vienotība (35)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/baiba-braze\|Baiba Braže]] | 386 | 0 | 5 | 2026-11-16 |
-| [[persons/evika-silina\|Evika Siliņa]] | 285 | 7 | 1010 | 2026-11-16 |
-| [[persons/valdis-dombrovskis\|Valdis Dombrovskis]] | 142 | 0 | 0 | 2026-11-16 |
-| [[persons/edmunds-jurevics\|Edmunds Jurēvics]] | 133 | 3 | 7542 | 2026-11-12 |
-| [[persons/andrejs-judins\|Andrejs Judins]] | 110 | 2 | 8294 | 2026-10-28 |
+| [[persons/baiba-braze\|Baiba Braže]] | 394 | 0 | 22 | 2026-11-24 |
+| [[persons/evika-silina\|Evika Siliņa]] | 296 | 7 | 1032 | 2026-11-23 |
+| [[persons/valdis-dombrovskis\|Valdis Dombrovskis]] | 159 | 0 | 0 | 2026-11-24 |
+| [[persons/edmunds-jurevics\|Edmunds Jurēvics]] | 137 | 3 | 7564 | 2026-11-24 |
+| [[persons/andrejs-judins\|Andrejs Judins]] | 111 | 2 | 8316 | 2026-11-23 |
 | [[persons/rihards-kozlovskis\|Rihards Kozlovskis]] | 102 | 1 | 1513 | 2026-11-08 |
 | [[persons/arvils-aseradens\|Arvils Ašeradens]] | 91 | 0 | 999 | 2026-10-25 |
-| [[persons/inese-vaidere\|Inese Vaidere]] | 62 | 0 | 0 | 2026-11-16 |
-| [[persons/vilnis-kirsis\|Vilnis Ķirsis]] | 49 | 0 | 0 | 2026-11-05 |
+| [[persons/inese-vaidere\|Inese Vaidere]] | 69 | 0 | 0 | 2026-11-23 |
+| [[persons/vilnis-kirsis\|Vilnis Ķirsis]] | 50 | 0 | 0 | 2026-11-20 |
 | [[persons/janis-patmalnieks\|Jānis Patmalnieks]] | 38 | 0 | 8356 | 2026-11-09 |
-| [[persons/inese-libina-egnere\|Inese Lībiņa-Egnere]] | 33 | 0 | 1019 | 2026-11-16 |
-| [[persons/sandra-kalniete\|Sandra Kalniete]] | 31 | 0 | 0 | 2026-11-12 |
-| [[persons/davis-martins-daugavietis\|Dāvis Mārtiņš Daugavietis]] | 24 | 0 | 7937 | 2026-11-04 |
-| [[persons/ainars-latkovskis\|Ainars Latkovskis]] | 24 | 0 | 7910 | 2026-11-08 |
+| [[persons/inese-libina-egnere\|Inese Lībiņa-Egnere]] | 35 | 0 | 1041 | 2026-11-24 |
+| [[persons/sandra-kalniete\|Sandra Kalniete]] | 32 | 0 | 0 | 2026-11-17 |
+| [[persons/davis-martins-daugavietis\|Dāvis Mārtiņš Daugavietis]] | 27 | 0 | 7937 | 2026-11-21 |
+| [[persons/ainars-latkovskis\|Ainars Latkovskis]] | 24 | 0 | 7932 | 2026-11-08 |
 | [[persons/raimonds-cudars\|Raimonds Čudars]] | 23 | 0 | 4799 | 2026-09-21 |
+| [[persons/zane-skujina-rubene\|Zane Skujiņa-Rubene]] | 22 | 0 | 7731 | 2026-11-23 |
 | [[persons/zanda-kalnina-lukasevica\|Zanda Kalniņa-Lukaševica]] | 21 | 1 | 7217 | 2026-10-29 |
-| [[persons/zane-skujina-rubene\|Zane Skujiņa-Rubene]] | 19 | 0 | 7731 | 2026-11-12 |
 | [[persons/dace-melbarde\|Dace Melbārde]] | 19 | 0 | 0 | 2026-11-08 |
 | [[persons/agnese-krasta\|Agnese Krasta]] | 16 | 0 | 8110 | 2026-10-01 |
-| [[persons/ugis-rotbergs\|Uģis Rotbergs]] | 11 | 0 | 7754 | 2026-11-05 |
-| [[persons/inga-berzina\|Inga Bērziņa]] | 11 | 0 | 4310 | 2026-11-16 |
+| [[persons/ugis-rotbergs\|Uģis Rotbergs]] | 16 | 0 | 7754 | 2026-11-24 |
+| [[persons/inga-berzina\|Inga Bērziņa]] | 13 | 0 | 4332 | 2026-11-24 |
+| [[persons/gatis-liepins\|Gatis Liepiņš]] | 10 | 0 | 7140 | 2026-11-19 |
 | [[persons/ingrida-circene\|Ingrīda Circene]] | 9 | 0 | 6266 | 2026-10-08 |
-| [[persons/gatis-liepins\|Gatis Liepiņš]] | 9 | 0 | 7140 | 2026-10-01 |
 | [[persons/irma-kalnina\|Irma Kalniņa]] | 8 | 0 | 7972 | 2026-10-21 |
 | [[persons/anna-rancane\|Anna Rancāne]] | 8 | 0 | 8344 | 2026-10-28 |
 | [[persons/anda-caksa\|Anda Čakša]] | 7 | 0 | 3371 | 2026-09-07 |
@@ -97,57 +104,58 @@ _Atjaunots: 2026-11-16 23:05:55_
 | [[persons/inese-kalnina\|Inese Kalniņa]] | 1 | 0 | 8021 | 2011-09-15 |
 | [[persons/janis-zarins\|Jānis Zariņš]] | 1 | 0 | 2096 | 2025-11-05 |
 
-## Nacionālā apvienība (22)
+## Nacionālā apvienība (23)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/ansis-pupols\|Ansis Pūpols]] | 307 | 1 | 0 | 2026-11-15 |
-| [[persons/janis-dombrava\|Jānis Dombrava]] | 300 | 1 | 6158 | 2026-11-16 |
-| [[persons/rihards-kols\|Rihards Kols]] | 186 | 0 | 2237 | 2026-11-16 |
-| [[persons/ilze-indriksone\|Ilze Indriksone]] | 165 | 1 | 5300 | 2026-11-16 |
+| [[persons/ansis-pupols\|Ansis Pūpols]] | 315 | 1 | 0 | 2026-11-22 |
+| [[persons/janis-dombrava\|Jānis Dombrava]] | 307 | 1 | 6167 | 2026-11-24 |
+| [[persons/rihards-kols\|Rihards Kols]] | 190 | 0 | 2237 | 2026-11-24 |
+| [[persons/ilze-indriksone\|Ilze Indriksone]] | 172 | 1 | 5309 | 2026-11-24 |
 | [[persons/edvards-ratnieks\|Edvards Ratnieks]] | 154 | 0 | 0 | 2026-11-11 |
-| [[persons/elina-treija\|Elīna Treija]] | 100 | 0 | 0 | 2026-11-14 |
-| [[persons/edvins-snore\|Edvīns Šnore]] | 79 | 0 | 7664 | 2026-11-01 |
-| [[persons/nauris-puntulis\|Nauris Puntulis]] | 68 | 0 | 5002 | 2026-11-16 |
-| [[persons/janis-vitenbergs\|Jānis Vitenbergs]] | 64 | 0 | 3681 | 2026-11-15 |
-| [[persons/arturs-butans\|Artūrs Butāns]] | 62 | 1 | 7149 | 2026-11-16 |
-| [[persons/inara-murniece\|Ināra Mūrniece]] | 34 | 1 | 5229 | 2026-11-11 |
-| [[persons/ivars-abolins\|Ivars Āboliņš]] | 30 | 0 | 5 | 2026-11-12 |
+| [[persons/elina-treija\|Elīna Treija]] | 111 | 0 | 0 | 2026-11-24 |
+| [[persons/edvins-snore\|Edvīns Šnore]] | 80 | 0 | 7686 | 2026-11-21 |
+| [[persons/nauris-puntulis\|Nauris Puntulis]] | 71 | 0 | 5011 | 2026-11-24 |
+| [[persons/arturs-butans\|Artūrs Butāns]] | 68 | 1 | 7171 | 2026-11-19 |
+| [[persons/janis-vitenbergs\|Jānis Vitenbergs]] | 68 | 0 | 3703 | 2026-11-23 |
+| [[persons/inara-murniece\|Ināra Mūrniece]] | 34 | 1 | 5251 | 2026-11-11 |
+| [[persons/ivars-abolins\|Ivars Āboliņš]] | 32 | 0 | 16 | 2026-11-23 |
 | [[persons/roberts-zile\|Roberts Zīle]] | 29 | 0 | 0 | 2026-11-11 |
 | [[persons/janis-eglits\|Jānis Eglīts]] | 29 | 0 | 1098 | 2026-11-03 |
-| [[persons/ugis-mitrevics\|Uģis Mitrevics]] | 27 | 0 | 8222 | 2026-11-07 |
-| [[persons/jurgis-klotins\|Jurģis Klotiņš]] | 20 | 0 | 5809 | 2026-10-29 |
+| [[persons/ugis-mitrevics\|Uģis Mitrevics]] | 27 | 0 | 8244 | 2026-11-07 |
+| [[persons/jurgis-klotins\|Jurģis Klotiņš]] | 22 | 0 | 5813 | 2026-11-20 |
 | [[persons/raivis-dzintars\|Raivis Dzintars]] | 11 | 0 | 5766 | 2026-10-04 |
+| [[persons/girts-lapins\|Ģirts Lapiņš]] | 10 | 0 | 1387 | 2026-11-21 |
 | [[persons/edmunds-teirumnieks\|Edmunds Teirumnieks]] | 7 | 0 | 7511 | 2026-08-08 |
-| [[persons/janis-grasbergs\|Jānis Grasbergs]] | 5 | 0 | 7105 | 2026-10-26 |
+| [[persons/janis-grasbergs\|Jānis Grasbergs]] | 6 | 0 | 7111 | 2026-11-20 |
 | [[persons/roberts-kipurs\|Roberts Ķipurs]] | 4 | 0 | 837 | 2025-03-15 |
 | [[persons/austris-stankevics\|Austris Stankevics]] | 3 | 0 | 0 | 2026-11-07 |
-| [[persons/rolands-keiss\|Rolands Keišs]] | 1 | 0 | 4 | 2026-10-09 |
+| [[persons/rolands-keiss\|Rolands Keišs]] | 1 | 0 | 26 | 2026-10-09 |
 
 ## Nezināms (36)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/jurgis-liepnieks\|Jurģis Liepnieks]] | 182 | 0 | 0 | 2026-11-16 |
+| [[persons/jurgis-liepnieks\|Jurģis Liepnieks]] | 198 | 0 | 0 | 2026-11-24 |
 | [[persons/lato-lapsa\|Lato Lapsa]] | 118 | 0 | 0 | 2026-08-20 |
-| [[persons/filips-rajevskis\|Filips Rajevskis]] | 100 | 0 | 0 | 2026-11-14 |
+| [[persons/filips-rajevskis\|Filips Rajevskis]] | 115 | 0 | 0 | 2026-11-24 |
+| [[persons/maija-krastina\|Maija Krastiņa]] | 90 | 0 | 0 | 2026-11-24 |
+| [[persons/latvijas-armija-nbs\|Latvijas armija (NBS)]] | 89 | 0 | 0 | 2026-11-20 |
 | [[persons/latvijas-darba-deveju-konfederacija\|Latvijas Darba devēju konfederācija]] | 88 | 0 | 0 | 2026-10-30 |
-| [[persons/latvijas-armija-nbs\|Latvijas armija (NBS)]] | 88 | 0 | 0 | 2026-11-14 |
-| [[persons/janis-slaidins\|Jānis Slaidiņš]] | 64 | 0 | 0 | 2026-11-16 |
-| [[persons/latvijas-banka\|Latvijas Banka]] | 62 | 0 | 0 | 2026-11-13 |
+| [[persons/janis-slaidins\|Jānis Slaidiņš]] | 76 | 0 | 0 | 2026-11-24 |
+| [[persons/latvijas-banka\|Latvijas Banka]] | 66 | 0 | 0 | 2026-11-20 |
 | [[persons/krisjanis-klavins\|Krišjānis Kļaviņš]] | 60 | 0 | 0 | 2026-08-20 |
-| [[persons/maija-krastina\|Maija Krastiņa]] | 59 | 0 | 0 | 2026-11-16 |
 | [[persons/marats-kasems\|Marats Kasems]] | 57 | 0 | 0 | 2026-08-20 |
-| [[persons/valsts-kontrole\|Valsts kontrole]] | 55 | 0 | 0 | 2026-11-16 |
-| [[persons/didzis-smits\|Didzis Šmits]] | 44 | 1 | 3397 | 2026-11-16 |
-| [[persons/janis-sarts\|Jānis Sārts]] | 39 | 0 | 0 | 2026-10-18 |
+| [[persons/valsts-kontrole\|Valsts kontrole]] | 57 | 0 | 0 | 2026-11-19 |
+| [[persons/didzis-smits\|Didzis Šmits]] | 51 | 1 | 3397 | 2026-11-22 |
+| [[persons/janis-sarts\|Jānis Sārts]] | 40 | 0 | 0 | 2026-11-20 |
 | [[persons/otto-ozols\|Otto Ozols]] | 38 | 0 | 0 | 2026-10-20 |
-| [[persons/kaspars-gorkss\|Kaspars Gorkšs]] | 35 | 0 | 0 | 2026-11-16 |
+| [[persons/kaspars-gorkss\|Kaspars Gorkšs]] | 37 | 0 | 0 | 2026-11-22 |
 | [[persons/skaidrite-abrama\|Skaidrīte Ābrama]] | 34 | 0 | 7653 | 2026-11-01 |
-| [[persons/latvijas-valsts-mezi-lvm\|Latvijas valsts meži (LVM)]] | 22 | 0 | 0 | 2026-11-13 |
-| [[persons/guntis-pujats\|Guntis Pujāts]] | 17 | 0 | 0 | 2026-11-05 |
+| [[persons/latvijas-valsts-mezi-lvm\|Latvijas valsts meži (LVM)]] | 24 | 0 | 0 | 2026-11-23 |
+| [[persons/guntis-pujats\|Guntis Pujāts]] | 18 | 0 | 0 | 2026-11-20 |
 | [[persons/gatis-madzins\|Gatis Madžiņš]] | 12 | 0 | 0 | 2026-08-12 |
-| [[persons/ivars-kalvins\|Ivars Kalviņš]] | 11 | 0 | 0 | 2026-11-07 |
+| [[persons/ivars-kalvins\|Ivars Kalviņš]] | 12 | 0 | 0 | 2026-11-23 |
 | [[persons/anastasija-tetarenko-supe\|Anastasija Tetarenko-Supe]] | 6 | 0 | 0 | 2026-08-16 |
 | [[persons/baiba-rivza\|Baiba Rivža]] | 4 | 0 | 0 | 2026-10-30 |
 | [[persons/raivis-kronbergs\|Raivis Kronbergs]] | 3 | 0 | 0 | 2026-05-18 |
@@ -169,31 +177,60 @@ _Atjaunots: 2026-11-16 23:05:55_
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/andris-suvajevs\|Andris Šuvajevs]] | 225 | 4 | 8106 | 2026-11-16 |
-| [[persons/atis-svinka\|Atis Švinka]] | 224 | 1 | 5663 | 2026-11-16 |
-| [[persons/andris-spruds\|Andris Sprūds]] | 151 | 1 | 2487 | 2026-10-30 |
-| [[persons/viesturs-kleinbergs\|Viesturs Kleinbergs]] | 81 | 0 | 0 | 2026-11-10 |
-| [[persons/martins-stakis\|Mārtiņš Staķis]] | 58 | 0 | 0 | 2026-11-12 |
-| [[persons/marta-kotello\|Marta Kotello]] | 54 | 0 | 0 | 2026-11-15 |
-| [[persons/jana-simanovska\|Jana Simanovska]] | 21 | 0 | 7733 | 2026-10-22 |
+| [[persons/andris-suvajevs\|Andris Šuvajevs]] | 236 | 4 | 8128 | 2026-11-24 |
+| [[persons/atis-svinka\|Atis Švinka]] | 226 | 1 | 5685 | 2026-11-21 |
+| [[persons/andris-spruds\|Andris Sprūds]] | 151 | 1 | 2509 | 2026-10-30 |
+| [[persons/viesturs-kleinbergs\|Viesturs Kleinbergs]] | 82 | 0 | 0 | 2026-11-19 |
+| [[persons/martins-stakis\|Mārtiņš Staķis]] | 62 | 0 | 0 | 2026-11-19 |
+| [[persons/marta-kotello\|Marta Kotello]] | 56 | 0 | 0 | 2026-11-23 |
+| [[persons/jana-simanovska\|Jana Simanovska]] | 21 | 0 | 7755 | 2026-10-22 |
 | [[persons/kaspars-briskens\|Kaspars Briškens]] | 20 | 0 | 5053 | 2026-10-29 |
-| [[persons/antonina-nenaseva\|Antoņina Ņenaševa]] | 17 | 1 | 7385 | 2026-10-29 |
+| [[persons/antonina-nenaseva\|Antoņina Ņenaševa]] | 18 | 1 | 7407 | 2026-11-21 |
+| [[persons/agnese-lace\|Agnese Lāce]] | 18 | 0 | 27 | 2026-11-23 |
 | [[persons/liene-gatere\|Liene Gātere]] | 14 | 0 | 1882 | 2026-10-13 |
 | [[persons/leila-rasima\|Leila Rasima]] | 14 | 0 | 6877 | 2026-11-03 |
-| [[persons/agnese-lace\|Agnese Lāce]] | 11 | 0 | 5 | 2026-11-08 |
-| [[persons/martins-hirss\|Mārtiņš Hiršs]] | 11 | 0 | 5 | 2026-10-12 |
+| [[persons/martins-hirss\|Mārtiņš Hiršs]] | 11 | 0 | 27 | 2026-10-12 |
 | [[persons/edmunds-cepuritis\|Edmunds Cepurītis]] | 9 | 0 | 7419 | 2025-03-01 |
-| [[persons/mairita-luse\|Mairita Lūse]] | 6 | 0 | 3645 | 2026-08-04 |
-| [[persons/krista-burane\|Krista Burāne]] | 3 | 0 | 5 | 2026-11-07 |
-| [[persons/selma-teodora-levrence\|Selma Teodora Levrence]] | 2 | 0 | 2052 | 2026-10-15 |
+| [[persons/mairita-luse\|Mairita Lūse]] | 6 | 0 | 3667 | 2026-08-04 |
+| [[persons/krista-burane\|Krista Burāne]] | 3 | 0 | 16 | 2026-11-07 |
+| [[persons/selma-teodora-levrence\|Selma Teodora Levrence]] | 2 | 0 | 2074 | 2026-10-15 |
 | [[persons/liga-rasnaca\|Līga Rasnača]] | 2 | 0 | 2454 | 2022-05-22 |
+
+## Latvija Pirmajā Vietā (24)
+
+| Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
+|---|---|---|---|---|
+| [[persons/ainars-slesers\|Ainārs Šlesers]] | 256 | 3 | 4422 | 2026-11-24 |
+| [[persons/eriks-stendzenieks\|Ēriks Stendzenieks]] | 186 | 0 | 0 | 2026-11-24 |
+| [[persons/maris-mezals\|Māris Mežals]] | 118 | 0 | 0 | 2026-11-17 |
+| [[persons/kristaps-kristopans\|Kristaps Krištopans]] | 85 | 1 | 7267 | 2026-11-24 |
+| [[persons/linda-liepina\|Linda Liepiņa]] | 41 | 0 | 8024 | 2026-11-19 |
+| [[persons/edmunds-zivtins\|Edmunds Zivtiņš]] | 29 | 0 | 8137 | 2026-10-21 |
+| [[persons/maija-armaneva\|Maija Armaņeva]] | 26 | 2 | 3048 | 2026-11-23 |
+| [[persons/ramona-petravica\|Ramona Petraviča]] | 21 | 0 | 7396 | 2026-10-29 |
+| [[persons/roberts-zemaitis\|Roberts Žemaitis]] | 21 | 0 | 26 | 2026-11-24 |
+| [[persons/viktorija-pleskane\|Viktorija Pleškāne]] | 12 | 0 | 8001 | 2026-10-08 |
+| [[persons/ilze-stobova\|Ilze Stobova]] | 12 | 0 | 4859 | 2026-10-08 |
+| [[persons/andrejs-klementjevs\|Andrejs Klementjevs]] | 8 | 0 | 26 | 2026-10-17 |
+| [[persons/marcis-jencitis\|Mārcis Jencītis]] | 4 | 0 | 7101 | 2026-09-24 |
+| [[persons/jekaterina-drelinga\|Jekaterina Drelinga]] | 3 | 0 | 6593 | 2026-09-24 |
+| [[persons/regina-locmele\|Regīna Ločmele]] | 3 | 0 | 27 | 2026-11-21 |
+| [[persons/olga-petkevica\|Olga Petkeviča]] | 3 | 0 | 27 | 2026-11-08 |
+| [[persons/ricards-slesers\|Ričards Šlesers]] | 2 | 0 | 6489 | 2026-10-01 |
+| [[persons/aleksejs-mackevics\|Aleksejs Mackevičs]] | 2 | 0 | 27 | 2026-11-03 |
+| [[persons/dana-slesere\|Dana Šlesere]] | 1 | 0 | 27 | 2026-11-11 |
+| [[persons/aivars-kraps\|Aivars Kraps]] | 1 | 0 | 27 | 2026-11-08 |
+| [[persons/jelena-klavina\|Jeļena Kļaviņa]] | 0 | 0 | 2620 |  |
+| [[persons/jevgenija-safraneka\|Jevgēnija Šafraneka]] | 0 | 0 | 27 |  |
+| [[persons/eduards-zivtins\|Eduards Zivtiņš]] | 0 | 0 | 27 |  |
+| [[persons/jekaterina-ivanova\|Jekaterina Ivanova]] | 0 | 0 | 27 |  |
 
 ## Zaļo un Zemnieku savienība (21)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/viktors-valainis\|Viktors Valainis]] | 335 | 1 | 1441 | 2026-11-10 |
-| [[persons/uldis-augulis\|Uldis Augulis]] | 114 | 0 | 3709 | 2026-11-16 |
+| [[persons/viktors-valainis\|Viktors Valainis]] | 336 | 1 | 1441 | 2026-11-24 |
+| [[persons/uldis-augulis\|Uldis Augulis]] | 117 | 0 | 3709 | 2026-11-18 |
 | [[persons/armands-krauze\|Armands Krauze]] | 74 | 0 | 1654 | 2026-10-04 |
 | [[persons/harijs-rokpelnis\|Harijs Rokpelnis]] | 66 | 0 | 8341 | 2026-10-31 |
 | [[persons/kaspars-melnis\|Kaspars Melnis]] | 58 | 0 | 2122 | 2026-11-03 |
@@ -214,56 +251,30 @@ _Atjaunots: 2026-11-16 23:05:55_
 | [[persons/gundars-daudze\|Gundars Daudze]] | 0 | 0 | 6133 |  |
 | [[persons/girts-stekerhofs\|Ģirts Štekerhofs]] | 0 | 0 | 4129 |  |
 
-## Latvija Pirmajā Vietā (24)
+## Bezpartejisks (10)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/ainars-slesers\|Ainārs Šlesers]] | 248 | 3 | 4401 | 2026-11-16 |
-| [[persons/eriks-stendzenieks\|Ēriks Stendzenieks]] | 151 | 0 | 0 | 2026-11-16 |
-| [[persons/maris-mezals\|Māris Mežals]] | 117 | 0 | 0 | 2026-11-13 |
-| [[persons/kristaps-kristopans\|Kristaps Krištopans]] | 82 | 1 | 7267 | 2026-11-14 |
-| [[persons/linda-liepina\|Linda Liepiņa]] | 38 | 0 | 8018 | 2026-11-15 |
-| [[persons/edmunds-zivtins\|Edmunds Zivtiņš]] | 29 | 0 | 8115 | 2026-10-21 |
-| [[persons/maija-armaneva\|Maija Armaņeva]] | 24 | 2 | 3026 | 2026-10-21 |
-| [[persons/ramona-petravica\|Ramona Petraviča]] | 21 | 0 | 7374 | 2026-10-29 |
-| [[persons/roberts-zemaitis\|Roberts Žemaitis]] | 18 | 0 | 5 | 2026-11-10 |
-| [[persons/viktorija-pleskane\|Viktorija Pleškāne]] | 12 | 0 | 7979 | 2026-10-16 |
-| [[persons/ilze-stobova\|Ilze Stobova]] | 12 | 0 | 4859 | 2026-10-16 |
-| [[persons/andrejs-klementjevs\|Andrejs Klementjevs]] | 8 | 0 | 5 | 2026-10-17 |
-| [[persons/marcis-jencitis\|Mārcis Jencītis]] | 4 | 0 | 7101 | 2026-09-24 |
-| [[persons/jekaterina-drelinga\|Jekaterina Drelinga]] | 3 | 0 | 6593 | 2026-09-25 |
-| [[persons/olga-petkevica\|Olga Petkeviča]] | 3 | 0 | 5 | 2026-11-08 |
-| [[persons/ricards-slesers\|Ričards Šlesers]] | 2 | 0 | 6489 | 2026-10-08 |
-| [[persons/regina-locmele\|Regīna Ločmele]] | 2 | 0 | 5 | 2026-11-08 |
-| [[persons/aleksejs-mackevics\|Aleksejs Mackevičs]] | 2 | 0 | 5 | 2026-11-03 |
-| [[persons/dana-slesere\|Dana Šlesere]] | 1 | 0 | 5 | 2026-11-11 |
-| [[persons/aivars-kraps\|Aivars Kraps]] | 1 | 0 | 5 | 2026-11-08 |
-| [[persons/jelena-klavina\|Jeļena Kļaviņa]] | 0 | 0 | 2620 |  |
-| [[persons/jevgenija-safraneka\|Jevgēnija Šafraneka]] | 0 | 0 | 5 |  |
-| [[persons/eduards-zivtins\|Eduards Zivtiņš]] | 0 | 0 | 5 |  |
-| [[persons/jekaterina-ivanova\|Jekaterina Ivanova]] | 0 | 0 | 5 |  |
-
-## Bezpartejisks (7)
-
-| Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
-|---|---|---|---|---|
-| [[persons/edgars-rinkevics\|Edgars Rinkēvičs]] | 295 | 0 | 120 | 2026-11-12 |
-| [[persons/matiss-zuravlevs\|Matīss Žuravļevs]] | 82 | 0 | 0 | 2026-11-16 |
-| [[persons/hosams-abu-meri\|Hosams Abu Meri]] | 75 | 0 | 1306 | 2026-11-06 |
-| [[persons/raivis-melnis\|Raivis Melnis]] | 67 | 0 | 0 | 2026-11-12 |
-| [[persons/igors-rajevs\|Igors Rajevs]] | 55 | 1 | 7455 | 2026-11-14 |
-| [[persons/reinis-uzulnieks\|Reinis Uzulnieks]] | 45 | 0 | 0 | 2026-10-29 |
-| [[persons/ilze-vergina\|Ilze Vergina]] | 6 | 0 | 8222 | 2026-11-07 |
+| [[persons/edgars-rinkevics\|Edgars Rinkēvičs]] | 305 | 0 | 120 | 2026-11-23 |
+| [[persons/matiss-zuravlevs\|Matīss Žuravļevs]] | 132 | 0 | 0 | 2026-11-24 |
+| [[persons/hosams-abu-meri\|Hosams Abu Meri]] | 79 | 0 | 1306 | 2026-11-19 |
+| [[persons/raivis-melnis\|Raivis Melnis]] | 68 | 0 | 0 | 2026-11-17 |
+| [[persons/igors-rajevs\|Igors Rajevs]] | 58 | 1 | 7455 | 2026-11-23 |
+| [[persons/reinis-uzulnieks\|Reinis Uzulnieks]] | 46 | 0 | 0 | 2026-11-19 |
+| [[persons/karlis-purgailis\|Kārlis Purgailis]] | 36 | 0 | 0 | 2026-11-24 |
+| [[persons/kriss-lipsans\|Krišs Lipšāns]] | 15 | 0 | 0 | 2026-11-24 |
+| [[persons/girts-jaunzems\|Ģirts Jaunzems]] | 13 | 0 | 0 | 2026-11-24 |
+| [[persons/normunds-stanevics\|Normunds Staņēvičs]] | 4 | 0 | 0 | 2026-11-23 |
 
 ## MMN (9)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
+| [[persons/jazeps-basko\|Jāzeps Baško]] | 175 | 0 | 0 | 2026-11-23 |
 | [[persons/alvis-hermanis\|Alvis Hermanis]] | 174 | 0 | 0 | 2026-10-07 |
-| [[persons/jazeps-basko\|Jāzeps Baško]] | 166 | 0 | 0 | 2026-11-16 |
-| [[persons/janis-hermanis\|Jānis Hermanis]] | 112 | 0 | 0 | 2026-11-12 |
+| [[persons/janis-hermanis\|Jānis Hermanis]] | 115 | 0 | 0 | 2026-11-23 |
 | [[persons/edvarts-krusts\|Edvarts Krusts]] | 58 | 0 | 0 | 2026-11-09 |
-| [[persons/aleksandrs-kirsteins\|Aleksandrs Kiršteins]] | 40 | 0 | 7034 | 2026-11-14 |
+| [[persons/aleksandrs-kirsteins\|Aleksandrs Kiršteins]] | 44 | 1 | 7034 | 2026-11-23 |
 | [[persons/ainars-mielavs\|Ainars Mielavs]] | 12 | 0 | 0 | 2026-10-23 |
 | [[persons/eriks-pucens\|Ēriks Pucens]] | 11 | 0 | 0 | 2026-09-24 |
 | [[persons/gints-aizupietis\|Gints Aizupietis]] | 6 | 0 | 0 | 2026-11-16 |
@@ -273,44 +284,44 @@ _Atjaunots: 2026-11-16 23:05:55_
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/andris-velps\|Andris Velps]] | 240 | 0 | 0 | 2026-11-16 |
-| [[persons/raivis-zeltits\|Raivis Zeltīts]] | 123 | 0 | 0 | 2026-11-16 |
-| [[persons/dace-lindberga\|Dace Lindberga]] | 50 | 0 | 0 | 2026-11-11 |
+| [[persons/andris-velps\|Andris Velps]] | 276 | 0 | 0 | 2026-11-24 |
+| [[persons/raivis-zeltits\|Raivis Zeltīts]] | 129 | 0 | 0 | 2026-11-23 |
+| [[persons/dace-lindberga\|Dace Lindberga]] | 59 | 0 | 0 | 2026-11-24 |
 | [[persons/janis-zalans\|Jānis Zalāns]] | 7 | 0 | 0 | 2026-10-06 |
 
 ## Latvijas attīstībai (2)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/juris-puce\|Juris Pūce]] | 116 | 0 | 0 | 2026-11-16 |
-| [[persons/ivars-ijabs\|Ivars Ijabs]] | 31 | 0 | 0 | 2026-11-11 |
+| [[persons/juris-puce\|Juris Pūce]] | 122 | 0 | 0 | 2026-11-23 |
+| [[persons/ivars-ijabs\|Ivars Ijabs]] | 33 | 0 | 0 | 2026-11-19 |
 
 ## Suverēnā vara/Jaunlatvieši (15)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/julija-stepanenko\|Jūlija Stepaņenko]] | 39 | 1 | 5 | 2026-11-13 |
-| [[persons/rudolfs-bremanis\|Rūdolfs Brēmanis]] | 10 | 0 | 5 | 2026-11-12 |
-| [[persons/karina-sprude\|Karina Sprūde]] | 10 | 0 | 5 | 2026-11-11 |
-| [[persons/lubova-svecova\|Ļubova Švecova]] | 5 | 0 | 5 | 2026-10-07 |
-| [[persons/andrejs-pagors\|Andrejs Pagors]] | 5 | 0 | 5 | 2026-11-11 |
-| [[persons/edgars-darznieks\|Edgars Dārznieks]] | 4 | 0 | 5 | 2026-10-12 |
-| [[persons/vjaceslavs-stepanenko\|Vjačeslavs Stepaņenko]] | 3 | 0 | 5 | 2026-10-04 |
-| [[persons/arturs-klebahs\|Artūrs Klēbahs]] | 2 | 0 | 5 | 2026-11-12 |
-| [[persons/aleksejs-ignatjevs\|Aleksejs Ignatjevs]] | 2 | 0 | 5 | 2026-11-11 |
-| [[persons/natalija-abola\|Natālija Ābola]] | 1 | 0 | 5 | 2026-11-08 |
-| [[persons/julija-sohina\|Jūlija Sohina]] | 0 | 0 | 5 |  |
-| [[persons/inna-djeri\|Inna Djeri]] | 0 | 0 | 5 |  |
-| [[persons/andrejs-jakovlevs\|Andrejs Jakovļevs]] | 0 | 0 | 5 |  |
-| [[persons/gita-plaude\|Gita Plaude]] | 0 | 0 | 5 |  |
-| [[persons/leontijs-morozs\|Leontijs Morozs]] | 0 | 0 | 5 |  |
+| [[persons/julija-stepanenko\|Jūlija Stepaņenko]] | 43 | 1 | 27 | 2026-11-18 |
+| [[persons/rudolfs-bremanis\|Rūdolfs Brēmanis]] | 15 | 0 | 27 | 2026-11-23 |
+| [[persons/karina-sprude\|Karina Sprūde]] | 10 | 0 | 27 | 2026-11-11 |
+| [[persons/andrejs-pagors\|Andrejs Pagors]] | 6 | 0 | 27 | 2026-11-17 |
+| [[persons/lubova-svecova\|Ļubova Švecova]] | 5 | 0 | 27 | 2026-10-07 |
+| [[persons/edgars-darznieks\|Edgars Dārznieks]] | 4 | 0 | 27 | 2026-10-12 |
+| [[persons/vjaceslavs-stepanenko\|Vjačeslavs Stepaņenko]] | 3 | 0 | 27 | 2026-10-04 |
+| [[persons/arturs-klebahs\|Artūrs Klēbahs]] | 2 | 0 | 27 | 2026-11-12 |
+| [[persons/aleksejs-ignatjevs\|Aleksejs Ignatjevs]] | 2 | 0 | 27 | 2026-11-11 |
+| [[persons/andrejs-jakovlevs\|Andrejs Jakovļevs]] | 2 | 0 | 27 | 2026-11-21 |
+| [[persons/natalija-abola\|Natālija Ābola]] | 1 | 0 | 27 | 2026-11-08 |
+| [[persons/julija-sohina\|Jūlija Sohina]] | 0 | 0 | 27 |  |
+| [[persons/inna-djeri\|Inna Djeri]] | 0 | 0 | 27 |  |
+| [[persons/gita-plaude\|Gita Plaude]] | 0 | 0 | 27 |  |
+| [[persons/leontijs-morozs\|Leontijs Morozs]] | 0 | 0 | 27 |  |
 
 ## JKP (2)
 
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
-| [[persons/martins-stals\|Mārtiņš Štāls]] | 57 | 0 | 0 | 2026-11-12 |
-| [[persons/janis-citskovskis\|Jānis Citskovskis]] | 19 | 0 | 0 | 2026-10-29 |
+| [[persons/martins-stals\|Mārtiņš Štāls]] | 59 | 0 | 0 | 2026-11-23 |
+| [[persons/janis-citskovskis\|Jānis Citskovskis]] | 21 | 0 | 0 | 2026-11-24 |
 
 ## Gods kalpot Rīgai (1)
 
@@ -332,7 +343,7 @@ _Atjaunots: 2026-11-16 23:05:55_
 | [[persons/jefimijs-klementjevs\|Jefimijs Klementjevs]] | 7 | 0 | 8199 | 2024-10-03 |
 | [[persons/igors-judins\|Igors Judins]] | 3 | 0 | 7352 |  |
 | [[persons/amils-salimovs\|Amils Saļimovs]] | 2 | 0 | 5178 | 2026-09-03 |
-| [[persons/vilis-sruogis\|Vilis Sruoģis]] | 1 | 0 | 3217 | 2026-10-16 |
+| [[persons/vilis-sruogis\|Vilis Sruoģis]] | 1 | 0 | 3217 | 2026-10-08 |
 | [[persons/ilja-ivanovs\|Iļja Ivanovs]] | 0 | 0 | 7878 |  |
 | [[persons/dmitrijs-kovalenko\|Dmitrijs Kovaļenko]] | 0 | 0 | 6438 |  |
 | [[persons/natalja-marcenko-jodko\|Nataļja Marčenko-Jodko]] | 0 | 0 | 7109 |  |
@@ -342,7 +353,13 @@ _Atjaunots: 2026-11-16 23:05:55_
 | Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
 |---|---|---|---|---|
 | [[persons/janis-tutins\|Jānis Tutins]] | 16 | 0 | 0 | 2026-10-21 |
-| [[persons/aleksandrs-bartasevics\|Aleksandrs Bartaševičs]] | 12 | 0 | 5 | 2026-11-08 |
+| [[persons/aleksandrs-bartasevics\|Aleksandrs Bartaševičs]] | 13 | 0 | 27 | 2026-11-24 |
+
+## Saskaņas Centrs (1)
+
+| Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
+|---|---|---|---|---|
+| [[persons/janis-urbanovics\|Jānis Urbanovičs]] | 7 | 0 | 0 | 2026-11-21 |
 
 ## Gobzema saraksts (2)
 
@@ -350,10 +367,4 @@ _Atjaunots: 2026-11-16 23:05:55_
 |---|---|---|---|---|
 | [[persons/arigo-toro\|Arigo Toro]] | 6 | 0 | 0 | 2026-10-04 |
 | [[persons/agris-freifalts\|Agris Freifalts]] | 1 | 0 | 0 | 2026-11-01 |
-
-## Saskaņas Centrs (1)
-
-| Politiķis | Pozīcijas | Pretrunas | Balsojumi | Pēdējā aktivitāte |
-|---|---|---|---|---|
-| [[persons/janis-urbanovics\|Jānis Urbanovičs]] | 5 | 0 | 0 | 2026-10-13 |
 

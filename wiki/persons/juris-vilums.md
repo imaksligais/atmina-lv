@@ -1,22 +1,22 @@
 ---
 name: Juris Viļums
 party: Apvienotais saraksts
-role: Saeimas deputāts
+role: Saeimas deputāts | Nacionālās drošības komisijas priekšsēdētājs
 relationship_type: tracked
-positions: 46
-votes: 7207
+positions: 48
+votes: 7229
 contradictions: 0
-mentioned_in: 698
-last_active: 2026-11-09
+mentioned_in: 734
+last_active: 2026-11-23
 top_topics:
 - Koalīcija un partijas
 - Valsts pārvalde
 - Droni
 - Transports
-- Pašvaldības
+- Ukraina un Krievija
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%), [[topics/droni|Droni]] (9%)
-- **30d:** 7 claims, 0.9× bāzes līnija
+- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (17%), [[topics/valsts-parvalde|Valsts pārvalde]] (10%), [[topics/droni|Droni]] (8%)
+- **30d:** 8 claims, 1.1× bāzes līnija
 <!-- /SYNC-AUTO -->

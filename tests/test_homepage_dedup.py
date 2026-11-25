@@ -11,7 +11,7 @@ skrējienam tmp mapē (mazās datu dienas gadījums: DB ar tieši 1 pretrunu).
 import sqlite3
 from datetime import timedelta
 from pathlib import Path
-from src.render._common.filters import _lv_number
+from src.render._orchestrator import _make_env
 
 SCHEMA = (Path(__file__).resolve().parents[1] / "src" / "schema.sql").read_text(encoding="utf-8")
 
@@ -274,32 +274,11 @@ def test_one_contradiction_data_level():
     assert kinds.count("contradiction") == 1  # tieši vienu reizi — karuselī
 
 
-def _make_env():
+def _test_env():
     """Jinja env kā _orchestrator (filtri + globals), atlases versijai 'test'."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.image_variants import variant_filename as _brief_image_variant
-    from src.render._common import (
-        TEMPLATES_DIR,
-        _autolink_bills_filter,
-        _lv_plural,
-        _party_page_slug,
-        _party_short_name,
-        _safe_json_filter,
-        _safe_url_filter,
-        _salience_label,
-    )
-    env = Environment(loader=FileSystemLoader(TEMPLATES_DIR), autoescape=True)
+    env = _make_env()
     env.filters["lv_date"] = (
         lambda s: f"{s[8:10]}.{s[5:7]}.{s[:4]}" if s and len(s) >= 10 and "-" in s else s or "")
-    env.filters["safe_json"] = _safe_json_filter
-    env.filters["safe_url"] = _safe_url_filter
-    env.filters["autolink_bills"] = _autolink_bills_filter
-    env.filters["image_variant"] = _brief_image_variant
-    env.filters["lv_plural"] = _lv_plural
-    env.filters["lv_number"] = _lv_number
-    env.filters["salience_label"] = _salience_label
-    env.filters["party_page_slug"] = _party_page_slug
-    env.globals["_party_short_name"] = _party_short_name
     env.globals["assets_version"] = "test"
     env.globals["bill_slugs"] = set()
     return env
@@ -316,7 +295,7 @@ def test_one_contradiction_full_page_renders_without_empty_box(tmp_path):
     out = tmp_path / "atmina"
     out.mkdir(parents=True)
     render_dashboard(
-        _make_env(), db, out,
+        _test_env(), db, out,
         stats={"politicians": 1, "parties": 0, "politicians_active": 1,
                "claims": 3, "contradictions": 1, "votes": 0,
                "claims_7d": 2, "votes_7d": 0, "tensions": 0, "documents": 0},

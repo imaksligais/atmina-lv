@@ -15,6 +15,7 @@
   <title>{% block title %}atmina.lv{% endblock %} — Politiskā atmiņa</title>
   <meta name="description" content="{% block description %}atmina.lv — Latvijas politiķu pozīcijas, pretrunas un balsojumi. Strukturēta, pārbaudāma informācija par politisko darbību.{% endblock %}">
   {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}{% block robots %}{% endblock %}
+  <link rel="alternate" type="application/rss+xml" title="atmina.lv" href="{{ BASE_URL|default('https://atmina.lv') }}/feed.xml">
   <meta property="og:title" content="{% block og_title %}atmina.lv — Politiskā atmiņa{% endblock %}">
   <meta property="og:description" content="{% block og_description %}Latvijas politiķu pozīcijas, pretrunas un balsojumi.{% endblock %}">
   <meta property="og:type" content="website">
@@ -89,10 +90,11 @@
         <a href="{{ assets_prefix }}personas.html"{% if active_page == "personas" %} class="active" aria-current="page"{% endif %}>Profili</a>
         <a href="{{ assets_prefix }}analizes.html"{% if active_page == "analizes" %} class="active" aria-current="page"{% endif %}>Analīzes</a>
         <div class="nav-more">
-          <button type="button" class="nav-more-btn{% if active_page in ['temas', 'partijas', 'mediji', 'zinas', 'x', 'likumi', 'spriedzes', 'saites', 'finanses', 'statistika'] %} active{% endif %}" aria-expanded="false" aria-controls="nav-more-menu">Vairāk<span class="nav-more-caret" aria-hidden="true">▾</span></button>
+          <button type="button" class="nav-more-btn{% if active_page in ['temas', 'partijas', 'valdiba', 'mediji', 'zinas', 'x', 'likumi', 'spriedzes', 'saites', 'finanses', 'statistika'] %} active{% endif %}" aria-expanded="false" aria-controls="nav-more-menu">Vairāk<span class="nav-more-caret" aria-hidden="true">▾</span></button>
           <div class="nav-more-menu" id="nav-more-menu">
             <a href="{{ assets_prefix }}temas.html"{% if active_page == "temas" %} class="active" aria-current="page"{% endif %}>Tēmas</a>
             <a href="{{ assets_prefix }}partijas.html"{% if active_page == "partijas" %} class="active" aria-current="page"{% endif %}>Partijas</a>
+            <a href="{{ assets_prefix }}valdiba.html"{% if active_page == "valdiba" %} class="active" aria-current="page"{% endif %}>Valdība</a>
             <a href="{{ assets_prefix }}mediji.html"{% if active_page == "mediji" %} class="active" aria-current="page"{% endif %}>Mediji</a>
             <a href="{{ assets_prefix }}zinas.html"{% if active_page == "zinas" %} class="active" aria-current="page"{% endif %}>Ziņas</a>
             <a href="{{ assets_prefix }}x.html"{% if active_page == "x" %} class="active" aria-current="page"{% endif %}>X</a>
@@ -156,6 +158,7 @@
             <a href="{{ assets_prefix }}about.html">Par mums</a>
             <a href="{{ assets_prefix }}kontakti.html">Kontakti</a>
             <a href="https://atbalsts.atmina.lv" target="_blank" rel="noopener">Atbalstīt</a>
+            <a href="{{ assets_prefix }}feed.xml">RSS</a>
             <a href="https://x.com/AtminaLV" target="_blank" rel="noopener" aria-label="atmina.lv uz X" class="footer-x-link">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>

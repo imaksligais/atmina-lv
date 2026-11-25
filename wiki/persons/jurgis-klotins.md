@@ -1,13 +1,13 @@
 ---
 name: Jurģis Klotiņš
 party: Nacionālā apvienība
-role: Saeimas deputāts (14. Saeima)
+role: Saeimas deputāts (mandāts uz laiku)
 relationship_type: tracked
-positions: 20
-votes: 5809
+positions: 22
+votes: 5813
 contradictions: 0
-mentioned_in: 115
-last_active: 2026-10-29
+mentioned_in: 135
+last_active: 2026-11-20
 top_topics:
 - Sociālā politika
 - Sabiedriskie mediji
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (35%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (20%), [[topics/izglitiba|Izglītība]] (10%)
-- **30d:** 6 claims, 1.0× bāzes līnija
+- **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (36%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (18%), [[topics/izglitiba|Izglītība]] (9%)
+- **30d:** 3 claims, 0.4× bāzes līnija
 - **Spriedzes:** [[persons/ilze-indriksone|Ilze Indriksone]] (1 atbalsts), [[persons/maris-kucinskis|Māris Kučinskis]] (1 spriedze), [[persons/gatis-madzins|Gatis Madžiņš]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

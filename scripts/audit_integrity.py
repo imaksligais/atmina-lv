@@ -83,8 +83,10 @@ ACCEPTED_3: frozenset[int] = frozenset({17, 27})
 # they will flag again every run» (BACKLOG § Ne-darīt: Ābrama 77, Kiršteins 96,
 # Ceļapīters 145). + Drelinga 87, J. Kļaviņa 100, Pleškāne 119: ST → LPV jau
 # piemērots (fix_party_role_cvk_review_2026-09-25, pleskane 2026-08-13), balso ar
-# faction=NULL — operatora lēmums 2026-09-30.
-ACCEPTED_9: frozenset[int] = frozenset({77, 87, 96, 100, 119, 145})
+# faction=NULL — operatora lēmums 2026-09-30. + Vergina 135: `party` = AS pēc
+# saraksta konvencijas (CVK SV2026 AS saraksts, IZM parlamentārā sekretāre),
+# balsis 14. Saeimā JV / bez frakcijas — operators apstiprināja 2026-11-22.
+ACCEPTED_9: frozenset[int] = frozenset({77, 87, 96, 100, 119, 135, 145})
 # 9b: partija pārbaudīta ar roku pret svaigiem avotiem (2026-10-12): Braže JV,
 # Vītols AS, Melbārde JV, Lāce PRO, Uzulnieks izslēgts no ZZS → bezpartejisks,
 # Raivis Melnis bezpartejisks («Melnis (ZZS)» avotos = Kaspars Melnis).

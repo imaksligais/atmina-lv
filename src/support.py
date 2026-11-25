@@ -76,6 +76,15 @@ def dropped_qualifiers(support, stance: str | None) -> list[str]:
     return [w for w, rx in QUALIFIERS.items() if rx.search(s_text) and not rx.search(st_text)]
 
 
+STANCE_MAX_WORDS = 45  # claim-extractor.md § stance: «ne vairāk par 45 vārdiem»
+
+
+def stance_too_long(stance: str | None) -> int | None:
+    """Vārdu skaits, ja stance pārsniedz STANCE_MAX_WORDS, citādi None."""
+    n = len((stance or "").split())
+    return n if n > STANCE_MAX_WORDS else None
+
+
 _GUILLEMET_FRAGMENT = re.compile(r"«([^«»]+)»")
 
 

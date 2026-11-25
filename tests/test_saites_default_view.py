@@ -1,4 +1,9 @@
-"""Saites lapa: noklusējuma skats bez JS, pilnais tīkls tikai pēc pogas (2026-10-18).
+"""Saites lapa: noklusējuma skats bez D3, pilnais tīkls tikai pēc pogas (2026-10-18).
+
+Saites v2 (2026-11-22): augšā jaunākās saiknes (vienam cilvēkam ≤2 rindas),
+partiju kastu vietā tabula, kuras rinda atver pārus; tīklā izcelšana uz
+klikšķa/pieskāriena, partiju leģenda, panelis atveras uz «Saites», un
+balsojumu sakritības līnijas tikai izvēlētajam mezglam.
 
 Kļūme A3: lapa uzreiz zīmēja 216 mezglu D3 kamolu; telefonā pirmajā ekrānā
 nebija nekā saprotama, un vecas `?party=` saites veda uz tabulu, ko vairs
@@ -44,6 +49,14 @@ INSERT INTO political_tensions (id, source_pid, target_pid, topic, description, 
   (3, 3, 4, 'Budžets un finanses', 'Cīrule atbalsta Dārziņu.', 'atbalsts', 'https://ex.lv/3', '2026-10-02 10:00:00'),
   (4, 4, 3, 'Enerģētika', 'Dārziņa iebilst Cīrules nostājai.', 'politikas nostāju konflikts', 'https://ex.lv/4', '2026-10-04 10:00:00');
 """
+# Ābele un Bērziņš 100 kopīgos balsojumos balso vienādi (VOTE_ALIGN_MIN_SHARED).
+_SQL += "".join(
+    f"INSERT INTO saeima_votes (id, motif, vote_date, vote_time) VALUES ({v}, 'Par grozījumiem {v}',"
+    f" '2026-06-05', '{10 + v // 60}:{v % 60:02d}');"
+    f"INSERT INTO saeima_individual_votes (vote_id, deputy_name, vote, politician_id) VALUES"
+    f" ({v}, 'Ābele Anna', 'Par', 1), ({v}, 'Bērziņš Bruno', 'Par', 2);"
+    for v in range(1, 101)
+)
 # ZZS iegūst 14 pārus (Cīrule ar 13 partijas biedriem) → redzami 12, pārējie
 # aiz «Rādīt vēl 2 pārus» (saraksts neizplūst pa visu lapu, 2026-10-18).
 _SQL += "".join(
@@ -108,35 +121,47 @@ def saites_site(saites_server):
 def test_default_view_is_readable_without_graph(saites_site):
     page, requested, base = saites_site
     assert page.locator("#saites-search").is_visible()
-    first = page.locator("details.saites-party").first
-    assert first.bounding_box()["y"] < 844                      # pirmajā ekrānā
     assert not any("d3.v7" in r for r in requested)
     assert not any("saites-graph.json" in r for r in requested)
-    # Partijas alfabētiski: AS, JV, ZZS.
-    assert page.locator("details.saites-party > summary .saites-party-name").all_inner_texts() == [
-        "AS", "JV", "ZZS"]
-    first.locator("summary").click()
-    link = first.locator("a.saites-pair").first
-    href = link.get_attribute("href")
-    assert href.startswith("politiki/") and "#saites-" in href
-    row = first.locator(".saites-pair-row").first
+    # Jaunākās saiknes: jaunākais pāris pirmais un pirmajā ekrānā. Cīrule ir
+    # 14 pāros, bet sarakstā ne vairāk kā divreiz — viena cilvēka vakars
+    # nepiepilda visu sarakstu.
+    rows = page.locator(".saites-newest-row")
+    assert rows.first.bounding_box()["y"] < 844
+    names = rows.locator(".saites-newest-names").all_inner_texts()
+    assert len(names) == 3, names
+    assert "Dārziņa" in names[0] and "Ābele" in names[1], names
+    assert sum("Cīrule" in n for n in names) == 2, names
+    lead = rows.first
+    assert "saites-newest-lead" in lead.get_attribute("class")
+    assert lead.locator(".saites-newest-type").inner_text() == "Nostāju konflikts"
+    assert lead.locator("a").get_attribute("href").startswith("politiki/")
+    # Partiju tabula: alfabētiski; četri veidi saskaitās līdz «Saiknes».
+    party_rows = page.locator(".saites-party-row")
+    assert party_rows.locator(".saites-party-name").all_inner_texts() == ["AS", "JV", "ZZS"]
+    as_cells = party_rows.first.locator("td").all_inner_texts()
+    assert as_cells == ["2", "1", "1", "–", "–"], as_cells
+    # Rinda pati ir vadīkla: atver savus pārus; cita rinda tos aizver.
+    as_pairs = page.locator(".saites-party-pairs").first
+    assert not as_pairs.is_visible()
+    party_rows.first.locator("td").first.click()
+    assert as_pairs.is_visible()
+    row = as_pairs.locator(".saites-pair-row").first
     assert row.locator(".saites-pair-n").inner_text() == "2"    # pāra 2 ieraksti saskaitīti
-    # Rinda saka, PAR KO ir saikne (jaunākā ieraksta apraksts) un tās veidu pēc krāsas.
     assert row.locator(".saites-pair-desc").inner_text() == "Bērziņš atbild Ābelei."
-    assert row.get_attribute("data-tone") == "spriedze"
+    href = row.locator("a.saites-pair").get_attribute("href")
+    assert href.startswith("politiki/") and "#saites-" in href
+    party_rows.nth(1).click()
+    assert not as_pairs.is_visible()
     # Starppartiju pāris ir ABU partiju sarakstos (AS un JV).
-    for party in ("AS", "JV"):
-        box = page.locator("details.saites-party", has=page.locator(
-            ".saites-party-name", has_text=party))
-        pair = box.locator("a.saites-pair", has_text="Ābele").filter(has_text="Bērziņš")
-        assert pair.count() == 1, party
-    # A5: tabula + 3 filtri aizstāti ar saiti uz spriedzes.html (saucējs = visas 4 rindas).
+    for i in (0, 1):
+        pair = page.locator(".saites-party-pairs").nth(i).locator(
+            "a.saites-pair", has_text="Ābele").filter(has_text="Bērziņš")
+        assert pair.count() == 1, i
+    # A5: tabula ar filtriem aizstāta ar saiti uz spriedzes.html.
     assert page.locator("#saites-table").count() == 0
-    assert page.locator(".saites-overview .multi-select").count() == 0
-    assert page.locator("#table-type-select, #party-select, #person-select").count() == 0
     to_list = page.locator("a.saites-to-list")
     assert to_list.get_attribute("href") == "spriedzes.html"
-    assert to_list.inner_text() == "Visu saikņu saraksts ar filtriem →"
     # Meklētājs → profila Saites cilne.
     page.fill("#saites-search", "Anna Ābele")
     page.dispatch_event("#saites-search", "change")
@@ -145,13 +170,12 @@ def test_default_view_is_readable_without_graph(saites_site):
     page.wait_for_url("**/spriedzes.html?party=AS")
 
 
-def test_full_graph_loads_only_on_demand_and_buttons_are_honest(saites_site):
+def test_full_graph_loads_only_on_demand_and_selection_works_by_tap(saites_site):
     page, requested, _base = saites_site
     if not _D3.exists():
         pytest.skip(f"{_D3} nav — palaid pilno renderu, kas lejupielādē D3")
     assert page.locator("#graph-svg circle").count() == 0
-    assert page.locator("[data-link-type='vote']").count() == 0          # 0 balsojumu saišu
-    assert page.locator("[data-link-type='politikas nostāju konflikts']").count() == 1
+    assert page.locator("[data-link-type='vote']").count() == 0          # balsojumi nav filtrs
     assert page.locator(
         "[data-link-type='politikas nostāju konflikts'] .filter-count").inner_text() == "1"
     page.click("#saites-open-graph")
@@ -160,6 +184,24 @@ def test_full_graph_loads_only_on_demand_and_buttons_are_honest(saites_site):
     assert any("saites-graph.json" in r for r in requested)
     legend, svg = page.locator("#graph-legend").bounding_box(), page.locator("#graph-svg").bounding_box()
     assert legend["y"] >= svg["y"] + svg["height"] - 1                   # leģenda zem grafa
+    page.wait_for_timeout(1500)                                          # simulācija nosēžas
+    dimmed = "[...document.querySelectorAll('#graph-svg g[opacity]')].filter(g => g.getAttribute('opacity') === '0.15').length"
+    # Izvēle ar klikšķi (telefonā nav hover): Ābele + kaimiņš Bērziņš paliek,
+    # pārējie nobālē; balsojumu līnija uz Bērziņu; panelis atveras uz «Saites».
+    page.evaluate("d3.selectAll('#graph-svg g').filter(d => d && d.id === 1 && d.name).dispatch('click')")
+    assert page.evaluate(dimmed) == 15
+    assert page.locator(".vote-line.vote-top").count() == 1
+    assert page.locator(".detail-stat-btn.active").get_attribute("data-section") == "saites"
+    assert "Visbiežāk balso vienādi" in page.locator("#detail-content").text_content()
+    assert "100 %" in page.locator(".detail-vote-list").inner_text()
+    # Partiju leģenda: JV izceļ 2 JV mezglus, otrs spiediens noņem.
+    jv = page.locator(".graph-party-btn[data-party='JV']")
+    jv.click()
+    assert jv.get_attribute("aria-pressed") == "true"
+    assert page.evaluate(dimmed) == 15
+    assert page.locator(".vote-line").count() == 0
+    jv.click()
+    assert page.evaluate(dimmed) == 0
 
 
 def test_pair_link_opens_the_profile_that_shows_the_pair(monkeypatch):
@@ -210,19 +252,19 @@ def test_party_less_people_are_grouped_by_kind_not_lumped():
 
 
 def test_long_party_list_shows_12_pairs_and_folds_the_rest(saites_site):
-    """Kļūme: atvērta lielā partija (JV 105 pāri) izplūda ~8 300 px garumā un
-    izstiepa partiju režģa kolonnu. Tagad redzami 12 jaunākie, pārējie aiz
-    «Rādīt vēl N pārus»; atvērtā partija aizņem visu rindu."""
+    """Kļūme: atvērta lielā partija (JV 105 pāri) izplūda ~8 300 px garumā.
+    Tagad redzami 12 jaunākie, pārējie aiz «Rādīt vēl N pārus»."""
     page, _requested, _base = saites_site
-    zzs = page.locator("details.saites-party", has_text="ZZS")
-    zzs.locator("summary").first.click()
-    visible = zzs.locator(".saites-party-body > .saites-pairs > li")
+    page.locator(".saites-party-row", has_text="ZZS").click()
+    zzs = page.locator(".saites-party-pairs").nth(2)
+    visible = zzs.locator("td > .saites-pairs > li")
     assert visible.count() == 12
     more = zzs.locator("details.saites-more")
     assert more.locator("summary").inner_text().strip() == "Rādīt vēl 2 pārus"
+    # Abas vadīklas (rinda un «Rādīt vēl») telefonā ≥ 44 px (§0; saites.html
+    # vairs nav test_ui_disclosures_one_look lapu sarakstā).
+    assert more.locator("summary").bounding_box()["height"] >= 44
+    assert page.locator(".saites-party-toggle").first.bounding_box()["height"] >= 44
     assert not more.locator("li").first.is_visible()
     more.locator("summary").click()
     assert more.locator("li").count() == 2 and more.locator("li").first.is_visible()
-    page.set_viewport_size({"width": 1200, "height": 900})          # ≥2 kolonnas
-    grid = page.locator(".saites-parties").bounding_box()
-    assert abs(zzs.bounding_box()["width"] - grid["width"]) < 2      # pilna rinda

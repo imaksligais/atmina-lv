@@ -3,11 +3,11 @@ name: Nauris Puntulis
 party: Nacionālā apvienība
 role: Kultūras ministrs
 relationship_type: tracked
-positions: 68
-votes: 5002
+positions: 71
+votes: 5011
 contradictions: 0
-mentioned_in: 1047
-last_active: 2026-11-16
+mentioned_in: 1113
+last_active: 2026-11-24
 top_topics:
 - Kultūra
 - Valodu politika
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/kultura|Kultūra]] (37%), [[topics/valodu-politika|Valodu politika]] (25%), [[topics/imigracija|Imigrācija]] (6%)
-- **30d:** 11 claims, 1.0× bāzes līnija
+- **30d:** 14 claims, 1.4× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

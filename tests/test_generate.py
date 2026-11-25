@@ -15,6 +15,7 @@ from src.render._common import (
     _slugify,
 )
 from src.render.votes import _enrich_faction_breakdown
+from src.render._orchestrator import _make_env
 
 
 class TestSlugify:
@@ -848,9 +849,8 @@ def _og_row(**over):
 
 class TestOgCardTemplate:
     def _html(self, **over):
-        from jinja2 import Environment, FileSystemLoader
         from src.render.contradictions import _og_card_context
-        env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+        env = _make_env()
         card = _og_card_context(_og_row(**over))
         return env.get_template("og-card.html.j2").render(card=card, fonts={})
 
@@ -908,7 +908,6 @@ def test_og_cards_rerender_only_when_content_changes(tmp_path, monkeypatch):
     (Līdz 2026-10-15 PNG, kas jaunāks par detected_at, nekad netika pārzīmēts.)"""
     from pathlib import Path
     import playwright.sync_api
-    from jinja2 import Environment, FileSystemLoader
     from src.render.contradictions import _render_og_cards
 
     shots: list[str] = []
@@ -930,7 +929,7 @@ def test_og_cards_rerender_only_when_content_changes(tmp_path, monkeypatch):
         def __exit__(self, *a): return False
 
     monkeypatch.setattr(playwright.sync_api, "sync_playwright", lambda: _PW())
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+    env = _make_env()
     og = tmp_path / "atmina" / "assets" / "og"
     cards = [_og_row(id=1), _og_row(id=2)]
 
@@ -950,14 +949,9 @@ def test_og_cards_rerender_only_when_content_changes(tmp_path, monkeypatch):
 
 class TestPretrunaDetailTemplate:
     def test_renders_with_og_meta(self):
-        from jinja2 import Environment, FileSystemLoader
-        from src.render._common import _autolink_bills_filter, _salience_label, lv_date
-        env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-        env.filters["autolink_bills"] = _autolink_bills_filter
-        env.filters["lv_date"] = lv_date  # 2026-10-21: datumi DD.MM.YYYY
+        env = _make_env()
         # 2026-09-06 (f9f9c3e2) pievienoja šablonam `salience_label`, bet šis
         # tests savu env veido pats — nereģistrēts filtrs to nogāza.
-        env.filters["salience_label"] = _salience_label
         env.globals["bill_slugs"] = set()
         c = {
             "id": 17,
@@ -1179,20 +1173,20 @@ def test_vote_alignment_for_ignores_non_vote_states(tmp_path):
     db.commit()
 
     top, bottom = _vote_alignment_for(db, 1, top_n=3)
-    # Only 2 real shared votes < 10 threshold → non-votes did not inflate the total.
+    # Only 2 real shared votes < threshold → non-votes did not inflate the total.
     assert top == []
     assert bottom == []
 
-    # Add 10 more real, agreeing votes so the pair now clears the threshold and
-    # confirms only cast votes are counted (total == 12, 100% agreement).
-    for vid in range(13, 23):
+    # Add 98 more real, agreeing votes so the pair now clears the threshold
+    # (VOTE_ALIGN_MIN_SHARED = 100) and confirms only cast votes are counted.
+    for vid in range(13, 111):
         db.execute("INSERT INTO saeima_individual_votes (vote_id, politician_id, vote) VALUES (?, 1, 'Par')", (vid,))
         db.execute("INSERT INTO saeima_individual_votes (vote_id, politician_id, vote) VALUES (?, 2, 'Par')", (vid,))
     db.commit()
     top, _ = _vote_alignment_for(db, 1, top_n=3)
     assert len(top) == 1
-    assert top[0]["total"] == 12  # 2 + 10 real votes; the 10 non-votes excluded
-    assert top[0]["agree"] == 12
+    assert top[0]["total"] == 100  # 2 + 98 real votes; the 10 non-votes excluded
+    assert top[0]["agree"] == 100
     assert top[0]["agree_pct"] == 100
     db.close()
 

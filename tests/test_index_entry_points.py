@@ -17,10 +17,9 @@ from __future__ import annotations
 
 import re
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
-from src.render._common import _safe_json_filter, _safe_url_filter
-from src.render._common.filters import _lv_number
+from src.render._orchestrator import _make_env
 
 ENTRY_LINKS = [
     ("temas.html", "Izpēti tēmu"),
@@ -34,12 +33,9 @@ DISCLAIMER = (
 
 
 def _env() -> Environment:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["safe_json"] = _safe_json_filter
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s or ""
     env.filters["lv_plural"] = lambda n, *a, **k: ""
-    env.filters["lv_number"] = _lv_number
     env.filters["autolink_bills"] = lambda s, *a, **k: s
     env.filters["image_variant"] = lambda s, *a, **k: s
     env.globals["assets_version"] = "test"

@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 7
 votes: 0
 contradictions: 0
-mentioned_in: 144
+mentioned_in: 152
 last_active: 2026-10-06
 top_topics:
 - Imigrācija

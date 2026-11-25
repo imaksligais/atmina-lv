@@ -144,9 +144,9 @@
               {% if x.topic %}<button type="button" class="chip xv1-chip xv1-chip-topic xv1-item-topic" data-topic="{{ x.topic }}" title="Filtrēt: {{ x.topic }}">{{ x.topic }}</button>{% endif %}
               {% if x.favorite_count is not none %}
               <span class="xv1-engagement">
-                <span>↩ {{ x.reply_count or 0 }}</span>
-                <span>↻ {{ x.retweet_count or 0 }}</span>
-                <span>♡ {{ x.favorite_count or 0 }}</span>
+                <span>↩ {{ (x.reply_count or 0)|lv_number }}</span>
+                <span>↻ {{ (x.retweet_count or 0)|lv_number }}</span>
+                <span>♡ {{ (x.favorite_count or 0)|lv_number }}</span>
               </span>
               {% endif %}
               {% if x.source_url %}<a class="xv1-item-link" href="{{ x.source_url | safe_url }}" target="_blank" rel="noopener">atvērt X ↗</a>{% endif %}

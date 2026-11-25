@@ -29,12 +29,15 @@ def env(tmp_path, monkeypatch):
     db = get_db(path)
     db.execute("INSERT INTO tracked_politicians (id, name, party) VALUES (1, 'Test Politiķis', 'X')")
     db.execute("INSERT INTO documents (id, content, content_hash) VALUES (10, 'teksts', 'h10')")
-    for cid, reasoning in ((101, FLAGGED), (102, FLAGGED), (103, PLAIN)):
+    # 104: an old tweet extracted today — stated_at is outside the brief window,
+    # created_at is inside the routine day (2026-11-18: 3 such rows were missed).
+    for cid, reasoning, stated in ((101, FLAGGED, "2026-11-12 12:00:00"), (102, FLAGGED, "2026-11-12 12:00:00"),
+                                   (103, PLAIN, "2026-11-12 12:00:00"), (104, FLAGGED, "2022-05-01 09:00:00")):
         db.execute(
             """INSERT INTO claims (id, opponent_id, document_id, topic, stance, reasoning, source_url,
                                    stated_at, created_at)
-               VALUES (?, 1, 10, 'Budžets', 'Stance.', ?, ?, '2026-11-12 12:00:00', '2026-11-12 16:00:00')""",
-            (cid, reasoning, f"https://x/{cid}"),
+               VALUES (?, 1, 10, 'Budžets', 'Stance.', ?, ?, ?, '2026-11-12 16:00:00')""",
+            (cid, reasoning, f"https://x/{cid}", stated),
         )
     db.commit()
     db.close()
@@ -82,6 +85,7 @@ def test_apply_resolves_the_queue_rows_and_rollback_restores_them(env, monkeypat
     assert rnr.main(["--list", "--day", "2026-11-12"]) == 0  # the rows to decide, with their source
     listed = capsys.readouterr().out
     assert "===== 101 |" in listed and "===== 102 |" in listed and "===== 103" not in listed
+    assert "===== 104 |" in listed, "backdated row created today is missing from --list"
     assert "teksts:    teksts" in listed
     args = ["--decisions", str(env["decisions"])]
     monkeypatch.setattr(rnr, "is_committed", lambda p: False)

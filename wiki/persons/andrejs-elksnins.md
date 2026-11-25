@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (25%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (13%), [[topics/transports|Transports]] (9%)
-- **30d:** 1 claims, 0.3× bāzes līnija
+- **30d:** 1 claims
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/koalicija-un-partijas|Koalīcija un partijas]], 2026-07-17
 <!-- /SYNC-AUTO -->

@@ -7,7 +7,7 @@ positions: 1
 votes: 3217
 contradictions: 0
 mentioned_in: 11
-last_active: 2026-10-16
+last_active: 2026-10-08
 top_topics:
 - Tieslietas
 ---

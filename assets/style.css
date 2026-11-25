@@ -340,7 +340,8 @@ details > summary,
 }
 details > summary::-webkit-details-marker { display: none; }
 details > summary::after,
-.profile-bio-trigger::after {
+.profile-bio-trigger::after,
+.saites-party-toggle::after {
   content: "";
   flex: none;
   justify-self: end;
@@ -354,7 +355,8 @@ details > summary::after,
   translate: 0 -0.15rem;
 }
 details[open] > summary::after,
-.profile-bio-trigger:has(+ :popover-open)::after { rotate: -135deg; translate: 0 0.1rem; }
+.profile-bio-trigger:has(+ :popover-open)::after,
+.saites-party-toggle[aria-expanded="true"]::after { rotate: -135deg; translate: 0 0.1rem; }
 details > summary:focus-visible,
 .profile-bio-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 details > summary:active,
@@ -1208,7 +1210,11 @@ details[open]::details-content { block-size: auto; }
   line-height: 1.5;
 }
 /* Tintes — fiksēti spilgtie toņi abās tēmās (gaišās tēmas --green/--yellow ir tumšāki un tinti padara duļķainu). */
-.badge-red { background: oklch(0.637 0.208 25.3 / 0.15); color: var(--red); }
+/* Tumšajā tēmā --red uz sarkanīgā birkas fona bija 4,23:1 (mērīts 2026-11-23,
+   370 birkas spriedzēs un likumprojektos) — birkas tinte ir nedaudz gaišāka.
+   Gaišajā tēmā paliek --red (4,76:1). */
+.badge-red { background: oklch(0.637 0.208 25.3 / 0.15); color: color-mix(in oklch, var(--red) 86%, white); }
+html[data-theme="light"] .badge-red { color: var(--red); }
 .badge-yellow { background: oklch(0.795 0.162 86 / 0.15); color: var(--yellow); }
 .badge-green { background: oklch(0.723 0.192 149.6 / 0.15); color: var(--green); }
 .badge-blue { background: oklch(0.623 0.188 259.8 / 0.15); color: var(--accent); }
@@ -3631,46 +3637,152 @@ a.profile-party-tag:hover {
 }
 .saites-search label { font-size: 0.8rem; color: var(--text-muted); }
 /* Lauka izskats — .field (Pamatelementi). */
-/* Partiju režģis. Atvērtā partija aizņem visu rindu; `dense` aizpilda tukšumu,
-   ko tā atstāj, tāpēc panelis nonāk tieši zem savas rindas un kolonnas
-   neizstiepjas (2026-10-18 — agrāk atvērtā šūna izstiepa visu kolonnu). */
-.saites-parties {
+.saites-h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Jaunākās saiknes (Saites v2, 2026-11-22). Pirmā rinda = lapas lielais
+   moments; visa rinda ir saite (::after). Kolonnas «veids» un «datums» sākas
+   vienā vietā visās rindās (§1.4). Bez sānu svītras un nozīmītēm. */
+.saites-newest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--border);
+}
+.saites-newest-row {
+  position: relative;
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-  grid-auto-flow: row dense;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 9.5rem 8.5rem;
+  grid-template-areas: "names type date" "desc type date";
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  padding: 0.65rem 0.5rem;
+  border-block-end: 1px solid var(--border);
 }
-.saites-party {
-  border: 1px solid var(--border);
-  border-radius: var(--radius, 8px);
-  background: var(--surface);
+.saites-newest-names {
+  grid-area: names;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
   min-inline-size: 0;
+  overflow-wrap: anywhere;
 }
-.saites-party[open] {
-  grid-column: 1 / -1;
-  border-color: color-mix(in oklch, var(--accent) 45%, var(--border));
+.saites-newest-names::after { content: ""; position: absolute; inset: 0; }
+.saites-newest-names:focus-visible { outline: 2px solid transparent; }
+.saites-newest-row:has(.saites-newest-names:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.saites-newest-row:active { background: var(--surface2, var(--surface)); }
+.saites-newest-desc {
+  grid-area: desc;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.saites-party > summary,
-.saites-more > summary {
+.saites-newest-type { grid-area: type; font-size: 0.85rem; color: var(--text); }
+.saites-newest-date {
+  grid-area: date;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  white-space: nowrap;
+}
+.saites-newest-lead { padding-block: 1rem; }
+.saites-newest-lead .saites-newest-names {
+  font-size: clamp(1.4rem, 1.05rem + 1.4vw, 2rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.saites-newest-lead .saites-newest-desc {
+  font-size: 1rem;
+  color: var(--text);
+  -webkit-line-clamp: 3;
+}
+@media (max-width: 600px) {
+  .saites-newest-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "names names" "desc desc" "type date";
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .saites-newest-row:hover { background: var(--surface); }
+  .saites-newest-row:hover .saites-newest-names { color: var(--accent); }
+}
+
+/* Partiju tabula (§1.4). Rinda pati ir vadīkla (ssv1.js): atver pārus nākamajā
+   rindā uzreiz, bez animācijas (§2.8). Šaurā ekrānā īsās galvenes (<abbr>). */
+.saites-party-wrap { overflow-x: auto; }
+.saites-party-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.saites-party-table th,
+.saites-party-table td {
+  padding: 0.5rem 0.6rem;
+  text-align: start;
+  border-block-end: 1px solid var(--border);
+}
+.saites-party-table thead th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.saites-party-table .num { text-align: end; inline-size: 1%; white-space: nowrap; }
+.saites-party-table abbr { text-decoration: none; }
+.saites-party-table .col-short { display: none; }
+@media (max-width: 600px) {
+  .saites-party-table .col-long { display: none; }
+  .saites-party-table .col-short { display: inline; }
+  .saites-party-table th, .saites-party-table td { padding-inline: 0.3rem; font-size: 0.85rem; }
+  .saites-party-toggle { padding-inline: 0.3rem; gap: 0.25rem; }
+}
+@media (max-width: 360px) {
+  .saites-party-table th, .saites-party-table td { padding-inline: 0.15rem; font-size: 0.8rem; }
+  .saites-party-toggle { padding-inline: 0.15rem; }
+  .saites-party-toggle::after { display: none; }
+}
+.saites-party-row { cursor: pointer; }
+.saites-party-row > th { padding: 0; font-weight: 600; }
+.saites-party-toggle {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  inline-size: 100%;
   min-block-size: 44px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.6rem;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
+  touch-action: manipulation;
 }
-.saites-party[open] > summary { border-block-end: 1px solid var(--border); }
-/* Skaits jau aizņem brīvo vietu — bultiņa tieši aiz tā, skaitļi vienā kolonnā. */
-.saites-party > summary::after { margin-inline-start: 0; }
-.saites-party-name { font-weight: 600; min-inline-size: 0; }
-.saites-party-count {
-  margin-inline-start: auto;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+.saites-party-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.saites-party-name { min-inline-size: 0; hyphens: auto; }
+.saites-party-count { font-weight: 600; color: var(--text); }
+.saites-party-row:active { background: var(--surface); }
+.saites-party:has(.saites-party-toggle[aria-expanded="true"]) .saites-party-row { background: var(--surface); }
+@media (hover: hover) and (pointer: fine) {
+  .saites-party-row:hover { background: var(--surface); }
+  .saites-party-row:hover .saites-party-name { color: var(--accent); }
 }
-.saites-party-body { padding: 0.75rem; }
+.saites-party-pairs[hidden] { display: none; }
+.saites-party-pairs > td { padding: 0.5rem 0 1rem; }
+.saites-party-pairs-n { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
+.saites-party-note { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
 
 /* Pāri: plakans saraksts (ne kaste kastē). Kreisā mala = jaunākās saiknes veids,
    zem vārdiem tās apraksts; visa rinda ir saite (2026-10-21). */
@@ -3756,12 +3868,123 @@ a.profile-party-tag:hover {
 }
 .saites-more { margin-block-start: 0.5rem; }
 .saites-more > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 44px;
+  padding: 0.5rem 1rem;
+}
+.saites-more > summary {
   justify-content: center;
   border: 1px dashed var(--border);
   border-radius: 6px;
   color: var(--accent);
 }
 .saites-more[open] > summary { margin-block-end: 0.5rem; }
+
+/* Kopīgās vietas (Saites v2, 2. posms, 2026-11-22). Neitrāls slānis: pelēks,
+   bez krāsainām malām un nozīmītēm. Rinda = viena vieta; visa rinda ir saite
+   (::after). Kolonnas sākas vienā vietā visās rindās (§1.4). Lieto Saites lapa
+   un profila «Saites» cilne. */
+.saites-places { margin-block-start: 1.5rem; }
+.saites-places-intro { margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--text-muted); max-inline-size: 48rem; }
+.saites-places-h3 { margin: 1rem 0 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.places-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--border);
+}
+.places-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11rem 7rem;
+  grid-template-areas: "name kind n";
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  min-block-size: 44px;
+  padding: 0.55rem 0.5rem;
+  border-block-end: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.places-name {
+  grid-area: name;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.places-name::after { content: ""; position: absolute; inset: 0; }
+.places-name:focus-visible { outline: 2px solid transparent; }
+.places-row:has(.places-name:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.places-row:active { background: var(--surface); }
+.places-kind { grid-area: kind; color: var(--text-muted); }
+.places-n { grid-area: n; text-align: end; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* Profila variants: vieta · savs amats · laiks, zem tā «Kopā ar». */
+.places-list-profile .places-row {
+  grid-template-columns: minmax(0, 1fr) 12rem 13rem;
+  grid-template-areas: "name role when" "with with with";
+}
+.places-role { grid-area: role; color: var(--text); min-inline-size: 0; overflow-wrap: anywhere; }
+.places-when { grid-area: when; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.places-with { grid-area: with; color: var(--text-muted); font-size: 0.85rem; }
+@media (max-width: 600px) {
+  .places-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "name name" "kind n";
+  }
+  .places-list-profile .places-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "name name" "role when" "with with";
+  }
+  .places-list-profile .places-when { text-align: end; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .places-row:hover { background: var(--surface); }
+  .places-row:hover .places-name { color: var(--accent); }
+}
+
+/* Vietas lapa → profils#kur-celi-krustojas: zem sticky joslām, kā pāra kartīte. */
+#kur-celi-krustojas { scroll-margin-top: 8rem; }
+
+/* Spriedžu kartītē: kopīgā vieta ar otru pāra dalībnieku. */
+.saites-card-shared { margin: 0.25rem 0 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
+
+/* Vietas lapa (vietas/<slug>.html): īsta tabula (§1.4); šaurā ekrānā ritina
+   tabulu, ne lapu. */
+.vieta-intro { max-inline-size: 48rem; color: var(--text-muted); font-size: 0.95rem; }
+.vieta-wrap { overflow-x: auto; margin-block: 1rem 0.5rem; }
+.vieta-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.vieta-table { inline-size: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.vieta-table th, .vieta-table td {
+  padding: 0.55rem 0.6rem;
+  text-align: start;
+  border-block-end: 1px solid var(--border);
+}
+.vieta-table thead th { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+.vieta-table tbody th { font-weight: 600; }
+/* Saites 44 px augstas (§0), teksts augšā — tā tas stāv vienā rindā ar
+   pārējām šūnām (vertical-align: top). */
+.vieta-table th, .vieta-table td { vertical-align: top; }
+.vieta-table tbody th a, .vieta-table td a { display: inline-flex; align-items: flex-start; min-block-size: 44px; }
+.vieta-table tbody th a { color: var(--text); }
+.vieta-legal { margin: 0.25rem 0 1rem; font-size: 0.85rem; color: var(--text-muted); }
+.vieta-when { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vieta-note { font-size: 0.85rem; color: var(--text-muted); }
+@media (max-width: 600px) {
+  .vieta-table th, .vieta-table td { padding-inline: 0.35rem; font-size: 0.85rem; }
+  .vieta-when { white-space: normal; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .vieta-table tbody th a:hover { color: var(--accent); }
+}
 .saites-to-list-wrap { margin: 0; }
 .saites-to-list {
   display: inline-flex;
@@ -3844,6 +4067,53 @@ a.profile-party-tag:hover {
   border-radius: 50%;
   background: var(--lt);
 }
+
+.graph-legend .lt-vote-top .legend-line,
+.graph-legend .lt-vote-bottom .legend-line {
+  background: none;
+  border-block-start: 2px dashed var(--lt);
+  block-size: 0;
+}
+.lt-vote-top    { --lt: var(--purple); }
+.lt-vote-bottom { --lt: var(--text-muted); }
+.graph-party-legend { margin-block: -1rem 1rem; }
+.graph-legend-title { margin: 0 0 0.35rem; font-size: 0.8rem; color: var(--text-muted); }
+.graph-party-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.graph-party-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-block-size: 36px;
+  padding-inline: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+@media (pointer: coarse) { .graph-party-btn { min-block-size: 44px; } }
+.graph-party-btn[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.graph-party-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.graph-party-btn:active { transform: translateY(1px); }
+@media (hover: hover) and (pointer: fine) { .graph-party-btn:hover { border-color: var(--accent); } }
+.graph-party-swatch {
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  background: var(--pc, var(--text-muted));
+}
+.graph-party-n { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.graph-vote-note { margin: 0 0 2rem; max-inline-size: 70ch; font-size: 0.8rem; color: var(--text-muted); }
 
 /* ── Graph + detail split layout (Saites page) ── */
 .graph-split {
@@ -6487,6 +6757,12 @@ a.cover-row:active { background:var(--surface2); }
   .hero-search-btn:hover { filter: var(--hover-brighten-soft); }
 }
 .hero-search-btn:active { transform: scale(0.97); }
+/* Telefonā pirkstam 44 px, izskats nemainās (2026-11-23): lauks stiepjas pa visu
+   kapsulas augstumu, arī tās 0.3rem polsterī (34 px → 53,6 px; kapsula paliek
+   55,6 px). Poga telefonā jau ir 44 px. */
+@media (max-width: 600px), (pointer: coarse) {
+  .hero-search-input { align-self: stretch; margin-block: -0.3rem; }
+}
 
 /* Sākumpunkti zem meklētāja (T2, 2026-09-05). Atkārto .hero-search pill
    valodu mazākā mērogā; wrap, lai šaurā ekrānā krīt divās rindās. */
@@ -6826,13 +7102,36 @@ a.cover-row:active { background:var(--surface2); }
 /* ── Topic destination pages: directory grid ── */
 .temas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.9rem; margin-top: 1.5rem; }
 .tema-card {
-  display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none;
+  display: grid; grid-template-columns: auto 1fr; column-gap: 0.75rem; row-gap: 0.2rem; align-items: center; align-content: start; text-decoration: none;
   border-inline-start: 3px solid var(--topic-color, var(--accent)); border-block-end: 1px solid var(--border);
   padding-block: 1rem; padding-inline: 1.1rem;
 }
 @media (hover: hover) and (pointer: fine) { .tema-card:hover { color: var(--accent); } }
-.tema-card-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+/* Tēmas ikona (Lucide, assets/topics.svg) tēmas krāsā tonētā kvadrātiņā —
+   tēmu birkas recepte, bet jaukta `in srgb`: `in oklch` WebKit (iPhone) griež
+   toni caur fona krāsu, un violetā tēma iznāk persiku krāsā (mērīts 23.11.).
+   Krāsu dod vecāka --topic-color. */
+.topic-icon {
+  flex-shrink: 0; display: inline-grid; place-items: center;
+  inline-size: 2.25rem; block-size: 2.25rem; border-radius: 6px;
+  color: color-mix(in srgb, var(--topic-color, var(--text-muted)) 70%, var(--text));
+  background: color-mix(in srgb, var(--topic-color, var(--text-muted)) 14%, var(--surface));
+}
+/* Gaišajā tēmā tīra tēmas krāsa uz sava toņa ir par bālu (dzeltenā 2,98:1) — piejauc tekstu. */
+html[data-theme="light"] .topic-icon { color: color-mix(in srgb, var(--topic-color, var(--text-muted)) 60%, var(--text)); }
+.topic-icon svg {
+  inline-size: 55%; block-size: 55%;
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+}
+/* Tēmas lapas virsraksts: kvadrātiņš virsraksta rindas augstumā (1em), abos izmēros. */
+.tema-h1 { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.2em 0.35em; }
+.tema-h1 .topic-icon { inline-size: 1em; block-size: 1em; }
+/* Ja garākais vārds (kapitālsabiedrības, 320 px) blakus kvadrātiņam neietilpst,
+   nosaukums pāriet zem tā, nevis pārlūzt vārda vidū. */
+.tema-h1 > span:last-child { flex: 1 1 min-content; min-inline-size: 0; }
 .tema-card-name { font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.25; }
+.tema-card .topic-icon { grid-row: span 2; align-self: start; }
+.tema-card-name { min-inline-size: 0; }
 .tema-card-counts { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .tema-card-count { font-size: 0.76rem; color: var(--text-muted); }
 
@@ -7169,10 +7468,28 @@ html[data-theme="light"] .domain-chip.domain-state { color: #15662e; }
   /* Palaga sadalīšana: katrs semikola segments savā rindkopā. */
   .post-content .cell-seg { display: block; }
   .post-content .cell-seg + .cell-seg { margin-top: 0.45rem; }
+  /* Kartītes virsraksta saite (vārds) un «Avots» saite bija 20 px augstas —
+     pirkstam 44 px ar neredzamu ::after zonu (2026-11-23). Tikai tad, ja šūnā
+     ir VIENA saite: divām saitēm blakus rindās zonas pārklātos un viena otrai
+     nozagtu centru. Saites prozas šūnās ir teksta saites, tās neaiztiek. */
+  .post-content td:is(:first-child, :last-child) > a:only-of-type { position: relative; }
+  .post-content td:is(:first-child, :last-child) > a:only-of-type::after {
+    content: "";
+    position: absolute;
+    inset: min(0px, (100% - var(--tap-target)) / 2);
+  }
 }
 
 /* Empty ("—") cells sit back visually so real data reads first. */
 .post-content .cell-empty { color: var(--text-muted); opacity: .55; }
+
+/* Likuma lapa: saturs sākas ar <h2> uzreiz zem lapas galvenes. No galvenes
+   līnijas līdz «Mērķis» bija 96 px (sekcijas 3rem + virsraksta paša mala);
+   citās lapās 25–55 px. Tagad 48 px — tas pats paņēmiens un tas pats skaitlis
+   kā likumprojekta lapai (.pagehead-section:has(+ .bill-detail-summary)).
+   Mērīts 2026-11-23, 390 un 1280 px. */
+.pagehead-section:has(+ .law-content) { padding-block-end: 1.5rem; }
+.law-content > :first-child { margin-block-start: 0; }
 
 /* Satura rādītājs ("Saturs") — compact anchor list before the prose. Reuses
    the neighbour box language (surface2 fill, border, radius). Both themes
@@ -8847,6 +9164,11 @@ a.pp-stat:active,
   --slv-s2: #7d97a3;
   --slv-s3: #dfe7ea;
   --slv-gap: var(--surface);
+  /* Koalīcija/opozīcija: divas neitrālas (ne partiju) krāsas — vēsa pret
+     siltu pelēku; abas ≥3:1 pret --surface, viena pret otru 3,7:1 (tumšā)
+     un 3,3:1 (gaišā). */
+  --slv-gov-k: #dfe7ea;
+  --slv-gov-o: #7a7462;
 }
 html[data-theme="light"] .slv {
   --slv-yes: #1f2d4d;
@@ -8855,6 +9177,8 @@ html[data-theme="light"] .slv {
   --slv-s1: #b3bfd3;
   --slv-s2: #5f78a6;
   --slv-s3: #1f2d4d;
+  --slv-gov-k: #1f2d4d;
+  --slv-gov-o: #857d66;
 }
 .slv-lead {
   font-family: var(--xv1-serif);
@@ -8892,6 +9216,12 @@ html[data-theme="light"] .slv {
   box-shadow: 0 0 0 8px var(--bg), 0 10px 18px -12px var(--shadow-overlay-strong);
 }
 .slv-lenses[hidden] { display: none; }
+/* Sešas lēcas: šaurā ekrānā 3 × 2 (valdības lēcas augšējā rindā blakus
+   «Sarakstam»), platā — viena rinda (768 px media zemāk). */
+/* Rindu atstarpe 12 px: .seg-ctl-btn::after paplašina spiešanas zonu līdz 44 px,
+   un bez tās augšējās rindas apakšmala nospiestu apakšējās rindas pogu. */
+.slv-lenses.has-gov { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 2px; border-radius: calc(var(--chip-block) / 2 + 3px); }
+.slv-short { display: none; }
 
 /* Pusloks */
 .slv-arc { position: relative; max-width: 640px; margin: 0 auto; }
@@ -8949,11 +9279,22 @@ html[data-theme="light"] .slv {
 .slv[data-lens="pretrunas"] [data-ctr="0"] { --dot: var(--slv-s0); }
 .slv[data-lens="pretrunas"] [data-ctr="1"] { --dot: var(--orange); }
 .slv[data-lens="pretrunas"] [data-ctr="2"] { --dot: var(--red); }
+.slv[data-lens="koalicija"] [data-gov="koalicija"] { --dot: var(--slv-gov-k); }
+.slv[data-lens="koalicija"] [data-gov="opozicija"] { --dot: var(--slv-gov-o); }
+/* Balsis — tās pašas krāsas kā sākumlapas balsojuma joslā (par/pret/atturas). */
+.slv[data-lens="uzticiba"] [data-uzt="par"] { --dot: var(--green); }
+.slv[data-lens="uzticiba"] [data-uzt="pret"] { --dot: var(--red); }
+.slv[data-lens="uzticiba"] [data-uzt="atturas"] { --dot: var(--yellow); }
+.slv[data-lens="uzticiba"] [data-uzt="nebalsoja"] { --dot: transparent; --ring: var(--text-muted); --ring-w: 2.5; }
 .slv[data-lens="pozicijas"] [data-pos="nav"],
-.slv[data-lens="pretrunas"] [data-ctr="nav"] { --dot: transparent; --ring: var(--text-dim); --ring-w: 2; --dash: 3 2.5; }
+.slv[data-lens="pretrunas"] [data-ctr="nav"],
+.slv[data-lens="koalicija"] [data-gov="nav"],
+.slv[data-lens="uzticiba"] [data-uzt="nav"] { --dot: transparent; --ring: var(--text-dim); --ring-w: 2; --dash: 3 2.5; }
 
 /* Kopsavilkums + leģenda — redzama tikai aktīvās lēcas daļa */
 .slv [data-lens-for] { display: none; }
+.slv[data-lens="koalicija"] [data-lens-for="koalicija"],
+.slv[data-lens="uzticiba"] [data-lens-for="uzticiba"],
 .slv[data-lens="saraksts"] [data-lens-for="saraksts"],
 .slv[data-lens="v14"] [data-lens-for="v14"],
 .slv[data-lens="pozicijas"] [data-lens-for="pozicijas"],
@@ -9005,6 +9346,12 @@ html[data-theme="light"] .slv {
 .slv-key-ctr-1 { background: var(--orange); }
 .slv-key-ctr-2 { background: var(--red); }
 .slv-key-nav { border: 2px dashed var(--text-dim); }
+.slv-key-gov-k { background: var(--slv-gov-k); }
+.slv-key-gov-o { background: var(--slv-gov-o); }
+.slv-key-uzt-par { background: var(--green); }
+.slv-key-uzt-pret { background: var(--red); }
+.slv-key-uzt-atturas { background: var(--yellow); }
+.slv-key-uzt-nebalsoja { border: 2px solid var(--text-muted); }
 .slv-legend-note {
   text-align: center;
   color: var(--text-muted);
@@ -9048,6 +9395,9 @@ html[data-theme="light"] .slv {
   margin: 0 0 0.7rem;
 }
 .slv-fact { min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
+/* Valdības fakti (koalīcija, uzticības balss) — teksts, ne skaitlis: 2 kolonnas, mazāks burts. */
+.slv-facts-gov { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.slv-facts-gov .slv-fact dd { font-size: 1.05rem; line-height: 1.2; }
 .slv-fact dt {
   font-family: var(--xv1-mono); font-size: 9.5px;
   letter-spacing: 0.6px; text-transform: uppercase;
@@ -9108,6 +9458,7 @@ html[data-theme="light"] .slv {
 @media (min-width: 768px) {
   .slv-stage { grid-template-columns: minmax(0, 1fr) minmax(260px, 320px); align-items: start; }
   .slv-lenses { grid-template-columns: repeat(4, auto); }
+  .slv-lenses.has-gov { grid-template-columns: repeat(6, auto); max-width: none; justify-self: start; inline-size: max-content; max-inline-size: 100%; }
   .slv-pop { position: sticky; inset-block-start: calc(var(--nav-block-size) + 12px); }
   .slv-pop-bar { margin-bottom: -0.5rem; }
 }
@@ -9117,6 +9468,7 @@ html[data-theme="light"] .slv {
   .slv-head .pagehead-metrics { display: none; }
   .slv-head { padding-bottom: 18px; margin-bottom: 16px; }
   .slv-long { display: none; }
+  .slv-short { display: inline; }
   .slv-pop {
     position: fixed;
     left: 0; right: 0; bottom: 0;
@@ -9187,9 +9539,12 @@ html[data-theme="light"] .slv {
   box-sizing: border-box;
   transition: background 0.35s ease, border-color 0.35s ease;
 }
-.slv[data-lens="v14"] .slv-dep[data-v14="ne"] .slv-dep-dot { border-width: 2px; }
+.slv[data-lens="v14"] .slv-dep[data-v14="ne"] .slv-dep-dot,
+.slv[data-lens="uzticiba"] .slv-dep[data-uzt="nebalsoja"] .slv-dep-dot { border-width: 2px; }
 .slv[data-lens="pozicijas"] .slv-dep[data-pos="nav"] .slv-dep-dot,
-.slv[data-lens="pretrunas"] .slv-dep[data-ctr="nav"] .slv-dep-dot { border-style: dashed; border-width: 2px; }
+.slv[data-lens="pretrunas"] .slv-dep[data-ctr="nav"] .slv-dep-dot,
+.slv[data-lens="koalicija"] .slv-dep[data-gov="nav"] .slv-dep-dot,
+.slv[data-lens="uzticiba"] .slv-dep[data-uzt="nav"] .slv-dep-dot { border-style: dashed; border-width: 2px; }
 .slv-dep-avatar {
   width: 36px; height: 36px; flex-shrink: 0;
   border-radius: 50%; object-fit: cover;
@@ -9213,6 +9568,8 @@ html[data-theme="light"] .slv {
   font-family: var(--xv1-mono); font-size: 11px;
   color: var(--text-muted); white-space: nowrap; text-align: right;
 }
+.slv[data-lens="koalicija"] .slv-val[data-lens-val="gov"],
+.slv[data-lens="uzticiba"] .slv-val[data-lens-val="uzt"],
 .slv[data-lens="v14"] .slv-val[data-lens-val="v14"],
 .slv[data-lens="pozicijas"] .slv-val[data-lens-val="pos"],
 .slv[data-lens="pretrunas"] .slv-val[data-lens-val="ctr"] { display: inline; }
@@ -9332,6 +9689,49 @@ html[data-theme="light"] .slv {
     border-inline-start: 3px solid var(--seat-list);
   }
   .slv-prez-avatar { grid-row: 1 / span 3; inline-size: 48px; block-size: 48px; margin: 0; }
+}
+
+/* Valdība Saeimas lapā (2026-11-18): tie paši dati, ko valdiba.html; rinda pati
+   ir saite uz ministra rindu tur. Tabula kā .vld-* (kolonnas vienā vietā). */
+.slv-gov { margin-block-end: 2.5rem; container-type: inline-size; }
+.slv-gov-list { list-style: none; margin: 0; padding: 0; }
+.slv-gov-head,
+.slv-gov-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 0.5fr) 1rem;
+  gap: 0 1rem;
+  align-items: center;
+  padding-block: 0.6rem;
+  border-block-end: 1px solid var(--border-soft);
+  overflow-wrap: anywhere;
+}
+.slv-gov-head { padding-block: 0.5rem; font-size: 0.8125rem; color: var(--text-muted); }
+.slv-gov-head::after { content: ""; }
+.slv-gov-row {
+  min-block-size: 44px;
+  color: var(--text); text-decoration: none;
+  touch-action: manipulation;
+}
+.slv-gov-row::after { content: "›"; justify-self: end; align-self: center; color: var(--text-muted); }
+.slv-gov-post { color: var(--text-soft); }
+.slv-gov-name { font-family: var(--xv1-serif); font-size: 1rem; font-weight: 500; line-height: 1.2; }
+.slv-gov-party { font-size: 0.875rem; color: var(--text-soft); }
+.slv-gov-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.slv-gov-row:active { background: var(--surface2); }
+@container (inline-size < 36rem) {
+  .slv-gov-head { display: none; }
+  .slv-gov-row {
+    grid-template-columns: minmax(0, 1fr) auto 1rem;
+    grid-template-areas: "post post chev" "name party chev";
+    row-gap: 2px;
+  }
+  .slv-gov-row::after { grid-area: chev; }
+  .slv-gov-post { grid-area: post; font-size: 0.8125rem; color: var(--text-muted); }
+  .slv-gov-name { grid-area: name; }
+  .slv-gov-party { grid-area: party; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .slv-gov-row:hover .slv-gov-name { color: var(--accent); }
 }
 
 /* Frakcijas vadība — grupas ķermenī virs kartītēm (saites <summary> iekšā būtu slazds). */
@@ -9858,3 +10258,115 @@ html[data-theme="light"] .tf {
   .tf-board.is-fit :is(.tf-card, .tf-pin) { position: static; inline-size: 100%; }
   .tf-board.is-fit :is(.tf-zone, .tf-threads) { display: none; }
 }
+
+/* ── Valdība (valdiba.html, 2026-11-17) ─────────────────────────────
+   Viens lielais moments: uzticības balsojuma «par» skaitlis (saite uz avotu).
+   Ministri — tabula: kolonnas sākas vienā vietā visās rindās; rinda pati
+   atveras (summary), bultiņa — globālais details marķieris. */
+.vld-section { padding: 0 0 3rem; }
+.vld-vote {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+  min-inline-size: 0;
+}
+.vld-vote-num {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 2.4rem + 2vw, 4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-inline-start: -0.06em;
+  font-variant-numeric: tabular-nums;
+}
+.vld-vote-rest { color: var(--text-soft); font-variant-numeric: tabular-nums; }
+.vld-vote-link { color: var(--accent); font-size: 0.875rem; }
+@media (hover: hover) and (pointer: fine) {
+  .vld-vote:hover .vld-vote-link { text-decoration: underline; }
+}
+.vld-vote:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.vld-thead,
+.vld-row > summary,
+.vld-row--none {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr) minmax(0, 0.7fr) 6.5rem 1rem;
+  gap: 0 1rem;
+  align-items: center;
+  padding-block: 0.6rem;
+  padding-inline: 0;
+  border-block-end: 1px solid var(--border-soft);
+  overflow-wrap: anywhere;
+}
+.vld-thead {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  padding-block: 0.5rem;
+}
+.vld-row--none { color: var(--text-muted); }
+.vld-row > summary { min-block-size: var(--tap-target, 44px); }
+.vld-row[id] { scroll-margin-block-start: calc(var(--nav-block-size, 64px) + 16px); }
+.vld-row > summary::after { margin-inline: 0; justify-self: end; }
+.vld-row[open] > summary { border-block-end-color: transparent; }
+.vld-name { font-weight: 600; }
+.vld-row--none .vld-name { font-weight: 400; }
+.vld-num { text-align: end; font-variant-numeric: tabular-nums; }
+.vld-thead .vld-num { grid-column: 4; }
+.vld-num-unit { display: none; }
+
+.vld-panel {
+  padding: 0.25rem 0 1rem;
+  border-block-end: 1px solid var(--border-soft);
+}
+.vld-topics { font-size: 0.875rem; margin: 0 0 0.75rem; }
+.vld-positions { list-style: none; margin: 0 0 0.75rem; padding: 0; }
+.vld-positions li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  gap: 0 1rem;
+  padding-block: 0.4rem;
+  border-block-start: 1px solid var(--border-soft);
+}
+.vld-positions li:first-child { border-block-start: 0; }
+.vld-positions time { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.vld-src { white-space: nowrap; }
+.vld-empty { margin: 0 0 0.75rem; }
+.vld-profile { display: inline-block; padding-block: 0.6rem; min-block-size: var(--tap-target, 44px); }
+.vld-h2 { font-size: 1.125rem; font-weight: 600; margin: 2rem 0 0.5rem; }
+.vld-foot { font-size: 0.875rem; margin-block-start: 1.5rem; max-width: 62ch; }
+
+@media (max-width: 640px) {
+  .vld-thead { display: none; }
+  .vld-row > summary,
+  .vld-row--none {
+    grid-template-columns: minmax(0, 1fr) auto 1rem;
+    grid-template-areas: "post post post" "name num chev" "party num chev";
+    row-gap: 2px;
+  }
+  .vld-row--none { grid-template-areas: "post post post" "name name name"; }
+  .vld-post { grid-area: post; font-size: 0.8125rem; color: var(--text-muted); }
+  .vld-name { grid-area: name; }
+  .vld-party { grid-area: party; font-size: 0.875rem; color: var(--text-soft); }
+  .vld-num { grid-area: num; align-self: center; }
+  .vld-num-unit { display: inline; color: var(--text-muted); font-size: 0.875rem; }
+  .vld-row > summary::after { grid-area: chev; align-self: center; }
+  .vld-row--none .vld-party, .vld-row--none .vld-num { display: none; }
+  .vld-positions li { grid-template-columns: minmax(0, 1fr) auto; }
+  .vld-positions time { grid-column: 1 / -1; font-size: 0.8125rem; }
+}
+
+/* Saites paneļa balsojumu sakritība (sav1.js voteAlignHtml, 2026-11-22). */
+.detail-vote-list { list-style: none; margin: 0 0 1rem; padding: 0; }
+.detail-vote-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-block-size: 44px;
+  align-items: center;
+  border-block-end: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.detail-vote-n { color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.detail-empty-note { color: var(--text-muted); margin: 0 0 0.75rem; }

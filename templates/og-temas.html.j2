@@ -1,0 +1,35 @@
+{% extends "_og_base.html.j2" %}
+{#- Tēmu direktorijas OG kartīte (assets/og/temas.png): virsraksts + visu tēmu
+    ikonu režģis. Čaula: _og_base.html.j2. Ikonu simboli ievietoti inline
+    (card.symbols no assets/topics.svg) — kartīti zīmē bez failu piekļuves. #}
+{% block css %}
+    .cols { display: grid; grid-template-columns: 1fr auto; column-gap: 56px; flex: 1; min-height: 0; }
+    .txt { display: flex; flex-direction: column; min-width: 0; }
+    .hero { margin-top: 14px; }
+    .nm { font-weight: 700; letter-spacing: -2px; line-height: 1.02; margin-top: 28px; font-size: 96px; }
+    .lead { font-size: 30px; font-style: italic; margin-top: 20px; color: var(--sub); line-height: 1.3; }
+    .grid { display: grid; grid-template-columns: repeat(7, 58px); grid-auto-rows: 58px; gap: 12px; align-content: center; margin-bottom: 28px; }
+    .ti { display: grid; place-items: center; border-radius: 8px;
+          color: color-mix(in srgb, var(--tc) 55%, var(--ink)); background: color-mix(in srgb, var(--tc) 22%, #efe3c9); }
+    .ti svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+{% endblock %}
+{% block body %}
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">{{ card.symbols }}</svg>
+    <div class="cols">
+      <div class="txt">
+        <div class="hero"><span class="stamp" style="font-size:24px">{{ card.kind }}</span></div>
+        <div class="nm">{{ card.name }}</div>
+        <div class="lead">{{ card.lead }}</div>
+        <div class="stats" style="margin-top:auto;margin-bottom:28px">
+          {%- for s in card.stats %}
+          <div class="stat"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>
+          {%- endfor %}
+        </div>
+      </div>
+      <div class="grid">
+        {%- for t in card.topics %}
+        <span class="ti" style="--tc: {{ t.color }}"><svg viewBox="0 0 24 24"><use href="#ti-{{ t.icon }}"/></svg></span>
+        {%- endfor %}
+      </div>
+    </div>
+{% endblock %}

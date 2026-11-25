@@ -18,7 +18,7 @@ og:
 
 # Sabiedriskais medijs skaitļos: nauda, cilvēki, ēters un Saeimas balsojumi
 
-**Avoti:** LSM 2025. gada pārskats, SEPLP 2025. gada budžeta izpildes analīze, VID, LSM sabiedriskā pasūtījuma 2026. gada plāns, TV.lv publicētā programma, LSM.lv sitemap, Saeimas balsojumi | **Dati uz:** 2026. gada 1. novembri (TV programma — 30.09.–27.10.2026.)
+**Avoti:** LSM 2025. gada pārskats, SEPLP 2025. gada budžeta izpildes analīze, VID, LSM sabiedriskā pasūtījuma 2026. gada plāns un tā apjoma tabula, TV.lv publicētā programma, LSM.lv sitemap, Saeimas balsojumi | **Dati uz:** 2026. gada 1. novembri (TV programma — 30.09.–27.10.2026., plāna apjoma tabula — 23. novembri)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -27,7 +27,7 @@ og:
 - **Nauda.** 2025. gadā LSM saņēma **69,05 miljonus eiro** valsts dotācijas. No tiem **10,29 miljoni** bija vienreizēja tehnikas iegāde — pārvietojamās televīzijas stacijas. Gadu LSM sāka ar 51,36 miljonu eiro budžetu; pārējo pārdalīja gada laikā. 2026. gadam visiem sabiedriskajiem medijiem kopā plānoti **61,70 miljoni**.
 - **Cilvēki.** 2025. gada beigās LSM strādāja **850** cilvēku (829 pilnas slodzes). Personāla izmaksas — **30,87 miljoni eiro**, ieskaitot valdi un nodokļus.
 - **Ēters.** Četrās rudens nedēļās LTV1 lielākā satura grupa ir ziņas un aktualitātes (33,6 %). LTV7 lielākā grupa ir ārvalstu filmas un seriāli (34,2 %), bet vakarā no 18 līdz 23 ārvalstu seriāli aizņem **65,7 %** laika.
-- **Plāns.** LSM 2026. gada plāns nenosaka, cik stundu jāvelta ziņām, seriāliem vai citiem žanriem. Tāpēc programmu ar plānu var salīdzināt tikai vārdos.
+- **Plāns.** LSM 2026. gada plāna apjoma tabulā ir stundu plāns katram kanālam pa satura veidiem. Atkārtojumiem LTV7 paredzēti **48,0 %** raidlaika pirmajā pusgadā un **61,6 %** otrajā, LTV1 — 38,6 % abos pusgados. Vai plāns tiek izpildīts, no četru nedēļu programmas noteikt nevar.
 - **Saeima.** 22. oktobrī Saeima steidzamā kārtā pieņēma likumu, kas saglabā nosaukumus «Latvijas Radio» un «Latvijas Televīzija» un aizliedz apvienot abu ziņu dienestus. Par balsoja 76 deputāti, pret — 4, atturējās — 8. Valsts prezidents likumu izsludināja 30. oktobrī.
 
 </aside>
@@ -99,13 +99,23 @@ Pārbaudījām TV.lv publicēto LTV1 un LTV7 programmu četrās nedēļās — n
 <img src="../images/analizes/lsm-2026-skaitlos-2-eters.png" alt="Joslu grafiks: satura grupu daļa visā diennaktī. LTV1 lielākā grupa — ziņas, intervijas un aktualitātes (33,6 %), LTV7 — ārvalstu filmas un seriāli (34,2 %); LTV7 vairāk dokumentālā, izzinošā un dzīvesveida satura (24,9 %), LTV1 vairāk kultūras un mākslas (14,4 %)." loading="lazy">
 </picture>
 
-- **LTV7 vakarā (18–23) ārvalstu seriāli aizņem 65,7 % laika** — darbdienās 61,9 %, brīvdienās 75,0 %. Visā diennaktī — 32,7 %. LSM plāns LTV7 paredz «kvalitatīvas ārvalstu filmas un seriālus» un augšējo robežu nenosaka.
+- **LTV7 vakarā (18–23) ārvalstu seriāli aizņem 65,7 % laika** — darbdienās 61,9 %, brīvdienās 75,0 %. Visā diennaktī — 32,7 %. LSM plāns LTV7 paredz «kvalitatīvas ārvalstu filmas un seriālus». Plāna apjoma tabulā visam no ārvalstīm iepirktajam saturam (filmām, ekranizējumiem, raidījumiem) LTV7 paredzētas 1679 stundas gadā; atsevišķas robežas seriāliem vai vakara stundām tur nav (sk. «Plāns pret programmu»).
 - LTV1 ārvalstu seriāli aizņem 16,6 % diennakts laika un 10,7 % vakarā.
 - TV.lv daļu raidījumu atzīmē ar zvaigznīti (*). LTV1 tie aizņem 29,7 % laika, LTV7 — 31,8 %. Vakarā no 18 līdz 23 — tikai 1,1 % un 2,7 %. Zvaigznītes nozīme TV.lv nav paskaidrota; LSM REplay ar to apzīmē atkārtojumus. Raidījums bez zvaigznītes nav obligāti pirmizrāde.
 
 ## Plāns pret programmu
 
-LSM 2026. gada sabiedriskā pasūtījuma plānā ([ar 30.06.2026. grozījumiem](https://www.seplp.lv/lv/media/3787/download)) skaitliskie mērķi ir aptauju rādītāji (piemēram, uzticēšanās LSM — no 47 % uz 52 %), piekļūstamība, budžets un portāls. Neviens mērķis nenosaka stundas vai daļas pa žanriem. Plāna publicētajā redakcijā ir tikai auditorijas pielikums; tabulu ar programmu apjomiem atrast neizdevās.
+LSM 2026. gada sabiedriskā pasūtījuma plāna pamattekstā ([ar 30.06.2026. grozījumiem](https://www.seplp.lv/lv/media/3787/download)) skaitliskie mērķi ir aptauju rādītāji (piemēram, uzticēšanās LSM — no 47 % uz 52 %), piekļūstamība, budžets un portāls. Stundu plāns ir Excel tabulā «LSM sabiedriskā pasūtījuma plāna apjoms un izpilde 2026. gadā» (pielikums Nr. 1), kas SEPLP vietnē publicēta kā atsevišķs fails ([tabula](https://www.seplp.lv/lv/media/3802/download?attachment=), [arhīva kopija 23.11.](https://web.archive.org/web/20261123012615/https://www.seplp.lv/lv/media/3802/download?attachment=)). Raksta pirmajā redakcijā mēs to nebijām atraduši (sk. «Labojumi»).
+
+| Tabulas rinda | LTV1 | LTV7 |
+|---|---:|---:|
+| No ārvalstīm iepirkts saturs (filmas, ekranizējumi, raidījumi), gadā | 2084 h (23,8 %) | 1679 h (19,2 %) |
+| Atkārtojumi, 1. pusgads | 38,6 % | 48,0 % |
+| Atkārtojumi, 2. pusgads | 38,6 % | 61,6 % |
+
+Procenti ir daļa no visām kanāla raidstundām attiecīgajā periodā. Vidēji diennaktī LTV7 atkārtojumiem pirmajā pusgadā paredzētas aptuveni 11 stundas un 31 minūte, otrajā — 14 stundas un 47 minūtes.
+
+Tabula skaita citādi nekā mēs. Pirmizrāde un pirmais atkārtojums gada laikā tajā ir oriģinālsaturs; atkārtojumu rindā ir tikai otrais un nākamie. No ārvalstīm iepirktajā saturā filmas, ekranizējumi un raidījumi ir kopā. Tāpēc mūsu TV.lv skaitļus (zvaigznītes, ārvalstu seriālu daļu) ar tabulas procentiem tieši salīdzināt nevar. Atsevišķas robežas ārvalstu seriāliem vakarā tabulā nav. Vai stundu plāns tiek izpildīts, no četru nedēļu programmas noteikt nevar.
 
 Salīdzinājām 27 plāna apgalvojumus ar programmu. Lielākā daļa nosaukto raidījumu programmā ir: «Panorāma», «De Facto», «Aizliegtais paņēmiens», «Kultūršoks» un citi. Daži plānā minētie raidījumi četrās nedēļās nebija redzami, piemēram, cikls «Zemes stāsti». Seriālu «Rudi sarkans» plāns sola izrādīt 2026. gada rudenī; līdz 27. oktobrim programmā tā nebija. «Nakts ziņas», ko plāns paredz pārtraukt no 2026. gada otrā pusgada, programmā vairs nav; naktī LTV1 rāda ar zvaigznīti atzīmētus ziņu raidījumus.
 
@@ -159,7 +169,7 @@ LSM 2025. gadā no valsts saņēma 69 miljonus eiro. Ap desmit no tiem bija vien
 
 LSM strādā ap 850 cilvēku. Pārskatos ir vairāki darbinieku skaiti, un tos nevar salikt vienā līknē.
 
-LTV1 visvairāk laika aizņem ziņas, LTV7 — ārvalstu filmas un seriāli. Vakarā LTV7 ārvalstu seriāli aizņem gandrīz divas trešdaļas laika. LSM plāns tiem robežu nenosaka.
+LTV1 visvairāk laika aizņem ziņas, LTV7 — ārvalstu filmas un seriāli. Vakarā LTV7 ārvalstu seriāli aizņem gandrīz divas trešdaļas laika. LSM plānā ir stundas pa satura veidiem, bet atsevišķas robežas ārvalstu seriāliem vakarā nav.
 
 Saeima ar likumu noteica, ka radio un televīzijas ziņu dienestus nedrīkst apvienot. Likums ir spēkā kopš 31. oktobra.
 
@@ -175,3 +185,9 @@ Saeima ar likumu noteica, ka radio un televīzijas ziņu dienestus nedrīkst apv
 ## Metodika
 
 LSM 2025. gada pārskats lejupielādēts no [info.lsm.lv](https://api.info.lsm.lv/storage/finance-reports/5798dd1c206eeb956b9975ca05bc2d5b.pdf) 2026. gada 1. novembrī (SHA-256 `da4078…52aa`); skaitļi — 23., 24., 25. un 28. piezīme. SEPLP budžeta izpildes analīze (29.04.2026.) — SHA-256 `88ccfa…3eb9`. TV programma — TV.lv publicētais arhīvs par 28 dienām; raidījumu saraksts ar žanriem — CSV fails; kontrolsummas — [audita mapē](https://github.com/imaksligais/atmina-lv/tree/main/docs/audits/2026-11-01-lsm). Portāla raksti skaitīti pēc datuma raksta adresē LSM.lv sitemap failos; pilnīgums pārbaudīts pret dienas arhīvu 9 sadaļu dienās (361 no 361 pēc raksta ID). Vidēji nodarbināto skaits — [VID atvērtie dati](https://data.gov.lv/dati/lv/dataset/nodoklu-maksataju-taksacijas-ceturksni-samaksato-vid-administreto-nodoklu-kopsummas) par 2026. gada 3. ceturksni. Balsojumi — Saeimas balsojumu dati atmina datubāzē.
+
+Plāna apjoma tabula (lapa «Pielikums nr.1 2026_groz_nr1») — SHA-256 `d3aeee…953f`, tāda pati arī Wayback kopijā 23.11.2026.; kopija un aprēķina skripts — [audita mapē](https://github.com/imaksligais/atmina-lv/tree/main/docs/audits/2026-11-23-lsm-plans); pusgadu stundas C un U ailē, gada — AM ailē; procenti — attiecīgā rinda (126./127., 133./134.) dalīta ar kanāla lineārā satura kopsummu (180./181. rinda); diennakts vidējais — pusgada stundas dalītas ar 181 un 184 dienām.
+
+## Labojumi
+
+- 2026\. gada 23. novembrī labots: raksts apgalvoja, ka LSM 2026. gada plāns nenosaka stundas pa žanriem un ka tabulu ar programmu apjomiem atrast neizdevās. Tas bija nepareizi: stundu plāns ir SEPLP publicētajā plāna apjoma tabulā. Labotas sadaļas «Īsumā», «Plāns pret programmu», «Vienkāršiem vārdiem» un teikums par LTV7 ārvalstu seriāliem. TV programmas, naudas un balsojumu skaitļi nav mainīti.

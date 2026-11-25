@@ -1,13 +1,13 @@
 ---
 name: Viktors Valainis
 party: Zaļo un Zemnieku savienība
-role: Ekonomikas ministrs
+role: Bijušais ekonomikas ministrs (līdz 2026-11-17)
 relationship_type: tracked
-positions: 335
+positions: 336
 votes: 1441
 contradictions: 0
-mentioned_in: 2255
-last_active: 2026-11-10
+mentioned_in: 2263
+last_active: 2026-11-24
 top_topics:
 - Budžets un finanses
 - Degviela un enerģētika
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (19%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (12%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (7%)
-- **30d:** 8 claims, 0.2× bāzes līnija
+- **30d:** 6 claims, 0.2× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (7 spriedzes), [[persons/janis-vitenbergs|Jānis Vitenbergs]] (2 spriedzes), [[persons/evika-silina|Evika Siliņa]] (1 spriedze)
 <!-- /SYNC-AUTO -->

@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Paraugs «citātu kartīte» — garā tvīta (/social-thread § 3a) 1. attēls; operators 2026-11-25 to postēja sepijas vietā. 1080×1350. Saturs = 24.11.2026 piemērs: nomaini virsrakstu, skaitļu rindkopu un 3–5 burtiskus citātus. Renderē: .venv/Scripts/python.exe scripts/render_shema.py IN.html OUT.png --width 1080 --height 1350 -->
+<html lang="lv"><head><meta charset="utf-8"><title>airBaltic galvojums: ko saka politiķi</title><style>
+@font-face { font-family:'Source Serif 4'; src:url('../../../output/atmina/assets/fonts/source-serif-4-normal-latin-ext.woff2') format('woff2'); font-weight:200 900; }
+@font-face { font-family:'Source Serif 4'; src:url('../../../output/atmina/assets/fonts/source-serif-4-normal-latin.woff2') format('woff2'); font-weight:200 900; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../../output/atmina/assets/fonts/jetbrains-mono-500-latin-ext.woff2') format('woff2'); font-weight:500; }
+@font-face { font-family:'JetBrains Mono'; src:url('../../../output/atmina/assets/fonts/jetbrains-mono-500-latin.woff2') format('woff2'); font-weight:500; }
+
+*, *::before, *::after { box-sizing:border-box; min-width:0; margin:0; padding:0; }
+:root {
+  --paper: oklch(96.4% 0.015 90);
+  --ink: oklch(22.4% 0.014 82);
+  --ink-2: color-mix(in oklch, var(--ink) 78%, var(--paper));
+  --night: oklch(27% 0.055 265);
+  --muted: oklch(50.9% 0.035 88);
+  --rule: oklch(83.7% 0.037 89);
+  --red: oklch(50.2% 0.189 27);
+  --on-night: oklch(96% 0.015 90);
+  --on-night-muted: color-mix(in oklch, var(--on-night) 68%, var(--night));
+  --serif: 'Source Serif 4', Georgia, serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --sans: "Segoe UI", Roboto, sans-serif;
+  font-synthesis: none; -webkit-font-smoothing: antialiased; text-wrap: pretty;
+}
+body { inline-size:1080px; block-size:1350px; background:var(--paper); color:var(--ink); font-family:var(--sans);
+       display:flex; flex-direction:column; overflow:clip; }
+.num { font-variant-numeric: lining-nums tabular-nums; }
+
+.lead { background:var(--night); color:var(--on-night); padding:44px 56px 40px; display:flex; flex-direction:column; gap:18px; }
+.top { display:flex; justify-content:space-between; align-items:baseline; gap:24px; }
+.brand { display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; font-size:28px; }
+.brand svg { flex:none; inline-size:34px; block-size:34px; }
+.kicker { font-family:var(--mono); font-weight:500; font-size:21px; color:color-mix(in oklch, var(--red), white 42%); }
+.lead h1 { font-family:var(--serif); font-weight:700; font-size:60px; line-height:1.06; letter-spacing:-0.01em; text-wrap:balance; }
+.lead .dek { font-size:25px; line-height:1.45; color:var(--on-night-muted); }
+.lead .dek b { font-weight:600; color:var(--on-night); }
+
+.body { flex:1; padding:8px 56px 32px; display:flex; flex-direction:column; }
+.row { flex:1; padding-block:22px; border-block-end:1px solid var(--rule); display:flex; flex-direction:column; justify-content:center; gap:10px; }
+.who { display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+.name { font-family:var(--serif); font-weight:700; font-size:30px; line-height:1.15; }
+.meta { font-family:var(--mono); font-weight:500; font-size:19px; color:var(--muted); }
+.quote { font-family:var(--serif); font-weight:500; font-size:33px; line-height:1.28; color:var(--ink); quotes:"«" "»"; }
+.src { margin-block-start:18px; color:var(--muted); font-family:var(--mono); font-size:16px; line-height:1.5; }
+</style></head>
+<body>
+<section class="lead">
+  <div class="top"><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="27" cy="27" r="17" fill="none" stroke="#f7f3e8" stroke-width="5.5"/><line x1="40.5" y1="40.5" x2="52" y2="52" stroke="#f7f3e8" stroke-width="5.5" stroke-linecap="round"/><circle cx="27" cy="27" r="6" fill="#EF5350"/></svg>atmina.lv</div>
+  <div class="kicker num">Dienas pārskats · 24.11.2026.</div></div>
+  <h1>airBaltic galvojums: ko saka politiķi</h1>
+  <p class="dek num">Aizdevējs dos <b>125 miljonus eiro</b>, ja valsts galvos <b>175 miljonus</b>: aizdevumu un 50 miljonus procentu. Valdība galvojumu konceptuāli atbalstīja 24. novembrī, Saeimai par to jālemj 26. novembrī.</p>
+</section>
+<section class="body">
+  <div class="row"><div class="who"><span class="name">Andris Kulbergs</span><span class="meta">Ministru prezidents, AS</span></div><q class="quote">Ja ceturtdien Saeima neatbalsta, tad neko darīt. Tāds ir Saeimas lēmums, un „airBaltic“ nelido</q></div>
+  <div class="row"><div class="who"><span class="name">Krišs Lipšāns</span><span class="meta">satiksmes ministrs, bezpartejisks</span></div><q class="quote">Labu izvēļu šajā situācijā vairs nav, un galvojums ir labākais, ko varam darīt</q></div>
+  <div class="row"><div class="who"><span class="name">Viktors Valainis</span><span class="meta">bijušais ekonomikas ministrs, ZZS</span></div><q class="quote">Tas nozīmē, ka nav investors. […] šis vairāk tomēr piespiedu gājiens</q></div>
+  <div class="row"><div class="who"><span class="name">Andris Šuvajevs</span><span class="meta">Progresīvo frakcijas vadītājs</span></div><q class="quote">Tagad pēkšņi 175M galvojums, kas jau ierēķināts nākamā gada budžetā</q></div>
+  <div class="src num">Avoti: LSM 24.11.2026. (Kulbergs, Lipšāns, skaitļi); X 24.11.2026. (Valainis, Šuvajevs).<br>Viss ar saitēm: atmina.lv/blog/2026-11-24.html</div>
+</section>
+</body></html>

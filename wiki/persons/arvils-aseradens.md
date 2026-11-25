@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 91
 votes: 999
 contradictions: 0
-mentioned_in: 992
+mentioned_in: 995
 last_active: 2026-10-25
 top_topics:
 - Budžets un finanses
@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (20%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (14%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (10%)
-- **30d:** 3 claims, 0.2× bāzes līnija
+- **30d:** 1 claims, 0.1× bāzes līnija
 - **Spriedzes:** [[persons/ainars-slesers|Ainārs Šlesers]] (1 spriedze), [[persons/janis-dombrava|Jānis Dombrava]] (1 spriedze), [[persons/andris-suvajevs|Andris Šuvajevs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

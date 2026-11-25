@@ -14,6 +14,12 @@ Visas lēcu vērtības aprēķina šeit; lapa bez JS rāda «Saraksta» lēcu un
 Amati (Prezidijs, frakciju vadība, komisiju statuss) — no kurētā
 ``data/saeima15_amati.yaml`` (spec: 2026-11-11-saeimas-lapa-amati-design.md),
 NE no ``tracked_politicians.role`` (brīvs teksts, T6). Neatbilstība → KRĪT.
+
+Lēcas «Koalīcija» un «Uzticības balsojums» (2026-11-18) rāda tikai tad, kad
+jaunākā ``coalition_periods`` rinda ir ŠĪ sasaukuma uzticības balsojums:
+koalīcija = ``parties.coalition_status`` (caur ``get_coalition_map``, nekad
+``relationship_type``), balss = tā paša balsojuma ``saeima_individual_votes``
+rinda pēc precīzā vārda ``politician_id``. Rindas nav → «nav ieraksta», nekad «pret».
 """
 
 from __future__ import annotations
@@ -37,8 +43,10 @@ from src.render._common import (
     trailing_days_cutoff,
 )
 from src.render._common.constants import PROJECT_ROOT
+from src.coalition import get_coalition_map
 from src.render._common.cvk import read_elected, read_election_results
 from src.saeima.convocation import SAEIMA_CONVOCATION, base_url
+from src.render.valdiba import VALDIBA_PUBLISHED, fetch_cabinet
 from src.scope import not_attendance_sql
 
 # Testi (test_render_chars, test_render_saeima) visus trīs pārsien uz fixture kopijām.
@@ -67,6 +75,18 @@ _FACTION_TITLES = {
 
 SEATS_TOTAL = 100
 POSITIONS_WINDOW_DAYS = 90
+
+# coalition_status → lēcas vērtība un teksts; cits statuss (not_in_saeima,
+# other, saraksts bez partijas) = «nav datu», nekad kāda no abām pusēm.
+_GOV_STATUS = {"coalition": "koalicija", "opposition": "opozicija"}
+_GOV_TEXT = {"koalicija": "koalīcija", "opozicija": "opozīcija", "nav": "nav datu"}
+# Balsojuma vērtība → lēcas vērtība un teksts. Cita vērtība (Reģistrējies…)
+# uzticības balsojumā → KRĪT: tā nav balss, un minēt to nedrīkst.
+_CAST = {"Par": "par", "Pret": "pret", "Atturas": "atturas", "Nebalsoja": "nebalsoja"}
+_CAST_TEXT = {
+    "par": "balsoja par", "pret": "balsoja pret", "atturas": "atturējās",
+    "nebalsoja": "nebalsoja", "nav": "nav ieraksta",
+}
 
 # Pusloka ģeometrija: 6 rindas, iekšējais rādiuss 0,36 no ārējā. Sēdvietas
 # rindā ∝ rindas rādiusam, tāpēc attālumi starp apļiem visās rindās ~vienādi
@@ -277,6 +297,74 @@ def _fetch_people(db: sqlite3.Connection, names: list[str]) -> dict[str, dict[st
     return people
 
 
+def _current_government(db: sqlite3.Connection) -> dict[str, Any] | None:
+    """Jaunākais uzticības balsojums no ``coalition_periods`` — ja tas ir ŠĪ sasaukuma.
+
+    Nav tabulas/rindas, nav balsojuma vai tas ir iepriekšējā Saeimā (jaunā valdība
+    vēl nav apstiprināta) → None, un abas valdības lēcas lapā neparādās.
+    """
+    try:
+        row = db.execute(
+            """SELECT source_vote_id FROM coalition_periods
+               ORDER BY valid_from_date DESC, valid_from_time DESC LIMIT 1"""
+        ).fetchone()
+    except sqlite3.OperationalError:
+        return None
+    if not row or row[0] is None:
+        return None
+    vote = db.execute(
+        "SELECT id, motif, vote_date, url FROM saeima_votes WHERE id = ?", (row[0],)
+    ).fetchone()
+    # Convocation follows the Titania URL, not the vote date (kā lēcai «Balsoja 14.»).
+    if not vote or not (vote["url"] or "").startswith(base_url(SAEIMA_CONVOCATION)):
+        return None
+    ballots: dict[int, str] = {}
+    rows_total = 0
+    for r in db.execute(
+        "SELECT politician_id, vote FROM saeima_individual_votes WHERE vote_id = ?",
+        (vote["id"],),
+    ):
+        rows_total += 1
+        if r["politician_id"] is None:
+            continue
+        if r["vote"] not in _CAST:
+            raise ValueError(f"saeima: uzticības balsojumā {vote['id']} nezināma balss {r['vote']!r}")
+        if ballots.get(r["politician_id"], r["vote"]) != r["vote"]:
+            raise ValueError(f"saeima: politiķim {r['politician_id']} balsojumā {vote['id']} divas atšķirīgas balsis")
+        ballots[r["politician_id"]] = r["vote"]
+    return {
+        "vote_id": vote["id"],
+        "motif": vote["motif"] or "",
+        "date": lv_date(vote["vote_date"]),
+        "date_short": _short_date(str(vote["vote_date"])[:10]),
+        "url": vote["url"],
+        "ballots": ballots,
+        "rows_total": rows_total,
+    }
+
+
+def _cabinet_rows(db: sqlite3.Connection) -> list[dict[str, Any]]:
+    """Valdības bloks: viena rinda katram amatam ar ministru, saite uz tā rindu valdiba.html.
+
+    Tie paši dati, ko valdiba.html (``fetch_cabinet``), lai abas lapas nekad nerunā
+    pretī; ministrija bez ministra šeit izlaista (to paskaidro valdiba.html).
+    Lapa vēl nepublicēta → tukšs saraksts, bloka nav (nekādu saišu uz 404).
+    """
+    if not VALDIBA_PUBLISHED:
+        return []
+    cabinet, others = fetch_cabinet(db)
+    return [
+        {"post": row["post"], "anchor": row["anchor"], "name": m["name"], "party_short": m["party_short"]}
+        for row in cabinet + others
+        for m in row["ministers"]
+    ]
+
+
+def _join_lv(items: list[str]) -> str:
+    """['AS', 'NA', 'X'] → 'AS, NA un X'."""
+    return " un ".join([", ".join(items[:-1]), items[-1]]) if len(items) > 1 else "".join(items)
+
+
 def _build_context(
     db: sqlite3.Connection,
     elected_path: Path,
@@ -297,14 +385,18 @@ def _build_context(
 
     people = _fetch_people(db, [e["name"] for e in elected])
     photo_dir = ASSETS_DIR / "photos"
+    gov = _current_government(db)
+    coalition_map = get_coalition_map(db)
 
     lists: list[dict[str, Any]] = []
     for nr in order:
         x = by_nr[nr]
         party = parties.get(x.get("party_id"))
+        name = party["name"] if party else x["cvk_name"]
         lists.append({
+            "gov": _GOV_STATUS.get(coalition_map.get(name, ""), "nav"),
             "nr": nr,
-            "name": party["name"] if party else x["cvk_name"],
+            "name": name,
             "short": (party["short_name"] if party else None) or x["cvk_name"],
             "color": (party.get("color") if party else None) or "var(--text-muted)",
             "seats": seat_counts[nr],
@@ -369,6 +461,12 @@ def _build_context(
             else f"{member['ctr']} {_lv_plural(member['ctr'], 'pretruna', 'pretrunas')}"
         )
         member["v14_text"] = "balsoja" if member["voted14"] else "nebalsoja"
+        member["gov"] = lst["gov"]
+        member["gov_text"] = _GOV_TEXT[lst["gov"]]
+        # Balss TIKAI caur precīzā vārda politician_id; nav rindas → «nav», ne «pret».
+        ballot = gov["ballots"].get(p["pid"]) if (gov and p) else None
+        member["uzt"] = _CAST[ballot] if ballot else "nav"
+        member["uzt_text"] = _CAST_TEXT[member["uzt"]]
         lst["members"].append(member)
 
     coords = _arc_positions(SEATS_TOTAL)
@@ -391,8 +489,26 @@ def _build_context(
     leaders = [ld for f in offices["factions"]["items"] for ld in f["leaders"]]
     committees = offices["committees"]
 
+    gov_ctx = None
+    if gov:
+        gov_ctx = {
+            "date": gov["date"],
+            "date_short": gov["date_short"],
+            "url": gov["url"],
+            "motif": gov["motif"],
+            "coalition_text": _join_lv([lst["short"] for lst in lists if lst["gov"] == "koalicija"]),
+            "counts": {b: _count("gov", b) for b in ("koalicija", "opozicija", "nav")},
+            "uzt_counts": {b: _count("uzt", b) for b in ("par", "pret", "atturas", "nebalsoja", "nav")},
+        }
+        gov_ctx["known_n"] = len(seats) - gov_ctx["counts"]["nav"]
+        gov_ctx["rows_n"] = len(seats) - gov_ctx["uzt_counts"]["nav"]
+        # Silent success: balsojuma rindas, kas netika nevienai sēdvietai (NULL
+        # politician_id vai politiķis nav starp 100), — skaitā render izdrukā.
+        gov_ctx["unlinked_n"] = gov["rows_total"] - gov_ctx["rows_n"]
+
     updated = str(results.get("cvk_updated_at") or "")
     return {
+        "gov": gov_ctx,
         "seats": seats,
         "lists": lists,
         "dot_r": round(_DOT_R * _SCALE, 2),
@@ -417,6 +533,7 @@ def _build_context(
         "factions_source_url": offices["factions"].get("source_url") or "",
         "offices_checked": _short_date(offices.get("checked")),
         "committees": {"n": len(committees["names"]), "source_url": committees.get("source_url") or ""},
+        "cabinet": _cabinet_rows(db),
         "faction_chairs_n": sum(1 for ld in leaders if ld["role"] == "chair"),
         "faction_deputies_n": sum(1 for ld in leaders if ld["role"] == "deputy"),
     }
@@ -443,5 +560,15 @@ def render_saeima(
         "frakciju_priekšsēdētāji": ctx["faction_chairs_n"],
         "vietnieki": ctx["faction_deputies_n"],
     }
+    if ctx["gov"]:
+        g = ctx["gov"]
+        summary.update({
+            "koalīcija": g["counts"]["koalicija"],
+            "opozīcija": g["counts"]["opozicija"],
+            "uzticība_rindas": g["rows_n"],
+            "uzticība_nesasaistītas": g["unlinked_n"],
+        })
+    else:
+        summary["valdības_lēcas"] = 0
     print("  saeima: " + " ".join(f"{k}={v}" for k, v in summary.items()))
     return summary

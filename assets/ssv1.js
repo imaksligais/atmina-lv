@@ -4,7 +4,8 @@
 //   2) politiķa meklētājs (datalist) → politiki/<slug>.html#saites;
 //   3) poga «Rādīt visu tīklu» ielādē d3 + sav1.js + data/saites-graph.json
 //      tikai pēc klikšķa un izsauc window.atminaSaitesGraph.open(data).
-// Bez JS lapa strādā: partiju saraksts ir parasts <details> HTML.
+//   4) partiju tabula: rinda atver savus pārus nākamajā rindā, vienlaikus viena
+//      partija (2026-11-22). Bez JS lapa strādā: visi pāri redzami.
 (function () {
   var params = new URLSearchParams(location.search);
   if (params.has('type') || params.has('party') || params.has('person')) {
@@ -35,6 +36,25 @@
         if (e.key === 'Enter' && !e.isComposing) go();
       });
     }
+
+    // Partiju tabula: JS pāru rindas paslēpj tikai šeit, tāpēc bez JS tās redz.
+    var toggles = document.querySelectorAll('.saites-party-toggle');
+    function setOpen(t, open) {
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var row = document.getElementById(t.getAttribute('aria-controls'));
+      if (row) row.hidden = !open;
+    }
+    toggles.forEach(function (t) { setOpen(t, false); });
+    document.querySelectorAll('.saites-party-row').forEach(function (row) {
+      var t = row.querySelector('.saites-party-toggle');
+      if (!t) return;
+      // Visa rinda ir vadīkla (§0); poga dod tastatūru un ekrāna lasītāju.
+      row.addEventListener('click', function () {
+        var open = t.getAttribute('aria-expanded') !== 'true';
+        toggles.forEach(function (o) { if (o !== t) setOpen(o, false); });
+        setOpen(t, open);
+      });
+    });
 
     var btn = document.getElementById('saites-open-graph');
     var block = document.getElementById('saites-graph-block');
@@ -68,7 +88,8 @@
         .catch(function () {
           block.hidden = true;
           btn.disabled = false;
-          if (status) status.textContent = 'Neizdevās ielādēt tīklu. Mēģiniet vēlreiz.';
+          if (status) status.textContent = 'Nevar ielādēt tīklu. Pārbaudi internetu un mēģini vēlreiz.';
+          btn.textContent = 'Mēģināt vēlreiz';
         });
     });
   });

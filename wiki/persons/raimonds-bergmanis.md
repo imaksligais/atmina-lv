@@ -3,11 +3,11 @@ name: Raimonds Bergmanis
 party: Apvienotais saraksts
 role: Saeimas deputāts, AS frakcijas vadītāja vietnieks
 relationship_type: tracked
-positions: 40
-votes: 6415
+positions: 41
+votes: 6437
 contradictions: 0
-mentioned_in: 204
-last_active: 2026-11-03
+mentioned_in: 222
+last_active: 2026-11-20
 top_topics:
 - Aizsardzība un drošība
 - Imigrācija
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (50%), [[topics/imigracija|Imigrācija]] (18%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (10%)
-- **30d:** 12 claims, 3.0× bāzes līnija
+- **Top tēmas:** [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (51%), [[topics/imigracija|Imigrācija]] (17%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (10%)
+- **30d:** 6 claims, 0.8× bāzes līnija
 - **Spriedzes:** [[persons/andris-spruds|Andris Sprūds]] (1 spriedze)
 <!-- /SYNC-AUTO -->

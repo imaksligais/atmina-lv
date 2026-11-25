@@ -29,6 +29,13 @@
   </header>
 {%- endmacro %}
 
+{# Tēmas ikona: Lucide simbols no assets/topics.svg tēmas krāsā tonētā
+   kvadrātiņā. Krāsu dod vecāka `--topic-color`. Dekoratīva (nosaukums stāv
+   blakus), tāpēc aria-hidden. Tikai lielajās virsmās — ne birkās. #}
+{% macro topic_icon(icon, prefix="") -%}
+<span class="topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><use href="{{ prefix }}assets/topics.svg?v={{ assets_version }}#ti-{{ icon }}"/></svg></span>
+{%- endmacro %}
+
 {% macro metric(label, value, label_title=none, href=none) -%}
 <div class="pagehead-metric">
         <span class="pagehead-metric-label"{% if label_title %} title="{{ label_title }}"{% endif %}>{{ label }}</span>
@@ -82,7 +89,7 @@
         <div class="prv2-meta-right">
           <div class="prv2-datacell">
             <span class="prv2-datacell-l">ΔT</span>
-            <span class="prv2-datacell-v">{{ c.delta_days }}d</span>
+            <span class="prv2-datacell-v">{{ c.delta_days|lv_number }}d</span>
           </div>
         </div>
         {% endif %}

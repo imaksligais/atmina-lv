@@ -22,6 +22,7 @@ from src.outlets import host_to_outlet
 from src.render._common import (
     ASSETS_DIR,
     FALLBACK_COLOR,
+    _lv_number,
     _party_page_slug,
     _render_page,
     _slugify,
@@ -46,10 +47,10 @@ def _empty_cov() -> dict[str, Any]:
 
 
 def _volume_phrase(n: int, plural: str) -> str:
-    """'1421 dokuments' / '1422 dokumenti' — LV: vienskaitlis, ja skaitlis
+    """'1 421 dokuments' / '1 422 dokumenti' — LV: vienskaitlis, ja skaitlis
     beidzas ar 1, bet ne ar 11; plural nominatīvs -i → vienskaitlis -s."""
     noun = plural[:-1] + "s" if n % 10 == 1 and n % 100 != 11 else plural
-    return f"{n} {noun}"
+    return f"{_lv_number(n)} {noun}"
 
 
 def _party_slug_map(db: sqlite3.Connection) -> dict[str, str]:

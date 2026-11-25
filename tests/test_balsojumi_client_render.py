@@ -10,9 +10,9 @@ SSR card loop is gone, plus the bmv1.js recent-shard option (``opts.wantFull``).
 
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
-from src.render._common import _lv_number, lv_date, lv_date_short
+from src.render._orchestrator import _make_env
 
 _TEMPLATE = Path("templates/balsojumi.html.j2")
 _BMV1 = Path("assets/bmv1.js")
@@ -20,11 +20,8 @@ _BMV1 = Path("assets/bmv1.js")
 
 def _env() -> Environment:
     """Minimal env with the filters balsojumi.html.j2 uses (see _orchestrator)."""
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
+    env = _make_env()
     env.globals["assets_version"] = "test"
-    env.filters["lv_date"] = lv_date
-    env.filters["lv_date_short"] = lv_date_short
-    env.filters["lv_number"] = _lv_number
     env.filters["safe_url"] = lambda u: u or ""
     env.filters["safe_json"] = lambda v: v
     return env

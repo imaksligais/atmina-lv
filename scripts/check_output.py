@@ -46,6 +46,8 @@ Izejas kods: 0 = tīrs, 1 = atrasti robi.
 from __future__ import annotations
 
 import argparse
+import contextlib
+import io
 import re
 import sqlite3
 import sys
@@ -519,6 +521,7 @@ def main() -> int:
 
     allow = load_allowlist()
     hits: dict[str, int] = {}
+    gate_accounting_error = None
 
     if args.publish_gate_only:
         problems = check_publish_gate(allow, hits)
@@ -537,6 +540,16 @@ def main() -> int:
             problems += check_sitemap(allow, hits)
         if args.publish_gate:
             problems += check_publish_gate(allow, hits)
+        else:
+            # Allowlist ir kopīgs abiem režīmiem; publish-gate šeit palaiž TIKAI
+            # trāpījumu uzskaitei, citādi tā paterni katrā skrējienā izskatītos
+            # miruši (2026-11-22: deploy plain režīms rādīja 2 «bez trāpījuma»,
+            # kas publish-gate režīmā trāpa). Problēmas neskaita, izvadi slāpē.
+            try:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    check_publish_gate(allow, hits)
+            except Exception as e:  # uzskaite nedrīkst gāzt robu pārbaudi
+                gate_accounting_error = f"{type(e).__name__}: {e}"
 
     if problems:
         print(f"check_output: {len(problems)} robi uzbūvētajā kokā", file=sys.stderr)
@@ -553,7 +566,11 @@ def main() -> int:
     unused = [p for p in allow if not hits.get(p)]
     line = (f"check_output: tīrs — {len(allow)} allowlist paterni, "
             f"apslāpēti {sum(hits.values())} robi")
-    if unused:
+    # --publish-gate-only (deploy otrais izsaukums) robu paternus neredz vispār;
+    # mirušos paternus nosauc deploy pirmais (plain) izsaukums.
+    if gate_accounting_error:
+        line += f"; mirušo paternu uzskaite nepilna (publish-gate: {gate_accounting_error})"
+    elif unused and not args.publish_gate_only:
         line += f"; BEZ TRĀPĪJUMA: {', '.join(unused)}"
     print(line)
     return 0

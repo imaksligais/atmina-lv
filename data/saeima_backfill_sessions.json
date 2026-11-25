@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10",
+  "generated_at": "2026-11-20",
   "sessions": [
     {
       "year": 2022,
@@ -3038,10 +3038,37 @@
     {
       "year": 2026,
       "month": 11,
+      "day": 17,
+      "session_type": "arkartas",
+      "uuid": "25552831-b992-409a-942e-51075d920c2c",
+      "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=25552831-b992-409a-942e-51075d920c2c",
+      "convocation": 15
+    },
+    {
+      "year": 2026,
+      "month": 11,
       "day": 18,
       "session_type": "sviniga",
       "uuid": "9ef273d3-ab6a-4f25-bd34-25df1214fd51",
       "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=9ef273d3-ab6a-4f25-bd34-25df1214fd51",
+      "convocation": 15
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "day": 20,
+      "session_type": "arkartas",
+      "uuid": "ee5cf0d3-b6b3-412c-b7b0-eb7ddcb38232",
+      "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=ee5cf0d3-b6b3-412c-b7b0-eb7ddcb38232",
+      "convocation": 15
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "day": 20,
+      "session_type": "arkartas",
+      "uuid": "20cb79eb-5609-4668-adfd-5338bcb16550",
+      "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=20cb79eb-5609-4668-adfd-5338bcb16550",
       "convocation": 15
     }
   ]

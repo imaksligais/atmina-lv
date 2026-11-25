@@ -4,9 +4,9 @@ party: Progresīvie
 role: Saeimas deputāte
 relationship_type: tracked
 positions: 21
-votes: 7733
+votes: 7755
 contradictions: 0
-mentioned_in: 123
+mentioned_in: 149
 last_active: 2026-10-22
 top_topics:
 - Mežsaimniecība
@@ -18,6 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/mezsaimnieciba|Mežsaimniecība]] (43%), [[topics/klimats|Klimats]] (10%), [[topics/tieslietas|Tieslietas]] (10%)
-- **30d:** 1 claims, 0.2× bāzes līnija
 - **Spriedzes:** [[persons/uldis-augulis|Uldis Augulis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

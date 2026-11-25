@@ -4,9 +4,9 @@ party: Nacionālā apvienība
 role: Saeimas deputāts, NA frakcijas vadītāja vietnieks
 relationship_type: tracked
 positions: 27
-votes: 8222
+votes: 8244
 contradictions: 0
-mentioned_in: 108
+mentioned_in: 115
 last_active: 2026-11-07
 top_topics:
 - Sociālā politika
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/sociala-politika|Sociālā politika]] (26%), [[topics/pensijas|Pensijas]] (22%), [[topics/valsts-parvalde|Valsts pārvalde]] (11%)
-- **30d:** 3 claims, 0.7× bāzes līnija
+- **30d:** 2 claims, 0.5× bāzes līnija
 <!-- /SYNC-AUTO -->

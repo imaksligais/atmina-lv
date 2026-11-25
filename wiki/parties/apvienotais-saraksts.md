@@ -1,12 +1,12 @@
 ---
 party: Apvienotais saraksts
-members: 48
-claims: 2272
+members: 55
+claims: 2454
 program_promises: 23
 contradictions: 12
-votes_par: 63624
-votes_pret: 12026
-votes_atturas: 4712
+votes_par: 69053
+votes_pret: 13552
+votes_atturas: 5990
 top_politicians:
 - Andris Kulbergs
 - Guntars Vītols
@@ -42,23 +42,29 @@ top_topics:
 - [[persons/edvards-smiltens|Edvards Smiltēns]]
 - [[persons/guntars-vitols|Guntars Vītols]]
 - [[persons/ilmars-luksts|Ilmārs Luksts]]
+- [[persons/ilze-vergina|Ilze Vergina]]
 - [[persons/inga-priede|Inga Priede]]
 - [[persons/ingmars-lidaka|Ingmārs Līdaka]]
 - [[persons/juris-lazdins|Juris Lazdiņš]]
 - [[persons/juris-vilums|Juris Viļums]]
 - [[persons/janis-dzerins|Jānis Džeriņš]]
 - [[persons/janis-jenzis|Jānis Jenzis]]
+- [[persons/janis-liepins|Jānis Liepiņš]]
 - [[persons/janis-sterninieks|Jānis Stērninieks]]
 - [[persons/janis-urtans|Jānis Urtāns]]
 - [[persons/karina-mikelsone|Karīna Miķelsone]]
 - [[persons/karlis-serzants|Kārlis Seržants]]
+- [[persons/lauris-gruntmanis|Lauris Gruntmanis]]
 - [[persons/lauris-lizbovskis|Lauris Lizbovskis]]
 - [[persons/liene-apine|Liene Apine]]
 - [[persons/linda-matisone|Linda Matisone]]
+- [[persons/luize-utane|Luīze Utāne]]
 - [[persons/liga-mengelsone|Līga Meņģelsone]]
+- [[persons/maris-dadzis|Māris Dadzis]]
 - [[persons/maris-kucinskis|Māris Kučinskis]]
 - [[persons/maris-ozolins|Māris Ozoliņš]]
 - [[persons/maris-sprindzuks|Māris Sprindžuks]]
+- [[persons/maris-truselis|Māris Trušelis]]
 - [[persons/martins-brencis|Mārtiņš Brencis]]
 - [[persons/martins-prisis|Mārtiņš Prīsis]]
 - [[persons/nellija-kleinberga|Nellija Kleinberga]]
@@ -70,6 +76,7 @@ top_topics:
 - [[persons/renars-putnins|Renārs Putniņš]]
 - [[persons/valdis-kotans|Valdis Kotāns]]
 - [[persons/valdis-karklins|Valdis Kārkliņš]]
+- [[persons/valters-bolevics|Valters Bolevics]]
 - [[persons/viesturs-vitovskis|Viesturs Vitovskis]]
 - [[persons/ceslavs-batna|Česlavs Batņa]]
 <!-- /SYNC-AUTO -->

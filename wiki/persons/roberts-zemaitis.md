@@ -3,20 +3,21 @@ name: Roberts Žemaitis
 party: Latvija Pirmajā Vietā
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 18
-votes: 5
+positions: 21
+votes: 26
 contradictions: 0
-mentioned_in: 71
-last_active: 2026-11-10
+mentioned_in: 87
+last_active: 2026-11-24
 top_topics:
 - Degviela un enerģētika
-- Sociālā politika
 - Ekonomika un uzņēmējdarbība
-- Pensijas
+- Sociālā politika
 - Budžets un finanses
+- Pensijas
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (22%), [[topics/sociala-politika|Sociālā politika]] (22%), [[topics/ekonomika-un-uznemejdarbiba|Ekonomika un uzņēmējdarbība]] (17%)
-- **30d:** 4 claims, 0.6× bāzes līnija
+- **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (19%), [[topics/ekonomika-un-uznemejdarbiba|Ekonomika un uzņēmējdarbība]] (19%), [[topics/sociala-politika|Sociālā politika]] (19%)
+- **30d:** 7 claims, 1.0× bāzes līnija
+- **Spriedzes:** [[persons/kaspars-briskens|Kaspars Briškens]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

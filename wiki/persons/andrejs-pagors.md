@@ -3,18 +3,18 @@ name: Andrejs Pagors
 party: Suverēnā vara/Jaunlatvieši
 role: Saeimas deputāts
 relationship_type: tracked
-positions: 5
-votes: 5
+positions: 6
+votes: 27
 contradictions: 0
-mentioned_in: 76
-last_active: 2026-11-11
+mentioned_in: 90
+last_active: 2026-11-17
 top_topics:
-- Valodu politika
 - Koalīcija un partijas
+- Valodu politika
 - Tieslietas
 - Valsts pārvalde
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 3 claims
+- **30d:** 4 claims
 <!-- /SYNC-AUTO -->

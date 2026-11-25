@@ -4,7 +4,9 @@ Pass-through pattern: ``tensions`` is pre-fetched in
 ``generate_public_site`` and shared with ``render_tensions``
 (spriedzes.html).
 
-Sub-page boundary: imports only from ``src.render._common`` and stdlib.
+Sub-page boundary: imports from ``src.render._common`` and stdlib, plus two
+shared helpers (``votes_matrix`` presence filter, ``politicians_tabs`` vote
+alignment — the same numbers as the profile Saites tab).
 """
 
 from __future__ import annotations
@@ -31,6 +33,7 @@ from src.render._common import (
     vote_alignment_data,
 )
 from src.render._common.enrich import ballot_line
+from src.render.politicians_tabs import VOTE_ALIGN_MIN_SHARED, _vote_alignment_for
 from src.render.votes_matrix import presence_motif_exclusion_sql
 
 logger = logging.getLogger(__name__)
@@ -63,6 +66,15 @@ def _emit_saites_json(
 # (2026-10-18 prod: 69 rindu grupā bija 29 žurnālistu, 6 organizāciju galapunkti).
 _NO_PARTY_GROUPS = {"journalist": "Žurnālisti", "organization": "Organizācijas"}
 _GROUP_ORDER = {"Žurnālisti": 1, "Organizācijas": 2, "": 3}
+# Partiju tabulas kolonnas: (tips, galvene, īsā galvene šauram ekrānam).
+# Visi četri TENSION_TYPE_LV tipi, lai summa = «Saiknes».
+_PARTY_COLS = [
+    ("uzbrukums", "Uzbrukumi", "Uzbr."),
+    ("spriedze", "Spriedzes", "Spr."),
+    ("atbalsts", "Atbalsts", "Atb."),
+    ("politikas nostāju konflikts", "Nostāju konflikti", "Konfl."),
+]
+assert {c[0] for c in _PARTY_COLS} == set(TENSION_TYPE_LV)
 
 
 def _pair_group(party: str | None, rel: str | None) -> str:
@@ -97,17 +109,21 @@ def _party_pairs(tensions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     shown = {pid: set(keys[:TENSIONS_CAP]) for pid, keys in per_pid.items()}
     pairs: dict[frozenset, dict[str, Any]] = {}
     party_count: dict[str, int] = {}
+    party_types: dict[str, dict[str, int]] = {}
     for t in tensions:
         if t.get("source_pid") is None or t.get("target_pid") is None:
             continue
         key = frozenset((t["source_pid"], t["target_pid"]))
-        p = pairs.setdefault(key, {"src": t, "types": {}, "n": 0, "last": ""})
+        p = pairs.setdefault(key, {"src": t, "types": {}, "n": 0, "last": "", "ts": ""})
         p["types"][t["tension_type"]] = p["types"].get(t["tension_type"], 0) + 1
         p["n"] += 1
         p["last"] = max(p["last"], t.get("date") or "")
+        p["ts"] = max(p["ts"], t.get("created_at") or "")
         for party in {_pair_group(t.get("source_party"), t.get("source_rel")),
                       _pair_group(t.get("target_party"), t.get("target_rel"))}:
             party_count[party] = party_count.get(party, 0) + 1
+            pt = party_types.setdefault(party, {})
+            pt[t["tension_type"]] = pt.get(t["tension_type"], 0) + 1
     by_party: dict[str, list[dict[str, Any]]] = {}
     for p in pairs.values():
         t = p["src"]
@@ -119,6 +135,8 @@ def _party_pairs(tensions: list[dict[str, Any]]) -> list[dict[str, Any]]:
         # Pāris nevienā profilā neietilpst griestos → kartītes nav; saite atver
         # tikai Saites cilni (`anchor` = "saites"), nevis mērķi bez elementa.
         row = {"a_name": a_name, "a_slug": a_slug, "b_name": b_name,
+               "pids": (a_pid, b_pid),
+               "type_label": TENSION_TYPE_LV.get(t["tension_type"], t["tension_type"]),
                "anchor": f"saites-{b_pid}" if key in shown[a_pid] else "saites",
                # `src` = pāra jaunākais ieraksts: tā apraksts un veids (malas krāsa).
                "desc": t.get("description") or "",
@@ -128,7 +146,7 @@ def _party_pairs(tensions: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     "badge": TENSION_BADGE.get(tt, "badge-muted"), "n": n}
                    for tt, n in sorted(p["types"].items())
                ],
-               "n": p["n"], "last": p["last"]}
+               "n": p["n"], "last": p["last"], "ts": p["ts"]}
         for party in {_pair_group(t.get("source_party"), t.get("source_rel")),
                       _pair_group(t.get("target_party"), t.get("target_rel"))}:
             by_party.setdefault(party, []).append(row)
@@ -136,7 +154,38 @@ def _party_pairs(tensions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     # casefold: «Jaunā Vienotība» pirms «JKP» (kodpunktos «K» < «a»).
     for party in sorted(by_party, key=lambda s: (_GROUP_ORDER.get(s, 0), s.casefold(), s)):
         rows = sorted(by_party[party], key=lambda r: r["last"], reverse=True)
-        out.append({"party": party, "count": party_count[party], "pairs": rows})
+        out.append({"party": party, "count": party_count[party],
+                    "types": party_types[party], "pairs": rows})
+    return out
+
+
+def _newest_pairs(
+    party_pairs: list[dict[str, Any]], n: int = 5, per_person: int = 2
+) -> list[dict[str, Any]]:
+    """The ``n`` most recently recorded pairs for the top of the Saites page.
+
+    Reuses the ``_party_pairs`` rows (same anchor → the same pair leads to the
+    same profile card everywhere). Newest by the pair's latest ``created_at``,
+    ties by names (deterministic). One person appears in at most
+    ``per_person`` rows: one evening's batch about one politician (prod
+    2026-11-21: Kulbergs in 4 of the 12 newest pairs) would otherwise fill
+    the whole list. Date order, never count (10-18 spec decision 8: no ranks).
+    """
+    seen: dict[tuple, dict[str, Any]] = {}
+    for p in party_pairs:
+        for r in p["pairs"]:
+            seen.setdefault(frozenset(r["pids"]), r)
+    rows = sorted(seen.values(), key=lambda r: (r["a_name"], r["b_name"]))
+    rows.sort(key=lambda r: r["ts"] or r["last"], reverse=True)
+    out: list[dict[str, Any]] = []
+    per: Counter = Counter()
+    for r in rows:
+        if any(per[pid] >= per_person for pid in r["pids"]):
+            continue
+        out.append(r)
+        per.update(r["pids"])
+        if len(out) == n:
+            break
     return out
 
 
@@ -208,42 +257,6 @@ def _fetch_graph_data(db: sqlite3.Connection) -> dict[str, Any]:
             "label": t["description"] or "",
         })
 
-    # Links from Saeima vote alignment
-    # Only cross-party pairs with >=10 shared votes AND extreme alignment/disagreement.
-    # Tikai nodotās balsis (Par/Pret/Atturas) abās savienojuma pusēs —
-    # klātbūtnes/reģistrācijas stāvokļi izslēgti, lai sakritība mēra balsojumu,
-    # ne klātbūtni; filtrs dzīvo vote_alignment_data (sk.
-    # rankings.py::_vote_alignment_outliers, 2026-06-08). Kopīgais precompute
-    # aizstāj ~41s SQL self-join (BACKLOG § Render self-join lēnās stadijas).
-    align = vote_alignment_data(db)
-    align_meta = align["meta"]
-    for (pid1, pid2), (agree, total) in sorted(align["pairs"].items()):
-        if pid1 not in node_ids or pid2 not in node_ids:
-            continue
-        pct = round(agree * 100 / total)
-        # Only show the most notable pairs to avoid clutter:
-        # - Cross-party high disagreement (<25%) = strong rivals
-        # - Same-party rebels (<50%) = internal conflict (rare, interesting)
-        # Skip high agreement — it's expected within coalitions
-        party1 = (align_meta.get(pid1) or {}).get("party")
-        party2 = (align_meta.get(pid2) or {}).get("party")
-        same_party = (party1 or "") == (party2 or "")
-        if same_party and pct >= 50:
-            continue
-        if not same_party and pct >= 25:
-            continue
-        links.append({
-            "source": pid1,
-            "target": pid2,
-            "type": "vote",
-            "tension_type": "vote",
-            "topic": "",
-            "label": f"{pct}% sakritība ({agree}/{total})",
-            "agree_pct": pct,
-            "agree": agree,
-            "total": total,
-        })
-
     # Links from shared topics (cross-party only, 3+ shared claims, excluding generic topics)
     # Only niche/specific topics — broad topics produce noise
     NICHE_TOPICS = {
@@ -311,11 +324,42 @@ def _fetch_graph_data(db: sqlite3.Connection) -> dict[str, Any]:
             "weight": s["cnt"],
         })
 
-    return {"nodes": nodes, "links": links}
+    # Balsojumu sakritība: NAV pastāvīgas līnijas. Katram mezglam viņa 3
+    # visvairāk un 3 vismazāk sakrītošie kolēģi (tā pati funkcija un skaitļi
+    # kā profila Saites cilnē); sav1.js tās zīmē tikai izvēlētajam mezglam.
+    # Globālais top/bottom N bija koalīcijas 99 % pāri un viens atkārtots
+    # fakts apakšā (prod 2026-11-22, plāns docs/plans/2026-11-22-saites-v2-posms1-plans.md).
+    align = vote_alignment_data(db)
+    vote_align: dict[str, dict[str, list]] = {}
+    for n in nodes:
+        top, bottom = _vote_alignment_for(db, n["id"], top_n=3, align=align)
+        keep = lambda rows: [[r["pid"], r["agree"], r["total"]]  # noqa: E731
+                             for r in rows if r["pid"] in node_ids]
+        if top or bottom:
+            vote_align[str(n["id"])] = {"top": keep(top), "bottom": keep(bottom)}
+
+    return {"nodes": nodes, "links": links, "voteAlign": vote_align}
+
+
+def _place_groups(places: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Saites lapas «Kopīgās vietas»: Saeima (komisijas + delegācijas) un organizācijas."""
+    if not places:
+        return []
+    groups = [
+        ("saeima", "Saeimā (14. Saeima)", ("komisija", "delegacija")),
+        ("org", "Organizācijās (amatpersonu deklarācijas)", ("organizacija",)),
+    ]
+    out = []
+    for key, title, kinds in groups:
+        rows = [p for p in places["places"] if p.kind in kinds]
+        if rows:
+            out.append({"key": key, "title": title, "places": rows})
+    return out
 
 
 def render_links(
-    env, db: sqlite3.Connection, atmina_dir: Path, tensions: list[dict[str, Any]]
+    env, db: sqlite3.Connection, atmina_dir: Path, tensions: list[dict[str, Any]],
+    places: dict[str, Any] | None = None,
 ) -> None:
     """Emit ``atmina_dir/saites.html`` (force-graph + per-politician detail panel)."""
     type_counts: dict[str, int] = {}
@@ -499,7 +543,6 @@ def render_links(
          "cls": TENSION_LINK_CLASS.get(lt, lt.replace("_", "-"))}
         for lt, label in (
             *TENSION_TYPE_LV.items(),
-            ("vote", "Balsojumi"),
             ("shared_topic", "Kopīgās tēmas"),
         )
         if link_type_counts[lt] > 0
@@ -507,11 +550,27 @@ def render_links(
     # Noklusējuma skats (servera HTML, 0 JS): meklētājs + partijas → pāri.
     # `date` ir created_at LV diena — kad MĒS ierakstījām, ne notikuma datums.
     dates = [t["date"] for t in tensions if t.get("date")]
+    # Tīkla partiju leģenda: tikai partijas, kas ir mezglos, ar to pašu krāsu
+    # (un to pašu atkāpi bez krāsas), ko sav1.js liek mezglam.
+    colors = saites_data["partyColors"]
+    node_parties = Counter(n["party"] for n in graph_data["nodes"])
+    graph_parties = [
+        {"party": p, "label": p or "Bez partijas", "color": colors.get(p) or "", "n": c}
+        for p, c in sorted(node_parties.items(), key=lambda kv: (kv[0] == "", kv[0].casefold()))
+    ]
+    party_pairs = _party_pairs(tensions)
     _render_page(env, "saites.html.j2", atmina_dir / "saites.html", {
-        "party_pairs": _party_pairs(tensions),
+        "party_pairs": party_pairs,
+        "newest": _newest_pairs(party_pairs),
+        "graph_parties": graph_parties,
+        "vote_min_shared": VOTE_ALIGN_MIN_SHARED,
+        "party_cols": _PARTY_COLS,
         "politicians": tension_politicians,
         "recorded": (min(dates), max(dates)) if dates else None,
         "saites_data": saites_data,
         "link_types": link_types,
         "metrics": saites_metrics,
+        # «Kopīgās vietas» (Saites v2, 2. posms): tas pats build_places
+        # rezultāts, ko lieto profili un vietas/<slug>.html.
+        "place_groups": _place_groups(places),
     })

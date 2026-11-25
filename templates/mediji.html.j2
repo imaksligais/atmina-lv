@@ -10,7 +10,7 @@
 
   {% call pagehead("Mediju caurskatāmība", "Mediji") %}
       {{ metric("Mediji", metrics.total) }}
-      {{ metric("Publikācijas", metrics.total_articles) }}
+      {{ metric("Publikācijas", metrics.total_articles|lv_number) }}
   {%- endcall %}
 
   <p class="muted mediji-intro">Mediju īpašnieki, finansējums un faktiskais

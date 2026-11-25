@@ -15,7 +15,3 @@ top_topics:
 - Pensijas
 - Tieslietas
 ---
-
-<!-- SYNC-AUTO -->
-- **30d:** 1 claims
-<!-- /SYNC-AUTO -->

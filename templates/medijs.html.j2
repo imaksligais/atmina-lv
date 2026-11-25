@@ -56,7 +56,7 @@
       <span class="feed-ident">
         <span class="feed-name">{{ f.name }}</span>
         {# LV locījums: 1/21/31... publikācija, bet 11 publikācijas #}
-        <span class="feed-sub">@{{ f.handle }}{% if f.pubs %} · {{ f.pubs }} publikācij{% if f.pubs % 10 == 1 and f.pubs % 100 != 11 %}a{% else %}as{% endif %}{% endif %}</span>
+        <span class="feed-sub">@{{ f.handle }}{% if f.pubs %} · {{ f.pubs|lv_number }} publikācij{% if f.pubs % 10 == 1 and f.pubs % 100 != 11 %}a{% else %}as{% endif %}{% endif %}</span>
       </span>
     </a>
     {% endfor %}

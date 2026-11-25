@@ -187,6 +187,12 @@ def _second_batch(db, tmp_path, topic="Vide"):
                     confidence=1.0, input_hash="h")
     freeze_batch(db, "b02", ["412/Lp14"])
     write_rollback_sql(db, "b02", tmp_path / "rb2.sql")
+    # Ražošanā piemērošanas notiek sekundēm atstatus (topics.py komentārs pie
+    # _LATER_OVERLAP_SQL); testā tās var iekrist vienā Windows pulksteņa solī,
+    # un stingrais `>` tad nejauši neredz vēlāko partiju. Agrākās — sekundi agrāk.
+    db.execute("UPDATE vote_topic_batches SET applied_at = "
+               "strftime('%Y-%m-%d %H:%M:%f', applied_at, '-1 second') WHERE status = 'applied'")
+    db.commit()
     apply_batch(db, "b02", require_tracked=False)
 
 

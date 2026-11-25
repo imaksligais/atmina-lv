@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 6
 votes: 0
 contradictions: 0
-mentioned_in: 251
+mentioned_in: 375
 last_active: 2026-08-16
 top_topics:
 - Ukraina un Krievija
@@ -16,5 +16,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
+- **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/andris-velps|Andris Velps]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

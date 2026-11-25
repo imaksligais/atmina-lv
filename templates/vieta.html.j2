@@ -1,0 +1,54 @@
+{% extends "base.html.j2" %}
+{% from "_macros.html.j2" import pagehead, metric %}
+
+{% block title %}{{ place.name }}{% endblock %}
+
+{% block content %}
+<section class="pagehead-section vieta">
+  <a href="../saites.html#kopigas-vietas" class="back-link">&larr; Kopīgās vietas</a>
+
+  {% call pagehead(place.kind_label, place.name) %}
+      {{ metric("Izsekoti politiķi", place.members|length) }}
+      {%- if place.reg_nr %}{{ metric("Reģ. nr.", place.reg_nr) }}{% endif %}
+  {%- endcall %}
+  {%- if place.legal_name and place.legal_name != place.name %}
+  <p class="vieta-legal">Deklarācijās: {{ place.legal_name }}</p>
+  {%- endif %}
+
+  {%- if place.kind == "organizacija" %}
+  <p class="vieta-intro">Izsekoti politiķi, kas savās amatpersonu deklarācijās norādījuši amatu šajā organizācijā. Gads ir deklarācijas gads, amats rakstīts tā, kā jaunākajā deklarācijā. Ja divi cilvēki norādījuši amatu vienā organizācijā, tas nenozīmē, ka viņi strādājuši kopā.</p>
+  {%- else %}
+  <p class="vieta-intro">Izsekoti politiķi, kas 14. Saeimā bijuši šīs {{ "delegācijas" if place.kind == "delegacija" else "komisijas" }} sastāvā, un laiks, kad viņi tajā bija.</p>
+  {%- endif %}
+
+  <div class="vieta-wrap" role="region" aria-labelledby="vieta-caption" tabindex="0">
+  <table class="vieta-table">
+    <caption id="vieta-caption" class="sr-only">{{ place.name }}: izsekotie politiķi</caption>
+    <thead>
+      <tr>
+        <th scope="col">Politiķis</th>
+        <th scope="col">Amats</th>
+        <th scope="col">{{ "Deklarācijas gads" if place.kind == "organizacija" else "Laiks" }}</th>
+        <th scope="col">Avots</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for m in place.members %}
+      <tr>
+        <th scope="row"><a href="../politiki/{{ m.slug }}.html{% if m.pid in place.together %}#kur-celi-krustojas{% endif %}">{{ m.name }}</a></th>
+        <td>{{ m.role }}</td>
+        <td class="vieta-when">{{ m.when }}</td>
+        <td>{% if m.source_url %}<a href="{{ m.source_url | safe_url }}" target="_blank" rel="nofollow noopener">{{ "Deklarācija" if place.kind == "organizacija" else "Saeima" }}</a>{% endif %}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  {%- if place.kind == "organizacija" %}
+  <p class="vieta-note">Avots: Valsts ieņēmumu dienesta publiskās amatpersonu deklarācijas.</p>
+  {%- else %}
+  <p class="vieta-note">Avots: Saeimas deputātu datubāze (titania), dati ielādēti {{ loaded|lv_date }}. Ja Saeima amatam beigu datumu nav ierakstījusi, tas beidzās līdz ar 14. Saeimas pilnvarām.</p>
+  {%- endif %}
+</section>
+{% endblock %}

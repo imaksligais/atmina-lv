@@ -17,7 +17,7 @@ og:
 
 # Pilsonība ar Saeimas balsojumu: 11 akti 14. Saeimā un kā tos pieņem
 
-**Avoti:** Saeima (likumprojektu lietas, balsojumi, stenogrammas), «Latvijas Vēstnesis», Pilsonības likums, Satversme, LSM, LETA | **Dati uz:** 2026. gada 1. novembri (balsojumi — līdz 22. oktobrim, Saeimas sēdes — līdz 29. oktobrim)
+**Avoti:** Saeima (likumprojektu lietas, balsojumi, stenogrammas), «Latvijas Vēstnesis», Pilsonības likums, Satversme, LSM, LETA | **Dati uz:** 2026. gada 1. novembri (balsojumi — līdz 22. oktobrim, Saeimas sēdes — līdz 29. oktobrim; Kūtra teiktais par publikāciju sarakstu pievienots 20. novembrī)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -66,7 +66,7 @@ Avots: Saeimas likumprojektu lietas un anotācijas (saites — sadaļā «Avoti�
 
 **Ko pārbauda.** Kopš 2026. gada 23. februāra iesniegumus izskata pēc Saeimas Prezidija apstiprinātas kārtības ([pilsoniba.saeima.lv](https://pilsoniba.saeima.lv/uznemsana-pilsoniba-par-nopelniem-latvijas-laba/780-kartiba,-kada-saeima-izskata-iesniegumus-par-personas-uznemsanu-latvijas-pilsoniba-par-ipasiem-nopelniem-latvijas-laba-vai-atzisanu-par-latvijas-pilsoni)). Tā attiecas uz abiem ceļiem. Pilsonības un migrācijas lietu pārvalde (PMLP) pārbauda, vai nav Pilsonības likuma 11. pantā noteikto ierobežojumu — piemēram, draudu valsts drošībai vai sodāmības — un vai cilvēks var naturalizēties parastajā kārtībā; ja var, iesniegumu nevirza (20.–22. punkts). Abos ceļos komisija vērtē iesniegtos dokumentus, personību un apstākļus (17. punkts).
 
-Kārtība īpaši prasa norādīt un vērtēt nopelnus tikai lēmuma ceļā (9., 12. un 18. punkts). Atsevišķas procedūras, kā neatkarīgi pārbaudīt iesniegumā minētos sasniegumus, kārtībā nav. Komisijas priekšsēdētājs Kūtris 19. oktobrī LSM teica: «Mēs pamatā paļaujamies uz to, ka cilvēks, kas iesniedz dokumentus, par to atbild. […] Mēs ļoti paļaujamies arī uz institūcijām, kas rekomendē» ([LSM](https://www.lsm.lv/raksts/zinas/latvija/19.10.2026-saeima-vertes-indijas-pilsonei-visvanatai-pieskirtas-pilsonibas-pamatotibu.a668227/)). Aģentūrai LETA viņš skaidroja, ka komisija pārbauda ziņas, kuras var pārbaudīt, bet neveic izmeklēšanu un padziļinātu izpēti ārvalstīs ([LETA, press.lv](https://press.lv/lat/post/na-velas-parskatit-pilsonibas-pieskirsanu-par-nopelniem-un-nodrosinat-lielaku-atklatibu-saeimas-komisijas-darba)).
+Kārtība īpaši prasa norādīt un vērtēt nopelnus tikai lēmuma ceļā (9., 12. un 18. punkts). Atsevišķas procedūras, kā neatkarīgi pārbaudīt iesniegumā minētos sasniegumus, kārtībā nav. Komisijas priekšsēdētājs Kūtris 19. oktobrī LSM teica: «Mēs pamatā paļaujamies uz to, ka cilvēks, kas iesniedz dokumentus, par to atbild. […] Mēs ļoti paļaujamies arī uz institūcijām, kas rekomendē» ([LSM](https://www.lsm.lv/raksts/zinas/latvija/19.10.2026-saeima-vertes-indijas-pilsonei-visvanatai-pieskirtas-pilsonibas-pamatotibu.a668227/)). Aģentūrai LETA viņš skaidroja, ka komisija pārbauda ziņas, kuras var pārbaudīt, bet neveic izmeklēšanu un padziļinātu izpēti ārvalstīs ([LETA, press.lv](https://press.lv/lat/post/na-velas-parskatit-pilsonibas-pieskirsanu-par-nopelniem-un-nodrosinat-lielaku-atklatibu-saeimas-komisijas-darba)). Divjas Višvanatas lietā Kūtris 22. oktobrī Saeimā teica, ka komisija, skatot materiālus, publikāciju sarakstu «nebija pieprasījusi»; to viņš caur Zinātņu akadēmiju palūdza pēc publiskajām šaubām, kas izskanēja pēc balsojuma ([stenogramma](https://www.saeima.lv/lv/sasaukumi/14-saeima/stenogrammas/latvijas-republikas-saeimas-2026-gada-22-oktobra-karteja-sede/)).
 
 ## Kā likumu pieņem: steidzami, vienā sēdē
 

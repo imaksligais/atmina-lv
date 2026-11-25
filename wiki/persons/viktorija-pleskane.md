@@ -4,10 +4,10 @@ party: Latvija Pirmajā Vietā
 role: Saeimas deputāte
 relationship_type: tracked
 positions: 12
-votes: 7979
+votes: 8001
 contradictions: 0
-mentioned_in: 94
-last_active: 2026-10-16
+mentioned_in: 109
+last_active: 2026-10-08
 top_topics:
 - Koalīcija un partijas
 - Transports

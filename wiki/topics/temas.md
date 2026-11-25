@@ -1,44 +1,44 @@
 # Tēmas — Indekss
 
-_Atjaunots: 2026-11-16 23:05:58_
+_Atjaunots: 2026-11-24 23:49:46_
 
 **35** tēmas
 
 | Tēma | Pozīcijas | Balsojumi | Politiķi | Pretrunas | Pēdējā poz. aktivitāte |
 |---|---|---|---|---|---|
-| [[topics/koalicija-un-partijas\|Koalīcija un partijas]] | 13752 | 55848 | 126 | 12 | 2026-11-16 |
-| [[topics/sociala-politika\|Sociālā politika]] | 4750 | 324120 | 112 | 10 | 2026-11-16 |
-| [[topics/valsts-parvalde\|Valsts pārvalde]] | 4440 | 169104 | 120 | 6 | 2026-11-16 |
-| [[topics/ukraina-un-krievija\|Ukraina un Krievija]] | 3868 | 72676 | 104 | 4 | 2026-11-16 |
-| [[topics/velesanas\|Vēlēšanas]] | 2000 | 64020 | 114 | 4 | 2026-11-09 |
-| [[topics/aizsardziba-un-drosiba\|Aizsardzība un drošība]] | 1074 | 44334 | 116 | 1 | 2026-11-16 |
-| [[topics/imigracija\|Imigrācija]] | 757 | 22341 | 92 | 0 | 2026-11-16 |
-| [[topics/budzets-un-finanses\|Budžets un finanses]] | 709 | 153301 | 93 | 1 | 2026-11-16 |
-| [[topics/rail-baltica\|Rail Baltica]] | 620 | 19480 | 37 | 4 | 2026-11-16 |
-| [[topics/arpolitika\|Ārpolitika]] | 370 | 3781 | 69 | 1 | 2026-11-16 |
-| [[topics/tieslietas\|Tieslietas]] | 351 | 75111 | 80 | 1 | 2026-11-16 |
-| [[topics/degviela-un-energetika\|Degviela un enerģētika]] | 338 | 26906 | 81 | 1 | 2026-11-16 |
-| [[topics/airbaltic\|airBaltic]] | 300 | 1210 | 50 | 1 | 2026-11-14 |
-| [[topics/izglitiba\|Izglītība]] | 294 | 28038 | 75 | 1 | 2026-11-16 |
-| [[topics/es-politika\|ES politika]] | 288 | 949 | 56 | 0 | 2026-11-16 |
-| [[topics/pasvaldibas\|Pašvaldības]] | 284 | 25965 | 65 | 1 | 2026-11-15 |
-| [[topics/sabiedriskie-mediji\|Sabiedriskie mediji]] | 263 | 4342 | 55 | 0 | 2026-11-16 |
-| [[topics/veselibas-aprupe\|Veselības aprūpe]] | 244 | 17561 | 67 | 0 | 2026-11-15 |
-| [[topics/korupcija-un-knab\|Korupcija un KNAB]] | 242 | 6151 | 67 | 1 | 2026-11-15 |
-| [[topics/droni\|Droni]] | 229 | 787 | 45 | 0 | 2026-11-14 |
-| [[topics/pilsetvide\|Pilsētvide]] | 223 | 183 | 31 | 1 | 2026-11-15 |
-| [[topics/transports\|Transports]] | 189 | 25208 | 49 | 1 | 2026-11-15 |
-| [[topics/valsts-kapitalsabiedribas\|Valsts kapitālsabiedrības]] | 179 | 5643 | 33 | 0 | 2026-11-09 |
-| [[topics/valodu-politika\|Valodu politika]] | 175 | 5086 | 52 | 0 | 2026-11-13 |
-| [[topics/digitala-politika\|Digitālā politika]] | 168 | 7083 | 51 | 0 | 2026-11-13 |
-| [[topics/nvo-un-pilsoniska-sabiedriba\|NVO un pilsoniskā sabiedrība]] | 152 | 1891 | 51 | 1 | 2026-11-15 |
-| [[topics/kultura\|Kultūra]] | 135 | 9852 | 55 | 1 | 2026-11-15 |
-| [[topics/pensijas\|Pensijas]] | 111 | 13131 | 41 | 0 | 2026-11-16 |
-| [[topics/lauksaimnieciba\|Lauksaimniecība]] | 109 | 8511 | 31 | 0 | 2026-11-16 |
-| [[topics/mezsaimnieciba\|Mežsaimniecība]] | 108 | 2345 | 31 | 0 | 2026-11-14 |
-| [[topics/vide\|Vide]] | 64 | 23770 | 28 | 0 | 2026-11-16 |
-| [[topics/ekonomika-un-uznemejdarbiba\|Ekonomika un uzņēmējdarbība]] | 56 | 29533 | 27 | 0 | 2026-11-15 |
-| [[topics/sports\|Sports]] | 56 | 1243 | 32 | 0 | 2026-11-16 |
-| [[topics/klimats\|Klimats]] | 40 | 3060 | 21 | 0 | 2026-11-12 |
-| [[topics/saeimas-darbs\|Saeimas darbs]] | 38 | 43188 | 25 | 0 | 2026-11-16 |
+| [[topics/koalicija-un-partijas\|Koalīcija un partijas]] | 15012 | 57000 | 133 | 12 | 2026-11-24 |
+| [[topics/valsts-parvalde\|Valsts pārvalde]] | 5495 | 197288 | 127 | 7 | 2026-11-24 |
+| [[topics/sociala-politika\|Sociālā politika]] | 4970 | 324120 | 113 | 10 | 2026-11-24 |
+| [[topics/ukraina-un-krievija\|Ukraina un Krievija]] | 4132 | 72676 | 109 | 4 | 2026-11-24 |
+| [[topics/velesanas\|Vēlēšanas]] | 2024 | 64020 | 116 | 4 | 2026-11-21 |
+| [[topics/aizsardziba-un-drosiba\|Aizsardzība un drošība]] | 1109 | 44628 | 119 | 1 | 2026-11-24 |
+| [[topics/imigracija\|Imigrācija]] | 815 | 22341 | 95 | 0 | 2026-11-24 |
+| [[topics/budzets-un-finanses\|Budžets un finanses]] | 759 | 153301 | 97 | 1 | 2026-11-24 |
+| [[topics/rail-baltica\|Rail Baltica]] | 632 | 19480 | 40 | 4 | 2026-11-17 |
+| [[topics/arpolitika\|Ārpolitika]] | 384 | 3781 | 72 | 1 | 2026-11-23 |
+| [[topics/tieslietas\|Tieslietas]] | 363 | 75111 | 84 | 1 | 2026-11-24 |
+| [[topics/degviela-un-energetika\|Degviela un enerģētika]] | 345 | 26906 | 83 | 1 | 2026-11-23 |
+| [[topics/airbaltic\|airBaltic]] | 314 | 1210 | 51 | 1 | 2026-11-24 |
+| [[topics/sabiedriskie-mediji\|Sabiedriskie mediji]] | 312 | 4342 | 59 | 0 | 2026-11-23 |
+| [[topics/izglitiba\|Izglītība]] | 306 | 28038 | 77 | 1 | 2026-11-24 |
+| [[topics/pasvaldibas\|Pašvaldības]] | 304 | 25965 | 68 | 1 | 2026-11-24 |
+| [[topics/es-politika\|ES politika]] | 301 | 949 | 59 | 0 | 2026-11-24 |
+| [[topics/veselibas-aprupe\|Veselības aprūpe]] | 255 | 17561 | 68 | 0 | 2026-11-24 |
+| [[topics/korupcija-un-knab\|Korupcija un KNAB]] | 251 | 6151 | 70 | 1 | 2026-11-23 |
+| [[topics/pilsetvide\|Pilsētvide]] | 231 | 183 | 32 | 1 | 2026-11-23 |
+| [[topics/droni\|Droni]] | 230 | 787 | 45 | 0 | 2026-11-18 |
+| [[topics/transports\|Transports]] | 204 | 25208 | 51 | 1 | 2026-11-24 |
+| [[topics/valsts-kapitalsabiedribas\|Valsts kapitālsabiedrības]] | 200 | 5643 | 36 | 0 | 2026-11-24 |
+| [[topics/valodu-politika\|Valodu politika]] | 186 | 5086 | 53 | 0 | 2026-11-24 |
+| [[topics/digitala-politika\|Digitālā politika]] | 177 | 7083 | 53 | 0 | 2026-11-23 |
+| [[topics/nvo-un-pilsoniska-sabiedriba\|NVO un pilsoniskā sabiedrība]] | 162 | 1891 | 51 | 1 | 2026-11-24 |
+| [[topics/kultura\|Kultūra]] | 140 | 9852 | 55 | 1 | 2026-11-24 |
+| [[topics/pensijas\|Pensijas]] | 121 | 13131 | 43 | 0 | 2026-11-24 |
+| [[topics/lauksaimnieciba\|Lauksaimniecība]] | 114 | 8511 | 31 | 0 | 2026-11-23 |
+| [[topics/mezsaimnieciba\|Mežsaimniecība]] | 111 | 2345 | 31 | 0 | 2026-11-23 |
+| [[topics/ekonomika-un-uznemejdarbiba\|Ekonomika un uzņēmējdarbība]] | 107 | 29533 | 37 | 0 | 2026-11-24 |
+| [[topics/vide\|Vide]] | 67 | 23770 | 28 | 0 | 2026-11-23 |
+| [[topics/sports\|Sports]] | 59 | 1243 | 33 | 0 | 2026-11-24 |
+| [[topics/saeimas-darbs\|Saeimas darbs]] | 53 | 44294 | 34 | 0 | 2026-11-23 |
+| [[topics/klimats\|Klimats]] | 41 | 3060 | 22 | 0 | 2026-11-17 |
 

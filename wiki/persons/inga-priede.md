@@ -1,21 +1,21 @@
 ---
 name: Inga Priede
 party: Apvienotais saraksts
-role: Saeimas deputāte
+role: Saeimas deputāte, Mandātu, ētikas un iesniegumu komisijas priekšsēdētāja
 relationship_type: tracked
-positions: 6
-votes: 972
+positions: 7
+votes: 994
 contradictions: 0
-mentioned_in: 89
-last_active: 2026-11-12
+mentioned_in: 108
+last_active: 2026-11-23
 top_topics:
 - Sociālā politika
 - Degviela un enerģētika
 - Pašvaldības
+- Saeimas darbs
 - Valsts pārvalde
-- Vide
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 1 claims
+- **30d:** 2 claims
 <!-- /SYNC-AUTO -->

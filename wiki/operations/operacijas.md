@@ -37,7 +37,7 @@ Projektam ir **divi** repo:
 - **`imaksligais/atmina`** (privāts) — darba repo ar pilnu vēsturi. Šeit strādā, komitē, deployo.
 - **`imaksligais/atmina-lv`** (publisks) — atvērtā koda spogulis, AGPL-3.0. Pārbūvēts no privātā `master` HEAD; **kopš 2026-11-11 katrs sync ir jauns commits virs iepriekšējiem** (parasts push, bez force-push), tāpēc izmaiņas redzamas sync pa sync. Privāto commitu vēsture spogulī nav.
 
-Publiskais spogulis **izslēdz** redakcionālos melnrakstus un iekšējos dokumentus (`docs/tweet_bank`, `docs/social`, `docs/funding`, `wiki/dailies`, `wiki/log-ingest`, `data/*.sql` u.c.); renderēšanas izejviela (`wiki/persons|laws|synthesis|topics|parties`, `CLAUDE.md`, `wiki/CHANGELOG.md`) **paliek** — bez tās publiskā CI krīt. Sync = pārbūvē koku no privātā HEAD ar izslēgumiem → amend vienam noreply commitam → `push --force origin main`. Pilnā soli-pa-solim recepte: maintainera piezīme privātajā repo (`docs/funding/repo-sync.md`).
+Publiskais spogulis **izslēdz** redakcionālos melnrakstus un iekšējos dokumentus (`docs/tweet_bank`, `docs/social`, `docs/funding`, `wiki/dailies`, `wiki/log-ingest`, `data/*.sql` u.c.); renderēšanas izejviela (`wiki/persons|laws|synthesis|topics|parties`, `CLAUDE.md`, `wiki/CHANGELOG.md`) **paliek** — bez tās publiskā CI krīt. Sync = pārbūvē koku no privātā HEAD ar izslēgumiem → viens jauns noreply commits → `git push origin main` (bez `--force`). Pilnā soli-pa-solim recepte: maintainera piezīme privātajā repo (`docs/funding/repo-sync.md`).
 
 ## Rokasgrāmatas
 

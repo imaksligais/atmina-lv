@@ -28,7 +28,7 @@
     </div>
     <p class="election-meta">
       {% if election.provisional %}<span class="badge badge-yellow">Provizoriski</span>{% endif %}
-      {% if election.provisional %}Provizoriskie{% else %}Oficiālie{% endif %} CVK dati: {{ election.precincts_counted }} no {{ election.precincts_total }} iecirkņiem, atjaunināti {{ election.updated_text }}.
+      {% if election.provisional %}Provizoriskie{% else %}Oficiālie{% endif %} CVK dati: {{ election.precincts_counted|lv_number }} no {{ election.precincts_total|lv_number }} iecirkņiem, atjaunināti {{ election.updated_text }}.
     </p>
     <p class="election-meta">Nobalsojuši {{ election.voted }} no {{ election.eligible }} balsstiesīgajiem ({{ election.turnout }}).</p>
     <div class="table-wrap">
@@ -111,7 +111,7 @@
       {% if p.election_result %}<div class="party-card-election">Vēlēšanas 2026: {{ p.election_result.percent }} · {{ p.election_result.seats_text }}</div>{% endif %}
       <div class="party-card-stats">
         <span>{{ p.member_count }} {{ p.member_count|lv_plural("biedrs", "biedri") }}</span>
-        <span>{{ p.claims_count }} {{ p.claims_count|lv_plural("pozīcija", "pozīcijas") }}</span>
+        <span>{{ p.claims_count|lv_number }} {{ p.claims_count|lv_plural("pozīcija", "pozīcijas") }}</span>
         <span>{{ p.contradictions_count }} {{ p.contradictions_count|lv_plural("pretruna", "pretrunas") }}</span>
       </div>
       <div class="party-card-social">

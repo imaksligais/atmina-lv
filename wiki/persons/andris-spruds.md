@@ -4,9 +4,9 @@ party: Progresīvie
 role: Aizsardzības ministrs (atkāpies)
 relationship_type: tracked
 positions: 151
-votes: 2487
+votes: 2509
 contradictions: 1
-mentioned_in: 1622
+mentioned_in: 1629
 last_active: 2026-10-30
 top_topics:
 - Aizsardzība un drošība

@@ -9,6 +9,7 @@ import pytest
 
 from src.db import init_db, get_db
 from src.saeima import init_saeima_bills, init_saeima_tables, upsert_bill, append_bill_stage
+from src.render._orchestrator import _make_env
 
 
 def _safe_unlink(path):
@@ -154,8 +155,6 @@ def test_fetch_bill_with_individual_submitter(db_with_bills):
 
 
 def test_likumprojekts_template_renders_lp14(db_with_bills):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
 
     db = get_db(db_with_bills)
@@ -163,8 +162,7 @@ def test_likumprojekts_template_renders_lp14(db_with_bills):
     bill = _fetch_bill_detail(db, bid)
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s  # naive pass-through testam
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -187,8 +185,6 @@ def test_likumprojekts_template_renders_lp14(db_with_bills):
 
 
 def test_likumprojekts_template_renders_lm14(db_with_bills):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
 
     db = get_db(db_with_bills)
@@ -196,8 +192,7 @@ def test_likumprojekts_template_renders_lm14(db_with_bills):
     bill = _fetch_bill_detail(db, bid)
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -208,8 +203,6 @@ def test_likumprojekts_template_renders_lm14(db_with_bills):
 
 
 def test_likumprojekts_template_renders_p14(db_with_bills):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
 
     db = get_db(db_with_bills)
@@ -217,14 +210,14 @@ def test_likumprojekts_template_renders_p14(db_with_bills):
     bill = _fetch_bill_detail(db, bid)
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
 
     assert "14. Saeima · Pieprasījums" in html
-    assert "saeimalivs_lmp.nsf/webSasaiste?OpenView&restricttocategory=127/P14" in html
+    # autoescape kā īstajā lapā: & atribūtā ir &amp;
+    assert "saeimalivs_lmp.nsf/webSasaiste?OpenView&amp;restricttocategory=127/P14" in html
     assert "iesniegts" in html
     assert "paziņojuma_balsojums" in html
     assert "1.lasījums" not in html
@@ -232,8 +225,6 @@ def test_likumprojekts_template_renders_p14(db_with_bills):
 
 def test_likumprojekts_template_empty_submitters_state(db_with_bills):
     """Bill bez iesniedzējiem renders 'Iesniedzējs nav reģistrēts' empty state."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail, _fetch_bills
 
     db = get_db(db_with_bills)
@@ -246,8 +237,7 @@ def test_likumprojekts_template_empty_submitters_state(db_with_bills):
     assert bill["institutional_submitter"] is None
     assert bill["submitters_individual"] == []
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -257,9 +247,7 @@ def test_likumprojekts_template_empty_submitters_state(db_with_bills):
 
 def test_likumprojekts_template_empty_stages_state(db_with_bills):
     """Bill bez stadijām renders 'Stadiju nav reģistrētas' empty state."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
-    from src.render.bills import _fetch_bill_detail, _fetch_bills
+    from src.render.bills import _fetch_bill_detail
     from src.saeima import upsert_bill
 
     # Add a brand-new bill with NO stages to the fixture
@@ -272,8 +260,7 @@ def test_likumprojekts_template_empty_stages_state(db_with_bills):
     # Sanity check fixture state
     assert bill["stages"] == []
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     template = env.get_template("likumprojekts.html.j2")
     html = template.render(bill=bill)
@@ -309,8 +296,6 @@ def test_fetch_votes_includes_bill_slug_when_linked(db_with_bills, tmp_path):
 
 
 def test_bill_card_macro_renders_required_elements(db_with_bills):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bills
 
     db = get_db(db_with_bills)
@@ -318,8 +303,7 @@ def test_bill_card_macro_renders_required_elements(db_with_bills):
     db.close()
     bill = next(b for b in bills if b["document_nr"] == "1315/Lp14")
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     template_str = """
     {% from "_bill_card.html.j2" import bill_card %}
     {{ bill_card(bill) }}
@@ -338,8 +322,6 @@ def test_bill_card_badge_class_is_kind_not_convocation(db_with_bills):
     """Failure caught: a `1/Lp15` card gets `bill-pill-lp15`, which no CSS rule
     styles — the badge silently loses its colour once the 15th Saeima convenes.
     The class must come from the bill KIND (lp/lm/p), and style.css must style it."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bills
 
     upsert_bill(db_with_bills, "1/Lp15", "Grozījumi Saeimas kārtības rullī", "Lp15")
@@ -347,8 +329,7 @@ def test_bill_card_badge_class_is_kind_not_convocation(db_with_bills):
     bills = {b["document_nr"]: b for b in _fetch_bills(db)}
     db.close()
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     tmpl = env.from_string('{% from "_bill_card.html.j2" import bill_card %}{{ bill_card(bill) }}')
     for nr, kind in (("1/Lp15", "lp"), ("1315/Lp14", "lp"), ("952/Lm14", "lm"), ("127/P14", "p")):
         html = tmpl.render(bill=bills[nr])
@@ -375,14 +356,10 @@ def test_vote_card_bill_link_rendered_client_side():
 
 
 def test_generate_bill_pages_emits_correct_count(db_with_bills, tmp_path):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.bills import _generate_bill_pages
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
-    env.filters["safe_json"] = _safe_json_filter
     output_dir = tmp_path / "out"
     output_dir.mkdir()
 
@@ -397,14 +374,10 @@ def test_generate_bill_pages_emits_correct_count(db_with_bills, tmp_path):
 
 
 def test_generate_bill_pages_uses_slug_filename(db_with_bills, tmp_path):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.bills import _generate_bill_pages
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
-    env.filters["safe_json"] = _safe_json_filter
     output_dir = tmp_path / "out"
     output_dir.mkdir()
 
@@ -446,8 +419,6 @@ def test_sitemap_includes_bills_urls(db_with_bills, tmp_path):
 
 
 def test_likumprojekts_template_renders_lp15_kicker(tmp_path):
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail
 
     fd, path = tempfile.mkstemp(suffix=".db", dir=str(tmp_path))
@@ -463,8 +434,7 @@ def test_likumprojekts_template_renders_lp15_kicker(tmp_path):
     db.close()
     _safe_unlink(path)
 
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     html = env.get_template("likumprojekts.html.j2").render(bill=bill)
 
@@ -475,18 +445,14 @@ def test_likumprojekts_template_renders_lp15_kicker(tmp_path):
 def test_backfill_sentinel_summary_not_shown_on_bill_page(db_with_bills, tmp_path):
     """2026-10-09: 20 likumprojektu lapas rādīja iekšējo marķieri «Kopsavilkums
     nav pieejams — historic backfill 2026-05-26» kā kopsavilkumu."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_json_filter, _safe_url_filter
     from src.render.bills import _generate_bill_pages
 
     db = get_db(db_with_bills)
     db.execute("UPDATE saeima_bills SET summary=? WHERE document_nr='952/Lm14'",
                ("Kopsavilkums nav pieejams — historic backfill 2026-05-26",))
     db.commit()
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
-    env.filters["safe_json"] = _safe_json_filter
     _generate_bill_pages(db, env, tmp_path)
     db.close()
     html = (tmp_path / "likumprojekti" / "952-lm14.html").read_text(encoding="utf-8")
@@ -496,8 +462,6 @@ def test_backfill_sentinel_summary_not_shown_on_bill_page(db_with_bills, tmp_pat
 def test_decision_stage_labelled_without_vote(db_with_bills):
     """2026-10-20: lēmums bez balsojuma (stage_kind='decision', titania) lapā
     nedrīkst izskatīties pēc balsojuma — «Lēmums (bez balsojuma)», bez saites."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail
 
     bid = upsert_bill(db_with_bills, "1056/Lm14", "Par termiņa pagarināšanu", "Lm14")
@@ -506,8 +470,7 @@ def test_decision_stage_labelled_without_vote(db_with_bills):
     db = get_db(db_with_bills)
     bill = _fetch_bill_detail(db, bid)
     db.close()
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     html = env.get_template("likumprojekts.html.j2").render(bill=bill)
     assert "Lēmums (bez balsojuma)" in html
@@ -519,8 +482,6 @@ def test_procedural_votes_not_labelled_as_reading(db_with_bills):
     «1.lasījums Noraidīts» — pirmais bija iekļaušana darba kārtībā, otrais
     steidzamība. Posms DB paliek lasījums (statusa noteikums 10-09); lapā
     nosaukums nāk no balsojuma motīva. Īstais lasījums paliek «1.lasījums»."""
-    from jinja2 import Environment, FileSystemLoader
-    from src.render._common import _safe_url_filter
     from src.render.bills import _fetch_bill_detail
 
     motifs = [
@@ -545,8 +506,7 @@ def test_procedural_votes_not_labelled_as_reading(db_with_bills):
     db = get_db(db_with_bills)
     bill = _fetch_bill_detail(db, bid)
     db.close()
-    env = Environment(loader=FileSystemLoader("templates"))
-    env.filters["safe_url"] = _safe_url_filter
+    env = _make_env()
     env.filters["lv_date"] = lambda s: s
     html = env.get_template("likumprojekts.html.j2").render(bill=bill)
     labels = [seg.split("</span>")[0] for seg in html.split('class="timeline-stage">')[1:]]

@@ -18,6 +18,7 @@ from pathlib import Path
 
 import pytest
 
+from src.ingest import ingest_all as _REAL_INGEST_ALL
 from src.matcher import LinkResult
 
 REPO = Path(__file__).resolve().parent.parent
@@ -131,6 +132,22 @@ def test_vestnesis_nonzero_returncode_is_a_failure(all_steps_ok, monkeypatch):
     """Apakšprocess nemet izņēmumu — kļūme atnāk TIKAI kā returncode."""
     monkeypatch.setattr(subprocess, "run", lambda *_a, **_kw: _FakeCompleted(2))
     assert morning_ingest.main() == 1
+
+
+def test_rss_preflight_failure_is_a_failure(all_steps_ok, monkeypatch, capsys):
+    """2026-11-21: embedding modelis nenoslodzējās (os error 1455), `ingest_all()`
+    izdrukāja «Preflight check failed» un atgrieza [] — solis rādīja OK, 0 rakstu."""
+    import src.ingest
+
+    monkeypatch.setattr("src.ingest.ingest_all", _REAL_INGEST_ALL, raising=True)
+    monkeypatch.setattr(
+        "src.preflight.preflight_check",
+        lambda *_a, **_kw: (False, ["CRITICAL: Embedding model failed to load"]),
+        raising=True,
+    )
+    assert src.ingest.ingest_all is _REAL_INGEST_ALL
+    assert morning_ingest.main() == 1
+    assert "NEIZDEVĀS: ingest_all (RSS)" in capsys.readouterr().out
 
 
 def test_summary_names_the_failed_steps(all_steps_ok, monkeypatch, capsys):

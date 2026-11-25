@@ -1,12 +1,12 @@
 ---
 party: Jaunā Vienotība
 members: 35
-claims: 1702
+claims: 1768
 program_promises: 20
 contradictions: 8
-votes_par: 108529
-votes_pret: 38260
-votes_atturas: 24686
+votes_par: 108618
+votes_pret: 38277
+votes_atturas: 24687
 top_politicians:
 - Baiba Braže
 - Evika Siliņa

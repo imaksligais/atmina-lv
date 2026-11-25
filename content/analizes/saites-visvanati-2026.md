@@ -58,3 +58,7 @@ Labojumu pagaidām nav. Papildinājumi:
 - 2026\. gada 28. oktobrī saitei starp Kananu Višvanatu un LZA Ekonomikas institūtu pievienota atruna: Dr Ashleys komandas lapā 2023.–2024. gadā viņš nosaukts arī par institūta direktoru un vadošo pētnieku. Kartīšu un saišu skaits nav mainīts.
 
 - 2026\. gada 9. novembrī pievienota saite starp Divju Kananu Višvanatu un LZA Ekonomikas institūtu: pēc LETA 5. novembra publikācijas viņa kopš 2026. gada janvāra ir institūta vadošā viespētniece ar bezatlīdzības sadarbības līgumu (2. līmenis; līgumu neesam redzējuši). Saišu skaits — 69.
+
+- 2026\. gada 20. novembrī saite starp Kananu Višvanatu un LZA Ekonomikas institūtu pacelta no 2. uz 1. līmeni: Uzņēmumu reģistrā ieraksts par viņa iecelšanu institūta padomē izdarīts 2024. gada 22. aprīlī (iepriekš rakstījām, ka iecelšanas datums nav zināms). Saitē starp Rivžu un institūtu norādīts, ka UR viņa joprojām ir padomes priekšsēdētāja. Kartīšu un saišu skaits nav mainīts.
+
+- 2026\. gada 20. novembrī Zoar saites atjaunotas pēc darījuma noslēgšanas 17. novembrī: Zoar Limited tagad ir Impact BioMedical un Zoar Labs mātesuzņēmums, un Kanans Višvanats kontrolē balsu vairākumu (iepriekš — plānots darījums). Kartīšu un saišu skaits nav mainīts.

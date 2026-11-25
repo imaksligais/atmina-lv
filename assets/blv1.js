@@ -22,6 +22,10 @@
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
   })();
 
+  // Tūkstošu atstarpe kā galvenē («7 956») — kopīgā window.atminaFmtN
+  // (assets/sgv1.js). Tas ir defer, šis fails nav, tāpēc meklē izsaukuma brīdī.
+  function fmtN(n) { return window.atminaFmtN ? window.atminaFmtN(n) : String(n); }
+
   // VOTE_TOTAL nāk no #votes-archive data-vote-total atribūta (agrāk Jinja-iegults).
   var archiveEl = document.getElementById('votes-archive');
   var VOTE_TOTAL = archiveEl ? parseInt(archiveEl.getAttribute('data-vote-total'), 10) || 0 : 0;
@@ -124,8 +128,8 @@
           info.textContent = 'Nav balsojumu, kas atbilst izvēlētajiem filtriem.';
         } else {
           var shownTotal = (!hasFilter && res.total < VOTE_TOTAL) ? VOTE_TOTAL : res.total;
-          info.textContent = 'Rāda ' + res.shown.toLocaleString('lv-LV') + ' no ' +
-            shownTotal.toLocaleString('lv-LV') + ' balsojumiem.';
+          info.textContent = 'Rāda ' + fmtN(res.shown) + ' no ' +
+            fmtN(shownTotal) + ' balsojumiem.';
         }
         if (moreInArchive) ARCHIVE.needFull = true;
         moreBtn.style.display = (moreInShard || moreInArchive) ? '' : 'none';

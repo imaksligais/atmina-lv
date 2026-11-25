@@ -93,8 +93,16 @@ echo "==> pytest -q -m \"${CHECK_PYTEST_MARKERS-not slow}\" ${XDIST[*]}"
 # new brief page lands in blog/ while the sitemap stays from the last static
 # render, and check_output below fails "emitēta lapa nav sitemap" on every new
 # brief day (2026-09-22). ~5 s.
-echo "==> generate_public_site smoke (only=${CHECK_RENDER_ONLY:-dashboard,blog,static})"
-"$PY" - "${CHECK_RENDER_ONLY:-dashboard,blog,static}" <<'PYSMOKE'
+# `politiki,bills` are in the default for the opposite direction (2026-11-23):
+# `static` writes a sitemap <loc> for EVERY profile and bill in the DB, so on a
+# day with a new politician or a new bill the narrow smoke left those pages
+# unrendered and check_output failed "<loc> uz neesošu lapu" — a false alarm
+# here (the routine renders them before deploy; deploy.sh preflight is the real
+# gate and is unchanged). Measured: 48 s -> 95 s. Proven by removing one profile
+# page: old scope 63 gaps, new scope clean.
+SMOKE_DEFAULT="dashboard,blog,static,politiki,bills"
+echo "==> generate_public_site smoke (only=${CHECK_RENDER_ONLY:-$SMOKE_DEFAULT})"
+"$PY" - "${CHECK_RENDER_ONLY:-$SMOKE_DEFAULT}" <<'PYSMOKE'
 import sys
 from src.render import generate_public_site
 spec = sys.argv[1]

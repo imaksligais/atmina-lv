@@ -1,17 +1,13 @@
 """Regression tests for compact, neutral daily/weekly brief presentation."""
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
-from src.image_variants import variant_filename as _brief_image_variant
-from src.render._common import _lv_plural, lv_date
 from src.render import blog
+from src.render._orchestrator import _make_env
 
 
 def _template_env() -> Environment:
-    env = Environment(loader=FileSystemLoader("templates"), autoescape=True)
-    env.filters["image_variant"] = _brief_image_variant
-    env.filters["lv_plural"] = _lv_plural
-    env.filters["lv_date"] = lv_date
+    env = _make_env()
     env.globals["assets_version"] = "test"
     return env
 

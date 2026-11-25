@@ -19,6 +19,11 @@ var _saitesJson = _saitesDataEl ? JSON.parse(_saitesDataEl.textContent) : {};
 let graphData = { nodes: [], links: [] };
 let tensionsData = [];
 let contrasByPid = {};
+// Balsojumu sakritība pa mezgliem: {pid: {top: [[pid, agree, total]…], bottom: […]}}
+// (links.py, tā pati _vote_alignment_for kā profilā). Zīmē tikai izvēlētajam.
+let voteAlign = {};
+// Izcelšanas stāvoklis pārdzīvo grafa pārbūvi (resize).
+var _hl = { nodeId: null, party: null };
 const _partyColorsData = _saitesJson.partyColors || {};
 // Spriedžu tipu etiķetes un žetonu klases — no servera (TENSION_TYPE_LV /
 // TENSION_BADGE, src/render/_common/constants.py), ne savs kartējums.
@@ -45,6 +50,7 @@ window.atminaSaitesGraph = {
     graphData = data.graph || { nodes: [], links: [] };
     tensionsData = data.tensions || [];
     contrasByPid = data.contrasByPid || {};
+    voteAlign = graphData.voteAlign || {};
     _initSaitesGraph();
   }
 };
@@ -60,7 +66,12 @@ function _initSaitesGraph() {
     if (container) container.style.display = 'none';
   } else {
     initGraph();
+    // Pārbūvē tikai, ja mainās platums: telefonā adreses josla ritinot maina
+    // augstumu un agrāk izmeta izvēli un visu izkārtojumu.
+    var _lastW = container.clientWidth;
     window.addEventListener('resize', function() {
+      if (container.clientWidth === _lastW) return;
+      _lastW = container.clientWidth;
       svg.selectAll('*').remove();
       initGraph();
     });
@@ -119,7 +130,8 @@ function _initSaitesGraph() {
       .alphaDecay(0.015);
 
     // Active link type filters
-    var activeFilters = new Set(['uzbrukums', 'spriedze', 'atbalsts', 'politikas nostāju konflikts', 'vote', 'shared_topic']);
+    var activeFilters = window._graphActiveFilters ||
+      new Set(['uzbrukums', 'spriedze', 'atbalsts', 'politikas nostāju konflikts', 'shared_topic']);
     // Detaļu panelis lasa to pašu filtru (activeTensionTypes, visibleTensions).
     window._graphActiveFilters = activeFilters;
 
@@ -127,7 +139,6 @@ function _initSaitesGraph() {
     function linkWidth(d) {
       if (d.type === 'tension') return 2.5;
       if (d.type === 'support') return 2;
-      if (d.type === 'vote') return Math.max(0.8, Math.min((d.agree_pct || 50) / 30, 2.5));
       return Math.max(0.5, Math.min((d.weight || 1) * 0.4, 2));
     }
 
@@ -139,13 +150,6 @@ function _initSaitesGraph() {
         return cssVar('--red-bright');  // uzbrukums
       }
       if (d.type === 'support') return cssVar('--green');
-      if (d.type === 'vote') {
-        var pct = d.agree_pct || 50;
-        // Red (disagree) → purple (neutral) → purple (agree)
-        if (pct >= 70) return cssVar('--purple') + '80';
-        if (pct <= 30) return cssVar('--red-bright') + '4D';
-        return cssVar('--purple') + '40';
-      }
       if (d.type === 'shared_topic') return 'rgba(100,116,139,0.35)';
       return cssVar('--graph-link-default');
     }
@@ -161,13 +165,12 @@ function _initSaitesGraph() {
     linkGroup.append('line')
       .attr('stroke', 'transparent')
       .attr('stroke-width', 12)
-      .style('cursor', function(d) { return (d.type === 'tension' || d.type === 'support' || d.type === 'vote' || d.type === 'shared_topic') ? 'pointer' : 'default'; });
+      .style('cursor', function(d) { return (d.type === 'tension' || d.type === 'support' || d.type === 'shared_topic') ? 'pointer' : 'default'; });
     // Visible line
     linkGroup.append('line')
       .attr('stroke', linkColor)
       .attr('stroke-width', linkWidth)
       .attr('stroke-dasharray', function(d) {
-        if (d.type === 'vote') return '3,2';
         if (d.type === 'shared_topic') return '4,3';
         return 'none';
       })
@@ -181,9 +184,58 @@ function _initSaitesGraph() {
       });
     }
     applyLinkFilters();
+    window._graphApplyFilters = function() { applyLinkFilters(); applyHighlight(); };
+
+    // Balsojumu līnijas: slānis zem mezgliem, saturs tikai izvēlētajam mezglam.
+    var voteLayer = g.append('g').attr('class', 'vote-layer');
+    var nodeById = {};
+    simNodes.forEach(function(n) { nodeById[n.id] = n; });
+    function votePartners(id) {
+      var va = voteAlign[id] || voteAlign[String(id)];
+      if (!va) return [];
+      var out = [];
+      [['top', va.top || []], ['bottom', va.bottom || []]].forEach(function(pair) {
+        pair[1].forEach(function(r) {
+          var other = nodeById[r[0]];
+          if (!other) return;
+          out.push({ type: 'vote', rank: pair[0], source: nodeById[id], target: other,
+                     agree: r[1], total: r[2], agree_pct: Math.round(r[1] * 100 / r[2]) });
+        });
+      });
+      return out;
+    }
+    window._graphVotePartners = votePartners;
+    var voteLines = voteLayer.selectAll('g');
+    function drawVoteLines() {
+      var data = (_hl.nodeId != null && nodeById[_hl.nodeId]) ? votePartners(_hl.nodeId) : [];
+      voteLines = voteLayer.selectAll('g').data(data, function(d) { return d.rank + '-' + d.target.id; })
+        .join(function(enter) {
+          var gg = enter.append('g').attr('class', function(d) { return 'vote-line vote-' + d.rank; });
+          gg.append('line').attr('stroke', 'transparent').attr('stroke-width', 14).style('cursor', 'pointer');
+          gg.append('line').style('pointer-events', 'none').attr('stroke-dasharray', '5,3');
+          return gg;
+        });
+      voteLines.select('line:nth-child(2)')
+        .attr('stroke', function(d) { return d.rank === 'top' ? cssVar('--purple') : cssVar('--text-muted'); })
+        .attr('stroke-width', 2);
+      voteLines.on('click', function(event, d) {
+        event.stopPropagation();
+        showLinkDetail(d);
+      });
+      positionVoteLines();
+    }
+    function positionVoteLines() {
+      voteLines.selectAll('line')
+        .attr('x1', function(d) { return d.source.x; })
+        .attr('y1', function(d) { return d.source.y; })
+        .attr('x2', function(d) { return d.target.x; })
+        .attr('y2', function(d) { return d.target.y; });
+    }
 
     // Filter button click handlers
     document.querySelectorAll('.link-filter-btn').forEach(function(btn) {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
       btn.addEventListener('click', function() {
         var type = btn.dataset.linkType;
         if (activeFilters.has(type)) {
@@ -195,7 +247,7 @@ function _initSaitesGraph() {
           btn.classList.add('active');
           btn.setAttribute('aria-pressed', 'true');
         }
-        applyLinkFilters();
+        if (window._graphApplyFilters) window._graphApplyFilters();
         if (window._refreshNodeDetail) window._refreshNodeDetail();
       });
     });
@@ -262,44 +314,66 @@ function _initSaitesGraph() {
       .attr('font-family', 'system-ui, sans-serif')
       .style('pointer-events', 'none');
 
-    // Selected state tracking
-    var selectedNodeId = null;
-
-    // Hover: highlight connected nodes (no tooltip — detail goes to panel)
-    node.on('mouseover', function(event, d) {
-      d3.select(this).select('circle').attr('stroke', cssVar('--graph-node-stroke-hover')).attr('stroke-width', 2.5);
-      // Dim unconnected
-      link.attr('opacity', function(l) {
-        return (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.08;
+    // ── Izcelšana: viena funkcija visiem stāvokļiem (2026-11-22) ──
+    // Izvēlēts mezgls (klikšķis/pieskāriens) → viņš, kaimiņi un balsojumu
+    // partneri; izvēlēta partija (leģenda) → tās mezgli. Hover (tikai ar peli)
+    // rāda to pašu īslaicīgi, un mouseout atgriež izvēlēto stāvokli.
+    var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    function neighborSet(id) {
+      var set = {}; set[id] = true;
+      simLinks.forEach(function(l) {
+        if (!linkVisible(l)) return;
+        if (l.source.id === id) set[l.target.id] = true;
+        if (l.target.id === id) set[l.source.id] = true;
       });
-      node.attr('opacity', function(n) {
-        if (n.id === d.id) return 1;
-        return simLinks.some(function(l) {
-          return (l.source.id === d.id && l.target.id === n.id) ||
-                 (l.target.id === d.id && l.source.id === n.id);
-        }) ? 1 : 0.15;
-      });
-    })
-    .on('mouseout', function(event, d) {
-      d3.select(this).select('circle')
-        .attr('stroke', selectedNodeId === d.id ? 'var(--accent)' : cssVar('--graph-node-stroke'))
-        .attr('stroke-width', selectedNodeId === d.id ? 3 : 1.5);
-      link.attr('opacity', 1);
-      node.attr('opacity', 1);
-    })
-    .on('click', function(event, d) {
-      event.stopPropagation();
-      selectedNodeId = d.id;
-      // Highlight selected node
+      votePartners(id).forEach(function(v) { set[v.target.id] = true; });
+      return set;
+    }
+    function applyHighlight(focusId) {
+      var id = focusId != null ? focusId : _hl.nodeId;
+      if (id != null && !nodeById[id]) id = null;
+      if (id != null) {
+        var near = neighborSet(id);
+        node.attr('opacity', function(n) { return near[n.id] ? 1 : 0.15; });
+        link.attr('opacity', function(l) { return (l.source.id === id || l.target.id === id) ? 1 : 0.08; });
+      } else if (_hl.party != null) {
+        var p = _hl.party;
+        node.attr('opacity', function(n) { return n.party === p ? 1 : 0.15; });
+        link.attr('opacity', function(l) { return (l.source.party === p || l.target.party === p) ? 1 : 0.08; });
+      } else {
+        node.attr('opacity', 1);
+        link.attr('opacity', 1);
+      }
       node.select('circle')
-        .attr('stroke', function(n) { return n.id === d.id ? 'var(--accent)' : cssVar('--graph-node-stroke'); })
-        .attr('stroke-width', function(n) { return n.id === d.id ? 3 : 1.5; });
+        .attr('stroke', function(n) { return n.id === _hl.nodeId ? 'var(--accent)' : cssVar('--graph-node-stroke'); })
+        .attr('stroke-width', function(n) { return n.id === _hl.nodeId ? 3 : 1.5; });
+      if (focusId != null && focusId !== _hl.nodeId) {
+        node.filter(function(n) { return n.id === focusId; }).select('circle')
+          .attr('stroke', cssVar('--graph-node-stroke-hover')).attr('stroke-width', 2.5);
+      }
+    }
+    window._graphSetParty = function(party) {
+      _hl.party = party;
+      _hl.nodeId = null;
+      drawVoteLines();
+      applyHighlight();
+    };
+
+    if (canHover) {
+      node.on('mouseover', function(event, d) { applyHighlight(d.id); })
+        .on('mouseout', function() { applyHighlight(); });
+    }
+    node.on('click', function(event, d) {
+      event.stopPropagation();
+      _hl.nodeId = d.id;
+      drawVoteLines();
+      applyHighlight();
       showNodeDetail(d);
     });
 
     // Link interactions — click to show detail in panel
     link.on('mouseover', function(event, d) {
-      if (d.type === 'tension' || d.type === 'support' || d.type === 'vote' || d.type === 'shared_topic') {
+      if (d.type === 'tension' || d.type === 'support' || d.type === 'shared_topic') {
         d3.select(this).select('line:nth-child(2)').attr('stroke-width', Math.max(linkWidth(d) * 2.5, 4));
       }
     })
@@ -307,23 +381,25 @@ function _initSaitesGraph() {
       d3.select(this).select('line:nth-child(2)').attr('stroke-width', linkWidth(d));
     })
     .on('click', function(event, d) {
-      if (d.type !== 'tension' && d.type !== 'support' && d.type !== 'vote' && d.type !== 'shared_topic') return;
+      if (d.type !== 'tension' && d.type !== 'support' && d.type !== 'shared_topic') return;
       event.stopPropagation();
-      selectedNodeId = null;
-      node.select('circle')
-        .attr('stroke', cssVar('--graph-node-stroke'))
-        .attr('stroke-width', 1.5);
+      _hl.nodeId = null;
+      drawVoteLines();
+      applyHighlight();
       showLinkDetail(d);
     });
 
     // Click empty space to deselect
     svg.on('click', function() {
-      selectedNodeId = null;
-      node.select('circle')
-        .attr('stroke', cssVar('--graph-node-stroke'))
-        .attr('stroke-width', 1.5);
+      _hl.nodeId = null;
+      drawVoteLines();
+      applyHighlight();
       showEmptyDetail();
     });
+
+    // Pēc pārbūves (resize) atjauno izvēli.
+    drawVoteLines();
+    applyHighlight();
 
     // Simulation tick
     simulation.on('tick', function() {
@@ -333,6 +409,7 @@ function _initSaitesGraph() {
         .attr('x2', function(d) { return d.target.x; })
         .attr('y2', function(d) { return d.target.y; });
       node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+      positionVoteLines();
     });
 
     // Re-read tokens on theme switch — the persistent graph bakes resolved
@@ -342,12 +419,24 @@ function _initSaitesGraph() {
       link.select('line:nth-child(2)').attr('stroke', linkColor);
       node.select('circle')
         .attr('fill', function(d) { return partyColors[d.party] || cssVar('--text-muted'); })
-        .attr('stroke', function(d) { return selectedNodeId === d.id ? 'var(--accent)' : cssVar('--graph-node-stroke'); })
+        .attr('stroke', function(d) { return _hl.nodeId === d.id ? 'var(--accent)' : cssVar('--graph-node-stroke'); })
         .style('filter', 'drop-shadow(0 0 3px ' + cssVar('--shadow-overlay') + ')');
       node.selectAll('text.node-surname').attr('fill', cssVar('--graph-label'));
+      drawVoteLines();
     };
     document.addEventListener('atmina:themechange', _themeRestyle);
   }
+
+  // Partiju leģenda: spiediens izceļ partijas mezglus, otrs noņem.
+  document.querySelectorAll('.graph-party-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      document.querySelectorAll('.graph-party-btn').forEach(function(o) { o.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (window._graphSetParty) window._graphSetParty(on ? btn.dataset.party : null);
+      if (on) showEmptyDetail();
+    });
+  });
 
   // ── Detail pane (inline, always visible) ──
   var detailEmpty = document.getElementById('detail-empty');
@@ -402,11 +491,6 @@ function _initSaitesGraph() {
     return TENSION_TYPES.filter(function(t) { return f.has(t); });
   }
 
-  function tensionFilterNarrowed() {
-    var act = activeTensionTypes();
-    return act !== null && act.length < TENSION_TYPES.length;
-  }
-
   function visibleTensions(list) {
     var f = window._graphActiveFilters;
     if (!f) return list;
@@ -424,6 +508,26 @@ function _initSaitesGraph() {
       return '<a href="politiki/' + escHtml(fallbackSlug) + '.html">' + escHtml(fallbackLabel || 'Profils') + ' &rarr;</a>';
     }
     return '';
+  }
+
+
+  // Balsojumu sakritības saraksts panelī: tās pašas 3 + 3 rindas, ko tīklā
+  // zīmē raustītās līnijas (telefonā līnijas ir sīkas — saraksts ir galvenais).
+  function voteAlignHtml(d) {
+    var partners = window._graphVotePartners ? window._graphVotePartners(d.id) : [];
+    if (!partners.length) return '';
+    var html = '';
+    [['top', 'Visbiežāk balso vienādi'], ['bottom', 'Visretāk balso vienādi']].forEach(function(g) {
+      var rows = partners.filter(function(v) { return v.rank === g[0]; });
+      if (!rows.length) return;
+      html += '<p class="detail-section-title">' + g[1] + '</p><ul class="detail-vote-list">';
+      rows.forEach(function(v) {
+        html += '<li><a href="politiki/' + escHtml(v.target.slug) + '.html#saites">' + escHtml(v.target.name) + '</a>' +
+          '<span class="detail-vote-n">' + v.agree_pct + ' % · ' + v.agree + '/' + v.total + '</span></li>';
+      });
+      html += '</ul>';
+    });
+    return html;
   }
 
   window.showEmptyDetail = function() {
@@ -477,16 +581,18 @@ function _initSaitesGraph() {
         return t.source_name === d.name || t.target_name === d.name;
       });
       var matching = visibleTensions(all);
+      var votesHtml = voteAlignHtml(d);
       if (all.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted);">Nav saišu.</p>';
+        container.innerHTML = '<p class="detail-empty-note">Šim politiķim vēl nav ierakstītu saikņu.</p>' +
+          (votesHtml ? votesHtml : '<button type="button" class="detail-stat-btn" data-section="pozicijas">Skatīt pozīcijas</button>');
         return;
       }
       if (matching.length === 0) {
         container.innerHTML = '<p style="color:var(--text-muted);">Nav saišu ar izvēlētajiem tipiem. ' +
-          'Šim politiķim ir ' + all.length + ' cita tipa saites — ieslēdz tipus augšā.</p>';
+          'Šim politiķim ir ' + all.length + ' cita tipa saites — ieslēdz tipus augšā.</p>' + votesHtml;
         return;
       }
-      var html = '';
+      var html = votesHtml ? votesHtml + '<p class="detail-section-title">Saiknes</p>' : '';
       if (matching.length < all.length) {
         html += '<p class="detail-filter-note">Rāda ' + matching.length + ' no ' + all.length +
           ' saitēm · ' + activeTensionTypes().map(typeLabel).join(', ') + '</p>';
@@ -644,7 +750,8 @@ function _initSaitesGraph() {
 
     // Sašaurināts tipu filtrs nozīmē, ka lietotājs pēta saites, nevis
     // pozīcijas — tad tā ir arī atvērtā cilne.
-    var section = forceSection || (tensionFilterNarrowed() ? 'saites' : 'pozicijas');
+    // Lapa saucas «Saites», tāpēc panelis atveras uz saitēm (2026-11-22).
+    var section = forceSection || 'saites';
     var saitesLabel = (matching.length < allTensions.length)
       ? matching.length + ' / ' + allTensions.length
       : String(allTensions.length);
@@ -726,28 +833,19 @@ function _initSaitesGraph() {
       html += renderTopicClaims(srcId, sourceName, sourceSlug);
       html += renderTopicClaims(tgtId, targetName, targetSlug);
     } else if (d.type === 'vote') {
-      // Vote alignment detail
+      // Balsojumu sakritība (tā pati kā profila Saites cilnē).
       var pct = d.agree_pct || 0;
-      var barColor = pct >= 70 ? 'var(--purple)' : pct <= 30 ? 'var(--red-bright)' : 'var(--yellow)';
+      var rankLabel = d.rank === 'top' ? 'Visbiežāk balso vienādi' : 'Visretāk balso vienādi';
       html += '<p class="detail-section-title">Balsojumu sakritība</p>' +
-        '<div class="detail-link-card" style="border-color:var(--purple);">' +
+        '<div class="detail-link-card">' +
           '<div class="link-parties" style="font-size:1rem;margin:0 0 0.75rem;">' +
-            '<a href="politiki/' + escHtml(sourceSlug) + '.html" style="color:var(--accent);">' + escHtml(sourceName) + '</a>' +
+            '<a href="politiki/' + escHtml(sourceSlug) + '.html#saites" style="color:var(--accent);">' + escHtml(sourceName) + '</a>' +
             '<span class="link-arrow" style="font-size:1.2rem;">&harr;</span>' +
-            '<a href="politiki/' + escHtml(targetSlug) + '.html" style="color:var(--accent);">' + escHtml(targetName) + '</a>' +
+            '<a href="politiki/' + escHtml(targetSlug) + '.html#saites" style="color:var(--accent);">' + escHtml(targetName) + '</a>' +
           '</div>' +
-          '<div style="margin-bottom:0.5rem;">' +
-            '<div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.25rem;">' +
-              '<span>Sakritība</span><strong style="color:' + barColor + ';">' + pct + '%</strong>' +
-            '</div>' +
-            '<div style="background:var(--surface2);border-radius:4px;height:8px;overflow:hidden;">' +
-              '<div style="background:' + barColor + ';width:' + pct + '%;height:100%;border-radius:4px;transition:width 0.3s;"></div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="link-desc">' + escHtml(d.label || '') + '</div>' +
-          '<div class="link-footer">' +
-            '<a href="balsojumi.html" style="color:var(--accent);">Balsojumi &rarr;</a>' +
-          '</div>' +
+          '<p class="link-desc"><strong>' + pct + ' %</strong> · balsoja vienādi ' + d.agree + ' no ' + d.total +
+            ' kopīgiem balsojumiem.</p>' +
+          '<p class="link-desc" style="color:var(--text-muted);">' + escHtml(rankLabel) + ' (' + escHtml(sourceName) + ' sarakstā).</p>' +
         '</div>';
     } else {
       // Find the matching tension to get source_url + target_url

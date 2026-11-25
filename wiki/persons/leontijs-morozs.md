@@ -4,7 +4,7 @@ party: Suverēnā vara/Jaunlatvieši
 role: Saeimas deputāts
 relationship_type: tracked
 positions: 0
-votes: 5
+votes: 27
 contradictions: 0
-mentioned_in: 23
+mentioned_in: 31
 ---

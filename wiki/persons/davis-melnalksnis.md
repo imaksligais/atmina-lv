@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas deputāts, AS frakcijas vadītāja vietnieks
 relationship_type: tracked
 positions: 4
-votes: 1112
+votes: 1134
 contradictions: 1
-mentioned_in: 119
+mentioned_in: 128
 last_active: 2026-10-20
 top_topics:
 - Sociālā politika
@@ -15,6 +15,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 1 claims
 - **Pretrunas:** 1 apstiprināta; pēdējā par [[topics/sociala-politika|Sociālā politika]], 2026-10-29
 <!-- /SYNC-AUTO -->

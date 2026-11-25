@@ -3,20 +3,20 @@ name: Aleksandrs Bartaševičs
 party: Kopā Latvijai
 role: Saeimas deputāts (15. Saeima), bijušais Rēzeknes mērs
 relationship_type: tracked
-positions: 12
-votes: 5
+positions: 13
+votes: 27
 contradictions: 0
-mentioned_in: 151
-last_active: 2026-11-08
+mentioned_in: 167
+last_active: 2026-11-24
 top_topics:
 - Pašvaldības
 - Tieslietas
+- Valsts pārvalde
 - Vēlēšanas
 - Aizsardzība un drošība
-- Valsts pārvalde
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (42%), [[topics/tieslietas|Tieslietas]] (17%), [[topics/velesanas|Vēlēšanas]] (17%)
-- **30d:** 1 claims
+- **Top tēmas:** [[topics/pasvaldibas|Pašvaldības]] (38%), [[topics/tieslietas|Tieslietas]] (15%), [[topics/valsts-parvalde|Valsts pārvalde]] (15%)
+- **30d:** 2 claims
 <!-- /SYNC-AUTO -->
