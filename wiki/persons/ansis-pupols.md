@@ -3,11 +3,11 @@ name: Ansis Pūpols
 party: Nacionālā apvienība
 role: Rīgas domes deputāts
 relationship_type: tracked
-positions: 315
+positions: 317
 votes: 0
 contradictions: 0
-mentioned_in: 2920
-last_active: 2026-11-22
+mentioned_in: 2928
+last_active: 2026-11-25
 top_topics:
 - Sabiedriskie mediji
 - Pilsētvide

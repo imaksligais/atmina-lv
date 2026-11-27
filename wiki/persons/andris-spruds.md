@@ -1,12 +1,12 @@
 ---
 name: Andris Sprūds
 party: Progresīvie
-role: Aizsardzības ministrs (atkāpies)
+role: Saeimas deputāts, bijušais aizsardzības ministrs
 relationship_type: tracked
 positions: 151
-votes: 2509
+votes: 2529
 contradictions: 1
-mentioned_in: 1629
+mentioned_in: 1630
 last_active: 2026-10-30
 top_topics:
 - Aizsardzība un drošība

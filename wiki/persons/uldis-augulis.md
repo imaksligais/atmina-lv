@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 117
 votes: 3709
 contradictions: 0
-mentioned_in: 789
+mentioned_in: 790
 last_active: 2026-11-18
 top_topics:
 - Lauksaimniecība

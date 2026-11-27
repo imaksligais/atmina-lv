@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 4
 votes: 0
 contradictions: 0
-mentioned_in: 84
+mentioned_in: 90
 last_active: 2026-11-23
 top_topics:
 - Veselības aprūpe

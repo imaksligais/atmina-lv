@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas deputāte, Mandātu, ētikas un iesniegumu komisijas priekšsēdētāja
 relationship_type: tracked
 positions: 7
-votes: 994
+votes: 1014
 contradictions: 0
-mentioned_in: 108
+mentioned_in: 110
 last_active: 2026-11-23
 top_topics:
 - Sociālā politika

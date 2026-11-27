@@ -1,11 +1,19 @@
-"""Audit: detect 2+ disjoint immediate-family clusters per tracked politician.
+"""Audit: detect 2+ disjoint family clusters per tracked politician.
 
-VAD Phase 2 — homonīmu signāls. Reāls cilvēks paralēlām deklarācijām (Saeima +
-ministrija u.tml.) saglabā konsekventu laulāto/bērnu sastāvu. Disjoint klasteri
-= homonīmu kontaminācija.
+VAD Phase 2 — homonīmu signāls. Reāls cilvēks visās deklarācijās saglabā
+vismaz vienu kopīgu ģimenes locekli. Disjoint klasteri = homonīmu kontaminācija.
+
+Paraksts = VISA deklarētā ģimene (laulātais, bērni, vecāki, brāļi, māsas), ne
+tikai laulātais/bērni (mainīts 2026-11-27, mērījums uz DB kopijas ar atjaunotām
+31 vārdabrāļu deklarācijām): tikai laulātais+bērni noķēra 4/5 zināmos vārdabrāļus
+un deva 21 viltus karogu (laulības, vārda maiņa); visa ģimene — 5/5 un 2 karogus,
+bez paraksta palika 8 dekl. (bija 558) — vecāki un brāļi/māsas desmitgadēm nemainās.
+
+Zināma robeža: divi vārdabrāļi, kuru kādam radiniekam (piem., tēvam) ir vienāds
+vārds un uzvārds, saplūst vienā klasterī — vārti tos nenoķer.
 
 Algoritms (union-find pa ģimenes locekļu signature):
-  1. Katrai deklarācijai ekstraktē frozenset(("Laulātais"|"Dēls"|"Meita", normalized_name))
+  1. Katrai deklarācijai ekstraktē frozenset((relation, normalized_name))
   2. Sasaista deklarācijas vienā klasterī, ja signatures pārklājas vismaz 1 loceklī
   3. Tukšas signatures tiek izlaistas (nepierāda piederību)
   4. Atskaite per pid: ja 2+ klasteri → flag
@@ -32,16 +40,26 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-IMMEDIATE = {"Laulātais", "Dēls", "Meita"}  # Partneris (nereģistrēts partneris) netiek iekļauts — VAD forma lieto "Laulātais" kā maritalā statusa deklarāciju; DB 1 tāds ieraksts, bez praktiskas ietekmes
+# Viena cilvēka radniecība dažādās deklarācijās rakstīta dažādi: vecā VID forma
+# (2002–2013) laulāto sauc «Sieva»/«Vīrs», jaunā «Laulātais»; to pašu brāli viena
+# deklarācija sauc «Brālis», cita «Pusbrālis».
+RELATION_ALIASES = {
+    "Sieva": "Laulātais", "Vīrs": "Laulātais",
+    "Pusbrālis": "Brālis", "Pusmāsa": "Māsa",
+}
+SKIP_RELATIONS = {"Nav norādīts"}
 
 
-def immediate_family_signature(
+def family_signature(
     fams: list[tuple[str, str]],
 ) -> frozenset[tuple[str, str]]:
-    """Return frozenset of (relation, normalized_name) for immediate family only."""
+    """Return frozenset of (relation, normalized_name) for the declared family."""
     out = set()
     for rel, name in fams:
-        if rel in IMMEDIATE:
+        rel = rel.strip()
+        rel = rel[:1].upper() + rel[1:]
+        rel = RELATION_ALIASES.get(rel, rel)
+        if rel not in SKIP_RELATIONS:
             normalized = " ".join(name.upper().split())
             out.add((rel, normalized))
     return frozenset(out)
@@ -106,16 +124,13 @@ def audit_pid(db: sqlite3.Connection, pid: int) -> dict:
         """,
         (pid,),
     ).fetchall()
-    fams_by_decl: dict[int, list[tuple[str, str]]] = defaultdict(list)
-    for r in db.execute(
-        "SELECT declaration_id, relation, full_name FROM vad_family "
-        "WHERE declaration_id IN (SELECT id FROM vad_declarations WHERE opponent_id = ?)",
-        (pid,),
-    ):
-        fams_by_decl[r["declaration_id"]].append((r["relation"], r["full_name"]))
+    # Jaunā forma no `vad_family`, vecā (2002–2013) no `raw_html` — src/vad/family.py.
+    from src.vad.family import declaration_families  # noqa: E402
+
+    fams_by_decl = declaration_families(db, [pid])
 
     decls_with_fams = [
-        (d["id"], immediate_family_signature(fams_by_decl[d["id"]])) for d in decls
+        (d["id"], family_signature(fams_by_decl.get(d["id"], []))) for d in decls
     ]
     clusters = cluster_disjoint_families(decls_with_fams)
     name = db.execute(
@@ -126,6 +141,7 @@ def audit_pid(db: sqlite3.Connection, pid: int) -> dict:
         "name": name["name"] if name else f"pid={pid}",
         "n_decls": len(decls),
         "n_clusters": len(clusters),
+        "n_no_signature": sum(1 for _did, sig in decls_with_fams if not sig),
         "clusters": clusters,
     }
 
@@ -154,11 +170,19 @@ def main() -> int:
         ]
 
     flagged: list[dict] = []
+    n_decls = n_unsigned = n_pids_unsigned = 0
     for pid in pids:
         result = audit_pid(db, pid)
+        n_decls += result["n_decls"]
+        n_unsigned += result["n_no_signature"]
+        n_pids_unsigned += result["n_clusters"] == 0
         if result["n_clusters"] >= 2:
             flagged.append(result)
 
+    # Saucējs: deklarācijas bez ģimenes datiem netiek salīdzinātas — tās ir
+    # «nepārbaudītas», nevis «tīras».
+    print(f"[saucējs] {n_decls} dekl.; bez paraksta (nav ģimenes datu) {n_unsigned}; "
+          f"politiķi bez neviena paraksta {n_pids_unsigned}/{len(pids)}", file=sys.stderr)
     if args.json:
         print(json.dumps(flagged, ensure_ascii=False, indent=2))
     else:

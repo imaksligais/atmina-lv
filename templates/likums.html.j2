@@ -4,6 +4,8 @@
 {% from "_macros.html.j2" import pagehead, metric %}
 
 {% block title %}{{ law.title }}{% endblock %}
+{% block description %}{{ law.title }}: likuma grozījumu likumprojekti Saeimā un to virzība.{% endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 
 {% block content %}
 <section class="pagehead-section">

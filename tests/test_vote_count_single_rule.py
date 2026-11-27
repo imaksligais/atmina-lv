@@ -135,6 +135,7 @@ def site(tmp_path_factory):
     import src.render.personas as _personas
     mp.setattr(_personas, "ELECTED_PATH", fixtures / "cvk_sv2026_ievēlētie.yaml")
     mp.setattr(_personas, "COHORT_PATH", fixtures / "15saeima_kohorta.yaml")
+    mp.setattr(_personas, "AMATI_PATH", fixtures / "saeima15_amati.yaml")
     import src.render.parties as _parties
     mp.setattr(_parties, "ELECTION_RESULTS_PATH", fixtures / "cvk_sv2026_rezultati.yaml")
     try:

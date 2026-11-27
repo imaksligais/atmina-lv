@@ -7,7 +7,7 @@ relationship_type: tracked
 positions: 21
 votes: 0
 contradictions: 0
-mentioned_in: 233
+mentioned_in: 242
 last_active: 2026-11-24
 top_topics:
 - Valsts pārvalde

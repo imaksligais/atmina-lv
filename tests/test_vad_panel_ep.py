@@ -45,6 +45,23 @@ def profiles(tmp_path_factory):
     decl = _insert_declaration(db, 2, 2024, "lv-2024")
     db.execute("INSERT INTO vad_positions(declaration_id, position_title, entity_name)"
                " VALUES (?, 'Deputāte', 'Saeima')", (decl,))
+    db.execute("INSERT INTO vad_family(declaration_id, full_name, relation)"
+               " VALUES (?, 'RADINIEKS SENTINELS', 'Brālis')", (decl,))
+    # Radinieks parādās arī citās sadaļās — maksātājs, amata otra puse, kreditors
+    # (citā rakstībā: reģistrs, apgriezta secība + teksts, garumzīmes); radiniece,
+    # kas sakrīt ar izsekotas politiķes vārdu, arī tiek paslēpta.
+    db.execute("INSERT INTO vad_family(declaration_id, full_name, relation)"
+               " VALUES (?, 'IEVA EIROPIETE', 'Māsa')", (decl,))
+    db.execute("INSERT INTO vad_income(declaration_id, source, is_individual, income_type, amount, currency)"
+               " VALUES (?, 'RADINIEKS SENTINELS, ,', 1, 'Dāvinājums', 5000, 'EUR')", (decl,))
+    db.execute("INSERT INTO vad_income(declaration_id, source, is_individual, income_type, amount, currency)"
+               " VALUES (?, 'Ieva Eiropiete, ,', 1, 'Aizdevuma atmaksa', 700, 'EUR')", (decl,))
+    db.execute("INSERT INTO vad_income(declaration_id, source, is_individual, income_type, amount, currency)"
+               " VALUES (?, 'Sentiņels Radinieks (brālis), ,', 1, 'Mantojums', 900, 'EUR')", (decl,))
+    db.execute("INSERT INTO vad_positions(declaration_id, position_title, entity_name, is_individual)"
+               " VALUES (?, 'Pilnvarojums', 'Radinieks  Sentinels', 1)", (decl,))
+    db.execute("INSERT INTO vad_debts(declaration_id, creditor_name, amount, currency)"
+               " VALUES (?, 'RADINIEKS SENTINELS', 12000, 'EUR')", (decl,))
     db.commit()
     db.close()
     ep_yaml = base / "ep.yaml"
@@ -93,3 +110,17 @@ def test_meta_line_has_no_empty_parts(profiles):
         for m in metas:
             text = " ".join(m.split())
             assert "· ·" not in text and "?" not in text, text
+
+
+def test_family_members_never_rendered(profiles):
+    """Ģimenes locekļi ir tikai iekšējai identitātes un interešu konflikta
+    pārbaudei, publiski netiek rādīti (operatora lēmums 2026-11-27,
+    docs/data-policy.md § 1)."""
+    for html in profiles.values():
+        assert "sentinels" not in html.casefold()
+        assert "vad-section-family" not in html
+    panel = _panel(profiles["lv"])
+    assert "no ģimenes locekļa" in panel  # dāvinājums paliek, vārds ne
+    assert "Pilnvarojums — ģimenes loceklis" in panel
+    assert "no Ieva Eiropiete" not in panel  # vārda sakritība ar politiķi nav izņēmums
+    assert "Sentiņels" not in panel

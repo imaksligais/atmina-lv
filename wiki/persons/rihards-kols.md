@@ -3,11 +3,11 @@ name: Rihards Kols
 party: Nacionālā apvienība
 role: EP deputāts
 relationship_type: tracked
-positions: 190
+positions: 194
 votes: 2237
 contradictions: 0
-mentioned_in: 1124
-last_active: 2026-11-24
+mentioned_in: 1144
+last_active: 2026-11-26
 top_topics:
 - Ukraina un Krievija
 - ES politika
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (34%), [[topics/es-politika|ES politika]] (19%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (14%)
-- **30d:** 29 claims, 0.9× bāzes līnija
+- **Top tēmas:** [[topics/ukraina-un-krievija|Ukraina un Krievija]] (33%), [[topics/es-politika|ES politika]] (19%), [[topics/aizsardziba-un-drosiba|Aizsardzība un drošība]] (13%)
+- **30d:** 33 claims, 1.0× bāzes līnija
 - **Spriedzes:** [[persons/janis-dombrava|Jānis Dombrava]] (3 atbalsti), [[persons/baiba-braze|Baiba Braže]] (3 uzbrukumi), [[persons/reinis-poznaks|Reinis Pozņaks]] (1 spriedze)
 <!-- /SYNC-AUTO -->

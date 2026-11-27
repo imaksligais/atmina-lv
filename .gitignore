@@ -253,3 +253,5 @@ docs/eval/_run-*
 # fikstūru NEDRĪKST ģenerēt mazāku (147 baseline SHA pārbūve, BACKLOG § Ne-darīt).
 !tests/fixtures/*.sql.gz
 .pytest-tmp/
+# Partiju testa melnraksts — ģenerē scripts/render_partiju_tests.py (bez --publish); repo to neglabā (2026-11-25).
+content/partiju-tests/partiju-tests.draft.html

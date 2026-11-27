@@ -9,7 +9,7 @@ image_light: "vad-izmeklesana-2026-light.png"
 
 # VID deklarāciju izmeklēšana: kas atklājas 60 amatpersonu pašu deklarācijās
 
-**Datu avots:** [www6.vid.gov.lv/VAD](https://www6.vid.gov.lv/VAD) | **Izlasīts:** aptuveni 60 personas, ~700 deklarāciju lapas | **Atjaunots:** 2026-10-20
+**Datu avots:** [www6.vid.gov.lv/VAD](https://www6.vid.gov.lv/VAD) | **Izlasīts:** aptuveni 60 personas, ~700 deklarāciju lapas | **Atjaunots:** 2026-11-26
 
 ---
 
@@ -35,11 +35,11 @@ Deklarācijās: **755 913 € mantojumi no mātes-skolotājas un ~100 000 € d�
 
 Publiskais konteksts: šo pašu lietu 2016. gadā atklāja LTV raidījums "De facto" — izmeklētājs ar ap 800 € mēnešalgu no mirušās mātes, Jelgavas skolotājas, mantojis ~445 000 €, bet kopā ar brāli viņa atstājusi ~550 000 ASV dolāru skaidrā naudā. Pēc sižeta Dirnēns aizgāja no dienesta. KNAB lietu pārbaudīt atteicās (persona vairs nebija amatpersona), tad Finanšu policija ierosināja kriminālprocesu par nepatiesām ziņām deklarācijā, nodokļu izvairīšanos un iespējamu noziedzīgi iegūtu līdzekļu legalizāciju. Rezultāts: deklarāciju pants iestājās noilgumā 2018. gadā, un nevienam netika piemērots pat aizdomās turētā statuss. Avoti: [LSM, 2016](https://www.lsm.lv/raksts/zinas/latvija/24.01.2016-de-facto-finansu-policists-no-mates-skolotajas-manto-pusmiljonu.a165669/) · [Delfi, 2016](https://www.delfi.lv/193/politics/46984983/knab-neparbaudis-zinas-par-bijusa-finansu-policista-mantisko-stavokli) · [NRA, 2018](https://nra.lv/latvija/233506-izbeigs-izmeklesanu-par-nepatiesu-zinu-noradisanu-bijusa-finansu-policista-dirnena-deklaracija.htm).
 
-### [Jūlija Stepaņenko](/politiki/julija-stepanenko.html) — Rīgas domes deputāte («Suverēnā vara»), b. Saeimas deputāte
+### [Jūlija Stepaņenko](/politiki/julija-stepanenko.html) — 15. Saeimas deputāte («Suverēnā vara»), b. Rīgas domes deputāte
 
-Deklarācijās: **239 598 € dāvinājums (2022) un 180 000 € dzīvoklis (2023) — abi no tēva Sergeja Fedotova, kopā 419 598,05 €**; kā Rīgas domes deputāte izdeva vairāk nekā 1 milj. € aizdevumus.
+Deklarācijās: **239 598 € dāvinājums (2022) un 180 000 € dzīvoklis (2024) — abi no tēva Sergeja Fedotova, kopā 419 598,05 €**; kā Rīgas domes deputāte izdeva vairāk nekā 1 milj. € aizdevumus.
 
-Publiskais konteksts: tēvs dzīvo Krievijā; medijos ziņotā summa sakrīt ar deklarāciju datiem līdz eiro. 2026. gada 16. septembrī KNAB sāka informācijas izvērtēšanu; tieslietu ministrs Edvards Smiltēns vērsies arī VDD, SAB un FID. Avots: [LSM, 2026-09-16](https://www.lsm.lv/raksts/zinas/latvija/16.09.2026-knab-vertes-informaciju-par-stepanenko-teva-apjomigajiem-naudas-davinajumiem-meitai.a663492/).
+Publiskais konteksts: tēvs dzīvo Krievijā; medijos ziņotā summa sakrīt ar deklarāciju datiem līdz eiro. 2026. gada 16. septembrī KNAB sāka informācijas izvērtēšanu; tieslietu ministrs Edvards Smiltēns vērsies arī VDD, SAB un FID. Avots: [LSM, 2026-09-16](https://www.lsm.lv/raksts/zinas/latvija/16.09.2026-knab-vertes-informaciju-par-stepanenko-teva-apjomigajiem-naudas-davinajumiem-meitai.a663492/). 2026. gada 16. oktobrī LETA ziņoja, ka KNAB informāciju par dāvinājumiem vērtē resoriskajā pārbaudē ([LETA/jauns.lv, 2026-10-16](https://jauns.lv/raksts/zinas/733619-knab-sacis-resorisko-parbaudi-par-krievijas-armijas-atbalstitaja-naudas-davinajumiem-stepanenko)).
 
 ### Aivars Lembergs — b. Ventspils mērs, Ventspils domes deputāts
 
@@ -112,7 +112,7 @@ Blakusdarbs pats par sevi nav problēma — deklarēta privātprakse vai otrs da
 Salīdzinājumam — amatpersonas ar garām karjerām un augstiem amatiem, kuru deklarācijās šādu anomāliju nav. To deklarētā plūsma ir pārsvarā alga, pensija un īpašuma pārdošanas:
 
 - **Armīns Meisters** (ģenerālprokurors): ~914 000 € — prokuratūras algas.
-- **Armands Ruks** (VP priekšnieks; kopš 2026. gada jūlija pret viņu notiek iekšlietu ministra rosināta dienesta pārbaude): deklarācijas tīras; nelieli SIA "Grotes AB" ienākumi (~17 500 €), kuru būtība deklarācijā paliek neskaidra.
+- **Armands Ruks** (VP priekšnieks; 2026. gada jūlijā iekšlietu ministrs rosināja dienesta pārbaudi pret viņu; Iekšlietu ministrijas komisijas pārbaude pabeigta oktobrī, un, pēc ministrijas teiktā, tā «nebija vērsta pret VP priekšnieku Armandu Ruku vai kādu konkrētu amatpersonu» — [LETA, 2026-10-21](https://www.leta.lv/home/important/3783108D-E213-4DEE-8091-8D38F1AF9D24)): deklarācijas tīras; nelieli SIA "Grotes AB" ienākumi (~17 500 €), kuru būtība deklarācijā paliek neskaidra.
 - **Ēriks Kalnmeiers** un **Juris Stukāns** (b. ģenerālprokurori), **Juris Juriss** (prokuratūra): algas un īpašumi, bez paralēliem biznesa amatiem.
 - **Jēkabs Straume** (b. KNAB priekšnieks, 2017–2026), **Ineta Cīrule** (KNAB priekšnieka vietniece, kopš 2026. gada augusta pagaidu vadītāja): tīras KNAB karjeras.
 - **Dimitrijs Trofimovs** (IeM valsts sekretārs), **[Raivis Melnis](/politiki/raivis-melnis.html)** (aizsardzības ministrs, NBS karjera): algas + īpašuma pārdošanas.
@@ -154,4 +154,9 @@ Viss šīs lapas saturs ir šādi verificējams. Tas, iespējams, ir interesant�
 
 ---
 
-*Publicēts: 2026-09-19. Papildināts: 2026-10-20 (Toca sadaļa — Uzņēmumu reģistra ieraksts). Datu kopa: ~60 amatpersonas, ~700 deklarāciju lapas no [VID VAD](https://www6.vid.gov.lv/VAD). Saistītā analīze: [VID amatpersonu deklarāciju statistika](vad-2026.html). Metodoloģija: homonīmu šķelšana pārbaudīta ar LLM "tā pati persona?" krustpārbaudi; skaitļi attīrīti no atkārtojumiem; parādsaistības saglabātas, bet bez kreditoru vārdiem (skat. § 8).*
+*Publicēts: 2026-09-19. Papildināts: 2026-10-20 (Toca sadaļa — Uzņēmumu reģistra ieraksts), 2026-11-26 (labojumi, sk. zemāk). Datu kopa: ~60 amatpersonas, ~700 deklarāciju lapas no [VID VAD](https://www6.vid.gov.lv/VAD). Saistītā analīze: [VID amatpersonu deklarāciju statistika](vad-2026.html). Metodoloģija: homonīmu šķelšana pārbaudīta ar LLM "tā pati persona?" krustpārbaudi; skaitļi attīrīti no atkārtojumiem; parādsaistības saglabātas, bet bez kreditoru vārdiem (skat. § 8).*
+
+## Labojumi
+
+- 2026\. gada 26. novembrī labots: Jūlijas Stepaņenko dzīvokļa dāvinājuma gads ir 2024., ne 2023. Viņas deklarācijā par laiku no 2023. gada 1. novembra līdz 2024. gada 31. oktobrim rakstīts: «2024.gada 12.janvārī saņēmu dāvinājumā dzīvokli Rīgā no sava tēva». Summa nav mainīta.
+- 2026\. gada 26. novembrī labots: par Armandu Ruku rakstījām, ka pret viņu «notiek» dienesta pārbaude. Iekšlietu ministrijas komisijas pārbaude pabeigta oktobrī, un pēc ministrijas teiktā LETA tā nebija vērsta pret Ruku. Pievienota arī ziņa par KNAB resorisko pārbaudi Stepaņenko gadījumā un viņas pašreizējais amats.

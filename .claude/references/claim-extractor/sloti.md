@@ -33,6 +33,8 @@ Vispārīgais tests: **iestādes slots atbild uz «vai iestāde to saka?», pers
 
 Ja izteikumu pauž parlamentārais sekretārs, padomnieks, preses sekretārs vai preses dienests — gan savā vārdā, gan nododot amatpersonas viedokli («Kulbergs uzskata…, atzina padomniece») —, tā **nav** amatpersonas pozīcija: `empty_doc_ids` ar iemeslu. Izņēmums: ja tā pati nostāja ±5 dienu logā ir amatpersonas pašas vārdos (tvīts, tiešs citāts), glabā TO avotu.
 
+**Robeža (operators 2026-11-26).** Padomnieka nodots pārstāsts par slēgtu tikšanos («Kā aģentūru LETA informēja prezidenta padomnieks…, Rinkēvičs uzsvēra…») ir biroja balss, arī ja tekstā ir pēdiņas — #758021, #758022 dzēstas.
+
 **Žurnālista pārstāsts ir cita lieta.** Ja politiķis runāja publiski (TV, intervija, Saeima) un žurnālists to pārstāsta, tā ir parasta ekstrakcija. Jautājums: vai amatpersona pati kaut kur runāja?
 
 `speaker_id` šeit nav risinājums: commentary ceļš ir slēgts kopš 2026-04-25.

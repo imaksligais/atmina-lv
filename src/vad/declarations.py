@@ -493,7 +493,9 @@ def _store(
             "VALUES (?,?,?,?)",
             (decl_id, ln.amount, ln.currency, ln.amount_in_words),
         )
-    for fm in parsed.family:
+    # `vad_family` = tikai jaunās formas ģimene (vienoti radniecības nosaukumi);
+    # vecās formas ģimeni audits lasa no raw_html. Ģimene publiski netiek rādīta.
+    for fm in ([] if parsed.header.is_old_form else parsed.family):
         cur.execute(
             "INSERT INTO vad_family(declaration_id, full_name, relation) VALUES (?,?,?)",
             (decl_id, fm.full_name, fm.relation),

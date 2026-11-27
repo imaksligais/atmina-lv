@@ -1,6 +1,8 @@
-# TESTU FIXTURE — kopija no data/saeima15_amati.yaml (2026-11-11). Visi vārdi ir arī
-# tests/fixtures/cvk_sv2026_ievēlētie.yaml ar tiem pašiem list_nr — validācija iziet.
+# TESTU FIXTURE — kopija no data/saeima15_amati.yaml (Prezidijs/frakcijas 2026-11-11;
+# mandāti un komisiju sastāvs 2026-11-25). Visi vārdi ir arī tests/fixtures/cvk_sv2026_ievēlētie.yaml
+# ar tiem pašiem list_nr (vai mandates.substitutes) — validācija iziet.
 # Fiksēta, lai data/ faila maiņa nepārbīda test_render_chars bāzlīniju.
+
 convocation: 15
 checked: 2026-11-11
 
@@ -48,23 +50,289 @@ factions:
         - {name: Inese Lībiņa-Egnere, role: chair, title: Priekšsēdētāja}
         - {name: Inga Bērziņa, role: deputy, title: Priekšsēdētājas vietniece}
 
+mandates:
+  # Ministri, kuru mandāts uz amata laiku pāriet nākamajam sarakstā, un deputāti viņu vietā.
+  # data/cvk_sv2026_ievēlētie.yaml paliek KĀ IEVĒLĒTS (to lasa arī personas.html); sēdošos
+  # Saeimas lapa saliek no abiem. Avots: saeima.lv deputātu saraksts (9 «Bijušais deputāts»,
+  # 9 jauni; kopija docs/audits/2026-11-25-saeima-komisijas/, SHA256SUMS); saraksts — CVK
+  # kandidāti (data/seed_saeima_aizstajeji_2026-11-20.sql). Pārus (kurš kura vietā) neglabā.
+  source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/deputati/
+  since: 2026-11-20
+  checked: 2026-11-25
+  suspended:
+    - Andris Kulbergs
+    - Edgars Putra
+    - Edgars Štelmahers
+    - Viesturs Vitovskis
+    - Česlavs Batņa
+    - Edgars Tavars
+    - Ilze Indriksone
+    - Nauris Puntulis
+    - Jānis Dombrava
+  substitutes:
+    - {name: Jānis Liepiņš, list_nr: 7}
+    - {name: Lauris Gruntmanis, list_nr: 7}
+    - {name: Luīze Utāne, list_nr: 7}
+    - {name: Valters Bolevics, list_nr: 7}
+    - {name: Māris Trušelis, list_nr: 7}
+    - {name: Māris Dadzis, list_nr: 7}
+    - {name: Jānis Grasbergs, list_nr: 5}
+    - {name: Jurģis Klotiņš, list_nr: 5}
+    - {name: Ģirts Lapiņš, list_nr: 5}
+
 committees:
   source_url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/
-  status: not_elected
-  names:
-    - Ārlietu komisija
-    - Budžeta un finanšu (nodokļu) komisija
-    - Juridiskā komisija
-    - Cilvēktiesību un sabiedrisko lietu komisija
-    - Izglītības, kultūras un zinātnes komisija
-    - Aizsardzības, iekšlietu un korupcijas novēršanas komisija
-    - Valsts pārvaldes un pašvaldības komisija
-    - Tautsaimniecības, agrārās, vides un reģionālās politikas komisija
-    - Sociālo un darba lietu komisija
-    - Mandātu, ētikas un iesniegumu komisija
-    - Pieprasījumu komisija
-    - Publisko izdevumu un revīzijas komisija
-    - Nacionālās drošības komisija
-    - Pilsonības, migrācijas un sabiedrības saliedētības komisija
-    - Eiropas lietu komisija
-    - Ilgtspējīgas attīstības un demogrāfijas jautājumu komisija
+  # 16 komisiju lapu kopijas: docs/audits/2026-11-25-saeima-komisijas/SHA256SUMS. Sastāvs «Šobrīd»;
+  # amats VERBATIM (vadība pirmā, tad kā lapā). Frakciju komisiju lapās NEŅEM (dažiem jaunajiem
+  # tur vēl tukša) — saraksts nāk no sastāva.
+  status: elected
+  checked: 2026-11-25
+  items:
+    - name: Ārlietu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-arlietu-komisija/
+      members:
+        - {name: Jānis Grasbergs, title: Priekšsēdētājs}
+        - {name: Raivis Kalējs, title: Priekšsēdētāja biedrs}
+        - {name: Mārtiņš Hiršs, title: Sekretārs}
+        - {name: Anete Biķe, title: Deputāte}
+        - {name: Baiba Braže, title: Deputāte}
+        - {name: Rūdolfs Brēmanis, title: Deputāts}
+        - {name: Leontijs Morozs, title: Deputāts}
+        - {name: Ramona Petraviča, title: Deputāte}
+        - {name: Edvards Smiltēns, title: Deputāts}
+        - {name: Dana Šlesere, title: Deputāte}
+        - {name: Raimonds Vējonis, title: Deputāts}
+    - name: Budžeta un finanšu (nodokļu) komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-budzeta-un-finansu-nodoklu-komisija/
+      members:
+        - {name: Aiva Vīksna, title: Priekšsēdētāja}
+        - {name: Roberts Žemaitis, title: Priekšsēdētājas biedrs}
+        - {name: Artūrs Butāns, title: Sekretārs}
+        - {name: Valters Bolevics, title: Deputāts}
+        - {name: Dāvis Melnalksnis, title: Deputāts}
+        - {name: Karīna Miķelsone, title: Deputāte}
+        - {name: Evika Siliņa, title: Deputāte}
+        - {name: Karina Sprūde, title: Deputāte}
+        - {name: Ainārs Šlesers, title: Deputāts}
+        - {name: Andris Šuvajevs, title: Deputāts}
+        - {name: Ļubova Švecova, title: Deputāte}
+        - {name: Guntars Vītols, title: Deputāts}
+    - name: Juridiskā komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-juridiska-komisija/
+      members:
+        - {name: Ivars Āboliņš, title: Priekšsēdētājs}
+        - {name: Jānis Liepiņš, title: Priekšsēdētāja biedrs}
+        - {name: Linda Matisone, title: Sekretāre}
+        - {name: Lauris Gruntmanis, title: Deputāts}
+        - {name: Jekaterina Ivanova, title: Deputāte}
+        - {name: Andrejs Judins, title: Deputāts}
+        - {name: Agnese Kupača, title: Deputāte}
+        - {name: Mairita Lūse, title: Deputāte}
+        - {name: Jūlija Stepaņenko, title: Deputāte}
+        - {name: Vjačeslavs Stepaņenko, title: Deputāts}
+        - {name: Eduards Zivtiņš, title: Deputāts}
+    - name: Cilvēktiesību un sabiedrisko lietu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-cilvektiesibu-un-sabiedrisko-lietu-komisija/
+      members:
+        - {name: Maija Armaņeva, title: Priekšsēdētāja}
+        - {name: Andrejs Svilāns, title: Priekšsēdētājas biedrs}
+        - {name: Ģirts Lapiņš, title: Sekretārs}
+        - {name: Natālija Ābola, title: Deputāte}
+        - {name: Krista Burāne, title: Deputāte}
+        - {name: Linda Liepiņa, title: Deputāte}
+        - {name: Inese Lībiņa-Egnere, title: Deputāte}
+        - {name: Māris Ozoliņš, title: Deputāts}
+        - {name: Andrejs Pagors, title: Deputāts}
+        - {name: Jānis Urtāns, title: Deputāts}
+        - {name: Luīze Utāne, title: Deputāte}
+    - name: Izglītības, kultūras un zinātnes komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-izglitibas-kulturas-un-zinatnes-komisija/
+      members:
+        - {name: Liene Apine, title: Priekšsēdētāja}
+        - {name: Baiba Atmane, title: Priekšsēdētājas biedre}
+        - {name: Aleksejs Mackevičs, title: Sekretārs}
+        - {name: Inga Bērziņa, title: Deputāte}
+        - {name: Mārtiņš Brencis, title: Deputāts}
+        - {name: Jānis Džeriņš, title: Deputāts}
+        - {name: Jurģis Klotiņš, title: Deputāts}
+        - {name: Antoņina Ņenaševa, title: Deputāte}
+        - {name: Inga Priede, title: Deputāte}
+        - {name: Jūlija Sohina, title: Deputāte}
+        - {name: Jevgēnija Šafraneka, title: Deputāte}
+    - name: Aizsardzības, iekšlietu un korupcijas novēršanas komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-aizsardzibas-iekslietu-un-korupcijas-noversanas-komisija/
+      members:
+        - {name: Raimonds Bergmanis, title: Priekšsēdētājs}
+        - {name: Edvīns Šnore, title: Priekšsēdētāja biedrs}
+        - {name: Mārtiņš Prīsis, title: Sekretārs}
+        - {name: Valdis Kārkliņš, title: Deputāts}
+        - {name: Artūrs Klēbahs, title: Deputāts}
+        - {name: Ainars Latkovskis, title: Deputāts}
+        - {name: Ilmārs Luksts, title: Deputāts}
+        - {name: Andris Sprūds, title: Deputāts}
+        - {name: Juris Viļums, title: Deputāts}
+        - {name: Edmunds Zivtiņš, title: Deputāts}
+    - name: Valsts pārvaldes un pašvaldības komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-valsts-parvaldes-un-pasvaldibas-komisija/
+      members:
+        - {name: Dagnis Straubergs, title: Priekšsēdētājs}
+        - {name: Nellija Kleinberga, title: Priekšsēdētāja biedre}
+        - {name: Māris Dadzis, title: Sekretārs}
+        - {name: Aleksandrs Bartaševičs, title: Deputāts}
+        - {name: Andis Caunītis, title: Deputāts}
+        - {name: Pēteris Dimants, title: Deputāts}
+        - {name: Inna Djeri, title: Deputāte}
+        - {name: Aivars Kraps, title: Deputāts}
+        - {name: Agnese Lāce, title: Deputāte}
+        - {name: Uģis Mitrevics, title: Deputāts}
+        - {name: Gita Plaude, title: Deputāte}
+    - name: Tautsaimniecības, agrārās, vides un reģionālās politikas komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-tautsaimniecibas-agraras-vides-un-regionalas-politikas-komisija/
+      members:
+        - {name: Jānis Vitenbergs, title: Priekšsēdētājs}
+        - {name: Māris Kučinskis, title: Priekšsēdētāja biedrs}
+        - {name: Regīna Ločmele, title: Sekretāre}
+        - {name: Edgars Dārznieks, title: Deputāts}
+        - {name: Aleksejs Ignatjevs, title: Deputāts}
+        - {name: Jānis Jenzis, title: Deputāts}
+        - {name: Rolands Keišs, title: Deputāts}
+        - {name: Valdis Kotāns, title: Deputāts}
+        - {name: Juris Lazdiņš, title: Deputāts}
+        - {name: Viktorija Pleškāne, title: Deputāte}
+        - {name: Jana Simanovska, title: Deputāte}
+        - {name: Jānis Stērninieks, title: Deputāts}
+        - {name: Atis Švinka, title: Deputāts}
+    - name: Sociālo un darba lietu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-socialo-un-darba-lietu-komisija/
+      members:
+        - {name: Andris Skride, title: Priekšsēdētājs}
+        - {name: Andrejs Klementjevs, title: Priekšsēdētāja biedrs}
+        - {name: Renārs Putniņš, title: Sekretārs}
+        - {name: Andrejs Jakovļevs, title: Deputāts}
+        - {name: Edmunds Jurēvics, title: Deputāts}
+        - {name: Selma Teodora Levrence, title: Deputāte}
+        - {name: Līga Meņģelsone, title: Deputāte}
+        - {name: Ināra Mūrniece, title: Deputāte}
+        - {name: Olga Petkeviča, title: Deputāte}
+        - {name: Māris Trušelis, title: Deputāts}
+    - name: Mandātu, ētikas un iesniegumu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-mandatu-etikas-un-iesniegumu-komisija/
+      members:
+        - {name: Inga Priede, title: Priekšsēdētāja}
+        - {name: Jurģis Klotiņš, title: Priekšsēdētājas biedrs}
+        - {name: Edmunds Jurēvics, title: Sekretārs}
+        - {name: Krista Burāne, title: Deputāte}
+        - {name: Aleksejs Ignatjevs, title: Deputāts}
+        - {name: Jekaterina Ivanova, title: Deputāte}
+        - {name: Andrejs Jakovļevs, title: Deputāts}
+        - {name: Ģirts Lapiņš, title: Deputāts}
+        - {name: Inese Lībiņa-Egnere, title: Deputāte}
+        - {name: Regīna Ločmele, title: Deputāte}
+        - {name: Andris Skride, title: Deputāts}
+        - {name: Atis Švinka, title: Deputāts}
+    - name: Pieprasījumu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-pieprasijumu-komisija/
+      members:
+        - {name: Pēteris Dimants, title: Priekšsēdētājs}
+        - {name: Andis Caunītis, title: Priekšsēdētāja biedrs}
+        - {name: Olga Petkeviča, title: Sekretāre}
+        - {name: Inga Bērziņa, title: Deputāte}
+        - {name: Rūdolfs Brēmanis, title: Deputāts}
+        - {name: Edgars Dārznieks, title: Deputāts}
+        - {name: Nellija Kleinberga, title: Deputāte}
+        - {name: Māris Kučinskis, title: Deputāts}
+        - {name: Linda Liepiņa, title: Deputāte}
+        - {name: Ilmārs Luksts, title: Deputāts}
+        - {name: Ināra Mūrniece, title: Deputāte}
+        - {name: Renārs Putniņš, title: Deputāts}
+        - {name: Jana Simanovska, title: Deputāte}
+        - {name: Jūlija Stepaņenko, title: Deputāte}
+        - {name: Jānis Stērninieks, title: Deputāts}
+        - {name: Andrejs Svilāns, title: Deputāts}
+    - name: Publisko izdevumu un revīzijas komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-publisko-izdevumu-un-revizijas-komisija/
+      members:
+        - {name: Linda Matisone, title: Priekšsēdētāja}
+        - {name: Rolands Keišs, title: Priekšsēdētājas biedrs}
+        - {name: Viktorija Pleškāne, title: Sekretāre}
+        - {name: Mārtiņš Brencis, title: Deputāts}
+        - {name: Lauris Gruntmanis, title: Deputāts}
+        - {name: Jānis Jenzis, title: Deputāts}
+        - {name: Andrejs Judins, title: Deputāts}
+        - {name: Andrejs Klementjevs, title: Deputāts}
+        - {name: Aleksejs Mackevičs, title: Deputāts}
+        - {name: Līga Meņģelsone, title: Deputāte}
+        - {name: Antoņina Ņenaševa, title: Deputāte}
+        - {name: Gita Plaude, title: Deputāte}
+        - {name: Karina Sprūde, title: Deputāte}
+        - {name: Dagnis Straubergs, title: Deputāts}
+        - {name: Ļubova Švecova, title: Deputāte}
+        - {name: Jānis Vitenbergs, title: Deputāts}
+        - {name: Aiva Vīksna, title: Deputāte}
+        - {name: Guntars Vītols, title: Deputāts}
+    - name: Nacionālās drošības komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-nacionalas-drosibas-komisija/
+      members:
+        - {name: Juris Viļums, title: Priekšsēdētājs}
+        - {name: Ainars Latkovskis, title: Priekšsēdētāja biedrs}
+        - {name: Edmunds Zivtiņš, title: Sekretārs}
+        - {name: Artūrs Klēbahs, title: Deputāts}
+        - {name: Edvīns Šnore, title: Deputāts}
+        - {name: Andris Šuvajevs, title: Deputāts}
+    - name: Pilsonības, migrācijas un sabiedrības saliedētības komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-pilsonibas-migracijas-un-sabiedribas-saliedetibas-komisija/
+      members:
+        - {name: Agnese Lāce, title: Priekšsēdētāja}
+        - {name: Dāvis Melnalksnis, title: Priekšsēdētājas biedrs}
+        - {name: Jevgēnija Šafraneka, title: Sekretāre}
+        - {name: Maija Armaņeva, title: Deputāte}
+        - {name: Baiba Atmane, title: Deputāte}
+        - {name: Natālija Ābola, title: Deputāte}
+        - {name: Ivars Āboliņš, title: Deputāts}
+        - {name: Raimonds Bergmanis, title: Deputāts}
+        - {name: Artūrs Butāns, title: Deputāts}
+        - {name: Valdis Kārkliņš, title: Deputāts}
+        - {name: Valdis Kotāns, title: Deputāts}
+        - {name: Selma Teodora Levrence, title: Deputāte}
+        - {name: Andrejs Pagors, title: Deputāts}
+        - {name: Edvards Smiltēns, title: Deputāts}
+        - {name: Ainārs Šlesers, title: Deputāts}
+        - {name: Māris Trušelis, title: Deputāts}
+    - name: Eiropas lietu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-eiropas-lietu-komisija/
+      members:
+        - {name: Agnese Kupača, title: Priekšsēdētāja}
+        - {name: Andris Sprūds, title: Priekšsēdētājas biedrs}
+        - {name: Jānis Džeriņš, title: Sekretārs}
+        - {name: Liene Apine, title: Deputāte}
+        - {name: Anete Biķe, title: Deputāte}
+        - {name: Baiba Braže, title: Deputāte}
+        - {name: Jānis Grasbergs, title: Deputāts}
+        - {name: Raivis Kalējs, title: Deputāts}
+        - {name: Juris Lazdiņš, title: Deputāts}
+        - {name: Jānis Liepiņš, title: Deputāts}
+        - {name: Karīna Miķelsone, title: Deputāte}
+        - {name: Leontijs Morozs, title: Deputāts}
+        - {name: Ramona Petraviča, title: Deputāte}
+        - {name: Vjačeslavs Stepaņenko, title: Deputāts}
+        - {name: Eduards Zivtiņš, title: Deputāts}
+        - {name: Roberts Žemaitis, title: Deputāts}
+    - name: Ilgtspējīgas attīstības un demogrāfijas jautājumu komisija
+      url: https://www.saeima.lv/lv/sasaukumi/15-saeima/komisijas/15-ilgtspejigas-attistibas-un-demografijas-jautajumu-komisija/
+      members:
+        - {name: Evika Siliņa, title: Priekšsēdētāja}
+        - {name: Uģis Mitrevics, title: Priekšsēdētājas biedrs}
+        - {name: Māris Ozoliņš, title: Sekretārs}
+        - {name: Aleksandrs Bartaševičs, title: Deputāts}
+        - {name: Valters Bolevics, title: Deputāts}
+        - {name: Māris Dadzis, title: Deputāts}
+        - {name: Inna Djeri, title: Deputāte}
+        - {name: Mārtiņš Hiršs, title: Deputāts}
+        - {name: Aivars Kraps, title: Deputāts}
+        - {name: Mairita Lūse, title: Deputāte}
+        - {name: Mārtiņš Prīsis, title: Deputāts}
+        - {name: Jūlija Sohina, title: Deputāte}
+        - {name: Dana Šlesere, title: Deputāte}
+        - {name: Jānis Urtāns, title: Deputāts}
+        - {name: Luīze Utāne, title: Deputāte}
+        - {name: Raimonds Vējonis, title: Deputāts}

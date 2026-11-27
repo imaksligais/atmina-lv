@@ -18,7 +18,7 @@ og:
 
 # Sabiedriskais medijs skaitļos: nauda, cilvēki, ēters un Saeimas balsojumi
 
-**Avoti:** LSM 2025. gada pārskats, SEPLP 2025. gada budžeta izpildes analīze, VID, LSM sabiedriskā pasūtījuma 2026. gada plāns un tā apjoma tabula, TV.lv publicētā programma, LSM.lv sitemap, Saeimas balsojumi | **Dati uz:** 2026. gada 1. novembri (TV programma — 30.09.–27.10.2026., plāna apjoma tabula — 23. novembri)
+**Avoti:** LSM 2025. gada pārskats, SEPLP 2025. gada budžeta izpildes analīze, VID, LSM sabiedriskā pasūtījuma 2026. gada plāns un tā apjoma tabula, TV.lv publicētā programma, LSM.lv sitemap, Saeimas balsojumi | **Dati uz:** 2026. gada 1. novembri (TV programma — 30.09.–27.10.2026., plāna apjoma tabula — 23. novembri, SEPLP 29. oktobra lēmums — 26. novembri)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -150,7 +150,7 @@ Kā balsoja frakcijas (ZZS — Zaļo un Zemnieku savienība, NA — Nacionālā 
 - **Nodot atpakaļ komisijai:** par — JV (17) un Progresīvie (8); pret — ZZS, NA, AS un LPV.
 - **Galīgais lasījums:** par — visas frakcijas, izņemot Progresīvos (7 atturas, 1 pret); no deputātiem ārpus frakcijām 12 par, 3 pret, 1 atturas.
 
-Valsts prezidents likumu izsludināja 30. oktobrī ([Latvijas Vēstnesis](https://www.vestnesis.lv/ta/id/371967)). Tas stājās spēkā 31. oktobrī.
+Valsts prezidents likumu izsludināja 30. oktobrī ([Latvijas Vēstnesis](https://www.vestnesis.lv/ta/id/371967)). Tas stājās spēkā 31. oktobrī. SEPLP 29. oktobrī vienojās ar LSM valdi, ka 2027. gada sabiedriskā pasūtījuma plānā ņems vērā šos grozījumus, un atgādināja, ka spēkā paliek uzdevums valdei «līdz 2027. gada 31. martam sagatavot priekšlikumu iespējamām strukturālām un darba organizācijas izmaiņām» ([SEPLP, 29.10.2026](https://www.seplp.lv/lv/jaunums/sabiedriskais-pasutijums-2027-gadam-taps-atbilstosi-likuma-grozijumiem-nepieciesami-strategijas-grozijumi)).
 
 Ko deputāti teica:
 
@@ -191,3 +191,4 @@ Plāna apjoma tabula (lapa «Pielikums nr.1 2026_groz_nr1») — SHA-256 `d3aeee
 ## Labojumi
 
 - 2026\. gada 23. novembrī labots: raksts apgalvoja, ka LSM 2026. gada plāns nenosaka stundas pa žanriem un ka tabulu ar programmu apjomiem atrast neizdevās. Tas bija nepareizi: stundu plāns ir SEPLP publicētajā plāna apjoma tabulā. Labotas sadaļas «Īsumā», «Plāns pret programmu», «Vienkāršiem vārdiem» un teikums par LTV7 ārvalstu seriāliem. TV programmas, naudas un balsojumu skaitļi nav mainīti.
+- 2026\. gada 26. novembrī papildināts: SEPLP 29. oktobra lēmums par 2027. gada sabiedrisko pasūtījumu un LSM valdes uzdevumu līdz 2027. gada 31. martam. Pārējais saturs nav mainīts.

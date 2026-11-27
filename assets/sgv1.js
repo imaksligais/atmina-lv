@@ -21,7 +21,7 @@
 
   const P_NAME = 0, P_SLUG = 1, P_PARTY_SHORT = 2, P_COLOR = 3,
         P_PHOTO = 4, P_CLAIMS = 5, P_CONTRAS = 6, P_CAT = 7;
-  const T_NAME = 0, T_COLOR = 1, T_COUNT = 2;
+  const T_NAME = 0, T_COLOR = 1, T_COUNT = 2, T_SLUG = 3;
   const G_NAME = 0, G_SHORT = 1, G_COLOR = 2, G_COUNT = 3;
   const C_LABEL = 0, C_ID = 1, C_POL = 2, C_SEV = 3, C_TOPIC = 4;
   const MAX_P = 5, MAX_C = 3, MAX_I = 3, MAX_T = 4, MAX_G = 3, MAX_PR = 3,
@@ -65,6 +65,10 @@
   // toLocaleString — tas dod U+00A0/U+202F atkarībā no ICU.
   const fmtN = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   window.atminaFmtN = fmtN;
+
+  // Latviešu skaitļa saskaņa: 1, 21, 101 pozīcija, bet 11 pozīcijas. Tas pats
+  // noteikums kā Jinja filtram lv_plural (src/render/_common/filters.py).
+  window.atminaLvPlural = (n, one, many) => (n % 10 === 1 && n % 100 !== 11 ? one : many);
 
   // «Rāda N no M …» + tukšais stāvoklis (good-css 5. kārta A9). Sākuma teksts
   // jau ir veidnē (to pašu formātu raksta Jinja), šis to pārraksta pēc filtra.
@@ -176,7 +180,7 @@
       const avatar = row[P_PHOTO]
         ? '<img class="sgv1-avatar" src="' + prefix + 'assets/photos/' + esc(row[P_SLUG]) + '.jpg" alt="" width="28" height="28" loading="lazy" style="--pc: ' + esc(row[P_COLOR]) + '">'
         : '<span class="sgv1-avatar sgv1-avatar-initials" style="--pc: ' + esc(row[P_COLOR]) + '">' + esc(initialsOf(row[P_NAME])) + "</span>";
-      const counts = row[P_CLAIMS] + " poz." + (row[P_CONTRAS] ? " · " + row[P_CONTRAS] + " pretr." : "");
+      const counts = fmtN(row[P_CLAIMS]) + " poz." + (row[P_CONTRAS] ? " · " + fmtN(row[P_CONTRAS]) + " pretr." : "");
       return '<a class="sgv1-opt" role="option" href="' + prefix + 'politiki/' + esc(row[P_SLUG]) + '.html">'
         + avatar
         + '<span class="sgv1-opt-name">' + esc(row[P_NAME]) + "</span>"
@@ -194,10 +198,10 @@
     }
 
     function topicRow(row) {
-      return '<a class="sgv1-opt" role="option" href="' + prefix + 'pozicijas.html?tema=' + encodeURIComponent(row[T_NAME]) + '">'
+      return '<a class="sgv1-opt" role="option" href="' + prefix + (row[T_SLUG] ? 'temas/' + esc(row[T_SLUG]) + '.html' : 'pozicijas.html?tema=' + encodeURIComponent(row[T_NAME])) + '">'
         + '<span class="sgv1-dot sgv1-dot-lg" style="background:' + esc(row[T_COLOR]) + '"></span>'
         + '<span class="sgv1-opt-name">' + esc(row[T_NAME]) + "</span>"
-        + '<span class="sgv1-counts">' + row[T_COUNT] + " poz.</span></a>";
+        + '<span class="sgv1-counts">' + fmtN(row[T_COUNT]) + " poz.</span></a>";
     }
 
     function partyRow(row) {
@@ -205,7 +209,7 @@
         + '<span class="sgv1-dot sgv1-dot-lg" style="background:' + esc(row[G_COLOR]) + '"></span>'
         + '<span class="sgv1-opt-name">' + esc(row[G_NAME]) + "</span>"
         + '<span class="sgv1-opt-sub">' + esc(row[G_SHORT]) + "</span>"
-        + '<span class="sgv1-counts">' + row[G_COUNT] + " poz.</span></a>";
+        + '<span class="sgv1-counts">' + fmtN(row[G_COUNT]) + " poz.</span></a>";
     }
 
     function update() {
@@ -232,7 +236,7 @@
         if (parts.length) html += kicker("Partijas") + parts.map(partyRow).join("");
       }
       html += '<a class="sgv1-opt sgv1-submit-row" role="option" href="' + prefix + 'pozicijas.html?q=' + encodeURIComponent(raw) + '">'
-        + 'Meklēt "' + esc(raw) + '" pozīcijās →</a>';
+        + "Meklēt «" + esc(raw) + "» pozīcijās</a>";
 
       dropEl.innerHTML = html;
       optionEls = Array.prototype.slice.call(dropEl.querySelectorAll(".sgv1-opt"));
@@ -276,6 +280,8 @@
         }
         // bez aktīvas opcijas — dabiskais form submit uz pozicijas.html?q=
       } else if (e.key === "Escape") {
+        // Aizver tikai ieteikumus — ne arī nav izvēlni (chrome-v1.js Escape).
+        e.stopPropagation();
         close();
       }
     });

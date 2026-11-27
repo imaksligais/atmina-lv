@@ -1,10 +1,10 @@
 ---
 topic: Transports
-positions: 204
+positions: 206
 votes: 25208
 politicians: 51
 contradictions: 1
-last_activity: '2026-11-24 00:00:00'
+last_activity: '2026-11-25 00:00:00'
 top_politicians:
 - '[[persons/atis-svinka|Atis Švinka]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

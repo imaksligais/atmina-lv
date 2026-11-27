@@ -1,12 +1,13 @@
 ---
 name: Raimonds Bergmanis
 party: Apvienotais saraksts
-role: Saeimas deputāts, AS frakcijas vadītāja vietnieks
+role: Saeimas deputāts, Aizsardzības, iekšlietu un korupcijas novēršanas komisijas
+  priekšsēdētājs, AS frakcijas vadītāja vietnieks
 relationship_type: tracked
 positions: 41
-votes: 6437
+votes: 6448
 contradictions: 0
-mentioned_in: 222
+mentioned_in: 223
 last_active: 2026-11-20
 top_topics:
 - Aizsardzība un drošība

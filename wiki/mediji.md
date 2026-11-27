@@ -1,6 +1,6 @@
 # Mediji
 
-_Konfigurācijas spogulis no `sources.yaml` (`outlets:`); atjaunots: 2026-11-24 23:49:59_
+_Konfigurācijas spogulis no `sources.yaml` (`outlets:`); atjaunots: 2026-11-26 23:18:47_
 
 Caurskatāmības fakti un pārklājums dzīvo publiskajā vietnē (`mediji.html`, `mediji/<slug>.html`); šī lapa ir operatora reģistrs.
 

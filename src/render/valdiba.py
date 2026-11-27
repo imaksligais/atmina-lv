@@ -26,7 +26,13 @@ from src.profile_kind import (
     current_term_vote_counts,
     derive_profile_kind,
 )
-from src.render._common import PUBLIC_PROFILE_WHERE, _party_short_name, _render_page, _slugify
+from src.render._common import (
+    PUBLIC_PROFILE_WHERE,
+    _party_page_slug,
+    _party_short_name,
+    _render_page,
+    _slugify,
+)
 
 # Publicēšanas slēdzis (2026-11-17): False = lapa netiek ne pilnā build, ne sitemap;
 # priekšskatījums tikai ar `--only=valdiba --output=<.scratch/...>`. Pārslēdz uz
@@ -77,7 +83,7 @@ def _holds(role: str | None, needle: str) -> bool:
 
 def _confidence_vote(db: sqlite3.Connection) -> dict[str, Any] | None:
     row = db.execute(
-        "SELECT vote_date, total_par, total_pret, total_atturas, url FROM saeima_votes "
+        "SELECT id, vote_date, total_par, total_pret, total_atturas, url FROM saeima_votes "
         "WHERE motif LIKE ? AND result = 'Pieņemts' "
         "ORDER BY vote_date DESC, vote_time DESC LIMIT 1",
         (CONFIDENCE_MOTIF,),
@@ -110,10 +116,17 @@ def _positions(
 
 def _member(db: sqlite3.Connection, p: sqlite3.Row, topics: tuple[str, ...] | None) -> dict[str, Any]:
     total, latest = _positions(db, p["id"], topics)
+    short = _party_short_name(p["party"], db) if p["party"] else ""
+    # Saite tikai uz esošu partijas lapu (render_parties raksta katrai `parties` rindai);
+    # «Bezp.» u.c. paliek teksts.
+    has_page = bool(short) and db.execute(
+        "SELECT 1 FROM parties WHERE short_name = ?", (short,)
+    ).fetchone() is not None
     return {
         "name": p["name"],
         "slug": _slugify(p["name"]),
-        "party_short": _party_short_name(p["party"], db) if p["party"] else "",
+        "party_short": short,
+        "party_slug": _party_page_slug(short) if has_page else "",
         "count": total,
         "positions": latest,
     }

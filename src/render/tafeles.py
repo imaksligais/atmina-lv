@@ -39,7 +39,6 @@ def _context(board: Board) -> dict:
 
 def render_board(env: Environment, atmina_dir: Path, board: Board,
                  og_image_url: str | None = None, notes_html: str | None = None) -> Path:
-    env.filters["tf_numbers"] = nonbreaking_numbers
     out = atmina_dir / "analizes" / f"{board.slug}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     _render_page(env, "tafele.html.j2", out, {**_context(board), "og_image_url": og_image_url, "notes_html": notes_html})

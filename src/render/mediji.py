@@ -29,6 +29,7 @@ from src.render._common import (
     norm_source_domain_sql,
     party_color_map,
 )
+from src.render._common.text import word_truncate
 # Canonical audience/non-first-party roles excluded from "who an outlet covers".
 from src.render.blog import _FOOTER_POSITION_EXCLUDED_ROLES
 
@@ -125,7 +126,7 @@ def _fetch_coverage(db: sqlite3.Connection,
             text = (r["content"] or "").replace("\n", " ").strip()
             bucket.append({
                 "url": r["url"],
-                "title": text[:90] + ("..." if len(text) > 90 else ""),
+                "title": word_truncate(text, 90),
                 "date": (r["scraped_at"] or "")[:10],
             })
     return cov

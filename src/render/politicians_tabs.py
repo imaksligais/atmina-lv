@@ -33,6 +33,7 @@ from src.render._common import (
     party_color_map,
     vote_alignment_data,
 )
+from src.render._common.text import word_truncate
 # Klātbūtnes reģistrācija nav balsojums (Data Contract 4b); noteikums dzīvo
 # src/scope.py. Vārds paliek arī šeit vēsturiskajiem importiem (testi).
 from src.scope import NOT_ATTENDANCE_SQL
@@ -133,7 +134,7 @@ def _latest_activity_block(
             "date": pos_date,
             "relative": _format_relative_time_lv(pos_date, today),
             "topic": latest_pos.get("topic") or "",
-            "content": (latest_pos.get("stance") or "")[:200],
+            "content": word_truncate(latest_pos.get("stance") or "", 200),
             "source_url": latest_pos.get("source_url") or "",
         }
     if vote_date:

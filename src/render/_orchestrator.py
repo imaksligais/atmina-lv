@@ -33,7 +33,7 @@ from src.coalition import party_color_map
 from src.db import get_db, now_lv, today_lv
 from src.image_variants import variant_filename as _brief_image_variant
 from src.outlets import load_outlets
-from src.render._common.dates import _initials_from_name, lv_date_accusative
+from src.render._common.dates import _initials_from_name, iso_datetime_lv, lv_date_accusative
 from src.scope import NOT_ATTENDANCE_SQL
 from src.render._common import (
     lv_date,
@@ -61,6 +61,7 @@ from src.render._common import (
     _safe_url_filter,
 )
 from src.render._common import og_render
+from src.render._common.text import word_truncate
 from src.render.analyses import _draft_analysis_image_stems, _load_analyses, render_analyses
 from src.render.bills import _fetch_bills, render_bills, render_bills_index
 from src.render.blog import _fetch_blog_posts, _fetch_context_notes, render_blog
@@ -90,7 +91,7 @@ from src.render.search_index import render_search_index
 from src.render.syntheses import _load_syntheses, _map_syntheses_to_politicians, render_syntheses
 from src.render.tensions import _fetch_tensions, render_tensions
 from src.render.valdiba import VALDIBA_PUBLISHED, render_valdiba
-from src.render.tafeles import render_tafeles
+from src.render.tafeles import nonbreaking_numbers, render_tafeles
 from src.render.votes import _fetch_votes, render_votes
 from src.render.x import render_x
 
@@ -224,6 +225,8 @@ def _make_env() -> Environment:
     env.filters["lv_date"] = lv_date
     env.filters["lv_date_short"] = lv_date_short
     env.filters["lv_dates_in_text"] = lv_dates_in_text
+    env.filters["iso_datetime_lv"] = iso_datetime_lv
+    env.filters["tf_numbers"] = nonbreaking_numbers
     env.filters["safe_json"] = _safe_json_filter
     env.filters["safe_url"] = _safe_url_filter
     env.filters["autolink_bills"] = _autolink_bills_filter
@@ -232,6 +235,9 @@ def _make_env() -> Environment:
     env.filters["lv_money"] = _lv_money
     env.filters["lv_number"] = _lv_number
     env.filters["salience_label"] = _salience_label
+    # Griež pie vārda robežas, viens «…», bez «,…» (Jinja `truncate` ar
+    # killwords vai «...» noklusējumu to nedara).
+    env.filters["word_trunc"] = lambda s, n: word_truncate(str(s or ""), int(n))
     env.globals["_party_short_name"] = _party_short_name
     env.filters["party_page_slug"] = _party_page_slug
 
@@ -638,7 +644,8 @@ def _generate_public_site(
                     day_politician_ids=brief_day_politician_ids(db))
 
     # 9b. feed.xml — visos domēnos, kuros blog_posts ir ielādēts (_heavy_fetch_plan).
-    if _want("blog") or _want("dashboard") or _want("static"):
+    # Arī `analizes`: jauns Atradums citādi plūsmā neparādās līdz pilnam renderim.
+    if _want("blog") or _want("dashboard") or _want("static") or _want("analizes"):
         write_feed(atmina_dir, blog_posts, analyses)
 
     # 10. Individual analysis pages (analizes/<slug>.html)
@@ -759,8 +766,10 @@ def _generate_sitemap(
     to crawlers except through internal links. Found by ``scripts/check_output.py``,
     which diffs the emitted ``.html`` set against the ``<loc>`` set precisely so a
     whole missing vertical cannot hide again.
+
+    Bez ``<lastmod>``: īstu izmaiņu datumu nezinām, un vienādu «šodien» katrai
+    lapai Google ignorē (lēmums 2026-11-25).
     """
-    today = today_lv().isoformat()
     urls: list[str] = []
 
     root_pages = [
@@ -830,7 +839,7 @@ def _generate_sitemap(
     lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     for url in urls:
         lines.append(
-            f"  <url><loc>{url}</loc><lastmod>{today}</lastmod></url>"
+            f"  <url><loc>{url}</loc></url>"
         )
     lines.append("</urlset>")
     lines.append("")

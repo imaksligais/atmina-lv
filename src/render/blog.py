@@ -54,8 +54,10 @@ from src.render._common import (
     _render_page,
     _wrap_tables,
     escape_year_list_markers,
+    lv_date,
 )
 from src.render._common.politician_links import link_politicians
+from src.render._common.text import word_truncate
 from src.render.votes_matrix import presence_motif_exclusion_sql
 from src.saeima.vote_url_map import rewrite_parentid_vote_urls
 
@@ -519,7 +521,7 @@ _NON_STORY_HEADINGS = ("Nedēļa skaitļos", "Kas kustējās", "Vizuālais brief
 
 
 def _brief_preview(body: str) -> str:
-    """Pārskata priekšskats (≤300 zīmes + «...») no satura bez H1 rindas.
+    """Pārskata priekšskats (≤300 zīmes, garāks — pie vārda robežas + «…») no satura bez H1 rindas.
 
     Smart lead extraction: find the first narrative paragraph in
     ## Galvenais (daily) / ## Nedēļas stāsts (old weekly) — the story paragraph
@@ -554,17 +556,17 @@ def _brief_preview(body: str) -> str:
                 continue
             # Found a narrative paragraph — clean and use it
             clean = _preview_clean(para)
-            preview = clean[:300] + "..." if len(clean) > 300 else clean
+            preview = word_truncate(clean, 300)
             break
         if not preview and first_bullet:
-            preview = first_bullet[:300] + "..." if len(first_bullet) > 300 else first_bullet
+            preview = word_truncate(first_bullet, 300)
 
     # Fallback: strip markdown and take first 300 chars
     if not preview:
         clean_body = re.sub(r'<!--.*?-->', '', body, flags=re.DOTALL)
         clean_body = re.sub(r'^#+\s*', '', clean_body, flags=re.MULTILINE)
         clean_body = _preview_clean(clean_body)
-        preview = clean_body[:300] + "..." if len(clean_body) > 300 else clean_body
+        preview = word_truncate(clean_body, 300)
     return preview
 
 
@@ -636,10 +638,9 @@ def _fetch_blog_posts(db: sqlite3.Connection) -> list[dict[str, Any]]:
                 except (ValueError, TypeError):
                     pass
 
-        import re as _re2
-        display_title = headline or _re2.sub(
-            r"\s*[—–-]\s*\d{4}-\d{2}-\d{2}\s*$", "", title
-        ).strip()
+        # Bez virsraksta — tips («Dienas pārskats»), nevis noglabātā H1 vecais
+        # vārds «Dienas analīze» (handoff 2026-11-25 § Vietne 3).
+        display_title = headline or type_label
         weekday_lv = ""
         try:
             from datetime import date as _date
@@ -714,6 +715,22 @@ def _fetch_blog_posts(db: sqlite3.Connection) -> list[dict[str, Any]]:
             if len(dates_in_title) >= 2:
                 display_date = f"{dates_in_title[0]} — {dates_in_title[-1]}"
 
+        # Lapas <title>: noglabātais H1 («Dienas analīze — 2026-11-24») ir
+        # apstiprinātā satura daļa (publish hash), tāpēc to NEmaina — virsrakstu
+        # saliek tikai renderī: «‹virsraksts› — Dienas pārskats, 24.11.2026».
+        if d.get("note_type") == "weekly_brief":
+            dates_in_title = _DATE_RE.findall(title)
+            period = (f"{lv_date(dates_in_title[0])}–{lv_date(dates_in_title[-1])}"
+                      if len(dates_in_title) >= 2 else lv_date(date_str))
+        else:
+            period = lv_date(date_str)
+        if date_str == "unknown":
+            page_title = headline or title
+        else:
+            page_title = f"{type_label}, {period}"
+            if headline:
+                page_title = f"{headline} — {page_title}"
+
         posts.append({
             "id": d["id"],
             "slug": slug,
@@ -722,6 +739,7 @@ def _fetch_blog_posts(db: sqlite3.Connection) -> list[dict[str, Any]]:
             "created_at": created,
             "weekday": weekday_lv,
             "title": title,
+            "page_title": page_title,
             "display_title": display_title,
             "type_label": type_label,
             "note_type": d.get("note_type"),

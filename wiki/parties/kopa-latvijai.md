@@ -4,8 +4,8 @@ members: 2
 claims: 29
 program_promises: 0
 contradictions: 0
-votes_par: 15
-votes_pret: 3
+votes_par: 23
+votes_pret: 7
 votes_atturas: 0
 top_politicians:
 - Jānis Tutins

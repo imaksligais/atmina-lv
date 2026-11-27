@@ -1,11 +1,11 @@
 ---
 party: Suverēnā vara/Jaunlatvieši
 members: 15
-claims: 93
+claims: 97
 program_promises: 24
 contradictions: 0
-votes_par: 205
-votes_pret: 58
+votes_par: 323
+votes_pret: 193
 votes_atturas: 0
 top_politicians:
 - Jūlija Stepaņenko

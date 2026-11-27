@@ -400,6 +400,7 @@ _SINGLE_VOTE_FINAL_NOT_LP = ("procesuāls", "paziņojuma_balsojums", "nezināms"
 # `procesuāls` lēmums, kas tikai virza dokumentu, nav galīgs (1104/Lm14).
 _PROCEDURAL_NOT_FINAL_RE = re.compile(
     r"darba kārtīb|iekļaušan|nodošan\w*\s+[^.()]*?komisij", re.IGNORECASE)
+_AGENDA_INCLUSION_RE = re.compile(r"iekļaušan\w*\s+[^.]*?darba kārtīb", re.IGNORECASE)
 # Saeimas iznākuma vārdi, kas viena balsojuma lēmumam nozīmē «pieņemts».
 # «Paziņojums» ir Saeimas PAŠAS iznākuma vārds pieņemtam lēmumam, ko publicē kā
 # Saeimas paziņojumu (titania 1112/Lm14: «Rezultāts: Paziņojums», pievienots
@@ -480,8 +481,11 @@ def derive_bill_denorm(db, bill_id: int) -> tuple[Optional[str], str]:
                 stage == "procesuāls"
                 and _PROCEDURAL_NOT_FINAL_RE.search(latest["motif"] or "")))):
         return stage, "pieņemts"
-    # Noraidīts priekšlikums likumprojektu nenoraida (2026-10-20).
-    if result == "noraidīts" and not stage.endswith(" priekšlikums"):
+    # Noraidīts priekšlikums likumprojektu nenoraida (2026-10-20); noraidīta
+    # iekļaušana darba kārtībā likumprojektu (Lp) arī ne (17/Lp15; 2026-11-26).
+    # Lēmuma projektam (Lm) atteikta iekļaušana = `noraidīts` (operators 2026-10).
+    if (result == "noraidīts" and not stage.endswith(" priekšlikums")
+            and (not_lp or not _AGENDA_INCLUSION_RE.search(latest["motif"] or ""))):
         return stage, "noraidīts"
     return stage, "procesā"
 

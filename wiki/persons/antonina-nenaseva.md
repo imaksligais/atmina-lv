@@ -4,9 +4,9 @@ party: Progresīvie
 role: Saeimas sekretāra biedre
 relationship_type: tracked
 positions: 18
-votes: 7407
+votes: 7427
 contradictions: 1
-mentioned_in: 236
+mentioned_in: 239
 last_active: 2026-11-21
 top_topics:
 - Izglītība

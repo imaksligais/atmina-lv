@@ -3,6 +3,11 @@
 {% set assets_prefix = "../" %}
 
 {% block title %}{{ outlet.name }}{% endblock %}
+{% block description -%}
+{%- if outlet.description %}{{ outlet.description|word_trunc(200) }}
+{%- else %}{{ outlet.name }}: kuru politiķu teikto šis medijs atspoguļo un kas to izdod.{% endif %}
+{%- endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 
 {% block content %}
 <section class="section medijs">

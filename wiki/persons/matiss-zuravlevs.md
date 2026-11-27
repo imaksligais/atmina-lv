@@ -3,11 +3,11 @@ name: Matīss Žuravļevs
 party: Bezpartejisks
 role: Bijušais «Austošā Saule Latvijai» valdes loceklis
 relationship_type: tracked
-positions: 132
+positions: 142
 votes: 0
 contradictions: 0
-mentioned_in: 2754
-last_active: 2026-11-24
+mentioned_in: 2811
+last_active: 2026-11-26
 top_topics:
 - Imigrācija
 - Koalīcija un partijas
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/imigracija|Imigrācija]] (24%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (18%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (12%)
-- **30d:** 85 claims, 6.3× bāzes līnija
+- **Top tēmas:** [[topics/imigracija|Imigrācija]] (24%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (18%), [[topics/sabiedriskie-mediji|Sabiedriskie mediji]] (11%)
+- **30d:** 95 claims, 7.6× bāzes līnija
 - **Spriedzes:** [[persons/andrejs-judins|Andrejs Judins]] (2 spriedzes), [[persons/edvards-smiltens|Edvards Smiltēns]] (2 uzbrukumi), [[persons/ugis-rotbergs|Uģis Rotbergs]] (2 uzbrukumi)
 <!-- /SYNC-AUTO -->

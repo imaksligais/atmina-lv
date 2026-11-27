@@ -1,21 +1,21 @@
 # atmina — Indekss
 
-_Atjaunots: 2026-11-24 23:49:56_
+_Atjaunots: 2026-11-26 23:18:44_
 
 ## Stāvoklis
 
-- **239** politiķi, **12251** pozīcijas + **696294** Saeimas balsojumi, **54** pretrunas, **154630** dokumenti
+- **239** politiķi, **12474** pozīcijas + **697921** Saeimas balsojumi, **55** pretrunas, **156661** dokumenti
 - Saucējs: «politiķi» = tikai `relationship_type='tracked'` ieraksti; mediju, žurnālistu un iestāžu sloti nav ieskaitīti
 - **35** tēmas, **33** likumi
-- Pēdējais ingest: 2026-11-24 21:09
-- Media pārklājums: mediāns 11 claims/politiķi, 27/239 bez neviena media claim
+- Pēdējais ingest: 2026-11-26 20:43
+- Media pārklājums: mediāns 11 claims/politiķi, 25/239 bez neviena media claim
 - Nepārskatīts backlog: 3 ziņu raksti
-- Pārskatīti bez claims: 5193 (ceremoniāli/dublikāti — re-extraction var atgūt daļu)
-- Pēdējo 7 dienu media claims: Andris Kulbergs (57), Matīss Žuravļevs (50), Kārlis Purgailis (36), Andris Velps (36), Ēriks Stendzenieks (35)
+- Pārskatīti bez claims: 5259 (ceremoniāli/dublikāti — re-extraction var atgūt daļu)
+- Pēdējo 7 dienu media claims: Matīss Žuravļevs (47), Andris Kulbergs (35), Andris Velps (32), Maija Krastiņa (31), Ēriks Stendzenieks (29)
 
 ## Struktūra
 
-- [[persons/personas|Politiķi]] — 269 profili, 12200 pozīcijas (tikai aktīvie)
+- [[persons/personas|Politiķi]] — 269 profili, 12423 pozīcijas (tikai aktīvie)
 - [[parties/partijas|Partijas]] — 18 partijas
 - [[topics/temas|Tēmas]] — 35 tēmas
 - [[mediji|Mediji]] — 11 mediju caurskatāmības profili (publiskā vietne `mediji.html`)

@@ -1,10 +1,10 @@
 ---
 topic: ES politika
-positions: 301
+positions: 307
 votes: 949
-politicians: 59
+politicians: 60
 contradictions: 0
-last_activity: '2026-11-24 00:00:00'
+last_activity: '2026-11-26 00:00:00'
 top_politicians:
 - '[[persons/valdis-dombrovskis|Valdis Dombrovskis]]'
 - '[[persons/rihards-kols|Rihards Kols]]'

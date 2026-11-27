@@ -4,9 +4,9 @@ party: Progresīvie
 role: Saeimas deputāts
 relationship_type: tracked
 positions: 11
-votes: 27
+votes: 47
 contradictions: 0
-mentioned_in: 80
+mentioned_in: 81
 last_active: 2026-10-12
 top_topics:
 - Koalīcija un partijas

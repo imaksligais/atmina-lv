@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/veselibas-aprupe|Veselības aprūpe]] (73%), [[topics/koalicija-un-partijas|Koalīcija un partijas]] (4%), [[topics/sociala-politika|Sociālā politika]] (4%)
-- **30d:** 13 claims, 1.0× bāzes līnija
+- **30d:** 11 claims, 0.8× bāzes līnija
 - **Spriedzes:** [[persons/normunds-stanevics|Normunds Staņēvičs]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

@@ -4,9 +4,9 @@ party: Latvija Pirmajā Vietā
 role: Saeimas sekretāre
 relationship_type: tracked
 positions: 21
-votes: 7396
+votes: 7416
 contradictions: 0
-mentioned_in: 210
+mentioned_in: 214
 last_active: 2026-10-29
 top_topics:
 - Imigrācija

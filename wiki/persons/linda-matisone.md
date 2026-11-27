@@ -4,7 +4,7 @@ party: Apvienotais saraksts
 role: Saeimas deputāte, Publisko izdevumu un revīzijas komisijas priekšsēdētāja
 relationship_type: tracked
 positions: 10
-votes: 8176
+votes: 8196
 contradictions: 0
 mentioned_in: 129
 last_active: 2026-11-23

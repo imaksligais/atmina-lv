@@ -72,8 +72,9 @@ def declaration_identity(
     deklarācijas. VIENĪGĀ normalizācija — meklēšanas rindām (`dedup_key`) un
     glabātajām `vad_declarations` rindām (`src.vad.declarations`). Tukša glabātā
     iestāde (vecākām deklarācijām detaļās tās nav) atbilst jebkurai — to lemj
-    salīdzinātājs, ne šī funkcija."""
-    return tuple(" ".join((f or "").split()).casefold() for f in (
+    salīdzinātājs, ne šī funkcija. VID saraksts dažām iestādēm liek «'…'»
+    pēdiņas, parsētā galvene ne — tās noņem."""
+    return tuple(" ".join((f or "").split()).strip("'").strip().casefold() for f in (
         declaration_type, institution, position_title))
 
 

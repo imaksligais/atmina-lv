@@ -77,8 +77,12 @@ Verifikācijas secība (katra nākamā metode sedz iepriekšējā aklo zonu):
    apakštabelām. Gatava skripta repozitorijā nav (līdz šim to darīja lokāls
    palīgskripts ārpus versiju kontroles). Ķer parser-drift/bugus, ne homonīmus.
 2. **Ģimenes-paraksts** — vecāku (Māte/Tēvs) vārdi vienai personai NEKAD
-   nemainās; divas dažādas mātes vienā pid = divi cilvēki. NEstrādā vecām
-   (2002–2013) deklarācijām — tām ģimenes sadaļas vispār nav.
+   nemainās; divas dažādas mātes vienā pid = divi cilvēki. Automātiski:
+   `scripts/audit_vad_family_clusters.py` (visa deklarētā ģimene; vecās
+   2002–2013 formas ģimeni — §12, «Sieva»/«Vīrs» — nolasa no `raw_html`, jo
+   `vad_family` tām nav rakstīts; 2026-11-27 uz DB kopijas noķēra 5/5 zināmos
+   vārdabrāļus). Deklarācija bez ģimenes datiem = «nepārbaudīta», ne «tīra»
+   (skripts drukā saucēju); viens klasteris vēl nepierāda, ka tas ir mūsu cilvēks.
 3. **Amata līnija** — tukšās-iestāžu (legacy) deklarācijas šķeļ pa
    `position_title` progresiju. Tukša iestāde ≠ svešs cilvēks: karjera var būt
    nepārtraukta (Citskovskis: «Jurists → Priekšnieka vietnieks» = tā pati PMLP
@@ -177,7 +181,13 @@ tabulai ir 3 kolonnas (summa | valūta | summa ar vārdiem); vecajam formātam
 («5 928 853 USD, 450 000 EUR, 7 813 LVL») — dalās pa valūtu rindām,
 oriģināls paliek `amount_in_words`. `creditor_name` tukšs ir normāls stāvoklis,
 ne trūkstošs datums.
-- `vad_family` — sec 14 ģimene
+- `vad_family` — sec 14 ģimene, tikai jaunās formas (vecās §12 paliek `raw_html`).
+  **Tikai iekšēji** (identitāte, interešu konflikts) — publiski nerāda nevienā
+  lapā (operatora lēmums 2026-11-27, `docs/data-policy.md` § 1, tests
+  `tests/test_vad_panel_ep.py::test_family_members_never_rendered`). Radinieka
+  vārds citās sadaļās (maksātājs, amata otra puse, kreditors) → «ģimenes
+  loceklis» (`src/vad/family.py`). Pirms deploy pēc VAD izmaiņām:
+  `scripts/audit_public_family_names.py` (krīt, ja vārds parādās paša profilā).
 
 ## Spec atsauce
 

@@ -301,7 +301,6 @@ def _generate_bill_pages(db: sqlite3.Connection, env: Environment, output_dir: P
     """
     bills_dir = output_dir / "likumprojekti"
     bills_dir.mkdir(parents=True, exist_ok=True)
-    template = env.get_template("likumprojekts.html.j2")
     bills = _fetch_bills(db)
     count = 0
     for b in bills:
@@ -309,9 +308,9 @@ def _generate_bill_pages(db: sqlite3.Connection, env: Environment, output_dir: P
         if detail is None:
             logger.warning("_generate_bill_pages: bill_id=%s detail returned None — skip", b["id"])
             continue
-        html = template.render(bill=detail)
-        target = bills_dir / f"{detail['slug']}.html"
-        target.write_text(html, encoding="utf-8")
+        # _render_page, ne template.render: tikai tas ieliek canonical_url/og:url.
+        _render_page(env, "likumprojekts.html.j2", bills_dir / f"{detail['slug']}.html",
+                     {"bill": detail})
         count += 1
     logger.info("_generate_bill_pages: wrote %d bill pages to %s", count, bills_dir)
     return count

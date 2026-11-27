@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 20
 votes: 5053
 contradictions: 0
-mentioned_in: 623
+mentioned_in: 632
 last_active: 2026-10-29
 top_topics:
 - Koalīcija un partijas
@@ -18,5 +18,5 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (15%), [[topics/rail-baltica|Rail Baltica]] (15%), [[topics/transports|Transports]] (15%)
-- **30d:** 3 claims
+- **30d:** 2 claims
 <!-- /SYNC-AUTO -->

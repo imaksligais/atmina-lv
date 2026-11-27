@@ -3,6 +3,12 @@
 {% set assets_prefix = "../" %}
 
 {% block title %}{{ party.display_name or party.name }}{% endblock %}
+{% block description -%}
+{{ party.display_name or party.name }}{% if party.short_name and party.short_name != (party.display_name or party.name) %} ({{ party.short_name }}){% endif %}: partijas politiķu teiktais{% if program_count %}, balsojumi un programmas solījumi{% else %} un balsojumi{% endif %}.
+{%- if members %} Politiķi: {{ members|length|lv_number }}.{% endif %}
+{%- if claims_count %} Pozīcijas: {{ claims_count|lv_number }}.{% endif %}
+{%- endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 {% block og_image %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og/partijas/{{ party.short_name|party_page_slug }}.png{% endblock %}
 
 {% block content %}

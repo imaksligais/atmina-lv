@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 29
 votes: 0
 contradictions: 0
-mentioned_in: 273
+mentioned_in: 274
 last_active: 2026-11-11
 top_topics:
 - ES politika

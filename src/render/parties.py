@@ -40,6 +40,7 @@ from src.render._common import (
 from src.render._common import og_render
 from src.render._common.constants import PROJECT_ROOT
 from src.render._common.cvk import read_election_results
+from src.render._common.text import word_truncate
 from src.scope import not_attendance_sql
 
 # scripts/fetch_cvk_results.py. Testi to pārsien uz fiksētu fixture failu, lai
@@ -300,8 +301,8 @@ def _fetch_party_detail(db: sqlite3.Connection, party: dict) -> dict[str, Any]:
             full_text = (news_row["content"] or "").replace("\n", " ").strip()
             last_news = {
                 "url": news_row["source_url"],
-                "title": full_text[:80] + ("..." if len(full_text) > 80 else ""),
-                "title_full": full_text[:300],
+                "title": word_truncate(full_text, 80),
+                "title_full": word_truncate(full_text, 300),
                 "date": (news_row["scraped_at"] or "")[:10],
                 "politician": news_row["name"],
             }
@@ -324,8 +325,8 @@ def _fetch_party_detail(db: sqlite3.Connection, party: dict) -> dict[str, Any]:
             full_text_x = (x_row["content"] or "").replace("\n", " ").strip()
             last_x = {
                 "url": x_row["source_url"],
-                "title": full_text_x[:80] + ("..." if len(full_text_x) > 80 else ""),
-                "title_full": full_text_x[:300],
+                "title": word_truncate(full_text_x, 80),
+                "title_full": word_truncate(full_text_x, 300),
                 "date": _format_tweet_time(x_row["published_at"], x_row["scraped_at"]),
                 "politician": x_row["name"],
             }

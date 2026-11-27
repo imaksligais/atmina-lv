@@ -1,7 +1,7 @@
 ---
 topic: Digitālā politika
 positions: 177
-votes: 7083
+votes: 7179
 politicians: 53
 contradictions: 0
 last_activity: '2026-11-23 00:00:00'

@@ -6,8 +6,9 @@ fixture sastāva/rezultātu YAML. Kļūmes, ko tas noķer:
   (b) izsekotais deputāts nav sasaistīts ar profilu VAI neizsekotais saņem
       saiti uz neesošu profilu (404);
   (c) neizsekotais pozīciju lēcā izskatās kā «0» (zemākā krāsa), nevis «nav datu»;
-  (d) nepilns sastāva fails (99) vai amatu fails ar neievēlētu vārdu klusi
-      renderē nepilnu lapu, nevis krīt;
+  (d) nepilns sastāva fails (99) vai amatu fails ar nesēdošu vārdu, izkritušu
+      komisiju, diviem priekšsēdētājiem, deputātu bez komisijas vai nesakrītošiem
+      mandātiem klusi renderē nepilnu lapu, nevis krīt;
   (e) amati (data/saeima15_amati.yaml) nenonāk lapā: Prezidija bloks ar 5
       saitēm uz #dep-*, frakcijas vadība savā grupā, amata čips rindā un
       sēdvietas aria-label, gredzens tieši 11 amatpersonu sēdvietām;
@@ -15,7 +16,10 @@ fixture sastāva/rezultātu YAML. Kļūmes, ko tas noķer:
       kādu pusi sarakstam, kura partijas DB nav);
   (g) uzticības balsojuma lēcā deputāts bez balsojuma rindas izskatās kā «pret»;
   (h) bloks «Valdība» nerāda ministru vai ved uz neesošu valdiba.html rindu
-      (enkurs ≠ ``fetch_cabinet`` enkurs).
+      (enkurs ≠ ``fetch_cabinet`` enkurs);
+  (i) sēdvietas rāda CVK sarakstu, ne sēdošos: ministrs, kas nolicis mandātu, vēl
+      sēž, aizstājēja nav; komisiju blokā nav 16 komisiju vai sastāva rinda ved uz
+      neesošu #dep- rindu.
 """
 
 from __future__ import annotations
@@ -77,6 +81,14 @@ def _render(tmp_path, monkeypatch, db_path, elected_path, amati_path=AMATI):
     return (out / "atmina" / "saeima.html").read_text(encoding="utf-8")
 
 
+def _sitting() -> list[dict]:
+    """Sēdošie = ievēlētie − mandātu nolikušie + aizstājēji (kā amatu fixture)."""
+    elected = yaml.safe_load(ELECTED.read_text(encoding="utf-8"))["elected"]
+    mand = yaml.safe_load(AMATI.read_text(encoding="utf-8"))["mandates"]
+    out = set(mand["suspended"])
+    return [e for e in elected if e["name"] not in out] + list(mand["substitutes"])
+
+
 def _tracked_names(db_path: str) -> set[str]:
     import sqlite3
 
@@ -130,7 +142,18 @@ def _seed_confidence_vote(db_path: str, ballots: dict[str, str]) -> None:
 def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
     from src.render._common import _slugify
 
-    elected_rows = yaml.safe_load(ELECTED.read_text(encoding="utf-8"))["elected"]
+    elected_rows = _sitting()
+    import sqlite3
+    # Fixture DB no AS un NA izseko tikai ministrus (tie nolikuši mandātu) — pa vienam
+    # aizstājējam kā izsekotu deputātu, lai abu sarakstu sēdvietām būtu profils un balss.
+    with sqlite3.connect(fixture_db) as c:
+        for nr, party in ((7, "Apvienotais saraksts"), (5, "Nacionālā apvienība")):
+            sub = next(s["name"] for s in elected_rows if s["list_nr"] == nr and "region" not in s)
+            c.execute(
+                "INSERT INTO tracked_politicians (name, name_forms, relationship_type, party, role) "
+                "VALUES (?, '[]', 'tracked', ?, 'Saeimas deputāts')",
+                (sub, party),
+            )
     tracked_all = _tracked_names(fixture_db)
     # Uzticības balsojums: AS deputātam «Par», PRO deputātam «Pret»; izsekotam NA
     # deputātam rindas nav (jābūt «nav ieraksta», ne «pret»).
@@ -149,7 +172,7 @@ def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
     # (a) 100 sēdvietas
     assert len(re.findall(r'<a [^>]*class="seat[ "]', html)) == 100
 
-    elected = [e["name"] for e in yaml.safe_load(ELECTED.read_text(encoding="utf-8"))["elected"]]
+    elected = [e["name"] for e in elected_rows]
     tracked = _tracked_names(fixture_db) & set(elected)
     untracked = [n for n in elected if n not in tracked]
     assert tracked and untracked, "fixture jāsatur abas klases"
@@ -175,7 +198,6 @@ def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
     assert block, "Prezidija bloka nav"
     prez_links = re.findall(r'href="#dep-([^"]+)"', block.group(0))
     assert prez_links == [_slugify(m["name"]) for m in prez], "Prezidija saites ≠ 5 locekļi YAML secībā"
-    assert "16 komisiju sastāvs un vadība vēl nav ievēlēti" in html
 
     smiltens = prez[0]
     assert smiltens["office"] in _row(html, _slugify(smiltens["name"])), "amata čips nav rindā"
@@ -222,6 +244,63 @@ def test_saeima_page_end_to_end(tmp_path, monkeypatch, fixture_db):
                     gov_block.group(0), re.S)
     assert row and voter_par in row.group(0), "ministrs nav rindā ar saiti uz savu valdiba.html rindu"
 
+    # (i) sēdošie un komisijas
+    mand = amati["mandates"]
+    for name in mand["suspended"]:
+        assert f'aria-label="{name},' not in html, f"{name} nolicis mandātu, bet sēdvieta vēl ir"
+    for s in mand["substitutes"]:
+        assert "ministra vietā" in _row(html, _slugify(s["name"])), f"{s['name']}: rindā nav «ministra vietā»"
+        assert f'data-list="{s["list_nr"]}"' in _seat(html, s["name"]), f"{s['name']} nav sava saraksta sēdvietā"
+    kom = re.findall(r'<details class="slv-kom-item" id="kom-[^"]+">.*?</details>', html, re.S)
+    assert len(kom) == 16, f"komisiju blokā {len(kom)} komisijas, jābūt 16"
+    dep_ids = set(re.findall(r'id="dep-([^"]+)"', html))
+    for block, c in zip(kom, amati["committees"]["items"], strict=True):
+        assert c["name"] in block
+        links = re.findall(r'<a class="slv-kom-row" href="#dep-([^"]+)"', block)
+        assert links == [_slugify(m["name"]) for m in c["members"]], f"{c['name']}: sastāvs ≠ YAML"
+        assert set(links) <= dep_ids, f"{c['name']}: saite uz neesošu deputāta rindu"
+    chair = amati["committees"]["items"][0]["members"][0]["name"]
+    assert re.search(r'<summary class="slv-kom-sum">.*?' + re.escape(chair), kom[0], re.S), "priekšsēdētājs nav komisijas rindā"
+
+
+def _break_amati(amati: dict, how: str) -> str:
+    """Viena kļūda amatu YAML; atgriež tekstu, kam jābūt kļūdas ziņojumā."""
+    items = amati["committees"]["items"]
+    if how == "nesēdošs":
+        amati["presidium"]["members"][0]["name"] = "Neievēlēts Deputāts"
+        return "Neievēlēts Deputāts"
+    if how == "nolicis_mandātu_komisijā":
+        items[0]["members"][-1]["name"] = amati["mandates"]["suspended"][0]
+        return "nav sēdošo"
+    if how == "izkritusi_komisija":
+        del items[-1]
+        return "komisiju ir 15"
+    if how == "divi_priekšsēdētāji":
+        items[0]["members"][3]["title"] = "Priekšsēdētājs"
+        return "'chair' 2"
+    if how == "deputāts_bez_komisijas":
+        gone = items[0]["members"].pop()["name"]
+        for c in items[1:]:
+            c["members"] = [m for m in c["members"] if m["name"] != gone]
+        return "nav 1–2 komisijās"
+    if how == "mandāti_nesakrīt":
+        amati["mandates"]["substitutes"][0]["list_nr"] = 5
+        return "nesakrīt"
+    raise AssertionError(how)
+
+
+@pytest.mark.parametrize("how", [
+    "nesēdošs", "nolicis_mandātu_komisijā", "izkritusi_komisija",
+    "divi_priekšsēdētāji", "deputāts_bez_komisijas", "mandāti_nesakrīt",
+])
+def test_saeima_bad_offices_fail(tmp_path, monkeypatch, fixture_db, how):
+    amati = yaml.safe_load(AMATI.read_text(encoding="utf-8"))
+    expect = _break_amati(amati, how)
+    bad_amati = tmp_path / f"amati_{how}.yaml"
+    bad_amati.write_text(yaml.safe_dump(amati, allow_unicode=True), encoding="utf-8")
+    with pytest.raises(ValueError, match=re.escape(expect)):
+        _render(tmp_path, monkeypatch, fixture_db, ELECTED, bad_amati)
+
 
 def test_saeima_incomplete_composition_fails(tmp_path, monkeypatch, fixture_db):
     doc = yaml.safe_load(ELECTED.read_text(encoding="utf-8"))
@@ -230,13 +309,6 @@ def test_saeima_incomplete_composition_fails(tmp_path, monkeypatch, fixture_db):
     bad.write_text(yaml.safe_dump(doc, allow_unicode=True), encoding="utf-8")
     with pytest.raises(ValueError, match="100"):
         _render(tmp_path, monkeypatch, fixture_db, bad)
-
-    amati = yaml.safe_load(AMATI.read_text(encoding="utf-8"))
-    amati["presidium"]["members"][0]["name"] = "Neievēlēts Deputāts"
-    bad_amati = tmp_path / "amati_neievēlēts.yaml"
-    bad_amati.write_text(yaml.safe_dump(amati, allow_unicode=True), encoding="utf-8")
-    with pytest.raises(ValueError, match="Neievēlēts Deputāts"):
-        _render(tmp_path, monkeypatch, fixture_db, ELECTED, bad_amati)
 
 
 @pytest.mark.parametrize("convocation", [15, 16])

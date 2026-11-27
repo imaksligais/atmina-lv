@@ -4,7 +4,7 @@ party: Latvija Pirmajā Vietā
 role: Saeimas deputāte
 relationship_type: tracked
 positions: 0
-votes: 27
+votes: 46
 contradictions: 0
-mentioned_in: 40
+mentioned_in: 45
 ---

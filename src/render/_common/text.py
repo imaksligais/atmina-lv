@@ -82,6 +82,16 @@ def _normalize_ws(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def word_truncate(text: str, limit: int) -> str:
+    """Teksts līdz ``limit`` zīmēm; garāku nogriež pie pēdējās vārda robežas un
+    pieliek vienu «…» (nekad «...» un nekad vārda vidū)."""
+    if len(text) <= limit:
+        return text
+    window = text[:limit]
+    sp = window.rfind(" ")
+    return (window[:sp] if sp > 0 else window).rstrip(" ,;:—–-") + "…"
+
+
 def _clause_truncate(text: str, limit: int) -> str:
     """Soft-truncate ``text`` at the last clause boundary before ``limit``,
     appending '…'. Boundaries are , ; — –. Falls back to a hard word-boundary

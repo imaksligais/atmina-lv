@@ -2,7 +2,7 @@
 <html lang="lv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="color-scheme" content="light" id="meta-color-scheme">
   {#- Vietnei ir PAŠAI sava tumšā tēma (data-theme pārslēgs) — darkreader-lock
       liek DarkReader-saimes rīkiem (t.sk. Brave iOS Night Mode) neaiztikt
@@ -16,9 +16,10 @@
   <meta name="description" content="{% block description %}atmina.lv — Latvijas politiķu pozīcijas, pretrunas un balsojumi. Strukturēta, pārbaudāma informācija par politisko darbību.{% endblock %}">
   {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}{% block robots %}{% endblock %}
   <link rel="alternate" type="application/rss+xml" title="atmina.lv" href="{{ BASE_URL|default('https://atmina.lv') }}/feed.xml">
-  <meta property="og:title" content="{% block og_title %}atmina.lv — Politiskā atmiņa{% endblock %}">
+  {#- Noklusējuma og:title = lapas virsraksts; sākumlapa (title «atmina.lv») to pārraksta. -#}
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }} — atmina.lv{% endblock %}">
   <meta property="og:description" content="{% block og_description %}Latvijas politiķu pozīcijas, pretrunas un balsojumi.{% endblock %}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
   <meta property="og:locale" content="lv_LV">
   <meta property="og:site_name" content="atmina.lv">
   <meta property="og:image" content="{% block og_image %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og-atmina.png{% endblock %}">
@@ -151,7 +152,7 @@
         </div>
         <div>
           <strong>Metodoloģija</strong>
-          <small>MI-asistēta pozīciju identifikācija · Ticamības novērtējumi (0.0–1.0) · Saeimas balsojumi</small>
+          <small>MI-asistēta pozīciju identifikācija · Ticamības novērtējumi (0,0–1,0) · Saeimas balsojumi</small>
         </div>
         <div class="footer-end">
           <div class="footer-links">

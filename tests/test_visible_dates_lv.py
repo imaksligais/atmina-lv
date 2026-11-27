@@ -52,8 +52,7 @@ GROUPS = [
     ("blog/*.html", ".brief-pagehead-date", LV),
     ("blog/*.html", ".brief-footnav-link", LV),
     ("blog.html", ".blog-entry .date", LV),
-    # mūsu ģenerētie virsraksti «Dienas analīze — 2026-10-20» (lv_dates_in_text)
-    ("blog.html", ".blog-entry h2", LV),
+    # .blog-entry h2 kopš 2026-11-26 rāda pārskata virsrakstu bez datuma — grupa izņemta.
     ("mediji/*.html", ".recent-date", LV),
     ("mediji/*.html", ".fact-foot .muted", LV),
     ("zinas.html", ".news-card div[style*='font-size:0.82rem'] > span:first-child", LV),

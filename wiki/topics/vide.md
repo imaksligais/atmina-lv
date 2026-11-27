@@ -1,10 +1,10 @@
 ---
 topic: Vide
-positions: 67
+positions: 68
 votes: 23770
-politicians: 28
+politicians: 29
 contradictions: 0
-last_activity: '2026-11-23 00:00:00'
+last_activity: '2026-11-25 00:00:00'
 top_politicians:
 - '[[persons/maija-krastina|Maija Krastiņa]]'
 - '[[persons/latvijas-banka|Latvijas Banka]]'

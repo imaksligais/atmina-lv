@@ -1,24 +1,24 @@
 ---
 name: Ainārs Šlesers
 party: Latvija Pirmajā Vietā
-role: LPV priekšsēdētājs, LPV frakcijas vadītājs
+role: Saeimas deputāts, LPV priekšsēdētājs, LPV frakcijas vadītājs
 relationship_type: tracked
-positions: 256
-votes: 4422
+positions: 262
+votes: 4442
 contradictions: 2
-mentioned_in: 1738
-last_active: 2026-11-24
+mentioned_in: 1766
+last_active: 2026-11-26
 top_topics:
 - Koalīcija un partijas
-- Pensijas
 - airBaltic
+- Pensijas
 - Imigrācija
 - Budžets un finanses
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (25%), [[topics/pensijas|Pensijas]] (8%), [[topics/airbaltic|airBaltic]] (8%)
-- **30d:** 44 claims, 1.5× bāzes līnija
+- **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (24%), [[topics/airbaltic|airBaltic]] (10%), [[topics/pensijas|Pensijas]] (8%)
+- **30d:** 49 claims, 1.7× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (11 spriedzes), [[persons/evika-silina|Evika Siliņa]] (3 spriedzes), [[persons/atis-svinka|Atis Švinka]] (3 uzbrukumi)
 - **Pretrunas:** 2 apstiprinātas; pēdējā par [[topics/velesanas|Vēlēšanas]], 2026-07-17
 <!-- /SYNC-AUTO -->

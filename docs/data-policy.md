@@ -1,6 +1,6 @@
 # Data Policy / Datu politika
 
-**Last reviewed:** 2026-05-15
+**Last reviewed:** 2026-11-27
 **Maintainer contact:** redakcija@atmina.lv
 **Jurisdiction:** Latvia (EU GDPR + Fizisko personu datu apstrādes likums)
 
@@ -11,6 +11,8 @@
 atmina collects, structures, and re-publishes **public statements and public records** about Latvian politicians: media interviews, social-media posts, parliamentary votes, campaign-finance declarations, asset declarations, and promulgated laws. The platform processes personal data of public officials in the exercise of their public duties.
 
 Legal basis: GDPR Art. 6(1)(e) (public interest) and the journalistic-purpose exemption in GDPR Art. 85 as transposed into Latvian law (Fizisko personu datu apstrādes likums § 32).
+
+Relatives' names listed in officials' asset declarations are kept internally only — to tell a politician apart from a namesake and to assess possible conflicts of interest — and are never published.
 
 This policy describes what we collect, how to request corrections, and how to invoke the right of reply.
 
@@ -24,8 +26,9 @@ Mēs **neglabājam un nepublicējam**:
 - privātu saraksti vai personīgo dzīves datus;
 - avotus, kas nav publiski pieejami;
 - nepilngadīgo personu datus;
-- politiķu ģimenes locekļu datus (izņemot, ja tie paši ir publiski politiķi vai amatpersonas);
 - subjektīvus vērtējumus, sentimentu vai izteikumu interpretāciju.
+
+**VID amatpersonu deklarācijās norādītos ģimenes locekļu vārdus nepublicējam.** Tos izmantojam tikai iekšēji, lai atšķirtu personas ar vienādu vārdu un uzvārdu un izvērtētu iespējamus interešu konfliktus. Publiski norādām deputātu un bijušo deputātu amatus uzņēmumos un organizācijās. Ja radinieks pats ir politiķis vai valsts amatpersona, viņu varam minēt kā politiķi vai amatpersonu.
 
 ## 2. Datu apjoms (Scope of collected data)
 
@@ -36,7 +39,7 @@ Mēs **neglabājam un nepublicējam**:
 | Saeimas balsojumi | titania.saeima.lv | Pilns vēsturisks balsojumu reģistrs |
 | Likumprojekti un to posmi | Saeima + LR Vēstnesis | Posmu hronoloģija (`append_bill_stage`) |
 | KNAB priekšvēlēšanu finansu deklarācijas | knab.gov.lv | Ziedojumi, brīdinājumi |
-| VID amatpersonu deklarācijas (VAD) | vid.gov.lv | Pamatdarbība, papildienākumi, īpašumi (publiski reģistri) |
+| VID amatpersonu deklarācijas (VAD) | vid.gov.lv | Pamatdarbība, amati uzņēmumos un organizācijās, papildienākumi, īpašumi (publiski reģistri); radinieku vārdi — tikai iekšēji, nepublicē |
 | Latvijas Vēstnesis | vestnesis.lv | Promulgētie tiesību akti |
 
 Visi avoti ir **publiski pieejami**. atmina neveic non-publisku reģistru skrēpošanu, nepieprasa parakstītu piekļuvi un neuzglabā nekādus datus, kas nav pirmtiesīgi publicēti pašu politiķu vai kompetento iestāžu.

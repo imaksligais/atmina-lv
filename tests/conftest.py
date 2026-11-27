@@ -410,6 +410,10 @@ def rendered_site(tmp_path_factory, _stable_assets_version, render_fixture_db):
         _personas, "COHORT_PATH",
         Path(__file__).parent / "fixtures" / "15saeima_kohorta.yaml",
     )
+    mpatch.setattr(
+        _personas, "AMATI_PATH",
+        Path(__file__).parent / "fixtures" / "saeima15_amati.yaml",
+    )
     # saeima.html (15. Saeimas pusloks): tās pašas fiksētās sastāva + rezultātu kopijas.
     import src.render.saeima as _saeima
     mpatch.setattr(

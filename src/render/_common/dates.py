@@ -10,9 +10,12 @@ import re
 from datetime import date, datetime, timedelta
 from typing import Optional
 from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 
 from src.db import today_lv, utc_to_lv
 from src.render._common.constants import _PARTY_LOWERCASE_WORDS
+
+_RIGA = ZoneInfo("Europe/Riga")
 
 def trailing_days_cutoff(days: int = 7) -> str:
     """ISO date that opens a window of exactly ``days`` calendar days ending
@@ -186,6 +189,25 @@ def lv_dates_in_text(text: str | None) -> str:
     if not text:
         return ""
     return _ISO_DATE_IN_TEXT.sub(lambda m: lv_date(m[0]), str(text))
+
+
+def iso_datetime_lv(value: str | None) -> str:
+    """LV laika zīmogs «2026-11-24 23:49:01» → ISO 8601 «2026-11-24T23:49:01+02:00»
+    (Jinja filtrs `iso_datetime_lv`, JSON-LD `dateModified`).
+
+    Ievade bez joslas tiek lasīta kā Europe/Riga laiks (LV kolonnas, T17); ar
+    joslu — paliek tās joslā. Tikai datums vai neparsējams teksts → nemainīts.
+    """
+    s = str(value or "").strip()
+    if len(s) <= 10:
+        return s
+    try:
+        dt = datetime.fromisoformat(s)
+    except ValueError:
+        return s
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=_RIGA)
+    return dt.isoformat(timespec="seconds")
 
 
 _LV_MONTHS_LOC = (

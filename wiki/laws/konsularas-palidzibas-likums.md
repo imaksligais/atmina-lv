@@ -30,5 +30,6 @@ Likums nodrošina personām ārpus Latvijas piekļuvi konsulārajai palīdzībai
 
 | Nr. | Nosaukums | Stadija | Datums |
 |---|---|---|---|
+| [11/Lp15](/likumprojekti/11-lp15.html) | Grozījumi Konsulārās palīdzības un konsulāro pakalpojumu likumā | procesā | 26.11.2026 |
 | [1027/Lp14](/likumprojekti/1027-lp14.html) | Grozījumi Konsulārās palīdzības un konsulāro pakalpojumu likumā | 3. lasījums (pieņemts) | 27.05.2026 |
 <!-- /BILLS-SYNC-AUTO -->

@@ -6,7 +6,7 @@ relationship_type: journalist
 positions: 12
 votes: 0
 contradictions: 0
-mentioned_in: 551
+mentioned_in: 552
 last_active: 2026-08-12
 top_topics:
 - Aizsardzība un drošība

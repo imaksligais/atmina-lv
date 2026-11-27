@@ -87,13 +87,16 @@ def db():
 
 
 def test_sg_index_tuple_shape(db):
-    """Arity lock — sgv1.js reads positional indexes (p:8, t:3, g:4)."""
+    """Arity lock — sgv1.js reads positional indexes (p:8, t:4, g:4)."""
     from src.render.search_index import _fetch_search_index
 
     d = _fetch_search_index(db)
     assert d["v"] == 3
     assert all(len(row) == 8 for row in d["p"])
-    assert all(len(row) == 3 for row in d["t"])
+    assert all(len(row) == 4 for row in d["t"])
+    from src.render._common import _slugify
+    # Tēmas ieteikums ved uz temas/<slug>.html — tas pats slugs kā tēmas lapai.
+    assert all(row[3] == _slugify(row[0]) for row in d["t"]), "tēmas slugs ≠ temas/ lapas slugs"
     assert all(len(row) == 4 for row in d["g"])
     assert all(len(row) == 5 for row in d["c"])
 

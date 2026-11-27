@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/koalicija-un-partijas|Koalīcija un partijas]] (18%), [[topics/airbaltic|airBaltic]] (17%), [[topics/degviela-un-energetika|Degviela un enerģētika]] (14%)
-- **30d:** 2 claims, 0.2× bāzes līnija
+- **30d:** 1 claims, 0.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze), [[persons/atis-svinka|Atis Švinka]] (1 uzbrukums)
 <!-- /SYNC-AUTO -->

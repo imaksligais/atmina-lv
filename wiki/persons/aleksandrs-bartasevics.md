@@ -4,9 +4,9 @@ party: Kopā Latvijai
 role: Saeimas deputāts (15. Saeima), bijušais Rēzeknes mērs
 relationship_type: tracked
 positions: 13
-votes: 27
+votes: 44
 contradictions: 0
-mentioned_in: 167
+mentioned_in: 172
 last_active: 2026-11-24
 top_topics:
 - Pašvaldības

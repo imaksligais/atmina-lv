@@ -1,10 +1,10 @@
 ---
 topic: Sabiedriskie mediji
-positions: 312
+positions: 318
 votes: 4342
 politicians: 59
 contradictions: 0
-last_activity: '2026-11-23 00:00:00'
+last_activity: '2026-11-26 00:00:00'
 top_politicians:
 - '[[persons/ansis-pupols|Ansis Pūpols]]'
 - '[[persons/eriks-stendzenieks|Ēriks Stendzenieks]]'

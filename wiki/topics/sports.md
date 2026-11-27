@@ -1,10 +1,10 @@
 ---
 topic: Sports
-positions: 59
+positions: 61
 votes: 1243
-politicians: 33
+politicians: 34
 contradictions: 0
-last_activity: '2026-11-24 00:00:00'
+last_activity: '2026-11-25 00:00:00'
 top_politicians:
 - '[[persons/davis-martins-daugavietis|Dāvis Mārtiņš Daugavietis]]'
 - '[[persons/evika-silina|Evika Siliņa]]'

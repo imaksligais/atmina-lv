@@ -4,6 +4,11 @@
 {% from "_macros.html.j2" import pagehead, metric %}
 
 {% block title %}{{ bill.title }} ({{ bill.document_nr }}){% endblock %}
+{% block description -%}
+{%- if bill.summary %}{{ bill.summary|word_trunc(200) }}
+{%- else %}{{ bill.kind_label or "Likumprojekts" }} {{ bill.document_nr }}: virzība Saeimā, iesniedzēji un balsojumi.{% endif %}
+{%- endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 
 {% block content %}
 <section class="pagehead-section">

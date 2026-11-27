@@ -4,9 +4,9 @@ party: Nacionālā apvienība
 role: Saeimas deputāts, Juridiskās komisijas priekšsēdētājs
 relationship_type: tracked
 positions: 32
-votes: 16
+votes: 36
 contradictions: 0
-mentioned_in: 598
+mentioned_in: 605
 last_active: 2026-11-23
 top_topics:
 - Valodu politika

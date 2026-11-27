@@ -4,9 +4,9 @@ party: Nacionālā apvienība
 role: Saeimas priekšsēdētāja biedre
 relationship_type: tracked
 positions: 34
-votes: 5251
+votes: 5271
 contradictions: 0
-mentioned_in: 425
+mentioned_in: 426
 last_active: 2026-11-11
 top_topics:
 - Ukraina un Krievija

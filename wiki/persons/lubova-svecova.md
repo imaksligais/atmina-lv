@@ -3,11 +3,11 @@ name: Ļubova Švecova
 party: Suverēnā vara/Jaunlatvieši
 role: Saeimas deputāte
 relationship_type: tracked
-positions: 5
-votes: 27
+positions: 6
+votes: 47
 contradictions: 0
-mentioned_in: 69
-last_active: 2026-10-07
+mentioned_in: 72
+last_active: 2026-11-26
 top_topics:
 - Aizsardzība un drošība
 - Degviela un enerģētika
@@ -17,5 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
+- **30d:** 1 claims
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 atbalsts)
 <!-- /SYNC-AUTO -->

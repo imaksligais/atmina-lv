@@ -35,7 +35,7 @@ from src.render._common.dates import (
     _normalize_date,
 )
 from src.render._common.slugs import _party_short_name, _slugify
-from src.render._common.text import _latvian_quotes, _split_summary
+from src.render._common.text import _latvian_quotes, _split_summary, word_truncate
 
 # ── Cross-page domain helpers ───────────────────────────────────────
 
@@ -105,8 +105,7 @@ def _get_last_activity(db: sqlite3.Connection, politician_id: int, politician_na
         v = vote["vote"] or ""
         vote_label = {"Par": "Balsoja par", "Pret": "Balsoja pret", "Atturas": "Atturējās"}.get(v, "Balsoja")
         summary = (vote["summary"] or vote["topic"] or "")
-        if len(summary) > 50:
-            summary = summary[:47] + "…"
+        summary = word_truncate(summary, 50)
         candidates.append({
             "date": _normalize_date(vote["vote_date"]),
             "type": "vote",
@@ -452,8 +451,11 @@ def faction_alignment_data(db: sqlite3.Connection) -> dict[int, dict[str, int]]:
 
     - Frakcija = ``saeima_individual_votes.faction`` TAJĀ rindā (T6: frakcija
       ≠ partija); NULL/'' rindas izkrīt abās pusēs.
-    - Skaitās tikai nodotās balsis (Par/Pret/Atturas) abās pusēs; «Atturas»
-      ir sava vērtība, tāpēc «Atturas» pret frakcijas «Par» ir nesakritība.
+    - Skaitās tikai nodotās balsis (Par/Pret/Atturas) abās pusēs, sakļautas
+      divās: «Par» un «ne-Par». Saeimā «Atturas» lēmumu aptur tāpat kā «Pret»
+      (CLAUDE.md § Abstention), tāpēc «Atturas» pret frakcijas «Pret» ir
+      sakritība, bet pret «Par» — nesakritība (operators 2026-11-26; agrāk
+      «Atturas» bija sava vērtība, un JV 14. Saeimā rādījās 96 %, nevis 99,6 %).
     - Vairākums = biežākā balss starp CITIEM tās pašas frakcijas deputātiem
       (pats netiek skaitīts); < FACTION_ALIGNMENT_MIN_OTHERS citu vai
       neizšķirts → balsojums izkrīt. Nesaskaņotas rindas (politician_id NULL)
@@ -473,6 +475,9 @@ def faction_alignment_data(db: sqlite3.Connection) -> dict[int, dict[str, int]]:
           AND siv.faction IS NOT NULL AND siv.faction != ''
           AND v.vote_date >= ?
     """, (CURRENT_TERM_START,)).fetchall()
+
+    # Iznākums, ne etiķete: «Atturas» un «Pret» abi lēmumu aptur.
+    rows = [(vote_id, pid, faction, vote == "Par") for vote_id, pid, faction, vote in rows]
 
     counts: dict[tuple[int, str], Counter] = defaultdict(Counter)
     for vote_id, _pid, faction, vote in rows:

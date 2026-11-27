@@ -4,7 +4,8 @@ Viens end-to-end tests: īsta DB shēma → render_valdiba() → HTML. Kļūmes,
 - bijušais ministrs (``role`` = «bijušais …») parādās kā strādājošs;
 - nozares skaitā iekļūst citas tēmas pozīcija vai ``saeima_vote`` rinda;
 - ministrija bez mūsu datos esoša ministra klusi pazūd no saraksta;
-- uzticības balsojuma skaitlis nav tas, kas DB, vai nav saites uz avotu;
+- uzticības balsojuma skaitlis nav tas, kas DB, vai nav saites uz mūsu balsojuma kartīti;
+- partijas saīsinājums ved uz neesošu partijas lapu («Bezp.»);
 - ministrijas rindai nav enkura, uz kuru ved saeima.html bloks «Valdība».
 """
 
@@ -29,7 +30,10 @@ def _seed(path: str):
         (2, "Ilze Lauka", "Nacionālā apvienība", "Labklājības ministre"),
         (3, "Juris Vecais", "Apvienotais saraksts", "Saeimas deputāts, bijušais Finanšu ministrs"),
         (4, "Pēteris Biedrs", "Apvienotais saraksts", "Ministru prezidenta biedrs"),
+        (5, "Māris Brīvais", "Bezpartejisks", "Satiksmes ministrs"),
     ]
+    # Partijas lapa ir tikai `parties` rindām — šeit tikai NA.
+    db.execute("INSERT INTO parties (name, short_name) VALUES ('Nacionālā apvienība', 'NA')")
     for pid, name, party, role in pols:
         db.execute(
             "INSERT INTO tracked_politicians (id,name,party,role,relationship_type) "
@@ -72,9 +76,16 @@ def test_valdiba_page_lists_cabinet_with_portfolio_positions(tmp_path):
     render_valdiba(_make_env(), db, out)
     html = (out / "valdiba.html").read_text(encoding="utf-8")
 
-    # Uzticības balsojums: skaitlis no DB, saite uz avotu.
+    # Uzticības balsojums: skaitlis no DB, saite uz MŪSU balsojuma kartīti.
     assert ">51<" in html, "uzticības balsojuma «par» skaitlis nav lapā"
-    assert VOTE_URL in html, "nav saites uz balsojuma avotu"
+    vote_id = db.execute("SELECT id FROM saeima_votes").fetchone()[0]
+    assert f'href="balsojumi.html#vote-{vote_id}"' in html, "nav saites uz balsojuma kartīti"
+    assert VOTE_URL not in html, "galvene joprojām ved uz ārējo Saeimas vietni"
+
+    # Partijas saīsinājums ved uz partijas lapu tikai tad, ja tāda lapa ir.
+    assert 'href="partijas/na.html">NA</a>' in _row(html, "Labklājības ministr")
+    sat = _row(html, "Satiksmes ministr")
+    assert "Bezp." in sat and "partijas/" not in sat, "bezpartejiskajam saite uz neesošu lapu"
 
     # Labklājības ministre: nozarē 2 pozīcijas (Sociālā politika + Pensijas);
     # Izglītība un saeima_vote nav nozarē.

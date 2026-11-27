@@ -218,9 +218,10 @@ def _pozicijas_filters(page):
 
 
 def _personas_filters(page):
-    # Noklusējumā jau viens čips (15. Saeimā ievēlētie); meklējums pievieno otru
-    # un «Notīrīt visus».
+    # Kopš 2026-11-26 lapa atveras ar «Visi profili» (bez čipa). «Ievēlētie» dod
+    # pirmo čipu, meklējums otru — tad parādās «Notīrīt visus».
     _open_mobile_filters(page, "pnv1")
+    page.locator('.pnv1-rail-row[data-axis="saeima15"][data-value="ieveleti"]').click()
     page.fill("#pnv1-search", "Testa")
     page.wait_for_selector(".pnv1-clearall")
 

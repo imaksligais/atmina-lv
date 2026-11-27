@@ -17,9 +17,9 @@
     category: "visas",
     party: new Set(),
     coalition: "visas",
-    // Noklusējums «Ievēlētie» (operatora lūgums 2026-10-05): lapa atveras ar 15. Saeimas
-    // ievēlētajiem; «Notīrīt visu» un čipa noņemšana atgriež «visi». Veidnē is-active jāsakrīt.
-    saeima15: "ieveleti",
+    // Noklusējums «Visi profili» (operators 2026-11-26; 2026-10-05…11-26 bija «Ievēlētie»).
+    // Veidnē is-active jāsakrīt.
+    saeima15: "visi",
     query: "",
     queryRaw: "",
     sort: "aktivitate",

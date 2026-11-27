@@ -28,7 +28,9 @@ jobs:
 
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.11'
+          # Tā pati kā lokālais .venv (3.12.10): 3.11 pret 3.12 atšķirība
+          # 2026-11-04…07 deva 4 sarkanas dienas (HTMLParser._pending).
+          python-version: '3.12'
           cache: pip
           # ci.yml is part of the key so that changing the install strategy
           # below invalidates a pip cache primed with the old (CUDA) wheels.

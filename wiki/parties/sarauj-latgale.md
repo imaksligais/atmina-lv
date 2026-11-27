@@ -1,7 +1,7 @@
 ---
 party: SARAUJ, LATGALE!
 members: 1
-claims: 53
+claims: 54
 program_promises: 0
 contradictions: 1
 votes_par: 0

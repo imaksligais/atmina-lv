@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 16
 votes: 7754
 contradictions: 0
-mentioned_in: 173
+mentioned_in: 176
 last_active: 2026-11-24
 top_topics:
 - Sabiedriskie mediji

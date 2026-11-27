@@ -1,10 +1,10 @@
 ---
 topic: Valsts pārvalde
-positions: 785
-votes: 28184
-politicians: 127
+positions: 791
+votes: 28279
+politicians: 128
 contradictions: 3
-last_activity: '2026-11-24 00:00:00'
+last_activity: '2026-11-26 00:00:00'
 top_politicians:
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'
 - '[[persons/guntars-vitols|Guntars Vītols]]'

@@ -4,6 +4,7 @@
 {% from "_macros.html.j2" import prv2_card %}
 
 {% block title %}atmina.lv{% endblock %}
+{% block og_title %}atmina.lv — Politiskā atmiņa{% endblock %}
 
 {% block content %}
 <section class="hero-v2">
@@ -612,7 +613,7 @@
         {% for v in recent_votes %}
         <tr>
           <td>{{ v.vote_date|lv_date }}</td>
-          <td><a class="vote-link" href="balsojumi.html#vote-{{ v.id }}">{{ v.motif[:80] }}{% if v.motif|length > 80 %}…{% endif %}</a></td>
+          <td><a class="vote-link" href="balsojumi.html#vote-{{ v.id }}">{{ v.motif|word_trunc(80) }}</a></td>
           {# Tukšs result = avots iznākumu nenosauc (apakšpunkta balsojums,
              procedurāla rinda). Nerādām to kā noraidījumu — badge-red ar
              "None" bija tieši tas, ko šis zars darīja līdz 2026-08-17.

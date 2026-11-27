@@ -4,9 +4,9 @@ party: Nacionālā apvienība
 role: Saeimas deputāts, Iekšlietu ministrijas parlamentārais sekretārs
 relationship_type: tracked
 positions: 80
-votes: 7686
+votes: 7706
 contradictions: 0
-mentioned_in: 953
+mentioned_in: 954
 last_active: 2026-11-21
 top_topics:
 - Imigrācija

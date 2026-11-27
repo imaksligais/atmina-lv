@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
 positions: 15
-votes: 27
+votes: 47
 contradictions: 0
-mentioned_in: 128
+mentioned_in: 129
 last_active: 2026-11-21
 top_topics:
 - Transports

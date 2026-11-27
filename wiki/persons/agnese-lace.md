@@ -6,9 +6,9 @@ role: Saeimas deputāte, Pilsonības, migrācijas un sabiedrības saliedētības
   bijusī kultūras ministre
 relationship_type: tracked
 positions: 18
-votes: 27
+votes: 47
 contradictions: 0
-mentioned_in: 258
+mentioned_in: 261
 last_active: 2026-11-23
 top_topics:
 - NVO un pilsoniskā sabiedrība

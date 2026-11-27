@@ -10,7 +10,7 @@ Schema (compact arrays, pzv1 style)::
 
     {"v": 3,
      "p": [[name, slug, party_short, party_color, has_photo, claims, contras, cat], ...],
-     "t": [[topic, color, claims], ...],
+     "t": [[topic, color, claims, slug], ...],   # slug → temas/<slug>.html
      "g": [[name, short, color, claims], ...],
      "c": [[label, id, politician_name, severity, topic], ...]}
 
@@ -141,7 +141,8 @@ def _fetch_search_index(db: sqlite3.Connection) -> dict[str, Any]:
 
     # Topics — same scope as the Pozīcijas rail counts.
     topics = [
-        [row["topic"], TOPIC_COLORS.get(row["topic"], FALLBACK_COLOR), row["cnt"]]
+        [row["topic"], TOPIC_COLORS.get(row["topic"], FALLBACK_COLOR), row["cnt"],
+         _slugify(row["topic"])]  # tas pats slugs kā temas/<slug>.html (topics.py)
         for row in db.execute("""
             SELECT c.topic, COUNT(*) AS cnt
             FROM claims c

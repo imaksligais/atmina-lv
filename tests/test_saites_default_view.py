@@ -192,6 +192,7 @@ def test_full_graph_loads_only_on_demand_and_selection_works_by_tap(saites_site)
     assert page.evaluate(dimmed) == 15
     assert page.locator(".vote-line.vote-top").count() == 1
     assert page.locator(".detail-stat-btn.active").get_attribute("data-section") == "saites"
+    assert page.locator(".detail-stat-btn[aria-pressed='true']").get_attribute("data-section") == "saites"
     assert "Visbiežāk balso vienādi" in page.locator("#detail-content").text_content()
     assert "100 %" in page.locator(".detail-vote-list").inner_text()
     # Partiju leģenda: JV izceļ 2 JV mezglus, otrs spiediens noņem.

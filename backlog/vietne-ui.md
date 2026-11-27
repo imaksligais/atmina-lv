@@ -23,10 +23,11 @@ Sadaļa ieviesta 2026-10-17 (`kind: atradums`, `src/render/analyses.py`, `tests/
 - **Signāls:** lasītāja komentārs Reddit: lapa izskatās pēc «noklusējuma Claude izvades», tāpēc dati šķiet mazāk ticami. Fakts: Styrene netiek lietots (sistēmas sans + serifs + JetBrains Mono; serifs kopš 2026-10-11 ir pašmitināts Source Serif 4, Georgia tikai rezerve — CHANGELOG 2026-10-11), bet serifa virsraksti + mono etiķetes + krēmīgi toņi + sepijas attēli veido atpazīstamu AI-ģenerētu stilu.
 - **Rīcība (operators 2026-10-08: «vēlāk darīsim ar savu unikālo fontu»):** savs burtveidolu pāris (LV diakritika!), krāsa, logotips. Paralēli — redzamāka «Kā mēs strādājam» un labojumu žurnāls; `about`/`kontakti` roku veidotā varoņa galvene → kopā ar šo (nav `pagehead`). Tumšās tēmas toņi: `--bg` viens avots (`chrome-v1.js`, `theme-init.js` literālis piesprausts testā). *Īpašnieks:* operators.
 
-### [OPERATOR] Tēmu ikonas — live kopš 2026-11-23 (`51d58620`); atlikums: sānu svītra, ikonu izvēle, profila saraksts
+### [OPERATOR] Tēmu ikonas — live kopš 2026-11-23 (`51d58620`); atlikums: ikonu izvēle, profila saraksts
 - **Izdarīts:** 35 tēmām Lucide ikona tonētā kvadrātiņā tēmu direktorijā (`temas.html`) un tēmas lapas virsrakstā; `TOPIC_ICONS` blakus `TOPIC_COLORS` (`src/render/_common/constants.py`), sprite `assets/topics.svg` būvē `scripts/build_topic_sprite.py`; noteikumi `wiki/operations/ui-conventions.md` § Tēmu ikonas. Bildes un mērījumi `.scratch/temu-ikonas/`.
 - **Publicēts 23.11.** ar operatora «Ok, lieliski … publish» (deploy `51d58620`); dzīvajā Chrome 390 px: ikonas uzzīmētas 37/37 trīs lapās, konsoles kļūdu 0 (`.scratch/temu-ikonas/live_check.py`).
-- **Operatoram (nav atbildēts):** (1) kartītē paturēt 3 px krāsaino sānu svītru blakus ikonai (live tagad; `ui-conventions.md` § Kartītes un saraksti) vai noņemt; (2) ikonu izvēle nav apstiprināta pa vienai, strīdīgākās: Ukraina un Krievija (swords), Korupcija un KNAB (hand-coins), Pensijas (piggy-bank), Saeimas darbs (scroll-text), Imigrācija (id-card), ES politika (circle-star).
+- **Sānu svītra noņemta** tēmu kartītēm (operators 2026-11-25; `ui-conventions.md` § Tēmu ikonas).
+- **Operatoram (nav atbildēts):** ikonu izvēle nav apstiprināta pa vienai, strīdīgākās: Ukraina un Krievija (swords), Korupcija un KNAB (hand-coins), Pensijas (piggy-bank), Saeimas darbs (scroll-text), Imigrācija (id-card), ES politika (circle-star).
 - **Nav pārbaudīts:** Android emulators; WebKit (iPhone) tumšā tēma; esošās tēmu birkas, kas tumšajā tēmā krāsu jauc `in oklch` (ikonām tas WebKit mainīja toni).
 - **Nav darīts:** profila tēmu saraksts (tur tēmas ir birkas — sākotnējais plāns birkās ikonas neliek); sākumlapā tēmu režģa vairs nav. `TOPIC_COLORS` nav pārtaisīts par `{color, icon}` — divas vārdnīcas ar vienādām atslēgām, ko sargā `tests/test_topics.py` (mazāks diffs: krāsu lasa 6 moduļi).
 - *Jaunai tēmai:* ieraksts abās vārdnīcās + sprite pārbūve (tests krīt, ja aizmirsts).
@@ -68,6 +69,10 @@ Pirmā kārta izpildīta 2026-09-06 (`2b48c541`; `docs/arhivs/handoffs/HANDOFF-2
 ### [OPEN] good-css 5. kārtas atlikums — operatora jautājumi (2026-10-21)
 
 Kārta: `docs/plans/archive/2026-10-21-good-css-5-karta.md`, kopsavilkums `docs/audits/2026-10-21-good-css-5/kopsavilkums.md`. Daļa (a) izdarīta 2026-11-23 (mazie mērķi telefonā, tūkstošu atstarpes, likuma lapas atstarpe, `.badge-red` tumšajā; `tests/test_phone_tap_targets.py`). Paliek: operatora jautājumi (kopsavilkums § D): `<title>`/og_title datumi `16.10.2026` (222 lapas, sociālie priekšskatījumi); lasīšanas platums garajiem rakstiem; multi-select → `popover`, mobilais filtrs → `<details>`, X filtrs telefonā; statistikā LV skaitļu formāts; nedēļas pārskata galvene kā dienas; fontu skala. D2 (ziņu/X lapošana) NEceļ — § Ne-darīt. *Trigeris:* operatora atbilde. *Īpašnieks:* operators.
+
+### [OPEN] Dizaina vienādošana pēc golden-rules — viena kārta ar «pirms/pēc» (2026-11-25)
+
+No 2026-11-25 Gemini projekta pārskata § 3.1 (fails glabājas tikai lokāli, ārpus repo) (pārlūka mērījumus neesam atkārtojuši). Operators 2026-11-25 apstiprināja virzienu: LIELIE BURTI etiķetēs → parasts reģistrs visā vietnē vienā kārtā (ne pa gabaliem), kopā ar krāsainajiem punktiem pogās (`pretrunas.html`), kreisās malas laika līniju profilā, faktu dublēšanos (profila cilnes pret skaitļu joslu, `saeima.html` «100 deputāti» ×4) un pogu izskatu skaitu `pozicijas.html`. Atbild arī «Valdība» (a) jautājumu. *Rīcība:* `mans-dizains`, ekrānuzņēmumi pirms/pēc, operatora apstiprinājums pirms deploy. *Īpašnieks:* operators/kods.
 
 ### [OPERATOR] Lapa «Valdība» — divi jautājumi pēc publicēšanas (2026-11-18)
 

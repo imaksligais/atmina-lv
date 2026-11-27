@@ -1,12 +1,12 @@
 ---
 name: Ģirts Lapiņš
 party: Nacionālā apvienība
-role: Saeimas deputāts
+role: Saeimas deputāts (mandāts uz laiku)
 relationship_type: tracked
 positions: 10
-votes: 1387
+votes: 1407
 contradictions: 0
-mentioned_in: 114
+mentioned_in: 120
 last_active: 2026-11-21
 top_topics:
 - Imigrācija

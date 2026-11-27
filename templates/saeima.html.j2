@@ -134,7 +134,7 @@
           <li><span class="slv-key slv-key-uzt-nebalsoja" aria-hidden="true"></span>nebalsoja <span class="slv-key-n">{{ gov.uzt_counts.nebalsoja }}</span></li>
           {% if gov.uzt_counts.nav %}<li><span class="slv-key slv-key-nav" aria-hidden="true"></span>nav ieraksta <span class="slv-key-n">{{ gov.uzt_counts.nav }}</span></li>{% endif %}
         </ul>
-        <p class="slv-legend-note">Katra deputāta balss, kad Saeima {{ gov.date }} lēma par uzticību Ministru kabinetam. Rāda ievēlēto sastāvu balsojuma brīdī; vēlāk ministru vietā Saeimā nāks aizstājēji.{% if gov.uzt_counts.nav %} «Nav ieraksta»: mūsu balsojuma datos šim deputātam balss nav.{% endif %} Dati par {{ gov.rows_n }} no {{ total }}. <a href="{{ gov.url|safe_url }}" target="_blank" rel="noopener">Balsojums ↗</a></p>
+        <p class="slv-legend-note">Katra deputāta balss, kad Saeima {{ gov.date }} lēma par uzticību Ministru kabinetam. {% if mandates_n %}Puslokā ir pašreizējais sastāvs: {{ mandates_n }} {{ mandates_n|lv_plural("deputāts", "deputāti") }} ministru vietā toreiz vēl nebija Saeimā, tāpēc viņiem balss nav.{% endif %}{% if gov.uzt_counts.nav %} «Nav ieraksta»: mūsu balsojuma datos šim deputātam balss nav.{% endif %} Dati par {{ gov.rows_n }} no {{ total }}. <a href="{{ gov.url|safe_url }}" target="_blank" rel="noopener">Balsojums ↗</a></p>
       </div>
       {%- endif %}
       <div class="slv-legend" data-lens-for="v14">
@@ -197,8 +197,38 @@
       </li>
       {% endfor %}
     </ul>
-    <p class="slv-prez-note">{{ committees.n }} komisiju sastāvs un vadība vēl nav ievēlēti · <a href="{{ committees.source_url|safe_url }}" target="_blank" rel="noopener">saeima.lv{% if offices_checked %}, {{ offices_checked }}{% endif %} ↗</a></p>
     <p class="slv-prez-note">Amati pēc saeima.lv datiem{% if offices_checked %}, pārbaudīti {{ offices_checked }}{% endif %}: <a href="{{ presidium_source_url|safe_url }}" target="_blank" rel="noopener">Prezidijs ↗</a> · <a href="{{ factions_source_url|safe_url }}" target="_blank" rel="noopener">frakcijas ↗</a></p>
+  </section>
+
+  <section class="slv-kom" aria-labelledby="slv-kom-title">
+    <div class="section-head">
+      <div>
+        <div class="section-head-kicker">{{ committees|length }} pastāvīgās komisijas</div>
+        <h2 class="section-head-title" id="slv-kom-title">Komisijas</h2>
+      </div>
+    </div>
+    <div class="slv-kom-head" aria-hidden="true"><span>Komisija</span><span>Priekšsēdētājs</span><span>Locekļi</span></div>
+    {% for c in committees %}
+    <details class="slv-kom-item" id="{{ c.anchor }}">
+      <summary class="slv-kom-sum">
+        <span class="slv-kom-name">{{ c.name }}</span>
+        <span class="slv-kom-chair" style="--seat-list:{{ c.chair.list.color }}"><span class="slv-swatch" aria-hidden="true"></span>{{ c.chair.name }} <span class="slv-kom-list">{{ c.chair.list.short }}</span></span>
+        <span class="slv-kom-n">{{ c.n }}</span>
+      </summary>
+      <ul class="slv-kom-members" role="list">
+        {% for m in c.members %}
+        <li><a class="slv-kom-row" href="#dep-{{ m.slug }}" style="--seat-list:{{ m.list.color }}">
+          <span class="slv-kom-mname">{{ m.name }}</span>
+          <span class="slv-kom-title{% if m.role != 'member' %} is-lead{% endif %}">{{ m.title }}</span>
+          <span class="slv-kom-mlist"><span class="slv-swatch" aria-hidden="true"></span>{{ m.list.short }}</span>
+        </a></li>
+        {% endfor %}
+      </ul>
+      {% if c.url %}<p class="slv-kom-src"><a href="{{ c.url|safe_url }}" target="_blank" rel="noopener">Komisijas lapa saeima.lv ↗</a></p>{% endif %}
+    </details>
+    {% endfor %}
+    <p class="slv-prez-note">Sastāvs pēc saeima.lv{% if committees_checked %}, pārbaudīts {{ committees_checked }}{% endif %} · <a href="{{ committees_source_url|safe_url }}" target="_blank" rel="noopener">komisijas ↗</a></p>
+    {% if mandates_n %}<p class="slv-prez-note">{{ mandates_n }} {{ mandates_n|lv_plural("deputāts", "deputāti") }} sēž ministru vietā: kamēr deputāts ir ministrs, viņa mandātu pilda nākamais kandidāts no tā paša saraksta.</p>{% endif %}
   </section>
 
   {% if cabinet %}

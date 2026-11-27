@@ -4,7 +4,7 @@ Frontend un chrome noteikumi, kas nav acīmredzami no koda. Pārcelts no privāt
 
 ## Tēmas (light/dark)
 
-- **GAIŠAIS = noklusējums** (flip `c634c47`); tumšais = opt-in caur `localStorage['atmina:theme']`. **`:root` apzināti tur DARK vērtības** — light dzīvo `html[data-theme="light"]` blokā, un bootstrap skripts uzliek `data-theme="light"`, ja localStorage ≠ 'dark'. JS-disabled → tumšais fallback (apzināti pieņemts). NElabo `:root` uz light — tas NAV bugs.
+- **GAIŠAIS = noklusējums** (flip `c634c47`); tumšais = opt-in caur `localStorage['atmina:theme']`. **`:root` apzināti tur DARK vērtības** — light dzīvo `html[data-theme="light"]` blokā, un bootstrap skripts uzliek `data-theme="light"`, ja localStorage ≠ 'dark'. JS-disabled → tumšais fallback (apzināti pieņemts). NElabo `:root` uz light — tas NAV bugs. golden-rules § 3.1 «tumšais pēc noklusējuma» atmina.lv NEattiecas (avīzes/lasīšanas vietne; operators 2026-11-25).
 - **Datu-vadītas krāsas tekstā emitē caur CSS custom property** (`--party-color` / `--topic-color`), NEKAD inline `color:HEX` (inline pārspēj stylesheet → light režīmā nevar pārrakstīt). Resting: `color: var(--party-color, var(--text-muted))`. Light patumšināšana: `color-mix(in srgb, var(--party-color) 47%, #1f1b14)` → WCAG AA uz krēma fona pat gaišiem zīmola toņiem.
 - **Tēmas-adaptīvi attēli = divi `<img>` + CSS kaskāde** (`img.theme-img-dark`/`img.theme-img-light`, style.css pie `.analysis-feat-media`): noklusējums bez `data-theme` rāda TUMŠO (JS-disabled atkāpe), `html[data-theme="light"]` pārslēdz — momentāni, bez JS. Analīžu kartītēm to ieslēdz `image_light:` frontmatter (`_load_analyses`). Bāzes slēpšanas noteikums ir `html img.theme-img-light` (0,1,2) — ar nolūku PĀRSIT jebkuru `.konteiners img` (0,1,1) neatkarīgi no vietas failā; kaila `.klase` (0,1,0) un pat `img.klase` pirms vēlāka `.brief-hero img` abas reizes izgāzās dzīvajā pārbaudē 2026-07-29. Sedz kartītes (analizes/sintēzes/landing) un rakstu hero (`blog-post.html.j2`, sintēzēm `image_light_src`). Teksta kaveriem (Siliņas, Sprūda sintēzes) dvīņu NAV ar nolūku — LV teksts ģenerētā attēlā ir halucināciju risks.
 - **`<meta name="darkreader-lock">` NEDZĒST** (base.html.j2 head): vietnei ir pati sava tumšā tēma, un bez šī taga DarkReader-saimes rīki (t.sk. Brave iOS Night Mode) gaišo tēmu pārkrāso olīvbrūnā puskrāsojumā. Pāris: `meta[name=color-scheme]` ir DINAMISKS (id `meta-color-scheme`, sinhronizē bootstrap + pārslēgs) — statisks `light` tumšajā tēmā aicina auto-dark rīkus tumšot jau tumšu lapu. Sedz `tests/test_base_theme_meta.py`; vēsture CHANGELOG § 2026-07-17.
@@ -15,6 +15,10 @@ Frontend un chrome noteikumi, kas nav acīmredzami no koda. Pārcelts no privāt
 - **Jaunas lapas JS paterns:** jauns `assets/XXv1.js` (nosaukumu konvencija kā ixv1/ppv1/sav1…) — `_resolve_assets_version()` glob to uzņem cache-bust automātiski; templotē `<script src="{{ assets_prefix }}assets/XXv1.js?v={{ assets_version }}" defer>`. Per-lapas dati → `<script type="application/json" id="…">{{ dati | tojson | safe_json }}</script>` (ne-izpildāms → CSP neskar; `safe_json` ekranē `</`) un `JSON.parse(getElementById(…).textContent)`; sīki skalāri → `data-*` atribūti. Notikumi → `data-*` + deleģēts `addEventListener`, nekad `onclick=`.
 - **Ielādes kārtība:** `defer` saglabā secību starp defer skriptiem (chart-atkarīgie aiz `chart.min.js`); ja lapa sauc citu skripta `window.*` TŪLĪT (balsojumi → `bmv1.js`, saites → d3), jaunais fails jālādē SINHRONI tieši aiz atkarības. `theme-init.js` galvā ir bloķējošs AR NOLŪKU (FOUC aizsargs + fontu media-swap uz `link[data-font-async]`) — nepievieno tam defer.
 - **Jauns ārējs hosts (skripts/stils/fonts/fetch) = CSP saraksta papildinājums** `assets/_headers` — citādi resurss klusi nolūst TIKAI produkcijā (lokālam priekšskatam galvenes nav). Multi-select meklēšanas filtru visām lapām dod `ms-a11y.js` delegācija (`.multi-select-search`/`.xv1-select-search`) — jaunam widgetam savs `filterOptions` nav jāraksta. Atvēršanu, atlasi, etiķeti un klikšķi ārpusē dod `assets/msv1.js` (`atminaMultiSelect({...})`, ielādē pirms lapas skripta) — savu `setupMultiSelect` nekopē. Lapas galvene = `pagehead` makro no `templates/_macros.html.j2`, ne roku marķējums. Cilnes = `assets/tabs-v1.js` (`atminaTabs`, profila `pp-tabs` ARIA kontrakts); filtrs, kas nepārslēdz paneļus, nav cilne → `aria-pressed`. Partiju krāsas (`src.coalition.party_color_map`) un spriedžu tipu etiķetes (`TENSION_TYPE_LV`/`TENSION_BADGE`) nāk no viena avota — JS tās saņem JSON blokā, savu kartējumu neraksta. Cilnes (paneļu pārslēgšana lapā) = profila ARIA kontrakts; jaunai joslai tastatūru un `aria-selected`/tabindex dod `assets/tabs-v1.js` (`atminaTabs({...})`, `tests/test_tabs_keyboard.py`); pogas, kas filtrē VIENU sarakstu, nav cilnes — tām `aria-pressed`.
+
+## Uzruna
+
+- **Lasītāju uzrunā ar «tu»** visā vietnē (pārbaudi avotu, raksti, pārlādē lapu; bez «pats/pati» — vārds nedrīkst pieņemt dzimti), nekad ar «Jūs» (operators 2026-11-25). Izņēmums: publicēts saturs, kura labojums prasītu jaunu publicēšanas atļauju (T15).
 
 ## Chrome (nav/footer) un kurētās lapas
 
@@ -40,6 +44,8 @@ Frontend un chrome noteikumi, kas nav acīmredzami no koda. Pārcelts no privāt
 - **Filtru/kārtošanas pogām `aria-pressed` vienmēr kopā ar aktīvo klasi** — veidnē sākumstāvoklis, JS vienā vietā (`setActive()` pzv1/pnv1); jauns pārslēgšanas punkts bez tā atstāj ekrāna lasītājam novecojušu stāvokli (`tests/test_toggle_aria_pressed.py`).
 
 ## Prozas tabulas (pārskati, sintēzes) — `.post-content table`
+
+- **Kartītes telefonā ir apzināts izņēmums** no golden-rules `tehnika.md` «nepārvērt tabulas kartītēs» (operators 2026-11-25): tas attiecas tikai uz prozas tabulām; skaitliskās tabulas (`valdiba`, `saites`, `vieta`) paliek tabulas.
 
 **Tās nav datu tabulas, tās ir rindkopas režģī**, un abos galos tas sāp citādi. Mērījums 2026-09-08, 7. septembra pārskats, 12 tabulas:
 
@@ -74,12 +80,13 @@ Uz datora bija SLIKTĀK: `.table-scroll > table { min-width: max-content }` noz�
 ## Tēmu ikonas
 
 - **Ikona tikai lielajās virsmās** (tēmu direktorija, tēmas lapas virsraksts) ar makro `topic_icon(icon, prefix)`; birkās, filtros un meklēšanā ikonu nav. Krāsu dod vecāka `--topic-color`.
+- **Tēmu kartītei (`.tema-card`) nav 3 px sānu svītras** (operators 2026-11-25) — krāsu nes ikonas kvadrātiņš; izņēmums no § Kartītes un saraksti.
 - **Krāsu ikonai jauc `in srgb`, ne `in oklch`**: WebKit (iPhone) `in oklch` toni griež caur fona krāsu, un violetā tēma iznāk persiku krāsā (Playwright WebKit, 2026-11-23). Esošās tēmu birkas tumšajā tēmā vēl jauc `in oklch` — nav pārbaudītas.
 - **Jauna ikona:** nosaukums `TOPIC_ICONS`, tad `scripts/build_topic_sprite.py <lucide-static/icons>`; licence `assets/topics-LICENSE.txt`.
 
 ## Skaitļi
 
-- **Katrs skaitītājs, kas var pārsniegt 999, iet caur formatētāju** (2026-11-23): veidnē `{{ n|lv_number }}` («26 682», nedalāma atstarpe), Python kodā `_lv_number()`, JS — `window.atminaFmtN` (`assets/sgv1.js`). `toLocaleString('lv-LV')` četrciparu skaitli NEgrupē («7956») — to nelieto. Identifikatori (reģistrācijas numurs, likumprojekta numurs) nav skaitītāji un paliek kā ir.
+- **Katrs skaitītājs, kas var pārsniegt 999, iet caur formatētāju** (2026-11-23): veidnē `{{ n|lv_number }}` («26 682», nedalāma atstarpe), Python kodā `_lv_number()`, JS — `window.atminaFmtN` (`assets/sgv1.js`). Skaitļa un lietvārda saskaņa JS — `window.atminaLvPlural(n, "pozīcija", "pozīcijas")` (tas pats fails; veidnē `lv_plural`). `toLocaleString('lv-LV')` četrciparu skaitli NEgrupē («7956») — to nelieto. Identifikatori (reģistrācijas numurs, likumprojekta numurs) nav skaitītāji un paliek kā ir.
 - **Jaunu filtru reģistrē tikai `_make_env()`** (`src/render/_orchestrator.py`): testi vidi ņem no turienes (kopš 2026-11-23, `3cf5e74a6`), savus aizstājējus liek pēc tam. Testā nebūvē `Environment(loader=FileSystemLoader(...))` ar roku — tāda vide krīt ar `No filter named …`, tiklīdz veidne dabū jaunu filtru.
 - Pārbaude pārlūkā, ne ar grep: `.scratch/rsf-2026-11-23/measure.py` metode — redzamā teksta mezgli ar ≥4 cipariem pēc kārtas, izņemot gadus un citētu avota tekstu; nosauc, cik lapu pārbaudītas.
 

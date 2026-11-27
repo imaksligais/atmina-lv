@@ -4,6 +4,16 @@
 {% from "_macros.html.j2" import prv2_card, share_buttons %}
 
 {% block title %}{{ politician.name }}{% endblock %}
+{#- Amatu rāda tikai, ja tas ir īss un vienā gabalā — `role_label` ir brīvs teksts
+    (ar «|», «;», datumiem). Skaitļi = tās pašas skaitļu joslas flīzes. -#}
+{% block description -%}
+{%- set _role = politician.role_label or '' -%}
+{%- set _role = _role if _role|length <= 60 and '|' not in _role and ';' not in _role else '' -%}
+{{ politician.name }}{% if _role %} — {{ _role }}{% endif %}{% if politician.party %}, {{ politician.party }}{% endif %}.
+{%- if stat_tiles %} {% for t in stat_tiles %}{% if not loop.first %}{{ " un " if loop.last else ", " }}{% endif %}{{ t.value }} {{ t.label if t.key == "x" else t.label|lower }}{% endfor %} ar avotiem.
+{%- else %} Publiski paustās pozīcijas un balsojumi ar avotiem.{% endif %}
+{%- endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 {% block og_image %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og/politiki/{{ politician.slug }}.png{% endblock %}
 
 {% block jsonld %}
@@ -70,7 +80,7 @@
   <div class="pp-tl-body">
     <h3 class="pp-tl-title">{{ e.title }}{% if e.meta %}<span class="pp-tl-meta"> · {{ e.meta }}</span>{% endif %}</h3>
     {% if e.event_type == 'claim' and e.topic %}<span class="pp-tl-topic">{{ e.topic }}</span>{% endif %}
-    {% if e.detail %}<p class="pp-tl-detail">{{ e.detail|truncate(cut, true, '…', 0) }}</p>{% endif %}
+    {% if e.detail %}<p class="pp-tl-detail">{{ e.detail|word_trunc(cut) }}</p>{% endif %}
     {% if e.link %}<a class="pp-tl-link" href="{{ e.link | safe_url }}" target="_blank" rel="noopener">{{ e.link_label }} ↗</a>
     {% elif e.href %}<a class="pp-tl-link" href="{{ e.href }}">{{ e.link_label }} →</a>
     {% elif e.tab_link %}<a class="pp-tl-link" href="#{{ e.tab_link }}" data-tab-link="{{ e.tab_link }}">{{ e.link_label }} →</a>{% endif %}
@@ -316,7 +326,7 @@
           <h3 class="parskats-headline">
             Pozīcija{% if la.topic %} · <span class="topic-tag">{{ la.topic }}</span>{% endif %}
           </h3>
-          <p class="parskats-body">{{ la.content }}{% if la.content|length >= 200 %}…{% endif %}</p>
+          <p class="parskats-body">{{ la.content }}</p>
           {% if la.source_url %}
           <a href="{{ la.source_url | safe_url }}" target="_blank" rel="noopener">Avots →</a>
           {% endif %}
@@ -358,7 +368,7 @@
           <div class="parskats-kicker">Balso kopā ar savu frakciju</div>
           <h3 class="parskats-headline">{{ fa.pct }} %</h3>
           <p class="parskats-body">{{ fa.body }}</p>
-          <p class="pp-chart-note">Skaitītas tikai «Par», «Pret» un «Atturas» balsis; frakcijas vairākums — pārējo frakcijas deputātu biežākā balss.</p>
+          <p class="pp-chart-note">Skaitītas tikai «Par», «Pret» un «Atturas» balsis. «Atturas» skaitās kopā ar «Pret», jo Saeimā atturēšanās lēmumu aptur tāpat. Frakcijas vairākums — pārējo frakcijas deputātu biežākā balss.</p>
           {% if 'saeima' in tab_set %}<a href="#saeima" data-tab-link="saeima">Skatīt balsojumus →</a>{% endif %}
         </div>
         {% endif %}
@@ -465,7 +475,7 @@
           <span>{{ p.source_domain or 'x.com' }}</span>
           <span>{{ (p.published_at or p.scraped_at)|lv_date }}</span>
         </div>
-        {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+        {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content|word_trunc(280) }}</div>
         {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
       </div>
       {% endfor %}
@@ -526,7 +536,7 @@
           {% for v in votes %}
           <tr>
             <td style="white-space:nowrap">{{ v.vote_date|lv_date }}</td>
-            <td>{{ v.motif|truncate(80, False, '…', 0) }}</td>
+            <td>{{ v.motif|word_trunc(80) }}</td>
             <td>
               <span class="badge {% if v.vote == 'Par' %}badge-green{% elif v.vote == 'Pret' %}badge-red{% elif v.vote == 'Atturas' %}badge-yellow{% else %}badge-muted{% endif %}"{% if v.vote == 'Atturas' %} title="Atturējās — priekšlikumu neatbalstīja"{% endif %}>{{ v.vote }}</span>
             </td>
@@ -603,7 +613,7 @@
             <tr>
               <td class="saeima-activity-date">{{ s.session_date|lv_date }}</td>
               {% set s_title = s.item_title or s.document_nr or '' %}
-              <td{% if s_title|length > 140 %} title="{{ s_title }}"{% endif %}>{% if s.bill_slug %}<a href="{{ assets_prefix }}likumprojekti/{{ s.bill_slug }}.html">{{ s_title|truncate(140, true, '…', 0) }}</a>{% else %}{{ s_title|truncate(140, true, '…', 0) }}{% endif %}</td>
+              <td{% if s_title|length > 140 %} title="{{ s_title }}"{% endif %}>{% if s.bill_slug %}<a href="{{ assets_prefix }}likumprojekti/{{ s.bill_slug }}.html">{{ s_title|word_trunc(140) }}</a>{% else %}{{ s_title|word_trunc(140) }}{% endif %}</td>
               <td class="saeima-activity-date">{{ s.duration }}</td>
             </tr>
             {% endfor %}
@@ -707,7 +717,7 @@
         <span>{{ p.source_domain or 'x.com' }}</span>
         <span>{{ (p.published_at or p.scraped_at)|lv_date }}</span>
       </div>
-      {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content[:280] }}{% if p.content and p.content|length > 280 %}…{% endif %}</div>
+      {% if p.ctx_links %}<p class="profile-feed-ctx">{% for c in p.ctx_links %}{% if not loop.first %} · {% endif %}<a href="{{ c.url | safe_url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% endfor %}</p>{% endif %}<div class="profile-feed-body profile-feed-body-x">{{ p.content|word_trunc(280) }}</div>
       {% if p.source_url %}<a href="{{ p.source_url | safe_url }}" target="_blank" rel="noopener" class="profile-feed-link">Atvērt X ↗</a>{% endif %}
     </div>
     {% endfor %}

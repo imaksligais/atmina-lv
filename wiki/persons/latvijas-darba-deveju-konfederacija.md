@@ -6,7 +6,7 @@ relationship_type: organization
 positions: 88
 votes: 0
 contradictions: 0
-mentioned_in: 571
+mentioned_in: 572
 last_active: 2026-10-30
 top_topics:
 - Budžets un finanses

@@ -1,10 +1,10 @@
 ---
 name: Māris Trušelis
 party: Apvienotais saraksts
-role: Saeimas deputāts
+role: Saeimas deputāts (mandāts uz laiku)
 relationship_type: tracked
 positions: 0
-votes: 8
+votes: 28
 contradictions: 0
-mentioned_in: 6
+mentioned_in: 8
 ---

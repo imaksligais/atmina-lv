@@ -40,6 +40,7 @@ class VadHeader(BaseModel):
     position_title: str
     submitted_at: Optional[str]
     published_at: Optional[str]
+    is_old_form: bool = False  # 2002–2013 VID forma («Darbavieta:», ģimene §12)
 
 
 class VadPositionRow(BaseModel):
@@ -140,10 +141,16 @@ class ParsedDeclaration(BaseModel):
 
 
 def parse_declaration_html(html: str) -> ParsedDeclaration:
-    """Parse a modern VID amatpersonu deklarācijas detail HTML page."""
+    """Parse a VID amatpersonu deklarācijas detail HTML page — jaunā forma un
+    vecā (2002–2013: «Darbavieta:», brīvteksts §11, ģimene §12)."""
     soup = BeautifulSoup(html, "html.parser")
     header = _parse_header(soup)
-    sections = _split_sections(soup)
+    sections, headings = _split_sections(soup)
+    # Brīvteksts, pensijas karogi un ģimene — pēc virsraksta, ne numura: vecajā
+    # formā (2002–2013) brīvteksts ir §11 un ģimene §12, jaunajā §13 un §14.
+    other_sec = _section_by_heading(sections, headings, ("cita informācija", "informācija par citiem faktiem"))
+    pension_sec = _section_by_heading(sections, headings, ("norādot ar vārdiem",))
+    family_sec = _section_by_heading(sections, headings, ("laulātais",))
     return ParsedDeclaration(
         header=header,
         positions=_parse_positions(sections.get(2)),
@@ -158,10 +165,10 @@ def parse_declaration_html(html: str) -> ParsedDeclaration:
         loans_given=_parse_loans_given(sections.get(10)),
         other_benefits_text=_parse_other_benefits(soup),
         trust_agreement_text=_parse_trust_agreement(soup),
-        has_private_pension=_parse_pension_flag(sections.get(12), 0),
-        has_life_insurance=_parse_pension_flag(sections.get(12), 1),
-        other_info=_parse_other_info(sections.get(13)),
-        family=_parse_family(sections.get(14)),
+        has_private_pension=_parse_pension_flag(pension_sec, 0),
+        has_life_insurance=_parse_pension_flag(pension_sec, 1),
+        other_info=_parse_other_info(other_sec),
+        family=_parse_family(family_sec),
     )
 
 
@@ -224,9 +231,11 @@ def _parse_header(soup: BeautifulSoup) -> VadHeader:
             fields[cells[0].rstrip(":").strip()] = cells[1]
     decl_type = fields.get("Deklarācijas veids", "")
     full_name = fields.get("Vārds, uzvārds", "")
-    institution = fields.get(
-        "Darbavieta vai valsts amatpersonu saraksta iesniedzējas institūcija", ""
-    )
+    modern_label = "Darbavieta vai valsts amatpersonu saraksta iesniedzējas institūcija"
+    is_old_form = modern_label not in fields and "Darbavieta" in fields
+    institution = fields.get(modern_label) or fields.get("Darbavieta", "")
+    if len(institution) > 1 and institution[0] == institution[-1] == "'":
+        institution = institution[1:-1].strip()  # vecā forma liek «'…'»
     position_title = fields.get("Valsts amatpersonas amats", "")
     if not decl_type or not full_name:
         raise ValueError(f"nepilnīgs header: {fields!r}")
@@ -239,11 +248,23 @@ def _parse_header(soup: BeautifulSoup) -> VadHeader:
         position_title=position_title,
         submitted_at=_norm_date(fields.get("Iesniegta VID", "")),
         published_at=_norm_date(fields.get("Publicēta", "")),
+        is_old_form=is_old_form,
     )
 
 
-def _split_sections(soup: BeautifulSoup) -> dict[int, list[Tag]]:
+def _section_by_heading(
+    sections: dict[int, list[Tag]], headings: dict[int, str], needles: tuple[str, ...]
+) -> Optional[list[Tag]]:
+    for n, heading in headings.items():
+        if any(needle in heading for needle in needles):
+            return sections[n]
+    return None
+
+
+def _split_sections(soup: BeautifulSoup) -> tuple[dict[int, list[Tag]], dict[int, str]]:
+    """Sadaļas pēc numura + to virsraksti (mazajiem burtiem, viena atstarpe)."""
     out: dict[int, list[Tag]] = {}
+    headings: dict[int, str] = {}
     h2s = soup.find_all("h2")
     for h2 in h2s:
         text = h2.get_text(" ", strip=True)
@@ -258,7 +279,8 @@ def _split_sections(soup: BeautifulSoup) -> dict[int, list[Tag]]:
             if isinstance(sib, Tag):
                 siblings.append(sib)
         out[n] = siblings
-    return out
+        headings[n] = " ".join(text.lower().split())
+    return out, headings
 
 
 def _table_rows(siblings: Optional[list[Tag]]) -> list[list[str]]:
@@ -591,6 +613,8 @@ def _parse_other_info(siblings):
         elif sib.name == "table":
             lines = []
             for tr in sib.find_all("tr"):
+                if tr.find_parent("thead") is not None:
+                    continue  # vecā §11 kolonnas virsraksts «Publicējamā daļa»
                 cells = [c.get_text(" ", strip=True) for c in tr.find_all(["td", "th"])]
                 line = " ".join(c for c in cells if c)
                 if line:

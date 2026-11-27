@@ -41,8 +41,9 @@ def test_flat_discovery_rows_and_single_evidence_surface(theme, width):
             shadow: s.boxShadow, background: s.backgroundColor};
         })''')
         assert len(rows) == 9
-        for row in rows:
-            assert row["start"] == "3px", row
+        for i, row in enumerate(rows):
+            # .tema-card (4.) bez sānu svītras — krāsu nes ikona (2026-11-25).
+            assert row["start"] == ("0px" if i == 3 else "3px"), row
             assert row["end"] == "1px", row
             assert row["top"] == "0px", row
             assert row["radius"] == "0px", row

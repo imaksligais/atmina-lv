@@ -125,6 +125,21 @@ var chromeSrc = document.currentScript && document.currentScript.src;
       }
     });
   }
+  // Escape ar vienu spiedienu aizver visu atvērto (telefonā «Vairāk» saraksts
+  // ir burger izvēlnes iekšpusē). Fokuss atgriežas uz burger pogu, ja bija
+  // atvērta izvēlne, citādi uz «Vairāk».
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var moreOpen = !!more && more.getAttribute('aria-expanded') === 'true';
+    var menuOpen = nav.classList.contains('nav-open');
+    if (moreOpen) {
+      more.setAttribute('aria-expanded', 'false');
+      more.parentNode.classList.remove('is-open');
+    }
+    if (menuOpen) setOpen(false);
+    if (menuOpen && burger) burger.focus();
+    else if (moreOpen) more.focus();
+  });
 })();
 
 // [data-copy-state] pogas (profila «Dalīties»/«Kopēt saiti») dod PAŠREIZĒJO
@@ -167,21 +182,30 @@ document.addEventListener('click', function (e) {
   e.preventDefault();
   var url = shareUrlOf(btn, btn.getAttribute('data-copy-url') || '');
   if (!url) url = window.location.href;
-  var done = function () {
+  var show = function (ok) {
     var prev = btn.getAttribute('data-label') || btn.textContent;
     btn.setAttribute('data-label', prev);
-    btn.textContent = 'Nokopēts!';
-    btn.classList.add('is-copied');
-    try { document.dispatchEvent(new CustomEvent('atmina:copied')); } catch (err) {}
+    btn.textContent = ok ? 'Nokopēts.' : 'Neizdevās nokopēt';
+    if (ok) {
+      btn.classList.add('is-copied');
+      try { document.dispatchEvent(new CustomEvent('atmina:copied')); } catch (err) {}
+    }
     setTimeout(function () { btn.textContent = prev; btn.classList.remove('is-copied'); }, 1600);
   };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(done, done);
-  } else {
+  // Rezerve bez Clipboard API vai tad, ja tā atteica: execCommand atgriež
+  // false, nemetot kļūdu, tāpēc skatāmies atgriezto vērtību.
+  var legacyCopy = function () {
+    var ok = false;
     var ta = document.createElement('textarea');
     ta.value = url; document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (err) { /* no-op */ }
-    document.body.removeChild(ta); done();
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    show(ok);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(function () { show(true); }, legacyCopy);
+  } else {
+    legacyCopy();
   }
 });
 
@@ -206,7 +230,8 @@ document.addEventListener('click', function (e) {
 // to atver, lai lasītājs uzreiz redz rindas saturu, ne tikai virsrakstu.
 (function () {
   function openTarget() {
-    var id = decodeURIComponent((location.hash || '').slice(1));
+    var id;
+    try { id = decodeURIComponent((location.hash || '').slice(1)); } catch (err) { return; }
     if (!id) return;
     var el = document.getElementById(id);
     if (el && el.tagName === 'DETAILS') el.open = true;

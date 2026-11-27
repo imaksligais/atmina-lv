@@ -1,7 +1,7 @@
 ---
 party: Latvijas attīstībai
 members: 2
-claims: 155
+claims: 163
 program_promises: 11
 contradictions: 0
 votes_par: 0
@@ -14,8 +14,8 @@ top_topics:
 - Koalīcija un partijas
 - Budžets un finanses
 - Ukraina un Krievija
-- Aizsardzība un drošība
 - Izglītība
+- Aizsardzība un drošība
 ---
 
 <!-- SYNC-AUTO -->

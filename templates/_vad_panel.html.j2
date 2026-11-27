@@ -78,6 +78,7 @@
                   {% if _own and _title == 'saimnieciskās darbības veicējs' %}Pašnodarbinātais
                   {% elif _own and _title == 'saimnieciskās darbības veicēja' %}Pašnodarbinātā
                   {% elif _own %}{{ d.payload.position_title }}
+                  {% elif d.payload.family_member %}{{ d.payload.position_title }} — ģimenes loceklis
                   {% else %}{{ d.payload.position_title }} — {{ d.payload.entity_name }}{% endif %}
                 {% elif sec_key == 'real_estate' %}
                   {{ 'Cits īpašums' if d.payload.property_type == 'Pārējie' else ('Īpašums' if d.payload.property_type in ('', '-') else d.payload.property_type) }} — {{ d.payload.location }} ({{ d.payload.ownership_status }})
@@ -88,13 +89,13 @@
                 {% elif sec_key == 'savings' %}
                   {{ savings_kind_lv.get(d.payload.savings_kind, d.payload.savings_kind) }}: {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.holder_name %} — {{ d.payload.holder_name }}{% endif %}
                 {% elif sec_key == 'income' %}
-                  {{ 'Ienākumi' if d.payload.income_type in ('', '-') else d.payload.income_type }}: {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.payer_name %} <span style="color:var(--text-muted);">no {{ d.payload.payer_name }}</span>{% endif %}
+                  {{ 'Ienākumi' if d.payload.income_type in ('', '-') else d.payload.income_type }}: {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.family_member %} <span style="color:var(--text-muted);">no ģimenes locekļa</span>{% elif d.payload.payer_name %} <span style="color:var(--text-muted);">no {{ d.payload.payer_name }}</span>{% endif %}
                 {% elif sec_key == 'transactions' %}
-                  {{ d.payload.transaction_description|truncate(120, false, '…', 0) }}
+                  {{ d.payload.transaction_description|word_trunc(120) }}
                 {% elif sec_key == 'debts' %}
-                  {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.creditor_name %} — {{ d.payload.creditor_name }}{% endif %}{% if d.payload.amount_in_words %} <span style="color:var(--text-muted);">({{ d.payload.amount_in_words|truncate(90, false, '…', 0) }})</span>{% endif %}
+                  {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.family_member %} — ģimenes loceklis{% elif d.payload.creditor_name %} — {{ d.payload.creditor_name }}{% endif %}{% if d.payload.amount_in_words %} <span style="color:var(--text-muted);">({{ d.payload.amount_in_words|word_trunc(90) }})</span>{% endif %}
                 {% elif sec_key == 'loans_given' %}
-                  {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.amount_in_words %} <span style="color:var(--text-muted);">({{ d.payload.amount_in_words|truncate(90, false, '…', 0) }})</span>{% endif %}
+                  {{ d.payload.amount|lv_money(d.payload.currency) }}{% if d.payload.amount_in_words %} <span style="color:var(--text-muted);">({{ d.payload.amount_in_words|word_trunc(90) }})</span>{% endif %}
                 {% endif %}
                 {% if d.delta == 'new' %}<span class="vad-delta-marker vad-delta-marker-new">jauns</span>
                 {% elif d.delta == 'modified' %}<span class="vad-delta-marker vad-delta-marker-modified">mainījies</span>
@@ -110,27 +111,6 @@
     </details>
     {% endif %}
   {% endfor %}
-
-  {# Family — collapsed default #}
-  {% set family_rows = v.sections.get('family', []) %}
-  {% if family_rows %}
-  <details class="vad-section vad-section-family" style="margin-top:1rem;">
-    <summary style="font-weight:600; padding:0.5rem 0; cursor:pointer; color:var(--text-muted);">
-      Ģimene — publiska VID portālā ({{ family_rows|length }})
-    </summary>
-    <div class="table-wrap">
-      <table class="data-table">
-        <tbody>
-          {% for d in family_rows %}
-          <tr class="vad-delta-{{ d.delta }}">
-            <td>{{ d.payload.full_name }} <span style="color:var(--text-muted);">— {{ d.payload.relation|lower }}</span></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </details>
-  {% endif %}
 
   {% if v.has_private_pension is not none or v.has_life_insurance is not none %}
   <p style="margin-top:1rem; color:var(--text-muted); font-size:0.85rem;">

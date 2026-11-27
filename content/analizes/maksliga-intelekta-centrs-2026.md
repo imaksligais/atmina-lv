@@ -17,7 +17,7 @@ og:
 
 # Mākslīgā intelekta centrs: 19 mēneši, 416 000 eiro, divas direktores
 
-**Avoti:** Saeima, Ministru kabinets (MK), Valsts kanceleja, Uzņēmumu reģistrs (UR), TAP portāls, VARAM, VDAA, CORDIS, LSM, LV portāls, LETA, Mākslīgā intelekta centra vietne | **Dati uz:** 2026. gada 1. novembri
+**Avoti:** Saeima, Ministru kabinets (MK), Valsts kanceleja, Uzņēmumu reģistrs (UR), TAP portāls, VARAM, VDAA, CORDIS, LSM, LV portāls, LETA, Mākslīgā intelekta centra vietne | **Dati uz:** 2026. gada 1. novembri (sadaļa «Pēc publicēšanas» — 26. novembri)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -62,7 +62,11 @@ og:
 
 <li class="tl-in"><span class="tl-date"><time datetime="2026-07-15">2026. gada 15. jūlijs</time></span><span class="tl-tag">Valsts kanceleja</span><span class="tl-text">Līdz šai dienai centram izmaksāti 416 000 eiro valsts naudas. <a class="tl-src" href="https://www.mk.gov.lv/lv/jaunums/sagatavots-parskats-par-valsts-parvaldes-instituciju-maksajumiem-biedribam-un-nodibinajumiem">pārskats</a></span></li>
 
+<li class="tl-lv"><span class="tl-date"><time datetime="2026-07-27">2026. gada 27. jūlijs</time></span><span class="tl-tag">MK</span><span class="tl-text">Valdības rīcības plāns uzdod VARAM līdz 21. septembrim iesniegt valdībai Mākslīgā intelekta plānu un nodrošināt publisko finansējumu centra darbībai. <a class="tl-src" href="https://likumi.lv/ta/id/369925">rīkojums</a></span></li>
+
 <li class="tl-lv"><span class="tl-date"><time datetime="2026-11-01">2026. gada 1. novembris</time></span><span class="tl-tag">LSM</span><span class="tl-text">Tavars: «kapacitāte absolūti šobrīd nevelk», centra struktūru pārskatīs pēc jaunās valdības izveides. <a class="tl-src" href="https://www.lsm.lv/raksts/zinas/latvija/01.11.2026-kapacitate-absoluti-sobrid-nevelk-parskatis-maksliga-intelekta-centra-strukturu.a670071/">LSM</a></span></li>
+
+<li class="tl-lv"><span class="tl-date"><time datetime="2026-11-17">2026. gada 17. novembris</time></span><span class="tl-tag">Saeima</span><span class="tl-text">Saeima apstiprina otro Kulberga valdību; VARAM atkal vada Tavars. Deklarācijā: «Valdība pieņems Nacionālo mākslīgā intelekta stratēģiju», bez termiņa. <a class="tl-src" href="https://www.mk.gov.lv/lv/ministru-kabineta-valdibas-deklaracija">deklarācija</a></span></li>
 </ol>
 
 ## Kas ir centrs
@@ -164,6 +168,16 @@ Smilškastes lapas poga «Pieteikties» 1. novembrī veda uz Microsoft Forms vei
 
 Formu neiesniedzām. Lapu kopijas saglabājām 1. novembrī (archive.today: [privātuma politika](https://archive.ph/C6mL4), [smilškastes lapa](https://archive.ph/uOf4R); forma: [Wayback](https://web.archive.org/web/20261101213222/https://forms.cloud.microsoft/pages/responsepage.aspx?id=9f5h4HmkD0eUoqQtER4kU2MIq0pYcPhKkXS5-GjmB8VUQkE4UFhOMlRPQU83RzFRSk1FV1hOMFdZUC4u&route=shorturl)). Vietne pati Wayback arhīvam daļu lapu neļauj saglabāt. Formas jautājumu sarakstu nolasījām 2. novembrī no formas publiskajiem datiem; pēdējās izmaiņas formā veiktas 2026. gada 30. oktobrī. Mūsu kopijas SHA-256: `d2ba4f23f141b49abbb46cf5fded55dc4eb7aaba3448c2a7dee19801c5329f99`.
 
+## Pēc publicēšanas
+
+Valdības rīcības plānā, ko Ministru kabinets apstiprināja 2026. gada 27. jūlijā, pasākumam 39.1 ir trīs darbības rezultāti. Divi no tiem ir «Izstrādāts un MK iesniegts Mākslīgā intelekta plāns» un «Nodrošināt publisko finansējumu Mākslīgā intelekta centra darbībai un speciālās regulatīvās vides uzturēšanai». Atbildīgā institūcija ir VARAM, izpildes termiņš — 2026. gada 21. septembris ([rīkojums Nr. 449](https://likumi.lv/ta/id/369925)). Pasākums izriet no pirmās Kulberga valdības deklarācijas apņemšanās, ka «valdība 100 dienās apstiprinās Latvijas Nacionālo MI stratēģiju» ([deklarācija, Wayback kopija](https://web.archive.org/web/20260606042954/https://www.mk.gov.lv/lv/ministru-kabineta-valdibas-deklaracija)).
+
+Valsts kancelejas atskaitē par plāna izpildi (stāvoklis 15. oktobrī; valdība to izskatīja 6. novembrī) par MI plānu rakstīts «Izpildē»: darba versija izplatīta ministrijām, un «turpinās dokumenta saskaņošana». Atskaitē norādīts, ka plānā iekļauts arī budžeta pieprasījums centra darbībai. Par finansējuma uzdevumu atskaitē rakstīts: «Pabeigts. Sagatavota finansējuma aplēse.» ([atskaite](https://tapportals.mk.gov.lv/legal_acts/eb886e6e-2524-4317-8a3c-fb6d9f21e83c), [LV portāls](https://lvportals.lv/dienaskartiba/396801-valdibas-ricibas-plana-izpilditi-85-prioritaro-darbu-2026)).
+
+Saeima 17. novembrī apstiprināja otro Kulberga valdību. Tās deklarācijā rakstīts: «Valdība pieņems Nacionālo mākslīgā intelekta stratēģiju.» Termiņa tur nav. Mākslīgā intelekta centrs nav nosaukts ne šajā, ne maija deklarācijā ([deklarācija](https://www.mk.gov.lv/lv/ministru-kabineta-valdibas-deklaracija)). VARAM jaunajā valdībā atkal vada Edgars Tavars, kurš ministriju vada kopš 28. maija ([LSM](https://www.lsm.lv/raksts/zinas/latvija/17.11.2026-kulbergs-nosauc-iecereto-jaunas-valdibas-sastavu.a672254/)).
+
+Centra vietnes privātuma politikā 26. novembrī joprojām bija vecā juridiskā adrese — Alberta iela 10 (sk. «Centra vietne un konsultācijas forma»).
+
 ## Vienkāršiem vārdiem
 
 Valsts 2025. gadā izveidoja centru, kam jāpalīdz Latvijai ieviest mākslīgo intelektu. Līdz šā gada jūlijam tas no valsts saņēmis 416 000 eiro.
@@ -185,7 +199,9 @@ Politiķi, arī tie, kas centru dibināja, tagad atzīst, ka tas nav strādājis
 - Mēs nezinām, kāpēc konsultācijas forma veidota tieši tā, un neapgalvojam, ka tā veidota, lai atturētu pieteicējus.
 - Mēs neapgalvojam, ka Čerņeckas aiziešanai bija citi iemesli, nekā raksta LSM.
 - Tavara balsojums 2025. gadā un viņa vērtējums 2026. gadā nav pretruna. Tie ir divi dažādi brīži.
+- Mēs neapgalvojam, ka VARAM nav pildījusi rīcības plāna uzdevumus. Mēs citējam valdības atskaiti par stāvokli 15. oktobrī; vēlāku informāciju par MI plāna virzību publiskajos avotos neatradām.
 
 ## Labojumi
 
 - 2026\. gada 4. novembrī labots: LV portāla raksta Wayback saite ar 1. novembra datumu atvēra 25. augusta kopiju. Saite tagad ved tieši uz šo kopiju. Raksta saturs nav mainīts.
+- 2026\. gada 26. novembrī papildināts: sadaļa «Pēc publicēšanas» par valdības rīcības plānu, tā izpildes atskaiti un otrās Kulberga valdības deklarāciju; divi ieraksti laika līnijā. Iepriekšējais saturs nav mainīts.

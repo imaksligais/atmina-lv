@@ -2,7 +2,8 @@
 
 Spec: docs/superpowers/specs/2026-10-08-saeimas-pusloks-design.md.
 
-Sastāvs = ievēlēto saraksta fails (CVK oficiālais, apstiprināts 2026-10-16); saraksta
+Sastāvs = SĒDOŠIE: ievēlēto saraksta fails (CVK oficiālais, apstiprināts 2026-10-16)
+mīnus ministri, kas nolikuši mandātu, plus viņu aizstājēji (``mandates`` amatu YAML); saraksta
 nosaukums un krāsa = CVK rezultātu fails + ``parties``. Sasaiste ar profilu —
 TIKAI precīzs pilnais ``tracked_politicians.name`` (T1: nekādu apakšvirkņu) un
 tikai tiem, kam profila lapa tiešām tiek renderēta (tas pats WHERE kā
@@ -11,7 +12,7 @@ tikai tiem, kam profila lapa tiešām tiek renderēta (tas pats WHERE kā
 Visas lēcu vērtības aprēķina šeit; lapa bez JS rāda «Saraksta» lēcu un strādā.
 ``assets/slv1.js`` tikai pārslēdz ``data-lens`` un atver kartīti.
 
-Amati (Prezidijs, frakciju vadība, komisiju statuss) — no kurētā
+Amati (Prezidijs, frakciju vadība, komisiju sastāvs) — no kurētā
 ``data/saeima15_amati.yaml`` (spec: 2026-11-11-saeimas-lapa-amati-design.md),
 NE no ``tracked_politicians.role`` (brīvs teksts, T6). Neatbilstība → KRĪT.
 
@@ -72,6 +73,23 @@ _FACTION_TITLES = {
         "Priekšsēdētājas vietnieks", "Priekšsēdētājas vietniece",
     },
 }
+
+# Komisijas amats (verbatim no saeima.lv) → loma. Cits teksts → KRĪT.
+_COMMITTEE_TITLES = {
+    "chair": {"Priekšsēdētājs", "Priekšsēdētāja"},
+    "deputy": {
+        "Priekšsēdētāja biedrs", "Priekšsēdētāja biedre",
+        "Priekšsēdētājas biedrs", "Priekšsēdētājas biedre",
+    },
+    "secretary": {"Sekretārs", "Sekretāre"},
+    "member": {"Deputāts", "Deputāte"},
+}
+_COMMITTEE_ROLE = {t: role for role, titles in _COMMITTEE_TITLES.items() for t in titles}
+# 15. Saeimas pastāvīgās komisijas (saeima.lv, 25.11.). Mazāk ierakstu YAML = izkritusi komisija.
+COMMITTEES_TOTAL = 16
+# 25.11. katrs no 100 sēdošajiem ir tieši divās komisijās. Neviena = izkritis loceklis
+# (vai sēdošo sarakstā kāds, kas nesēž); trīs = dublikāts starp komisijām.
+_COMMITTEES_PER_DEPUTY = (1, 2)
 
 SEATS_TOTAL = 100
 POSITIONS_WINDOW_DAYS = 90
@@ -174,13 +192,100 @@ def _short_date(d: Any) -> str:
     return f"{d.day:02d}.{d.month:02d}." if isinstance(d, _dt.date) else ""
 
 
-def _load_offices(path: Path, elected: list[dict[str, Any]]) -> dict[str, Any]:
-    """Amatu YAML → pārbaudīts dict. Jebkura neatbilstība sastāvam → ValueError."""
-    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+def _apply_mandates(
+    mandates: dict[str, Any], elected: list[dict[str, Any]], fail: Any
+) -> list[dict[str, Any]]:
+    """Ievēlētie − mandātu nolikušie ministri + deputāti viņu vietā = sēdošie.
+
+    Aizstājējs nāk no tā paša saraksta, tāpēc katram sarakstam abu skaitam jāsakrīt;
+    aizstājējs stāv sava saraksta beigās (pārus — kurš kura vietā — neglabājam).
+    """
+    if not mandates:
+        return list(elected)
     list_of = {e["name"]: e["list_nr"] for e in elected}
+    short_of = {e["list_nr"]: e.get("list_short") for e in elected}
+    out = mandates.get("suspended") or []
+    subs = mandates.get("substitutes") or []
+    if len(set(out)) != len(out):
+        fail("mandates.suspended — vārds divreiz")
+    delta: dict[int, int] = {}
+    for name in out:
+        if name not in list_of:
+            fail(f"mandates.suspended — {name!r} nav ievēlēto sarakstā")
+        delta[list_of[name]] = delta.get(list_of[name], 0) - 1
+    seen: set[str] = set()
+    for s in subs:
+        if s["name"] in list_of:
+            fail(f"mandates.substitutes — {s['name']!r} jau ir ievēlēto sarakstā")
+        if s["name"] in seen:
+            fail(f"mandates.substitutes — {s['name']!r} divreiz")
+        if s.get("list_nr") not in short_of:
+            fail(f"mandates.substitutes — {s['name']!r}: saraksts {s.get('list_nr')!r} nav ievēlēto vidū")
+        seen.add(s["name"])
+        delta[s["list_nr"]] = delta.get(s["list_nr"], 0) + 1
+    uneven = sorted(nr for nr, d in delta.items() if d)
+    if uneven:
+        fail(f"mandates — sarakstam(-iem) {uneven} nolikto un aizstājēju skaits nesakrīt")
+    gone = set(out)
+    sitting = [e for e in elected if e["name"] not in gone]
+    for nr in dict.fromkeys(e["list_nr"] for e in elected):
+        sitting += [
+            {"name": s["name"], "list_nr": nr, "list_short": short_of[nr], "region": "", "substitute": True}
+            for s in subs if s["list_nr"] == nr
+        ]
+    return sitting
+
+
+def _check_committees(committees: dict[str, Any], list_of: dict[str, int], fail: Any) -> None:
+    """16 komisijas; katrā tieši viens priekšsēdētājs, biedrs un sekretārs; locekļi = sēdošie."""
+    if committees.get("status") != "elected":
+        fail(f"komisiju statuss {committees.get('status')!r} nav atbalstīts")
+    items = committees.get("items") or []
+    if len(items) != COMMITTEES_TOTAL:
+        fail(f"komisiju ir {len(items)}, jābūt {COMMITTEES_TOTAL}")
+    if len({c.get("name") for c in items}) != len(items):
+        fail("komisijas nosaukums divreiz")
+    seats: dict[str, int] = {}
+    for c in items:
+        cname = c.get("name")
+        members = c.get("members") or []
+        roles: dict[str, int] = {}
+        names: set[str] = set()
+        for m in members:
+            name, title = m.get("name"), m.get("title")
+            if name not in list_of:
+                fail(f"{cname} — {name!r} nav sēdošo deputātu sarakstā")
+            if title not in _COMMITTEE_ROLE:
+                fail(f"{cname} — {name!r}: nezināms amats {title!r}")
+            if name in names:
+                fail(f"{cname} — {name!r} divreiz")
+            names.add(name)
+            roles[_COMMITTEE_ROLE[title]] = roles.get(_COMMITTEE_ROLE[title], 0) + 1
+            seats[name] = seats.get(name, 0) + 1
+        for role in ("chair", "deputy", "secretary"):
+            if roles.get(role, 0) != 1:
+                fail(f"{cname} — lomai {role!r} {roles.get(role, 0)} cilvēki, jābūt tieši vienam")
+    lo, hi = _COMMITTEES_PER_DEPUTY
+    odd = sorted(n for n in list_of if not lo <= seats.get(n, 0) <= hi)
+    if odd:
+        fail(f"{len(odd)} deputāti nav {lo}–{hi} komisijās: {odd[:5]}")
+
+
+def _load_offices(path: Path, elected: list[dict[str, Any]]) -> dict[str, Any]:
+    """Amatu YAML → pārbaudīts dict ar ``sitting`` (sēdošie 100). Neatbilstība → ValueError."""
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
     def _fail(msg: str) -> NoReturn:
         raise ValueError(f"saeima: {path.name}: {msg}")
+
+    sitting = _apply_mandates(doc.get("mandates") or {}, elected, _fail)
+    if len(sitting) != SEATS_TOTAL:
+        _fail(f"sēdošo ir {len(sitting)}, jābūt {SEATS_TOTAL}")
+    slugs = [_slugify(e["name"]) for e in sitting]
+    if len(set(slugs)) != len(slugs):
+        _fail("divi sēdošie ar vienādu slug — #dep- enkuri sadurtos")
+    doc["sitting"] = sitting
+    list_of = {e["name"]: e["list_nr"] for e in sitting}
 
     presidium = (doc.get("presidium") or {}).get("members") or []
     if len(presidium) != PRESIDIUM_SIZE:
@@ -222,12 +327,7 @@ def _load_offices(path: Path, elected: list[dict[str, Any]]) -> dict[str, Any]:
         # Citādi saraksts klusi paliktu bez vadības rindas.
         _fail(f"nav frakcijas ieraksta sarakstam(-iem) {missing}")
 
-    committees = doc.get("committees") or {}
-    # Komisiju sastāva/vadības attēlojums vēl nav uzbūvēts — cits statuss = jāpapildina kods.
-    if committees.get("status") != "not_elected":
-        _fail(f"komisiju statuss {committees.get('status')!r} nav atbalstīts")
-    if not committees.get("names"):
-        _fail("nav komisiju nosaukumu")
+    _check_committees(doc.get("committees") or {}, list_of, _fail)
     return doc
 
 
@@ -373,17 +473,19 @@ def _build_context(
 ) -> dict[str, Any]:
     elected, results = _load_composition(elected_path, results_path)
     offices = _load_offices(amati_path or AMATI_PATH, elected)
+    # Sēdvietas = SĒDOŠIE (ievēlētie ± mandāti), ne CVK saraksts.
+    sitting = offices["sitting"]
     parties = {r["id"]: dict(r) for r in db.execute("SELECT id, name, short_name, color FROM parties")}
     by_nr = {x["list_nr"]: x for x in results["lists"]}
 
     seat_counts: dict[int, int] = {}
-    for e in elected:
+    for e in sitting:
         seat_counts[e["list_nr"]] = seat_counts.get(e["list_nr"], 0) + 1
     # Vietu skaits no SASTĀVA (ne rezultātu faila — tie var atšķirties, kamēr
     # viens ir provizorisks); vienādam skaitam — pēc balsīm.
     order = sorted(seat_counts, key=lambda nr: (-seat_counts[nr], -by_nr[nr]["votes"]))
 
-    people = _fetch_people(db, [e["name"] for e in elected])
+    people = _fetch_people(db, [e["name"] for e in sitting])
     photo_dir = ASSETS_DIR / "photos"
     gov = _current_government(db)
     coalition_map = get_coalition_map(db)
@@ -429,7 +531,7 @@ def _build_context(
                 # Aizvērtas grupas galvenei: verbatim amats + vārds (nav jāloka).
                 lst["chair_label"] = f"{ld['title']} {ld['name']}"
 
-    for e in elected:
+    for e in sitting:
         p = people.get(e["name"])
         slug = _slugify(e["name"])
         lst = list_by_nr[e["list_nr"]]
@@ -437,7 +539,9 @@ def _build_context(
             "list": lst,
             "name": e["name"],
             "slug": slug,
-            "region": e.get("region") or "",
+            # Aizstājējam CVK apgabala nav; rinda pasaka, kāpēc viņš sēž.
+            "region": "ministra vietā" if e.get("substitute") else (e.get("region") or ""),
+            "substitute": bool(e.get("substitute")),
             "tracked": p is not None,
             "voted14": bool(p and p["voted14"]),
             "pos90": p["pos90"] if p else None,
@@ -487,7 +591,21 @@ def _build_context(
     by_name = {s["name"]: s for s in seats}
     presidium = [{**by_name[m["name"]], "office": m["office"]} for m in offices["presidium"]["members"]]
     leaders = [ld for f in offices["factions"]["items"] for ld in f["leaders"]]
-    committees = offices["committees"]
+    committees = [
+        {
+            "name": c["name"],
+            "url": c.get("url") or "",
+            "anchor": "kom-" + _slugify(c["name"]),
+            "n": len(c["members"]),
+            "members": [
+                {**by_name[m["name"]], "title": m["title"], "role": _COMMITTEE_ROLE[m["title"]]}
+                for m in c["members"]
+            ],
+        }
+        for c in offices["committees"]["items"]
+    ]
+    for c in committees:
+        c["chair"] = next(m for m in c["members"] if m["role"] == "chair")
 
     gov_ctx = None
     if gov:
@@ -532,7 +650,10 @@ def _build_context(
         "presidium_source_url": offices["presidium"].get("source_url") or "",
         "factions_source_url": offices["factions"].get("source_url") or "",
         "offices_checked": _short_date(offices.get("checked")),
-        "committees": {"n": len(committees["names"]), "source_url": committees.get("source_url") or ""},
+        "committees": committees,
+        "committees_source_url": offices["committees"].get("source_url") or "",
+        "committees_checked": _short_date(offices["committees"].get("checked")),
+        "mandates_n": len((offices.get("mandates") or {}).get("substitutes") or []),
         "cabinet": _cabinet_rows(db),
         "faction_chairs_n": sum(1 for ld in leaders if ld["role"] == "chair"),
         "faction_deputies_n": sum(1 for ld in leaders if ld["role"] == "deputy"),

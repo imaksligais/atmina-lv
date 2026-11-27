@@ -110,13 +110,11 @@ def _generate_law_pages(db: sqlite3.Connection, env: Environment, output_dir: Pa
     """Renderē /likumi/<slug>.html katram wiki/laws/<slug>.md (izņemot likumi.md)."""
     out_laws = output_dir / "likumi"
     out_laws.mkdir(parents=True, exist_ok=True)
-    template = env.get_template("likums.html.j2")
     pages = _fetch_law_pages(db, laws_dir=laws_dir)
     count = 0
     for law in pages:
-        html = template.render(law=law)
-        target = out_laws / f"{law['slug']}.html"
-        target.write_text(html, encoding="utf-8")
+        # _render_page, ne template.render: tikai tas ieliek canonical_url/og:url.
+        _render_page(env, "likums.html.j2", out_laws / f"{law['slug']}.html", {"law": law})
         count += 1
     logger.info("_generate_law_pages: wrote %d law pages to %s", count, out_laws)
     return count

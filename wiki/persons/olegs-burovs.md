@@ -18,6 +18,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/velesanas|Vēlēšanas]] (30%), [[topics/valsts-parvalde|Valsts pārvalde]] (25%), [[topics/pilsetvide|Pilsētvide]] (15%)
-- **30d:** 2 claims, 0.2× bāzes līnija
+- **30d:** 1 claims, 0.1× bāzes līnija
 - **Spriedzes:** [[persons/andris-kulbergs|Andris Kulbergs]] (1 spriedze)
 <!-- /SYNC-AUTO -->

@@ -420,8 +420,10 @@ def _pin_14th_saeima(monkeypatch):
 def test_faction_alignment_uses_per_vote_faction_and_cast_ballots_only(db_faction):
     """Sargā: (a) frakcija ņemta no TĀ balsojuma rindas, ne no deputāta
     «pašreizējās» (T6); (b) ārpusfrakciju balsojums izkrīt; (c) «Nebalsoja»
-    neskaitās ne deputātam, ne citiem; (d) «Atturas» pret «Par» = nesakritība;
-    (e) balsojumi pirms CURRENT_TERM_START izkrīt; (f) < 20 → nav ieraksta."""
+    neskaitās ne deputātam, ne citiem; (d) «Atturas» pret «Par» = nesakritība,
+    bet «Atturas» pret «Pret» = sakritība (Saeimā atturēšanās lēmumu aptur tāpat
+    kā «Pret»; operators 2026-11-26); (e) balsojumi pirms CURRENT_TERM_START
+    izkrīt; (f) < 20 → nav ieraksta."""
     from src.render._common import faction_alignment_data
 
     a_par = [(2, "A", "Par"), (3, "A", "Par"), (4, "A", "Par")]
@@ -433,6 +435,8 @@ def test_faction_alignment_uses_per_vote_faction_and_cast_ballots_only(db_factio
     for v, no_faction in ((20, None), (25, "")):
         _fv(db_faction, v, [(p, no_faction, "Pret") for p in (1, 8, 9, 10)] + a_par)
     _fv(db_faction, 21, [(1, "A", "Atturas")] + a_par)  # Atturas pret Par → nesakrīt
+    # Atturas pret Pret → sakrīt (abas balsis lēmumu aptur)
+    _fv(db_faction, 26, [(1, "A", "Atturas"), (2, "A", "Pret"), (3, "A", "Pret"), (4, "A", "Pret")])
     _fv(db_faction, 22, [(1, "A", "Nebalsoja")] + a_par)  # nav nodota balss → izkrīt
     # citu «Nebalsoja» neveido vairākumu: nodotās balsis 3 × Par → sakrīt
     _fv(db_faction, 23, [(1, "A", "Par")] + a_par + [(p, "A", "Nebalsoja") for p in (11, 12, 13, 14)])
@@ -440,8 +444,8 @@ def test_faction_alignment_uses_per_vote_faction_and_cast_ballots_only(db_factio
 
     out = faction_alignment_data(db_faction)
 
-    # sakrīt: 1–10, 23 = 11; nesakrīt: 11–19, 21 = 10
-    assert out == {1: {"pct": 52, "agree": 11, "total": 21, "convocation": 14}}
+    # sakrīt: 1–10, 23, 26 = 12; nesakrīt: 11–19, 21 = 10
+    assert out == {1: {"pct": 54, "agree": 12, "total": 22, "convocation": 14}}
 
 
 def test_faction_alignment_majority_excludes_self_skips_ties_and_floors(db_faction):
@@ -456,8 +460,9 @@ def test_faction_alignment_majority_excludes_self_skips_ties_and_floors(db_facti
     _fv(db_faction, 301, [(1, "A", "Par"), (2, "A", "Par"), (3, "A", "Par"),
                           (4, "A", "Pret"), (5, "A", "Pret"), (6, "A", "Pret")])
     _fv(db_faction, 302, [(1, "A", "Par"), (2, "A", "Pret"), (3, "A", "Pret")])  # tikai 2 citi
-    _fv(db_faction, 303, [(1, "A", "Par"), (2, "A", "Par"), (3, "A", "Par"),  # 2:2 neizšķirts
-                          (4, "A", "Pret"), (5, "A", "Pret"), (6, "A", "Atturas")])
+    # citi 2 Par / 1 Pret / 1 Atturas = 2:2 neizšķirts, jo Atturas skaitās kopā ar Pret
+    _fv(db_faction, 303, [(1, "A", "Par"), (2, "A", "Par"), (3, "A", "Par"),
+                          (4, "A", "Pret"), (5, "A", "Atturas")])
 
     out = faction_alignment_data(db_faction)
 

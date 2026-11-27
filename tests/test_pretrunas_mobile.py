@@ -302,7 +302,7 @@ def test_copy_link_button_copies_contradiction_url(site, page_name):
             page.wait_for_selector(f"#pretruna-{TARGET}.open", timeout=8000)
         g = page.evaluate(COPY_PROBE, sel)
         page.locator(sel).click()
-        page.wait_for_function("(s) => document.querySelector(s).textContent === 'Nokopēts!'",
+        page.wait_for_function("(s) => document.querySelector(s).textContent === 'Nokopēts.'",
                                arg=sel, timeout=3000)
         copied = page.evaluate("navigator.clipboard.readText()")
         still_open = page.evaluate(f"!!document.querySelector('#pretruna-{TARGET}.open')") if hash_ else True

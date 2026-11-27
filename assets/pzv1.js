@@ -58,6 +58,13 @@
                     .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  // Avota saite tikai uz http(s) — servera `safe_url` filtra spogulis
+  // (src/render/_common/filters.py); citādi (javascript: u.c.) saites nav.
+  function safeHttpUrl(u) {
+    const s = u == null ? "" : String(u).trim();
+    return /^https?:\/\//i.test(s) ? s : "";
+  }
+
   // Skaitlis ar tūkstošu atstarpi kā galvenē («9 801») — kopīgais
   // window.atminaFmtN (assets/sgv1.js).
   const fmtInt = window.atminaFmtN;
@@ -257,7 +264,7 @@
     } else if (s === "confidence") {
       filtered.sort((a, b) => (b[IDX_CONF] || 0) - (a[IDX_CONF] || 0));
     } else if (s === "topic") {
-      filtered.sort((a, b) => (a[IDX_TOPIC] || "").localeCompare(b[IDX_TOPIC] || ""));
+      filtered.sort((a, b) => (a[IDX_TOPIC] || "").localeCompare(b[IDX_TOPIC] || "", "lv"));
     }
     return filtered;
   }
@@ -293,6 +300,7 @@
       return `<span class="pzv1-conf-dot${on ? " is-on" : ""}"></span>`;
     }).join("");
     const tierLabel = { augsta: "Augsta", laba: "Laba", merena: "Mērena" }[c[IDX_CONF_TIER]] || "";
+    const sourceUrl = safeHttpUrl(c[IDX_SOURCE_URL]);
 
     row.innerHTML =
       `<div>
@@ -305,12 +313,12 @@
        <div><p class="pzv1-row-text">${esc(c[IDX_STANCE])}</p></div>
        <div class="pzv1-row-date">${esc(lvDate(c[IDX_DATE]))}</div>
        <div class="pzv1-row-confidence">
-         <span class="pzv1-conf-line" title="Ticamība ${Number(c[IDX_CONF]).toFixed(2)}">
+         <span class="pzv1-conf-line" title="Ticamība ${Number(c[IDX_CONF]).toFixed(2).replace(".", ",")}">
            <span class="pzv1-conf-dots">${dots}</span>
            <span class="pzv1-conf-label">${esc(tierLabel)}</span>
          </span>
-         ${c[IDX_SOURCE_URL]
-           ? `<a class="pzv1-row-source" href="${esc(c[IDX_SOURCE_URL])}" target="_blank" rel="noopener">${esc(c[IDX_SOURCE_DOMAIN] || "avots")} ↗</a>`
+         ${sourceUrl
+           ? `<a class="pzv1-row-source" href="${esc(sourceUrl)}" target="_blank" rel="noopener">${esc(c[IDX_SOURCE_DOMAIN] || "avots")} ↗</a>`
            : ""}
        </div>`;
     return row;

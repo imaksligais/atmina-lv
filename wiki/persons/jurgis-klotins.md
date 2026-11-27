@@ -4,9 +4,9 @@ party: Nacionālā apvienība
 role: Saeimas deputāts (mandāts uz laiku)
 relationship_type: tracked
 positions: 22
-votes: 5813
+votes: 5833
 contradictions: 0
-mentioned_in: 135
+mentioned_in: 137
 last_active: 2026-11-20
 top_topics:
 - Sociālā politika

@@ -394,6 +394,32 @@ class TestAppendBillStage:
         db.close()
         assert status == "noraidīts"
 
+    def test_rejected_agenda_inclusion_does_not_reject_bill(self, bills_db):
+        """17/Lp15 (2026-11-26): noraidīta tikai iekļaušana sēdes darba kārtībā
+        (37/21/26) — likumprojekts nav noraidīts, lapa rādīja «noraidīts»."""
+        bid = upsert_bill(bills_db, "17/Lp15", "Test", "Lp15")
+        db = get_db(bills_db)
+        vid = db.execute(
+            "INSERT INTO saeima_votes (motif, vote_date, result, document_nr) VALUES (?, ?, ?, ?)",
+            ("Par likumprojekta Grozījumi Naftas produktu cenu pieauguma ierobežošanas likumā "
+             "(17/Lp15), nodošana komisijām iekļaušanu Saeimas sēdes darba kārtībā",
+             "2026-11-26", "Noraidīts", "17/Lp15")).lastrowid
+        db.commit()
+        db.close()
+        append_bill_stage(bills_db, bid, "iesniegts", "Noraidīts", "2026-11-26", vote_id=vid)
+        assert self._current(bills_db, bid) == ("iesniegts", "procesā")
+        # Lēmuma projektam atteikta iekļaušana = noraidīts (operators 2026-10, 1083/Lm14).
+        lm = upsert_bill(bills_db, "1083/Lm14", "Test", "Lm14")
+        db = get_db(bills_db)
+        vid = db.execute(
+            "INSERT INTO saeima_votes (motif, vote_date, result, document_nr) VALUES (?, ?, ?, ?)",
+            ("Par iekļaušanu nākamās Saeimas sēdes darba kārtībā. Par veselības mācības ieviešanu "
+             "(1083/Lm14)", "2026-06-18", "Noraidīts", "1083/Lm14")).lastrowid
+        db.commit()
+        db.close()
+        append_bill_stage(bills_db, lm, "procesuāls", "Noraidīts", "2026-06-18", vote_id=vid)
+        assert self._current(bills_db, lm) == ("procesuāls", "noraidīts")
+
     def test_second_review_final_vote_and_rejected_amendment(self, bills_db):
         """Otrreizēja caurlūkošana (2026-10-20): galīgais balsojums ar «Pieņemts»
         ir likums; noraidīts priekšlikums likumprojektu NEnoraida (1019/Lp14 —

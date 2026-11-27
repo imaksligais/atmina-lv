@@ -433,6 +433,6 @@ def _heavy_fetch_plan(only: Optional[set[str]]) -> dict[str, bool]:
 
     return {
         "votes": want("balsojumi") or want("dashboard"),
-        "blog_posts": want("blog") or want("dashboard") or want("static"),
+        "blog_posts": want("blog") or want("dashboard") or want("static") or want("analizes"),
         "trends_data": want("dashboard"),
     }

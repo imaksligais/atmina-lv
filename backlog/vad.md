@@ -4,6 +4,16 @@ _Sadalīts no `BACKLOG.md` 2026-08-19 — saturs nemainīts. Statusa tagi, uztur
 
 ## VAD (declarations)
 
+### [SLĒGTS 2026-11-27] VAD: vecā formāta (2002–2013) deklarācijas — iestāde, ģimenes audits; ģimene publiski netiek rādīta
+
+**Izdarīts 2026-11-27:** parsētājs lasa veco formu (`header.is_old_form`; «Darbavieta:», brīvteksts §11, ģimene §12 — sadaļas pēc virsraksta, ne numura). `scripts/reparse_vad_old_format_2026-11-27.py` ieraksta `institution` 1 064 vecajām + noņem «'…'» 9 jaunajām, `other_info` 227 (rollback `data/rollback_vad_old_format_reparse_2026-11-27.sql`; jaunās formas vārti — 0 izmaiņu ģimenē/karogos 1 778 dekl.). `audit_vad_family_clusters.py`: paraksts = visa ģimene (aliases Sieva/Vīrs, Pusbrālis/Pusmāsa), vecās formas ģimene no `raw_html`; DB kopijā ar atjaunotām 31 vārdabrāļu dekl. 5/5 karogoti (tikai laulātais+bērni: 4/5 un 21 viltus karogs). Dzīvajā DB 1 karogs — Treija (pid 65): Astra REAL (pirmslaulību uzvārds Siliņa; SIA «CELSIUS» visās 11) → zināms viltus karogs. Mežals (pid 163, decl 2762–2766): Astra REAL (paša X ieraksts par Interpolu, CVK izglītība 1998, Valsts policijas alga visās 5; atklāts: intervijā darbs NĪ jau 2005, deklarācijās nav). Bez ģimenes datiem 8 dekl. Visu-vecu politiķi (21, 23, 29, 30, 167, 188) — Astra 39/39 REAL; saraksts un avoti `docs/audits/2026-11-27-vad-springe/README.md`.
+
+**Operatora lēmums 2026-11-27:** ģimenes datus publiski nerāda vispār — tikai iekšēji (identitāte, interešu konflikts). Paneļa ģimenes sadaļa noņemta, `docs/data-policy.md` § 1 pārrakstīts; `vad_family` paliek jaunās formas ģimenei, vecā — `raw_html`. Svarīgie publiskie dati: deputātu un bijušo deputātu amati uzņēmumos un organizācijās.
+
+### [OPEN] VAD: ģimenes vārtus ielikt deploy preflight; paneļa rindu secība (2026-11-27)
+
+(a) `scripts/audit_public_family_names.py` šobrīd palaiž ar roku pirms deploy (CLAUDE.md); preflight `deploy.sh` to neizpilda (~50 s uz 1 481 failu). *Rīcība:* pievienot kā trešos preflight vārtus vai pie `check_output.py`. (b) `src/vad/diff.py:106` iterē `set` → deklarāciju rindu secība panelī mainās starp renderiem (saturs tas pats, pārbaudīts 755/755 rindas pie 3 PYTHONHASHSEED); lapu heši mainās bez iemesla. *Rīcība:* `sorted(...)`. *Īpašnieks:* kods.
+
 ### [OPEN] VAD: 15. Saeimas «stājoties amatā» deklarācijas + dry-run saucējs
 
 *Trigeris:* mēnesi pēc 15. Saeimas pirmās sēdes. *Rīcība:* `scripts/vad_resweep_dryrun.py --pids 256,257,266,278,280,291,293,294,296,298,299,301,302` → ielādē Saeimas rindas (hinti jau ir). Neskaidrie (pārbaudīti 2026-10-21 pret UR atvērtajiem datiem un CVK): Dārznieks NBS, Hiršs NBS un Ignatjevs policijā — vārdabrāļi (cits dzimšanas datums / 17 gadi stājoties dienestā / pretrunīgi amati un īpašumi), neielādē. Atvērti: Āboliņš NBS 2010 — vajag CV ar 2010. gada darbavietu; Ozoliņš (pid 256) BKSB valdē 2009–2010 — vajag avotu, kas viņu sasaista ar BKSB vai pierāda City24 darbu 2009. gada 1. pusē. Abu rindas neielādētas (`vad_disambig` tās neizlaiž). Sākums: `docs/audits/2026-10-17-vad-jaunie/verdicts_C.md`. *Rīka robs aizvērts 2026-10-17:* dry-run tagad drukā arī `rows_skipped_role/denylist/legacy`; `/seed-entity` solis 6a liek `vad_disambig` jaunajiem. Pēc izvēles (no slēgtā 10-08 resweep ieraksta): Dimants (pid 260) — vājākā VAD sasaiste kohortā, Jev same-person pārbaude. *Īpašnieks:* operators/kods.

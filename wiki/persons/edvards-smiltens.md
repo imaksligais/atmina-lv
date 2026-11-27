@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas priekšsēdētājs
 relationship_type: tracked
 positions: 222
-votes: 5632
+votes: 5652
 contradictions: 1
-mentioned_in: 2194
+mentioned_in: 2235
 last_active: 2026-11-20
 top_topics:
 - Tieslietas

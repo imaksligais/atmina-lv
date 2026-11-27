@@ -1,12 +1,12 @@
 ---
 name: Juris Viļums
 party: Apvienotais saraksts
-role: Saeimas deputāts | Nacionālās drošības komisijas priekšsēdētājs
+role: Saeimas deputāts, Nacionālās drošības komisijas priekšsēdētājs
 relationship_type: tracked
 positions: 48
-votes: 7229
+votes: 7249
 contradictions: 0
-mentioned_in: 734
+mentioned_in: 753
 last_active: 2026-11-23
 top_topics:
 - Koalīcija un partijas

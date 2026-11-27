@@ -14,7 +14,7 @@
       <summary data-count="{{ m.count }}">
         <span class="vld-post">{{ row.post }}</span>
         <span class="vld-name">{{ m.name }}</span>
-        <span class="vld-party">{{ m.party_short or "—" }}</span>
+        <span class="vld-party">{% if m.party_slug %}<a href="partijas/{{ m.party_slug }}.html">{{ m.party_short }}</a>{% else %}{{ m.party_short or "—" }}{% endif %}</span>
         <span class="vld-num">{{ m.count|lv_number }}<span class="vld-num-unit"> {{ m.count | lv_plural("pozīcija", "pozīcijas") }}</span></span>
       </summary>
       <div class="vld-panel">
@@ -53,11 +53,11 @@
       <p class="pagehead-lead">Katrs ministrs un tas, ko viņš publiski teicis par savas ministrijas jomu. Atver rindu, lai redzētu jaunākās pozīcijas ar avotu.</p>
     </div>
     {% if vote %}
-    <a class="vld-vote" href="{{ vote.url | safe_url }}" target="_blank" rel="noopener">
+    <a class="vld-vote" href="balsojumi.html#vote-{{ vote.id }}">
       <span class="pagehead-metric-label">Uzticība Saeimā, {{ vote.vote_date | lv_date }}</span>
       <span class="vld-vote-num">{{ vote.total_par }}</span>
       <span class="vld-vote-rest">par, {{ vote.total_pret }} pret, {{ vote.total_atturas }} atturējās</span>
-      <span class="vld-vote-link">Balsojums Saeimas vietnē ↗</span>
+      <span class="vld-vote-link">Kā balsoja deputāti →</span>
     </a>
     {% else %}
     <p class="muted vld-vote-none">Uzticības balsojums šai valdībai vēl nav mūsu datos.</p>

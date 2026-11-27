@@ -81,10 +81,11 @@ def write_feed(
     items = _feed_items(blog_posts, analyses)
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<rss version="2.0">',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
         "<channel>",
         "  <title>atmina.lv</title>",
         f"  <link>{BASE_URL}/</link>",
+        f'  <atom:link href="{BASE_URL}/feed.xml" rel="self" type="application/rss+xml"/>',
         "  <description>Dienas un nedēļas pārskati un analīzes par Latvijas politiķu "
         "pozīcijām un balsojumiem.</description>",
         "  <language>lv</language>",

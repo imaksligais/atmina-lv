@@ -7,10 +7,10 @@
 {% set assets_prefix = "../" %}
 
 {% block title %}Pretruna atsaukta{% if c.politician_name %} · {{ c.politician_name }}{% endif %}{% endblock %}
-{% block description %}{{ c.withdrawn_note|truncate(160) }}{% endblock %}
+{% block description %}{{ c.withdrawn_note|word_trunc(160) }}{% endblock %}
 {% block robots %}<meta name="robots" content="noindex">{% endblock %}
 {% block og_title %}Pretruna atsaukta{% endblock %}
-{% block og_description %}{{ c.withdrawn_note|truncate(200) }}{% endblock %}
+{% block og_description %}{{ c.withdrawn_note|word_trunc(200) }}{% endblock %}
 
 {% block content %}
 <section class="pagehead-section">

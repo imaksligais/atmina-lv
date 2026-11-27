@@ -6,7 +6,7 @@ relationship_type: tracked
 positions: 8
 votes: 14
 contradictions: 0
-mentioned_in: 93
+mentioned_in: 98
 last_active: 2026-11-23
 top_topics:
 - Ekonomika un uzņēmējdarbība

@@ -17,17 +17,35 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from src.vad.diff import DeltaRow, compute_section_deltas
+from src.vad.family import contains_name, private_family_names
 
+# Sadaļa → lauks, kurā var stāvēt radinieka vārds. Paslēpj PĒC delta aprēķina
+# (citādi divi dažādi radinieki saplūstu vienā atslēgā), tikai attēlojumam.
+_FAMILY_NAME_FIELDS = {"positions": "entity_name", "income": "payer_name", "debts": "creditor_name"}
+
+
+def _hide_family_names(view: VadDeclarationView, family: set[frozenset[str]]) -> None:
+    """Radinieka vārdu aizstāj ar karogu `family_member` — veidne raksta
+    «ģimenes loceklis» (data-policy § 1: ģimenes datus nepublicējam)."""
+    for section, fld in _FAMILY_NAME_FIELDS.items():
+        rows = view.sections.get(section, [])
+        for i, d in enumerate(rows):
+            if contains_name(d.payload.get(fld), family):
+                rows[i] = DeltaRow(payload={**d.payload, fld: None, "family_member": True},
+                                   delta=d.delta, diff_text=d.diff_text)
+
+# Ģimene (`vad_family`) apzināti NAV te: tā ir tikai iekšējai identitātes un
+# interešu konflikta pārbaudei, publiski netiek rādīta (docs/data-policy.md § 1).
 SECTION_NAMES = [
     "positions", "real_estate", "companies", "vehicles", "savings",
-    "income", "transactions", "debts", "loans_given", "family",
+    "income", "transactions", "debts", "loans_given",
 ]
 SECTION_TABLES = {
     "positions": "vad_positions", "real_estate": "vad_real_estate",
     "companies": "vad_companies", "vehicles": "vad_vehicles",
     "savings": "vad_savings", "income": "vad_income",
     "transactions": "vad_transactions", "debts": "vad_debts",
-    "loans_given": "vad_loans_given", "family": "vad_family",
+    "loans_given": "vad_loans_given",
 }
 
 
@@ -149,6 +167,7 @@ def get_vad_data_for_politicians(
     all_decl_ids = [d.declaration_id for views in decls_by_pid.values() for d in views]
     rows_by_section_decl = _fetch_section_rows(db, all_decl_ids)
 
+    family_by_pid = private_family_names(db, list(decls_by_pid))
     out: dict[int, list[VadDeclarationView]] = {}
     for pid, views in decls_by_pid.items():
         # views sorted sort_date DESC; newest = views[0], second = views[1]
@@ -162,6 +181,8 @@ def get_vad_data_for_politicians(
                     view.sections[section] = compute_section_deltas(section, prev_rows, this_rows)
                 else:
                     view.sections[section] = [DeltaRow(payload=r, delta="unchanged") for r in this_rows]
+        for view in views:
+            _hide_family_names(view, family_by_pid.get(pid, set()))
         out[pid] = views
     return out
 

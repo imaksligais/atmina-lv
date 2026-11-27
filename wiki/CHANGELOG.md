@@ -6,6 +6,56 @@
 
 Skaitlis bez vaicājuma nav skaitlis: ja ieraksts nes skaitli, tajā pašā rindā stāv arī tā izcelsme.
 
+## 2026-11-27 (3) — Politiķu ģimenes dati publiski netiek rādīti (operatora lēmums)
+- Profila deklarāciju panelī noņemta sadaļa «Ģimene — publiska VID portālā» (1 778 deklarācijām rādīja radinieku vārdus); `vad_family` render vairs nelasa. Tests `test_vad_panel_ep.py::test_family_members_never_rendered`.
+- `docs/data-policy.md` § 1: radinieku vārdus glabājam tikai iekšēji — vārdabrāļu atšķiršanai un interešu konflikta izvērtēšanai; publiski svarīgie dati ir deputātu un bijušo deputātu amati uzņēmumos un organizācijās.
+- Radinieka vārds arī citās sadaļās (dāvinājuma/mantojuma maksātājs, amata otra puse, kreditors, karjeras uznirstošais logs) → «ģimenes loceklis»: 157 rindas (141 ienākumi, 16 amati) 52 profilos; salīdzina vārdu kopas bez garumzīmēm, jebkurā secībā, arī ar papildu tekstu; izņēmumu politiķiem nav (`src/vad/family.py`, Astra pārskats). Vārti `scripts/audit_public_family_names.py`: bez slēpšanas 249 trāpījumi profilos, ar to 0 (+1 izskaidrots).
+- LIVE: deploy `dab914e7` (renders `politiki,static`), verify_host 9/9; dzīvajā vietnē 53/53 skartie profili — «ģimenes loceklis» 52/52, ģimenes sadaļa 0/53, vārti 0. Politika atstāj izņēmumu radiniekam, kas pats ir politiķis/amatpersona (publicētais `vad-2026` min Stepaņenko pāri); kods slēpj arī tos.
+
+## 2026-11-27 (2) — VAD vecā forma: parsētājs + ģimenes audits pār visām deklarācijām; vecās ģimenes rindas nerakstām
+- Parsētājs: sadaļas pēc virsraksta (vecajā formā brīvteksts §11, ģimene §12), iestāde no «Darbavieta:» (`header.is_old_form`); `scripts/reparse_vad_old_format_2026-11-27.py`: 1 073 `institution` (1 064 vecās + 9 «'…'»), 227 `other_info`; jaunajai formai 0 izmaiņu (skripta vārti); rollback `data/rollback_vad_old_format_reparse_2026-11-27.sql` (commit 4dd37e754 pirms apply).
+- `audit_vad_family_clusters.py`: paraksts = visa ģimene (+ Sieva/Vīrs/Pus- aliases), vecā ģimene no `raw_html`. Mērījums DB kopijā ar atjaunotām 31 dekl.: visa ģimene 5/5 vārdabrāļi, dzīvajā DB 1 karogs; laulātais+bērni 4/5 un 21 karogs. Bez ģimenes datiem 8/2 842.
+- Vecās formas ģimene `vad_family` NETIEK rakstīta (arī ingestā): panelis rāda ģimeni publiski, data-policy § 1 saka pretējo — operatora lēmums (`backlog/vad.md`).
+- Astra (gpt-6.2-astra): Mežals 163, Treija 65 (vienīgais audita karogs), 6 visu-vecu politiķi — REAL; avoti `docs/audits/2026-11-27-vad-springe/README.md`.
+- `declaration_identity()` noņem «'…'» (citādi resweep ielādētu dublikātus); resweep dry-run 128 pid ar vecām dekl.: 2 374 jau ir, 3 jaunas (visas 2026. g.), 0 neviennozīmīgu, 0 kļūdu.
+
+## 2026-11-27 — VAD: 31 vārdabrāļu deklarācija izņemta 5 politiķiem (operatora «jā»)
+- Augulis, Kalniņa, Krasta, Vitenbergs, Ķirsis — vecās (2002–2014) deklarācijas ar citu ģimeni (vecāki/brāļi/laulātais no `raw_html` pret jaunajām): 1 095 vecās dekl., 1 091 ar ģimeni, 968 sakrīt, 30 konflikts, 1 neizšķirta (ta pati sērija). Sol (gpt-6.1-sol) neatkarīgi atrada tos pašus 4 deputātus.
+- `scripts/_purge_vad_vardabrali_2026-11-27.py` + `data/rollback_vad_vardabrali_2026-11-27.sql` (commit pirms apply); `data/vad_denylist.json` +31 identitātes kāja; resweep dry-run: 31/31 izlaisti, 0 jaunu.
+- Cēlonis: vecā formāta ģimene un iestāde netiek parsēta, tāpēc `audit_vad_family_clusters.py` tās neredzēja — `backlog/vad.md`. Atklāts, pārbaudot datus pirms izraksta (`docs/audits/2026-11-27-vad-springe/`).
+
+## 2026-11-26 (4) — Vakara rutīna: biroja balss, #74 nepublicēta, noraidīta iekļaušana ≠ noraidīts likumprojekts (deploy bb193d95)
+- Operators 26.11.: Rinkēviča #758021, #758022 (padomnieka pārstāsts par slēgtu tikšanos) dzēstas — `sloti.md` § Biroja balss papildināts ar šo gadījumu. Pretruna #74 (Zivtiņš, airBaltic) paliek `confirmed=0`.
+- `derive_bill_denorm()`: likumprojektam (Lp) «Noraidīts» darba kārtības iekļaušanas balsojumā vairs nedod `noraidīts` — pārrēķināts 1 no 617 (17/Lp15 → `procesā`); lēmuma projektam (Lm) atteikta iekļaušana paliek `noraidīts` (operators 2026-10, 1083/Lm14, 1124/Lm14) (`scripts/recompute_bill_status.py`, rollback `data/rollback_recompute_bill_status_2026-11-26.sql`). Tests `test_rejected_agenda_inclusion_does_not_reject_bill` krita pirms labojuma.
+- NEEDS_REVIEW: 22 + 5 izvērtētas (5 ar operatora lēmumu), #758011 gaida 26.11. stenogrammu Vēstnesī.
+
+## 2026-11-26 (3) — Komentāru lūgums nav obligāts; «Atradumu» jaunumi 11 rakstos (deploy 2f14791f, bf65eead)
+- Operators 26.11.: atmina.lv nav oficiāla organizācija — drīkst publicēt sausus faktus no publiskiem avotiem bez komentāra lūguma, ja tekstā pateikts, ko nezinām, un nav pārkāpuma piedēvējuma (`wiki/operations/quality-bars.md` § analīzes). Pirmais gadījums: Biķe, `amatpersonas-un-biedribas` § 3.
+- Izpēte un labojumi: `docs/audits/2026-11-26-atradumu-jaunumi.md` (Sol divas kārtas, avotu kopijas ar SHA-256).
+
+## 2026-11-26 (2) — `personas.html` atveras ar «Visi profili» (deploy cd40e08b)
+- Operators 26.11.: noklusējuma filtrs «Ievēlētie» (kopš 2026-10-05) noņemts — saite no posta par 14. Saeimu citādi neatrada 14. Saeimas deputātus (piem., Jakovinu). `assets/pnv1.js` `saeima15: "visi"` + veidnes `is-active`; `tests/test_personas_v2.py::test_default_filter_is_all_in_template_and_js` krita pirms maiņas. Pārlūkā (Chrome, 390 px): «Rāda 269 no 269».
+
+## 2026-11-26 — «Balso kopā ar savu frakciju»: «Atturas» skaitās kopā ar «Pret»
+- Operators 26.11.: profila bloks skaita balsis pēc iznākuma (Par / ne-Par), jo Saeimā atturēšanās aptur lēmumu tāpat kā «Pret» (CLAUDE.md § Abstention). `faction_alignment_data` (`src/render/_common/enrich.py`), sīkraksts `politician.html.j2`, plāna § Definīcija 3. p.
+- Iemesls: 14. Saeimā vecā metode JV rādīja 96,4 % (zemākā), pēc iznākuma 99,6 %; Reirs 86 %, gandrīz tikai «Pret» pret frakcijas «Atturas» grozījumu priekšlikumos. Skaitļi + divi neatkarīgi Codex pārrēķini: `docs/tweet_bank/2026-11-26-14-saeima-frakciju-vienotiba.md`.
+- Dzīvajā lapā tagad bez izmaiņām: 15. Saeimā nevienam deputātam vēl nav ≥ 20 skaitītu balsojumu (`faction_alignment_data(db)` → 0 ierakstu, 26.11.). Testi `test_faction_alignment_*` pārrakstīti; pirms koda maiņas krita abi.
+
+## 2026-11-25 (5) — Sēdošo deputātu `role` un `personas.html` aizstājēji (deploy d491c5bd)
+- `role`: 9 aizstājējiem «(mandāts uz laiku)» (kā Klotiņam), Sprūdam (16), Kučinskim (105), Šleseram (3) pievienots «Saeimas deputāts» (bija «Aizsardzības ministrs (atkāpies)» u.c.); `data/fix_roles_sedosie_deputati_2026-11-25.sql` + rollback, 11 rindas, `derive_profile_kind` visiem `deputy` pirms un pēc.
+- `personas.html` filtrā «Ievēlētie» arī 9 deputāti ministru vietā (`data-saeima15="aizstājējs"`), saraksts no tā paša `saeima15_amati.yaml` § `mandates` (`read_substitutes`); ministri paliek (ievēlēti). `tests/test_personas_v2.py` TestSaeima15Flags, mutācija krīt (3 testi).
+- Lēmums: komisiju biedru/sekretāru amatus `role` neraksta (32 pārbaudīti, kļūdu nav; sastāvs `saeima.html`).
+
+## 2026-11-25 (4) — `saeima.html`: sēdošais sastāvs (ministru vietā aizstājēji) un komisiju bloks (deploy 156d14fa)
+- Pusloks rāda SĒDOŠOS: ievēlētie − 9 ministri, kas nolikuši mandātu, + 9 deputāti viņu vietā (`data/saeima15_amati.yaml` § `mandates`; avots saeima.lv deputātu saraksts 25.11., kopija `docs/audits/2026-11-25-saeima-komisijas/`). `cvk_sv2026_ievēlētie.yaml` paliek «kā ievēlēts» (to lasa arī `personas.html`). Pārus (kurš kura vietā) neglabā; sakrīt skaits pa sarakstiem (AS 6, NA 3).
+- Komisiju bloks: 16 komisijas, 200 locekļu ar verbatim amatu (`committees.items`, izvilkts ar vienreizēju skriptu ārpus repo — parseris joprojām NĒ, § Ne-darīt 37). Ielādētājs krīt: nesēdošs vārds, ≠16 komisiju, ≠1 priekšsēdētājs/biedrs/sekretārs, deputāts ārpus 1–2 komisijām, mandātu skaits nesakrīt — 4 sargi redzēti krītam (mutācija), `tests/test_render_saeima.py` (e2e (i) + 6 bojājumi).
+- Sekas: uzticības lēcā 9 sēdvietām «nav ieraksta» (aizstājēji 17.11. vēl nebija deputāti; lapa to pasaka). `role` 6 komisiju priekšsēdētājiem labots (`data/fix_roles_komisiju_vaditaji_2026-11-25.sql` + rollback, `derive_profile_kind` visiem `deputy` pirms un pēc).
+
+## 2026-11-25 (3) — Projekta pārskata labojumi: SEO galvenes, komisijas, «tu» uzruna (deploy cef30e5b)
+- Gemini projekta pārskats (fails tikai lokāli, ārpus repo), pārbaudīts kodā 22 apgalvojumi. `output/atmina` (1404 lapas) pirms (pārskata skaitļi) → pēc pilna rendera (mūsu grep): bez canonical 627 → 0 (likumprojekti/likumi caur `_render_page`), vispārīgs `<meta description>` 1312 → 25, vispārīgs `og:title` 1030 → 1 (sākumlapa, apzināti); sitemap bez `<lastmod>` (īstu datumu nezinām). Mērījums: grep pa `output/atmina/**/*.html` galvām, `tests/test_seo_head.py`.
+- `saeima.html`: komisijas ievēlētas (saeima.lv kopijas 25.11., `fb3001eac`). Pārskata `<title>` = «‹virsraksts› — Dienas pārskats, 24.11.2026» tikai renderī (glabātais H1 = apstiprinātais saturs, hešs nemainās).
+- Operatora lēmumi 2026-11-25: lasītāju uzrunā ar «tu»; profila bio dekoratīvā svītra un tēmu kartīšu sānu svītra noņemtas; CI Python 3.12; gaišais noklusējums un prozas tabulu kartītes = apzināti izņēmumi no golden-rules (`ui-conventions.md`). LIELIE BURTI u.c. → viena dizaina kārta (`backlog/vietne-ui.md`).
+
 ## 2026-11-25 (2) — Garā tvīta 1. attēls: citātu kartīte, ne sepia
 - Operators: sepia attēli «visiem šķiet garlaicīgi»; 24.11. pārskata tvīts postēts ar citātu kartīti (`src/graphics/templates/citatu-kartite.html`, 1080×1350). `/social-thread` § 3a un § 4: kartīte pēc noklusējuma, sepia tikai, ja nav īsu burtisku citātu. Skatījumu mērījuma nav — tas ir spriedums.
 - Neskarts: pārskata plakāts (`cli brief`, `SEPIA_STYLE`) — atsevišķs lēmums.

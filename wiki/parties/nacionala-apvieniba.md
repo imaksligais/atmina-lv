@@ -1,12 +1,12 @@
 ---
 party: Nacionālā apvienība
 members: 23
-claims: 1751
+claims: 1774
 program_promises: 23
 contradictions: 2
-votes_par: 59741
-votes_pret: 11199
-votes_atturas: 2855
+votes_par: 59862
+votes_pret: 11231
+votes_atturas: 2865
 top_politicians:
 - Ansis Pūpols
 - Jānis Dombrava

@@ -4,7 +4,7 @@ party: Nacionālā apvienība
 role: Saeimas deputāts, NA frakcijas vadītāja vietnieks
 relationship_type: tracked
 positions: 27
-votes: 8244
+votes: 8264
 contradictions: 0
 mentioned_in: 115
 last_active: 2026-11-07

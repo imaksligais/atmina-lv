@@ -35,6 +35,7 @@ Likums regulē ārzemnieku ieceļošanu, uzturēšanos, tranzītu, izceļošanu 
 
 | Nr. | Nosaukums | Stadija | Datums |
 |---|---|---|---|
+| [13/Lp15](/likumprojekti/13-lp15.html) | Grozījumi Imigrācijas likumā | procesā | 26.11.2026 |
 | [1521/Lp14](/likumprojekti/1521-lp14.html) | Grozījumi Imigrācijas likumā | 1. lasījums (noraidīts) | 29.10.2026 |
 | [1536/Lp14](/likumprojekti/1536-lp14.html) | Grozījumi Imigrācijas likumā | iesniegts (procesā) | 24.09.2026 |
 | [1485/Lp14](/likumprojekti/1485-lp14.html) | Grozījumi Imigrācijas likumā | 2. lasījums (pieņemts) | 20.08.2026 |

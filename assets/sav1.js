@@ -461,6 +461,9 @@ function _initSaitesGraph() {
   // Redzamais datums DD.MM.YYYY — kopīgais window.atminaLvDate (assets/sgv1.js;
   // sav1 ielādē ssv1.js pēc pogas, tātad pēc sgv1).
   var lvDate = window.atminaLvDate;
+  // Skaitlis ar tūkstošu atstarpi un LV skaitļa saskaņa — tas pats sgv1.js.
+  var fmtN = window.atminaFmtN;
+  var lvPlural = window.atminaLvPlural;
 
   function badgeClass(type) {
     return _tensionBadges[type] || '';
@@ -497,8 +500,16 @@ function _initSaitesGraph() {
     return list.filter(function(t) { return f.has(t.tension_type); });
   }
 
+  // Avota saite tikai uz http(s) — servera `safe_url` filtra spogulis
+  // (src/render/_common/filters.py; tas pats pzv1.js safeHttpUrl).
+  function safeHttpUrl(u) {
+    var s = u == null ? '' : String(u).trim();
+    return /^https?:\/\//i.test(s) ? s : '';
+  }
+
   // Generate source link — external URL or fallback to our site
   function sourceLink(url, fallbackSlug, fallbackLabel) {
+    url = safeHttpUrl(url);
     if (url) {
       var isX = url.indexOf('x.com/') !== -1 || url.indexOf('twitter.com/') !== -1;
       var label = isX ? 'X/Twitter &rarr;' : 'Avots &rarr;';
@@ -523,7 +534,7 @@ function _initSaitesGraph() {
       html += '<p class="detail-section-title">' + g[1] + '</p><ul class="detail-vote-list">';
       rows.forEach(function(v) {
         html += '<li><a href="politiki/' + escHtml(v.target.slug) + '.html#saites">' + escHtml(v.target.name) + '</a>' +
-          '<span class="detail-vote-n">' + v.agree_pct + ' % · ' + v.agree + '/' + v.total + '</span></li>';
+          '<span class="detail-vote-n">' + v.agree_pct + ' % · ' + fmtN(v.agree) + '/' + fmtN(v.total) + '</span></li>';
       });
       html += '</ul>';
     });
@@ -545,7 +556,9 @@ function _initSaitesGraph() {
 
     // Update active tab
     document.querySelectorAll('.detail-stat-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.dataset.section === section);
+      var on = btn.dataset.section === section;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', String(on));
     });
 
     if (section === 'pozicijas') {
@@ -559,7 +572,7 @@ function _initSaitesGraph() {
       var html = '';
       if (allClaims.length > claims.length) {
         html += '<p class="detail-filter-note">Rāda ' + claims.length + ' jaunākās no ' +
-          allClaims.length + ' · <a href="politiki/' + escHtml(d.slug) + '.html">Visas profilā &rarr;</a></p>';
+          fmtN(allClaims.length) + ' · <a href="politiki/' + escHtml(d.slug) + '.html">Visas profilā &rarr;</a></p>';
       }
       claims.forEach(function(c) {
         html += '<div class="detail-link-card">' +
@@ -570,7 +583,7 @@ function _initSaitesGraph() {
           '<div class="link-desc">' + escHtml(c.stance) + '</div>' +
           '<div class="link-footer">' +
             sourceLink(c.source_url, d.slug, d.name) +
-            '<span style="color:var(--text-muted);font-size:0.75rem;">tic. ' + (c.confidence || 0).toFixed(1) + '</span>' +
+            '<span style="color:var(--text-muted);font-size:0.75rem;">tic. ' + (c.confidence || 0).toFixed(1).replace('.', ',') + '</span>' +
           '</div>' +
         '</div>';
       });
@@ -589,13 +602,13 @@ function _initSaitesGraph() {
       }
       if (matching.length === 0) {
         container.innerHTML = '<p style="color:var(--text-muted);">Nav saišu ar izvēlētajiem tipiem. ' +
-          'Šim politiķim ir ' + all.length + ' cita tipa saites — ieslēdz tipus augšā.</p>' + votesHtml;
+          'Šim politiķim ir ' + fmtN(all.length) + ' cita tipa ' + lvPlural(all.length, 'saite', 'saites') + ' — ieslēdz tipus augšā.</p>' + votesHtml;
         return;
       }
       var html = votesHtml ? votesHtml + '<p class="detail-section-title">Saiknes</p>' : '';
       if (matching.length < all.length) {
-        html += '<p class="detail-filter-note">Rāda ' + matching.length + ' no ' + all.length +
-          ' saitēm · ' + activeTensionTypes().map(typeLabel).join(', ') + '</p>';
+        html += '<p class="detail-filter-note">Rāda ' + fmtN(matching.length) + ' no ' + fmtN(all.length) + ' ' +
+          lvPlural(all.length, 'saites', 'saitēm') + ' · ' + activeTensionTypes().map(typeLabel).join(', ') + '</p>';
       }
       matching.forEach(function(t) {
         html += '<div class="detail-link-card">' +
@@ -654,7 +667,7 @@ function _initSaitesGraph() {
           '<div class="link-desc">' + escHtml(meta.motif) + '</div>' +
           '<div class="link-footer">' +
             '<a href="balsojumi.html#vote-' + meta.id + '">Balsojums &rarr;</a>' +
-            (meta.url ? '<a href="' + escHtml(meta.url) + '" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:0.75rem;">Saeima &rarr;</a>' : '') +
+            (safeHttpUrl(meta.url) ? '<a href="' + escHtml(safeHttpUrl(meta.url)) + '" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:0.75rem;">Saeima &rarr;</a>' : '') +
           '</div>' +
         '</div>';
       });
@@ -684,9 +697,9 @@ function _initSaitesGraph() {
           var newLbl = c.new_label || 'Pašlaik';
           html += '<div style="margin-top:0.4rem;font-size:0.8rem;">';
           if (c.old_stance) html += '<div style="color:var(--text-muted);margin-bottom:0.2rem;"><span style="opacity:0.5;">' + escHtml(oldLbl) + ':</span> ' + escHtml(c.old_stance) +
-            (c.old_url ? ' <a href="' + escHtml(c.old_url) + '" target="_blank" rel="noopener" style="color:var(--accent);font-size:0.75rem;">avots</a>' : '') + '</div>';
+            (safeHttpUrl(c.old_url) ? ' <a href="' + escHtml(safeHttpUrl(c.old_url)) + '" target="_blank" rel="noopener" style="color:var(--accent);font-size:0.75rem;">avots</a>' : '') + '</div>';
           if (c.new_stance) html += '<div style="color:var(--text-muted);"><span style="opacity:0.5;">' + escHtml(newLbl) + ':</span> ' + escHtml(c.new_stance) +
-            (c.new_url ? ' <a href="' + escHtml(c.new_url) + '" target="_blank" rel="noopener" style="color:var(--accent);font-size:0.75rem;">avots</a>' : '') + '</div>';
+            (safeHttpUrl(c.new_url) ? ' <a href="' + escHtml(safeHttpUrl(c.new_url)) + '" target="_blank" rel="noopener" style="color:var(--accent);font-size:0.75rem;">avots</a>' : '') + '</div>';
           html += '</div>';
         }
         if (c.context_note) {
@@ -731,7 +744,7 @@ function _initSaitesGraph() {
     detailContent.hidden = false;
     detailContent.innerHTML = '<p style="color:var(--text-muted);padding:1rem;">Ielādē…</p>';
     loadSaitesData().then(retry).catch(function() {
-      detailContent.innerHTML = '<p style="color:var(--text-muted);padding:1rem;">Neizdevās ielādēt datus. Pārlādējiet lapu.</p>';
+      detailContent.innerHTML = '<p style="color:var(--text-muted);padding:1rem;">Neizdevās ielādēt datus. Pārlādē lapu.</p>';
     });
   }
 
@@ -753,18 +766,18 @@ function _initSaitesGraph() {
     // Lapa saucas «Saites», tāpēc panelis atveras uz saitēm (2026-11-22).
     var section = forceSection || 'saites';
     var saitesLabel = (matching.length < allTensions.length)
-      ? matching.length + ' / ' + allTensions.length
-      : String(allTensions.length);
+      ? fmtN(matching.length) + ' / ' + fmtN(allTensions.length)
+      : fmtN(allTensions.length);
 
     var html = '<h3>' + escHtml(d.name) + '</h3>' +
       '<div class="detail-subtitle"><span class="party-tag">' + escHtml(d.party) + '</span>' +
         ' <a href="politiki/' + escHtml(d.slug) + '.html" style="color:var(--accent);font-size:0.8rem;margin-left:0.5rem;">Profils &rarr;</a>' +
       '</div>' +
       '<div class="detail-meta">' +
-        '<button class="detail-stat-btn" data-section="pozicijas"><strong>' + d.claims + '</strong> pozīcijas</button>' +
-        '<button class="detail-stat-btn" data-section="saites"><strong>' + saitesLabel + '</strong> saites</button>' +
-        (voteN > 0 ? '<button class="detail-stat-btn" data-section="balsojumi" style="border-color:var(--purple);"><strong style="color:var(--purple);">' + voteN + '</strong> balsojumi</button>' : '') +
-        (contras.length > 0 ? '<button class="detail-stat-btn" data-section="pretrunas" style="border-color:var(--red-bright);"><strong style="color:var(--red-bright);">' + contras.length + '</strong> pretrunas</button>' : '') +
+        '<button type="button" class="detail-stat-btn" data-section="pozicijas" aria-pressed="false"><strong>' + fmtN(d.claims) + '</strong> ' + lvPlural(d.claims, 'pozīcija', 'pozīcijas') + '</button>' +
+        '<button type="button" class="detail-stat-btn" data-section="saites" aria-pressed="false"><strong>' + saitesLabel + '</strong> ' + lvPlural(allTensions.length, 'saite', 'saites') + '</button>' +
+        (voteN > 0 ? '<button type="button" class="detail-stat-btn" data-section="balsojumi" aria-pressed="false" style="border-color:var(--purple);"><strong style="color:var(--purple);">' + fmtN(voteN) + '</strong> ' + lvPlural(voteN, 'balsojums', 'balsojumi') + '</button>' : '') +
+        (contras.length > 0 ? '<button type="button" class="detail-stat-btn" data-section="pretrunas" aria-pressed="false" style="border-color:var(--red-bright);"><strong style="color:var(--red-bright);">' + fmtN(contras.length) + '</strong> ' + lvPlural(contras.length, 'pretruna', 'pretrunas') + '</button>' : '') +
       '</div>' +
       '<div id="detail-section-content"></div>';
 
@@ -843,8 +856,8 @@ function _initSaitesGraph() {
             '<span class="link-arrow" style="font-size:1.2rem;">&harr;</span>' +
             '<a href="politiki/' + escHtml(targetSlug) + '.html#saites" style="color:var(--accent);">' + escHtml(targetName) + '</a>' +
           '</div>' +
-          '<p class="link-desc"><strong>' + pct + ' %</strong> · balsoja vienādi ' + d.agree + ' no ' + d.total +
-            ' kopīgiem balsojumiem.</p>' +
+          '<p class="link-desc"><strong>' + pct + ' %</strong> · balsoja vienādi ' + fmtN(d.agree) + ' no ' + fmtN(d.total) + ' ' +
+            lvPlural(d.total, 'kopīga balsojuma', 'kopīgiem balsojumiem') + '.</p>' +
           '<p class="link-desc" style="color:var(--text-muted);">' + escHtml(rankLabel) + ' (' + escHtml(sourceName) + ' sarakstā).</p>' +
         '</div>';
     } else {

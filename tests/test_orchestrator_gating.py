@@ -46,6 +46,9 @@ import pytest
         # blog index + sitemap (static) consume blog_posts only.
         ({"blog"}, {"votes": False, "blog_posts": True, "trends_data": False}),
         ({"static"}, {"votes": False, "blog_posts": True, "trends_data": False}),
+        # analizes writes feed.xml, which lists briefs — an empty blog_posts
+        # would publish a feed without them.
+        ({"analizes"}, {"votes": False, "blog_posts": True, "trends_data": False}),
         # dashboard hero+analizes consume all three.
         ({"dashboard"}, {"votes": True, "blog_posts": True, "trends_data": True}),
     ],

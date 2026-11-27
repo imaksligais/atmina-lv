@@ -162,11 +162,11 @@ def test_unparseable_content_block_falls_back_to_stored_headline():
 
 
 def test_no_content_block_and_no_stored_json_uses_title_fallback():
-    """Bez abiem avotiem paliek no virsraksta atvasinātais fallback."""
+    """Bez abiem avotiem virsraksts ir pārskata tips («Dienas pārskats»)."""
     post = _post(_BODY, None)
 
     assert post["headline"] is None
-    assert post["display_title"] == "Dienas analīze"
+    assert post["display_title"] == "Dienas pārskats"
 
 
 def test_empty_stored_headline_falls_through_to_title_fallback():
@@ -174,7 +174,7 @@ def test_empty_stored_headline_falls_through_to_title_fallback():
     for stored in ('{"headline": null}', '{"headline": "   "}', "{}", "nav JSON"):
         post = _post(_BODY, stored)
         assert post["headline"] is None, stored
-        assert post["display_title"] == "Dienas analīze", stored
+        assert post["display_title"] == "Dienas pārskats", stored
 
 
 def test_placeholder_template_block_does_not_override_stored_headline():

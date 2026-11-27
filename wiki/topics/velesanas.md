@@ -1,7 +1,7 @@
 ---
 topic: Vēlēšanas
 positions: 506
-votes: 16005
+votes: 16197
 politicians: 116
 contradictions: 2
 last_activity: '2026-11-21 00:00:00'

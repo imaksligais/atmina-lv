@@ -228,22 +228,25 @@ _Detalizētie ieraksti dzīvo tēmas failos `backlog/*.md` (sadale 2026-08-19). 
 - **[OPEN]** Ingest atnes releja tvītu, bet ne rakstu, uz kuru tas rāda (2026-11-06)
 - **[DEFERRED]** Video ingest — pirmais reālais ievākums (Kola LTV intervija) + diarizācijas crosstalk sanity-check
 
-**[`backlog/vad.md`](backlog/vad.md)** — 3 ieraksti:
+**[`backlog/vad.md`](backlog/vad.md)** — 5 ieraksti:
+- **[SLĒGTS 2026-11-27]** VAD: vecā formāta (2002–2013) deklarācijas — iestāde, ģimenes audits; ģimene publiski netiek rādīta
+- **[OPEN]** VAD: ģimenes vārtus ielikt deploy preflight; paneļa rindu secība (2026-11-27)
 - **[OPEN]** VAD: 15. Saeimas «stājoties amatā» deklarācijas + dry-run saucējs
 - **[DAĻĒJI SLĒGTS 2026-08-21]** NVO maksājumi × VAD deklarācijas — JOIN atkārtots; parsera robi aizvērti; paliek operatora triāža
 - **[DEFERRED]** VAD: `_norm_kind` «stājoties amatā» / «Beidzot darbu» → `interim`; kartējums dublēts
 
-**[`backlog/vietne-ui.md`](backlog/vietne-ui.md)** — 11 ieraksti:
+**[`backlog/vietne-ui.md`](backlog/vietne-ui.md)** — 12 ieraksti:
 - **[OPERATOR]** Nākamie «Atradumi» — Toca deklarācijas un tiesas lieta par policijas izpostītu dārzu (sadaļa kopš 2026-10-17)
 - **[DEFERRED]** Wiki pārskati grafā izolēti — pārskatiem nav strukturēta dalībnieku saraksta (2026-10-18)
 - **[OPEN]** Partiju krāsas — atlikums pēc 2026-11-11 (ārpus Saeimas partijas, kontrasts)
 - **[OPEN]** Sava vizuālā identitāte — unikāls fonts (2026-10-08, zema prioritāte)
-- **[OPERATOR]** Tēmu ikonas — live kopš 2026-11-23 (`51d58620`); atlikums: sānu svītra, ikonu izvēle, profila saraksts
+- **[OPERATOR]** Tēmu ikonas — live kopš 2026-11-23 (`51d58620`); atlikums: ikonu izvēle, profila saraksts
 - **[OPEN]** UI audits 2026-10-27 — atlikums (S1 nedēļas diagramma, kastes→līnijas, S2)
 - **[OPEN]** UI review — atlikums pēc 1.–3. fāzes (2026-07-04 dizaina audits)
 - **[OPEN]** Profilu UI parāds — sintēzes ports, Bloks 3, UX tier 3
 - **[DEFERRED]** Tēmu direktorija un tēmas lapa — 2. kārta (meklēšana, kārtošana, jautājumu salīdzinājums)
 - **[OPEN]** good-css 5. kārtas atlikums — operatora jautājumi (2026-10-21)
+- **[OPEN]** Dizaina vienādošana pēc golden-rules — viena kārta ar «pirms/pēc» (2026-11-25)
 - **[OPERATOR]** Lapa «Valdība» — divi jautājumi pēc publicēšanas (2026-11-18)
 
 **[`backlog/repo-higiena.md`](backlog/repo-higiena.md)** — 5 ieraksti:

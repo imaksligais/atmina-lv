@@ -81,7 +81,7 @@
         <div class="prv2-related-glyph">{{ c.severity_glyph }}</div>
         <div class="prv2-related-body">
           <div class="prv2-related-sev">{{ c.politician_name }} · {{ c.category_label or c.severity_lv }}</div>
-          <div class="prv2-related-summary">{{ (c.summary or c.old_stance or '')|truncate(140) }}</div>
+          <div class="prv2-related-summary">{{ (c.summary or c.old_stance or '')|word_trunc(140) }}</div>
         </div>
       </a>
       {% endfor %}

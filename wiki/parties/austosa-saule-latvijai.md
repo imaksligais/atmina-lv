@@ -1,7 +1,7 @@
 ---
 party: Austošā Saule Latvijai
 members: 4
-claims: 498
+claims: 518
 program_promises: 23
 contradictions: 0
 votes_par: 0

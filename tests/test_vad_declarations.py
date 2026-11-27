@@ -471,3 +471,42 @@ def test_resweep_dryrun_reports_rows_rejected_by_disambig(capsys):
             assert "rows_skipped_role=2" in line, out
     finally:
         _safe_unlink(path)
+
+
+def test_old_format_ingest_stores_institution_but_not_family():
+    """Vecās formas (2002–2013) ģimene netiek rakstīta `vad_family` — tā tabula
+    tur tikai jaunās formas ģimeni; audits veco lasa no raw_html. Iestāde
+    («Darbavieta:») gan jāieraksta."""
+    db, path = _make_db()
+    try:
+        client = MagicMock()
+        client.search.return_value = [SearchResultRow(
+            vad_uuid="uuid-2003", declaration_type="Kārtējā gada deklarācija - par 2003. gadu",
+            is_legacy=False, institution="Latvijas Republikas Saeima",
+            position_title="Saeimas deputāts",
+        )]
+        client.fetch_detail.return_value = (
+            Path(__file__).parent / "fixtures" / "vad" / "old-format-2003.html"
+        ).read_text(encoding="utf-8")
+        fetch_for_politician(3, db, client)
+        row = db.execute("SELECT id, institution FROM vad_declarations").fetchone()
+        assert row["institution"] == "TESTA IESTĀDE"
+        assert db.execute("SELECT COUNT(*) FROM vad_family").fetchone()[0] == 0
+    finally:
+        db.close()
+        _safe_unlink(path)
+
+
+def test_quoted_search_institution_matches_unquoted_stored():
+    """VID saraksts dažām iestādēm liek «'…'» pēdiņas, glabātā (parsētā) iestāde
+    tās nenes (2026-11-27 reparse noņēma 9) → tā pati deklarācija, ne jauna."""
+    db, path = _make_db()
+    try:
+        _seed_stored(db, _START_2009, "VĀRKAVAS NOVADA DOME", "old-2009")
+        client = MagicMock()
+        client.search.return_value = [_row(_START_2009, "u1", institution="'VĀRKAVAS NOVADA DOME'")]
+        result = fetch_for_politician(3, db, client, dry_run=True)
+        assert (result.already_present, result.new_inserted) == (1, 0), result
+    finally:
+        db.close()
+        _safe_unlink(path)

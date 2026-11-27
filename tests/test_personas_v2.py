@@ -283,6 +283,7 @@ class TestSaeima15Flags:
                 (5, "Eiropas Deputāts", "Jaunā Vienotība", "EP deputāts"),
                 (6, "Novada Mērs", None, "Novada domes priekšsēdētājs"),
                 (7, "Partijas Biedrs", "Latvija Pirmajā Vietā", "Valdes loceklis"),
+                (8, "Ministra Aizstājējs", "Jaunā Vienotība", "Saeimas deputāts (mandāts uz laiku)"),
             ],
         )
         db.execute("INSERT INTO saeima_votes (id, vote_date, summary) VALUES (1, '2026-04-10', 's')")
@@ -300,10 +301,14 @@ class TestSaeima15Flags:
         )
         cohort = tmp_path / "cohort.yaml"
         cohort.write_text("- name: Jauna Deputāte\n- name: Arī Nav DB\n", encoding="utf-8")
+        amati = tmp_path / "amati.yaml"
+        amati.write_text(
+            "mandates:\n  substitutes:\n  - {name: Ministra Aizstājējs, list_nr: 9}\n", encoding="utf-8"
+        )
 
         env = _make_env()
         env.globals["assets_version"] = "test"
-        render_personas(env, db, tmp_path, elected_path=elected, cohort_path=cohort)
+        render_personas(env, db, tmp_path, elected_path=elected, cohort_path=cohort, amati_path=amati)
         html = (tmp_path / "personas.html").read_text(encoding="utf-8")
 
         cards = {
@@ -321,16 +326,20 @@ class TestSaeima15Flags:
         assert 'data-saeima15="ievēlēts"' in cards["atkal ievēlētais"]
         assert 'data-saeima15=""' in cards["neievēlētais"]
         assert 'data-saeima15=""' in cards["ministrs bez mandāta"]
+        assert 'data-saeima15="aizstājējs"' in cards["ministra aizstājējs"]
 
     def test_rail_counts_equal_flagged_cards(self, tmp_path):
         _, cards, rail = self._render(tmp_path)
         n_new = sum('data-saeima15="jauns"' in c for c in cards.values())
-        n_elected = n_new + sum('data-saeima15="ievēlēts"' in c for c in cards.values())
-        assert (n_elected, n_new) == (2, 1)
-        assert rail == {"visi": "7", "ieveleti": str(n_elected), "jauni": str(n_new)}
+        n_elected = n_new + sum(
+            'data-saeima15="ievēlēts"' in c or 'data-saeima15="aizstājējs"' in c for c in cards.values()
+        )
+        assert (n_elected, n_new) == (3, 1)
+        assert rail == {"visi": "8", "ieveleti": str(n_elected), "jauni": str(n_new)}
 
-    def test_default_filter_is_elected_in_template_and_js(self, tmp_path):
-        # Lapa atveras ar «Ievēlētie» (2026-10-05). Ja JS sākuma stāvoklis un veidnes
+    def test_default_filter_is_all_in_template_and_js(self, tmp_path):
+        # Lapa atveras ar «Visi profili» (operators 2026-11-26; 2026-10-05…11-26 bija
+        # «Ievēlētie» — saite no posta par 14. Saeimu neatrada 14. Saeimas deputātus). Ja JS sākuma stāvoklis un veidnes
         # is-active poga nesakrīt, filtrs rāda vienu, bet izcelta ir cita poga.
         import re
         from pathlib import Path
@@ -340,8 +349,8 @@ class TestSaeima15Flags:
         )
         js = (Path(__file__).resolve().parent.parent / "assets" / "pnv1.js").read_text(encoding="utf-8")
         js_default = re.search(r'^\s*saeima15: "(\w+)",', js, re.M).group(1)
-        assert active == ["ieveleti"]
-        assert js_default == "ieveleti"
+        assert active == ["visi"]
+        assert js_default == "visi"
 
     def test_active_chips_live_in_main_column(self, tmp_path):
         # Nosauktā kļūme (2026-10-05): čipi bija tikai mobilajā joslā (darbvirsmā
@@ -374,7 +383,7 @@ class TestSaeima15Flags:
         )
         # Kanoniskā secība, tukšās grupas (Žurnālisti, Mediji …) nerāda.
         assert rail == [
-            ("visas", "7"), ("Deputāti", "3"), ("Valdība", "1"), ("EP deputāti", "1"),
+            ("visas", "8"), ("Deputāti", "4"), ("Valdība", "1"), ("EP deputāti", "1"),
             ("Pašvaldības", "1"), ("Citi politiķi", "1"),
         ]
         assert 'data-category="EP deputāti"' in cards["eiropas deputāts"]
@@ -387,7 +396,7 @@ class TestSaeima15Flags:
         from src.render.personas import _load_saeima15_names
 
         with pytest.raises(FileNotFoundError):
-            _load_saeima15_names(tmp_path / "nav.yaml", tmp_path / "nav2.yaml")
+            _load_saeima15_names(tmp_path / "nav.yaml", tmp_path / "nav2.yaml", tmp_path / "nav3.yaml")
 
     def test_every_card_has_four_stat_slots(self, tmp_path):
         # Nosauktā kļūme (2026-10-09): ne-balsotājam «bals.» šūna izkrita, un
@@ -396,6 +405,6 @@ class TestSaeima15Flags:
         import re
         html, _, _ = self._render(tmp_path)
         blocks = re.findall(r'<div class="pnv1-card-stats">(.*?)\n          </div>', html, re.S)
-        assert len(blocks) == 7
+        assert len(blocks) == 8
         assert all(len(re.findall(r'class="pnv1-card-stat[ "]', b)) == 4 for b in blocks)
-        assert sum('stat-n">—<' in b for b in blocks) == 5  # 2 balsotāji no 7
+        assert sum('stat-n">—<' in b for b in blocks) == 6  # 2 balsotāji no 8

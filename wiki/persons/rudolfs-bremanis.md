@@ -4,9 +4,9 @@ party: Suverēnā vara/Jaunlatvieši
 role: Saeimas deputāts, SV/AJ frakcijas vadītājas vietnieks
 relationship_type: tracked
 positions: 15
-votes: 27
+votes: 47
 contradictions: 0
-mentioned_in: 407
+mentioned_in: 418
 last_active: 2026-11-23
 top_topics:
 - Ukraina un Krievija

@@ -14,5 +14,5 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **30d:** 4 claims, 1.0× bāzes līnija
+- **30d:** 2 claims, 0.7× bāzes līnija
 <!-- /SYNC-AUTO -->

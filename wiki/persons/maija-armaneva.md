@@ -4,9 +4,9 @@ party: Latvija Pirmajā Vietā
 role: Saeimas deputāte, Cilvēktiesību un sabiedrisko lietu komisijas priekšsēdētāja
 relationship_type: tracked
 positions: 26
-votes: 3048
+votes: 3068
 contradictions: 0
-mentioned_in: 289
+mentioned_in: 294
 last_active: 2026-11-23
 top_topics:
 - Izglītība

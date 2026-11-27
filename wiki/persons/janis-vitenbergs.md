@@ -5,9 +5,9 @@ role: Saeimas deputāts, Tautsaimniecības, agrārās, vides un reģionālās po
   priekšsēdētājs, bijušais klimata un enerģētikas ministrs
 relationship_type: tracked
 positions: 68
-votes: 3703
+votes: 3722
 contradictions: 0
-mentioned_in: 622
+mentioned_in: 623
 last_active: 2026-11-23
 top_topics:
 - Degviela un enerģētika
@@ -19,6 +19,6 @@ top_topics:
 
 <!-- SYNC-AUTO -->
 - **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (38%), [[topics/valsts-parvalde|Valsts pārvalde]] (9%), [[topics/ukraina-un-krievija|Ukraina un Krievija]] (7%)
-- **30d:** 7 claims, 1.0× bāzes līnija
+- **30d:** 7 claims, 1.2× bāzes līnija
 - **Spriedzes:** [[persons/maris-kucinskis|Māris Kučinskis]] (1 spriedze)
 <!-- /SYNC-AUTO -->

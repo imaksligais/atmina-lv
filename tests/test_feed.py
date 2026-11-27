@@ -19,6 +19,8 @@ def test_feed_lists_published_pages_newest_first(rendered_site):
 
     channel = ET.fromstring(feed.read_bytes()).find("channel")
     assert channel is not None
+    self_link = channel.find("{http://www.w3.org/2005/Atom}link")
+    assert self_link is not None and self_link.get("href") == f"{BASE_URL}/feed.xml", "nav atom:link rel=self"
     items = channel.findall("item")
     assert 2 <= len(items) <= FEED_LIMIT, f"ierakstu skaits: {len(items)}"
 

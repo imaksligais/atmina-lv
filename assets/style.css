@@ -6690,7 +6690,7 @@ a.cover-row:active { background:var(--surface2); }
   .nav-more { flex-direction: column; align-items: stretch; }
   .nav-more-btn { width: 100%; color: var(--text-muted); border-top: 1px solid var(--border); }
   .nav-more-menu { position: static; display: flex; box-shadow: none; border: none; background: transparent; padding: 0; min-width: 0; }
-  .nav-more-menu a { padding-left: 2.75rem; min-height: 42px; display: flex; align-items: center; }
+  .nav-more-menu a { padding-left: 2.75rem; min-height: 44px; display: flex; align-items: center; }
   .nav-more-caret { display: none; }
   /* Meklētājs kā pilna platuma rinda burger paneļa (#nav-menu) apakšā. */
   .nav-search {
@@ -7101,9 +7101,10 @@ a.cover-row:active { background:var(--surface2); }
 
 /* ── Topic destination pages: directory grid ── */
 .temas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.9rem; margin-top: 1.5rem; }
+/* Bez krāsainās sānu svītras: tēmas krāsu nes ikonas kvadrātiņš (operators 2026-11-25). */
 .tema-card {
   display: grid; grid-template-columns: auto 1fr; column-gap: 0.75rem; row-gap: 0.2rem; align-items: center; align-content: start; text-decoration: none;
-  border-inline-start: 3px solid var(--topic-color, var(--accent)); border-block-end: 1px solid var(--border);
+  border-block-end: 1px solid var(--border);
   padding-block: 1rem; padding-inline: 1.1rem;
 }
 @media (hover: hover) and (pointer: fine) { .tema-card:hover { color: var(--accent); } }
@@ -8518,7 +8519,6 @@ html[data-theme="light"] .pp { --pp-mark: var(--accent-highlight); }
 .pp-hero .profile-bio {
   position: relative;
   margin: 0;
-  padding-block: 1.35rem 0;
   padding-inline: 1.75rem 0;
   border-inline-start: 1px solid var(--border);
   font-size: 0.85rem;
@@ -8528,16 +8528,6 @@ html[data-theme="light"] .pp { --pp-mark: var(--accent-highlight); }
    vertikālā līnija un atkāpe nav vajadzīgas — bio stāv zem identitātes. */
 @media (width < 55rem) {
   .pp-hero .profile-bio { padding-inline-start: 0; border-inline-start: 0; }
-  .pp-hero .profile-bio::before { inset-inline-start: 0; }
-}
-.pp-hero .profile-bio::before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 1.75rem;
-  inline-size: 2.75rem;
-  block-size: 3px;
-  background: var(--pp-mark);
 }
 .pp-hero .profile-bio-facts {
   font-family: var(--prv2-serif);
@@ -8639,7 +8629,6 @@ a.pp-stat:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px;
 }
 .pp-stat-sub {
   display: block;
-  white-space: nowrap;
   font-family: var(--prv2-serif);
   font-style: italic;
   font-size: 0.88rem;
@@ -8943,7 +8932,6 @@ a.pp-stat:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px;
   .pp-ov-chart { padding-block-start: 2rem; margin-block-start: 0.75rem; border-block-start: 1px solid var(--border); }
   .pp-stat, .pp-stats-4 .pp-stat { padding: 0.2rem 1.1rem; gap: 0.75rem; }
   .pp-stat:first-child { padding-inline-start: 0; }
-  .pp-stat-sub { white-space: normal; }
   /* Četras kartītes ar lielām vērtībām («2 345») blakus etiķetei neietilpa
      601–760 px (lapa +21 px dzīvajos datos). Vērtība virs etiķetes, kā telefonā. */
   .pp-stats-4 .pp-stat { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
@@ -9734,6 +9722,75 @@ html[data-theme="light"] .slv {
   .slv-gov-row:hover .slv-gov-name { color: var(--accent); }
 }
 
+/* Komisijas (2026-11-25): tabula kā .slv-gov; rinda atver sastāvu, sastāva rinda
+   ved uz deputāta rindu lapā (#dep-). Bultiņa — kopīgā details > summary::after. */
+.slv-kom { margin-block-end: 2.5rem; container-type: inline-size; }
+.slv-kom-head,
+.slv-kom-sum {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 4.5rem 1rem;
+  gap: 0 1rem;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.slv-kom-head {
+  padding-block: 0.5rem; border-block-end: 1px solid var(--border-soft);
+  font-size: 0.8125rem; color: var(--text-muted);
+}
+.slv-kom-head > :nth-child(3) { text-align: end; }
+.slv-kom-head::after { content: ""; }
+.slv-kom-item { border-block-end: 1px solid var(--border-soft); }
+.slv-kom-sum { padding-block: 0.6rem; min-block-size: 44px; touch-action: manipulation; }
+.slv-kom-sum::after { justify-self: center; margin-inline: 0; }
+.slv-kom-name { font-family: var(--xv1-serif); font-size: 1rem; font-weight: 500; line-height: 1.25; }
+.slv-kom-chair { display: flex; align-items: baseline; gap: 0.4rem; min-inline-size: 0; font-size: 0.875rem; color: var(--text-soft); }
+.slv-kom-chair .slv-swatch { flex: none; align-self: center; }
+.slv-kom-list { color: var(--text-muted); white-space: nowrap; }
+.slv-kom-n { text-align: end; font-variant-numeric: tabular-nums; font-size: 0.875rem; color: var(--text-soft); }
+.slv-kom-members { list-style: none; margin: 0; padding: 0 0 0.5rem; }
+.slv-kom-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 4.5rem 1rem;
+  gap: 0 1rem; align-items: center;
+  min-block-size: 44px; padding-block: 0.35rem;
+  border-block-start: 1px solid var(--border-soft);
+  color: var(--text); text-decoration: none; touch-action: manipulation;
+  overflow-wrap: anywhere;
+}
+.slv-kom-row::after { content: "›"; justify-self: center; color: var(--text-muted); }
+.slv-kom-mname { font-size: 0.9375rem; }
+.slv-kom-title { font-size: 0.8125rem; color: var(--text-muted); }
+.slv-kom-title.is-lead { color: var(--text-soft); font-weight: 600; }
+.slv-kom-mlist { display: flex; align-items: center; justify-content: end; gap: 0.4rem; font-size: 0.8125rem; color: var(--text-muted); white-space: nowrap; }
+.slv-kom-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.slv-kom-row:active { background: var(--surface2); }
+.slv-kom-src { margin-block: 0 0.9rem; margin-inline: 0; }
+.slv-kom-src a { font-family: var(--xv1-mono); font-size: 11px; letter-spacing: 0.6px; color: var(--text-muted); }
+@container (inline-size < 36rem) {
+  .slv-kom-head { display: none; }
+  .slv-kom-sum {
+    grid-template-columns: minmax(0, 1fr) auto 1rem;
+    grid-template-areas: "name name chev" "chair n chev";
+    row-gap: 2px;
+  }
+  .slv-kom-sum::after { grid-area: chev; }
+  .slv-kom-name { grid-area: name; }
+  .slv-kom-chair { grid-area: chair; font-size: 0.8125rem; }
+  .slv-kom-n { grid-area: n; font-size: 0.8125rem; }
+  .slv-kom-row {
+    grid-template-columns: minmax(0, 1fr) auto 1rem;
+    grid-template-areas: "name list chev" "title list chev";
+  }
+  .slv-kom-row::after { grid-area: chev; }
+  .slv-kom-mname { grid-area: name; }
+  .slv-kom-title { grid-area: title; }
+  .slv-kom-mlist { grid-area: list; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .slv-kom-row:hover .slv-kom-mname { color: var(--accent); }
+  .slv-kom-src a:hover { color: var(--accent); }
+}
+
 /* Frakcijas vadība — grupas ķermenī virs kartītēm (saites <summary> iekšā būtu slazds). */
 .slv-group-lead { margin-block: 0 0.75rem; margin-inline: 0; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); }
 .slv-group-lead a {
@@ -10349,6 +10406,9 @@ html[data-theme="light"] .tf {
   .vld-post { grid-area: post; font-size: 0.8125rem; color: var(--text-muted); }
   .vld-name { grid-area: name; }
   .vld-party { grid-area: party; font-size: 0.875rem; color: var(--text-soft); }
+  /* Telefonā partijas saite būtu 16×19 px mērķis blīvā rindā — pieskāriens atver
+     rindu, partijas lapa sasniedzama no ministra profila (2026-11-25). */
+  .vld-party a { pointer-events: none; color: inherit; text-decoration: none; }
   .vld-num { grid-area: num; align-self: center; }
   .vld-num-unit { display: inline; color: var(--text-muted); font-size: 0.875rem; }
   .vld-row > summary::after { grid-area: chev; align-self: center; }

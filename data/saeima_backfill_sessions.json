@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20",
+  "generated_at": "2026-11-26",
   "sessions": [
     {
       "year": 2022,
@@ -3069,6 +3069,24 @@
       "session_type": "arkartas",
       "uuid": "20cb79eb-5609-4668-adfd-5338bcb16550",
       "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=20cb79eb-5609-4668-adfd-5338bcb16550",
+      "convocation": 15
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "day": 26,
+      "session_type": "jautajumi",
+      "uuid": "3c3fb74f-d235-4b37-8d3c-bcb57bc94cdf",
+      "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=3c3fb74f-d235-4b37-8d3c-bcb57bc94cdf",
+      "convocation": 15
+    },
+    {
+      "year": 2026,
+      "month": 11,
+      "day": 26,
+      "session_type": "regular",
+      "uuid": "0cfbb76e-7f7b-416b-b201-336d5aa08b7e",
+      "url": "https://titania.saeima.lv/LIVS15/SaeimaLIVS2_DK.nsf/DK?ReadForm&nr=0cfbb76e-7f7b-416b-b201-336d5aa08b7e",
       "convocation": 15
     }
   ]

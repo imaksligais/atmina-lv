@@ -139,8 +139,15 @@ def fetch_career(db: sqlite3.Connection, pids: list[int]) -> dict[int, list[dict
         ).fetchall()
     except sqlite3.OperationalError:
         return {}
+    # Radinieka vārds amata otrā pusē (pilnvarojums u. c.) publiski netiek
+    # rādīts (data-policy § 1).
+    from src.vad.family import contains_name, private_family_names
+
+    family = private_family_names(db, pids)
     by_pid: dict[int, list[tuple]] = {}
     for pid, year, title, entity in rows:
+        if contains_name(entity, family.get(pid, ())):
+            entity = "ģimenes loceklis"
         by_pid.setdefault(pid, []).append((year, title, entity))
     return {pid: merge_career(r) for pid, r in by_pid.items()}
 

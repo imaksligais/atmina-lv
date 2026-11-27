@@ -17,7 +17,7 @@ og:
 
 # Pilsonība ar Saeimas balsojumu: 11 akti 14. Saeimā un kā tos pieņem
 
-**Avoti:** Saeima (likumprojektu lietas, balsojumi, stenogrammas), «Latvijas Vēstnesis», Pilsonības likums, Satversme, LSM, LETA | **Dati uz:** 2026. gada 1. novembri (balsojumi — līdz 22. oktobrim, Saeimas sēdes — līdz 29. oktobrim; Kūtra teiktais par publikāciju sarakstu pievienots 20. novembrī)
+**Avoti:** Saeima (likumprojektu lietas, balsojumi, stenogrammas), «Latvijas Vēstnesis», Pilsonības likums, Satversme, LSM, LETA | **Dati uz:** 2026. gada 1. novembri (balsojumi — līdz 22. oktobrim, Saeimas sēdes — līdz 29. oktobrim; Kūtra teiktais par publikāciju sarakstu pievienots 20. novembrī; 15. Saeimas stāvoklis — 26. novembrī)
 
 <aside class="post-brief" aria-label="Īsumā" markdown="1">
 
@@ -60,7 +60,7 @@ Saucējs: visi 14. Saeimas likumi «par atzīšanu par Latvijas pilsoni» (10) u
 
 Avots: Saeimas likumprojektu lietas un anotācijas (saites — sadaļā «Avoti»); balsojumi — Saeimas balsošanas rezultāti. «Joma» ir mūsu īss apkopojums pēc anotācijas, nevis pārbaudīts fakts.
 
-**Kas iesniedz.** Visus 10 likumprojektus iesniedza **Pilsonības, migrācijas un sabiedrības saliedētības komisija**. Pavadvēstules paraksta komisijas priekšsēdētājs komisijas vārdā; nevienā lietā iesniedzējs nav deputātu grupa. Manska lēmuma projektu iesniedza tā pati komisija. No 2023. gada 27. septembra komisiju vada [Gunārs Kūtris](/politiki/gunars-kutris.html) (ZZS); pirms viņa — Ingmārs Līdaka (AS), kura laikā sagatavots pirmais no šiem likumiem ([Saeimas faktu lapa Nr. 24](https://m.saeima.lv/faktulapas/Pilsonibas_sabiedribas_saliedetibas_komisija_LV.pdf)).
+**Kas iesniedz.** Visus 10 likumprojektus iesniedza **Pilsonības, migrācijas un sabiedrības saliedētības komisija**. Pavadvēstules paraksta komisijas priekšsēdētājs komisijas vārdā; nevienā lietā iesniedzējs nav deputātu grupa. Manska lēmuma projektu iesniedza tā pati komisija. No 2023. gada 27. septembra līdz 14. Saeimas pilnvaru beigām komisiju vadīja [Gunārs Kūtris](/politiki/gunars-kutris.html) (ZZS); pirms viņa — Ingmārs Līdaka (AS), kura laikā sagatavots pirmais no šiem likumiem ([Saeimas faktu lapa Nr. 24](https://m.saeima.lv/faktulapas/Pilsonibas_sabiedribas_saliedetibas_komisija_LV.pdf)).
 
 **Kas ieteica.** Anotācijās un stenogrammās kā atbalstītāji minēti: sporta federācijas (četriem sportistiem, vispārīgi arī dus Santusam-Šavieram) un Latvijas Olimpiskā komiteja (trim), LZA vadība (abiem Višvanatiem), zinātnes institūts, darba devējs, kultūras un sabiedrības personības. 1355. un 1356. likumprojekta anotācijās atbalstītāji nav nosaukti vārdā.
 
@@ -154,7 +154,7 @@ Saucējs: Saeimas likumprojektu un lēmumu reģistri 11.–14. Saeimai (pārlūk
 | 11. (2011–2014) | 0 | 0 | 0 | — |
 | 12. (2014–2018) | 0 | 7 | 7 | 3 |
 | 13. (2018–2022) | 6 | 2 | 8 | 0 |
-| 14. (2022–) | 10* | 1 | 11 | 8 (Manska lēmums; likumiem — 6) |
+| 14. (2022–2026) | 10* | 1 | 11 | 8 (Manska lēmums; likumiem — 6) |
 
 \* Viens no tiem (Višvanata) 22.10.2026 atcelts; spēkā 9 likumi.
 
@@ -173,10 +173,10 @@ Saeima 22. oktobrī Višvanatas likumu atcēla (68 : 10 : 1). Tajā pašā dien�
 
 - **Valsts prezidents Edgars Rinkēvičs** cer, ka nākamā Saeima šādus lēmumus vairs nepieņems steidzami ([LSM, 23.10.2026](https://www.lsm.lv/raksts/zinas/latvija/23.10.2026-prezidents-pilsoniba-japieskir-tikai-ekskluzivos-gadijumos-un-bez-steigas.a668773/)). Pēc tikšanās ar Ministru prezidentu 28. oktobrī viņš aicināja atteikties no steidzamības, ja tai nav skaidra pamatojuma, un diskusijas padarīt atklātākas ([LETA](https://www.leta.lv/home/important/6F9D7D26-0179-4378-A0D5-3089398D3EB1)).
 - **Ministru prezidents Andris Kulbergs** (AS) tajā pašā tikšanās reizē teica, ka viena gadījuma dēļ no prakses nevajadzētu atteikties pilnībā. Viņaprāt, komisijas darbs bijis pārāk slepens, un būtu vajadzīgs dienestu atzinums ([LETA](https://www.leta.lv/home/important/6F9D7D26-0179-4378-A0D5-3089398D3EB1)).
-- **Deputāts Česlavs Batņa** (AS) rosina, lai šādus likumprojektus varētu iesniegt tikai Valsts prezidents un Ministru kabinets. **Komisijas loceklis Artūrs Butāns** (NA) uzskata, ka komisijas sēdēm un dokumentiem jābūt atklātiem ([LSM, 27.10.2026](https://www.lsm.lv/raksts/zinas/latvija/27.10.2026-rosina-pilsonibas-pieskirsanas-likumprojektus-laut-iesniegt-tikai-prezidentam-un-valdibai.a669297/)).
-- **Komisijas priekšsēdētājs Kūtris** 28. oktobrī teica, ka kārtību var mainīt, vēršoties Saeimas Prezidijā, bet atklātas sēdes varētu kaitēt diskusijai, jo tajās runā par cilvēka privāto dzīvi. Sēžu atklātība, viņaprāt, visticamāk būs jāvērtē nākamajai Saeimai ([LETA](https://www.leta.lv/home/important/6F9D7D26-0179-4378-A0D5-3089398D3EB1)).
+- **Deputāts [Česlavs Batņa](/politiki/ceslavs-batna.html)** (AS; kopš 2026. gada 17. novembra izglītības un zinātnes ministrs) rosināja, lai šādus likumprojektus varētu iesniegt tikai Valsts prezidents un Ministru kabinets. **Komisijas loceklis Artūrs Butāns** (NA) uzskatīja, ka komisijas sēdēm un dokumentiem jābūt atklātiem ([LSM, 27.10.2026](https://www.lsm.lv/raksts/zinas/latvija/27.10.2026-rosina-pilsonibas-pieskirsanas-likumprojektus-laut-iesniegt-tikai-prezidentam-un-valdibai.a669297/)).
+- **Toreizējais komisijas priekšsēdētājs Kūtris** 28. oktobrī teica, ka kārtību var mainīt, vēršoties Saeimas Prezidijā, bet atklātas sēdes varētu kaitēt diskusijai, jo tajās runā par cilvēka privāto dzīvi. Sēžu atklātība, viņaprāt, visticamāk būs jāvērtē nākamajai Saeimai ([LETA](https://www.leta.lv/home/important/6F9D7D26-0179-4378-A0D5-3089398D3EB1)).
 
-Līdz 29. oktobra sēdei (ieskaitot) Saeima par šiem priekšlikumiem nebalsoja.
+Par šiem priekšlikumiem 14. Saeima nenobalsoja. 15. Saeimā līdz 26. novembrim neviens likumprojekts vai lēmuma projekts par pilsonības piešķiršanu nav iesniegts (0 no 22 likumprojektiem un 0 no 26 lēmumu projektiem Saeimas reģistrā). Pilsonības, migrācijas un sabiedrības saliedētības komisiju 15. Saeimā no 23. novembra vada [Agnese Lāce](/politiki/agnese-lace.html) (Progresīvie). Stājoties amatā, viņa teica: «Ir ļoti svarīgi aktualizēt pilsonības piešķiršanas jautājumus, tostarp pilnveidot pilsonības iegūšanas procesu» ([LSM, 23.11.2026](https://www.lsm.lv/raksts/zinas/latvija/23.11.2026-opozicijai-uztic-tris-saeimas-komisiju-vadibu.a672991/)).
 
 ## Vienkāršiem vārdiem
 
@@ -195,6 +195,10 @@ Kopš 2025. gada beigām daļa deputātu balso pret vai atturas. Visvairāk — 
 - Mēs neapgalvojam, ka komisijas priekšsēdētājs būtu personīgi virzījis kādu no gadījumiem. Likumprojektus iesniedz komisija kopumā.
 - Balsis pret vai atturas mēs neinterpretējam. No septiņiem šādiem galīgajiem balsojumiem debatēs runāja četros, un šīs runas neizskaidro visu deputātu balsojumu.
 - Nezinām, cik iesniegumu komisija noraidījusi, un nezinām, kas tiek runāts slēgtajās komisijas sēdēs, izņemot 14. oktobra sēdi, kuras [stenogrammu](https://www.saeima.lv/wp-content/uploads/2026/10/14.oktobra-sedes-stenogramma.pdf) Saeima publicēja 28. oktobrī.
+
+## Labojumi
+
+- 2026\. gada 26. novembrī papildināts pēc 15. Saeimas sākuma: komisijas vadība, Batņas amats, 14. Saeima priekšlikumus nenobalsoja, jauni pilsonības akti 15. Saeimā nav iesniegti. Skaitļi par 14. Saeimu nav mainīti.
 
 ## Avoti
 

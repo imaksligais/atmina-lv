@@ -1,13 +1,13 @@
 ---
 name: Kaspars Melnis
 party: Zaļo un Zemnieku savienība
-role: Saeimas deputāts (14. Saeima)
+role: Bijušais klimata un enerģētikas ministrs, 14. Saeimas deputāts
 relationship_type: tracked
-positions: 58
+positions: 59
 votes: 2122
 contradictions: 0
-mentioned_in: 417
-last_active: 2026-11-03
+mentioned_in: 418
+last_active: 2026-11-25
 top_topics:
 - Degviela un enerģētika
 - Valsts pārvalde
@@ -17,7 +17,7 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (53%), [[topics/valsts-parvalde|Valsts pārvalde]] (12%), [[topics/izglitiba|Izglītība]] (7%)
-- **30d:** 1 claims
+- **Top tēmas:** [[topics/degviela-un-energetika|Degviela un enerģētika]] (53%), [[topics/valsts-parvalde|Valsts pārvalde]] (14%), [[topics/izglitiba|Izglītība]] (7%)
+- **30d:** 2 claims
 - **Spriedzes:** [[persons/dace-melbarde|Dace Melbārde]] (1 spriedze)
 <!-- /SYNC-AUTO -->

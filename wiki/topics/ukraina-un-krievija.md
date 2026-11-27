@@ -1,10 +1,10 @@
 ---
 topic: Ukraina un Krievija
-positions: 1033
+positions: 1052
 votes: 18169
-politicians: 109
+politicians: 110
 contradictions: 4
-last_activity: '2026-11-24 00:00:00'
+last_activity: '2026-11-26 00:00:00'
 top_politicians:
 - '[[persons/baiba-braze|Baiba Braže]]'
 - '[[persons/andris-kulbergs|Andris Kulbergs]]'

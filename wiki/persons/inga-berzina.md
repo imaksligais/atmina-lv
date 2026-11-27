@@ -4,9 +4,9 @@ party: Jaunā Vienotība
 role: Saeimas deputāte, JV frakcijas vadītājas vietniece
 relationship_type: tracked
 positions: 13
-votes: 4332
+votes: 4352
 contradictions: 0
-mentioned_in: 220
+mentioned_in: 231
 last_active: 2026-11-24
 top_topics:
 - Koalīcija un partijas

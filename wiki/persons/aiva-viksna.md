@@ -1,13 +1,13 @@
 ---
 name: Aiva Vīksna
 party: Apvienotais saraksts
-role: Saeimas deputāte
+role: Saeimas deputāte, Budžeta un finanšu (nodokļu) komisijas priekšsēdētāja
 relationship_type: tracked
-positions: 19
-votes: 7688
+positions: 21
+votes: 7708
 contradictions: 0
-mentioned_in: 163
-last_active: 2026-11-20
+mentioned_in: 167
+last_active: 2026-11-26
 top_topics:
 - Budžets un finanses
 - Sociālā politika
@@ -17,6 +17,6 @@ top_topics:
 ---
 
 <!-- SYNC-AUTO -->
-- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (47%), [[topics/sociala-politika|Sociālā politika]] (16%), [[topics/airbaltic|airBaltic]] (11%)
-- **30d:** 1 claims, 0.2× bāzes līnija
+- **Top tēmas:** [[topics/budzets-un-finanses|Budžets un finanses]] (43%), [[topics/sociala-politika|Sociālā politika]] (14%), [[topics/airbaltic|airBaltic]] (14%)
+- **30d:** 3 claims, 0.7× bāzes līnija
 <!-- /SYNC-AUTO -->

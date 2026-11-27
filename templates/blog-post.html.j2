@@ -2,9 +2,11 @@
 {% set active_page = "analizes" %}
 {% set assets_prefix = "../" %}
 
-{% block title %}{{ post.title }}{% endblock %}
-{% block og_title %}{{ post.headline or post.title }}{% endblock %}
-{% block og_description %}{{ (post.preview or '')|truncate(200) }}{% endblock %}
+{% block title %}{{ post.page_title or post.title }}{% endblock %}
+{% block og_title %}{{ post.headline or post.page_title or post.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block description %}{% if post.preview %}{{ post.preview|word_trunc(200) }}{% else %}{{ super() }}{% endif %}{% endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 {% block og_image %}{% if post.og_image_url %}{{ post.og_image_url }}{% elif post.image_filename %}{{ BASE_URL|default('https://atmina.lv') }}/images/{{ post.image_dir|default('briefs') }}/{{ post.image_filename|image_variant('og') }}{% if post.image_cache_bust %}?v={{ post.image_cache_bust }}{% endif %}{% else %}{{ BASE_URL|default('https://atmina.lv') }}/assets/og-atmina.png{% endif %}{% endblock %}
 
 {% block jsonld %}
@@ -17,7 +19,7 @@
   "headline": {{ (post.headline or post.display_title or post.title)|tojson }},
   "inLanguage": "lv",
   {% if _date_iso %}"datePublished": {{ _date_iso|tojson }},{% endif %}
-  {% if post.created_at %}"dateModified": {{ post.created_at|tojson }},{% endif %}
+  {% if post.created_at %}"dateModified": {{ post.created_at|iso_datetime_lv|tojson }},{% endif %}
   "image": ["{{ self.og_image() }}"],
   {% if canonical_url %}"mainEntityOfPage": {"@type": "WebPage", "@id": "{{ canonical_url }}"},{% endif %}
   "author": {

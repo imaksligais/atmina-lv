@@ -1,12 +1,12 @@
 ---
 party: Apvienotais saraksts
 members: 55
-claims: 2454
+claims: 2515
 program_promises: 23
 contradictions: 12
-votes_par: 69053
-votes_pret: 13552
-votes_atturas: 5990
+votes_par: 69549
+votes_pret: 13687
+votes_atturas: 6008
 top_politicians:
 - Andris Kulbergs
 - Guntars Vītols

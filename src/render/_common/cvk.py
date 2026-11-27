@@ -14,6 +14,17 @@ from typing import Any
 import yaml
 
 
+def read_substitutes(path: Path) -> list[dict[str, Any]]:
+    """`saeima15_amati.yaml` § mandates → deputāti ministru vietā (vārds, list_nr).
+
+    Pārbaudes (skaits pa sarakstiem, vārdi) dara `saeima.py` ielādētājs; šeit tikai
+    lasa, lai `personas.html` un `saeima.html` sēdošos ņem no viena faila.
+    Trūkstošs fails ir kļūda, ne tukšs saraksts.
+    """
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return list((doc.get("mandates") or {}).get("substitutes") or [])
+
+
 def read_election_results(path: Path) -> dict[str, Any] | None:
     """`cvk_sv2026_rezultati.yaml` → dict. Nav faila vai nav sarakstu → None."""
     if not path.exists():

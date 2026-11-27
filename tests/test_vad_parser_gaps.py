@@ -116,3 +116,16 @@ def test_debts_empty_section_and_freeform_without_money():
     parsed = parse_declaration_html(html)
     assert parsed.debts == []
     assert parsed.loans_given == []
+
+
+def test_old_format_2002_2013_header_family_and_other_info():
+    """Vecā VID forma (2002–2013, 1 064 dekl. 2026-11-27): iestāde zem
+    «Darbavieta:», brīvteksts §11, ģimene §12. Pēc numura dalītais parsētājs
+    tās nelasīja → ģimenes vārti šīs deklarācijas neredzēja (backlog/vad.md)."""
+    parsed = parse_declaration_html(_load("old-format-2003"))
+    assert parsed.header.institution == "TESTA IESTĀDE"  # VID «'…'» pēdiņas noņemtas
+    assert [(f.relation, f.full_name) for f in parsed.family] == [
+        ("Brālis", "TESTA BRĀLIS"), ("Sieva", "TESTA SIEVA"), ("Māte", "TESTA MĀTE"),
+    ]
+    assert parsed.other_info == "Papildinājums pie 4. jautājuma: daļas atsavinātas."
+    assert parsed.has_private_pension is None and parsed.has_life_insurance is None

@@ -69,7 +69,9 @@ def test_long_bio_hero_columns_and_popover_keep_tabs_still(tmp_path, monkeypatch
         browser.close()
     print(f"\nHero: {geometry}; tabs after: {tabs_after}; popover: {opened}")
     failures = []
-    if not geometry["beside"] or geometry["bottomGap"] > 40:
+    # 50, ne 40: 2026-11-25 bio kolonnai noņemta dekoratīvā svītra ar 1,35rem
+    # (~22 px) augšējo atkāpi — bio tagad sākas līdzās foto augšmalai.
+    if not geometry["beside"] or geometry["bottomGap"] > 50:
         failures.append(f"identity/bio bottom gap: {geometry['bottomGap']} px")
     if geometry["height"] > geometry["tallest"] + geometry["padding"] + 1:
         failures.append("hero exceeds its taller column plus padding")

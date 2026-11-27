@@ -2,6 +2,11 @@
 {% from "_macros.html.j2" import pagehead, metric %}
 
 {% block title %}{{ place.name }}{% endblock %}
+{% block description -%}
+{{ place.name }}: {% if place.kind == "organizacija" %}izsekotie politiķi, kas amatpersonu deklarācijās norādījuši amatu šajā organizācijā.{% else %}izsekotie politiķi, kas 14. Saeimā bijuši šīs {{ "delegācijas" if place.kind == "delegacija" else "komisijas" }} sastāvā.{% endif %}
+{%- if place.members %} Politiķi: {{ place.members|length }}.{% endif %}
+{%- endblock %}
+{% block og_description %}{{ self.description() }}{% endblock %}
 
 {% block content %}
 <section class="pagehead-section vieta">

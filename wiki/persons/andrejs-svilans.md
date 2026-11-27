@@ -4,9 +4,9 @@ party: Apvienotais saraksts
 role: Saeimas deputāts
 relationship_type: tracked
 positions: 4
-votes: 4509
+votes: 4529
 contradictions: 0
-mentioned_in: 69
+mentioned_in: 70
 last_active: 2026-10-02
 top_topics:
 - Aizsardzība un drošība

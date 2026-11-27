@@ -35,7 +35,7 @@ from src.render._common import (
     party_color_map,
 )
 from src.render._common.constants import PROJECT_ROOT
-from src.render._common.cvk import read_elected
+from src.render._common.cvk import read_elected, read_substitutes
 from src.render.valdiba import VALDIBA_PUBLISHED
 from src.scope import not_attendance_sql
 
@@ -43,6 +43,8 @@ from src.scope import not_attendance_sql
 # jaunie profili = 15. Saeimas sēklas kohorta.
 # Testi (test_render_chars) abus pārsien uz fiksētām fixture kopijām.
 ELECTED_PATH = PROJECT_ROOT / "data" / "cvk_sv2026_ievēlētie.yaml"
+# Deputāti ministru vietā (§ mandates) — tas pats fails, ko lasa saeima.html.
+AMATI_PATH = PROJECT_ROOT / "data" / "saeima15_amati.yaml"
 COHORT_PATH = PROJECT_ROOT / "data" / "seed" / "15saeima_kohorta.yaml"
 
 
@@ -72,9 +74,9 @@ def _persona_sort_name(name: str, category: str) -> str:
 
 
 def _load_saeima15_names(
-    elected_path: Path, cohort_path: Path
-) -> tuple[set[str], set[str]]:
-    """(ievēlētie, jaunie) vārdu kopas. Jaunie ⊂ ievēlētie pēc konstrukcijas.
+    elected_path: Path, cohort_path: Path, amati_path: Path
+) -> tuple[set[str], set[str], set[str]]:
+    """(ievēlētie, jaunie, aizstājēji) vārdu kopas. Jaunie ⊂ ievēlētie pēc konstrukcijas.
 
     Trūkstošs fails ir kļūda, nevis tukša kopa — citādi rails klusi rādītu
     «Ievēlētie 0» (vārti, kas nevar nostrādāt).
@@ -82,13 +84,16 @@ def _load_saeima15_names(
     elected = {e["name"] for e in read_elected(elected_path)}
     cohort = yaml.safe_load(cohort_path.read_text(encoding="utf-8")) or []
     new = {c["name"] for c in cohort} & elected
-    return elected, new
+    substitutes = {s["name"] for s in read_substitutes(amati_path)} - elected
+    return elected, new, substitutes
 
 
 def _apply_saeima15(
-    personas: list[dict[str, Any]], elected: set[str], new: set[str]
+    personas: list[dict[str, Any]], elected: set[str], new: set[str], substitutes: set[str]
 ) -> None:
-    """Atzīmē ``saeima15`` ('jauns' | 'ievēlēts' | '') pēc precīza vārda.
+    """Atzīmē ``saeima15`` ('jauns' | 'ievēlēts' | 'aizstājējs' | '') pēc precīza vārda.
+
+    Aizstājējs (sēž ministra vietā) ir filtrā «Ievēlētie» — ministrs tur paliek arī.
 
     Tikai šajā lapā ievēlētais bez balsojumiem kļūst «Deputāti» —
     ``_persona_category`` globāli nemainās (search_index to lieto atsevišķi).
@@ -98,6 +103,8 @@ def _apply_saeima15(
             p["saeima15"] = "jauns"
         elif p["name"] in elected:
             p["saeima15"] = "ievēlēts"
+        elif p["name"] in substitutes:
+            p["saeima15"] = "aizstājējs"
         else:
             p["saeima15"] = ""
         # Ministrs paliek Valdībā arī ievēlēts — mandāts uz amata laiku nolikts.
@@ -192,6 +199,7 @@ def render_personas(
     atmina_dir: Path,
     elected_path: Path | None = None,
     cohort_path: Path | None = None,
+    amati_path: Path | None = None,
 ) -> None:
     """Render personas.html with category + party rails.
 
@@ -200,10 +208,10 @@ def render_personas(
     facet counts + emits one HTML page.
     """
     personas = _fetch_personas(db)
-    elected, new = _load_saeima15_names(
-        elected_path or ELECTED_PATH, cohort_path or COHORT_PATH
+    elected, new, substitutes = _load_saeima15_names(
+        elected_path or ELECTED_PATH, cohort_path or COHORT_PATH, amati_path or AMATI_PATH
     )
-    _apply_saeima15(personas, elected, new)
+    _apply_saeima15(personas, elected, new, substitutes)
     saeima15_counts = {
         "ieveleti": sum(1 for p in personas if p["saeima15"]),
         "jauni": sum(1 for p in personas if p["saeima15"] == "jauns"),

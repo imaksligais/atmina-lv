@@ -4,10 +4,10 @@
 {% from "_macros.html.j2" import prv2_card, share_buttons %}
 
 {% block title %}{{ c.politician_name }} · {{ c.severity_lv }}{% if c.topic %} — {{ c.topic }}{% endif %}{% endblock %}
-{% block description %}{% if c.summary %}{{ c.summary|truncate(160) }}{% else %}{{ c.politician_name }} — {{ c.severity_lv }}{% if c.topic %} par {{ c.topic }}{% endif %}.{% endif %}{% endblock %}
+{% block description %}{% if c.summary %}{{ c.summary|word_trunc(160) }}{% else %}{{ c.politician_name }} — {{ c.severity_lv }}{% if c.topic %} par {{ c.topic }}{% endif %}.{% endif %}{% endblock %}
 
 {% block og_title %}{{ c.politician_name }}: {{ c.topic or "pretruna" }}{% endblock %}
-{% block og_description %}{% if c.summary %}{{ c.summary|truncate(200) }}{% else %}{{ c.severity_lv }} · {{ c.old_date|lv_date }} → {{ c.new_date|lv_date }}{% endif %}{% endblock %}
+{% block og_description %}{% if c.summary %}{{ c.summary|word_trunc(200) }}{% else %}{{ c.severity_lv }} · {{ c.old_date|lv_date }} → {{ c.new_date|lv_date }}{% endif %}{% endblock %}
 {% block og_image %}{{ BASE_URL }}/assets/og/pretruna-{{ c.id }}.png{% if og_v %}?v={{ og_v }}{% endif %}{% endblock %}
 
 {% block content %}

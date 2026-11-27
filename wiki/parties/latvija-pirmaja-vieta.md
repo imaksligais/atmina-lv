@@ -1,11 +1,11 @@
 ---
 party: Latvija Pirmajā Vietā
 members: 24
-claims: 834
+claims: 848
 program_promises: 23
 contradictions: 2
-votes_par: 52070
-votes_pret: 12255
+votes_par: 52260
+votes_pret: 12304
 votes_atturas: 204
 top_politicians:
 - Ainārs Šlesers
@@ -15,9 +15,9 @@ top_politicians:
 - Linda Liepiņa
 top_topics:
 - Koalīcija un partijas
+- airBaltic
 - Imigrācija
 - Valsts pārvalde
-- airBaltic
 - Sociālā politika
 ---
 
